@@ -36,47 +36,6 @@ def _map_reciter_to_markers(markers: list[Marker], prayers: list[PrayerSegment])
     return markers
 
 
-def _build_legacy_prayers_from_rakaat(rakaat: list[PrayerSegment]) -> list[dict]:
-    if not rakaat:
-        return []
-
-    legacy: list[dict] = []
-    prayer_index = 1
-    for index in range(0, len(rakaat), 2):
-        rakah = rakaat[index]
-        legacy.append(
-            {
-                "start": rakah.start,
-                "label": f"Prayer {prayer_index}",
-                "reciter": rakah.reciter or "Unknown",
-            }
-        )
-        prayer_index += 1
-    return legacy
-
-
-def _build_reciter_switches(rakaat: list[PrayerSegment]) -> list[dict]:
-    switches: list[dict] = []
-    if not rakaat:
-        return switches
-
-    previous = rakaat[0].reciter or "Unknown"
-    for rakah in rakaat[1:]:
-        current = rakah.reciter or "Unknown"
-        if current != previous:
-            switches.append(
-                {
-                    "time": rakah.start,
-                    "from": previous,
-                    "to": current,
-                    "label": f"Reciter switch: {previous} -> {current}",
-                }
-            )
-        previous = current
-
-    return switches
-
-
 def process_day(
     day: int,
     output_path: Path,
@@ -142,16 +101,16 @@ def process_day(
             },
         )
 
-    audio_rakah_starts = detect_prayer_starts(audio, sample_rate, collapse_rakah_pairs=False)
-    fatiha_rakah_starts = detect_fatiha_starts(transcript_segments)
-    rakaat_starts = merge_rakah_starts(audio_rakah_starts, fatiha_rakah_starts)
+    audio_segment_starts = detect_prayer_starts(audio, sample_rate, collapse_rakah_pairs=True)
+    fatiha_segment_starts = detect_fatiha_starts(transcript_segments)
+    reciter_segment_starts = merge_rakah_starts(audio_segment_starts, fatiha_segment_starts, min_gap_seconds=180)
 
-    rakaat = build_prayer_segments(rakaat_starts, total_seconds)
-    rakaat = assign_reciters(
+    reciter_segments = build_prayer_segments(reciter_segment_starts, total_seconds)
+    reciter_segments = assign_reciters(
         day=day,
         audio=audio,
         sample_rate=sample_rate,
-        prayers=rakaat,
+        prayers=reciter_segments,
         profiles_path=profiles_path,
         bootstrap_reciters=bootstrap_reciters,
     )
@@ -165,38 +124,24 @@ def process_day(
         min_overlap=match_min_overlap,
         min_confidence=match_min_confidence,
     )
-    markers = _map_reciter_to_markers(markers, rakaat)
-    reciter_switches = _build_reciter_switches(rakaat)
+    markers = _map_reciter_to_markers(markers, reciter_segments)
 
     payload = {
         "day": day,
         "source": source,
-        "rakaat": [
-            {
-                "start": rakah.start,
-                "label": f"Rakah {rakah.index}",
-                "reciter": rakah.reciter or "Unknown",
-            }
-            for rakah in rakaat
-        ],
-        "reciter_switches": reciter_switches,
-        "prayers": [
-            prayer for prayer in _build_legacy_prayers_from_rakaat(rakaat)
-        ],
         "markers": [asdict(marker) for marker in markers],
         "meta": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "audio_path": str(normalized_audio_path),
             "whisper_model": whisper_model,
             "markers_detected": len(markers),
-            "rakaat_detected": len(rakaat),
-            "prayers_detected": len(_build_legacy_prayers_from_rakaat(rakaat)),
+            "reciter_segments_detected": len(reciter_segments),
             "corpus_loaded": bool(corpus_entries),
             "transcript_path": str(transcript_cache_path),
-            "rakaat_detection": {
-                "audio_starts": len(audio_rakah_starts),
-                "fatiha_starts": len(fatiha_rakah_starts),
-                "merged_starts": len(rakaat_starts),
+            "segment_detection": {
+                "audio_starts": len(audio_segment_starts),
+                "fatiha_starts": len(fatiha_segment_starts),
+                "merged_starts": len(reciter_segment_starts),
             },
             "match_config": {
                 "min_score": match_min_score,

@@ -132,6 +132,11 @@ def match_quran_markers(
     recovery_after_seconds: int = 420,
     recovery_rewind_ayat: int = 40,
     recovery_window_multiplier: float = 2.0,
+    ambiguous_min_score: int = 70,
+    ambiguous_min_confidence: float = 0.5,
+    max_infer_gap_ayahs: int = 8,
+    max_infer_gap_seconds: int = 720,
+    max_leading_infer_ayahs: int = 3,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -193,7 +198,7 @@ def match_quran_markers(
             elif score > second_score:
                 second_score = score
 
-        if top_index < 0 or top_score < local_min_score:
+        if top_index < 0 or top_score < ambiguous_min_score:
             stale_segments += 1
             continue
 
@@ -210,7 +215,9 @@ def match_quran_markers(
         if is_recovery and last_matched_index >= 0:
             threshold = local_min_confidence
 
-        if confidence < threshold or overlap < local_min_overlap:
+        is_high = top_score >= local_min_score and confidence >= threshold and overlap >= local_min_overlap
+        is_ambiguous = top_score >= ambiguous_min_score and confidence >= ambiguous_min_confidence
+        if not is_high and not is_ambiguous:
             stale_segments += 1
             continue
 
@@ -230,12 +237,19 @@ def match_quran_markers(
             surah_number=entry.surah_number,
             ayah=entry.ayah,
             juz=get_juz_for_ayah(entry.surah_number, entry.ayah),
+            quality="high" if is_high else "ambiguous",
             confidence=round(confidence, 3),
         )
 
         if existing_index is not None:
             existing = markers[existing_index]
-            if marker_time < existing.time:
+            should_replace = False
+            if existing.quality != "high" and candidate.quality == "high":
+                should_replace = True
+            elif existing.quality == candidate.quality and marker_time < existing.time:
+                should_replace = True
+
+            if should_replace:
                 markers[existing_index] = candidate
             last_matched_index = max(last_matched_index, matched_index)
             stale_segments = 0
@@ -246,4 +260,68 @@ def match_quran_markers(
         last_matched_index = max(last_matched_index, matched_index)
         last_marker_time = marker_time
         stale_segments = 0
-    return sorted(markers, key=lambda marker: marker.time)
+
+    inferred_markers: list[Marker] = []
+    keyed_markers: dict[tuple[str, int], Marker] = {(marker.surah, marker.ayah): marker for marker in markers}
+    anchors = [marker for marker in sorted(markers, key=lambda m: m.time) if marker.quality == "high"]
+
+    for left, right in zip(anchors, anchors[1:]):
+        if left.surah != right.surah:
+            continue
+        if left.ayah >= right.ayah:
+            continue
+
+        missing_count = right.ayah - left.ayah - 1
+        if missing_count <= 0 or missing_count > max_infer_gap_ayahs:
+            continue
+
+        gap_seconds = right.time - left.time
+        if gap_seconds <= min_gap_seconds or gap_seconds > max_infer_gap_seconds:
+            continue
+
+        step_seconds = gap_seconds / (missing_count + 1)
+        for offset in range(1, missing_count + 1):
+            ayah_number = left.ayah + offset
+            key = (left.surah, ayah_number)
+            if key in keyed_markers:
+                continue
+
+            inferred_time = int(round(left.time + (step_seconds * offset)))
+            inferred = Marker(
+                time=inferred_time,
+                surah=left.surah,
+                surah_number=left.surah_number,
+                ayah=ayah_number,
+                juz=get_juz_for_ayah(left.surah_number or 1, ayah_number),
+                quality="inferred",
+                confidence=round(min(left.confidence or 0.58, right.confidence or 0.58, 0.6), 3),
+            )
+            inferred_markers.append(inferred)
+            keyed_markers[key] = inferred
+
+    # Backfill leading ayahs if the first strong anchor starts after ayah 1.
+    if anchors:
+        first = anchors[0]
+        if first.ayah > 1 and first.ayah - 1 <= max_leading_infer_ayahs:
+            # Spread inferred ayahs before the first confident timestamp.
+            time_step = max(4, int(round(first.time / max(1, first.ayah))))
+            for ayah_number in range(first.ayah - 1, 0, -1):
+                key = (first.surah, ayah_number)
+                if key in keyed_markers:
+                    continue
+
+                offset = first.ayah - ayah_number
+                inferred_time = max(0, first.time - (time_step * offset))
+                inferred = Marker(
+                    time=inferred_time,
+                    surah=first.surah,
+                    surah_number=first.surah_number,
+                    ayah=ayah_number,
+                    juz=get_juz_for_ayah(first.surah_number or 1, ayah_number),
+                    quality="inferred",
+                    confidence=round(min(first.confidence or 0.58, 0.58), 3),
+                )
+                inferred_markers.append(inferred)
+                keyed_markers[key] = inferred
+
+    return sorted(markers + inferred_markers, key=lambda marker: marker.time)

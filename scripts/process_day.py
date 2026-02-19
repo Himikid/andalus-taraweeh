@@ -108,7 +108,7 @@ def main() -> None:
     )
 
     print(f"Saved: {output_path}")
-    print(f"Prayers detected: {len(payload['prayers'])}")
+    print(f"Reciter segments detected: {payload['meta'].get('reciter_segments_detected', 0)}")
     print(f"Markers detected: {len(payload['markers'])}")
     print(f"Corpus loaded: {payload['meta']['corpus_loaded']}")
 

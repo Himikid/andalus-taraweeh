@@ -25,5 +25,6 @@ class Marker:
     ayah: int
     surah_number: int | None = None
     juz: int | None = None
+    quality: str = "high"
     reciter: str | None = None
     confidence: float | None = None

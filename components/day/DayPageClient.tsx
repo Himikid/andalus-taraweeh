@@ -6,21 +6,12 @@ import { useRouter } from "next/navigation";
 import DaySelector from "@/components/day/DaySelector";
 import RecitersInfo from "@/components/shared/RecitersInfo";
 import SurahIndex, { type SurahMarker } from "@/components/day/SurahIndex";
-import PrayerStarts, { type PrayerStart } from "@/components/day/PrayerStarts";
 import VideoPlayer from "@/components/day/VideoPlayer";
 import { getDateForRamadanDay } from "@/data/ramadan";
 import { availableTaraweehDays, getVideoIdForDay } from "@/data/taraweehVideos";
 
 type DayData = {
   markers?: SurahMarker[];
-  rakaat?: PrayerStart[];
-  prayers?: PrayerStart[];
-  reciter_switches?: {
-    time: number;
-    from: string;
-    to: string;
-    label: string;
-  }[];
 };
 
 type DayPageClientProps = {
@@ -35,15 +26,6 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
 
   const [selectedDay, setSelectedDay] = useState(safeInitialDay);
   const [markers, setMarkers] = useState<SurahMarker[]>([]);
-  const [rakaat, setRakaat] = useState<PrayerStart[]>([]);
-  const [reciterSwitches, setReciterSwitches] = useState<
-    {
-      time: number;
-      from: string;
-      to: string;
-      label: string;
-    }[]
-  >([]);
   const [manualVideoId, setManualVideoId] = useState("");
   const [seekTime, setSeekTime] = useState<number | undefined>(undefined);
   const hasInitializedSeekReset = useRef(false);
@@ -85,8 +67,6 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
         if (!response.ok) {
           if (isMounted) {
             setMarkers([]);
-            setRakaat([]);
-            setReciterSwitches([]);
           }
           return;
         }
@@ -94,14 +74,10 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
         const data = (await response.json()) as DayData;
         if (isMounted) {
           setMarkers(Array.isArray(data.markers) ? data.markers : []);
-          setRakaat(Array.isArray(data.rakaat) ? data.rakaat : Array.isArray(data.prayers) ? data.prayers : []);
-          setReciterSwitches(Array.isArray(data.reciter_switches) ? data.reciter_switches : []);
         }
       } catch {
         if (isMounted) {
           setMarkers([]);
-          setRakaat([]);
-          setReciterSwitches([]);
         }
       }
     }
@@ -140,16 +116,6 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
         <section className="grid gap-6 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-8">
             <VideoPlayer videoId={effectiveVideoId} startAt={seekTime} />
-            {rakaat.length ? (
-              <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
-                <PrayerStarts
-                  prayers={rakaat}
-                  reciterSwitches={reciterSwitches}
-                  title="Rakah Start Timestamps"
-                  onSeek={setSeekTime}
-                />
-              </section>
-            ) : null}
             <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
               <SurahIndex markers={markers} onSeek={setSeekTime} />
             </section>

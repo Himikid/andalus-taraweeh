@@ -1,140 +1,24 @@
 {
   "day": 1,
   "source": "data/audio/day-1/source.wav",
-  "rakaat": [
-    {
-      "start": 0,
-      "label": "Rakah 1",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 293,
-      "label": "Rakah 2",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 657,
-      "label": "Rakah 3",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 964,
-      "label": "Rakah 4",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 1329,
-      "label": "Rakah 5",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 1595,
-      "label": "Rakah 6",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 1896,
-      "label": "Rakah 7",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 2181,
-      "label": "Rakah 8",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 2292,
-      "label": "Rakah 9",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 2398,
-      "label": "Rakah 10",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 2612,
-      "label": "Rakah 11",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 3331,
-      "label": "Rakah 12",
-      "reciter": "Samir"
-    },
-    {
-      "start": 3553,
-      "label": "Rakah 13",
-      "reciter": "Samir"
-    },
-    {
-      "start": 3881,
-      "label": "Rakah 14",
-      "reciter": "Samir"
-    },
-    {
-      "start": 4326,
-      "label": "Rakah 15",
-      "reciter": "Samir"
-    }
-  ],
-  "reciter_switches": [
-    {
-      "time": 3331,
-      "from": "Hasan",
-      "to": "Samir",
-      "label": "Reciter switch: Hasan -> Samir"
-    }
-  ],
-  "prayers": [
-    {
-      "start": 0,
-      "label": "Prayer 1",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 657,
-      "label": "Prayer 2",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 1329,
-      "label": "Prayer 3",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 1896,
-      "label": "Prayer 4",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 2292,
-      "label": "Prayer 5",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 2612,
-      "label": "Prayer 6",
-      "reciter": "Hasan"
-    },
-    {
-      "start": 3553,
-      "label": "Prayer 7",
-      "reciter": "Samir"
-    },
-    {
-      "start": 4326,
-      "label": "Prayer 8",
-      "reciter": "Samir"
-    }
-  ],
   "markers": [
+    {
+      "time": 13,
+      "surah": "Al-Baqara",
+      "ayah": 1,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.58
+    },
     {
       "time": 26,
       "surah": "Al-Baqara",
       "ayah": 2,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.829
     },
@@ -144,6 +28,7 @@
       "ayah": 3,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.758
     },
@@ -153,6 +38,7 @@
       "ayah": 4,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.855
     },
@@ -162,6 +48,7 @@
       "ayah": 5,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.721
     },
@@ -171,6 +58,7 @@
       "ayah": 6,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.764
     },
@@ -180,8 +68,39 @@
       "ayah": 7,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.761
+    },
+    {
+      "time": 100,
+      "surah": "Al-Baqara",
+      "ayah": 8,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 101,
+      "surah": "Al-Baqara",
+      "ayah": 9,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.615
+    },
+    {
+      "time": 122,
+      "surah": "Al-Baqara",
+      "ayah": 10,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
     },
     {
       "time": 134,
@@ -189,17 +108,89 @@
       "ayah": 11,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.801
     },
     {
-      "time": 194,
+      "time": 151,
+      "surah": "Al-Baqara",
+      "ayah": 12,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.676
+    },
+    {
+      "time": 166,
+      "surah": "Al-Baqara",
+      "ayah": 13,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 172,
       "surah": "Al-Baqara",
       "ayah": 14,
       "surah_number": 2,
       "juz": 1,
+      "quality": "ambiguous",
       "reciter": "Hasan",
-      "confidence": 0.766
+      "confidence": 0.665
+    },
+    {
+      "time": 198,
+      "surah": "Al-Baqara",
+      "ayah": 15,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 215,
+      "surah": "Al-Baqara",
+      "ayah": 16,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 231,
+      "surah": "Al-Baqara",
+      "ayah": 17,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 247,
+      "surah": "Al-Baqara",
+      "ayah": 18,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 265,
+      "surah": "Al-Baqara",
+      "ayah": 19,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.645
     },
     {
       "time": 279,
@@ -207,6 +198,7 @@
       "ayah": 20,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.776
     },
@@ -216,8 +208,29 @@
       "ayah": 21,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.746
+    },
+    {
+      "time": 423,
+      "surah": "Al-Baqara",
+      "ayah": 22,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.688
+    },
+    {
+      "time": 459,
+      "surah": "Al-Baqara",
+      "ayah": 23,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
     },
     {
       "time": 483,
@@ -225,8 +238,19 @@
       "ayah": 24,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.775
+    },
+    {
+      "time": 499,
+      "surah": "Al-Baqara",
+      "ayah": 25,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.706
     },
     {
       "time": 692,
@@ -234,8 +258,59 @@
       "ayah": 26,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.776
+    },
+    {
+      "time": 718,
+      "surah": "Al-Baqara",
+      "ayah": 27,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 760,
+      "surah": "Al-Baqara",
+      "ayah": 28,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.653
+    },
+    {
+      "time": 771,
+      "surah": "Al-Baqara",
+      "ayah": 29,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 790,
+      "surah": "Al-Baqara",
+      "ayah": 30,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.733
+    },
+    {
+      "time": 820,
+      "surah": "Al-Baqara",
+      "ayah": 31,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.724
     },
     {
       "time": 850,
@@ -243,8 +318,89 @@
       "ayah": 32,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.775
+    },
+    {
+      "time": 879,
+      "surah": "Al-Baqara",
+      "ayah": 33,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 907,
+      "surah": "Al-Baqara",
+      "ayah": 34,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 936,
+      "surah": "Al-Baqara",
+      "ayah": 35,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 965,
+      "surah": "Al-Baqara",
+      "ayah": 36,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 993,
+      "surah": "Al-Baqara",
+      "ayah": 37,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1022,
+      "surah": "Al-Baqara",
+      "ayah": 38,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1051,
+      "surah": "Al-Baqara",
+      "ayah": 39,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1079,
+      "surah": "Al-Baqara",
+      "ayah": 40,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
     },
     {
       "time": 1108,
@@ -252,8 +408,49 @@
       "ayah": 41,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.623
+    },
+    {
+      "time": 1164,
+      "surah": "Al-Baqara",
+      "ayah": 42,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1220,
+      "surah": "Al-Baqara",
+      "ayah": 43,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1333,
+      "surah": "Al-Baqara",
+      "ayah": 45,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1351,
+      "surah": "Al-Baqara",
+      "ayah": 44,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.585
     },
     {
       "time": 1389,
@@ -261,8 +458,29 @@
       "ayah": 46,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.812
+    },
+    {
+      "time": 1412,
+      "surah": "Al-Baqara",
+      "ayah": 47,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1427,
+      "surah": "Al-Baqara",
+      "ayah": 48,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.517
     },
     {
       "time": 1457,
@@ -270,8 +488,79 @@
       "ayah": 49,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.744
+    },
+    {
+      "time": 1472,
+      "surah": "Al-Baqara",
+      "ayah": 50,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.708
+    },
+    {
+      "time": 1514,
+      "surah": "Al-Baqara",
+      "ayah": 51,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1543,
+      "surah": "Al-Baqara",
+      "ayah": 52,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1572,
+      "surah": "Al-Baqara",
+      "ayah": 53,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1601,
+      "surah": "Al-Baqara",
+      "ayah": 54,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1656,
+      "surah": "Al-Baqara",
+      "ayah": 55,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.698
+    },
+    {
+      "time": 1658,
+      "surah": "Al-Baqara",
+      "ayah": 56,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
     },
     {
       "time": 1687,
@@ -279,8 +568,69 @@
       "ayah": 57,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.738
+    },
+    {
+      "time": 1742,
+      "surah": "Al-Baqara",
+      "ayah": 58,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1798,
+      "surah": "Al-Baqara",
+      "ayah": 59,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 1947,
+      "surah": "Al-Baqara",
+      "ayah": 60,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.655
+    },
+    {
+      "time": 1960,
+      "surah": "Al-Baqara",
+      "ayah": 61,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.635
+    },
+    {
+      "time": 1963,
+      "surah": "Al-Baqara",
+      "ayah": 62,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 2019,
+      "surah": "Al-Baqara",
+      "ayah": 63,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
     },
     {
       "time": 2074,
@@ -288,6 +638,7 @@
       "ayah": 64,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.781
     },
@@ -297,6 +648,7 @@
       "ayah": 65,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.775
     },
@@ -306,8 +658,79 @@
       "ayah": 66,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.745
+    },
+    {
+      "time": 2248,
+      "surah": "Al-Baqara",
+      "ayah": 67,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.678
+    },
+    {
+      "time": 2353,
+      "surah": "Al-Baqara",
+      "ayah": 68,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 2462,
+      "surah": "Al-Baqara",
+      "ayah": 69,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.664
+    },
+    {
+      "time": 2492,
+      "surah": "Al-Baqara",
+      "ayah": 70,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.76
+    },
+    {
+      "time": 2533,
+      "surah": "Al-Baqara",
+      "ayah": 71,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.649
+    },
+    {
+      "time": 2582,
+      "surah": "Al-Baqara",
+      "ayah": 72,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
+    },
+    {
+      "time": 2640,
+      "surah": "Al-Baqara",
+      "ayah": 73,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.6
     },
     {
       "time": 2697,
@@ -315,8 +738,19 @@
       "ayah": 74,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Hasan",
       "confidence": 0.753
+    },
+    {
+      "time": 3369,
+      "surah": "Al-Baqara",
+      "ayah": 75,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.678
     },
     {
       "time": 3433,
@@ -324,6 +758,7 @@
       "ayah": 77,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Samir",
       "confidence": 0.78
     },
@@ -333,8 +768,39 @@
       "ayah": 78,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Samir",
       "confidence": 0.745
+    },
+    {
+      "time": 3461,
+      "surah": "Al-Baqara",
+      "ayah": 79,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.714
+    },
+    {
+      "time": 3764,
+      "surah": "Al-Baqara",
+      "ayah": 84,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.657
+    },
+    {
+      "time": 3819,
+      "surah": "Al-Baqara",
+      "ayah": 85,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.684
     },
     {
       "time": 3849,
@@ -342,6 +808,7 @@
       "ayah": 86,
       "surah_number": 2,
       "juz": 1,
+      "quality": "ambiguous",
       "reciter": "Samir",
       "confidence": 0.556
     },
@@ -351,6 +818,7 @@
       "ayah": 88,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Samir",
       "confidence": 0.791
     },
@@ -360,8 +828,49 @@
       "ayah": 89,
       "surah_number": 2,
       "juz": 1,
+      "quality": "high",
       "reciter": "Samir",
       "confidence": 0.762
+    },
+    {
+      "time": 4236,
+      "surah": "Al-Baqara",
+      "ayah": 93,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.668
+    },
+    {
+      "time": 4288,
+      "surah": "Al-Baqara",
+      "ayah": 95,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.607
+    },
+    {
+      "time": 4859,
+      "surah": "Al-Baqara",
+      "ayah": 106,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.642
+    },
+    {
+      "time": 4889,
+      "surah": "Al-Baqara",
+      "ayah": 108,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.7
     },
     {
       "time": 4936,
@@ -369,23 +878,53 @@
       "ayah": 109,
       "surah_number": 2,
       "juz": 1,
+      "quality": "ambiguous",
       "reciter": "Samir",
-      "confidence": 0.638
+      "confidence": 0.704
+    },
+    {
+      "time": 5206,
+      "surah": "Al-Baqara",
+      "ayah": 114,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.688
+    },
+    {
+      "time": 5279,
+      "surah": "Al-Baqara",
+      "ayah": 118,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.701
+    },
+    {
+      "time": 5297,
+      "surah": "Al-Baqara",
+      "ayah": 119,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.737
     }
   ],
   "meta": {
-    "generated_at": "2026-02-19T06:34:26.661907+00:00",
+    "generated_at": "2026-02-19T12:49:45.297251+00:00",
     "audio_path": "data/audio/day-1/normalized.wav",
     "whisper_model": "tiny",
-    "markers_detected": 27,
-    "rakaat_detected": 15,
-    "prayers_detected": 8,
+    "markers_detected": 91,
+    "reciter_segments_detected": 14,
     "corpus_loaded": true,
     "transcript_path": "data/ai/cache/day-1-transcript-full.json",
-    "rakaat_detection": {
-      "audio_starts": 10,
+    "segment_detection": {
+      "audio_starts": 8,
       "fatiha_starts": 10,
-      "merged_starts": 15
+      "merged_starts": 14
     },
     "match_config": {
       "min_score": 80,
