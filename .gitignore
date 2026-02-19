@@ -4,3 +4,9 @@ out
 .vercel
 *.log
 .DS_Store
+__pycache__/
+*.pyc
+.pycache/
+.venv
+data/audio/*
+!data/audio/.gitkeep

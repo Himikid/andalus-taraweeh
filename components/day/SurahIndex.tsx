@@ -6,6 +6,7 @@ export type SurahMarker = {
   time: number;
   surah: string;
   ayah: number;
+  juz?: number;
 };
 
 type SurahIndexProps = {
@@ -19,11 +20,29 @@ function formatTime(seconds: number) {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
+function isExcludedSurah(surah: string) {
+  const normalized = surah.toLowerCase().replace(/[\s-]/g, "");
+  return normalized.includes("fatiha") || normalized.includes("faatiha") || surah.includes("فاتحة");
+}
+
 export default function SurahIndex({ markers, onSeek }: SurahIndexProps) {
   const [openSurah, setOpenSurah] = useState<string | null>(null);
   const groupedMarkers = useMemo(() => {
-    const map = new Map<string, SurahMarker[]>();
+    const dedupedMap = new Map<string, SurahMarker>();
     markers.forEach((marker) => {
+      if (isExcludedSurah(marker.surah)) {
+        return;
+      }
+
+      const key = `${marker.surah}:${marker.ayah}`;
+      const existing = dedupedMap.get(key);
+      if (!existing || marker.time < existing.time) {
+        dedupedMap.set(key, marker);
+      }
+    });
+
+    const map = new Map<string, SurahMarker[]>();
+    Array.from(dedupedMap.values()).forEach((marker) => {
       const existing = map.get(marker.surah);
       if (existing) {
         existing.push(marker);
@@ -38,7 +57,7 @@ export default function SurahIndex({ markers, onSeek }: SurahIndexProps) {
     }));
   }, [markers]);
 
-  if (!markers.length) {
+  if (!groupedMarkers.length) {
     return null;
   }
 

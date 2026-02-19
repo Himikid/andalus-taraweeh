@@ -1,0 +1,157 @@
+{
+  "day": 1,
+  "best": {
+    "candidate": 3,
+    "params": {
+      "match_min_score": 80,
+      "match_min_overlap": 0.12,
+      "match_min_confidence": 0.62,
+      "match_min_gap_seconds": 6
+    },
+    "score": 88.07,
+    "summary": {
+      "markers": 7,
+      "pass_rate": 0.429,
+      "mean_score": 60.2,
+      "chronology_backtracks": 0,
+      "duplicates": 0,
+      "confidence_spread": 0.107
+    },
+    "output_path": "data/ai/tuning/day-1/candidate-3.json"
+  },
+  "candidates": [
+    {
+      "candidate": 3,
+      "params": {
+        "match_min_score": 80,
+        "match_min_overlap": 0.12,
+        "match_min_confidence": 0.62,
+        "match_min_gap_seconds": 6
+      },
+      "score": 88.07,
+      "summary": {
+        "markers": 7,
+        "pass_rate": 0.429,
+        "mean_score": 60.2,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.107
+      },
+      "output_path": "data/ai/tuning/day-1/candidate-3.json"
+    },
+    {
+      "candidate": 2,
+      "params": {
+        "match_min_score": 79,
+        "match_min_overlap": 0.1,
+        "match_min_confidence": 0.58,
+        "match_min_gap_seconds": 6
+      },
+      "score": 85.87,
+      "summary": {
+        "markers": 8,
+        "pass_rate": 0.375,
+        "mean_score": 62.6,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.107
+      },
+      "output_path": "data/ai/tuning/day-1/candidate-2.json"
+    },
+    {
+      "candidate": 1,
+      "params": {
+        "match_min_score": 78,
+        "match_min_overlap": 0.08,
+        "match_min_confidence": 0.55,
+        "match_min_gap_seconds": 5
+      },
+      "score": 84.315,
+      "summary": {
+        "markers": 9,
+        "pass_rate": 0.333,
+        "mean_score": 60.07,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.298
+      },
+      "output_path": "data/ai/tuning/day-1/candidate-1.json"
+    },
+    {
+      "candidate": 4,
+      "params": {
+        "match_min_score": 82,
+        "match_min_overlap": 0.15,
+        "match_min_confidence": 0.66,
+        "match_min_gap_seconds": 8
+      },
+      "score": -485.0,
+      "summary": {
+        "markers": 3,
+        "pass_rate": 0.667,
+        "mean_score": 70.17,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.091
+      },
+      "output_path": "data/ai/tuning/day-1/candidate-4.json"
+    },
+    {
+      "candidate": 5,
+      "params": {
+        "match_min_score": 84,
+        "match_min_overlap": 0.15,
+        "match_min_confidence": 0.68,
+        "match_min_gap_seconds": 8
+      },
+      "score": -485.0,
+      "summary": {
+        "markers": 3,
+        "pass_rate": 0.667,
+        "mean_score": 70.17,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.091
+      },
+      "output_path": "data/ai/tuning/day-1/candidate-5.json"
+    },
+    {
+      "candidate": 6,
+      "params": {
+        "match_min_score": 86,
+        "match_min_overlap": 0.18,
+        "match_min_confidence": 0.7,
+        "match_min_gap_seconds": 10
+      },
+      "score": -495.0,
+      "summary": {
+        "markers": 1,
+        "pass_rate": 1.0,
+        "mean_score": 90.48,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.0
+      },
+      "output_path": "data/ai/tuning/day-1/candidate-6.json"
+    },
+    {
+      "candidate": 7,
+      "params": {
+        "match_min_score": 88,
+        "match_min_overlap": 0.2,
+        "match_min_confidence": 0.72,
+        "match_min_gap_seconds": 10
+      },
+      "score": -495.0,
+      "summary": {
+        "markers": 1,
+        "pass_rate": 1.0,
+        "mean_score": 90.48,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.0
+      },
+      "output_path": "data/ai/tuning/day-1/candidate-7.json"
+    }
+  ]
+}

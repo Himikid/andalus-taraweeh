@@ -1,6 +1,397 @@
 {
+  "day": 1,
+  "source": "data/audio/day-1/source.wav",
+  "rakaat": [
+    {
+      "start": 0,
+      "label": "Rakah 1",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 293,
+      "label": "Rakah 2",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 657,
+      "label": "Rakah 3",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 964,
+      "label": "Rakah 4",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 1329,
+      "label": "Rakah 5",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 1595,
+      "label": "Rakah 6",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 1896,
+      "label": "Rakah 7",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 2181,
+      "label": "Rakah 8",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 2292,
+      "label": "Rakah 9",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 2398,
+      "label": "Rakah 10",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 2612,
+      "label": "Rakah 11",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 3331,
+      "label": "Rakah 12",
+      "reciter": "Samir"
+    },
+    {
+      "start": 3553,
+      "label": "Rakah 13",
+      "reciter": "Samir"
+    },
+    {
+      "start": 3881,
+      "label": "Rakah 14",
+      "reciter": "Samir"
+    },
+    {
+      "start": 4326,
+      "label": "Rakah 15",
+      "reciter": "Samir"
+    }
+  ],
+  "reciter_switches": [
+    {
+      "time": 3331,
+      "from": "Hasan",
+      "to": "Samir",
+      "label": "Reciter switch: Hasan -> Samir"
+    }
+  ],
+  "prayers": [
+    {
+      "start": 0,
+      "label": "Prayer 1",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 657,
+      "label": "Prayer 2",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 1329,
+      "label": "Prayer 3",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 1896,
+      "label": "Prayer 4",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 2292,
+      "label": "Prayer 5",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 2612,
+      "label": "Prayer 6",
+      "reciter": "Hasan"
+    },
+    {
+      "start": 3553,
+      "label": "Prayer 7",
+      "reciter": "Samir"
+    },
+    {
+      "start": 4326,
+      "label": "Prayer 8",
+      "reciter": "Samir"
+    }
+  ],
   "markers": [
-    { "time": 120, "surah": "Al-Mulk", "ayah": 1 },
-    { "time": 180, "surah": "Al-Mulk", "ayah": 2 }
-  ]
+    {
+      "time": 26,
+      "surah": "Al-Baqara",
+      "ayah": 2,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.829
+    },
+    {
+      "time": 43,
+      "surah": "Al-Baqara",
+      "ayah": 3,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.758
+    },
+    {
+      "time": 53,
+      "surah": "Al-Baqara",
+      "ayah": 4,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.855
+    },
+    {
+      "time": 66,
+      "surah": "Al-Baqara",
+      "ayah": 5,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.721
+    },
+    {
+      "time": 76,
+      "surah": "Al-Baqara",
+      "ayah": 6,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.764
+    },
+    {
+      "time": 88,
+      "surah": "Al-Baqara",
+      "ayah": 7,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.761
+    },
+    {
+      "time": 134,
+      "surah": "Al-Baqara",
+      "ayah": 11,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.801
+    },
+    {
+      "time": 194,
+      "surah": "Al-Baqara",
+      "ayah": 14,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.766
+    },
+    {
+      "time": 279,
+      "surah": "Al-Baqara",
+      "ayah": 20,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.776
+    },
+    {
+      "time": 412,
+      "surah": "Al-Baqara",
+      "ayah": 21,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.746
+    },
+    {
+      "time": 483,
+      "surah": "Al-Baqara",
+      "ayah": 24,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.775
+    },
+    {
+      "time": 692,
+      "surah": "Al-Baqara",
+      "ayah": 26,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.776
+    },
+    {
+      "time": 850,
+      "surah": "Al-Baqara",
+      "ayah": 32,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.775
+    },
+    {
+      "time": 1108,
+      "surah": "Al-Baqara",
+      "ayah": 41,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.623
+    },
+    {
+      "time": 1389,
+      "surah": "Al-Baqara",
+      "ayah": 46,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.812
+    },
+    {
+      "time": 1457,
+      "surah": "Al-Baqara",
+      "ayah": 49,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.744
+    },
+    {
+      "time": 1687,
+      "surah": "Al-Baqara",
+      "ayah": 57,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.738
+    },
+    {
+      "time": 2074,
+      "surah": "Al-Baqara",
+      "ayah": 64,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.781
+    },
+    {
+      "time": 2226,
+      "surah": "Al-Baqara",
+      "ayah": 65,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.775
+    },
+    {
+      "time": 2238,
+      "surah": "Al-Baqara",
+      "ayah": 66,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.745
+    },
+    {
+      "time": 2697,
+      "surah": "Al-Baqara",
+      "ayah": 74,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Hasan",
+      "confidence": 0.753
+    },
+    {
+      "time": 3433,
+      "surah": "Al-Baqara",
+      "ayah": 77,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Samir",
+      "confidence": 0.78
+    },
+    {
+      "time": 3444,
+      "surah": "Al-Baqara",
+      "ayah": 78,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Samir",
+      "confidence": 0.745
+    },
+    {
+      "time": 3849,
+      "surah": "Al-Baqara",
+      "ayah": 86,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Samir",
+      "confidence": 0.556
+    },
+    {
+      "time": 4088,
+      "surah": "Al-Baqara",
+      "ayah": 88,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Samir",
+      "confidence": 0.791
+    },
+    {
+      "time": 4118,
+      "surah": "Al-Baqara",
+      "ayah": 89,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Samir",
+      "confidence": 0.762
+    },
+    {
+      "time": 4936,
+      "surah": "Al-Baqara",
+      "ayah": 109,
+      "surah_number": 2,
+      "juz": 1,
+      "reciter": "Samir",
+      "confidence": 0.638
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-02-19T06:34:26.661907+00:00",
+    "audio_path": "data/audio/day-1/normalized.wav",
+    "whisper_model": "tiny",
+    "markers_detected": 27,
+    "rakaat_detected": 15,
+    "prayers_detected": 8,
+    "corpus_loaded": true,
+    "transcript_path": "data/ai/cache/day-1-transcript-full.json",
+    "rakaat_detection": {
+      "audio_starts": 10,
+      "fatiha_starts": 10,
+      "merged_starts": 15
+    },
+    "match_config": {
+      "min_score": 80,
+      "min_overlap": 0.12,
+      "min_confidence": 0.62,
+      "min_gap_seconds": 6
+    }
+  }
 }

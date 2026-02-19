@@ -1,0 +1,78 @@
+{
+  "day": 1,
+  "source_json": "public/data/day-1.json",
+  "transcript_cache": "data/ai/cache/day-1-transcript-900s.json",
+  "summary": {
+    "markers": 7,
+    "pass_rate": 0.429,
+    "mean_score": 60.2,
+    "chronology_backtracks": 0,
+    "duplicates": 0,
+    "confidence_spread": 0.107
+  },
+  "markers": [
+    {
+      "time": 26,
+      "surah": "Al-Baqara",
+      "ayah": 2,
+      "score": 34.55,
+      "overlap": 0.0,
+      "pass": false,
+      "confidence": 0.83
+    },
+    {
+      "time": 43,
+      "surah": "Al-Baqara",
+      "ayah": 3,
+      "score": 80.36,
+      "overlap": 0.333,
+      "pass": true,
+      "confidence": 0.767
+    },
+    {
+      "time": 55,
+      "surah": "Al-Baqara",
+      "ayah": 4,
+      "score": 90.48,
+      "overlap": 0.538,
+      "pass": true,
+      "confidence": 0.855
+    },
+    {
+      "time": 76,
+      "surah": "Al-Baqara",
+      "ayah": 6,
+      "score": 48.21,
+      "overlap": 0.0,
+      "pass": false,
+      "confidence": 0.748
+    },
+    {
+      "time": 88,
+      "surah": "Al-Baqara",
+      "ayah": 7,
+      "score": 40.68,
+      "overlap": 0.0,
+      "pass": false,
+      "confidence": 0.748
+    },
+    {
+      "time": 693,
+      "surah": "Al-Baqara",
+      "ayah": 26,
+      "score": 41.6,
+      "overlap": 0.062,
+      "pass": false,
+      "confidence": 0.755
+    },
+    {
+      "time": 761,
+      "surah": "Al-Baqara",
+      "ayah": 28,
+      "score": 85.5,
+      "overlap": 0.25,
+      "pass": true,
+      "confidence": 0.764
+    }
+  ]
+}

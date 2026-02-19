@@ -1,0 +1,183 @@
+{
+  "day": 1,
+  "source_json": "public/data/day-1.json",
+  "transcript_cache": "data/ai/cache/day-1-transcript-900s.json",
+  "summary": {
+    "markers": 7,
+    "pass_rate": 0.714,
+    "mean_score": 82.86,
+    "chronology_backtracks": 0,
+    "duplicates": 0,
+    "confidence_spread": 0.107
+  },
+  "markers": [
+    {
+      "time": 26,
+      "surah": "Al-Baqara",
+      "ayah": 2,
+      "score": 71.25,
+      "overlap": 0.0,
+      "pass": false,
+      "confidence": 0.83,
+      "matched_surah": "Al-Faatiha",
+      "matched_ayah": 7,
+      "matched_delta": -2
+    },
+    {
+      "time": 43,
+      "surah": "Al-Baqara",
+      "ayah": 3,
+      "score": 80.36,
+      "overlap": 0.333,
+      "pass": true,
+      "confidence": 0.767,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 3,
+      "matched_delta": 0
+    },
+    {
+      "time": 55,
+      "surah": "Al-Baqara",
+      "ayah": 4,
+      "score": 90.48,
+      "overlap": 0.538,
+      "pass": true,
+      "confidence": 0.855,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 4,
+      "matched_delta": 0
+    },
+    {
+      "time": 76,
+      "surah": "Al-Baqara",
+      "ayah": 6,
+      "score": 85.5,
+      "overlap": 0.077,
+      "pass": false,
+      "confidence": 0.748,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 4,
+      "matched_delta": -2
+    },
+    {
+      "time": 88,
+      "surah": "Al-Baqara",
+      "ayah": 7,
+      "score": 81.42,
+      "overlap": 0.273,
+      "pass": true,
+      "confidence": 0.748,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 6,
+      "matched_delta": -1
+    },
+    {
+      "time": 693,
+      "surah": "Al-Baqara",
+      "ayah": 26,
+      "score": 85.5,
+      "overlap": 0.105,
+      "pass": true,
+      "confidence": 0.755,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 27,
+      "matched_delta": 1
+    },
+    {
+      "time": 761,
+      "surah": "Al-Baqara",
+      "ayah": 28,
+      "score": 85.5,
+      "overlap": 0.25,
+      "pass": true,
+      "confidence": 0.764,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 28,
+      "matched_delta": 0
+    }
+  ],
+  "strict_audio_check": {
+    "checked": 7,
+    "pass_rate": 0.571,
+    "mean_score": 71.25,
+    "markers": [
+      {
+        "time": 26,
+        "surah": "Al-Baqara",
+        "ayah": 2,
+        "score": 54.0,
+        "overlap": 0.0,
+        "pass": false,
+        "matched_surah": "Al-Faatiha",
+        "matched_ayah": 7,
+        "matched_delta": -2
+      },
+      {
+        "time": 43,
+        "surah": "Al-Baqara",
+        "ayah": 3,
+        "score": 85.5,
+        "overlap": 0.125,
+        "pass": true,
+        "matched_surah": "Al-Baqara",
+        "matched_ayah": 5,
+        "matched_delta": 2
+      },
+      {
+        "time": 55,
+        "surah": "Al-Baqara",
+        "ayah": 4,
+        "score": 85.5,
+        "overlap": 0.125,
+        "pass": true,
+        "matched_surah": "Al-Baqara",
+        "matched_ayah": 5,
+        "matched_delta": 1
+      },
+      {
+        "time": 76,
+        "surah": "Al-Baqara",
+        "ayah": 6,
+        "score": 68.47,
+        "overlap": 0.182,
+        "pass": false,
+        "matched_surah": "Al-Baqara",
+        "matched_ayah": 6,
+        "matched_delta": 0
+      },
+      {
+        "time": 88,
+        "surah": "Al-Baqara",
+        "ayah": 7,
+        "score": 85.5,
+        "overlap": 0.125,
+        "pass": true,
+        "matched_surah": "Al-Baqara",
+        "matched_ayah": 5,
+        "matched_delta": -2
+      },
+      {
+        "time": 693,
+        "surah": "Al-Baqara",
+        "ayah": 26,
+        "score": 34.29,
+        "overlap": 0.0,
+        "pass": false,
+        "matched_surah": "Al-Baqara",
+        "matched_ayah": 26,
+        "matched_delta": 0
+      },
+      {
+        "time": 761,
+        "surah": "Al-Baqara",
+        "ayah": 28,
+        "score": 85.5,
+        "overlap": 0.167,
+        "pass": true,
+        "matched_surah": "Al-Baqara",
+        "matched_ayah": 28,
+        "matched_delta": 0
+      }
+    ]
+  }
+}

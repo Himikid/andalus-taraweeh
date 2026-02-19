@@ -55,6 +55,37 @@ Example:
 
 If day data exists, the site shows grouped surah markers. If not, the section stays hidden.
 
+Generated day JSON now includes:
+
+- `markers` with `surah`, `ayah`, `juz`, `time`, `reciter`, `confidence`
+- `rakaat` start timestamps
+- `reciter_switches` timestamps
+
+The day page uses these for:
+
+- clickable rakah jump points
+- reciter switch jump points
+- ayah/surah timestamp navigation
+
+## AI local processing layer
+
+A local Python pipeline is included for daily audio processing and JSON generation.
+
+- Docs: `scripts/README.md`
+- Main command: `python scripts/process_day.py ...`
+- Quran corpus fetch: `python scripts/fetch_quran_corpus.py`
+
+The Python code is local-only and does not affect Vercel runtime.
+
+## Home insights
+
+The home page includes a Quran insights panel that is computed from indexed day JSON files:
+
+- latest detected Quran position (`surah`, `ayah`, `juz`, timestamp)
+- estimated progress indicator (by Juz)
+- surah-based navigation across published days
+- AI disclaimer (best-effort indexing accuracy)
+
 ## Project structure
 
 - `app/`
@@ -65,9 +96,11 @@ If day data exists, the site shows grouped surah markers. If not, the section st
 - `components/home/`
   - `Header.tsx`
   - `LiveStatus.tsx`
+  - `QuranInsights.tsx`
 - `components/day/`
   - `DayPageClient.tsx`
   - `DaySelector.tsx`
+  - `PrayerStarts.tsx`
   - `VideoPlayer.tsx`
   - `SurahIndex.tsx`
 - `components/shared/`
@@ -75,5 +108,9 @@ If day data exists, the site shows grouped surah markers. If not, the section st
 - `data/`
   - `taraweehVideos.ts`
   - `ramadan.ts`
+- `scripts/`
+  - `process_day.py`
+  - `fetch_quran_corpus.py`
+  - `ai_pipeline/*`
 - `public/data/`
-  - AI-ready day marker JSON files
+  - generated day marker JSON files
