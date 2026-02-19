@@ -495,6 +495,32 @@ def _fill_surah_coverage_markers(
     return coverage_inferred
 
 
+def _dedupe_by_local_time_window(markers: list[Marker], window_seconds: int = 90) -> list[Marker]:
+    if not markers:
+        return []
+
+    sorted_markers = sorted(markers, key=lambda marker: marker.time)
+    deduped: list[Marker] = []
+
+    for marker in sorted_markers:
+        merged = False
+        for index in range(len(deduped) - 1, -1, -1):
+            candidate = deduped[index]
+            if marker.time - candidate.time > window_seconds:
+                break
+            if marker.surah == candidate.surah and marker.ayah == candidate.ayah:
+                if _quality_rank(marker.quality) > _quality_rank(candidate.quality):
+                    deduped[index] = marker
+                elif _quality_rank(marker.quality) == _quality_rank(candidate.quality) and marker.time < candidate.time:
+                    deduped[index] = marker
+                merged = True
+                break
+        if not merged:
+            deduped.append(marker)
+
+    return deduped
+
+
 def match_quran_markers(
     transcript_segments: list[TranscriptSegment],
     corpus_entries: list[AyahEntry],
@@ -512,6 +538,8 @@ def match_quran_markers(
     max_infer_gap_seconds: int = 720,
     max_leading_infer_ayahs: int = 3,
     allow_unverified_leading_infer: bool = True,
+    duplicate_ayah_window_seconds: int = 120,
+    max_forward_jump_ayahs: int = 14,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -530,13 +558,23 @@ def match_quran_markers(
             # During Fatiha we should not advance Quran progression markers.
             continue
 
-        merged_segment = ""
-        if segment_index + 1 < len(transcript_segments):
-            next_segment = transcript_segments[segment_index + 1]
-            if float(next_segment.start) - float(segment.end) <= 2.5:
-                next_normalized = normalize_arabic(next_segment.text)
-                if len(next_normalized) >= 8:
-                    merged_segment = f"{normalized_segment} {next_normalized}".strip()
+        segment_variants: list[tuple[str, float]] = [(normalized_segment, 0.0)]
+        combined_text = normalized_segment
+        previous_end = float(segment.end)
+        for offset in range(1, 4):
+            next_idx = segment_index + offset
+            if next_idx >= len(transcript_segments):
+                break
+            next_segment = transcript_segments[next_idx]
+            if float(next_segment.start) - previous_end > 2.5:
+                break
+            next_normalized = normalize_arabic(next_segment.text)
+            if len(next_normalized) < 6:
+                break
+            combined_text = f"{combined_text} {next_normalized}".strip()
+            # Penalize longer merged windows slightly to avoid over-eager matches.
+            segment_variants.append((combined_text, float(offset) * 1.5))
+            previous_end = float(next_segment.end)
 
         is_recovery = False
         if last_marker_time >= 0 and segment.start - last_marker_time >= recovery_after_seconds:
@@ -574,13 +612,14 @@ def match_quran_markers(
             if is_excluded_surah(entry.surah):
                 continue
 
-            score, overlap = _score_segment_against_entry(normalized_segment, entry)
-            if merged_segment:
-                merged_score, merged_overlap = _score_segment_against_entry(merged_segment, entry)
-                merged_score = merged_score - 2.0
-                if merged_score > score:
-                    score = merged_score
-                    overlap = merged_overlap
+            score = -1.0
+            overlap = 0.0
+            for variant_text, penalty in segment_variants:
+                variant_score, variant_overlap = _score_segment_against_entry(variant_text, entry)
+                adjusted_score = variant_score - penalty
+                if adjusted_score > score:
+                    score = adjusted_score
+                    overlap = variant_overlap
 
             if score > top_score:
                 second_score = top_score
@@ -620,6 +659,18 @@ def match_quran_markers(
             if marker_time - previous.time < min_gap_seconds:
                 stale_segments += 1
                 continue
+            if previous.surah == entry.surah:
+                ayah_delta = entry.ayah - previous.ayah
+                elapsed = max(1, marker_time - previous.time)
+                allowed_jump = max_forward_jump_ayahs + int(elapsed // 25)
+
+                # Preserve forward progression and block implausible large jumps.
+                if ayah_delta < 0:
+                    stale_segments += 1
+                    continue
+                if ayah_delta > allowed_jump:
+                    stale_segments += 1
+                    continue
 
         key = (entry.surah, entry.ayah)
         existing_index = marker_positions.get(key)
@@ -635,17 +686,18 @@ def match_quran_markers(
 
         if existing_index is not None:
             existing = markers[existing_index]
-            should_replace = False
-            if existing.quality != "high" and candidate.quality == "high":
-                should_replace = True
-            elif existing.quality == candidate.quality and marker_time < existing.time:
-                should_replace = True
+            if abs(marker_time - existing.time) <= duplicate_ayah_window_seconds:
+                should_replace = False
+                if existing.quality != "high" and candidate.quality == "high":
+                    should_replace = True
+                elif existing.quality == candidate.quality and marker_time < existing.time:
+                    should_replace = True
 
-            if should_replace:
-                markers[existing_index] = candidate
-            last_matched_index = max(last_matched_index, matched_index)
-            stale_segments = 0
-            continue
+                if should_replace:
+                    markers[existing_index] = candidate
+                last_matched_index = max(last_matched_index, matched_index)
+                stale_segments = 0
+                continue
 
         markers.append(candidate)
         marker_positions[key] = len(markers) - 1
@@ -794,16 +846,4 @@ def match_quran_markers(
     coverage_inferred = _fill_surah_coverage_markers(merged, entry_lookup)
     merged.extend(coverage_inferred)
 
-    deduped: dict[tuple[str, int], Marker] = {}
-    for marker in sorted(merged, key=lambda m: m.time):
-        key = (marker.surah, marker.ayah)
-        existing = deduped.get(key)
-        if existing is None:
-            deduped[key] = marker
-            continue
-        if _quality_rank(marker.quality) > _quality_rank(existing.quality):
-            deduped[key] = marker
-        elif _quality_rank(marker.quality) == _quality_rank(existing.quality) and marker.time < existing.time:
-            deduped[key] = marker
-
-    return sorted(deduped.values(), key=lambda marker: marker.time)
+    return _dedupe_by_local_time_window(merged, window_seconds=90)
