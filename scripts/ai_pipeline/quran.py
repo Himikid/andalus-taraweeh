@@ -544,6 +544,12 @@ def match_quran_markers(
     if not transcript_segments or not corpus_entries:
         return []
 
+    surah_totals: dict[str, int] = {}
+    for item in corpus_entries:
+        current = surah_totals.get(item.surah, 0)
+        if item.ayah > current:
+            surah_totals[item.surah] = item.ayah
+
     markers: list[Marker] = []
     marker_positions: dict[tuple[str, int], int] = {}
     last_matched_index = -1
@@ -660,6 +666,18 @@ def match_quran_markers(
             if marker_time - previous.time < min_gap_seconds:
                 stale_segments += 1
                 continue
+            if previous.surah != entry.surah:
+                previous_total = surah_totals.get(previous.surah, previous.ayah)
+                near_end_of_previous = previous.ayah >= max(1, previous_total - 5)
+                next_surah = (
+                    previous.surah_number is not None
+                    and entry.surah_number is not None
+                    and entry.surah_number == previous.surah_number + 1
+                )
+                # Block random cross-surah jumps; only allow natural progression near a surah boundary.
+                if not (near_end_of_previous and next_surah):
+                    stale_segments += 1
+                    continue
             if previous.surah == entry.surah:
                 ayah_delta = entry.ayah - previous.ayah
                 elapsed = max(1, marker_time - previous.time)
