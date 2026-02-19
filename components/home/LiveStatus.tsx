@@ -59,7 +59,8 @@ export default function LiveStatus() {
       ) : (
         <>
           <p className="font-[var(--font-heading)] text-5xl leading-none text-ivory sm:text-6xl">8:00pm</p>
-          <p className="label-caps !tracking-[0.18em]">Countdown To Livestream</p>
+          <p className="label-caps !tracking-[0.18em]">Taraweeh Livestream Starts</p>
+          <p className="text-sm text-muted">Beginning after Isha prayer.</p>
           <p className="font-mono text-base text-muted">{countdown}</p>
         </>
       )}
