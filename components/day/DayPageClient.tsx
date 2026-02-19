@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import DaySelector from "@/components/day/DaySelector";
 import RecitersInfo from "@/components/shared/RecitersInfo";
+import NowReciting from "@/components/day/NowReciting";
 import SurahIndex, { type SurahMarker } from "@/components/day/SurahIndex";
 import VideoPlayer from "@/components/day/VideoPlayer";
 import { getDateForRamadanDay } from "@/data/ramadan";
@@ -28,6 +29,7 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
   const [markers, setMarkers] = useState<SurahMarker[]>([]);
   const [manualVideoId, setManualVideoId] = useState("");
   const [seekTime, setSeekTime] = useState<number | undefined>(undefined);
+  const [currentTime, setCurrentTime] = useState(0);
   const hasInitializedSeekReset = useRef(false);
 
   const dayVideoId = getVideoIdForDay(selectedDay);
@@ -115,7 +117,10 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
 
         <section className="grid gap-6 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-8">
-            <VideoPlayer videoId={effectiveVideoId} startAt={seekTime} />
+            <VideoPlayer videoId={effectiveVideoId} startAt={seekTime} onTimeUpdate={setCurrentTime} />
+            <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
+              <NowReciting markers={markers} currentTime={currentTime} />
+            </section>
             <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
               <SurahIndex markers={markers} onSeek={setSeekTime} />
             </section>

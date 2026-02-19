@@ -12,7 +12,7 @@ export default function Header() {
       </h1>
 
       <p className="max-w-2xl pt-2 text-sm leading-8 text-muted sm:text-base">
-        A calm digital prayer space to join nightly Taraweeh and revisit published recitations with clarity.
+        Join Taraweeh live each night and revisit past recitations whenever you wish.
       </p>
     </header>
   );

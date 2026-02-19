@@ -1,10 +1,18 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
 class TranscriptSegment:
+    start: float
+    end: float
+    text: str
+    words: list["TranscriptWord"] = field(default_factory=list)
+
+
+@dataclass
+class TranscriptWord:
     start: float
     end: float
     text: str
@@ -28,3 +36,5 @@ class Marker:
     quality: str = "high"
     reciter: str | None = None
     confidence: float | None = None
+    arabic_text: str | None = None
+    english_text: str | None = None

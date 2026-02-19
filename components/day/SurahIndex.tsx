@@ -6,9 +6,12 @@ export type SurahMarker = {
   time: number;
   surah: string;
   ayah: number;
+  surah_number?: number;
   juz?: number;
   quality?: "high" | "ambiguous" | "inferred";
   reciter?: string;
+  arabic_text?: string;
+  english_text?: string;
 };
 
 type SurahIndexProps = {

@@ -15,10 +15,10 @@ from .prayers import (
     merge_rakah_starts,
     read_mono_audio,
 )
-from .quran import load_corpus, match_quran_markers
+from .quran import enrich_marker_texts, load_asad_translation, load_corpus, match_quran_markers
 from .reciters import assign_reciters
 from .transcribe import transcribe_audio
-from .types import Marker, PrayerSegment, TranscriptSegment
+from .types import Marker, PrayerSegment, TranscriptSegment, TranscriptWord
 
 
 def _map_reciter_to_markers(markers: list[Marker], prayers: list[PrayerSegment]) -> list[Marker]:
@@ -52,6 +52,7 @@ def process_day(
     match_min_gap_seconds: int = 8,
     reuse_transcript_cache: bool = True,
     max_audio_seconds: int | None = None,
+    asad_path: Path | None = None,
 ) -> dict:
     normalized_audio_path, source = prepare_audio_source(
         day=day,
@@ -86,6 +87,15 @@ def process_day(
                 start=float(segment.get("start", 0.0)),
                 end=float(segment.get("end", 0.0)),
                 text=str(segment.get("text", "")).strip(),
+                words=[
+                    TranscriptWord(
+                        start=float(word.get("start", 0.0)),
+                        end=float(word.get("end", 0.0)),
+                        text=str(word.get("text", "")).strip(),
+                    )
+                    for word in segment.get("words", [])
+                    if str(word.get("text", "")).strip()
+                ],
             )
             for segment in cached_payload.get("segments", [])
             if str(segment.get("text", "")).strip()
@@ -124,6 +134,8 @@ def process_day(
         min_overlap=match_min_overlap,
         min_confidence=match_min_confidence,
     )
+    asad_lookup = load_asad_translation(asad_path) if asad_path else {}
+    markers = enrich_marker_texts(markers, corpus_entries, asad_lookup)
     markers = _map_reciter_to_markers(markers, reciter_segments)
 
     payload = {
@@ -137,6 +149,7 @@ def process_day(
             "markers_detected": len(markers),
             "reciter_segments_detected": len(reciter_segments),
             "corpus_loaded": bool(corpus_entries),
+            "asad_loaded": bool(asad_lookup),
             "transcript_path": str(transcript_cache_path),
             "segment_detection": {
                 "audio_starts": len(audio_segment_starts),

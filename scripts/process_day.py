@@ -28,6 +28,12 @@ def parse_args() -> argparse.Namespace:
         help="Quran corpus JSON path",
     )
     parser.add_argument(
+        "--quran-asad",
+        type=Path,
+        default=Path("data/quran/quran_asad_en.json"),
+        help="Muhammad Asad translation cache JSON path",
+    )
+    parser.add_argument(
         "--reciter-profiles",
         type=Path,
         default=Path("data/ai/reciter_profiles.json"),
@@ -105,12 +111,14 @@ def main() -> None:
         match_min_gap_seconds=args.match_min_gap_seconds,
         reuse_transcript_cache=not args.no_reuse_transcript_cache,
         max_audio_seconds=args.max_audio_seconds,
+        asad_path=args.quran_asad,
     )
 
     print(f"Saved: {output_path}")
     print(f"Reciter segments detected: {payload['meta'].get('reciter_segments_detected', 0)}")
     print(f"Markers detected: {len(payload['markers'])}")
     print(f"Corpus loaded: {payload['meta']['corpus_loaded']}")
+    print(f"Asad loaded: {payload['meta']['asad_loaded']}")
 
 
 if __name__ == "__main__":
