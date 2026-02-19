@@ -1,5 +1,5 @@
 export const taraweehVideos: Record<number, string> = {
-  1: "YOUTUBE_VIDEO_ID_1",
+  1: "WJGS2B673Zg",
   2: "YOUTUBE_VIDEO_ID_2",
   3: "YOUTUBE_VIDEO_ID_3",
   4: "",
@@ -30,3 +30,17 @@ export const taraweehVideos: Record<number, string> = {
   29: "",
   30: ""
 };
+
+function isConfiguredVideoId(videoId: string) {
+  return Boolean(videoId) && !videoId.startsWith("YOUTUBE_VIDEO_ID_");
+}
+
+export const availableTaraweehDays = Object.entries(taraweehVideos)
+  .filter(([, videoId]) => isConfiguredVideoId(videoId))
+  .map(([day]) => Number(day))
+  .sort((a, b) => a - b);
+
+export function getVideoIdForDay(day: number) {
+  const videoId = taraweehVideos[day] ?? "";
+  return isConfiguredVideoId(videoId) ? videoId : "";
+}

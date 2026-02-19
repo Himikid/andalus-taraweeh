@@ -3,9 +3,45 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
+  --font-heading: "Didot", "Bodoni 72", "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-arabic: "Amiri", "Noto Naskh Arabic", "Scheherazade New", "Times New Roman", serif;
 }
 
 body {
-  @apply bg-charcoal text-white antialiased;
+  margin: 0;
+  font-family: var(--font-body);
+  @apply bg-charcoal text-ivory antialiased;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background-color: #dfece3;
+  background-image: radial-gradient(circle at 50% -8%, rgba(92, 158, 126, 0.2), transparent 64%);
+}
+
+.label-caps {
+  @apply text-[11px] font-medium uppercase tracking-[0.22em] text-muted;
+}
+
+.arabic-basmala {
+  font-family: var(--font-arabic);
+  font-feature-settings: "liga" 1, "calt" 1;
+  direction: rtl;
+}
+
+.hero-shell {
+  @apply rounded-[34px] border border-line bg-charcoalSoft;
+  box-shadow: 0 20px 42px -34px rgba(30, 66, 49, 0.24);
+}
+
+.tile-shell {
+  @apply rounded-[28px] border border-line bg-charcoalLift;
+  box-shadow: 0 18px 36px -34px rgba(30, 66, 49, 0.2);
+}
+
+.video-shell {
+  @apply rounded-[26px] border border-line bg-white;
+  box-shadow: 0 18px 42px -32px rgba(30, 66, 49, 0.28);
 }

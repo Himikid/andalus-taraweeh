@@ -1,6 +1,6 @@
 # andalus-taraweeh
 
-Taraweeh livestream website for **Andalus Centre Glasgow** built with Next.js 14, TypeScript, and TailwindCSS.
+A production-ready Ramadan livestream site for **Andalus Centre Glasgow** built with Next.js 14, TypeScript, and TailwindCSS.
 
 ## Local development
 
@@ -9,13 +9,20 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open `http://localhost:3000`.
+
+## Production preview
+
+```bash
+npm run build
+npm run start
+```
 
 ## Deploy to Vercel
 
-1. Push this project to GitHub.
-2. Import the repository in Vercel.
-3. Keep default framework settings (Next.js).
+1. Push this repository to GitHub.
+2. Import the repo in Vercel.
+3. Keep default Next.js settings.
 4. Deploy.
 
 ## Update YouTube IDs
@@ -24,27 +31,49 @@ Edit:
 
 - `data/taraweehVideos.ts`
 
-Use day keys from `1` to `30` and set each value to a YouTube video ID.
+Set day keys (`1` to `30`) to real YouTube video IDs.
 
-## Manual video override
+## Manual URL override
 
-Use URL query param:
+Use:
 
 - `?video=VIDEO_ID`
 
 Example:
 
-- `http://localhost:3000?video=dQw4w9WgXcQ`
+- `http://localhost:3000/day/1?video=dQw4w9WgXcQ`
 
-## Future AI JSON index files
+## Surah index JSON hook
 
-Place day index JSON files in:
+Place day JSON files in:
 
 - `public/data/day-{N}.json`
 
-Examples:
+Example:
 
 - `public/data/day-1.json`
-- `public/data/day-2.json`
 
-If a selected day JSON exists, the site shows **Indexed Surahs**. If not, it hides that section automatically.
+If day data exists, the site shows grouped surah markers. If not, the section stays hidden.
+
+## Project structure
+
+- `app/`
+  - `page.tsx` home page
+  - `day/[day]/page.tsx` day route
+  - `layout.tsx` app layout + metadata
+  - `globals.css` theme and shared styles
+- `components/home/`
+  - `Header.tsx`
+  - `LiveStatus.tsx`
+- `components/day/`
+  - `DayPageClient.tsx`
+  - `DaySelector.tsx`
+  - `VideoPlayer.tsx`
+  - `SurahIndex.tsx`
+- `components/shared/`
+  - `RecitersInfo.tsx`
+- `data/`
+  - `taraweehVideos.ts`
+  - `ramadan.ts`
+- `public/data/`
+  - AI-ready day marker JSON files

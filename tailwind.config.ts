@@ -8,10 +8,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: "#111315",
-        panel: "#171b1f",
-        accent: "#0f3d2e",
-        accentSoft: "#1f6b52"
+        charcoal: "#dfece3",
+        charcoalSoft: "#ebf3ed",
+        charcoalLift: "#e4eee7",
+        ivory: "#223028",
+        muted: "#5b7267",
+        green: "#2f7a59",
+        line: "#b8ccc0"
       }
     }
   },

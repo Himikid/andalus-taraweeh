@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Taraweeh Live – Andalus Centre Glasgow",
+  title: "Andalus Taraweeh – Live",
   description:
     "Watch Taraweeh prayers live and access indexed Ramadan recitations from Andalus Centre Glasgow."
 };
