@@ -76,7 +76,7 @@ export default function SurahIndex({ markers, onSeek }: SurahIndexProps) {
                 className="flex w-full items-center justify-between gap-4 text-left"
               >
                 <span className="text-sm text-ivory sm:text-base">{group.surah}</span>
-                <span className="text-xs text-green">{isOpen ? "Hide" : "Show"}</span>
+                <span className="text-xs text-sand">{isOpen ? "Hide" : "Show"}</span>
               </button>
 
               {isOpen ? (
@@ -86,7 +86,7 @@ export default function SurahIndex({ markers, onSeek }: SurahIndexProps) {
                       key={`${group.surah}-${marker.ayah}`}
                       type="button"
                       onClick={() => onSeek?.(marker.time)}
-                      className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-green hover:text-green"
+                      className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-sand hover:text-sand"
                     >
                       Ayah {marker.ayah} - {formatTime(marker.time)}
                     </button>

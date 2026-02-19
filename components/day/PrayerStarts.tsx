@@ -39,7 +39,7 @@ export default function PrayerStarts({ prayers, reciterSwitches = [], title = "R
             key={`${prayer.label}-${prayer.start}`}
             type="button"
             onClick={() => onSeek?.(prayer.start)}
-            className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-green hover:text-green"
+            className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-sand hover:text-sand"
           >
             {prayer.label} - {formatTime(prayer.start)}
           </button>
@@ -55,7 +55,7 @@ export default function PrayerStarts({ prayers, reciterSwitches = [], title = "R
                 key={`${switchPoint.time}-${switchPoint.from}-${switchPoint.to}`}
                 type="button"
                 onClick={() => onSeek?.(switchPoint.time)}
-                className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-green hover:text-green"
+                className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-sand hover:text-sand"
               >
                 {formatTime(switchPoint.time)} · {switchPoint.from} to {switchPoint.to}
               </button>

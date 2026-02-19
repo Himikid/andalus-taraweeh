@@ -21,7 +21,10 @@ export default function HomePage() {
 
               <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
                 {latestDay ? (
-                  <Link href={`/day/${latestDay}`} className="rounded-full bg-[#4ca77b] px-6 py-2.5 text-sm font-semibold text-white">
+                  <Link
+                    href={`/day/${latestDay}`}
+                    className="rounded-full border border-sand/30 bg-green px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#377557]"
+                  >
                     Open Latest Livestream
                   </Link>
                 ) : (
@@ -33,7 +36,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <QuranInsights />
+          <QuranInsights className="lg:col-span-4" />
 
           <section id="published-days" className="tile-shell px-6 py-8 sm:px-8 sm:py-9 lg:col-span-8">
             <div className="space-y-3">
@@ -50,7 +53,7 @@ export default function HomePage() {
                         <p className="text-sm font-medium text-ivory sm:text-base">Ramadan Day {day}</p>
                         <p className="mt-1 text-sm text-muted">{getDateForRamadanDay(day)}</p>
                       </div>
-                      <span className="text-sm text-green">Open</span>
+                      <span className="text-sm text-sand">Open</span>
                     </Link>
                   </li>
                 ))}

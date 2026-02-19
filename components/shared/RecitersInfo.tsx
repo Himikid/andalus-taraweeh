@@ -9,7 +9,7 @@ export default function RecitersInfo({ compact = false }: RecitersInfoProps) {
 
       <div className={`mt-5 flex flex-col gap-7 ${compact ? "" : "sm:flex-row sm:items-start sm:gap-12"}`}>
         <article>
-          <p className="text-lg font-medium text-ivory sm:text-xl">Shaikh Samier</p>
+          <p className="text-lg font-medium text-ivory sm:text-xl">Shaikh Samir</p>
           <p className="mt-1 text-sm text-muted">Alexandria, Egypt</p>
         </article>
 

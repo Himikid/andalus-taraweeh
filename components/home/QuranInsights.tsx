@@ -11,6 +11,10 @@ type Marker = {
   juz?: number;
 };
 
+type QuranInsightsProps = {
+  className?: string;
+};
+
 type DayPayload = {
   markers?: Marker[];
 };
@@ -33,10 +37,9 @@ function formatTime(seconds: number) {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
-export default function QuranInsights() {
+export default function QuranInsights({ className = "" }: QuranInsightsProps) {
   const [latest, setLatest] = useState<LatestPosition | null>(null);
-  const [surahMap, setSurahMap] = useState<Record<string, SurahEntry[]>>({});
-  const [openSurah, setOpenSurah] = useState<string | null>(null);
+  const [surahStarts, setSurahStarts] = useState<Record<string, SurahEntry>>({});
 
   useEffect(() => {
     let active = true;
@@ -62,7 +65,7 @@ export default function QuranInsights() {
       if (!active) return;
       if (!records.length) {
         setLatest(null);
-        setSurahMap({});
+        setSurahStarts({});
         return;
       }
 
@@ -70,7 +73,7 @@ export default function QuranInsights() {
       const latestMarker = latestRecord.markers[latestRecord.markers.length - 1];
       setLatest({ day: latestRecord.day, marker: latestMarker });
 
-      const grouped: Record<string, SurahEntry[]> = {};
+      const starts: Record<string, SurahEntry> = {};
       records
         .slice()
         .reverse()
@@ -78,22 +81,18 @@ export default function QuranInsights() {
           markers.forEach((marker) => {
             const key = marker.surah;
             const entry: SurahEntry = { day, time: marker.time, ayah: marker.ayah, juz: marker.juz };
-            if (!grouped[key]) grouped[key] = [];
-            grouped[key].push(entry);
+            const existing = starts[key];
+            if (!existing) {
+              starts[key] = entry;
+              return;
+            }
+            if (day < existing.day || (day === existing.day && entry.time < existing.time)) {
+              starts[key] = entry;
+            }
           });
         });
 
-      for (const surah of Object.keys(grouped)) {
-        grouped[surah] = grouped[surah].sort((a, b) => {
-          if (a.day !== b.day) return a.day - b.day;
-          if (a.ayah !== b.ayah) return a.ayah - b.ayah;
-          return a.time - b.time;
-        });
-      }
-
-      setSurahMap(grouped);
-      const firstSurah = Object.keys(grouped)[0] ?? null;
-      setOpenSurah(firstSurah);
+      setSurahStarts(starts);
     }
 
     load();
@@ -109,7 +108,7 @@ export default function QuranInsights() {
   }, [latest]);
 
   return (
-    <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
+    <section className={`tile-shell px-6 py-7 sm:px-7 sm:py-8 ${className}`}>
       <p className="label-caps">Quran Progress</p>
 
       {latest ? (
@@ -141,39 +140,20 @@ export default function QuranInsights() {
 
       <div className="mt-7 border-t border-line pt-5">
         <p className="label-caps">Navigate By Surah</p>
-        {Object.keys(surahMap).length ? (
-          <ul className="mt-3 divide-y divide-line">
-            {Object.entries(surahMap).map(([surah, entries]) => {
-              const isOpen = openSurah === surah;
-              return (
-                <li key={surah} className="py-3">
-                  <button
-                    type="button"
-                    onClick={() => setOpenSurah(isOpen ? null : surah)}
-                    className="flex w-full items-center justify-between gap-3 text-left"
-                  >
-                    <span className="text-sm text-ivory">{surah}</span>
-                    <span className="text-xs text-green">{isOpen ? "Hide" : "Open"}</span>
-                  </button>
-
-                  {isOpen ? (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {entries.map((entry, index) => (
-                        <Link
-                          key={`${surah}-${entry.day}-${entry.ayah}-${entry.time}-${index}`}
-                          href={`/day/${entry.day}?t=${entry.time}`}
-                          className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-green hover:text-green"
-                        >
-                          D{entry.day} · Ayah {entry.ayah}
-                          {entry.juz ? ` · J${entry.juz}` : ""}
-                        </Link>
-                      ))}
-                    </div>
-                  ) : null}
-                </li>
-              );
-            })}
-          </ul>
+        {Object.keys(surahStarts).length ? (
+          <div className="mt-3 max-h-[26rem] overflow-y-auto pr-1">
+            <div className="flex flex-wrap gap-2">
+              {Object.entries(surahStarts).map(([surah, entry]) => (
+                <Link
+                  key={`${surah}-${entry.day}-${entry.time}`}
+                  href={`/day/${entry.day}?t=${entry.time}`}
+                  className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-sand hover:text-sand"
+                >
+                  {surah}
+                </Link>
+              ))}
+            </div>
+          </div>
         ) : (
           <p className="mt-3 text-sm text-muted">Surah navigation will appear after indexing.</p>
         )}

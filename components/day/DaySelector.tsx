@@ -22,7 +22,7 @@ export default function DaySelector({ days, selectedDay, onDayChange }: DaySelec
         id="day-selector"
         value={selectedDay}
         onChange={(event) => onDayChange(Number(event.target.value))}
-        className="mt-3 w-full rounded-xl border border-line bg-charcoalLift px-4 py-3 text-sm text-ivory outline-none focus:border-green"
+        className="mt-3 w-full rounded-xl border border-line bg-charcoalLift px-4 py-3 text-sm text-ivory outline-none focus:border-sand"
       >
         {safeDays.map((day) => (
           <option key={day} value={day}>

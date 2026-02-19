@@ -13,7 +13,9 @@ const config: Config = {
         charcoalLift: "#e4eee7",
         ivory: "#223028",
         muted: "#5b7267",
-        green: "#2f7a59",
+        green: "#3f8a67",
+        sand: "#9f7a48",
+        sandSoft: "#c6ab84",
         line: "#b8ccc0"
       }
     }
