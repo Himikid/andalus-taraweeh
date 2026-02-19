@@ -552,8 +552,6 @@ def match_quran_markers(
 
     for segment_index, segment in enumerate(transcript_segments):
         normalized_segment = normalize_arabic(segment.text)
-        if len(normalized_segment) < 14:
-            continue
         if _is_fatiha_like_segment(normalized_segment):
             # During Fatiha we should not advance Quran progression markers.
             continue
@@ -561,7 +559,7 @@ def match_quran_markers(
         segment_variants: list[tuple[str, float]] = [(normalized_segment, 0.0)]
         combined_text = normalized_segment
         previous_end = float(segment.end)
-        for offset in range(1, 4):
+        for offset in range(1, 7):
             next_idx = segment_index + offset
             if next_idx >= len(transcript_segments):
                 break
@@ -569,12 +567,15 @@ def match_quran_markers(
             if float(next_segment.start) - previous_end > 2.5:
                 break
             next_normalized = normalize_arabic(next_segment.text)
-            if len(next_normalized) < 6:
+            if len(next_normalized) < 2:
                 break
             combined_text = f"{combined_text} {next_normalized}".strip()
             # Penalize longer merged windows slightly to avoid over-eager matches.
-            segment_variants.append((combined_text, float(offset) * 1.5))
+            segment_variants.append((combined_text, float(offset) * 1.1))
             previous_end = float(next_segment.end)
+
+        if max(len(text) for text, _ in segment_variants) < 14:
+            continue
 
         is_recovery = False
         if last_marker_time >= 0 and segment.start - last_marker_time >= recovery_after_seconds:
