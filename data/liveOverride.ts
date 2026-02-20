@@ -17,7 +17,16 @@ function extractYouTubeVideoId(input: string): string | null {
     }
     if (host.endsWith("youtube.com")) {
       const v = url.searchParams.get("v")?.trim() || "";
-      return /^[A-Za-z0-9_-]{11}$/.test(v) ? v : null;
+      if (/^[A-Za-z0-9_-]{11}$/.test(v)) {
+        return v;
+      }
+
+      const parts = url.pathname.split("/").filter(Boolean);
+      if (parts.length >= 2 && (parts[0] === "live" || parts[0] === "shorts")) {
+        const pathId = parts[1].trim();
+        return /^[A-Za-z0-9_-]{11}$/.test(pathId) ? pathId : null;
+      }
+      return null;
     }
   } catch {
     return null;
