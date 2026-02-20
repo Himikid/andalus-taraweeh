@@ -91,10 +91,18 @@ The Python code is local-only and does not affect Vercel runtime.
 
 The home page includes a Quran insights panel that is computed from indexed day JSON files:
 
-- latest detected Quran position (`surah`, `ayah`, `juz`, timestamp)
-- estimated progress indicator (by Juz)
+- latest detected Quran position (`surah`, `ayah`, `juz`)
 - surah-based navigation across published days
+- quick stat cards (`Juz`, `Surah coverage`, current `surah/ayah`)
 - AI disclaimer (best-effort indexing accuracy)
+
+## Now Reciting controls
+
+On day pages, the **Now Reciting** card supports:
+
+- synced mode that follows the live video timestamp
+- manual pause + previous/next ayah stepping
+- one-tap resume back to live sync (`Play`)
 
 ## Project structure
 
