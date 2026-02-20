@@ -4,7 +4,7 @@ import LiveStatus from "@/components/home/LiveStatus";
 import QuranInsights from "@/components/home/QuranInsights";
 import RecitersInfo from "@/components/shared/RecitersInfo";
 import { getDateForRamadanDay } from "@/data/ramadan";
-import { availableTaraweehDays } from "@/data/taraweehVideos";
+import { availableTaraweehDays, getVideoPartsForDay } from "@/data/taraweehVideos";
 
 export default function HomePage() {
   const latestDay = availableTaraweehDays.at(-1) ?? null;
@@ -52,6 +52,9 @@ export default function HomePage() {
                       <div>
                         <p className="text-sm font-medium text-ivory sm:text-base">Ramadan Day {day}</p>
                         <p className="mt-1 text-sm text-muted">{getDateForRamadanDay(day)}</p>
+                        {getVideoPartsForDay(day).length > 1 ? (
+                          <p className="mt-1 text-xs text-sand">{getVideoPartsForDay(day).length} stream parts</p>
+                        ) : null}
                       </div>
                       <span className="text-sm text-sand">Open</span>
                     </Link>

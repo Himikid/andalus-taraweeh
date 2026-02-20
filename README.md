@@ -33,6 +33,15 @@ Edit:
 
 Set day keys (`1` to `30`) to real YouTube video IDs.
 
+For split uploads, use parts:
+
+```ts
+2: [
+  { id: "1", label: "Part 1", videoId: "..." },
+  { id: "2", label: "Part 2", videoId: "..." }
+]
+```
+
 ## Manual URL override
 
 Use:
@@ -66,6 +75,7 @@ The day page uses these for:
 - clickable rakah jump points
 - reciter switch jump points
 - ayah/surah timestamp navigation
+- multi-part day pages (e.g. `/data/day-2-part-1.json`, `/data/day-2-part-2.json`)
 
 ## AI local processing layer
 

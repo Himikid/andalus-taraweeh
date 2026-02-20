@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { surahAyahCounts } from "@/data/surahAyahCounts";
-import { availableTaraweehDays } from "@/data/taraweehVideos";
+import { availableTaraweehDays, getVideoPartsForDay } from "@/data/taraweehVideos";
 
 type Marker = {
   time: number;
@@ -11,7 +11,7 @@ type Marker = {
   ayah: number;
   surah_number?: number;
   juz?: number;
-  quality?: "high" | "ambiguous" | "inferred";
+  quality?: "high" | "ambiguous" | "inferred" | "manual";
 };
 
 type QuranInsightsProps = {
@@ -21,6 +21,49 @@ type QuranInsightsProps = {
 type DayPayload = {
   markers?: Marker[];
 };
+
+async function fetchDayMarkers(day: number): Promise<Marker[]> {
+  const parts = getVideoPartsForDay(day);
+  const hasParts = parts.length > 1;
+
+  if (!hasParts) {
+    const response = await fetch(`/data/day-${day}.json`, { cache: "no-store" });
+    if (!response.ok) {
+      return [];
+    }
+    const payload = (await response.json()) as DayPayload;
+    return Array.isArray(payload.markers) ? payload.markers : [];
+  }
+
+  const partMarkers: Marker[] = [];
+  let runningOffset = 0;
+
+  for (const part of parts) {
+    const partPath = part.dataFile?.trim()
+      ? part.dataFile.startsWith("/")
+        ? part.dataFile
+        : `/data/${part.dataFile}`
+      : `/data/day-${day}-part-${part.id}.json`;
+
+    const response = await fetch(partPath, { cache: "no-store" });
+    if (!response.ok) {
+      continue;
+    }
+
+    const payload = (await response.json()) as DayPayload;
+    const markers = Array.isArray(payload.markers) ? payload.markers : [];
+    const adjusted = markers
+      .slice()
+      .sort((a, b) => a.time - b.time)
+      .map((marker) => ({ ...marker, time: marker.time + runningOffset }));
+
+    partMarkers.push(...adjusted);
+    const partMaxTime = adjusted.length ? Math.max(...adjusted.map((marker) => marker.time)) : runningOffset;
+    runningOffset = partMaxTime + 30;
+  }
+
+  return partMarkers;
+}
 
 type SurahEntry = {
   day: number;
@@ -56,10 +99,7 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
 
       for (const day of days) {
         try {
-          const response = await fetch(`/data/day-${day}.json`, { cache: "no-store" });
-          if (!response.ok) continue;
-          const payload = (await response.json()) as DayPayload;
-          const markers = Array.isArray(payload.markers) ? payload.markers : [];
+          const markers = await fetchDayMarkers(day);
           if (markers.length) {
             records.push({ day, markers });
           }
@@ -82,7 +122,10 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
       const latestMarker = latestRecord.markers[latestRecord.markers.length - 1];
       setLatest({ day: latestRecord.day, marker: latestMarker });
 
-      const startsByQuality: Record<string, Record<string, SurahEntry[]>> = {};
+      const startsByQuality: Record<
+        string,
+        { high: SurahEntry[]; manual: SurahEntry[]; ambiguous: SurahEntry[]; inferred: SurahEntry[] }
+      > = {};
       const seenJuz = new Set<number>();
       const seenSurah = new Set<string>();
       const progressPoints: DayProgressPoint[] = [];
@@ -119,15 +162,22 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
             const entry: SurahEntry = { day, time: marker.time, ayah: marker.ayah, juz: marker.juz };
             const quality = marker.quality ?? "high";
             if (!startsByQuality[key]) {
-              startsByQuality[key] = { high: [], ambiguous: [], inferred: [] };
+              startsByQuality[key] = { high: [], manual: [], ambiguous: [], inferred: [] };
             }
-            startsByQuality[key][quality].push(entry);
+            const bucket = startsByQuality[key][quality] ? quality : "ambiguous";
+            startsByQuality[key][bucket].push(entry);
           });
         });
 
       const starts: Record<string, SurahEntry> = {};
       for (const [surah, buckets] of Object.entries(startsByQuality)) {
-        const chosenBucket = buckets.high.length ? buckets.high : buckets.ambiguous.length ? buckets.ambiguous : buckets.inferred;
+        const chosenBucket = buckets.high.length
+          ? buckets.high
+          : buckets.manual.length
+            ? buckets.manual
+            : buckets.ambiguous.length
+              ? buckets.ambiguous
+              : buckets.inferred;
         chosenBucket.sort((a, b) => (a.day !== b.day ? a.day - b.day : a.time - b.time));
         if (chosenBucket[0]) {
           starts[surah] = chosenBucket[0];

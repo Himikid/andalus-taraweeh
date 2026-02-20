@@ -26,12 +26,14 @@ function reciterLabel(reciter?: string) {
 
 export default function NowReciting({ markers, currentTime }: NowRecitingProps) {
   const [textCache, setTextCache] = useState<Record<string, { arabic?: string; english?: string }>>({});
+  const [isPaused, setIsPaused] = useState(false);
+  const [pausedIndex, setPausedIndex] = useState<number | null>(null);
 
   const timeline = useMemo(() => {
     return markers.slice().sort((a, b) => a.time - b.time);
   }, [markers]);
 
-  const active = useMemo(() => {
+  const liveIndex = useMemo(() => {
     if (!timeline.length) return null;
     let index = -1;
     for (let i = 0; i < timeline.length; i += 1) {
@@ -41,10 +43,31 @@ export default function NowReciting({ markers, currentTime }: NowRecitingProps) 
         break;
       }
     }
-    return index >= 0 ? timeline[index] : timeline[0];
+    return index >= 0 ? index : 0;
   }, [timeline, currentTime]);
 
+  const effectiveIndex = isPaused ? pausedIndex : liveIndex;
+  const active = effectiveIndex !== null ? timeline[effectiveIndex] : null;
   const activeKey = active?.surah_number ? `${active.surah_number}:${active.ayah}` : null;
+
+  function handlePause() {
+    if (liveIndex === null) return;
+    setPausedIndex(liveIndex);
+    setIsPaused(true);
+  }
+
+  function handleResume() {
+    setIsPaused(false);
+    setPausedIndex(null);
+  }
+
+  function handleStep(direction: -1 | 1) {
+    if (!timeline.length) return;
+    const baseIndex = isPaused ? (pausedIndex ?? liveIndex ?? 0) : (liveIndex ?? 0);
+    const nextIndex = Math.max(0, Math.min(timeline.length - 1, baseIndex + direction));
+    setPausedIndex(nextIndex);
+    setIsPaused(true);
+  }
 
   useEffect(() => {
     if (!active || !active.surah_number || !activeKey) return;
@@ -104,21 +127,61 @@ export default function NowReciting({ markers, currentTime }: NowRecitingProps) 
   return (
     <section className="w-full">
       <p className="label-caps">Now Reciting</p>
-      <p className="mt-2 text-xs text-muted">
-        {active.surah} · Ayah {active.ayah} · {formatTime(active.time)} · {reciterLabel(active.reciter)}
-      </p>
+      <div className="mt-4 rounded-2xl border border-line/80 bg-panel/55 p-4 sm:p-5">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="text-xs text-muted">
+            {active.surah} · Ayah {active.ayah} · {formatTime(active.time)} · {reciterLabel(active.reciter)}
+          </p>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => handleStep(-1)}
+              disabled={!timeline.length}
+              className="rounded-full border border-line px-3 py-1 text-xs text-ivory disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              ←
+            </button>
+            {isPaused ? (
+              <button
+                type="button"
+                onClick={handleResume}
+                className="rounded-full border border-green/40 px-3 py-1 text-xs text-green"
+              >
+                Play
+              </button>
+            ) : (
+              <button type="button" onClick={handlePause} className="rounded-full border border-line px-3 py-1 text-xs text-ivory">
+                Pause
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={() => handleStep(1)}
+              disabled={!timeline.length}
+              className="rounded-full border border-line px-3 py-1 text-xs text-ivory disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              →
+            </button>
+          </div>
+        </div>
+        <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-sand">{isPaused ? "Manual preview paused" : "Synced to video"}</p>
+        <div className="mb-3 flex justify-end">
+          <div className="inline-flex items-center rounded-full border border-sand/45 bg-sand/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-sand">
+            AI Beta
+          </div>
+        </div>
+        {resolvedArabic ? (
+          <p className="text-right font-[var(--font-arabic)] text-2xl leading-loose text-ivory sm:text-[1.8rem]">
+            {resolvedArabic}
+          </p>
+        ) : null}
 
-      {resolvedArabic ? (
-        <p className="mt-4 text-right font-[var(--font-arabic)] text-2xl leading-loose text-ivory sm:text-[1.8rem]">
-          {resolvedArabic}
-        </p>
-      ) : null}
-
-      {resolvedEnglish ? (
-        <p className="mt-4 text-sm leading-7 text-muted sm:text-base">{resolvedEnglish}</p>
-      ) : (
-        <p className="mt-4 text-sm text-muted">Translation unavailable for this ayah.</p>
-      )}
+        {resolvedEnglish ? (
+          <p className="mt-4 text-sm leading-7 text-muted sm:text-base">{resolvedEnglish}</p>
+        ) : (
+          <p className="mt-4 text-sm text-muted">Translation unavailable for this ayah.</p>
+        )}
+      </div>
     </section>
   );
 }

@@ -38,3 +38,13 @@ class Marker:
     confidence: float | None = None
     arabic_text: str | None = None
     english_text: str | None = None
+    start_time: int | None = None
+    end_time: int | None = None
+    matched_token_indices: list[list[int]] | None = None
+
+    def __post_init__(self) -> None:
+        if self.start_time is None:
+            self.start_time = int(self.time)
+        if self.end_time is None:
+            self.end_time = int(self.start_time)
+        self.time = int(self.start_time)

@@ -8,6 +8,7 @@ from pathlib import Path
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Process one Ramadan day audio into UI JSON markers.")
     parser.add_argument("--day", type=int, required=True, help="Ramadan day number (1-30)")
+    parser.add_argument("--part", type=int, help="Optional part number for split uploads (e.g. 1, 2)")
     parser.add_argument("--youtube-url", type=str, help="YouTube URL for the day")
     parser.add_argument("--audio-file", type=Path, help="Local audio file path")
     parser.add_argument(
@@ -74,6 +75,17 @@ def parse_args() -> argparse.Namespace:
         type=int,
         help="Optional cap for processing only the first N seconds (useful for tuning).",
     )
+    parser.add_argument(
+        "--aggressive-infer-fill",
+        action="store_true",
+        help="Fill missing ayahs between detected anchors more aggressively (less strict local-support gating).",
+    )
+    parser.add_argument(
+        "--day-overrides",
+        type=Path,
+        default=Path("data/ai/day_overrides.json"),
+        help="Optional manual per-day caps (e.g. final ayah/final time).",
+    )
     return parser.parse_args()
 
 
@@ -93,12 +105,17 @@ def main() -> None:
     if args.day < 1 or args.day > 30:
         raise SystemExit("--day must be between 1 and 30")
 
-    output_path = args.output or Path(f"public/data/day-{args.day}.json")
+    if args.output:
+        output_path = args.output
+    elif args.part and args.part > 0:
+        output_path = Path(f"public/data/day-{args.day}-part-{args.part}.json")
+    else:
+        output_path = Path(f"public/data/day-{args.day}.json")
 
     payload = process_day(
         day=args.day,
         output_path=output_path,
-        cache_dir=args.cache_dir,
+        cache_dir=(Path(f"data/audio/day-{args.day}-part-{args.part}") if args.part and args.cache_dir == Path("data/audio") else args.cache_dir),
         corpus_path=args.quran_corpus,
         profiles_path=args.reciter_profiles,
         youtube_url=args.youtube_url,
@@ -109,9 +126,12 @@ def main() -> None:
         match_min_overlap=args.match_min_overlap,
         match_min_confidence=args.match_min_confidence,
         match_min_gap_seconds=args.match_min_gap_seconds,
+        match_require_weak_support_for_inferred=not args.aggressive_infer_fill,
         reuse_transcript_cache=not args.no_reuse_transcript_cache,
         max_audio_seconds=args.max_audio_seconds,
         asad_path=args.quran_asad,
+        day_overrides_path=args.day_overrides,
+        part=args.part,
     )
 
     print(f"Saved: {output_path}")

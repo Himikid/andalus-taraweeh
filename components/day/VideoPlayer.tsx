@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 type VideoPlayerProps = {
   videoId?: string;
   startAt?: number;
+  seekNonce?: number;
   onTimeUpdate?: (seconds: number) => void;
 };
 
@@ -83,7 +84,7 @@ function loadYouTubeApi() {
   return youtubeApiPromise;
 }
 
-export default function VideoPlayer({ videoId, startAt, onTimeUpdate }: VideoPlayerProps) {
+export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate }: VideoPlayerProps) {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const playerRef = useRef<YTPlayer | null>(null);
   const tickerRef = useRef<number | null>(null);
@@ -165,7 +166,7 @@ export default function VideoPlayer({ videoId, startAt, onTimeUpdate }: VideoPla
     playerRef.current.seekTo(startAt, true);
     playerRef.current.playVideo();
     onTimeUpdate?.(startAt);
-  }, [onTimeUpdate, startAt]);
+  }, [onTimeUpdate, seekNonce, startAt]);
 
   if (!videoId) {
     return (

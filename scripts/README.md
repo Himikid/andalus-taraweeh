@@ -54,6 +54,20 @@ python scripts/process_day.py --day 1 --youtube-url "https://youtu.be/WJGS2B673Z
 python scripts/process_day.py --day 2 --audio-file data/audio/day-2.wav
 ```
 
+## Process split uploads as parts
+
+```bash
+python scripts/process_day.py --day 2 --part 1 --youtube-url "https://youtu.be/..."
+python scripts/process_day.py --day 2 --part 2 --youtube-url "https://youtu.be/..."
+```
+
+This writes:
+
+- `public/data/day-2-part-1.json`
+- `public/data/day-2-part-2.json`
+
+Then set day config in `data/taraweehVideos.ts` to parts with matching `id`s.
+
 ## Fast tuning on first 15 minutes
 
 This runs multiple matcher configs, validates each, and writes the best candidate to `public/data/day-{N}.json`.

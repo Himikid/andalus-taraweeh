@@ -8,7 +8,7 @@ export type SurahMarker = {
   ayah: number;
   surah_number?: number;
   juz?: number;
-  quality?: "high" | "ambiguous" | "inferred";
+  quality?: "high" | "ambiguous" | "inferred" | "manual";
   reciter?: string;
   arabic_text?: string;
   english_text?: string;
@@ -28,6 +28,9 @@ function formatTime(seconds: number) {
 function markerClasses(quality: SurahMarker["quality"]) {
   if (quality === "high") {
     return "border-green/40 text-green hover:border-green";
+  }
+  if (quality === "manual") {
+    return "border-ivory/35 text-ivory hover:border-ivory";
   }
   if (quality === "ambiguous") {
     return "border-sand/50 text-sand hover:border-sand";
@@ -108,9 +111,10 @@ export default function SurahIndex({ markers, onSeek }: SurahIndexProps) {
 
   return (
     <section className="w-full">
-      <p className="label-caps">Indexed Surahs</p>
+      <p className="label-caps">AI INDEXED SURAHS</p>
       <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
         <span className="rounded-full border border-green/40 px-2.5 py-1 text-green">High Confidence</span>
+        <span className="rounded-full border border-ivory/35 px-2.5 py-1 text-ivory">Manual Anchor</span>
         <span className="rounded-full border border-sand/50 px-2.5 py-1 text-sand">Ambiguous</span>
         <span className="rounded-full border border-line px-2.5 py-1 text-muted">Inferred</span>
       </div>
