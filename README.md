@@ -1,4 +1,4 @@
-# andalus-taraweeh
+# Andalus Taraweeh
 
 Live Ramadan Taraweeh streaming and archive experience for **Andalus Centre Glasgow**.
 
