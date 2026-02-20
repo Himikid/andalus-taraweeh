@@ -21,7 +21,11 @@ function formatCountdown(totalMs: number) {
   return [hours, minutes, seconds].map((value) => value.toString().padStart(2, "0")).join(":");
 }
 
-export default function LiveStatus() {
+type LiveStatusProps = {
+  forceLive?: boolean;
+};
+
+export default function LiveStatus({ forceLive = false }: LiveStatusProps) {
   const [, setTick] = useState(Date.now());
 
   useEffect(() => {
@@ -37,7 +41,7 @@ export default function LiveStatus() {
   const liveEnd = new Date(londonNow);
   liveEnd.setHours(LIVESTREAM_END_HOUR, LIVESTREAM_END_MINUTE, 0, 0);
 
-  const isLive = londonNow >= liveStart && londonNow < liveEnd;
+  const isLive = forceLive || (londonNow >= liveStart && londonNow < liveEnd);
 
   const countdown = (() => {
     const nextStart = new Date(liveStart);

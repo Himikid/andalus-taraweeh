@@ -44,3 +44,17 @@ body {
 .video-shell {
   @apply rounded-[26px] bg-transparent;
 }
+
+@keyframes live-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 12px 24px rgba(30, 66, 49, 0.16));
+  }
+  50% {
+    filter: drop-shadow(0 18px 34px rgba(30, 66, 49, 0.28));
+  }
+}
+
+.live-player-glow {
+  animation: live-glow 4.5s ease-in-out infinite;
+}

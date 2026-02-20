@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/home/Header";
-import LiveStatus from "@/components/home/LiveStatus";
+import HomeLiveBlock from "@/components/home/HomeLiveBlock";
 import QuranInsights from "@/components/home/QuranInsights";
 import RecitersInfo from "@/components/shared/RecitersInfo";
 import { getDateForRamadanDay } from "@/data/ramadan";
@@ -17,22 +17,7 @@ export default function HomePage() {
             <div className="mx-auto flex w-full max-w-3xl flex-col gap-12">
               <Header />
 
-              <LiveStatus />
-
-              <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
-                {latestDay ? (
-                  <Link
-                    href={`/day/${latestDay}`}
-                    className="rounded-full border border-sand/30 bg-green px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#377557]"
-                  >
-                    Open Latest Livestream
-                  </Link>
-                ) : (
-                  <span className="rounded-full border border-line px-6 py-2.5 text-sm text-muted">
-                    Waiting for first upload
-                  </span>
-                )}
-              </div>
+              <HomeLiveBlock latestDay={latestDay} />
             </div>
           </section>
 
