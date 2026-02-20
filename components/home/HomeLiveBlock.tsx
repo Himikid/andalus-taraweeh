@@ -7,6 +7,8 @@ import LiveStatus from "@/components/home/LiveStatus";
 
 type HomeLiveBlockProps = {
   latestDay: number | null;
+  manualVideoId?: string | null;
+  manualTitle?: string;
 };
 
 type LiveStatusResponse = {
@@ -17,11 +19,17 @@ type LiveStatusResponse = {
 
 const POLL_MS = 30000;
 
-export default function HomeLiveBlock({ latestDay }: HomeLiveBlockProps) {
-  const [liveVideoId, setLiveVideoId] = useState<string | null>(null);
-  const [liveTitle, setLiveTitle] = useState<string>("");
+export default function HomeLiveBlock({ latestDay, manualVideoId = null, manualTitle = "" }: HomeLiveBlockProps) {
+  const [liveVideoId, setLiveVideoId] = useState<string | null>(manualVideoId);
+  const [liveTitle, setLiveTitle] = useState<string>(manualTitle);
 
   useEffect(() => {
+    if (manualVideoId) {
+      setLiveVideoId(manualVideoId);
+      setLiveTitle(manualTitle);
+      return;
+    }
+
     let active = true;
 
     async function pollLiveStatus() {
@@ -63,7 +71,7 @@ export default function HomeLiveBlock({ latestDay }: HomeLiveBlockProps) {
       active = false;
       window.clearInterval(timer);
     };
-  }, []);
+  }, [manualTitle, manualVideoId]);
 
   const hasLiveVideo = Boolean(liveVideoId);
   const latestDayHref = useMemo(() => {
@@ -85,7 +93,7 @@ export default function HomeLiveBlock({ latestDay }: HomeLiveBlockProps) {
                 </span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ivory">Live</span>
               </div>
-              <p className="text-xs text-muted">Auto-updates from YouTube channel</p>
+              <p className="text-xs text-muted">{manualVideoId ? "Manual live override enabled" : "Auto-updates from YouTube channel"}</p>
             </div>
             {liveTitle ? (
               <p className="mt-3 text-sm text-ivory/95 sm:text-base">{liveTitle}</p>

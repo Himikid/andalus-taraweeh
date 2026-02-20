@@ -3,6 +3,7 @@ import Header from "@/components/home/Header";
 import HomeLiveBlock from "@/components/home/HomeLiveBlock";
 import QuranInsights from "@/components/home/QuranInsights";
 import RecitersInfo from "@/components/shared/RecitersInfo";
+import { manualLiveTitle, manualLiveVideoId } from "@/data/liveOverride";
 import { getDateForRamadanDay } from "@/data/ramadan";
 import { availableTaraweehDays, getVideoPartsForDay } from "@/data/taraweehVideos";
 
@@ -17,7 +18,7 @@ export default function HomePage() {
             <div className="mx-auto flex w-full max-w-3xl flex-col gap-12">
               <Header />
 
-              <HomeLiveBlock latestDay={latestDay} />
+              <HomeLiveBlock latestDay={latestDay} manualVideoId={manualLiveVideoId} manualTitle={manualLiveTitle} />
             </div>
           </section>
 
