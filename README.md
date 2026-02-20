@@ -1,39 +1,81 @@
 # andalus-taraweeh
 
-A production-ready Ramadan livestream site for **Andalus Centre Glasgow** built with Next.js 14, TypeScript, and TailwindCSS.
+Live Ramadan Taraweeh streaming and archive experience for **Andalus Centre Glasgow**.
 
-## Local development
+## Quick Navigation
+
+- [What Is Taraweeh?](#what-is-taraweeh)
+- [Why This Project Exists](#why-this-project-exists)
+- [Feature Highlights](#feature-highlights)
+- [How It Works](#how-it-works)
+- [Run Locally](#run-locally)
+- [Data + AI Pipeline](#data--ai-pipeline)
+- [Deploy](#deploy)
+- [Project Structure](#project-structure)
+
+## What Is Taraweeh?
+
+Taraweeh is a special nightly prayer in Ramadan.
+It usually includes long Quran recitation in congregation after the night prayer (`Isha`).
+
+## Why This Project Exists
+
+Many people cannot attend every night physically. This app makes it easier to:
+
+- watch the live stream
+- catch up on previous nights
+- follow exactly where recitation is (`surah` / `ayah`)
+
+## Feature Highlights
+
+| Area | What users get |
+| --- | --- |
+| Live + Archive | Published Ramadan day streams in one place |
+| Multi-part support | Day pages can include Part 1 / Part 2 uploads |
+| Quran timeline | Indexed recitation markers by `surah`, `ayah`, `juz`, and time |
+| Now Reciting | Arabic + English ayah display with current recitation context |
+| Manual control | Pause, step backward/forward, then resume live sync |
+| Home insights | Latest position, coverage stats, and cross-day surah navigation |
+
+## How It Works
+
+1. **Video layer** serves YouTube streams by Ramadan day.
+2. **Indexed JSON** (`public/data/day-*.json`) powers ayah-aware navigation.
+3. **Now Reciting UI** follows video time and can be manually stepped.
+4. **Local Python pipeline** generates and validates Quran timeline JSON.
+
+## Tech Stack
+
+| Layer | Tools |
+| --- | --- |
+| Frontend | Next.js 14, React, TypeScript, TailwindCSS |
+| Data Runtime | Static JSON from `public/data/*` |
+| Processing | Python scripts in `scripts/ai_pipeline/*` |
+| Hosting | Vercel |
+
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Production preview
+### Production Preview
 
 ```bash
 npm run build
 npm run start
 ```
 
-## Deploy to Vercel
+## Configuration
 
-1. Push this repository to GitHub.
-2. Import the repo in Vercel.
-3. Keep default Next.js settings.
-4. Deploy.
+### Update YouTube IDs
 
-## Update YouTube IDs
+Edit `data/taraweehVideos.ts`.
 
-Edit:
-
-- `data/taraweehVideos.ts`
-
-Set day keys (`1` to `30`) to real YouTube video IDs.
-
-For split uploads, use parts:
+For split uploads:
 
 ```ts
 2: [
@@ -42,93 +84,50 @@ For split uploads, use parts:
 ]
 ```
 
-## Manual URL override
+### Manual URL override
 
-Use:
-
-- `?video=VIDEO_ID`
+Use `?video=VIDEO_ID`
 
 Example:
+`http://localhost:3000/day/1?video=dQw4w9WgXcQ`
 
-- `http://localhost:3000/day/1?video=dQw4w9WgXcQ`
+## Data + AI Pipeline
 
-## Surah index JSON hook
-
-Place day JSON files in:
+### Day JSON location
 
 - `public/data/day-{N}.json`
+- Multi-part example: `public/data/day-2-part-1.json`, `public/data/day-2-part-2.json`
 
-Example:
+### Day JSON usage
 
-- `public/data/day-1.json`
+The day page uses indexed data for:
 
-If day data exists, the site shows grouped surah markers. If not, the section stays hidden.
-
-Generated day JSON now includes:
-
-- `markers` with `surah`, `ayah`, `juz`, `time`, `reciter`, `confidence`
-- `rakaat` start timestamps
-- `reciter_switches` timestamps
-
-The day page uses these for:
-
-- clickable rakah jump points
-- reciter switch jump points
 - ayah/surah timestamp navigation
-- multi-part day pages (e.g. `/data/day-2-part-1.json`, `/data/day-2-part-2.json`)
+- reciter switch points
+- prayer/rakah jump points
+- now-reciting context
 
-## AI local processing layer
-
-A local Python pipeline is included for daily audio processing and JSON generation.
+### AI processing layer (local)
 
 - Docs: `scripts/README.md`
 - Main command: `python scripts/process_day.py ...`
 - Quran corpus fetch: `python scripts/fetch_quran_corpus.py`
 
-The Python code is local-only and does not affect Vercel runtime.
+This Python processing is local and separate from Vercel runtime.
 
-## Home insights
+## Deploy
 
-The home page includes a Quran insights panel that is computed from indexed day JSON files:
+1. Push this repo to GitHub.
+2. Import the repo in Vercel.
+3. Keep default Next.js settings.
+4. Deploy.
 
-- latest detected Quran position (`surah`, `ayah`, `juz`)
-- surah-based navigation across published days
-- quick stat cards (`Juz`, `Surah coverage`, current `surah/ayah`)
-- AI disclaimer (best-effort indexing accuracy)
+## Project Structure
 
-## Now Reciting controls
-
-On day pages, the **Now Reciting** card supports:
-
-- synced mode that follows the live video timestamp
-- manual pause + previous/next ayah stepping
-- one-tap resume back to live sync (`Play`)
-
-## Project structure
-
-- `app/`
-  - `page.tsx` home page
-  - `day/[day]/page.tsx` day route
-  - `layout.tsx` app layout + metadata
-  - `globals.css` theme and shared styles
-- `components/home/`
-  - `Header.tsx`
-  - `LiveStatus.tsx`
-  - `QuranInsights.tsx`
-- `components/day/`
-  - `DayPageClient.tsx`
-  - `DaySelector.tsx`
-  - `PrayerStarts.tsx`
-  - `VideoPlayer.tsx`
-  - `SurahIndex.tsx`
-- `components/shared/`
-  - `RecitersInfo.tsx`
-- `data/`
-  - `taraweehVideos.ts`
-  - `ramadan.ts`
-- `scripts/`
-  - `process_day.py`
-  - `fetch_quran_corpus.py`
-  - `ai_pipeline/*`
-- `public/data/`
-  - generated day marker JSON files
+- `app/` routes, layout, global styles
+- `components/day/` day page video + recitation UI
+- `components/home/` homepage panels and insights
+- `components/shared/` reusable shared UI
+- `data/` day metadata and static config
+- `public/data/` generated indexed Quran timeline JSON
+- `scripts/` local AI/data processing pipeline
