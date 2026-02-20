@@ -1,4 +1,4 @@
-const MANUAL_LIVE_URL = "https://www.youtube.com/watch?v=Z2LnH6JXnag";
+const MANUAL_LIVE_URL = "";
 
 function extractYouTubeVideoId(input: string): string | null {
   const trimmed = input.trim();
