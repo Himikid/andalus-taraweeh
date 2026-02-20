@@ -104,6 +104,8 @@ class CandidateEvidence:
     start_time: float
     end_time: float
     word_indices: list[int]
+    segment_start_index: int | None = None
+    segment_end_index: int | None = None
 
 
 @dataclass
@@ -302,12 +304,33 @@ def _tokenize_transcript_words(
     return tokens, starts, ends
 
 
-def _align_entry_to_segment_words(
-    segment: TranscriptSegment,
+def _collect_words_from_segments(
+    transcript_segments: list[TranscriptSegment],
+    start_index: int,
+    end_index: int,
+    max_gap_seconds: float = 2.5,
+) -> list[TranscriptWord]:
+    words: list[TranscriptWord] = []
+    if start_index < 0 or end_index < start_index:
+        return words
+
+    previous_end: float | None = None
+    max_index = min(end_index, len(transcript_segments) - 1)
+    for index in range(start_index, max_index + 1):
+        segment = transcript_segments[index]
+        if previous_end is not None and float(segment.start) - previous_end > max_gap_seconds:
+            break
+        words.extend(list(getattr(segment, "words", None) or []))
+        previous_end = float(segment.end)
+
+    return words
+
+
+def _align_entry_to_words(
+    words: list[TranscriptWord],
     entry: AyahEntry,
     selected_word_indices: list[int] | None = None,
 ) -> TokenAlignmentResult | None:
-    words = getattr(segment, "words", None) or []
     transcript_tokens, starts, ends = _tokenize_transcript_words(words, selected_indices=selected_word_indices)
     if len(transcript_tokens) < 2:
         return None
@@ -347,19 +370,46 @@ def _align_entry_to_segment_words(
     return best_alignment
 
 
+def _align_entry_to_segment_words(
+    segment: TranscriptSegment,
+    entry: AyahEntry,
+    selected_word_indices: list[int] | None = None,
+) -> TokenAlignmentResult | None:
+    words = list(getattr(segment, "words", None) or [])
+    return _align_entry_to_words(words=words, entry=entry, selected_word_indices=selected_word_indices)
+
+
 def _resolve_marker_times(
     segment: TranscriptSegment,
     entry: AyahEntry,
     evidence: CandidateEvidence,
+    transcript_segments: list[TranscriptSegment],
+    segment_index: int,
 ) -> tuple[int, int, list[list[int]] | None]:
     default_start = int(round(_estimate_marker_onset_time(segment, entry)))
     default_end = int(round(max(default_start, evidence.end_time)))
 
-    alignment = _align_entry_to_segment_words(
-        segment=segment,
-        entry=entry,
-        selected_word_indices=evidence.word_indices if evidence.word_indices else None,
-    )
+    alignment: TokenAlignmentResult | None = None
+    if (
+        evidence.segment_start_index is not None
+        and evidence.segment_end_index is not None
+        and evidence.segment_end_index > evidence.segment_start_index
+    ):
+        merged_words = _collect_words_from_segments(
+            transcript_segments=transcript_segments,
+            start_index=evidence.segment_start_index,
+            end_index=evidence.segment_end_index,
+        )
+        alignment = _align_entry_to_words(words=merged_words, entry=entry)
+
+    if alignment is None:
+        local_indices = evidence.word_indices if evidence.word_indices and evidence.segment_end_index == segment_index else None
+        alignment = _align_entry_to_segment_words(
+            segment=segment,
+            entry=entry,
+            selected_word_indices=local_indices,
+        )
+
     if alignment is not None:
         return alignment.start_time, alignment.end_time, alignment.matched_token_indices
 
@@ -587,6 +637,23 @@ def _has_weak_local_support(
     return top_score >= float(min_score) and top_overlap >= min_overlap
 
 
+def _defer_inferred_time_after_fatiha(
+    inferred_time: int,
+    fatiha_reset_times: list[float],
+    hold_seconds: int = 26,
+) -> int:
+    if not fatiha_reset_times:
+        return inferred_time
+
+    adjusted = inferred_time
+    for reset_time in fatiha_reset_times:
+        reset = int(round(reset_time))
+        # If marker lands around restart/Fatiha zone, hold until likely Fatiha completion.
+        if reset - 8 <= adjusted <= reset + hold_seconds:
+            adjusted = max(adjusted, reset + hold_seconds)
+    return adjusted
+
+
 def load_corpus(corpus_path: Path) -> list[AyahEntry]:
     if not corpus_path.exists():
         return []
@@ -745,17 +812,18 @@ def _find_best_ayah_timestamp(
     min_confidence: float,
     ambiguous_min_score: int,
     ambiguous_min_confidence: float,
-) -> tuple[int, str, float] | None:
+) -> tuple[int, int, str, float] | None:
     if window_end <= window_start:
         return None
 
     top_segment: TranscriptSegment | None = None
+    top_segment_index = -1
     top_evidence: CandidateEvidence | None = None
     top_score = -1.0
     second_score = -1.0
     top_overlap = 0.0
 
-    for segment in transcript_segments:
+    for seg_index, segment in enumerate(transcript_segments):
         if segment.end < window_start or segment.start > window_end:
             continue
 
@@ -765,24 +833,69 @@ def _find_best_ayah_timestamp(
 
         best_candidate: CandidateEvidence | None = None
         score, overlap = _score_segment_against_entry(normalized_segment, entry)
-        best_candidate = CandidateEvidence(
-            adjusted_score=score,
-            score=score,
-            overlap=overlap,
-            penalty=0.0,
-            source="segment",
-            normalized_text=normalized_segment,
-            start_time=float(segment.start),
-            end_time=float(segment.end),
-            word_indices=[],
-        )
+        if _has_anchor_token_hit(entry, normalized_segment):
+            best_candidate = CandidateEvidence(
+                adjusted_score=score,
+                score=score,
+                overlap=overlap,
+                penalty=0.0,
+                source="segment",
+                normalized_text=normalized_segment,
+                start_time=float(segment.start),
+                end_time=float(segment.end),
+                word_indices=[],
+                segment_start_index=seg_index,
+                segment_end_index=seg_index,
+            )
+
+        # Cross-segment full-ayah matching: merge nearby transcript chunks so long ayahs
+        # can be aligned against the canonical ayah text, not just a short local segment.
+        combined_text = normalized_segment
+        previous_end = float(segment.end)
+        for offset in range(1, 6):
+            next_idx = seg_index + offset
+            if next_idx >= len(transcript_segments):
+                break
+            next_segment = transcript_segments[next_idx]
+            if float(next_segment.start) - previous_end > 2.6:
+                break
+            if float(next_segment.start) > window_end:
+                break
+            next_normalized = normalize_arabic(next_segment.text)
+            if len(next_normalized) < 2:
+                break
+
+            combined_text = f"{combined_text} {next_normalized}".strip()
+            penalty = float(offset) * 0.45
+            merged_score, merged_overlap = _score_segment_against_entry(combined_text, entry)
+            adjusted = merged_score - penalty
+            if not _has_anchor_token_hit(entry, combined_text):
+                previous_end = float(next_segment.end)
+                continue
+            if best_candidate is None or adjusted > best_candidate.adjusted_score:
+                best_candidate = CandidateEvidence(
+                    adjusted_score=adjusted,
+                    score=merged_score,
+                    overlap=merged_overlap,
+                    penalty=penalty,
+                    source="segment",
+                    normalized_text=combined_text,
+                    start_time=float(segment.start),
+                    end_time=float(next_segment.end),
+                    word_indices=[],
+                    segment_start_index=seg_index,
+                    segment_end_index=next_idx,
+                )
+            previous_end = float(next_segment.end)
 
         segment_windows = list(generate_word_windows(list(getattr(segment, "words", None) or []), min_window=4, max_window=8))
         for window in segment_windows:
             penalty = _window_penalty(len(window.word_indices))
             window_score, window_overlap = _score_segment_against_entry(window.normalized_text, entry)
             adjusted = window_score - penalty
-            if adjusted > best_candidate.adjusted_score:
+            if not _has_anchor_token_hit(entry, window.normalized_text):
+                continue
+            if best_candidate is None or adjusted > best_candidate.adjusted_score:
                 best_candidate = CandidateEvidence(
                     adjusted_score=adjusted,
                     score=window_score,
@@ -793,12 +906,18 @@ def _find_best_ayah_timestamp(
                     start_time=window.start_time,
                     end_time=window.end_time,
                     word_indices=list(window.word_indices),
+                    segment_start_index=seg_index,
+                    segment_end_index=seg_index,
                 )
+
+        if best_candidate is None:
+            continue
 
         if best_candidate.adjusted_score > top_score:
             second_score = top_score
             top_score = best_candidate.adjusted_score
             top_segment = segment
+            top_segment_index = seg_index
             top_overlap = best_candidate.overlap
             top_evidence = best_candidate
         elif best_candidate.adjusted_score > second_score:
@@ -807,7 +926,13 @@ def _find_best_ayah_timestamp(
     if top_segment is None or top_evidence is None or top_score < ambiguous_min_score:
         return None
 
-    top_time, _, _ = _resolve_marker_times(top_segment, entry, top_evidence)
+    top_time, top_end, _ = _resolve_marker_times(
+        segment=top_segment,
+        entry=entry,
+        evidence=top_evidence,
+        transcript_segments=transcript_segments,
+        segment_index=top_segment_index,
+    )
     margin = max(0.0, top_score - max(0.0, second_score))
     window_span = max(1, window_end - window_start)
     proximity = 1.0 - min(1.0, abs(top_time - expected_time) / window_span)
@@ -823,7 +948,7 @@ def _find_best_ayah_timestamp(
     if not is_high and not is_ambiguous:
         return None
 
-    return top_time, ("high" if is_high else "ambiguous"), round(confidence, 3)
+    return top_time, max(top_time, top_end), ("high" if is_high else "ambiguous"), round(confidence, 3)
 
 
 def _quality_rank(quality: str | None) -> int:
@@ -858,6 +983,7 @@ def _fill_surah_coverage_markers(
     existing_markers: list[Marker],
     entry_lookup: dict[tuple[str, int], AyahEntry],
     transcript_segments: list[TranscriptSegment] | None = None,
+    fatiha_reset_times: list[float] | None = None,
     weak_support_score: int = 62,
     weak_support_overlap: float = 0.08,
     enforce_weak_support: bool = True,
@@ -895,6 +1021,8 @@ def _fill_surah_coverage_markers(
             right_ayah = right_ayahs[0] if right_ayahs else None
 
             inferred_time: int
+            left_marker: Marker | None = None
+            right_marker: Marker | None = None
             if left_ayah is not None and right_ayah is not None:
                 left_marker = ayah_map[left_ayah]
                 right_marker = ayah_map[right_ayah]
@@ -913,6 +1041,16 @@ def _fill_surah_coverage_markers(
                 inferred_time = max(0, right_marker.time - ((right_ayah - ayah) * step_seconds))
             else:
                 continue
+
+            if fatiha_reset_times:
+                inferred_time = _defer_inferred_time_after_fatiha(
+                    inferred_time=inferred_time,
+                    fatiha_reset_times=fatiha_reset_times,
+                )
+                if left_marker is not None:
+                    inferred_time = max(left_marker.time + 1, inferred_time)
+                if right_marker is not None:
+                    inferred_time = min(right_marker.time - 1, inferred_time)
 
             entry = entry_lookup.get((surah, ayah))
             left_reciter = ayah_map[left_ayah].reciter if left_ayah is not None else None
@@ -976,6 +1114,643 @@ def _dedupe_by_local_time_window(markers: list[Marker], window_seconds: int = 90
     return deduped
 
 
+def _apply_overlap_conflict_resolution(markers: list[Marker]) -> list[Marker]:
+    if len(markers) < 2:
+        return markers
+
+    def confidence(marker: Marker) -> float:
+        return float(marker.confidence or 0.0)
+
+    def is_strong(marker: Marker) -> bool:
+        return marker.quality in {"high", "manual"} or confidence(marker) >= 0.72
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+    resolved: list[Marker] = []
+    for idx, marker in enumerate(ordered):
+        if not resolved:
+            resolved.append(marker)
+            continue
+
+        previous = resolved[-1]
+        same_surah = previous.surah == marker.surah
+        forward_next = marker.ayah == previous.ayah + 1
+        overlap = (marker.start_time or marker.time) < (previous.end_time or previous.time)
+
+        if same_surah and forward_next and overlap:
+            prev_conf = confidence(previous)
+            curr_conf = confidence(marker)
+            # Keep current ayah active unless the next one has clearly stronger evidence.
+            if not is_strong(marker) and curr_conf <= prev_conf + 0.02:
+                delayed_start = (previous.end_time or previous.time) + 1
+                next_start: int | None = None
+                if idx + 1 < len(ordered):
+                    next_marker = ordered[idx + 1]
+                    if next_marker.surah == marker.surah and next_marker.ayah >= marker.ayah:
+                        next_start = next_marker.start_time or next_marker.time
+
+                # If there is space, delay instead of dropping.
+                if next_start is None or delayed_start < next_start:
+                    marker.start_time = delayed_start
+                    marker.time = delayed_start
+                    marker.end_time = max(marker.end_time or delayed_start, delayed_start)
+                else:
+                    # Only drop when confidence is truly weak; otherwise keep as a point marker.
+                    if curr_conf < 0.45 and marker.quality == "inferred":
+                        continue
+                    marker.start_time = max(delayed_start, next_start)
+                    marker.time = marker.start_time
+                    marker.end_time = marker.start_time
+            if (marker.start_time or marker.time) < (previous.end_time or previous.time):
+                previous.end_time = max(previous.start_time or previous.time, (marker.start_time or marker.time) - 1)
+
+        resolved.append(marker)
+
+    return resolved
+
+
+def _refine_weak_boundary_markers(
+    markers: list[Marker],
+    transcript_segments: list[TranscriptSegment],
+    entry_lookup: dict[tuple[str, int], AyahEntry],
+    fatiha_reset_times: list[float] | None,
+    min_score: int,
+    min_overlap: float,
+    min_confidence: float,
+    ambiguous_min_score: int,
+    ambiguous_min_confidence: float,
+) -> list[Marker]:
+    if len(markers) < 3:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+
+    for idx in range(1, len(ordered) - 1):
+        marker = ordered[idx]
+        previous = ordered[idx - 1]
+        next_marker = ordered[idx + 1]
+
+        if marker.surah != previous.surah or marker.surah != next_marker.surah:
+            continue
+        if marker.ayah != previous.ayah + 1:
+            continue
+        if next_marker.ayah <= marker.ayah:
+            continue
+        if marker.quality not in {"ambiguous", "inferred"}:
+            continue
+
+        marker_conf = float(marker.confidence or 0.0)
+        if marker_conf >= 0.66 and marker.quality == "ambiguous":
+            continue
+
+        prev_end = int(previous.end_time or previous.time)
+        marker_start = int(marker.start_time or marker.time)
+        # Focus on likely boundary slips where next ayah was placed immediately after previous ayah ends.
+        if marker_start - prev_end > 3:
+            continue
+
+        gap_to_next = int(next_marker.time) - marker_start
+        if gap_to_next < 25:
+            continue
+
+        entry = entry_lookup.get((marker.surah, marker.ayah))
+        if entry is None:
+            continue
+
+        window_start = max(prev_end + 6, marker_start + 8)
+        window_end = min(int(next_marker.time) - 6, marker_start + 220)
+        if window_end <= window_start:
+            continue
+
+        best = _find_best_ayah_timestamp(
+            transcript_segments=transcript_segments,
+            entry=entry,
+            window_start=window_start,
+            window_end=window_end,
+            expected_time=max(window_start, marker_start + 20),
+            min_score=min_score,
+            min_overlap=min_overlap,
+            min_confidence=min_confidence,
+            ambiguous_min_score=ambiguous_min_score,
+            ambiguous_min_confidence=ambiguous_min_confidence,
+        )
+        if best is None:
+            continue
+
+        matched_time, matched_end, matched_quality, matched_confidence = best
+        if matched_time <= marker_start + 5:
+            continue
+        if matched_confidence < max(marker_conf + 0.08, 0.60):
+            continue
+
+        bounded_time = max(window_start, min(window_end, matched_time))
+        bounded_end = max(bounded_time, min(window_end, matched_end))
+        if fatiha_reset_times:
+            bounded_time = _defer_inferred_time_after_fatiha(
+                inferred_time=bounded_time,
+                fatiha_reset_times=fatiha_reset_times,
+            )
+            bounded_time = max(window_start, min(window_end, bounded_time))
+            bounded_end = max(bounded_time, min(window_end, bounded_end))
+        marker.time = bounded_time
+        marker.start_time = bounded_time
+        marker.end_time = bounded_end
+        marker.quality = matched_quality
+        marker.confidence = round(matched_confidence, 3)
+
+    return ordered
+
+
+def _refine_inferred_markers_with_local_search(
+    markers: list[Marker],
+    transcript_segments: list[TranscriptSegment],
+    entry_lookup: dict[tuple[str, int], AyahEntry],
+    fatiha_reset_times: list[float] | None,
+    min_score: int,
+    min_overlap: float,
+    min_confidence: float,
+    ambiguous_min_score: int,
+    ambiguous_min_confidence: float,
+) -> list[Marker]:
+    if len(markers) < 3:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+
+    for idx, marker in enumerate(ordered):
+        if marker.quality != "inferred":
+            continue
+
+        entry = entry_lookup.get((marker.surah, marker.ayah))
+        if entry is None:
+            continue
+
+        prev_marker: Marker | None = None
+        next_marker: Marker | None = None
+        for left in range(idx - 1, -1, -1):
+            if ordered[left].surah == marker.surah:
+                prev_marker = ordered[left]
+                break
+        for right in range(idx + 1, len(ordered)):
+            if ordered[right].surah == marker.surah:
+                next_marker = ordered[right]
+                break
+
+        current_time = int(marker.start_time or marker.time)
+        if prev_marker is not None:
+            window_start = int(prev_marker.end_time or prev_marker.time) + 2
+        else:
+            window_start = max(0, current_time - 90)
+        if next_marker is not None:
+            window_end = int(next_marker.start_time or next_marker.time) - 2
+        else:
+            window_end = current_time + 90
+        if window_end <= window_start:
+            continue
+
+        # Keep search local, but wide enough to recover if interpolation was poor.
+        span_limit_start = max(0, current_time - 120)
+        span_limit_end = current_time + 120
+        window_start = max(window_start, span_limit_start)
+        window_end = min(window_end, span_limit_end)
+        if window_end <= window_start:
+            continue
+
+        best = _find_best_ayah_timestamp(
+            transcript_segments=transcript_segments,
+            entry=entry,
+            window_start=window_start,
+            window_end=window_end,
+            expected_time=current_time,
+            min_score=max(74, min_score - 6),
+            min_overlap=max(0.06, min_overlap - 0.08),
+            min_confidence=max(0.56, min_confidence - 0.08),
+            ambiguous_min_score=max(66, ambiguous_min_score - 4),
+            ambiguous_min_confidence=max(0.48, ambiguous_min_confidence - 0.04),
+        )
+        if best is None:
+            continue
+
+        matched_time, matched_end, matched_quality, matched_confidence = best
+        if matched_confidence < 0.56:
+            continue
+
+        bounded_time = max(window_start, min(window_end, matched_time))
+        bounded_end = max(bounded_time, min(window_end, matched_end))
+        if fatiha_reset_times:
+            bounded_time = _defer_inferred_time_after_fatiha(
+                inferred_time=bounded_time,
+                fatiha_reset_times=fatiha_reset_times,
+            )
+            bounded_time = max(window_start, min(window_end, bounded_time))
+            bounded_end = max(bounded_time, min(window_end, bounded_end))
+        if abs(bounded_time - current_time) < 2 and matched_quality == "ambiguous":
+            marker.confidence = max(float(marker.confidence or 0.56), round(matched_confidence, 3))
+            continue
+
+        marker.time = bounded_time
+        marker.start_time = bounded_time
+        marker.end_time = max(bounded_end, marker.end_time or bounded_end)
+        marker.quality = matched_quality
+        marker.confidence = round(matched_confidence, 3)
+
+    return ordered
+
+
+def _redistribute_dense_weak_runs(markers: list[Marker]) -> list[Marker]:
+    if len(markers) < 4:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+
+    def is_weak(marker: Marker) -> bool:
+        quality = marker.quality or ""
+        confidence = float(marker.confidence or 0.0)
+        if quality == "inferred":
+            return True
+        return quality == "ambiguous" and confidence <= 0.62
+
+    idx = 1
+    while idx < len(ordered) - 1:
+        marker = ordered[idx]
+        if not is_weak(marker):
+            idx += 1
+            continue
+
+        run_start = idx
+        run_end = idx
+        while run_end + 1 < len(ordered):
+            current = ordered[run_end]
+            nxt = ordered[run_end + 1]
+            current_time = int(current.start_time or current.time)
+            next_time = int(nxt.start_time or nxt.time)
+            if (
+                nxt.surah == current.surah
+                and nxt.ayah == current.ayah + 1
+                and is_weak(nxt)
+                and (next_time - current_time) <= 25
+            ):
+                run_end += 1
+            else:
+                break
+
+        run = ordered[run_start : run_end + 1]
+        if len(run) < 4:
+            idx = run_end + 1
+            continue
+
+        run_span = int((run[-1].start_time or run[-1].time) - (run[0].start_time or run[0].time))
+        if run_span > max(8, len(run)):
+            idx = run_end + 1
+            continue
+
+        left = ordered[run_start - 1]
+        right: Marker | None = None
+        for right_idx in range(run_end + 1, len(ordered)):
+            candidate = ordered[right_idx]
+            if candidate.surah == run[0].surah and candidate.ayah > run[-1].ayah:
+                right = candidate
+                break
+        if right is None:
+            idx = run_end + 1
+            continue
+
+        left_bound = int(left.end_time or left.time) + 1
+        right_bound = int(right.start_time or right.time) - 1
+        available = right_bound - left_bound
+        if available < len(run) * 3:
+            idx = run_end + 1
+            continue
+
+        step = available / float(len(run) + 1)
+        for offset, weak_marker in enumerate(run, start=1):
+            target = int(round(left_bound + (step * offset)))
+            if target <= left_bound:
+                target = left_bound + offset
+            weak_marker.time = target
+            weak_marker.start_time = target
+            weak_marker.end_time = target
+            if weak_marker.quality == "inferred":
+                weak_marker.confidence = max(float(weak_marker.confidence or 0.56), 0.58)
+
+        idx = run_end + 1
+
+    return ordered
+
+
+def _extend_point_markers_to_next(markers: list[Marker], max_extension_seconds: int = 90) -> list[Marker]:
+    if len(markers) < 2:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+    for idx, marker in enumerate(ordered[:-1]):
+        start = int(marker.start_time or marker.time)
+        end = int(marker.end_time or marker.time)
+        if end > start:
+            continue
+        if marker.quality not in {"inferred", "ambiguous"}:
+            continue
+
+        next_marker: Marker | None = None
+        for look_ahead in range(idx + 1, len(ordered)):
+            candidate = ordered[look_ahead]
+            if candidate.surah != marker.surah:
+                continue
+            if int(candidate.ayah) <= int(marker.ayah):
+                continue
+            next_marker = candidate
+            break
+        if next_marker is None:
+            continue
+
+        next_start = int(next_marker.start_time or next_marker.time)
+        if next_start <= start:
+            continue
+
+        extension = min(max_extension_seconds, max(0, next_start - start - 1))
+        if extension <= 0:
+            continue
+        marker.end_time = start + extension
+
+    return ordered
+
+
+def _stabilize_weak_marker_durations(markers: list[Marker]) -> list[Marker]:
+    if len(markers) < 2:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+
+    def nearest_step_seconds(index: int, fallback: float = 14.0) -> float:
+        center = ordered[index]
+        # Use nearby same-surah anchors to estimate ayah pace.
+        best: float | None = None
+        for left_idx in range(index - 1, -1, -1):
+            left = ordered[left_idx]
+            if left.surah != center.surah:
+                continue
+            ayah_gap = center.ayah - left.ayah
+            time_gap = (center.start_time or center.time) - (left.start_time or left.time)
+            if ayah_gap > 0 and time_gap > 0:
+                best = time_gap / ayah_gap
+                break
+        for right_idx in range(index + 1, len(ordered)):
+            right = ordered[right_idx]
+            if right.surah != center.surah:
+                continue
+            ayah_gap = right.ayah - center.ayah
+            time_gap = (right.start_time or right.time) - (center.start_time or center.time)
+            if ayah_gap > 0 and time_gap > 0:
+                right_step = time_gap / ayah_gap
+                if best is None:
+                    best = right_step
+                else:
+                    best = (best + right_step) / 2.0
+                break
+        if best is None:
+            return fallback
+        return max(6.0, min(26.0, best))
+
+    for idx, marker in enumerate(ordered[:-1]):
+        if marker.quality not in {"inferred", "ambiguous"}:
+            continue
+        start = int(marker.start_time or marker.time)
+        next_marker: Marker | None = None
+        for look_ahead in range(idx + 1, len(ordered)):
+            candidate = ordered[look_ahead]
+            if candidate.surah != marker.surah:
+                continue
+            if int(candidate.ayah) <= int(marker.ayah):
+                continue
+            next_marker = candidate
+            break
+        if next_marker is None:
+            continue
+
+        next_start = int(next_marker.start_time or next_marker.time)
+        available = next_start - start - 1
+        if available <= 0:
+            continue
+
+        step = nearest_step_seconds(idx)
+        hold_ratio = 0.78 if marker.quality == "inferred" else 0.62
+        desired = int(round(step * hold_ratio))
+        if marker.quality == "inferred":
+            desired = max(12, desired)
+        else:
+            desired = max(8, desired)
+        desired = min(desired, 40, available)
+
+        current_end = int(marker.end_time or start)
+        target_end = max(current_end, start + desired)
+        target_end = min(target_end, next_start - 1)
+        marker.end_time = max(start, target_end)
+
+        # Prevent weak->weak markers from being too tightly packed when there is room to spread.
+        if next_marker.quality in {"inferred", "ambiguous"}:
+            min_gap = 14 if marker.quality == "inferred" else 10
+            current_gap = next_start - start
+            if current_gap < min_gap:
+                ceiling = next_start
+                for look_ahead in range(idx + 2, len(ordered)):
+                    candidate = ordered[look_ahead]
+                    if candidate.surah != marker.surah:
+                        continue
+                    if int(candidate.ayah) <= int(next_marker.ayah):
+                        continue
+                    ceiling = int(candidate.start_time or candidate.time) - 1
+                    break
+                target_next_start = min(ceiling, start + min_gap)
+                if target_next_start > next_start:
+                    next_marker.time = target_next_start
+                    next_marker.start_time = target_next_start
+                    next_marker.end_time = max(int(next_marker.end_time or target_next_start), target_next_start)
+
+    return ordered
+
+
+def _quran_first_refine_weak_markers(
+    markers: list[Marker],
+    transcript_segments: list[TranscriptSegment],
+    entry_lookup: dict[tuple[str, int], AyahEntry],
+    min_score: int,
+    min_overlap: float,
+    min_confidence: float,
+    ambiguous_min_score: int,
+    ambiguous_min_confidence: float,
+) -> list[Marker]:
+    if len(markers) < 3:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+
+    def is_weak(marker: Marker) -> bool:
+        return marker.quality in {"inferred", "ambiguous"}
+
+    def is_anchor(marker: Marker) -> bool:
+        return marker.quality in {"high", "manual"}
+
+    for idx, marker in enumerate(ordered):
+        if not is_weak(marker):
+            continue
+
+        entry = entry_lookup.get((marker.surah, marker.ayah))
+        if entry is None:
+            continue
+
+        prev_any: Marker | None = None
+        next_any: Marker | None = None
+        prev_anchor: Marker | None = None
+        next_anchor: Marker | None = None
+
+        for left in range(idx - 1, -1, -1):
+            candidate = ordered[left]
+            if candidate.surah != marker.surah:
+                continue
+            if int(candidate.ayah) >= int(marker.ayah):
+                continue
+            prev_any = candidate
+            if is_anchor(candidate):
+                prev_anchor = candidate
+                break
+        for right in range(idx + 1, len(ordered)):
+            candidate = ordered[right]
+            if candidate.surah != marker.surah:
+                continue
+            if int(candidate.ayah) <= int(marker.ayah):
+                continue
+            if next_any is None:
+                next_any = candidate
+            if is_anchor(candidate):
+                next_anchor = candidate
+                break
+
+        left_bound = int(prev_any.end_time or prev_any.time) + 1 if prev_any is not None else 0
+        right_bound = int(next_any.start_time or next_any.time) - 1 if next_any is not None else int(marker.start_time or marker.time) + 180
+
+        if prev_anchor is not None:
+            left_bound = max(left_bound, int(prev_anchor.end_time or prev_anchor.time) + 1)
+        if next_anchor is not None:
+            right_bound = min(right_bound, int(next_anchor.start_time or next_anchor.time) - 1)
+
+        if right_bound <= left_bound:
+            continue
+
+        current_start = int(marker.start_time or marker.time)
+        expected = max(left_bound, min(right_bound, current_start))
+
+        best = _find_best_ayah_timestamp(
+            transcript_segments=transcript_segments,
+            entry=entry,
+            window_start=left_bound,
+            window_end=right_bound,
+            expected_time=expected,
+            min_score=max(72, min_score - 8),
+            min_overlap=max(0.05, min_overlap - 0.10),
+            min_confidence=max(0.54, min_confidence - 0.10),
+            ambiguous_min_score=max(64, ambiguous_min_score - 6),
+            ambiguous_min_confidence=max(0.46, ambiguous_min_confidence - 0.06),
+        )
+        if best is None:
+            continue
+
+        matched_start, matched_end, matched_quality, matched_confidence = best
+        bounded_start = max(left_bound, min(right_bound, matched_start))
+        bounded_end = max(bounded_start, min(right_bound, matched_end))
+
+        # Respect existing strong neighbors and avoid overlap with adjacent ayahs.
+        if prev_any is not None and bounded_start <= int(prev_any.end_time or prev_any.time):
+            continue
+        if next_any is not None and bounded_end >= int(next_any.start_time or next_any.time):
+            bounded_end = max(bounded_start, int(next_any.start_time or next_any.time) - 1)
+            if bounded_end < bounded_start:
+                continue
+
+        marker.time = bounded_start
+        marker.start_time = bounded_start
+        marker.end_time = bounded_end
+        marker.quality = matched_quality
+        marker.confidence = round(max(float(marker.confidence or 0.0), matched_confidence), 3)
+
+    return ordered
+
+
+def _delay_weak_markers_after_resets(
+    markers: list[Marker],
+    fatiha_reset_times: list[float],
+    transcript_segments: list[TranscriptSegment] | None = None,
+    hold_seconds: int = 34,
+) -> list[Marker]:
+    if len(markers) < 2 or not fatiha_reset_times:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+    reset_points = sorted(int(round(item)) for item in fatiha_reset_times)
+
+    def is_weak(marker: Marker) -> bool:
+        return marker.quality in {"inferred", "ambiguous"}
+
+    def has_local_speech(second: int, window: int = 18) -> bool:
+        if transcript_segments is None:
+            return True
+        lo = float(max(0, second - window))
+        hi = float(second + window)
+        for segment in transcript_segments:
+            seg_start = float(segment.start)
+            seg_end = float(segment.end)
+            if seg_end < lo or seg_start > hi:
+                continue
+            normalized = normalize_arabic(segment.text)
+            if len(normalized) >= 6:
+                return True
+        return False
+
+    for idx, marker in enumerate(ordered):
+        if not is_weak(marker):
+            continue
+
+        marker_start = int(marker.start_time or marker.time)
+        recent_reset: int | None = None
+        next_reset: int | None = None
+        for reset in reset_points:
+            if reset <= marker_start:
+                recent_reset = reset
+            else:
+                next_reset = reset
+                break
+        # If weak marker sits in a low-speech zone right before an upcoming reset,
+        # prefer deferring to post-reset even when there was an earlier reset.
+        if next_reset is not None and (next_reset - marker_start) <= 120 and not has_local_speech(marker_start):
+            min_start = next_reset + hold_seconds
+        elif recent_reset is None:
+            continue
+        else:
+            min_start = recent_reset + hold_seconds
+            if marker_start >= min_start:
+                continue
+
+        next_same_surah_start: int | None = None
+        for look_ahead in range(idx + 1, len(ordered)):
+            candidate = ordered[look_ahead]
+            if candidate.surah != marker.surah:
+                continue
+            if int(candidate.ayah) <= int(marker.ayah):
+                continue
+            next_same_surah_start = int(candidate.start_time or candidate.time)
+            break
+
+        target = min_start
+        if next_same_surah_start is not None:
+            target = min(target, next_same_surah_start - 1)
+        if target <= marker_start:
+            continue
+
+        marker.time = target
+        marker.start_time = target
+        marker.end_time = max(int(marker.end_time or target), target)
+
+    return ordered
+
+
 def _is_valid_forward_transition(
     previous: Marker | None,
     entry: AyahEntry,
@@ -1002,8 +1777,7 @@ def _is_valid_forward_transition(
 
     if previous.surah == entry.surah:
         ayah_delta = entry.ayah - previous.ayah
-        elapsed = max(1, marker_time - previous.time)
-        allowed_jump = max_forward_jump_ayahs + int(elapsed // 25)
+        allowed_jump = max_forward_jump_ayahs
         if ayah_delta < 0:
             return False
         if ayah_delta > allowed_jump:
@@ -1044,26 +1818,57 @@ def _candidate_is_valid(
     return True, ("high" if is_high else "ambiguous"), round(confidence, 3)
 
 
+def _has_anchor_token_hit(
+    entry: AyahEntry,
+    normalized_text: str,
+    min_anchor_len: int = 4,
+    min_similarity: float = 85.0,
+) -> bool:
+    if not normalized_text:
+        return False
+
+    anchors: list[str] = []
+    for form in entry.match_forms:
+        anchors.extend(_anchor_tokens_for_form(form))
+
+    if not anchors:
+        return False
+
+    tokens = [token for token in normalized_text.split() if len(token) >= 2]
+    if not tokens:
+        return False
+
+    for anchor in anchors:
+        if len(anchor) < min_anchor_len:
+            continue
+        for token in tokens:
+            similarity = max(float(fuzz.ratio(anchor, token)), float(fuzz.partial_ratio(anchor, token)))
+            if similarity >= min_similarity:
+                return True
+    return False
+
+
 def match_quran_markers(
     transcript_segments: list[TranscriptSegment],
     corpus_entries: list[AyahEntry],
-    min_score: int = 76,
+    min_score: int = 78,
     min_gap_seconds: int = 8,
-    min_overlap: float = 0.0,
-    min_confidence: float = 0.6,
-    search_window: int = 220,
+    min_overlap: float = 0.18,
+    min_confidence: float = 0.62,
+    search_window: int = 25,
     recovery_after_seconds: int = 420,
     recovery_rewind_ayat: int = 40,
-    recovery_window_multiplier: float = 2.0,
-    ambiguous_min_score: int = 70,
+    recovery_window_multiplier: float = 3.0,
+    ambiguous_min_score: int = 74,
     ambiguous_min_confidence: float = 0.5,
     max_infer_gap_ayahs: int = 8,
     max_infer_gap_seconds: int = 720,
     max_leading_infer_ayahs: int = 3,
     allow_unverified_leading_infer: bool = True,
     duplicate_ayah_window_seconds: int = 120,
-    max_forward_jump_ayahs: int = 14,
+    max_forward_jump_ayahs: int = 2,
     require_weak_support_for_inferred: bool = True,
+    forced_start_index: int | None = None,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -1076,21 +1881,28 @@ def match_quran_markers(
 
     markers: list[Marker] = []
     marker_positions: dict[tuple[str, int], int] = {}
-    last_matched_index = -1
+    if forced_start_index is not None and 0 <= forced_start_index < len(corpus_entries):
+        last_matched_index = forced_start_index - 1
+    else:
+        last_matched_index = -1
     last_marker_time = -1
     stale_segments = 0
     fatiha_reset_times: list[float] = []
+    last_fatiha_reset_time: float | None = None
     awaiting_reacquire = False
 
     for segment_index, segment in enumerate(transcript_segments):
         normalized_segment = normalize_arabic(segment.text)
         if _is_fatiha_like_segment(normalized_segment):
-            # During Fatiha we should not advance Quran progression markers.
             fatiha_reset_times.append(float(segment.start))
+            last_fatiha_reset_time = float(segment.start)
             awaiting_reacquire = True
             continue
+        if awaiting_reacquire and last_fatiha_reset_time is not None:
+            if float(segment.start) - last_fatiha_reset_time >= 120.0:
+                awaiting_reacquire = False
 
-        segment_variants: list[tuple[str, float]] = [(normalized_segment, 0.0)]
+        segment_variants: list[tuple[str, float, int, float]] = [(normalized_segment, 0.0, segment_index, float(segment.end))]
         combined_text = normalized_segment
         previous_end = float(segment.end)
         for offset in range(1, 7):
@@ -1104,289 +1916,264 @@ def match_quran_markers(
             if len(next_normalized) < 2:
                 break
             combined_text = f"{combined_text} {next_normalized}".strip()
-            # Penalize longer merged windows slightly to avoid over-eager matches.
-            segment_variants.append((combined_text, float(offset) * 1.1))
+            segment_variants.append((combined_text, float(offset) * 1.1, next_idx, float(next_segment.end)))
             previous_end = float(next_segment.end)
 
-        if max(len(text) for text, _ in segment_variants) < 14:
+        if max(len(text) for text, _, _, _ in segment_variants) < 14:
             continue
 
         segment_words = list(getattr(segment, "words", None) or [])
         word_windows = list(generate_word_windows(segment_words, min_window=4, max_window=8))
 
-        is_recovery = False
-        if last_marker_time >= 0 and segment.start - last_marker_time >= recovery_after_seconds:
-            is_recovery = True
-        if stale_segments >= 12:
-            is_recovery = True
-
-        local_min_score = min_score
-        local_min_confidence = min_confidence
-        local_min_overlap = min_overlap
-        local_search_window = search_window
-
-        if is_recovery and last_matched_index >= 0:
-            local_min_score = max(68, min_score - 4)
-            local_min_confidence = max(0.55, min_confidence - 0.07)
-            local_min_overlap = max(0.0, min_overlap - 0.05)
-            local_search_window = int(search_window * recovery_window_multiplier)
-
-        if is_recovery and last_matched_index >= 0:
-            search_start = max(0, last_matched_index - recovery_rewind_ayat)
-        else:
-            search_start = max(0, last_matched_index + 1)
-
-        search_end = min(len(corpus_entries), search_start + local_search_window)
-        if search_start >= len(corpus_entries):
-            break
-
-        top_index = -1
-        top_score = -1.0
-        second_score = -1.0
-        entry_candidates: dict[int, CandidateEvidence] = {}
-
-        for index in range(search_start, search_end):
+        def evaluate_index(index: int) -> CandidateEvidence | None:
+            if index < 0 or index >= len(corpus_entries):
+                return None
             entry = corpus_entries[index]
             if is_excluded_surah(entry.surah):
-                continue
+                return None
 
-            best_candidate: CandidateEvidence | None = None
-
-            for variant_text, penalty in segment_variants:
-                variant_score, variant_overlap = _score_segment_against_entry(variant_text, entry)
-                adjusted_score = variant_score - penalty
-                if best_candidate is None or adjusted_score > best_candidate.adjusted_score:
-                    best_candidate = CandidateEvidence(
-                        adjusted_score=adjusted_score,
-                        score=variant_score,
-                        overlap=variant_overlap,
+            best: CandidateEvidence | None = None
+            for variant_text, penalty, variant_end_index, variant_end_time in segment_variants:
+                if not _has_anchor_token_hit(entry, variant_text):
+                    continue
+                score, overlap = _score_segment_against_entry(variant_text, entry)
+                adjusted = score - penalty
+                if best is None or adjusted > best.adjusted_score:
+                    best = CandidateEvidence(
+                        adjusted_score=adjusted,
+                        score=score,
+                        overlap=overlap,
                         penalty=penalty,
                         source="segment",
                         normalized_text=variant_text,
                         start_time=float(segment.start),
-                        end_time=float(segment.end),
+                        end_time=variant_end_time,
                         word_indices=[],
+                        segment_start_index=segment_index,
+                        segment_end_index=variant_end_index,
                     )
 
             for window in word_windows:
+                if not _has_anchor_token_hit(entry, window.normalized_text):
+                    continue
                 penalty = _window_penalty(len(window.word_indices))
-                variant_score, variant_overlap = _score_segment_against_entry(window.normalized_text, entry)
-                adjusted_score = variant_score - penalty
-                if best_candidate is None or adjusted_score > best_candidate.adjusted_score:
-                    best_candidate = CandidateEvidence(
-                        adjusted_score=adjusted_score,
-                        score=variant_score,
-                        overlap=variant_overlap,
+                score, overlap = _score_segment_against_entry(window.normalized_text, entry)
+                adjusted = score - penalty
+                if best is None or adjusted > best.adjusted_score:
+                    best = CandidateEvidence(
+                        adjusted_score=adjusted,
+                        score=score,
+                        overlap=overlap,
                         penalty=penalty,
                         source="window",
                         normalized_text=window.normalized_text,
                         start_time=window.start_time,
                         end_time=window.end_time,
                         word_indices=list(window.word_indices),
+                        segment_start_index=segment_index,
+                        segment_end_index=segment_index,
                     )
+            return best
 
-            if best_candidate is None:
-                continue
+        selected_index: int | None = None
+        selected_candidate: CandidateEvidence | None = None
+        selected_quality: str | None = None
+        selected_confidence = 0.0
+        selected_from_recovery = False
 
-            entry_candidates[index] = best_candidate
-            score = best_candidate.adjusted_score
-            if score > top_score:
-                second_score = top_score
-                top_score = score
-                top_index = index
-            elif score > second_score:
-                second_score = score
+        if last_matched_index < 0:
+            acquire_start = forced_start_index if forced_start_index is not None else 0
+            acquire_end = min(len(corpus_entries), acquire_start + 40)
+            candidates: dict[int, CandidateEvidence] = {}
+            top_score = -1.0
+            top_index = -1
+            second_score = -1.0
 
-        if top_index < 0 or top_score < ambiguous_min_score:
+            for index in range(acquire_start, acquire_end):
+                candidate = evaluate_index(index)
+                if candidate is None:
+                    continue
+                candidates[index] = candidate
+                if candidate.adjusted_score > top_score:
+                    second_score = top_score
+                    top_score = candidate.adjusted_score
+                    top_index = index
+                elif candidate.adjusted_score > second_score:
+                    second_score = candidate.adjusted_score
+
+            if top_index >= 0:
+                top_candidate = candidates[top_index]
+                valid, quality, confidence = _candidate_is_valid(
+                    candidate=top_candidate,
+                    rival_score=second_score,
+                    local_min_score=min_score,
+                    local_min_overlap=min_overlap,
+                    threshold=max(0.7, min_confidence),
+                    ambiguous_min_score=ambiguous_min_score,
+                    ambiguous_min_confidence=ambiguous_min_confidence,
+                )
+                if valid and quality is not None:
+                    selected_index = top_index
+                    selected_candidate = top_candidate
+                    selected_quality = quality
+                    selected_confidence = confidence
+        else:
+            expected = last_matched_index + 1
+            next_expected = expected + 1
+            normal_candidates: dict[int, CandidateEvidence] = {}
+            for index in [expected, next_expected]:
+                candidate = evaluate_index(index)
+                if candidate is not None:
+                    normal_candidates[index] = candidate
+
+            for index in [expected, next_expected]:
+                candidate = normal_candidates.get(index)
+                if candidate is None:
+                    continue
+                rival = max(
+                    (
+                        other.adjusted_score
+                        for other_index, other in normal_candidates.items()
+                        if other_index != index
+                    ),
+                    default=-1.0,
+                )
+                valid, quality, confidence = _candidate_is_valid(
+                    candidate=candidate,
+                    rival_score=rival,
+                    local_min_score=min_score,
+                    local_min_overlap=min_overlap,
+                    threshold=min_confidence,
+                    ambiguous_min_score=ambiguous_min_score,
+                    ambiguous_min_confidence=ambiguous_min_confidence,
+                )
+                if not valid or quality is None:
+                    continue
+                jump = index - last_matched_index
+                if jump < 1 or jump > max_forward_jump_ayahs:
+                    continue
+                selected_index = index
+                selected_candidate = candidate
+                selected_quality = quality
+                selected_confidence = confidence
+                selected_from_recovery = False
+                break
+
+            if selected_index is None:
+                recovery_start = max(expected + 2, 0)
+                recovery_end = min(len(corpus_entries), recovery_start + 60)
+                recovery_best_index = -1
+                recovery_best: CandidateEvidence | None = None
+                recovery_best_conf = 0.0
+                recovery_second = -1.0
+
+                for index in range(recovery_start, recovery_end):
+                    candidate = evaluate_index(index)
+                    if candidate is None:
+                        continue
+                    rival = recovery_best.adjusted_score if recovery_best is not None else -1.0
+                    valid, quality, confidence = _candidate_is_valid(
+                        candidate=candidate,
+                        rival_score=rival,
+                        local_min_score=max(min_score, 80),
+                        local_min_overlap=max(min_overlap, 0.20),
+                        threshold=max(min_confidence, 0.72),
+                        ambiguous_min_score=max(ambiguous_min_score, 78),
+                        ambiguous_min_confidence=max(ambiguous_min_confidence, 0.68),
+                    )
+                    if not valid or quality is None:
+                        continue
+                    jump = index - last_matched_index
+                    if jump <= max_forward_jump_ayahs:
+                        continue
+                    if candidate.adjusted_score < 80 or candidate.overlap < 0.20 or confidence < 0.72:
+                        continue
+                    if recovery_best is None or candidate.adjusted_score > recovery_best.adjusted_score:
+                        recovery_second = recovery_best.adjusted_score if recovery_best is not None else recovery_second
+                        recovery_best = candidate
+                        recovery_best_index = index
+                        recovery_best_conf = confidence
+                    elif candidate.adjusted_score > recovery_second:
+                        recovery_second = candidate.adjusted_score
+
+                if recovery_best is not None and recovery_best_index >= 0:
+                    selected_index = recovery_best_index
+                    selected_candidate = recovery_best
+                    selected_quality = "high"
+                    selected_confidence = max(0.72, recovery_best_conf)
+                    selected_from_recovery = True
+
+        if selected_index is None or selected_candidate is None or selected_quality is None:
             stale_segments += 1
             continue
 
-        top_candidate = entry_candidates.get(top_index)
-        if top_candidate is None:
-            stale_segments += 1
-            continue
-
-        threshold = 0.7 if last_matched_index < 0 else min_confidence
-        if is_recovery and last_matched_index >= 0:
-            threshold = local_min_confidence
-
-        top_valid, top_quality, top_confidence = _candidate_is_valid(
-            candidate=top_candidate,
-            rival_score=second_score,
-            local_min_score=local_min_score,
-            local_min_overlap=local_min_overlap,
-            threshold=threshold,
-            ambiguous_min_score=ambiguous_min_score,
-            ambiguous_min_confidence=ambiguous_min_confidence,
-        )
-        if not top_valid or top_quality is None:
-            stale_segments += 1
-            continue
         if awaiting_reacquire:
-            # After Fatiha/rakah reset, only resume progression on stronger real-audio evidence.
-            if top_quality != "high" or top_confidence < max(threshold, min_confidence + 0.08):
+            if selected_quality != "high" or selected_confidence < max(0.72, min_confidence + 0.08):
                 stale_segments += 1
                 continue
 
-        emit_indices = [top_index]
-        emit_meta: dict[int, tuple[str, float]] = {top_index: (top_quality, top_confidence)}
-        timing_cache: dict[int, tuple[int, int, list[list[int]] | None]] = {}
-
-        pair_candidates: list[tuple[int, int]] = []
-        if top_index - 1 >= search_start and top_index - 1 > last_matched_index:
-            pair_candidates.append((top_index - 1, top_index))
-        if top_index + 1 < search_end:
-            pair_candidates.append((top_index, top_index + 1))
-
-        for left_index, right_index in pair_candidates:
-            if right_index != left_index + 1:
-                continue
-            left_candidate = entry_candidates.get(left_index)
-            right_candidate = entry_candidates.get(right_index)
-            if left_candidate is None or right_candidate is None:
-                continue
-            if left_candidate.source != "window" or right_candidate.source != "window":
-                continue
-            if _word_windows_overlap_ambiguously(left_candidate, right_candidate):
-                continue
-
-            excluded = {left_index, right_index}
-            left_rival = _best_rival_score(entry_candidates, index=left_index, excluded=excluded)
-            right_rival = _best_rival_score(entry_candidates, index=right_index, excluded=excluded)
-            left_valid, left_quality, left_confidence = _candidate_is_valid(
-                candidate=left_candidate,
-                rival_score=left_rival,
-                local_min_score=local_min_score,
-                local_min_overlap=local_min_overlap,
-                threshold=threshold,
-                ambiguous_min_score=ambiguous_min_score,
-                ambiguous_min_confidence=ambiguous_min_confidence,
-            )
-            right_valid, right_quality, right_confidence = _candidate_is_valid(
-                candidate=right_candidate,
-                rival_score=right_rival,
-                local_min_score=local_min_score,
-                local_min_overlap=local_min_overlap,
-                threshold=threshold,
-                ambiguous_min_score=ambiguous_min_score,
-                ambiguous_min_confidence=ambiguous_min_confidence,
-            )
-            if not left_valid or not right_valid:
-                continue
-            if left_quality is None or right_quality is None:
-                continue
-            left_margin = left_candidate.adjusted_score - left_rival
-            right_margin = right_candidate.adjusted_score - right_rival
-            if min(left_margin, right_margin) < 1.0:
-                continue
-
-            left_entry = corpus_entries[left_index]
-            right_entry = corpus_entries[right_index]
-            left_times = _resolve_marker_times(segment, left_entry, left_candidate)
-            right_times = _resolve_marker_times(segment, right_entry, right_candidate)
-            timing_cache[left_index] = left_times
-            timing_cache[right_index] = right_times
-
-            left_start, left_end, _ = left_times
-            right_start, _, _ = right_times
-            if right_start <= left_start:
-                continue
-            if right_start <= left_end and (right_start - left_start) < 1:
-                continue
-
-            emit_indices = [left_index, right_index]
-            emit_meta = {
-                left_index: (left_quality, left_confidence),
-                right_index: (right_quality, right_confidence),
-            }
-            break
-
-        accepted_count = 0
+        entry = corpus_entries[selected_index]
         previous_marker = markers[-1] if markers else None
+        marker_start, marker_end, matched_tokens = _resolve_marker_times(
+            segment=segment,
+            entry=entry,
+            evidence=selected_candidate,
+            transcript_segments=transcript_segments,
+            segment_index=segment_index,
+        )
+        marker_end = max(marker_start, marker_end)
 
-        for emit_offset, matched_index in enumerate(emit_indices):
-            if matched_index <= last_matched_index:
-                if emit_offset == 0:
-                    accepted_count = 0
-                break
+        if not _is_valid_forward_transition(
+            previous=previous_marker,
+            entry=entry,
+            marker_time=marker_start,
+            surah_totals=surah_totals,
+            min_gap_seconds=min_gap_seconds,
+            max_forward_jump_ayahs=(80 if selected_from_recovery else max_forward_jump_ayahs),
+        ):
+            stale_segments += 1
+            continue
 
-            entry = corpus_entries[matched_index]
-            candidate_info = entry_candidates.get(matched_index)
-            if candidate_info is None:
-                if emit_offset == 0:
-                    accepted_count = 0
-                break
+        marker_candidate = Marker(
+            time=marker_start,
+            start_time=marker_start,
+            end_time=marker_end,
+            surah=entry.surah,
+            surah_number=entry.surah_number,
+            ayah=entry.ayah,
+            juz=get_juz_for_ayah(entry.surah_number, entry.ayah),
+            quality=selected_quality,
+            confidence=round(selected_confidence, 3),
+            matched_token_indices=matched_tokens,
+        )
 
-            if matched_index in timing_cache:
-                marker_start, marker_end, matched_tokens = timing_cache[matched_index]
-            else:
-                marker_start, marker_end, matched_tokens = _resolve_marker_times(segment, entry, candidate_info)
-                timing_cache[matched_index] = (marker_start, marker_end, matched_tokens)
-            marker_end = max(marker_start, marker_end)
-
-            gap_requirement = min_gap_seconds if emit_offset == 0 else max(1, min(2, min_gap_seconds))
-            if not _is_valid_forward_transition(
-                previous=previous_marker,
-                entry=entry,
-                marker_time=marker_start,
-                surah_totals=surah_totals,
-                min_gap_seconds=gap_requirement,
-                max_forward_jump_ayahs=max_forward_jump_ayahs,
-            ):
-                if emit_offset == 0:
-                    accepted_count = 0
-                break
-
-            quality, confidence = emit_meta.get(matched_index, (top_quality, top_confidence))
-            marker_candidate = Marker(
-                time=marker_start,
-                start_time=marker_start,
-                end_time=marker_end,
-                surah=entry.surah,
-                surah_number=entry.surah_number,
-                ayah=entry.ayah,
-                juz=get_juz_for_ayah(entry.surah_number, entry.ayah),
-                quality=quality,
-                confidence=round(confidence, 3),
-                matched_token_indices=matched_tokens,
-            )
-
-            key = (entry.surah, entry.ayah)
-            existing_index = marker_positions.get(key)
-            accepted_marker = marker_candidate
-
-            if existing_index is not None:
-                existing = markers[existing_index]
-                if abs(marker_candidate.time - existing.time) <= duplicate_ayah_window_seconds:
-                    if _should_replace_existing(existing, marker_candidate):
-                        markers[existing_index] = marker_candidate
-                        accepted_marker = marker_candidate
-                    else:
-                        accepted_marker = existing
-                else:
-                    markers.append(marker_candidate)
-                    marker_positions[key] = len(markers) - 1
+        key = (entry.surah, entry.ayah)
+        existing_index = marker_positions.get(key)
+        accepted_marker = marker_candidate
+        if existing_index is not None:
+            existing = markers[existing_index]
+            if abs(marker_candidate.time - existing.time) <= duplicate_ayah_window_seconds:
+                if _should_replace_existing(existing, marker_candidate):
+                    markers[existing_index] = marker_candidate
                     accepted_marker = marker_candidate
+                else:
+                    accepted_marker = existing
             else:
                 markers.append(marker_candidate)
                 marker_positions[key] = len(markers) - 1
-                accepted_marker = marker_candidate
+        else:
+            markers.append(marker_candidate)
+            marker_positions[key] = len(markers) - 1
 
-            previous_marker = accepted_marker
-            last_matched_index = max(last_matched_index, matched_index)
-            last_marker_time = max(last_marker_time, marker_start)
-            accepted_count += 1
-
-        if accepted_count == 0:
-            stale_segments += 1
-            continue
+        last_matched_index = max(last_matched_index, selected_index)
+        last_marker_time = max(last_marker_time, accepted_marker.time)
         awaiting_reacquire = False
         stale_segments = 0
 
     inferred_markers: list[Marker] = []
     keyed_markers: dict[tuple[str, int], Marker] = {(marker.surah, marker.ayah): marker for marker in markers}
     entry_lookup: dict[tuple[str, int], AyahEntry] = {(entry.surah, entry.ayah): entry for entry in corpus_entries}
-    anchors = [marker for marker in sorted(markers, key=lambda m: m.time) if marker.quality == "high"]
+    anchors = [item for item in sorted(markers, key=lambda m: m.time) if item.quality == "high"]
 
     for left, right in zip(anchors, anchors[1:]):
         if left.surah != right.surah:
@@ -1418,61 +2205,36 @@ def match_quran_markers(
             window_start = max(left.time + min_gap_seconds, expected_time - window_half)
             window_end = min(right.time - min_gap_seconds, expected_time + window_half)
 
-            marker_to_add: Marker | None = None
             entry = entry_lookup.get(key)
-            if entry is not None:
-                best = _find_best_ayah_timestamp(
+            inferred_time = int(round(left.time + (step_seconds * offset)))
+            inferred_time = _defer_inferred_time_after_fatiha(
+                inferred_time=inferred_time,
+                fatiha_reset_times=fatiha_reset_times,
+            )
+            inferred_time = max(window_start, min(window_end, inferred_time))
+            if require_weak_support_for_inferred and entry is not None:
+                window_start = max(left.time + min_gap_seconds, inferred_time - max(12, int(round(step_seconds))))
+                window_end = min(right.time - min_gap_seconds, inferred_time + max(12, int(round(step_seconds))))
+                if not _has_weak_local_support(
                     transcript_segments=transcript_segments,
                     entry=entry,
                     window_start=window_start,
                     window_end=window_end,
-                    expected_time=expected_time,
-                    min_score=min_score,
-                    min_overlap=min_overlap,
-                    min_confidence=min_confidence,
-                    ambiguous_min_score=ambiguous_min_score,
-                    ambiguous_min_confidence=ambiguous_min_confidence,
-                )
-                if best is not None:
-                    matched_time, quality, confidence = best
-                    bounded_time = max(window_start, min(window_end, matched_time))
-                    marker_to_add = Marker(
-                        time=bounded_time,
-                        start_time=bounded_time,
-                        end_time=bounded_time,
-                        surah=left.surah,
-                        surah_number=left.surah_number,
-                        ayah=ayah_number,
-                        juz=get_juz_for_ayah(left.surah_number or 1, ayah_number),
-                        quality=quality,
-                        confidence=confidence,
-                    )
-
-            if marker_to_add is None:
-                inferred_time = int(round(left.time + (step_seconds * offset)))
-                if require_weak_support_for_inferred and entry is not None:
-                    window_start = max(left.time + min_gap_seconds, inferred_time - max(12, int(round(step_seconds))))
-                    window_end = min(right.time - min_gap_seconds, inferred_time + max(12, int(round(step_seconds))))
-                    if not _has_weak_local_support(
-                        transcript_segments=transcript_segments,
-                        entry=entry,
-                        window_start=window_start,
-                        window_end=window_end,
-                        min_score=max(60, ambiguous_min_score - 8),
-                        min_overlap=max(0.07, min_overlap - 0.05),
-                    ):
-                        continue
-                marker_to_add = Marker(
-                    time=inferred_time,
-                    start_time=inferred_time,
-                    end_time=inferred_time,
-                    surah=left.surah,
-                    surah_number=left.surah_number,
-                    ayah=ayah_number,
-                    juz=get_juz_for_ayah(left.surah_number or 1, ayah_number),
-                    quality="inferred",
-                    confidence=round(min(left.confidence or 0.58, right.confidence or 0.58, 0.6), 3),
-                )
+                    min_score=max(60, ambiguous_min_score - 8),
+                    min_overlap=max(0.07, min_overlap - 0.05),
+                ):
+                    continue
+            marker_to_add = Marker(
+                time=inferred_time,
+                start_time=inferred_time,
+                end_time=inferred_time,
+                surah=left.surah,
+                surah_number=left.surah_number,
+                ayah=ayah_number,
+                juz=get_juz_for_ayah(left.surah_number or 1, ayah_number),
+                quality="inferred",
+                confidence=round(min(left.confidence or 0.58, right.confidence or 0.58, 0.6), 3),
+            )
 
             inferred_markers.append(marker_to_add)
             keyed_markers[key] = marker_to_add
@@ -1511,12 +2273,13 @@ def match_quran_markers(
                         ambiguous_min_confidence=ambiguous_min_confidence,
                     )
                     if best is not None:
-                        matched_time, quality, confidence = best
+                        matched_time, matched_end, quality, confidence = best
                         bounded_time = max(window_start, min(window_end, matched_time))
+                        bounded_end = max(bounded_time, min(window_end, matched_end))
                         marker_to_add = Marker(
                             time=bounded_time,
                             start_time=bounded_time,
-                            end_time=bounded_time,
+                            end_time=bounded_end,
                             surah=first.surah,
                             surah_number=first.surah_number,
                             ayah=ayah_number,
@@ -1529,6 +2292,11 @@ def match_quran_markers(
                     continue
 
                 if marker_to_add is None:
+                    expected_time = _defer_inferred_time_after_fatiha(
+                        inferred_time=expected_time,
+                        fatiha_reset_times=fatiha_reset_times,
+                    )
+                    expected_time = max(window_start, min(window_end, expected_time))
                     if require_weak_support_for_inferred and not _has_weak_local_support(
                         transcript_segments=transcript_segments,
                         entry=entry,
@@ -1558,10 +2326,52 @@ def match_quran_markers(
         merged,
         entry_lookup,
         transcript_segments=transcript_segments,
+        fatiha_reset_times=fatiha_reset_times,
         weak_support_score=max(60, ambiguous_min_score - 8),
         weak_support_overlap=max(0.07, min_overlap - 0.05),
         enforce_weak_support=require_weak_support_for_inferred,
     )
     merged.extend(coverage_inferred)
-
-    return _dedupe_by_local_time_window(merged, window_seconds=90)
+    merged = _dedupe_by_local_time_window(merged, window_seconds=90)
+    merged = _apply_overlap_conflict_resolution(merged)
+    merged = _refine_weak_boundary_markers(
+        merged,
+        transcript_segments=transcript_segments,
+        entry_lookup=entry_lookup,
+        fatiha_reset_times=fatiha_reset_times,
+        min_score=min_score,
+        min_overlap=min_overlap,
+        min_confidence=min_confidence,
+        ambiguous_min_score=ambiguous_min_score,
+        ambiguous_min_confidence=ambiguous_min_confidence,
+    )
+    merged = _refine_inferred_markers_with_local_search(
+        merged,
+        transcript_segments=transcript_segments,
+        entry_lookup=entry_lookup,
+        fatiha_reset_times=fatiha_reset_times,
+        min_score=min_score,
+        min_overlap=min_overlap,
+        min_confidence=min_confidence,
+        ambiguous_min_score=ambiguous_min_score,
+        ambiguous_min_confidence=ambiguous_min_confidence,
+    )
+    merged = _delay_weak_markers_after_resets(
+        merged,
+        fatiha_reset_times=fatiha_reset_times,
+        transcript_segments=transcript_segments,
+        hold_seconds=34,
+    )
+    merged = _quran_first_refine_weak_markers(
+        merged,
+        transcript_segments=transcript_segments,
+        entry_lookup=entry_lookup,
+        min_score=min_score,
+        min_overlap=min_overlap,
+        min_confidence=min_confidence,
+        ambiguous_min_score=ambiguous_min_score,
+        ambiguous_min_confidence=ambiguous_min_confidence,
+    )
+    merged = _extend_point_markers_to_next(merged, max_extension_seconds=90)
+    merged = sorted(merged, key=lambda marker: (marker.time, marker.surah_number or 0, marker.ayah))
+    return merged

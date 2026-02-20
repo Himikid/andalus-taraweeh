@@ -35,15 +35,27 @@ export default function NowReciting({ markers, currentTime }: NowRecitingProps) 
 
   const liveIndex = useMemo(() => {
     if (!timeline.length) return null;
-    let index = -1;
-    for (let i = 0; i < timeline.length; i += 1) {
-      if (timeline[i].time <= currentTime) {
-        index = i;
-      } else {
+
+    const isStrong = (marker: SurahMarker) => {
+      if (marker.quality === "high" || marker.quality === "manual") {
+        return true;
+      }
+      return (marker.confidence ?? 0) >= 0.7;
+    };
+
+    let index = 0;
+    for (let i = 1; i < timeline.length; i += 1) {
+      const candidate = timeline[i];
+      if (candidate.time > currentTime) {
         break;
       }
+      const current = timeline[index];
+      const currentEnd = current.end_time ?? current.time;
+      if (isStrong(candidate) || currentTime >= currentEnd) {
+        index = i;
+      }
     }
-    return index >= 0 ? index : 0;
+    return index;
   }, [timeline, currentTime]);
 
   const effectiveIndex = isPaused ? pausedIndex : liveIndex;

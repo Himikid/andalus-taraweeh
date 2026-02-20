@@ -4,11 +4,14 @@ import { useMemo, useState } from "react";
 
 export type SurahMarker = {
   time: number;
+  start_time?: number;
+  end_time?: number;
   surah: string;
   ayah: number;
   surah_number?: number;
   juz?: number;
   quality?: "high" | "ambiguous" | "inferred" | "manual";
+  confidence?: number;
   reciter?: string;
   arabic_text?: string;
   english_text?: string;
