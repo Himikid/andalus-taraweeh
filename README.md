@@ -1,59 +1,88 @@
 # Andalus Taraweeh
 
-Live Ramadan Taraweeh streaming and archive experience for **Andalus Centre Glasgow**.
+A live + archived Ramadan recitation platform for **Andalus Centre Glasgow**, built to make Quran recitation easier to access, follow, and understand.
 
-## Quick Navigation
-
-- [What Is Taraweeh?](#what-is-taraweeh)
-- [Why This Project Exists](#why-this-project-exists)
-- [Feature Highlights](#feature-highlights)
-- [How It Works](#how-it-works)
-- [Run Locally](#run-locally)
-- [Data + AI Pipeline](#data--ai-pipeline)
-- [Deploy](#deploy)
-- [Project Structure](#project-structure)
+---
 
 ## What Is Taraweeh?
 
-Taraweeh is a special nightly prayer in Ramadan.
-It usually includes long Quran recitation in congregation after the night prayer (`Isha`).
+**Taraweeh** is a special nightly prayer in Ramadan.
+In many mosques, long portions of the Quran are recited each night.
 
-## Why This Project Exists
+This app helps people:
 
-Many people cannot attend every night physically. This app makes it easier to:
+- watch live Taraweeh streams
+- revisit previous nights as an archive
+- track where recitation is in the Quran (`surah` and `ayah`)
+- read Arabic text with English translation while listening
 
-- watch the live stream
-- catch up on previous nights
-- follow exactly where recitation is (`surah` / `ayah`)
+## Why This Platform Matters
 
-## Feature Highlights
+This platform focuses on clarity and accessibility:
 
-| Area | What users get |
+- helps people stay connected to nightly recitation
+- gives context to what is being recited in real time
+- makes long recitations navigable and searchable
+- preserves recitation history night-by-night
+
+---
+
+## Why This App Is Special
+
+| Capability | Why it matters |
 | --- | --- |
-| Live + Archive | Published Ramadan day streams in one place |
-| Multi-part support | Day pages can include Part 1 / Part 2 uploads |
-| Quran timeline | Indexed recitation markers by `surah`, `ayah`, `juz`, and time |
-| Now Reciting | Arabic + English ayah display with current recitation context |
-| Manual control | Pause, step backward/forward, then resume live sync |
-| Home insights | Latest position, coverage stats, and cross-day surah navigation |
+| Live + archive in one flow | Users can join now or catch up later without switching tools |
+| Ayah-level timeline | Recitation is navigable like chapters in a technical media player |
+| AI-assisted indexing | Converts long-form recitation into structured timeline data |
+| Multi-part day handling | Real-world upload splits are handled cleanly |
+| Manual drift control | User can pause, step ayah-by-ayah, then re-sync instantly |
 
-## How It Works
+## AI-Enhanced Experience
 
-1. **Video layer** serves YouTube streams by Ramadan day.
-2. **Indexed JSON** (`public/data/day-*.json`) powers ayah-aware navigation.
-3. **Now Reciting UI** follows video time and can be manually stepped.
-4. **Local Python pipeline** generates and validates Quran timeline JSON.
+The app uses a local Python pipeline to generate Quran timeline JSON that powers the frontend.
+
+### AI pipeline responsibilities
+
+- process recitation audio/transcript inputs
+- align recitation against Quran ayat
+- assign marker quality (`high`, `ambiguous`, `inferred`, `manual`)
+- output structured day files consumed by the app
+
+### Runtime behavior in UI
+
+- **Now Reciting** auto-follows video time
+- Arabic and English ayah text is shown for current marker
+- users can **Pause**, step **back/forward**, and **Play** to re-sync
+
+### Accuracy note
+
+Indexing is AI-assisted and best effort. Some timestamps or matches may need manual correction.
+
+---
+
+## Product Walkthrough
+
+1. Open a Ramadan day.
+2. Play the livestream (or archive video).
+3. Watch `Now Reciting` update with current `surah/ayah`.
+4. Jump by indexed markers when needed.
+5. If drift occurs, use manual controls and resume sync.
+
+---
 
 ## Tech Stack
 
-| Layer | Tools |
+| Layer | Stack |
 | --- | --- |
 | Frontend | Next.js 14, React, TypeScript, TailwindCSS |
-| Data Runtime | Static JSON from `public/data/*` |
-| Processing | Python scripts in `scripts/ai_pipeline/*` |
+| Video | YouTube iframe player |
+| Data runtime | JSON served from `public/data/*` |
+| AI processing | Python scripts in `scripts/ai_pipeline/*` |
 | Hosting | Vercel |
 
-## Run Locally
+---
+
+## Quick Start
 
 ```bash
 npm install
@@ -62,20 +91,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-### Production Preview
+### Production preview
 
 ```bash
 npm run build
 npm run start
 ```
 
+---
+
 ## Configuration
 
-### Update YouTube IDs
+### YouTube day mapping
 
-Edit `data/taraweehVideos.ts`.
+Edit: `data/taraweehVideos.ts`
 
-For split uploads:
+Example for split uploads:
 
 ```ts
 2: [
@@ -86,48 +117,52 @@ For split uploads:
 
 ### Manual URL override
 
-Use `?video=VIDEO_ID`
+Use: `?video=VIDEO_ID`
 
 Example:
 `http://localhost:3000/day/1?video=dQw4w9WgXcQ`
 
+---
+
 ## Data + AI Pipeline
 
-### Day JSON location
+### Day JSON files
 
 - `public/data/day-{N}.json`
-- Multi-part example: `public/data/day-2-part-1.json`, `public/data/day-2-part-2.json`
+- split example: `public/data/day-2-part-1.json`, `public/data/day-2-part-2.json`
 
-### Day JSON usage
-
-The day page uses indexed data for:
+### Day JSON powers
 
 - ayah/surah timestamp navigation
 - reciter switch points
 - prayer/rakah jump points
 - now-reciting context
 
-### AI processing layer (local)
+### Processing commands
 
-- Docs: `scripts/README.md`
-- Main command: `python scripts/process_day.py ...`
-- Quran corpus fetch: `python scripts/fetch_quran_corpus.py`
+- docs: `scripts/README.md`
+- main: `python scripts/process_day.py ...`
+- Quran corpus: `python scripts/fetch_quran_corpus.py`
 
-This Python processing is local and separate from Vercel runtime.
+The Python layer is local processing; it is not executed in Vercel runtime.
 
-## Deploy
+---
+
+## Deploy (Vercel)
 
 1. Push this repo to GitHub.
-2. Import the repo in Vercel.
+2. Import project in Vercel.
 3. Keep default Next.js settings.
 4. Deploy.
+
+---
 
 ## Project Structure
 
 - `app/` routes, layout, global styles
-- `components/day/` day page video + recitation UI
-- `components/home/` homepage panels and insights
-- `components/shared/` reusable shared UI
-- `data/` day metadata and static config
-- `public/data/` generated indexed Quran timeline JSON
+- `components/day/` day player + recitation UI
+- `components/home/` homepage insights
+- `components/shared/` shared UI blocks
+- `data/` static config and day metadata
+- `public/data/` generated Quran timeline JSON
 - `scripts/` local AI/data processing pipeline
