@@ -7,8 +7,7 @@ export default function RecitersInfo({ compact = false }: RecitersInfoProps) {
     <section className="w-full">
       <p className="label-caps">Reciters</p>
       <p className="mt-2 text-sm leading-6 text-muted">
-        Highly trained reciters with advanced command of multiple riwayat and transmission paths. Each night carries a distinct
-        recitation character.
+        Experienced reciters with different riwayat and transmission styles. Each night is unique.
       </p>
 
       <div className={`mt-5 flex flex-col gap-7 ${compact ? "" : "sm:flex-row sm:items-start sm:gap-12"}`}>
