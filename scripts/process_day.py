@@ -51,12 +51,12 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="When processing day 1, build Hasan/Samir profiles from first 5 / second 5 prayers.",
     )
-    parser.add_argument("--match-min-score", type=int, default=84, help="Minimum fuzzy score for ayah match")
-    parser.add_argument("--match-min-overlap", type=float, default=0.15, help="Minimum token overlap for ayah match")
+    parser.add_argument("--match-min-score", type=int, default=78, help="Minimum fuzzy score for ayah match")
+    parser.add_argument("--match-min-overlap", type=float, default=0.18, help="Minimum token overlap for ayah match")
     parser.add_argument(
         "--match-min-confidence",
         type=float,
-        default=0.68,
+        default=0.62,
         help="Minimum confidence gate for accepted ayah markers",
     )
     parser.add_argument(
@@ -79,6 +79,16 @@ def parse_args() -> argparse.Namespace:
         "--aggressive-infer-fill",
         action="store_true",
         help="Fill missing ayahs between detected anchors more aggressively (less strict local-support gating).",
+    )
+    parser.add_argument(
+        "--start-surah-number",
+        type=int,
+        help="Optional forced start surah number for constrained matching (e.g. 2 for Al-Baqara).",
+    )
+    parser.add_argument(
+        "--start-ayah",
+        type=int,
+        help="Optional forced start ayah for constrained matching.",
     )
     parser.add_argument(
         "--day-overrides",
@@ -127,6 +137,8 @@ def main() -> None:
         match_min_confidence=args.match_min_confidence,
         match_min_gap_seconds=args.match_min_gap_seconds,
         match_require_weak_support_for_inferred=not args.aggressive_infer_fill,
+        match_start_surah_number=args.start_surah_number,
+        match_start_ayah=args.start_ayah,
         reuse_transcript_cache=not args.no_reuse_transcript_cache,
         max_audio_seconds=args.max_audio_seconds,
         asad_path=args.quran_asad,

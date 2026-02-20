@@ -200,11 +200,13 @@ def process_day(
     audio_file: Path | None,
     whisper_model: str,
     bootstrap_reciters: bool,
-    match_min_score: int = 84,
-    match_min_overlap: float = 0.15,
-    match_min_confidence: float = 0.68,
+    match_min_score: int = 78,
+    match_min_overlap: float = 0.18,
+    match_min_confidence: float = 0.62,
     match_min_gap_seconds: int = 8,
     match_require_weak_support_for_inferred: bool = True,
+    match_start_surah_number: int | None = None,
+    match_start_ayah: int | None = None,
     reuse_transcript_cache: bool = True,
     max_audio_seconds: int | None = None,
     asad_path: Path | None = None,
@@ -284,6 +286,12 @@ def process_day(
     )
 
     corpus_entries = load_corpus(corpus_path)
+    forced_start_index: int | None = None
+    if match_start_surah_number is not None and match_start_ayah is not None:
+        for index, entry in enumerate(corpus_entries):
+            if entry.surah_number == match_start_surah_number and entry.ayah == match_start_ayah:
+                forced_start_index = index
+                break
     markers = match_quran_markers(
         transcript_segments,
         corpus_entries,
@@ -292,6 +300,7 @@ def process_day(
         min_overlap=match_min_overlap,
         min_confidence=match_min_confidence,
         require_weak_support_for_inferred=match_require_weak_support_for_inferred,
+        forced_start_index=forced_start_index,
     )
     markers, override_info = _apply_day_final_ayah_override(
         day=day,
@@ -329,6 +338,8 @@ def process_day(
                 "min_gap_seconds": match_min_gap_seconds,
                 "strict_normalization": STRICT_NORMALIZATION,
                 "require_weak_support_for_inferred": match_require_weak_support_for_inferred,
+                "start_surah_number": match_start_surah_number,
+                "start_ayah": match_start_ayah,
             },
             "manual_override": override_info,
         },
