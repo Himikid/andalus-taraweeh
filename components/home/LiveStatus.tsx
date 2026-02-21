@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const LIVESTREAM_START_HOUR = 20;
+const LIVESTREAM_START_HOUR = 19;
+const LIVESTREAM_START_MINUTE = 45;
 const LIVESTREAM_END_HOUR = 21;
 const LIVESTREAM_END_MINUTE = 30;
 const GLASGOW_TIMEZONE = "Europe/London";
@@ -36,7 +37,7 @@ export default function LiveStatus({ forceLive = false }: LiveStatusProps) {
   const londonNow = getLondonNow();
 
   const liveStart = new Date(londonNow);
-  liveStart.setHours(LIVESTREAM_START_HOUR, 0, 0, 0);
+  liveStart.setHours(LIVESTREAM_START_HOUR, LIVESTREAM_START_MINUTE, 0, 0);
 
   const liveEnd = new Date(londonNow);
   liveEnd.setHours(LIVESTREAM_END_HOUR, LIVESTREAM_END_MINUTE, 0, 0);
@@ -53,18 +54,16 @@ export default function LiveStatus({ forceLive = false }: LiveStatusProps) {
 
   return (
     <div className="space-y-4 text-center">
-      <p className="label-caps">Isha Salat 7:45pm</p>
+      <p className="label-caps">Livestream Starts At Isha (7:45pm)</p>
 
       {isLive ? (
         <>
           <p className="font-[var(--font-heading)] text-4xl leading-none text-ivory sm:text-5xl">Live Now</p>
-          <p className="text-sm text-muted">Now streaming from Andalus Centre Glasgow.</p>
+          <p className="text-sm text-muted">Isha is live now. Taraweeh follows after Isha in the same stream.</p>
         </>
       ) : (
         <>
-          <p className="font-[var(--font-heading)] text-5xl leading-none text-ivory sm:text-6xl">8:00pm</p>
-          <p className="label-caps !tracking-[0.18em]">Taraweeh Livestream Starts</p>
-          <p className="text-sm text-muted">Beginning after Isha prayer.</p>
+          <p className="font-[var(--font-heading)] text-5xl leading-none text-ivory sm:text-6xl">7:45pm</p>
           <p className="font-mono text-base text-muted">{countdown}</p>
         </>
       )}

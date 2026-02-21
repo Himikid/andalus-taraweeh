@@ -5,7 +5,15 @@
       "final_ayah": 124
     },
     "3": {
-      "final_time": 6211
+      "final_time": 6211,
+      "marker_overrides": [
+        {
+          "surah_number": 3,
+          "ayah": 1,
+          "start_time": 3458,
+          "end_time": 3464
+        }
+      ]
     }
   }
 }

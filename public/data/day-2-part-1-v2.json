@@ -1,0 +1,36 @@
+{
+  "day": 2,
+  "source": "data/audio/day-2/source.wav",
+  "markers": [],
+  "meta": {
+    "generated_at": "2026-02-21T07:45:13.552329+00:00",
+    "audio_path": "data/audio/day-2/normalized.wav",
+    "part": null,
+    "whisper_model": "small",
+    "markers_detected": 0,
+    "transcript_segments_raw": 215,
+    "transcript_segments_for_matching": 117,
+    "transcript_reset_markers": 11,
+    "reciter_segments_detected": 11,
+    "corpus_loaded": true,
+    "asad_loaded": true,
+    "transcript_path": "data/ai/cache/day-2-transcript-full.json",
+    "segment_detection": {
+      "audio_starts": 6,
+      "fatiha_starts": 11,
+      "merged_starts": 11
+    },
+    "match_config": {
+      "min_score": 78,
+      "min_overlap": 0.18,
+      "min_confidence": 0.62,
+      "min_gap_seconds": 8,
+      "strict_normalization": false,
+      "require_weak_support_for_inferred": false,
+      "start_surah_number": 2,
+      "start_ayah": 125
+    },
+    "manual_override": null,
+    "marker_time_overrides": []
+  }
+}

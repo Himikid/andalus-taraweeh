@@ -1,0 +1,101 @@
+{
+  "day": 2,
+  "source": "data/audio/day-2/source.wav",
+  "markers": [
+    {
+      "time": 97,
+      "surah": "Al-Baqara",
+      "ayah": 26,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.826,
+      "arabic_text": "۞ إِنَّ ٱللَّهَ لَا يَسْتَحْىِۦٓ أَن يَضْرِبَ مَثَلًۭا مَّا بَعُوضَةًۭ فَمَا فَوْقَهَا ۚ فَأَمَّا ٱلَّذِينَ ءَامَنُوا۟ فَيَعْلَمُونَ أَنَّهُ ٱلْحَقُّ مِن رَّبِّهِمْ ۖ وَأَمَّا ٱلَّذِينَ كَفَرُوا۟ فَيَقُولُونَ مَاذَآ أَرَادَ ٱللَّهُ بِهَٰذَا مَثَلًۭا ۘ يُضِلُّ بِهِۦ كَثِيرًۭا وَيَهْدِى بِهِۦ كَثِيرًۭا ۚ وَمَا يُضِلُّ بِهِۦٓ إِلَّا ٱلْفَٰسِقِينَ",
+      "english_text": "Behold, God does not disdain to propound a parable of a gnat, or of something [even] less than that. Now, as for those who have attained to faith, they know that it is the truth from their Sustainer - whereas those who are bent on denying the truth say, \"What could God mean by this parable?\" In this way does He cause many a one to go astray, just as He guides many a one aright: but none does He cause thereby to go astray save the iniquitous,",
+      "start_time": 97,
+      "end_time": 113,
+      "matched_token_indices": [
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          3,
+          36
+        ]
+      ]
+    },
+    {
+      "time": 748,
+      "surah": "Al-Baqara",
+      "ayah": 27,
+      "surah_number": 2,
+      "juz": 1,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.7,
+      "arabic_text": "ٱلَّذِينَ يَنقُضُونَ عَهْدَ ٱللَّهِ مِنۢ بَعْدِ مِيثَٰقِهِۦ وَيَقْطَعُونَ مَآ أَمَرَ ٱللَّهُ بِهِۦٓ أَن يُوصَلَ وَيُفْسِدُونَ فِى ٱلْأَرْضِ ۚ أُو۟لَٰٓئِكَ هُمُ ٱلْخَٰسِرُونَ",
+      "english_text": "who break their bond with God after it has been established [in their nature], and cut asunder what God has bidden to be joined, and spread corruption on earth: these it is that shall be the losers.",
+      "start_time": 748,
+      "end_time": 750,
+      "matched_token_indices": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          18
+        ]
+      ]
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-02-21T07:50:27.104033+00:00",
+    "audio_path": "data/audio/day-2/normalized.wav",
+    "part": null,
+    "whisper_model": "small",
+    "markers_detected": 2,
+    "transcript_segments_raw": 215,
+    "transcript_segments_for_matching": 117,
+    "transcript_reset_markers": 11,
+    "reciter_segments_detected": 11,
+    "corpus_loaded": true,
+    "asad_loaded": true,
+    "transcript_path": "data/ai/cache/day-2-transcript-full.json",
+    "segment_detection": {
+      "audio_starts": 6,
+      "fatiha_starts": 11,
+      "merged_starts": 11
+    },
+    "match_config": {
+      "min_score": 78,
+      "min_overlap": 0.18,
+      "min_confidence": 0.62,
+      "min_gap_seconds": 8,
+      "strict_normalization": false,
+      "require_weak_support_for_inferred": false,
+      "start_surah_number": null,
+      "start_ayah": null
+    },
+    "manual_override": null,
+    "marker_time_overrides": []
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "run_id": "smoke-20260221-4",
+  "created_at": "2026-02-21T03:09:28+00:00",
+  "updated_at": "2026-02-21T03:12:44+00:00",
+  "repo_root": "/Users/himi/Documents/firebase/andalus-taraweeh",
+  "spec_file": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/spec.lock.json",
+  "spec_version": "matcher-agent-spec-v1",
+  "base_ref": "64a50a7b2d351cb8f7da90651aa73b7e7ce138fd",
+  "next_strategy_index": 1,
+  "stage_best_scores": {
+    "quick": 63.3069,
+    "medium": 36.9047,
+    "full": 20.7144
+  },
+  "results": [
+    {
+      "trial": 1,
+      "strategy_index": 0,
+      "strategy_id": "baseline",
+      "description": "Current matcher defaults.",
+      "branch": "codex/agent-smoke-20260221-4-t001-baseline",
+      "commit": "d3b2a4aa0951f3864edbf43b0c55862a2c434928",
+      "trial_dir": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/trials/trial-001-baseline",
+      "worktree": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline",
+      "applied_patch_sets": [],
+      "stage_scores": {
+        "quick": 63.3069,
+        "medium": 36.9047,
+        "full": 20.7144
+      },
+      "terminal_stage": "full",
+      "terminal_score": 20.7144,
+      "stopped_early": false,
+      "completed_at": "2026-02-21T03:12:44+00:00"
+    }
+  ],
+  "best": {
+    "trial": 1,
+    "strategy_index": 0,
+    "strategy_id": "baseline",
+    "description": "Current matcher defaults.",
+    "branch": "codex/agent-smoke-20260221-4-t001-baseline",
+    "commit": "d3b2a4aa0951f3864edbf43b0c55862a2c434928",
+    "trial_dir": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/trials/trial-001-baseline",
+    "worktree": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline",
+    "applied_patch_sets": [],
+    "stage_scores": {
+      "quick": 63.3069,
+      "medium": 36.9047,
+      "full": 20.7144
+    },
+    "terminal_stage": "full",
+    "terminal_score": 20.7144,
+    "stopped_early": false,
+    "completed_at": "2026-02-21T03:12:44+00:00"
+  }
+}

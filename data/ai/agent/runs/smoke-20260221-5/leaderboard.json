@@ -1,0 +1,25 @@
+{
+  "updated_at": "2026-02-21T03:17:52+00:00",
+  "trials": [
+    {
+      "trial": 1,
+      "strategy_index": 0,
+      "strategy_id": "baseline",
+      "description": "Current matcher defaults.",
+      "branch": "codex/agent-smoke-20260221-5-t001-baseline",
+      "commit": "64a50a7b2d351cb8f7da90651aa73b7e7ce138fd",
+      "trial_dir": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/trials/trial-001-baseline",
+      "worktree": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/worktrees/trial-001-baseline",
+      "applied_patch_sets": [],
+      "stage_scores": {
+        "quick": 63.3069,
+        "medium": 37.5532,
+        "full": 21.2333
+      },
+      "terminal_stage": "full",
+      "terminal_score": 21.2333,
+      "stopped_early": false,
+      "completed_at": "2026-02-21T03:17:51+00:00"
+    }
+  ]
+}

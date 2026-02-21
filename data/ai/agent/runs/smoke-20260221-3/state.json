@@ -1,0 +1,13 @@
+{
+  "run_id": "smoke-20260221-3",
+  "created_at": "2026-02-21T03:08:55+00:00",
+  "updated_at": "2026-02-21T03:08:55+00:00",
+  "repo_root": "/Users/himi/Documents/firebase/andalus-taraweeh",
+  "spec_file": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-3/spec.lock.json",
+  "spec_version": "matcher-agent-spec-v1",
+  "base_ref": "64a50a7b2d351cb8f7da90651aa73b7e7ce138fd",
+  "next_strategy_index": 0,
+  "stage_best_scores": {},
+  "results": [],
+  "best": null
+}

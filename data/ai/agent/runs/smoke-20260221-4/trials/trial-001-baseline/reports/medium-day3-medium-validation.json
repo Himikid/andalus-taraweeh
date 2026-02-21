@@ -1,0 +1,171 @@
+{
+  "day": 3,
+  "source_json": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/trials/trial-001-baseline/outputs/medium-day3-medium.json",
+  "transcript_cache": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline/data/ai/cache/day-3-transcript-win-1130-7341-422542de0160.json",
+  "summary": {
+    "markers": 13,
+    "pass_rate": 0.154,
+    "mean_score": 64.76,
+    "chronology_backtracks": 0,
+    "duplicates": 0,
+    "confidence_spread": 0.297
+  },
+  "markers": [
+    {
+      "time": 1174,
+      "surah": "Al-Baqara",
+      "ayah": 253,
+      "score": 85.5,
+      "overlap": 0.1,
+      "pass": true,
+      "confidence": 0.732,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 252,
+      "matched_delta": -1
+    },
+    {
+      "time": 1231,
+      "surah": "Al-Baqara",
+      "ayah": 254,
+      "score": 75.0,
+      "overlap": 0.0,
+      "pass": false,
+      "confidence": 0.794,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 254,
+      "matched_delta": 0
+    },
+    {
+      "time": 1273,
+      "surah": "Al-Baqara",
+      "ayah": 255,
+      "score": 57.0,
+      "overlap": 0.024,
+      "pass": false,
+      "confidence": 0.711,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 255,
+      "matched_delta": 0
+    },
+    {
+      "time": 1304,
+      "surah": "Al-Baqara",
+      "ayah": 256,
+      "score": 57.0,
+      "overlap": 0.024,
+      "pass": false,
+      "confidence": 0.76,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 255,
+      "matched_delta": -1
+    },
+    {
+      "time": 1339,
+      "surah": "Al-Baqara",
+      "ayah": 257,
+      "score": 49.09,
+      "overlap": 0.0,
+      "pass": false,
+      "confidence": 0.71,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 257,
+      "matched_delta": 0
+    },
+    {
+      "time": 1634,
+      "surah": "Al-Baqara",
+      "ayah": 261,
+      "score": 57.0,
+      "overlap": 0.048,
+      "pass": false,
+      "confidence": 0.772,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 261,
+      "matched_delta": 0
+    },
+    {
+      "time": 1666,
+      "surah": "Al-Baqara",
+      "ayah": 262,
+      "score": 53.33,
+      "overlap": 0.0,
+      "pass": false,
+      "confidence": 0.756,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 262,
+      "matched_delta": 0
+    },
+    {
+      "time": 1683,
+      "surah": "Al-Baqara",
+      "ayah": 274,
+      "score": 57.0,
+      "overlap": 0.024,
+      "pass": false,
+      "confidence": 0.56,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 275,
+      "matched_delta": 1
+    },
+    {
+      "time": 1687,
+      "surah": "Al-Baqara",
+      "ayah": 277,
+      "score": 85.5,
+      "overlap": 0.077,
+      "pass": false,
+      "confidence": 0.742,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 278,
+      "matched_delta": 1
+    },
+    {
+      "time": 2695,
+      "surah": "Al-Baqara",
+      "ayah": 279,
+      "score": 60.0,
+      "overlap": 0.062,
+      "pass": false,
+      "confidence": 0.672,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 279,
+      "matched_delta": 0
+    },
+    {
+      "time": 2711,
+      "surah": "Al-Baqara",
+      "ayah": 280,
+      "score": 60.0,
+      "overlap": 0.143,
+      "pass": false,
+      "confidence": 0.857,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 280,
+      "matched_delta": 0
+    },
+    {
+      "time": 2726,
+      "surah": "Al-Baqara",
+      "ayah": 281,
+      "score": 60.0,
+      "overlap": 0.071,
+      "pass": false,
+      "confidence": 0.724,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 280,
+      "matched_delta": -1
+    },
+    {
+      "time": 2738,
+      "surah": "Al-Baqara",
+      "ayah": 283,
+      "score": 85.5,
+      "overlap": 0.125,
+      "pass": true,
+      "confidence": 0.666,
+      "matched_surah": "Al-Baqara",
+      "matched_ayah": 281,
+      "matched_delta": -2
+    }
+  ]
+}
