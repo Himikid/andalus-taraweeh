@@ -8,7 +8,7 @@ export type TaraweehDayPart = {
 type TaraweehDayConfig = string | TaraweehDayPart[];
 
 export const taraweehVideos: Record<number, TaraweehDayConfig> = {
-  1: "WJGS2B673Zg",
+  1: [{ id: "1", label: "Main", videoId: "WJGS2B673Zg", dataFile: "day-1-v2.json" }],
   2: [
     { id: "1", label: "Part 1", videoId: "NiX9yY-MQZA" },
     { id: "2", label: "Part 2", videoId: "SmzUUfP6fEc" },
@@ -106,7 +106,11 @@ export function getDataFilePathForDay(day: number, partId?: string | null) {
     return `/data/day-${day}.json`;
   }
 
-  if (!partId || parts.length === 1) {
+  if (!partId) {
+    const first = parts[0];
+    if (first?.dataFile?.trim()) {
+      return first.dataFile.startsWith("/") ? first.dataFile : `/data/${first.dataFile}`;
+    }
     return `/data/day-${day}.json`;
   }
 

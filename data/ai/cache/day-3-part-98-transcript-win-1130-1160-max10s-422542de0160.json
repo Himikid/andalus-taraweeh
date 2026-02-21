@@ -1,0 +1,37 @@
+{
+  "cache_version": 2,
+  "day": 3,
+  "source": "data/audio/day-3/source.wav",
+  "source_key": "422542de0160",
+  "audio_path": "data/audio/day-3-part-98/day-3/trimmed-win-1130-1160-max10s.wav",
+  "time_offset_seconds": 1130,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.95,
+      "text": "الحمد لله رب العالمين",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 2.38,
+          "text": "الحمد"
+        },
+        {
+          "start": 5.93,
+          "end": 6.51,
+          "text": "لله"
+        },
+        {
+          "start": 6.51,
+          "end": 6.99,
+          "text": "رب"
+        },
+        {
+          "start": 6.99,
+          "end": 8.95,
+          "text": "العالمين"
+        }
+      ]
+    }
+  ]
+}

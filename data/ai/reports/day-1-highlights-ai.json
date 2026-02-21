@@ -1,0 +1,59 @@
+{
+  "day": 1,
+  "day_summary": {
+    "title": "Day 1 Recitation Summary (Al-Baqarah 1-124)",
+    "summary": "Day 1 begins with the Quran as guidance for people of taqwa, then contrasts belief, denial, and hypocrisy. It moves through Bani Isra'il as a warning against repeated covenant-breaking and heart hardening, and closes with Ibrahim's tests as a model for leadership through obedience and sincerity.",
+    "themes": [
+      "Faith is proven by worship, spending, and certainty in the unseen.",
+      "Ignoring clear guidance repeatedly hardens the heart.",
+      "Leadership and covenant in deen are tied to obedience and justice, not lineage alone."
+    ]
+  },
+  "highlights": [
+    {
+      "ayahRef": "2:2-5",
+      "themeType": "Faith Foundations",
+      "shortTitle": "Traits of the Muttaqun",
+      "whyNotable": [
+        "Defines practical markers of taqwa early in Al-Baqarah.",
+        "Frequently cited in teaching the lived form of iman."
+      ],
+      "summary": "These ayat introduce the Quran as guidance and describe believers through action: belief in the unseen, establishment of prayer, spending from provision, and certainty in revelation and the Hereafter.",
+      "keyTakeaway": "Iman is measured by consistent worship and response to guidance.",
+      "references": [
+        { "name": "Quran 2:2-5", "url": "https://quran.com/2:2-5" },
+        { "name": "Ibn Kathir Tafsir (2:2)", "url": "https://quran.com/en/2:2/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    },
+    {
+      "ayahRef": "2:30-39",
+      "themeType": "Repentance & Return",
+      "shortTitle": "Adam: Slip and Return",
+      "whyNotable": [
+        "Foundational passage for human trial and repentance.",
+        "Shows accountability and mercy together."
+      ],
+      "summary": "Allah honored Adam with knowledge, then tested him. After the slip, repentance was accepted, establishing hope for those who return sincerely.",
+      "keyTakeaway": "A believer rises by returning to Allah after mistakes.",
+      "references": [
+        { "name": "Quran 2:30-39", "url": "https://quran.com/2:30-39" },
+        { "name": "Ibn Kathir Tafsir (2:30)", "url": "https://quran.com/en/2:30/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    },
+    {
+      "ayahRef": "2:124",
+      "themeType": "Leadership in Deen",
+      "shortTitle": "Ibrahim and Covenant",
+      "whyNotable": [
+        "Major ayah on prophetic leadership through successful trial.",
+        "Clarifies covenant is not guaranteed to wrongdoers."
+      ],
+      "summary": "After Ibrahim fulfilled divine tests, Allah granted him leadership. The ayah teaches that rank with Allah is tied to righteousness.",
+      "keyTakeaway": "Spiritual leadership is earned by obedience and justice.",
+      "references": [
+        { "name": "Quran 2:124", "url": "https://quran.com/2:124" },
+        { "name": "Ibn Kathir Tafsir (2:124)", "url": "https://quran.com/en/2:124/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    }
+  ]
+}

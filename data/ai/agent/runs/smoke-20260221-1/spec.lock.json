@@ -1,0 +1,307 @@
+{
+  "spec_version": "matcher-agent-spec-v1",
+  "description": "Fixed scorer and strategy loop for autonomous ayah matcher improvement. Keep constant during a run.",
+  "paths": {
+    "quran_corpus": "data/quran/quran_arabic.json",
+    "quran_asad": "data/quran/quran_asad_en.json",
+    "reciter_profiles": "data/ai/reciter_profiles.json",
+    "day_overrides": "data/ai/day_overrides.json"
+  },
+  "base_match_config": {
+    "min_score": 78,
+    "min_overlap": 0.18,
+    "min_confidence": 0.62,
+    "min_gap_seconds": 8,
+    "require_weak_support_for_inferred": true
+  },
+  "scoring": {
+    "weights": {
+      "pass_rate": 55.0,
+      "mean_score": 22.0,
+      "quality_high_ratio": 8.0,
+      "marker_density_ratio": 10.0,
+      "confidence_spread_ratio": 5.0
+    },
+    "ratios": {
+      "confidence_spread_target": 0.35,
+      "seconds_per_marker_target": 20.0
+    },
+    "penalties": {
+      "chronology_backtracks": 2.5,
+      "duplicates": 1.5,
+      "schema_errors": 4.0,
+      "contract_errors": 4.0,
+      "suspicious_missing_ayahs": 0.6,
+      "suspicious_resets": 3.0,
+      "low_marker_floor": 20.0
+    },
+    "gates": {
+      "min_markers": 8,
+      "reset_gap_seconds": 180,
+      "fast_gap_seconds_per_ayah": 9.0
+    }
+  },
+  "stages": [
+    {
+      "name": "quick",
+      "promote_within_best": 2.0,
+      "datasets": [
+        {
+          "name": "day1-quick",
+          "day": 1,
+          "audio_file": "data/audio/day-1/source.wav",
+          "transcript_cache": "data/ai/cache/day-1-transcript-900s.json",
+          "transcript_fallbacks": ["data/ai/cache/day-1-transcript-full.json"],
+          "max_audio_seconds": 900,
+          "min_markers": 25
+        },
+        {
+          "name": "day2-quick",
+          "day": 2,
+          "audio_file": "data/audio/day-2/source.wav",
+          "transcript_cache": "data/ai/cache/day-2-transcript-full.json",
+          "max_audio_seconds": 900,
+          "min_markers": 18
+        },
+        {
+          "name": "day3-quick",
+          "day": 3,
+          "audio_file": "data/audio/day-3/source.wav",
+          "transcript_cache": "data/ai/cache/day-3-transcript-win-1130-7341-422542de0160.json",
+          "transcript_fallbacks": ["data/ai/cache/day-3-transcript-full.json"],
+          "window_start_seconds": 1130,
+          "window_end_seconds": 7341,
+          "max_audio_seconds": 900,
+          "min_markers": 18
+        }
+      ]
+    },
+    {
+      "name": "medium",
+      "promote_within_best": 1.0,
+      "datasets": [
+        {
+          "name": "day1-medium",
+          "day": 1,
+          "audio_file": "data/audio/day-1/source.wav",
+          "transcript_cache": "data/ai/cache/day-1-transcript-full.json",
+          "max_audio_seconds": 1800,
+          "min_markers": 45
+        },
+        {
+          "name": "day2-medium",
+          "day": 2,
+          "audio_file": "data/audio/day-2/source.wav",
+          "transcript_cache": "data/ai/cache/day-2-transcript-full.json",
+          "max_audio_seconds": 1800,
+          "min_markers": 34
+        },
+        {
+          "name": "day3-medium",
+          "day": 3,
+          "audio_file": "data/audio/day-3/source.wav",
+          "transcript_cache": "data/ai/cache/day-3-transcript-win-1130-7341-422542de0160.json",
+          "transcript_fallbacks": ["data/ai/cache/day-3-transcript-full.json"],
+          "window_start_seconds": 1130,
+          "window_end_seconds": 7341,
+          "max_audio_seconds": 1800,
+          "min_markers": 34
+        }
+      ]
+    },
+    {
+      "name": "full",
+      "datasets": [
+        {
+          "name": "day1-full",
+          "day": 1,
+          "audio_file": "data/audio/day-1/source.wav",
+          "transcript_cache": "data/ai/cache/day-1-transcript-full.json",
+          "min_markers": 90
+        },
+        {
+          "name": "day2-full",
+          "day": 2,
+          "audio_file": "data/audio/day-2/source.wav",
+          "transcript_cache": "data/ai/cache/day-2-transcript-full.json",
+          "min_markers": 75
+        },
+        {
+          "name": "day3-full",
+          "day": 3,
+          "audio_file": "data/audio/day-3/source.wav",
+          "transcript_cache": "data/ai/cache/day-3-transcript-win-1130-7341-422542de0160.json",
+          "transcript_fallbacks": ["data/ai/cache/day-3-transcript-full.json"],
+          "window_start_seconds": 1130,
+          "window_end_seconds": 7341,
+          "min_markers": 180
+        }
+      ]
+    }
+  ],
+  "patch_sets": {
+    "reset_hold_short": {
+      "description": "Reduce post-Fatiha hold so recovered markers can settle earlier.",
+      "operations": [
+        {
+          "path": "scripts/ai_pipeline/quran.py",
+          "regex": "hold_seconds: int = 26",
+          "replace": "hold_seconds: int = 20",
+          "count": 1
+        },
+        {
+          "path": "scripts/ai_pipeline/quran.py",
+          "regex": "hold_seconds=34",
+          "replace": "hold_seconds=26",
+          "count": 1
+        }
+      ]
+    },
+    "window_penalty_soft": {
+      "description": "Reduce short-window penalty to allow stronger early matches.",
+      "operations": [
+        {
+          "path": "scripts/ai_pipeline/quran.py",
+          "regex": "return max\\(0\\.0, float\\(8 - window_size\\) \\* 0\\.35\\)",
+          "replace": "return max(0.0, float(8 - window_size) * 0.24)",
+          "count": 1
+        }
+      ]
+    },
+    "anchor_relax": {
+      "description": "Relax anchor token minimum length for noisy transcript chunks.",
+      "operations": [
+        {
+          "path": "scripts/ai_pipeline/quran.py",
+          "regex": "min_anchor_len: int = 4",
+          "replace": "min_anchor_len: int = 3",
+          "count": 1
+        }
+      ]
+    }
+  },
+  "strategies": [
+    {
+      "id": "baseline",
+      "description": "Current matcher defaults.",
+      "match_overrides": {}
+    },
+    {
+      "id": "relaxed-overlap",
+      "description": "Lower overlap and confidence slightly to recover missed ayahs.",
+      "match_overrides": {
+        "min_overlap": 0.14,
+        "min_confidence": 0.58,
+        "ambiguous_min_confidence": 0.46
+      }
+    },
+    {
+      "id": "tighter-confidence",
+      "description": "Raise acceptance confidence to reduce weak/duplicate markers.",
+      "match_overrides": {
+        "min_confidence": 0.68,
+        "ambiguous_min_score": 76,
+        "ambiguous_min_confidence": 0.56
+      }
+    },
+    {
+      "id": "wider-search",
+      "description": "Use wider local search and more tolerant recovery window.",
+      "match_overrides": {
+        "search_window": 36,
+        "recovery_after_seconds": 300,
+        "recovery_window_multiplier": 3.8
+      }
+    },
+    {
+      "id": "aggressive-infer-fill",
+      "description": "Fill more ayah gaps when anchors are detected.",
+      "match_overrides": {
+        "require_weak_support_for_inferred": false,
+        "max_infer_gap_ayahs": 12,
+        "max_infer_gap_seconds": 900,
+        "allow_unverified_leading_infer": true
+      }
+    },
+    {
+      "id": "conservative-infer-fill",
+      "description": "Reduce inferred spans and require stronger local support.",
+      "match_overrides": {
+        "require_weak_support_for_inferred": true,
+        "max_infer_gap_ayahs": 6,
+        "allow_unverified_leading_infer": false,
+        "max_forward_jump_ayahs": 2
+      }
+    },
+    {
+      "id": "fast-cadence",
+      "description": "Allow tighter ayah spacing and smaller dedupe window.",
+      "match_overrides": {
+        "min_gap_seconds": 6,
+        "duplicate_ayah_window_seconds": 90,
+        "max_forward_jump_ayahs": 3
+      }
+    },
+    {
+      "id": "anti-duplicate",
+      "description": "Space markers out and tighten duplicate suppression.",
+      "match_overrides": {
+        "min_gap_seconds": 10,
+        "duplicate_ayah_window_seconds": 160,
+        "min_confidence": 0.66
+      }
+    },
+    {
+      "id": "recovery-long-jump",
+      "description": "Permit longer forward jumps during recovery when confidence is high.",
+      "match_overrides": {
+        "max_forward_jump_ayahs": 4,
+        "recovery_after_seconds": 360,
+        "recovery_rewind_ayat": 54
+      }
+    },
+    {
+      "id": "strict-recovery",
+      "description": "Use stricter recovery to avoid wrong surah/ayah jumps.",
+      "match_overrides": {
+        "max_forward_jump_ayahs": 2,
+        "recovery_after_seconds": 540,
+        "recovery_window_multiplier": 2.5,
+        "ambiguous_min_score": 78,
+        "ambiguous_min_confidence": 0.6
+      }
+    },
+    {
+      "id": "non-strict-normalization",
+      "description": "Disable strict normalization mode for tolerant Arabic matching.",
+      "env": {
+        "STRICT_NORMALIZATION": "false"
+      },
+      "match_overrides": {}
+    },
+    {
+      "id": "patch-reset-hold-short",
+      "description": "Patch matcher reset hold timings.",
+      "patch_sets": ["reset_hold_short"],
+      "match_overrides": {}
+    },
+    {
+      "id": "patch-window-penalty-soft",
+      "description": "Patch short-window penalty to be less severe.",
+      "patch_sets": ["window_penalty_soft"],
+      "match_overrides": {}
+    },
+    {
+      "id": "patch-anchor-relax",
+      "description": "Patch anchor matching with shorter token anchors.",
+      "patch_sets": ["anchor_relax"],
+      "match_overrides": {}
+    },
+    {
+      "id": "patch-reset-plus-window",
+      "description": "Combine reset hold and window penalty patches.",
+      "patch_sets": ["reset_hold_short", "window_penalty_soft"],
+      "match_overrides": {}
+    }
+  ]
+}

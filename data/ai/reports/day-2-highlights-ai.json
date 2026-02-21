@@ -1,0 +1,41 @@
+{
+  "day": 2,
+  "day_summary": {
+    "title": "Day 2 Recitation Summary (Al-Baqarah 142-251)",
+    "summary": "Day 2 develops communal identity through qiblah, defines righteousness through belief and character, and anchors Ramadan through fasting and dua. It closes with legal-ethical discipline and scenes of steadfastness, teaching that guidance requires obedience, patience, and trust in Allah.",
+    "themes": [
+      "Identity in deen is shown by obedience and justice.",
+      "Ramadan worship is meant to produce taqwa and sincere dua.",
+      "Steadfastness in trials requires sabr, unity, and reliance on Allah."
+    ]
+  },
+  "highlights": [
+    {
+      "ayahRef": "2:143",
+      "themeType": "Identity & Balance",
+      "shortTitle": "A Middle Nation",
+      "references": [
+        { "name": "Quran 2:143", "url": "https://quran.com/2:143" },
+        { "name": "Ibn Kathir Tafsir (2:143)", "url": "https://quran.com/en/2:143/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    },
+    {
+      "ayahRef": "2:186",
+      "themeType": "Dua",
+      "shortTitle": "Allah Is Near and Responds",
+      "references": [
+        { "name": "Quran 2:186", "url": "https://quran.com/2:186" },
+        { "name": "Ibn Kathir Tafsir (2:186)", "url": "https://quran.com/en/2:186/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    },
+    {
+      "ayahRef": "2:201",
+      "themeType": "Dua",
+      "shortTitle": "Rabbana Atina",
+      "references": [
+        { "name": "Quran 2:201", "url": "https://quran.com/2:201" },
+        { "name": "Ibn Kathir Tafsir (2:201)", "url": "https://quran.com/en/2:201/tafsirs/ar-tafsir-ibn-kathir" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "stage": "medium",
+  "strategy_id": "baseline",
+  "stage_score": 37.5532,
+  "datasets": [
+    {
+      "dataset": "day1-medium",
+      "day": 1,
+      "output_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/trials/trial-001-baseline/outputs/medium-day1-medium.json",
+      "report_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/trials/trial-001-baseline/reports/medium-day1-medium-validation.json",
+      "transcript_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/worktrees/trial-001-baseline/data/ai/cache/day-1-transcript-full.json",
+      "markers": 41,
+      "duration_seconds": 1800,
+      "summary": {
+        "markers": 41,
+        "pass_rate": 0.561,
+        "mean_score": 76.07,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.377
+      },
+      "contract": {
+        "schema_errors": 0,
+        "contract_errors": 0,
+        "suspicious_missing_ayahs": 82,
+        "suspicious_resets": 0,
+        "quality_high_ratio": 0.9756,
+        "chronology_backtracks": 0,
+        "duplicates": 0
+      },
+      "score": {
+        "score": 12.9217,
+        "base_score": 63.8995,
+        "penalty_score": 50.9778,
+        "marker_density_ratio": 0.3504,
+        "confidence_spread_ratio": 1.0,
+        "minimum_markers": 45
+      }
+    },
+    {
+      "dataset": "day2-medium",
+      "day": 2,
+      "output_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/trials/trial-001-baseline/outputs/medium-day2-medium.json",
+      "report_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/trials/trial-001-baseline/reports/medium-day2-medium-validation.json",
+      "transcript_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/worktrees/trial-001-baseline/data/ai/cache/day-2-transcript-full.json",
+      "markers": 45,
+      "duration_seconds": 1800,
+      "summary": {
+        "markers": 45,
+        "pass_rate": 0.911,
+        "mean_score": 88.53,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.266
+      },
+      "contract": {
+        "schema_errors": 0,
+        "contract_errors": 0,
+        "suspicious_missing_ayahs": 0,
+        "suspicious_resets": 0,
+        "quality_high_ratio": 0.9778,
+        "chronology_backtracks": 0,
+        "duplicates": 0
+      },
+      "score": {
+        "score": 85.0502,
+        "base_score": 85.0502,
+        "penalty_score": 0.0,
+        "marker_density_ratio": 0.3846,
+        "confidence_spread_ratio": 0.76,
+        "minimum_markers": 34
+      }
+    },
+    {
+      "dataset": "day3-medium",
+      "day": 3,
+      "output_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/trials/trial-001-baseline/outputs/medium-day3-medium.json",
+      "report_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/trials/trial-001-baseline/reports/medium-day3-medium-validation.json",
+      "transcript_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-5/worktrees/trial-001-baseline/data/ai/cache/day-3-transcript-win-1130-7341-422542de0160.json",
+      "markers": 13,
+      "duration_seconds": 1800,
+      "summary": {
+        "markers": 13,
+        "pass_rate": 0.154,
+        "mean_score": 64.76,
+        "chronology_backtracks": 0,
+        "duplicates": 0,
+        "confidence_spread": 0.297
+      },
+      "contract": {
+        "schema_errors": 0,
+        "contract_errors": 0,
+        "suspicious_missing_ayahs": 13,
+        "suspicious_resets": 0,
+        "quality_high_ratio": 0.8462,
+        "chronology_backtracks": 0,
+        "duplicates": 0
+      },
+      "score": {
+        "score": 14.6878,
+        "base_score": 34.8408,
+        "penalty_score": 20.1529,
+        "marker_density_ratio": 0.1111,
+        "confidence_spread_ratio": 0.8486,
+        "minimum_markers": 34
+      }
+    }
+  ]
+}

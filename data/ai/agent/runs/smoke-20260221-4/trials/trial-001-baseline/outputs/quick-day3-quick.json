@@ -1,0 +1,634 @@
+{
+  "day": 3,
+  "source": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline/data/audio/day-3/source.wav",
+  "markers": [
+    {
+      "time": 1174,
+      "surah": "Al-Baqara",
+      "ayah": 253,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.732,
+      "arabic_text": "۞ تِلْكَ ٱلرُّسُلُ فَضَّلْنَا بَعْضَهُمْ عَلَىٰ بَعْضٍۢ ۘ مِّنْهُم مَّن كَلَّمَ ٱللَّهُ ۖ وَرَفَعَ بَعْضَهُمْ دَرَجَٰتٍۢ ۚ وَءَاتَيْنَا عِيسَى ٱبْنَ مَرْيَمَ ٱلْبَيِّنَٰتِ وَأَيَّدْنَٰهُ بِرُوحِ ٱلْقُدُسِ ۗ وَلَوْ شَآءَ ٱللَّهُ مَا ٱقْتَتَلَ ٱلَّذِينَ مِنۢ بَعْدِهِم مِّنۢ بَعْدِ مَا جَآءَتْهُمُ ٱلْبَيِّنَٰتُ وَلَٰكِنِ ٱخْتَلَفُوا۟ فَمِنْهُم مَّنْ ءَامَنَ وَمِنْهُم مَّن كَفَرَ ۚ وَلَوْ شَآءَ ٱللَّهُ مَا ٱقْتَتَلُوا۟ وَلَٰكِنَّ ٱللَّهَ يَفْعَلُ مَا يُرِيدُ",
+      "english_text": "Some of these apostles have We endowed more highly than others: among them were such as were spoken to by God [Himself], and some He has raised yet higher.' And We vouchsafed unto Jesus, the son of Mary, all evidence of the truth, and strengthened him with holy inspiration. And if God had so willed, they who succeeded those [apostles] would not have contended with one another after all evidence of the truth had come to them; but [as it was,] they did take to divergent views, and some of them attained to faith, while some of them came to deny the truth. Yet if God had so willed, they would not have contended with one another: but God does whatever He wills.",
+      "start_time": 1174,
+      "end_time": 1188,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ]
+      ]
+    },
+    {
+      "time": 1231,
+      "surah": "Al-Baqara",
+      "ayah": 254,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.794,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ أَنفِقُوا۟ مِمَّا رَزَقْنَٰكُم مِّن قَبْلِ أَن يَأْتِىَ يَوْمٌۭ لَّا بَيْعٌۭ فِيهِ وَلَا خُلَّةٌۭ وَلَا شَفَٰعَةٌۭ ۗ وَٱلْكَٰفِرُونَ هُمُ ٱلظَّٰلِمُونَ",
+      "english_text": "O YOU who have attained to faith! Spend [in Our way] out of what We have granted you as sustenance ere there come a Day when there will be no bargaining, and no friendship, and no intercession. And they who deny the truth -it is they who are evildoers!",
+      "start_time": 1231,
+      "end_time": 1252,
+      "matched_token_indices": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          12
+        ],
+        [
+          18,
+          13
+        ],
+        [
+          19,
+          14
+        ],
+        [
+          20,
+          15
+        ],
+        [
+          21,
+          16
+        ],
+        [
+          22,
+          17
+        ],
+        [
+          23,
+          18
+        ],
+        [
+          24,
+          20
+        ],
+        [
+          25,
+          21
+        ]
+      ]
+    },
+    {
+      "time": 1273,
+      "surah": "Al-Baqara",
+      "ayah": 255,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.711,
+      "arabic_text": "ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ ۚ لَا تَأْخُذُهُۥ سِنَةٌۭ وَلَا نَوْمٌۭ ۚ لَّهُۥ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ۗ مَن ذَا ٱلَّذِى يَشْفَعُ عِندَهُۥٓ إِلَّا بِإِذْنِهِۦ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَىْءٍۢ مِّنْ عِلْمِهِۦٓ إِلَّا بِمَا شَآءَ ۚ وَسِعَ كُرْسِيُّهُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ ۖ وَلَا يَـُٔودُهُۥ حِفْظُهُمَا ۚ وَهُوَ ٱلْعَلِىُّ ٱلْعَظِيمُ",
+      "english_text": "GOD - there is no deity save Him, the Ever-Living, the Self-Subsistent Fount of All Being. Neither slumber overtakes Him, nor sleep. His is all that is in the heavens and all that is on earth. Who is there that could intercede with Him, unless it be by His leave? He knows all that lies open before men and all that is hidden from them, whereas they cannot attain to aught of His knowledge save that which He wills [them to attain]. His eternal power overspreads the heavens and the earth, and their upholding wearies Him not. And he alone is truly exalted, tremendous.",
+      "start_time": 1273,
+      "end_time": 1291,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ]
+      ]
+    },
+    {
+      "time": 1304,
+      "surah": "Al-Baqara",
+      "ayah": 256,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.76,
+      "arabic_text": "لَآ إِكْرَاهَ فِى ٱلدِّينِ ۖ قَد تَّبَيَّنَ ٱلرُّشْدُ مِنَ ٱلْغَىِّ ۚ فَمَن يَكْفُرْ بِٱلطَّٰغُوتِ وَيُؤْمِنۢ بِٱللَّهِ فَقَدِ ٱسْتَمْسَكَ بِٱلْعُرْوَةِ ٱلْوُثْقَىٰ لَا ٱنفِصَامَ لَهَا ۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
+      "english_text": "THERE SHALL BE no coercion in matters of faith. Distinct has now become the right way from [the way of] error: hence, he who rejects the powers of evil and believes in God has indeed taken hold of a support most unfailing, which shall never give way: for God is all-hearing, all-knowing.",
+      "start_time": 1304,
+      "end_time": 1321,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          16,
+          24
+        ]
+      ]
+    },
+    {
+      "time": 1339,
+      "surah": "Al-Baqara",
+      "ayah": 257,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.71,
+      "arabic_text": "ٱللَّهُ وَلِىُّ ٱلَّذِينَ ءَامَنُوا۟ يُخْرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِ ۖ وَٱلَّذِينَ كَفَرُوٓا۟ أَوْلِيَآؤُهُمُ ٱلطَّٰغُوتُ يُخْرِجُونَهُم مِّنَ ٱلنُّورِ إِلَى ٱلظُّلُمَٰتِ ۗ أُو۟لَٰٓئِكَ أَصْحَٰبُ ٱلنَّارِ ۖ هُمْ فِيهَا خَٰلِدُونَ",
+      "english_text": "God is near unto those who have faith, taking them out of deep darkness into the light - whereas near unto those who are bent on denying the truth are the powers of evil that take them out of the light into darkness deep: it is they who are destined for the fire, therein to abide.",
+      "start_time": 1339,
+      "end_time": 1352,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ]
+      ]
+    },
+    {
+      "time": 1634,
+      "surah": "Al-Baqara",
+      "ayah": 261,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.772,
+      "arabic_text": "مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتْ سَبْعَ سَنَابِلَ فِى كُلِّ سُنۢبُلَةٍۢ مِّا۟ئَةُ حَبَّةٍۢ ۗ وَٱللَّهُ يُضَٰعِفُ لِمَن يَشَآءُ ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ",
+      "english_text": "THE PARABLE of those who spend their possessions for the sake of God is that of a grain out of which grow seven ears, in every ear a hundred grains: for God grants manifold increase unto whom He wills; and God is infinite, all-knowing.",
+      "start_time": 1634,
+      "end_time": 1654,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ]
+      ]
+    },
+    {
+      "time": 1666,
+      "surah": "Al-Baqara",
+      "ayah": 262,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.756,
+      "arabic_text": "ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمْ فِى سَبِيلِ ٱللَّهِ ثُمَّ لَا يُتْبِعُونَ مَآ أَنفَقُوا۟ مَنًّۭا وَلَآ أَذًۭى ۙ لَّهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
+      "english_text": "They who spend their possessions for the sake of God and do not thereafter mar their spending by stressing their own benevolence and hurting [the feelings of the needy] shall have their reward with 'their Sustainer, and no fear need they have, and neither shall they grieve.",
+      "start_time": 1666,
+      "end_time": 1677,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ]
+      ]
+    },
+    {
+      "time": 1683,
+      "surah": "Al-Baqara",
+      "ayah": 274,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.56,
+      "arabic_text": "ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُم بِٱلَّيْلِ وَٱلنَّهَارِ سِرًّۭا وَعَلَانِيَةًۭ فَلَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
+      "english_text": "Those who spend their possessions [for the sake of God] by night and by day, secretly and openly, shall have their reward with their Sustainer; and no fear need they have, and neither shall they grieve.",
+      "start_time": 1683,
+      "end_time": 1686,
+      "matched_token_indices": null
+    },
+    {
+      "time": 1687,
+      "surah": "Al-Baqara",
+      "ayah": 277,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.742,
+      "arabic_text": "إِنَّ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ وَأَقَامُوا۟ ٱلصَّلَوٰةَ وَءَاتَوُا۟ ٱلزَّكَوٰةَ لَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
+      "english_text": "Verily, those who have attained to faith and do good works, and are constant in prayer, and dispense charity - they shall have their reward with their Sustainer, and no fear need they have, and neither shall they grieve.",
+      "start_time": 1687,
+      "end_time": 1691,
+      "matched_token_indices": [
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          12
+        ]
+      ]
+    },
+    {
+      "time": 1993,
+      "surah": "Al-Baqara",
+      "ayah": 279,
+      "surah_number": 2,
+      "juz": 3,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.672,
+      "arabic_text": "فَإِن لَّمْ تَفْعَلُوا۟ فَأْذَنُوا۟ بِحَرْبٍۢ مِّنَ ٱللَّهِ وَرَسُولِهِۦ ۖ وَإِن تُبْتُمْ فَلَكُمْ رُءُوسُ أَمْوَٰلِكُمْ لَا تَظْلِمُونَ وَلَا تُظْلَمُونَ",
+      "english_text": "for if you do it not, then know that you are at war with God and His Apostle. But if you repent, then you shall be entitled to [the return of] your principal: you will do no wrong, and neither will you be wronged.",
+      "start_time": 1993,
+      "end_time": 1994,
+      "matched_token_indices": null
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-02-21T03:09:58.209180+00:00",
+    "audio_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline/data/audio/day-3/normalized.wav",
+    "transcription_audio_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline/data/audio/day-3/trimmed-win-1130-7341-max900s.wav",
+    "part": null,
+    "whisper_model": "tiny",
+    "time_offset_seconds": 1130,
+    "markers_detected": 10,
+    "reciter_segments_detected": 3,
+    "corpus_loaded": true,
+    "asad_loaded": true,
+    "transcript_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline/data/ai/cache/day-3-transcript-win-1130-7341-422542de0160.json",
+    "transcript_cache_source_key": "422542de0160",
+    "transcript_override_path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline/data/ai/cache/day-3-transcript-win-1130-7341-422542de0160.json",
+    "segment_detection": {
+      "audio_starts": 2,
+      "fatiha_starts": 3,
+      "merged_starts": 3
+    },
+    "match_config": {
+      "min_score": 78,
+      "min_gap_seconds": 8,
+      "min_overlap": 0.18,
+      "min_confidence": 0.62,
+      "require_weak_support_for_inferred": true,
+      "strict_normalization": true,
+      "start_surah_number": null,
+      "start_ayah": null,
+      "auto_start_from_previous_day": {
+        "source": "public/data/day-2-part-2.json",
+        "previous_surah_number": 2,
+        "previous_ayah": 251,
+        "start_surah_number": 2,
+        "start_ayah": 252
+      },
+      "window_start_seconds": 1130,
+      "window_end_seconds": 7341,
+      "overrides_applied": []
+    },
+    "manual_override": {
+      "path": "/Users/himi/Documents/firebase/andalus-taraweeh/data/ai/agent/runs/smoke-20260221-4/worktrees/trial-001-baseline/data/ai/day_overrides.json",
+      "final_surah": null,
+      "final_ayah": null,
+      "final_time": 7341,
+      "markers_before": 10,
+      "markers_after": 10,
+      "inserted_terminal": false,
+      "inserted_terminal_time": null
+    }
+  }
+}
