@@ -952,6 +952,8 @@ def _find_best_ayah_timestamp(
 
 
 def _quality_rank(quality: str | None) -> int:
+    if quality == "manual":
+        return 4
     if quality == "high":
         return 3
     if quality == "ambiguous":
@@ -959,6 +961,10 @@ def _quality_rank(quality: str | None) -> int:
     if quality == "inferred":
         return 1
     return 0
+
+
+def _is_anchor_quality(quality: str | None) -> bool:
+    return quality in {"high", "ambiguous", "manual"}
 
 
 def _estimate_step_seconds(surah_markers: dict[int, Marker], default_step: int = 8) -> int:
@@ -987,6 +993,9 @@ def _fill_surah_coverage_markers(
     weak_support_score: int = 62,
     weak_support_overlap: float = 0.08,
     enforce_weak_support: bool = True,
+    max_bridge_gap_ayahs: int = 60,
+    max_bridge_gap_seconds: int = 2400,
+    max_one_sided_extrapolation_ayahs: int = 5,
 ) -> list[Marker]:
     surah_map: dict[str, dict[int, Marker]] = {}
     for marker in sorted(existing_markers, key=lambda m: m.time):
@@ -1028,6 +1037,14 @@ def _fill_surah_coverage_markers(
                 right_marker = ayah_map[right_ayah]
                 span_ayahs = right_ayah - left_ayah
                 span_secs = right_marker.time - left_marker.time
+                if span_ayahs <= 0:
+                    continue
+                if span_ayahs > max_bridge_gap_ayahs:
+                    continue
+                if span_secs <= 0 or span_secs > max_bridge_gap_seconds:
+                    continue
+                if not (_is_anchor_quality(left_marker.quality) and _is_anchor_quality(right_marker.quality)):
+                    continue
                 ratio = (ayah - left_ayah) / max(1, span_ayahs)
                 if span_secs > 0:
                     inferred_time = int(round(left_marker.time + (span_secs * ratio)))
@@ -1035,9 +1052,17 @@ def _fill_surah_coverage_markers(
                     inferred_time = left_marker.time + ((ayah - left_ayah) * step_seconds)
             elif left_ayah is not None:
                 left_marker = ayah_map[left_ayah]
+                if not _is_anchor_quality(left_marker.quality):
+                    continue
+                if (ayah - left_ayah) > max_one_sided_extrapolation_ayahs:
+                    continue
                 inferred_time = left_marker.time + ((ayah - left_ayah) * step_seconds)
             elif right_ayah is not None:
                 right_marker = ayah_map[right_ayah]
+                if not _is_anchor_quality(right_marker.quality):
+                    continue
+                if (right_ayah - ayah) > max_one_sided_extrapolation_ayahs:
+                    continue
                 inferred_time = max(0, right_marker.time - ((right_ayah - ayah) * step_seconds))
             else:
                 continue
@@ -1787,9 +1812,19 @@ def _is_valid_forward_transition(
 
 
 def _should_replace_existing(existing: Marker, candidate: Marker) -> bool:
-    if existing.quality != "high" and candidate.quality == "high":
+    existing_rank = _quality_rank(existing.quality)
+    candidate_rank = _quality_rank(candidate.quality)
+    if candidate_rank > existing_rank:
         return True
-    if existing.quality == candidate.quality and candidate.time < existing.time:
+    if candidate_rank < existing_rank:
+        return False
+
+    existing_conf = float(existing.confidence or 0.0)
+    candidate_conf = float(candidate.confidence or 0.0)
+    if candidate_conf > existing_conf + 0.03:
+        return True
+
+    if candidate.time < existing.time:
         return True
     return False
 
@@ -1834,16 +1869,23 @@ def _has_anchor_token_hit(
     if not anchors:
         return False
 
+    # If a phrase only has short anchor tokens (e.g. muqatta'at like "الف لام ميم"),
+    # relax min length while requiring slightly higher similarity.
+    effective_min_anchor_len = min_anchor_len
+    if not any(len(anchor) >= min_anchor_len for anchor in anchors):
+        effective_min_anchor_len = 3
+
     tokens = [token for token in normalized_text.split() if len(token) >= 2]
     if not tokens:
         return False
 
     for anchor in anchors:
-        if len(anchor) < min_anchor_len:
+        if len(anchor) < effective_min_anchor_len:
             continue
         for token in tokens:
+            required_similarity = min_similarity + 4.0 if len(anchor) <= 3 or len(token) <= 3 else min_similarity
             similarity = max(float(fuzz.ratio(anchor, token)), float(fuzz.partial_ratio(anchor, token)))
-            if similarity >= min_similarity:
+            if similarity >= required_similarity:
                 return True
     return False
 
@@ -1869,6 +1911,11 @@ def match_quran_markers(
     max_forward_jump_ayahs: int = 2,
     require_weak_support_for_inferred: bool = True,
     forced_start_index: int | None = None,
+    repeat_lookback_ayahs: int = 1,
+    repeat_min_score: int = 90,
+    repeat_min_overlap: float = 0.25,
+    repeat_min_confidence: float = 0.80,
+    repeat_max_gap_seconds: int = 10,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -1980,6 +2027,120 @@ def match_quran_markers(
         selected_quality: str | None = None
         selected_confidence = 0.0
         selected_from_recovery = False
+        repeat_detected = False
+        repeat_detected_score = -1.0
+
+        # Small rewind exception: if imam repeats one of the most recent ayat,
+        # keep the forward pointer where it is and just extend that ayah's end_time.
+        if (
+            last_matched_index >= 0
+            and markers
+            and repeat_lookback_ayahs > 0
+            and not awaiting_reacquire
+        ):
+            lookback = max(1, min(8, int(repeat_lookback_ayahs)))
+            rewind_indices = [
+                index
+                for index in range(last_matched_index, last_matched_index - lookback, -1)
+                if 0 <= index < len(corpus_entries)
+            ]
+            rewind_candidates: dict[int, CandidateEvidence] = {}
+            for index in rewind_indices:
+                candidate = evaluate_index(index)
+                if candidate is not None:
+                    rewind_candidates[index] = candidate
+
+            if rewind_candidates:
+                forward_probe_scores: list[float] = []
+                for index in [last_matched_index + 1, last_matched_index + 2]:
+                    candidate = evaluate_index(index)
+                    if candidate is not None:
+                        forward_probe_scores.append(candidate.adjusted_score)
+                forward_best_score = max(forward_probe_scores, default=-1.0)
+
+                repeat_best_index: int | None = None
+                repeat_best_candidate: CandidateEvidence | None = None
+                repeat_best_confidence = 0.0
+
+                for index, candidate in rewind_candidates.items():
+                    rival = _best_rival_score(rewind_candidates, index=index)
+                    valid, quality, confidence = _candidate_is_valid(
+                        candidate=candidate,
+                        rival_score=rival,
+                        local_min_score=max(min_score + 4, repeat_min_score),
+                        local_min_overlap=max(min_overlap + 0.04, repeat_min_overlap),
+                        threshold=max(min_confidence + 0.10, repeat_min_confidence),
+                        ambiguous_min_score=99,
+                        ambiguous_min_confidence=0.99,
+                    )
+                    if not valid or quality != "high":
+                        continue
+                    if candidate.adjusted_score < repeat_min_score:
+                        continue
+                    if candidate.overlap < repeat_min_overlap:
+                        continue
+                    if confidence < repeat_min_confidence:
+                        continue
+                    if candidate.adjusted_score < forward_best_score + 1.0:
+                        continue
+                    if (
+                        repeat_best_candidate is None
+                        or confidence > repeat_best_confidence
+                        or (
+                            confidence == repeat_best_confidence
+                            and candidate.adjusted_score > repeat_best_candidate.adjusted_score
+                        )
+                    ):
+                        repeat_best_index = index
+                        repeat_best_candidate = candidate
+                        repeat_best_confidence = confidence
+
+                if repeat_best_index is not None and repeat_best_candidate is not None:
+                    repeat_entry = corpus_entries[repeat_best_index]
+                    repeat_key = (repeat_entry.surah, repeat_entry.ayah)
+                    existing_index = marker_positions.get(repeat_key)
+                    if existing_index is not None and 0 <= existing_index < len(markers):
+                        existing_marker = markers[existing_index]
+                        segment_start = int(round(float(segment.start)))
+                        marker_start = int(existing_marker.start_time or existing_marker.time)
+                        marker_end = int(existing_marker.end_time or marker_start)
+                        if segment_start - marker_end <= max(8, repeat_max_gap_seconds):
+                            _, repeat_end, _ = _resolve_marker_times(
+                                segment=segment,
+                                entry=repeat_entry,
+                                evidence=repeat_best_candidate,
+                                transcript_segments=transcript_segments,
+                                segment_index=segment_index,
+                            )
+                            proposed_end = max(
+                                int(existing_marker.end_time or existing_marker.time),
+                                int(repeat_end),
+                                int(round(repeat_best_candidate.end_time)),
+                            )
+
+                            next_same_surah_start: int | None = None
+                            for candidate_marker in markers:
+                                if candidate_marker.surah != existing_marker.surah:
+                                    continue
+                                if int(candidate_marker.ayah) <= int(existing_marker.ayah):
+                                    continue
+                                candidate_start = int(candidate_marker.start_time or candidate_marker.time)
+                                if candidate_start <= marker_start:
+                                    continue
+                                if next_same_surah_start is None or candidate_start < next_same_surah_start:
+                                    next_same_surah_start = candidate_start
+
+                            if next_same_surah_start is not None:
+                                proposed_end = min(proposed_end, next_same_surah_start - 1)
+
+                            extended = False
+                            if proposed_end >= marker_start and proposed_end > int(existing_marker.end_time or marker_start):
+                                existing_marker.end_time = proposed_end
+                                extended = True
+                            if extended:
+                                repeat_detected = True
+                                repeat_detected_score = max(repeat_detected_score, float(repeat_best_candidate.adjusted_score))
+                                last_marker_time = max(last_marker_time, int(existing_marker.end_time or marker_start))
 
         if last_matched_index < 0:
             acquire_start = forced_start_index if forced_start_index is not None else 0
@@ -2104,7 +2265,14 @@ def match_quran_markers(
                     selected_from_recovery = True
 
         if selected_index is None or selected_candidate is None or selected_quality is None:
+            if repeat_detected:
+                stale_segments = 0
+                continue
             stale_segments += 1
+            continue
+
+        if repeat_detected and selected_candidate.adjusted_score < (repeat_detected_score + 1.0):
+            stale_segments = 0
             continue
 
         if awaiting_reacquire:
@@ -2173,7 +2341,7 @@ def match_quran_markers(
     inferred_markers: list[Marker] = []
     keyed_markers: dict[tuple[str, int], Marker] = {(marker.surah, marker.ayah): marker for marker in markers}
     entry_lookup: dict[tuple[str, int], AyahEntry] = {(entry.surah, entry.ayah): entry for entry in corpus_entries}
-    anchors = [item for item in sorted(markers, key=lambda m: m.time) if item.quality == "high"]
+    anchors = [item for item in sorted(markers, key=lambda m: m.time) if _is_anchor_quality(item.quality)]
 
     for left, right in zip(anchors, anchors[1:]):
         if left.surah != right.surah:
@@ -2239,12 +2407,37 @@ def match_quran_markers(
             inferred_markers.append(marker_to_add)
             keyed_markers[key] = marker_to_add
 
-    # Backfill leading ayahs if the first strong anchor starts after ayah 1.
-    # Try to find best evidence in the pre-anchor audio window before falling back to inferred placement.
+    # Backfill leading ayahs for each surah's first anchor when it starts after ayah 1.
+    # This helps recover obvious transitions such as ending one surah and starting the next
+    # when ayah 1 is weakly captured but ayah 2/3 are confidently matched.
     if anchors:
-        first = anchors[0]
-        if first.ayah > 1 and first.ayah - 1 <= max_leading_infer_ayahs:
-            time_step = max(4, int(round(first.time / max(1, first.ayah))))
+        first_anchor_per_surah: list[Marker] = []
+        seen_surahs: set[str] = set()
+        for marker in anchors:
+            if marker.surah in seen_surahs:
+                continue
+            seen_surahs.add(marker.surah)
+            first_anchor_per_surah.append(marker)
+
+        for first in first_anchor_per_surah:
+            if first.ayah <= 1 or first.ayah - 1 > max_leading_infer_ayahs:
+                continue
+
+            next_same_surah = next(
+                (
+                    marker
+                    for marker in anchors
+                    if marker.surah == first.surah and marker.ayah > first.ayah and marker.time > first.time
+                ),
+                None,
+            )
+            if next_same_surah is not None:
+                delta_ayahs = max(1, next_same_surah.ayah - first.ayah)
+                delta_time = max(1, next_same_surah.time - first.time)
+                time_step = max(4, min(18, int(round(delta_time / delta_ayahs))))
+            else:
+                time_step = 8
+
             for ayah_number in range(first.ayah - 1, 0, -1):
                 key = (first.surah, ayah_number)
                 if key in keyed_markers:
@@ -2256,6 +2449,8 @@ def match_quran_markers(
                 window_half = max(8, time_step)
                 window_start = max(0, expected_time - window_half)
                 window_end = min(max(0, first.time - min_gap_seconds), expected_time + window_half)
+                if window_end <= window_start:
+                    continue
 
                 marker_to_add: Marker | None = None
                 entry = entry_lookup.get(key)
@@ -2372,6 +2567,8 @@ def match_quran_markers(
         ambiguous_min_score=ambiguous_min_score,
         ambiguous_min_confidence=ambiguous_min_confidence,
     )
+    merged = _redistribute_dense_weak_runs(merged)
+    merged = _stabilize_weak_marker_durations(merged)
     merged = _extend_point_markers_to_next(merged, max_extension_seconds=90)
     merged = sorted(merged, key=lambda marker: (marker.time, marker.surah_number or 0, marker.ayah))
     return merged

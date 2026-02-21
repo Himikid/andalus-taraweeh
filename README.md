@@ -143,6 +143,7 @@ Example:
 - docs: `scripts/README.md`
 - main: `python scripts/process_day.py ...`
 - Quran corpus: `python scripts/fetch_quran_corpus.py`
+- AI highlights prompt template: `data/ai/prompts/day-highlights-prompt.md`
 
 The Python layer is local processing; it is not executed in Vercel runtime.
 
