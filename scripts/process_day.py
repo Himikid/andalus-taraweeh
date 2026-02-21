@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 
@@ -71,9 +72,24 @@ def parse_args() -> argparse.Namespace:
         help="Force fresh transcription instead of using cached transcript segments.",
     )
     parser.add_argument(
+        "--transcript-cache-override",
+        type=Path,
+        help="Optional transcript cache path to force-use (supports window/full reuse and old cache formats).",
+    )
+    parser.add_argument(
         "--max-audio-seconds",
         type=int,
         help="Optional cap for processing only the first N seconds (useful for tuning).",
+    )
+    parser.add_argument(
+        "--window-start-seconds",
+        type=int,
+        help="Optional start offset in seconds for processing a windowed portion of the audio.",
+    )
+    parser.add_argument(
+        "--window-end-seconds",
+        type=int,
+        help="Optional end offset in seconds (exclusive) for processing a windowed portion of the audio.",
     )
     parser.add_argument(
         "--aggressive-infer-fill",
@@ -95,6 +111,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=Path("data/ai/day_overrides.json"),
         help="Optional manual per-day caps (e.g. final ayah/final time).",
+    )
+    parser.add_argument(
+        "--match-overrides-json",
+        type=Path,
+        help="Optional JSON file containing extra match_quran_markers overrides.",
     )
     return parser.parse_args()
 
@@ -122,6 +143,21 @@ def main() -> None:
     else:
         output_path = Path(f"public/data/day-{args.day}.json")
 
+    match_overrides: dict | None = None
+    if args.match_overrides_json:
+        try:
+            payload = json.loads(args.match_overrides_json.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise SystemExit(f"Unable to load --match-overrides-json: {exc}") from exc
+
+        if isinstance(payload, dict):
+            if "match_overrides" in payload and isinstance(payload.get("match_overrides"), dict):
+                match_overrides = dict(payload["match_overrides"])
+            else:
+                match_overrides = dict(payload)
+        else:
+            raise SystemExit("--match-overrides-json must contain a JSON object")
+
     payload = process_day(
         day=args.day,
         output_path=output_path,
@@ -141,9 +177,13 @@ def main() -> None:
         match_start_ayah=args.start_ayah,
         reuse_transcript_cache=not args.no_reuse_transcript_cache,
         max_audio_seconds=args.max_audio_seconds,
+        window_start_seconds=args.window_start_seconds,
+        window_end_seconds=args.window_end_seconds,
         asad_path=args.quran_asad,
         day_overrides_path=args.day_overrides,
         part=args.part,
+        transcript_cache_override=args.transcript_cache_override,
+        match_overrides=match_overrides,
     )
 
     print(f"Saved: {output_path}")

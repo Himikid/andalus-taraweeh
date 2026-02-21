@@ -96,6 +96,27 @@ def _corpus_map(corpus: dict) -> tuple[dict[tuple[str, int], str], dict[tuple[st
     return text_map, order_map, ordered_keys
 
 
+def _load_transcript_segments_for_validation(transcript_path: Path) -> list[dict]:
+    if not transcript_path.exists():
+        return []
+
+    payload = _load_json(transcript_path)
+    offset = float(payload.get("time_offset_seconds", 0.0) or 0.0)
+    rows: list[dict] = []
+
+    for segment in payload.get("segments", []):
+        text = str(segment.get("text", "")).strip()
+        if not text:
+            continue
+        start = float(segment.get("start", 0.0)) + offset
+        end = float(segment.get("end", start)) + offset
+        if end < start:
+            end = start
+        rows.append({"start": start, "end": end, "text": text})
+
+    return rows
+
+
 def _best_neighborhood_match(
     marker_key: tuple[str, int],
     normalized_text: str,
@@ -153,10 +174,7 @@ def evaluate_day_payload(
     day = int(day_payload.get("day", 0))
     markers = day_payload.get("markers", [])
 
-    transcript_segments = []
-    if transcript_path.exists():
-        transcript_payload = _load_json(transcript_path)
-        transcript_segments = transcript_payload.get("segments", [])
+    transcript_segments = _load_transcript_segments_for_validation(transcript_path)
 
     corpus = _load_json(quran_corpus_path)
     text_map, order_map, ordered_keys = _corpus_map(corpus)

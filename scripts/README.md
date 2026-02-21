@@ -81,6 +81,46 @@ Tuning artifacts:
 - `data/ai/tuning/day-{N}/leaderboard.json`
 - `data/ai/tuning/day-{N}/candidate-*.json`
 
+## Autonomous matcher agent (branch-per-trial)
+
+Fixed spec + strategy loop:
+
+- spec: `scripts/agent/spec_v1.json`
+- runner: `scripts/run_matcher_agent.py`
+- stage worker: `scripts/agent_trial_worker.py`
+
+Run:
+
+```bash
+python scripts/run_matcher_agent.py --run-id day123
+```
+
+Resume a stopped run:
+
+```bash
+python scripts/run_matcher_agent.py --resume-run-id day123
+```
+
+Behavior:
+
+- Creates isolated trial worktrees under `data/ai/agent/runs/<run-id>/worktrees/`
+- Creates per-trial branches named `codex/agent-...`
+- Evaluates `quick -> medium -> full` stages using a fixed scoring spec
+- Writes continuous logs to stdout while running
+- Stores best-so-far metadata so Ctrl+C is safe
+
+Key artifacts:
+
+- state: `data/ai/agent/runs/<run-id>/state.json`
+- leaderboard: `data/ai/agent/runs/<run-id>/leaderboard.json`
+- best trial: `data/ai/agent/runs/<run-id>/best/best-trial.json`
+- best patch vs base: `data/ai/agent/runs/<run-id>/best/best.diff`
+
+Optional process-day overrides used by the agent:
+
+- `--transcript-cache-override <path>`
+- `--match-overrides-json <path>`
+
 ## Validation reports
 
 Transcript-based validation:

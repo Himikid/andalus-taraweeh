@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from dataclasses import asdict
 from datetime import datetime, timezone
@@ -28,6 +29,26 @@ from .reciters import assign_reciters
 from .transcribe import transcribe_audio
 from .types import Marker, PrayerSegment, TranscriptSegment, TranscriptWord
 
+MATCH_OVERRIDE_KEYS = {
+    "min_score",
+    "min_gap_seconds",
+    "min_overlap",
+    "min_confidence",
+    "search_window",
+    "recovery_after_seconds",
+    "recovery_rewind_ayat",
+    "recovery_window_multiplier",
+    "ambiguous_min_score",
+    "ambiguous_min_confidence",
+    "max_infer_gap_ayahs",
+    "max_infer_gap_seconds",
+    "max_leading_infer_ayahs",
+    "allow_unverified_leading_infer",
+    "duplicate_ayah_window_seconds",
+    "max_forward_jump_ayahs",
+    "require_weak_support_for_inferred",
+}
+
 
 def _map_reciter_to_markers(markers: list[Marker], prayers: list[PrayerSegment]) -> list[Marker]:
     if not markers or not prayers:
@@ -44,11 +65,42 @@ def _map_reciter_to_markers(markers: list[Marker], prayers: list[PrayerSegment])
     return markers
 
 
+def _shift_marker_times(markers: list[Marker], offset_seconds: int) -> list[Marker]:
+    if offset_seconds <= 0:
+        return markers
+    for marker in markers:
+        start = int(marker.start_time if marker.start_time is not None else marker.time)
+        marker.start_time = start + offset_seconds
+        marker.time = marker.start_time
+        marker.end_time = int((marker.end_time if marker.end_time is not None else start) + offset_seconds)
+    return markers
+
+
+def _shift_prayer_segment_times(prayers: list[PrayerSegment], offset_seconds: int) -> list[PrayerSegment]:
+    if offset_seconds <= 0:
+        return prayers
+    for prayer in prayers:
+        prayer.start = int(prayer.start + offset_seconds)
+        prayer.end = int(prayer.end + offset_seconds)
+    return prayers
+
+
+def _marker_quality_rank(value: str | None) -> int:
+    if value == "high":
+        return 3
+    if value == "manual":
+        return 2
+    if value == "ambiguous":
+        return 1
+    return 0
+
+
 def _apply_day_final_ayah_override(
     day: int,
     markers: list[Marker],
     overrides_path: Path | None,
     corpus_entries: list,
+    time_offset_seconds: int = 0,
 ) -> tuple[list[Marker], dict | None]:
     if not markers or overrides_path is None or not overrides_path.exists():
         return markers, None
@@ -75,6 +127,11 @@ def _apply_day_final_ayah_override(
         final_time = int(final_time_raw) if final_time_raw is not None else None
     except (TypeError, ValueError):
         final_time = None
+    if final_time is not None and time_offset_seconds > 0:
+        # Override files historically store times relative to the processed clip.
+        # When we process a windowed clip and then shift marker times to absolute
+        # video time, shift override caps the same way.
+        final_time += int(time_offset_seconds)
 
     if final_ayah is None and final_time is None:
         return markers, None
@@ -190,6 +247,166 @@ def _apply_day_final_ayah_override(
     return filtered, info
 
 
+def _find_auto_start_from_previous_day(day: int, corpus_entries: list) -> tuple[int | None, dict | None]:
+    if day <= 1:
+        return None, None
+
+    previous_day = day - 1
+    data_dir = Path("public/data")
+    candidates = [data_dir / f"day-{previous_day}.json"] + sorted(data_dir.glob(f"day-{previous_day}-part-*.json"))
+
+    all_candidates: list[dict] = []
+    for path in candidates:
+        if not path.exists():
+            continue
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        markers = payload.get("markers", [])
+        if not isinstance(markers, list):
+            continue
+        for marker in markers:
+            if not isinstance(marker, dict):
+                continue
+            try:
+                surah_number = int(marker.get("surah_number"))
+                ayah = int(marker.get("ayah"))
+            except (TypeError, ValueError):
+                continue
+            try:
+                time = int(marker.get("time", 0))
+            except (TypeError, ValueError):
+                time = 0
+            quality = str(marker.get("quality", "")).strip()
+            try:
+                confidence = float(marker.get("confidence", 0.0))
+            except (TypeError, ValueError):
+                confidence = 0.0
+            candidate = {
+                "surah_number": surah_number,
+                "ayah": ayah,
+                "time": time,
+                "quality": quality,
+                "quality_rank": _marker_quality_rank(quality),
+                "confidence": confidence,
+                "source": str(path),
+            }
+            all_candidates.append(candidate)
+
+    if not all_candidates:
+        return None, None
+
+    preferred_candidates = [candidate for candidate in all_candidates if candidate["quality_rank"] >= 1]
+    pool = preferred_candidates if preferred_candidates else all_candidates
+    best_marker = max(
+        pool,
+        key=lambda item: (
+            item["surah_number"],
+            item["ayah"],
+            item["quality_rank"],
+            item["confidence"],
+            item["time"],
+        ),
+    )
+
+    matched_index: int | None = None
+    for index, entry in enumerate(corpus_entries):
+        if entry.surah_number == best_marker["surah_number"] and entry.ayah == best_marker["ayah"]:
+            matched_index = index
+            break
+    if matched_index is None:
+        return None, None
+
+    next_index = min(len(corpus_entries) - 1, matched_index + 1)
+    next_entry = corpus_entries[next_index]
+    return next_index, {
+        "source": best_marker["source"],
+        "previous_surah_number": best_marker["surah_number"],
+        "previous_ayah": best_marker["ayah"],
+        "start_surah_number": next_entry.surah_number,
+        "start_ayah": next_entry.ayah,
+    }
+
+
+def _load_transcript_segments_from_payload(
+    payload: dict,
+    target_time_offset_seconds: int = 0,
+    target_duration_seconds: int | None = None,
+) -> list[TranscriptSegment]:
+    source_offset_seconds = float(payload.get("time_offset_seconds", 0.0) or 0.0)
+    has_duration_bound = target_duration_seconds is not None and target_duration_seconds > 0
+    segments: list[TranscriptSegment] = []
+
+    for raw_segment in payload.get("segments", []):
+        text = str(raw_segment.get("text", "")).strip()
+        if not text:
+            continue
+
+        start_global = float(raw_segment.get("start", 0.0)) + source_offset_seconds
+        end_global = float(raw_segment.get("end", start_global)) + source_offset_seconds
+        if end_global < start_global:
+            end_global = start_global
+
+        start_local = start_global - float(target_time_offset_seconds)
+        end_local = end_global - float(target_time_offset_seconds)
+        if end_local < 0:
+            continue
+        if has_duration_bound and start_local > float(target_duration_seconds):
+            continue
+
+        words: list[TranscriptWord] = []
+        for raw_word in raw_segment.get("words", []):
+            word_text = str(raw_word.get("text", "")).strip()
+            if not word_text:
+                continue
+
+            word_start_global = float(raw_word.get("start", start_global)) + source_offset_seconds
+            word_end_global = float(raw_word.get("end", word_start_global)) + source_offset_seconds
+            if word_end_global < word_start_global:
+                word_end_global = word_start_global
+
+            word_start_local = word_start_global - float(target_time_offset_seconds)
+            word_end_local = word_end_global - float(target_time_offset_seconds)
+            if word_end_local < 0:
+                continue
+            if has_duration_bound and word_start_local > float(target_duration_seconds):
+                continue
+
+            if has_duration_bound:
+                word_start_local = min(float(target_duration_seconds), max(0.0, word_start_local))
+                word_end_local = min(float(target_duration_seconds), max(word_start_local, word_end_local))
+            else:
+                word_start_local = max(0.0, word_start_local)
+                word_end_local = max(word_start_local, word_end_local)
+
+            words.append(
+                TranscriptWord(
+                    start=word_start_local,
+                    end=word_end_local,
+                    text=word_text,
+                )
+            )
+
+        if has_duration_bound:
+            start_local = min(float(target_duration_seconds), max(0.0, start_local))
+            end_local = min(float(target_duration_seconds), max(start_local, end_local))
+        else:
+            start_local = max(0.0, start_local)
+            end_local = max(start_local, end_local)
+
+        segments.append(
+            TranscriptSegment(
+                start=start_local,
+                end=end_local,
+                text=text,
+                words=words,
+            )
+        )
+
+    return segments
+
+
 def process_day(
     day: int,
     output_path: Path,
@@ -209,9 +426,13 @@ def process_day(
     match_start_ayah: int | None = None,
     reuse_transcript_cache: bool = True,
     max_audio_seconds: int | None = None,
+    window_start_seconds: int | None = None,
+    window_end_seconds: int | None = None,
     asad_path: Path | None = None,
     day_overrides_path: Path | None = None,
     part: int | None = None,
+    transcript_cache_override: Path | None = None,
+    match_overrides: dict | None = None,
 ) -> dict:
     normalized_audio_path, source = prepare_audio_source(
         day=day,
@@ -223,11 +444,29 @@ def process_day(
     audio, sample_rate = read_mono_audio(normalized_audio_path)
     transcription_audio_path = normalized_audio_path
     cache_suffix = "full"
+    time_offset_seconds = 0
+
+    if window_start_seconds is not None or window_end_seconds is not None:
+        start_seconds = max(0, int(window_start_seconds or 0))
+        full_duration_seconds = int(len(audio) / sample_rate)
+        end_seconds = int(window_end_seconds) if window_end_seconds is not None else full_duration_seconds
+        if end_seconds <= start_seconds:
+            raise ValueError(f"Invalid window: start={start_seconds}s end={end_seconds}s")
+        start_samples = min(len(audio), start_seconds * sample_rate)
+        end_samples = min(len(audio), end_seconds * sample_rate)
+        if end_samples <= start_samples:
+            raise ValueError(f"Window produced empty audio: start={start_seconds}s end={end_seconds}s")
+        audio = audio[start_samples:end_samples]
+        time_offset_seconds = start_seconds
+        cache_suffix = f"win-{start_seconds}-{end_seconds}"
+        trimmed_audio_path = normalized_audio_path.parent / f"trimmed-{cache_suffix}.wav"
+        sf.write(trimmed_audio_path, audio, sample_rate)
+        transcription_audio_path = trimmed_audio_path
 
     if max_audio_seconds is not None and max_audio_seconds > 0:
         max_samples = min(len(audio), max_audio_seconds * sample_rate)
         audio = audio[:max_samples]
-        cache_suffix = f"{max_audio_seconds}s"
+        cache_suffix = f"{cache_suffix}-max{max_audio_seconds}s" if cache_suffix != "full" else f"{max_audio_seconds}s"
         trimmed_audio_path = normalized_audio_path.parent / f"trimmed-{cache_suffix}.wav"
         sf.write(trimmed_audio_path, audio, sample_rate)
         transcription_audio_path = trimmed_audio_path
@@ -235,41 +474,65 @@ def process_day(
     total_seconds = int(len(audio) / sample_rate)
 
     part_suffix = f"-part-{part}" if part is not None and part > 0 else ""
-    transcript_cache_path = Path("data/ai/cache") / f"day-{day}{part_suffix}-transcript-{cache_suffix}.json"
+    source_key = hashlib.sha1(source.encode("utf-8")).hexdigest()[:12]
+    generated_transcript_cache_path = Path("data/ai/cache") / f"day-{day}{part_suffix}-transcript-{cache_suffix}-{source_key}.json"
+    transcript_cache_path = generated_transcript_cache_path
     transcript_segments: list[TranscriptSegment]
-    if reuse_transcript_cache and transcript_cache_path.exists():
-        import json
+    cache_loaded = False
+    cache_source_key: str | None = None
 
-        with transcript_cache_path.open("r", encoding="utf-8") as handle:
-            cached_payload = json.load(handle)
-        transcript_segments = [
-            TranscriptSegment(
-                start=float(segment.get("start", 0.0)),
-                end=float(segment.get("end", 0.0)),
-                text=str(segment.get("text", "")).strip(),
-                words=[
-                    TranscriptWord(
-                        start=float(word.get("start", 0.0)),
-                        end=float(word.get("end", 0.0)),
-                        text=str(word.get("text", "")).strip(),
-                    )
-                    for word in segment.get("words", [])
-                    if str(word.get("text", "")).strip()
-                ],
+    if transcript_cache_override is not None and transcript_cache_override.exists():
+        try:
+            with transcript_cache_override.open("r", encoding="utf-8") as handle:
+                cached_payload = json.load(handle)
+            transcript_segments = _load_transcript_segments_from_payload(
+                payload=cached_payload,
+                target_time_offset_seconds=time_offset_seconds,
+                target_duration_seconds=total_seconds,
             )
-            for segment in cached_payload.get("segments", [])
-            if str(segment.get("text", "")).strip()
-        ]
-    else:
+            if transcript_segments:
+                cache_source_key = str(cached_payload.get("source_key", "")).strip() or None
+                cache_loaded = True
+                transcript_cache_path = transcript_cache_override
+        except (OSError, json.JSONDecodeError, TypeError, ValueError):
+            cache_loaded = False
+
+    if not cache_loaded and reuse_transcript_cache and generated_transcript_cache_path.exists():
+        try:
+            with generated_transcript_cache_path.open("r", encoding="utf-8") as handle:
+                cached_payload = json.load(handle)
+            cached_source = str(cached_payload.get("source", "")).strip()
+            cached_source_key = str(cached_payload.get("source_key", "")).strip()
+            source_matches = cached_source == source and (not cached_source_key or cached_source_key == source_key)
+            if source_matches:
+                transcript_segments = _load_transcript_segments_from_payload(
+                    payload=cached_payload,
+                    target_time_offset_seconds=time_offset_seconds,
+                    target_duration_seconds=total_seconds,
+                )
+                if transcript_segments:
+                    cache_loaded = True
+                    cache_source_key = cached_source_key or None
+                    transcript_cache_path = generated_transcript_cache_path
+        except (OSError, json.JSONDecodeError, TypeError, ValueError):
+            cache_loaded = False
+
+    if not cache_loaded:
         transcript_segments = transcribe_audio(transcription_audio_path, model_size=whisper_model)
         write_json(
-            transcript_cache_path,
+            generated_transcript_cache_path,
             {
+                "cache_version": 2,
                 "day": day,
                 "source": source,
+                "source_key": source_key,
+                "audio_path": str(transcription_audio_path),
+                "time_offset_seconds": time_offset_seconds,
                 "segments": [asdict(segment) for segment in transcript_segments],
             },
         )
+        transcript_cache_path = generated_transcript_cache_path
+        cache_source_key = source_key
 
     audio_segment_starts = detect_prayer_starts(audio, sample_rate, collapse_rakah_pairs=True)
     fatiha_segment_starts = detect_fatiha_starts(transcript_segments)
@@ -287,26 +550,40 @@ def process_day(
 
     corpus_entries = load_corpus(corpus_path)
     forced_start_index: int | None = None
+    auto_start_info: dict | None = None
     if match_start_surah_number is not None and match_start_ayah is not None:
         for index, entry in enumerate(corpus_entries):
             if entry.surah_number == match_start_surah_number and entry.ayah == match_start_ayah:
                 forced_start_index = index
                 break
+    else:
+        forced_start_index, auto_start_info = _find_auto_start_from_previous_day(day=day, corpus_entries=corpus_entries)
+    matcher_config: dict[str, int | float | bool] = {
+        "min_score": match_min_score,
+        "min_gap_seconds": match_min_gap_seconds,
+        "min_overlap": match_min_overlap,
+        "min_confidence": match_min_confidence,
+        "require_weak_support_for_inferred": match_require_weak_support_for_inferred,
+    }
+    if match_overrides:
+        for key, value in match_overrides.items():
+            if key in MATCH_OVERRIDE_KEYS and value is not None:
+                matcher_config[key] = value
+
     markers = match_quran_markers(
         transcript_segments,
         corpus_entries,
-        min_score=match_min_score,
-        min_gap_seconds=match_min_gap_seconds,
-        min_overlap=match_min_overlap,
-        min_confidence=match_min_confidence,
-        require_weak_support_for_inferred=match_require_weak_support_for_inferred,
         forced_start_index=forced_start_index,
+        **matcher_config,
     )
+    reciter_segments = _shift_prayer_segment_times(reciter_segments, time_offset_seconds)
+    markers = _shift_marker_times(markers, time_offset_seconds)
     markers, override_info = _apply_day_final_ayah_override(
         day=day,
         markers=markers,
         overrides_path=day_overrides_path,
         corpus_entries=corpus_entries,
+        time_offset_seconds=time_offset_seconds,
     )
     asad_lookup = load_asad_translation(asad_path) if asad_path else {}
     markers = enrich_marker_texts(markers, corpus_entries, asad_lookup)
@@ -319,27 +596,31 @@ def process_day(
         "meta": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "audio_path": str(normalized_audio_path),
+            "transcription_audio_path": str(transcription_audio_path),
             "part": part,
             "whisper_model": whisper_model,
+            "time_offset_seconds": time_offset_seconds,
             "markers_detected": len(markers),
             "reciter_segments_detected": len(reciter_segments),
             "corpus_loaded": bool(corpus_entries),
             "asad_loaded": bool(asad_lookup),
             "transcript_path": str(transcript_cache_path),
+            "transcript_cache_source_key": cache_source_key or source_key,
+            "transcript_override_path": str(transcript_cache_override) if transcript_cache_override else None,
             "segment_detection": {
                 "audio_starts": len(audio_segment_starts),
                 "fatiha_starts": len(fatiha_segment_starts),
                 "merged_starts": len(reciter_segment_starts),
             },
             "match_config": {
-                "min_score": match_min_score,
-                "min_overlap": match_min_overlap,
-                "min_confidence": match_min_confidence,
-                "min_gap_seconds": match_min_gap_seconds,
+                **matcher_config,
                 "strict_normalization": STRICT_NORMALIZATION,
-                "require_weak_support_for_inferred": match_require_weak_support_for_inferred,
                 "start_surah_number": match_start_surah_number,
                 "start_ayah": match_start_ayah,
+                "auto_start_from_previous_day": auto_start_info,
+                "window_start_seconds": window_start_seconds,
+                "window_end_seconds": window_end_seconds,
+                "overrides_applied": sorted([key for key in (match_overrides or {}).keys() if key in MATCH_OVERRIDE_KEYS]),
             },
             "manual_override": override_info,
         },
