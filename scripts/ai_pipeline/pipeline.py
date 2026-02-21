@@ -45,6 +45,19 @@ def _map_reciter_to_markers(markers: list[Marker], prayers: list[PrayerSegment])
     return markers
 
 
+def _quality_rank(value: str | None) -> int:
+    quality = (value or "").strip().lower()
+    if quality == "manual":
+        return 4
+    if quality == "high":
+        return 3
+    if quality == "ambiguous":
+        return 2
+    if quality == "inferred":
+        return 1
+    return 0
+
+
 def _apply_day_final_ayah_override(
     day: int,
     markers: list[Marker],
@@ -189,6 +202,175 @@ def _apply_day_final_ayah_override(
         "inserted_terminal_time": inserted_time,
     }
     return filtered, info
+
+
+def _fill_override_surah_range(
+    day: int,
+    markers: list[Marker],
+    overrides_path: Path | None,
+    corpus_entries: list,
+) -> tuple[list[Marker], dict | None]:
+    if not markers or overrides_path is None or not overrides_path.exists():
+        return markers, None
+
+    try:
+        payload = json.loads(overrides_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return markers, None
+
+    overrides = payload.get("day_overrides", payload)
+    day_config = overrides.get(str(day)) if isinstance(overrides, dict) else None
+    if not isinstance(day_config, dict):
+        return markers, None
+
+    final_surah = str(day_config.get("final_surah", "")).strip()
+    final_ayah_raw = day_config.get("final_ayah")
+    final_time_raw = day_config.get("final_time")
+
+    if not final_surah:
+        return markers, None
+    try:
+        final_ayah = int(final_ayah_raw)
+    except (TypeError, ValueError):
+        return markers, None
+    if final_ayah <= 0:
+        return markers, None
+    try:
+        final_time = int(final_time_raw) if final_time_raw is not None else None
+    except (TypeError, ValueError):
+        final_time = None
+
+    target_surah_number: int | None = None
+    for entry in corpus_entries:
+        if str(entry.surah) == final_surah:
+            target_surah_number = int(entry.surah_number)
+            break
+    if target_surah_number is None:
+        return markers, None
+
+    relevant = [marker for marker in markers if marker.surah_number == target_surah_number and marker.ayah <= final_ayah]
+    if not relevant:
+        return markers, None
+
+    best_by_ayah: dict[int, Marker] = {}
+    for marker in relevant:
+        existing = best_by_ayah.get(marker.ayah)
+        if existing is None:
+            best_by_ayah[marker.ayah] = marker
+            continue
+        marker_rank = _quality_rank(marker.quality)
+        existing_rank = _quality_rank(existing.quality)
+        marker_conf = float(marker.confidence or 0.0)
+        existing_conf = float(existing.confidence or 0.0)
+        if marker_rank > existing_rank:
+            best_by_ayah[marker.ayah] = marker
+        elif marker_rank == existing_rank and marker_conf > existing_conf:
+            best_by_ayah[marker.ayah] = marker
+        elif marker_rank == existing_rank and marker_conf == existing_conf and marker.time < existing.time:
+            best_by_ayah[marker.ayah] = marker
+
+    existing_ayahs = sorted(best_by_ayah.keys())
+    if not existing_ayahs:
+        return markers, None
+
+    adjacent_steps: list[int] = []
+    for left_ayah, right_ayah in zip(existing_ayahs, existing_ayahs[1:]):
+        if right_ayah != left_ayah + 1:
+            continue
+        left = best_by_ayah[left_ayah]
+        right = best_by_ayah[right_ayah]
+        gap = int(right.time) - int(left.time)
+        if 0 < gap < 240:
+            adjacent_steps.append(gap)
+    if adjacent_steps:
+        adjacent_steps.sort()
+        fallback_step = max(6, adjacent_steps[len(adjacent_steps) // 2])
+    else:
+        fallback_step = 20
+
+    full_timeline = sorted(markers, key=lambda marker: (marker.time, marker.surah_number or 0, marker.ayah))
+
+    def reciter_for_time(target_time: int) -> str | None:
+        chosen: str | None = None
+        for item in full_timeline:
+            item_time = int(item.start_time or item.time)
+            if item_time <= target_time:
+                chosen = item.reciter
+            else:
+                break
+        return chosen
+
+    additions: list[Marker] = []
+    for ayah in range(1, final_ayah + 1):
+        if ayah in best_by_ayah:
+            continue
+
+        prev_ayah = ayah - 1
+        next_ayah = ayah + 1
+        prev_marker: Marker | None = None
+        next_marker: Marker | None = None
+        while prev_ayah >= 1:
+            if prev_ayah in best_by_ayah:
+                prev_marker = best_by_ayah[prev_ayah]
+                break
+            prev_ayah -= 1
+        while next_ayah <= final_ayah:
+            if next_ayah in best_by_ayah:
+                next_marker = best_by_ayah[next_ayah]
+                break
+            next_ayah += 1
+
+        if prev_marker is not None and next_marker is not None and next_marker.ayah > prev_marker.ayah and next_marker.time > prev_marker.time:
+            ratio = (ayah - prev_marker.ayah) / max(1, next_marker.ayah - prev_marker.ayah)
+            inferred_time = int(round(prev_marker.time + ((next_marker.time - prev_marker.time) * ratio)))
+            inferred_time = max(inferred_time, prev_marker.time + 1)
+            inferred_time = min(inferred_time, next_marker.time - 1)
+        elif prev_marker is not None:
+            inferred_time = int(prev_marker.time + ((ayah - prev_marker.ayah) * fallback_step))
+        elif next_marker is not None:
+            inferred_time = int(max(0, next_marker.time - ((next_marker.ayah - ayah) * fallback_step)))
+        else:
+            continue
+
+        if final_time is not None:
+            inferred_time = min(inferred_time, final_time)
+
+        marker = Marker(
+            time=inferred_time,
+            start_time=inferred_time,
+            end_time=inferred_time,
+            surah=final_surah,
+            surah_number=target_surah_number,
+            ayah=ayah,
+            juz=get_juz_for_ayah(target_surah_number, ayah),
+            quality="inferred",
+            confidence=0.56,
+            reciter=reciter_for_time(inferred_time),
+        )
+        additions.append(marker)
+        best_by_ayah[ayah] = marker
+        full_timeline.append(marker)
+        full_timeline.sort(key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+
+    if not additions:
+        return markers, {
+            "surah": final_surah,
+            "surah_number": target_surah_number,
+            "target_final_ayah": final_ayah,
+            "added_markers": 0,
+            "fallback_step_seconds": fallback_step,
+        }
+
+    merged = markers + additions
+    merged.sort(key=lambda marker: (marker.time, marker.surah_number or 0, marker.ayah))
+    info = {
+        "surah": final_surah,
+        "surah_number": target_surah_number,
+        "target_final_ayah": final_ayah,
+        "added_markers": len(additions),
+        "fallback_step_seconds": fallback_step,
+    }
+    return merged, info
 
 
 def _apply_marker_time_overrides(
@@ -392,6 +574,12 @@ def process_day(
         markers=markers,
         overrides_path=day_overrides_path,
     )
+    markers, range_fill_info = _fill_override_surah_range(
+        day=day,
+        markers=markers,
+        overrides_path=day_overrides_path,
+        corpus_entries=corpus_entries,
+    )
     asad_lookup = load_asad_translation(asad_path) if asad_path else {}
     markers = enrich_marker_texts(markers, corpus_entries, asad_lookup)
     markers = _map_reciter_to_markers(markers, reciter_segments)
@@ -430,6 +618,7 @@ def process_day(
             },
             "manual_override": override_info,
             "marker_time_overrides": marker_time_overrides,
+            "override_surah_fill": range_fill_info,
         },
     }
 
