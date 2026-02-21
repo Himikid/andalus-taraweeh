@@ -95,6 +95,8 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
   const startAtRef = useRef<number | undefined>(startAt);
   const lastTimeRef = useRef<number>(0);
   const stalledTicksRef = useRef<number>(0);
+  const bufferingSinceRef = useRef<number | null>(null);
+  const lastStateRef = useRef<number>(-1);
 
   useEffect(() => {
     startAtRef.current = startAt;
@@ -141,7 +143,22 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
               // Reset stall tracker once playback is moving again.
               if (data === 1) {
                 stalledTicksRef.current = 0;
+                bufferingSinceRef.current = null;
               }
+              if (data === 3 && bufferingSinceRef.current === null) {
+                bufferingSinceRef.current = Date.now();
+              }
+              if (data === 2 && lastStateRef.current === 1) {
+                // Unintended pause right after playing can happen on flaky mobile/webview sessions.
+                window.setTimeout(() => {
+                  try {
+                    playerRef.current?.playVideo();
+                  } catch {
+                    // best effort
+                  }
+                }, 300);
+              }
+              lastStateRef.current = data;
             },
           },
         });
@@ -154,6 +171,13 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
 
           if (state === 1) {
             const delta = current - lastTimeRef.current;
+            if (typeof player.isMuted === "function" && player.isMuted() && typeof player.unMute === "function") {
+              try {
+                player.unMute();
+              } catch {
+                // best effort
+              }
+            }
             if (delta < 0.08 && document.visibilityState === "visible") {
               stalledTicksRef.current += 1;
             } else {
@@ -171,8 +195,21 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
                 stalledTicksRef.current = 0;
               }
             }
+          } else if (state === 3) {
+            const started = bufferingSinceRef.current;
+            if (started !== null && Date.now() - started > 8000) {
+              try {
+                player.seekTo(current + 0.01, true);
+                player.playVideo();
+              } catch {
+                // best effort recovery for long buffering stalls
+              } finally {
+                bufferingSinceRef.current = Date.now();
+              }
+            }
           } else {
             stalledTicksRef.current = 0;
+            bufferingSinceRef.current = null;
           }
 
           lastTimeRef.current = current;
