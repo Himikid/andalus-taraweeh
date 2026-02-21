@@ -17,6 +17,18 @@ def clamp(value: float, low: float, high: float) -> float:
     return max(low, min(high, value))
 
 
+def grade_from_score(score: float) -> str:
+    if score >= 0.88:
+        return "A"
+    if score >= 0.76:
+        return "B"
+    if score >= 0.62:
+        return "C"
+    if score >= 0.48:
+        return "D"
+    return "E"
+
+
 def require_binary(name: str) -> None:
     result = subprocess.run(["which", name], capture_output=True, text=True)
     if result.returncode != 0:
@@ -647,14 +659,18 @@ def apply_alignment_to_chunks(
             confidence = clamp((coverage * 0.48) + ((avg_score / 100.0) * 0.20), 0.28, 0.67)
         chunk_confidences.append(round(confidence, 3))
 
-    can_realign = len(aligned_tokens) >= 5 and avg_score >= 70 and coverage >= 0.22
+    min_hits = 3 if len(canonical_tokens) <= 40 else 5
+    min_coverage = 0.16 if len(canonical_tokens) <= 40 else 0.22
+    can_realign = len(aligned_tokens) >= min_hits and avg_score >= 70 and coverage >= min_coverage
     if not can_realign:
         return chunks, chunk_confidences, {
             "used_alignment": False,
             "reason": "low_quality_alignment",
             "canonical_tokens": len(canonical_tokens),
             "aligned_tokens": len(aligned_tokens),
+            "required_aligned_tokens": min_hits,
             "coverage": round(coverage, 3),
+            "required_coverage": round(min_coverage, 3),
             "avg_score": round(avg_score, 2),
         }
 
@@ -802,14 +818,45 @@ def build_caption_chunks(text: str, duration: float, variant: str) -> list[tuple
 
     chunk_size = 11 if variant == "clean" else 10
     step = max(6, chunk_size - 2)
+
+    # Prefer punctuation boundaries to reduce subtitle semantic drift.
+    sentence_like = [s.strip() for s in re.split(r"(?<=[\\.!\\?;:])\\s+", text) if s.strip()]
     text_chunks: list[str] = []
-    start_idx = 0
-    while start_idx < total:
-        end_idx = min(total, start_idx + chunk_size)
-        text_chunks.append(" ".join(words[start_idx:end_idx]))
-        if end_idx >= total:
-            break
-        start_idx += step
+    if len(sentence_like) > 1:
+        buffer_words: list[str] = []
+        for sentence in sentence_like:
+            sentence_words = sentence.split()
+            if not sentence_words:
+                continue
+            if buffer_words and len(buffer_words) + len(sentence_words) > (chunk_size + 4):
+                text_chunks.append(" ".join(buffer_words))
+                buffer_words = list(sentence_words)
+            else:
+                buffer_words.extend(sentence_words)
+        if buffer_words:
+            text_chunks.append(" ".join(buffer_words))
+
+        # Guard against too many tiny chunks: collapse by stepping.
+        if len(text_chunks) >= 8:
+            compact: list[str] = []
+            i = 0
+            while i < len(text_chunks):
+                merged = text_chunks[i]
+                if i + 1 < len(text_chunks) and len(merged.split()) < 7:
+                    merged = f"{merged} {text_chunks[i + 1]}".strip()
+                    i += 1
+                compact.append(merged)
+                i += 1
+            text_chunks = compact
+
+    if not text_chunks:
+        start_idx = 0
+        while start_idx < total:
+            end_idx = min(total, start_idx + chunk_size)
+            text_chunks.append(" ".join(words[start_idx:end_idx]))
+            if end_idx >= total:
+                break
+            start_idx += step
 
     n = len(text_chunks)
     if n == 1:
@@ -856,13 +903,13 @@ def hold_caption_chunks_until_next(
         next_confidence = float(next_row["confidence"])
         if next_confidence >= 0.62:
             continue
-        delay = min(1.6, (0.62 - next_confidence) * 3.8)
+        delay = min(1.8, (0.62 - next_confidence) * 4.2)
         delayed_start = float(next_row["start"]) + delay
         latest_start = float(next_row["end"]) - 0.36
         delayed_start = min(delayed_start, latest_start)
-        delayed_start = max(float(cleaned[index]["start"]) + 0.30, delayed_start)
+        delayed_start = max(float(cleaned[index]["start"]) + 0.38, delayed_start)
         next_row["start"] = delayed_start
-        next_row["end"] = max(delayed_start + 0.30, float(next_row["end"]))
+        next_row["end"] = max(delayed_start + 0.45, float(next_row["end"]))
 
     held: list[tuple[str, float, float]] = []
     for index, row in enumerate(cleaned):
@@ -1135,6 +1182,8 @@ def main() -> None:
 
         avg_conf = sum(caption_confidences) / max(1, len(caption_confidences))
         low_conf_count = len([value for value in caption_confidences if value < 0.62])
+        alignment_cov = float((alignment_summary or {}).get("coverage", 0.0) or 0.0)
+        qa_score = clamp((avg_conf * 0.72) + (alignment_cov * 0.28), 0.0, 1.0)
         subtitle_qa_rows.append(
             {
                 "variant": variant_name,
@@ -1143,6 +1192,8 @@ def main() -> None:
                 "chunk_count": len(caption_chunks),
                 "avg_chunk_confidence": round(avg_conf, 3),
                 "low_confidence_chunks": low_conf_count,
+                "qa_score": round(qa_score, 3),
+                "qa_grade": grade_from_score(qa_score),
                 "alignment": alignment_summary,
                 "chunks": [
                     {
@@ -1242,6 +1293,21 @@ def main() -> None:
         "transcript_tokens": len(transcript_tokens),
         "aligned_tokens": len(aligned_tokens),
         "rendered_files": [str(path) for path in rendered],
+        "overall_qa_score": round(
+            clamp(
+                sum(float(row.get("qa_score", 0.0)) for row in subtitle_qa_rows) / max(1, len(subtitle_qa_rows)),
+                0.0,
+                1.0,
+            ),
+            3,
+        ),
+        "overall_qa_grade": grade_from_score(
+            clamp(
+                sum(float(row.get("qa_score", 0.0)) for row in subtitle_qa_rows) / max(1, len(subtitle_qa_rows)),
+                0.0,
+                1.0,
+            )
+        ),
         "variants": subtitle_qa_rows,
     }
     qa_report_path.write_text(json.dumps(qa_report, ensure_ascii=False, indent=2), encoding="utf-8")
