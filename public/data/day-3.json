@@ -564,227 +564,6 @@
       ]
     },
     {
-      "time": 1678,
-      "surah": "Al-Baqara",
-      "ayah": 263,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "۞ قَوْلٌۭ مَّعْرُوفٌۭ وَمَغْفِرَةٌ خَيْرٌۭ مِّن صَدَقَةٍۢ يَتْبَعُهَآ أَذًۭى ۗ وَٱللَّهُ غَنِىٌّ حَلِيمٌۭ",
-      "english_text": "A kind word and the veiling of another's want is better than a charitable deed followed by hurt; and God is self-sufficient, forbearing.",
-      "start_time": 1678,
-      "end_time": 1678,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1679,
-      "surah": "Al-Baqara",
-      "ayah": 264,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُبْطِلُوا۟ صَدَقَٰتِكُم بِٱلْمَنِّ وَٱلْأَذَىٰ كَٱلَّذِى يُنفِقُ مَالَهُۥ رِئَآءَ ٱلنَّاسِ وَلَا يُؤْمِنُ بِٱللَّهِ وَٱلْيَوْمِ ٱلْءَاخِرِ ۖ فَمَثَلُهُۥ كَمَثَلِ صَفْوَانٍ عَلَيْهِ تُرَابٌۭ فَأَصَابَهُۥ وَابِلٌۭ فَتَرَكَهُۥ صَلْدًۭا ۖ لَّا يَقْدِرُونَ عَلَىٰ شَىْءٍۢ مِّمَّا كَسَبُوا۟ ۗ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلْكَٰفِرِينَ",
-      "english_text": "O you who have attained to faith! Do not deprive your charitable deeds of all worth by stressing your own benevolence and hurting [the feelings of the needy], as does he who spends his wealth only to be seen and praised by men, and believes not in God and the Last Day: for his parable is that of a smooth rock with [a little] earth upon it - and then a rainstorm smites it and leaves it hard and bare. Such as these shall have no gain whatever from all their [good] works: for God does not guide people who refuse to acknowledge the truth.",
-      "start_time": 1679,
-      "end_time": 1679,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1680,
-      "surah": "Al-Baqara",
-      "ayah": 265,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "وَمَثَلُ ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُمُ ٱبْتِغَآءَ مَرْضَاتِ ٱللَّهِ وَتَثْبِيتًۭا مِّنْ أَنفُسِهِمْ كَمَثَلِ جَنَّةٍۭ بِرَبْوَةٍ أَصَابَهَا وَابِلٌۭ فَـَٔاتَتْ أُكُلَهَا ضِعْفَيْنِ فَإِن لَّمْ يُصِبْهَا وَابِلٌۭ فَطَلٌّۭ ۗ وَٱللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ",
-      "english_text": "And the parable of those who spend their possessions out of a longing to please God, and out of their own inner certainty, is that of a garden on high, fertile ground: a rainstorm smites it, and thereupon it brings forth its fruit twofold; and if no rainstorm smites it, soft rain [falls upon it]. And God sees all that you do.",
-      "start_time": 1680,
-      "end_time": 1680,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1681,
-      "surah": "Al-Baqara",
-      "ayah": 266,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "أَيَوَدُّ أَحَدُكُمْ أَن تَكُونَ لَهُۥ جَنَّةٌۭ مِّن نَّخِيلٍۢ وَأَعْنَابٍۢ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ لَهُۥ فِيهَا مِن كُلِّ ٱلثَّمَرَٰتِ وَأَصَابَهُ ٱلْكِبَرُ وَلَهُۥ ذُرِّيَّةٌۭ ضُعَفَآءُ فَأَصَابَهَآ إِعْصَارٌۭ فِيهِ نَارٌۭ فَٱحْتَرَقَتْ ۗ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمُ ٱلْءَايَٰتِ لَعَلَّكُمْ تَتَفَكَّرُونَ",
-      "english_text": "Would any of you like to have a garden of date-palms and vines, through which running waters flow, and have all manner of fruit therein - and then be overtaken by old age, with only weak children to [look after] him-and then [see] it smitten by a fiery whirlwind and utterly scorched? In this way God makes clear His messages unto you, so that you might take thought.",
-      "start_time": 1681,
-      "end_time": 1681,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1682,
-      "surah": "Al-Baqara",
-      "ayah": 267,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ أَنفِقُوا۟ مِن طَيِّبَٰتِ مَا كَسَبْتُمْ وَمِمَّآ أَخْرَجْنَا لَكُم مِّنَ ٱلْأَرْضِ ۖ وَلَا تَيَمَّمُوا۟ ٱلْخَبِيثَ مِنْهُ تُنفِقُونَ وَلَسْتُم بِـَٔاخِذِيهِ إِلَّآ أَن تُغْمِضُوا۟ فِيهِ ۚ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ غَنِىٌّ حَمِيدٌ",
-      "english_text": "O you who have attained to faith! Spend on others out of the good things which you may have acquired, and out of that which We bring forth for you from the earth; and choose not for your spending the bad things which you yourselves would not accept without averting your eyes in disdain. And know that God is self-sufficient, ever to be praised.",
-      "start_time": 1682,
-      "end_time": 1682,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1683,
-      "surah": "Al-Baqara",
-      "ayah": 268,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "ٱلشَّيْطَٰنُ يَعِدُكُمُ ٱلْفَقْرَ وَيَأْمُرُكُم بِٱلْفَحْشَآءِ ۖ وَٱللَّهُ يَعِدُكُم مَّغْفِرَةًۭ مِّنْهُ وَفَضْلًۭا ۗ وَٱللَّهُ وَٰسِعٌ عَلِيمٌۭ",
-      "english_text": "Satan threatens you with the prospect of poverty and bids you to be niggardly, whereas God promises you His forgiveness and bounty; and God is infinite, all-knowing,",
-      "start_time": 1683,
-      "end_time": 1683,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1684,
-      "surah": "Al-Baqara",
-      "ayah": 269,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "يُؤْتِى ٱلْحِكْمَةَ مَن يَشَآءُ ۚ وَمَن يُؤْتَ ٱلْحِكْمَةَ فَقَدْ أُوتِىَ خَيْرًۭا كَثِيرًۭا ۗ وَمَا يَذَّكَّرُ إِلَّآ أُو۟لُوا۟ ٱلْأَلْبَٰبِ",
-      "english_text": "granting wisdom unto whom He wills: and whoever is granted wisdom has indeed been granted wealth abundant. But none bears this in mind save those who are endowed with insight.",
-      "start_time": 1684,
-      "end_time": 1684,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1685,
-      "surah": "Al-Baqara",
-      "ayah": 270,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "وَمَآ أَنفَقْتُم مِّن نَّفَقَةٍ أَوْ نَذَرْتُم مِّن نَّذْرٍۢ فَإِنَّ ٱللَّهَ يَعْلَمُهُۥ ۗ وَمَا لِلظَّٰلِمِينَ مِنْ أَنصَارٍ",
-      "english_text": "For, whatever you may spend on others, or whatever you may vow [to spend], verily, God knows it; and those who do wrong [by withholding charity] shall have none to succour them.",
-      "start_time": 1685,
-      "end_time": 1685,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1686,
-      "surah": "Al-Baqara",
-      "ayah": 271,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "إِن تُبْدُوا۟ ٱلصَّدَقَٰتِ فَنِعِمَّا هِىَ ۖ وَإِن تُخْفُوهَا وَتُؤْتُوهَا ٱلْفُقَرَآءَ فَهُوَ خَيْرٌۭ لَّكُمْ ۚ وَيُكَفِّرُ عَنكُم مِّن سَيِّـَٔاتِكُمْ ۗ وَٱللَّهُ بِمَا تَعْمَلُونَ خَبِيرٌۭ",
-      "english_text": "If you do deeds of charity openly, it is well; but if you bestow it upon the needy in secret, it will be even better for you, and it will atone for some of your bad deeds. And God is aware of all that you do.",
-      "start_time": 1686,
-      "end_time": 1687,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1689,
-      "surah": "Al-Baqara",
-      "ayah": 272,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "۞ لَّيْسَ عَلَيْكَ هُدَىٰهُمْ وَلَٰكِنَّ ٱللَّهَ يَهْدِى مَن يَشَآءُ ۗ وَمَا تُنفِقُوا۟ مِنْ خَيْرٍۢ فَلِأَنفُسِكُمْ ۚ وَمَا تُنفِقُونَ إِلَّا ٱبْتِغَآءَ وَجْهِ ٱللَّهِ ۚ وَمَا تُنفِقُوا۟ مِنْ خَيْرٍۢ يُوَفَّ إِلَيْكُمْ وَأَنتُمْ لَا تُظْلَمُونَ",
-      "english_text": "It is not for thee [O Prophet] to make people follow the right path, since it is God [alone] who guides whom He wills. And whatever good you may spend on others is for your own good, provided that you spend only out of a longing for God's countenance: for, whatever good you may spend will be repaid unto you in full, and you shall not be wronged.",
-      "start_time": 1689,
-      "end_time": 1689,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1690,
-      "surah": "Al-Baqara",
-      "ayah": 273,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "لِلْفُقَرَآءِ ٱلَّذِينَ أُحْصِرُوا۟ فِى سَبِيلِ ٱللَّهِ لَا يَسْتَطِيعُونَ ضَرْبًۭا فِى ٱلْأَرْضِ يَحْسَبُهُمُ ٱلْجَاهِلُ أَغْنِيَآءَ مِنَ ٱلتَّعَفُّفِ تَعْرِفُهُم بِسِيمَٰهُمْ لَا يَسْـَٔلُونَ ٱلنَّاسَ إِلْحَافًۭا ۗ وَمَا تُنفِقُوا۟ مِنْ خَيْرٍۢ فَإِنَّ ٱللَّهَ بِهِۦ عَلِيمٌ",
-      "english_text": "[And give] unto [such of] the needy who, being wholly wrapped up in God's cause, are unable to go about the earth [in search of livelihood]. He who is unaware [of their condition] might think that they are wealthy, because they abstain [from begging]; [but] thou canst recognize them by their special mark: they do not beg of men with importunity. And whatever good you may spend [on them], verily, God knows it all.",
-      "start_time": 1690,
-      "end_time": 1691,
-      "matched_token_indices": null
-    },
-    {
-      "time": 1692,
-      "surah": "Al-Baqara",
-      "ayah": 274,
-      "surah_number": 2,
-      "juz": 3,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.819,
-      "arabic_text": "ٱلَّذِينَ يُنفِقُونَ أَمْوَٰلَهُم بِٱلَّيْلِ وَٱلنَّهَارِ سِرًّۭا وَعَلَانِيَةًۭ فَلَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
-      "english_text": "Those who spend their possessions [for the sake of God] by night and by day, secretly and openly, shall have their reward with their Sustainer; and no fear need they have, and neither shall they grieve.",
-      "start_time": 1692,
-      "end_time": 1701,
-      "matched_token_indices": [
-        [
-          0,
-          9
-        ],
-        [
-          1,
-          10
-        ],
-        [
-          2,
-          11
-        ],
-        [
-          3,
-          12
-        ],
-        [
-          4,
-          13
-        ],
-        [
-          5,
-          14
-        ],
-        [
-          6,
-          15
-        ],
-        [
-          7,
-          16
-        ],
-        [
-          8,
-          17
-        ],
-        [
-          9,
-          18
-        ]
-      ]
-    },
-    {
       "time": 1955,
       "surah": "Al-Baqara",
       "ayah": 275,
@@ -1836,63 +1615,18 @@
       "matched_token_indices": null
     },
     {
-      "time": 4442,
+      "time": 4536,
       "surah": "Aal-i-Imraan",
-      "ayah": 17,
+      "ayah": 15,
       "surah_number": 3,
       "juz": 3,
       "quality": "ambiguous",
       "reciter": "Hasan",
-      "confidence": 0.6,
-      "arabic_text": "ٱلصَّٰبِرِينَ وَٱلصَّٰدِقِينَ وَٱلْقَٰنِتِينَ وَٱلْمُنفِقِينَ وَٱلْمُسْتَغْفِرِينَ بِٱلْأَسْحَارِ",
-      "english_text": "those who are patient in adversity, and true to their word, and truly devout, and who spend [in God's way], and pray for forgiveness from their innermost hearts.",
-      "start_time": 4442,
-      "end_time": 4458,
-      "matched_token_indices": null
-    },
-    {
-      "time": 4483,
-      "surah": "Aal-i-Imraan",
-      "ayah": 19,
-      "surah_number": 3,
-      "juz": 3,
-      "quality": "ambiguous",
-      "reciter": "Hasan",
-      "confidence": 0.6,
-      "arabic_text": "إِنَّ ٱلدِّينَ عِندَ ٱللَّهِ ٱلْإِسْلَٰمُ ۗ وَمَا ٱخْتَلَفَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ إِلَّا مِنۢ بَعْدِ مَا جَآءَهُمُ ٱلْعِلْمُ بَغْيًۢا بَيْنَهُمْ ۗ وَمَن يَكْفُرْ بِـَٔايَٰتِ ٱللَّهِ فَإِنَّ ٱللَّهَ سَرِيعُ ٱلْحِسَابِ",
-      "english_text": "Behold, the only [true] religion in the sight of God is [man's] self-surrender unto Him; and those who were vouchsafed revelation aforetime took, out of mutual jealousy, to divergent views [on this point] only after knowledge [thereof] had come unto them. But as for him who denies the truth of God's messages - behold, God is swift in reckoning!",
-      "start_time": 4483,
-      "end_time": 4499,
-      "matched_token_indices": null
-    },
-    {
-      "time": 4517,
-      "surah": "Aal-i-Imraan",
-      "ayah": 20,
-      "surah_number": 3,
-      "juz": 3,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.6,
-      "arabic_text": "فَإِنْ حَآجُّوكَ فَقُلْ أَسْلَمْتُ وَجْهِىَ لِلَّهِ وَمَنِ ٱتَّبَعَنِ ۗ وَقُل لِّلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ وَٱلْأُمِّيِّۦنَ ءَأَسْلَمْتُمْ ۚ فَإِنْ أَسْلَمُوا۟ فَقَدِ ٱهْتَدَوا۟ ۖ وَّإِن تَوَلَّوْا۟ فَإِنَّمَا عَلَيْكَ ٱلْبَلَٰغُ ۗ وَٱللَّهُ بَصِيرٌۢ بِٱلْعِبَادِ",
-      "english_text": "Thus, [O Prophet,] if they argue with thee, say, \"I have surrendered my whole being unto God, and [so have] all who follow me!\" - and ask those who have been vouchsafed revelation aforetime, as well as all unlettered people, \"Have you [too] surrendered yourselves unto Him?\" And if they surrender themselves unto Him, they are on the right path; but if they turn away - behold, thy duty is no more than to deliver the message: for God sees all that is in [the hearts of] His creatures.",
-      "start_time": 4517,
-      "end_time": 4530,
-      "matched_token_indices": null
-    },
-    {
-      "time": 4546,
-      "surah": "Aal-i-Imraan",
-      "ayah": 21,
-      "surah_number": 3,
-      "juz": 3,
-      "quality": "ambiguous",
-      "reciter": "Hasan",
-      "confidence": 0.6,
-      "arabic_text": "إِنَّ ٱلَّذِينَ يَكْفُرُونَ بِـَٔايَٰتِ ٱللَّهِ وَيَقْتُلُونَ ٱلنَّبِيِّۦنَ بِغَيْرِ حَقٍّۢ وَيَقْتُلُونَ ٱلَّذِينَ يَأْمُرُونَ بِٱلْقِسْطِ مِنَ ٱلنَّاسِ فَبَشِّرْهُم بِعَذَابٍ أَلِيمٍ",
-      "english_text": "Verily, as for those who deny the truth of God's messages, and slay the prophets against all right, and slay people who enjoin equity - announce unto them a grievous chastisement.",
-      "start_time": 4546,
-      "end_time": 4554,
+      "confidence": 0.68,
+      "arabic_text": "۞ قُلْ أَؤُنَبِّئُكُم بِخَيْرٍۢ مِّن ذَٰلِكُمْ ۚ لِلَّذِينَ ٱتَّقَوْا۟ عِندَ رَبِّهِمْ جَنَّٰتٌۭ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ خَٰلِدِينَ فِيهَا وَأَزْوَٰجٌۭ مُّطَهَّرَةٌۭ وَرِضْوَٰنٌۭ مِّنَ ٱللَّهِ ۗ وَٱللَّهُ بَصِيرٌۢ بِٱلْعِبَادِ",
+      "english_text": "Say: \"Shall I tell you of better things than those [earthly joys]? For the God-conscious there are, with their Sustainer, gardens through which running waters flow, therein to abide, and spouses pure, and God's goodly acceptance.\" And God sees all that is in [the hearts of] His servants -",
+      "start_time": 4536,
+      "end_time": 4552,
       "matched_token_indices": null
     },
     {
@@ -3982,13 +3716,13 @@
     }
   ],
   "meta": {
-    "generated_at": "2026-02-21T03:34:52.129733+00:00",
+    "generated_at": "2026-02-21T05:53:09.947441+00:00",
     "audio_path": "data/audio/day-3/normalized.wav",
     "transcription_audio_path": "data/audio/day-3/trimmed-win-1130-7341.wav",
     "part": null,
     "whisper_model": "small",
     "time_offset_seconds": 1130,
-    "markers_detected": 122,
+    "markers_detected": 107,
     "reciter_segments_detected": 19,
     "corpus_loaded": true,
     "asad_loaded": true,

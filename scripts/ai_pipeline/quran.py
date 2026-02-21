@@ -996,6 +996,7 @@ def _fill_surah_coverage_markers(
     max_bridge_gap_ayahs: int = 60,
     max_bridge_gap_seconds: int = 2400,
     max_one_sided_extrapolation_ayahs: int = 5,
+    min_bridge_step_seconds: float = 4.0,
 ) -> list[Marker]:
     surah_map: dict[str, dict[int, Marker]] = {}
     for marker in sorted(existing_markers, key=lambda m: m.time):
@@ -1042,6 +1043,9 @@ def _fill_surah_coverage_markers(
                 if span_ayahs > max_bridge_gap_ayahs:
                     continue
                 if span_secs <= 0 or span_secs > max_bridge_gap_seconds:
+                    continue
+                bridge_step = span_secs / float(span_ayahs)
+                if bridge_step < float(min_bridge_step_seconds):
                     continue
                 if not (_is_anchor_quality(left_marker.quality) and _is_anchor_quality(right_marker.quality)):
                     continue
@@ -1965,6 +1969,7 @@ def match_quran_markers(
     repeat_min_confidence: float = 0.80,
     repeat_max_gap_seconds: int = 10,
     max_recovery_jump_ayahs: int = 12,
+    min_infer_step_seconds: float = 4.0,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -2418,6 +2423,8 @@ def match_quran_markers(
             continue
 
         step_seconds = gap_seconds / (missing_count + 1)
+        if step_seconds < float(min_infer_step_seconds):
+            continue
         for offset in range(1, missing_count + 1):
             ayah_number = left.ayah + offset
             key = (left.surah, ayah_number)
@@ -2581,6 +2588,7 @@ def match_quran_markers(
         weak_support_score=max(60, ambiguous_min_score - 8),
         weak_support_overlap=max(0.07, min_overlap - 0.05),
         enforce_weak_support=require_weak_support_for_inferred,
+        min_bridge_step_seconds=min_infer_step_seconds,
     )
     merged.extend(coverage_inferred)
     merged = _dedupe_by_local_time_window(merged, window_seconds=90)
