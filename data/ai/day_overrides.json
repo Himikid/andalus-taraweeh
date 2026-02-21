@@ -5,7 +5,9 @@
       "final_ayah": 124
     },
     "3": {
-      "final_time": 6211,
+      "final_surah": "Aal-i-Imraan",
+      "final_ayah": 92,
+      "final_time": 7341,
       "marker_overrides": [
         {
           "surah_number": 3,
