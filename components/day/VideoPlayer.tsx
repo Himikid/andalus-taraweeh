@@ -14,6 +14,9 @@ type YTPlayer = {
   seekTo: (seconds: number, allowSeekAhead: boolean) => void;
   playVideo: () => void;
   getCurrentTime: () => number;
+  getPlayerState?: () => number;
+  isMuted?: () => boolean;
+  unMute?: () => void;
 };
 
 type YTNamespace = {
@@ -24,6 +27,7 @@ type YTNamespace = {
       playerVars?: Record<string, string | number>;
       events?: {
         onReady?: () => void;
+        onStateChange?: (event: { data: number }) => void;
       };
     },
   ) => YTPlayer;
@@ -89,6 +93,8 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
   const playerRef = useRef<YTPlayer | null>(null);
   const tickerRef = useRef<number | null>(null);
   const startAtRef = useRef<number | undefined>(startAt);
+  const lastTimeRef = useRef<number>(0);
+  const stalledTicksRef = useRef<number>(0);
 
   useEffect(() => {
     startAtRef.current = startAt;
@@ -119,6 +125,8 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
             rel: 0,
             playsinline: 1,
             modestbranding: 1,
+            enablejsapi: 1,
+            origin: window.location.origin,
             start: startAtRef.current && startAtRef.current > 0 ? startAtRef.current : 0,
           },
           events: {
@@ -129,13 +137,46 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
                 playerRef.current.playVideo();
               }
             },
+            onStateChange: ({ data }) => {
+              // Reset stall tracker once playback is moving again.
+              if (data === 1) {
+                stalledTicksRef.current = 0;
+              }
+            },
           },
         });
 
         tickerRef.current = window.setInterval(() => {
           const player = playerRef.current;
           if (!player) return;
-          const time = Math.floor(player.getCurrentTime() || 0);
+          const current = Number(player.getCurrentTime() || 0);
+          const state = typeof player.getPlayerState === "function" ? Number(player.getPlayerState()) : 0;
+
+          if (state === 1) {
+            const delta = current - lastTimeRef.current;
+            if (delta < 0.08 && document.visibilityState === "visible") {
+              stalledTicksRef.current += 1;
+            } else {
+              stalledTicksRef.current = 0;
+            }
+            if (stalledTicksRef.current >= 5) {
+              try {
+                if (typeof player.isMuted === "function" && player.isMuted() && typeof player.unMute === "function") {
+                  player.unMute();
+                }
+                player.playVideo();
+              } catch {
+                // best effort recovery for occasional YouTube stalls
+              } finally {
+                stalledTicksRef.current = 0;
+              }
+            }
+          } else {
+            stalledTicksRef.current = 0;
+          }
+
+          lastTimeRef.current = current;
+          const time = Math.floor(current);
           onTimeUpdate?.(time);
         }, 1000);
       } catch {
