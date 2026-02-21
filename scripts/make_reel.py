@@ -274,6 +274,7 @@ def build_ayah_caption_chunks_from_markers(
     fallback_english_file: Path | None = None,
     prefer_marker_english: bool = False,
     source_url: str | None = None,
+    split_long_ayahs: bool = False,
 ) -> list[tuple[str, float, float]]:
     if ayah_end < ayah_start:
         ayah_end = ayah_start
@@ -390,7 +391,7 @@ def build_ayah_caption_chunks_from_markers(
             continue
 
         desired_chunks = 1
-        if len(words) > 18 and span >= 6.0:
+        if split_long_ayahs and len(words) > 18 and span >= 6.0:
             desired_chunks = max(2, int(round(len(words) / 16)))
             if span < 10.0:
                 desired_chunks = min(desired_chunks, 2)
@@ -564,7 +565,7 @@ def align_arabic_tokens(canonical_tokens: list[str], transcript_tokens: list[dic
     aligned: list[tuple[int, float, float, float]] = []
     cursor = 0
     total_transcript = len(transcript_tokens)
-    max_window = 28
+    max_window = 42
 
     for c_idx, c_tok in enumerate(canonical_tokens):
         best_j = -1
@@ -576,6 +577,16 @@ def align_arabic_tokens(canonical_tokens: list[str], transcript_tokens: list[dic
             if score > best_score:
                 best_score = score
                 best_j = t_idx
+        # Recovery sweep if local window is weak.
+        if best_score < 72:
+            recovery_end = min(total_transcript, cursor + (max_window * 4))
+            for t_idx in range(cursor, recovery_end):
+                t_tok = transcript_tokens[t_idx]["token"]
+                score = 0.6 * fuzz.partial_ratio(c_tok, t_tok) + 0.4 * fuzz.ratio(c_tok, t_tok)
+                if score > best_score:
+                    best_score = score
+                    best_j = t_idx
+
         if best_j >= 0 and best_score >= 72:
             aligned.append((c_idx, float(transcript_tokens[best_j]["start"]), float(transcript_tokens[best_j]["end"]), float(best_score)))
             cursor = best_j + 1
@@ -916,6 +927,10 @@ def hold_caption_chunks_until_next(
         text = str(row["text"])
         start = float(row["start"])
         end = float(row["end"])
+        if held:
+            prev_start, prev_end = held[-1][1], held[-1][2]
+            start = max(start, prev_end + 0.06, prev_start + 0.40)
+            end = max(end, start + 0.30)
         if index < len(cleaned) - 1:
             next_start = max(start + 0.30, float(cleaned[index + 1]["start"]))
             end = max(end, next_start)
@@ -1151,6 +1166,7 @@ def main() -> None:
                     fallback_english_file=Path(args.fallback_english_corpus),
                     prefer_marker_english=bool(args.prefer_marker_english),
                     source_url=resolved_source_url or None,
+                    split_long_ayahs=False,
                 )
                 if caption_chunks:
                     marker_timing_used = True
@@ -1177,6 +1193,15 @@ def main() -> None:
                 )
                 if aligned_confidences:
                     caption_confidences = aligned_confidences
+
+            # Accuracy-first safety: when confidence is weak, avoid rapid chunk flips.
+            avg_conf_preview = sum(caption_confidences) / max(1, len(caption_confidences))
+            if avg_conf_preview < 0.50 and len(caption_chunks) > 1:
+                merged_text = " ".join(part for part, _s, _e in caption_chunks if part).strip()
+                if merged_text:
+                    caption_chunks = [(merged_text, 0.28, max(0.9, duration - 0.18))]
+                    caption_confidences = [max(0.40, avg_conf_preview)]
+                    timing_source = f"{timing_source}-stabilized"
 
             caption_chunks = hold_caption_chunks_until_next(caption_chunks, duration, chunk_confidences=caption_confidences)
 
