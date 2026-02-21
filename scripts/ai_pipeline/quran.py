@@ -1593,6 +1593,54 @@ def _stabilize_weak_marker_durations(markers: list[Marker]) -> list[Marker]:
     return ordered
 
 
+def _prune_unrealistic_progression(markers: list[Marker]) -> list[Marker]:
+    if len(markers) < 3:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
+    kept: list[Marker] = []
+    last_index_by_surah: dict[str, int] = {}
+
+    def rank(marker: Marker) -> int:
+        return _quality_rank(marker.quality)
+
+    for marker in ordered:
+        surah = marker.surah
+        last_idx = last_index_by_surah.get(surah)
+        if last_idx is None:
+            kept.append(marker)
+            last_index_by_surah[surah] = len(kept) - 1
+            continue
+
+        previous = kept[last_idx]
+        prev_time = int(previous.start_time or previous.time)
+        curr_time = int(marker.start_time or marker.time)
+        dt = curr_time - prev_time
+        da = int(marker.ayah) - int(previous.ayah)
+
+        if da <= 0:
+            # Do not allow backward/same ayah repeats in the same-surah timeline here.
+            # Repeat handling should already have extended end_time of existing ayah.
+            continue
+
+        # If two far-apart ayahs land on the same second, keep only the stronger one.
+        if dt <= 1 and da > 1:
+            if rank(marker) > rank(previous):
+                kept[last_idx] = marker
+            continue
+
+        # Pace guard: prevent unrealistic surah leaps over very short time.
+        # Allow roughly one ayah every ~3 seconds with a small buffer.
+        allowed_jump = max(3, int(max(0, dt) / 3) + 2)
+        if da > allowed_jump and rank(marker) < 4:
+            continue
+
+        kept.append(marker)
+        last_index_by_surah[surah] = len(kept) - 1
+
+    return kept
+
+
 def _quran_first_refine_weak_markers(
     markers: list[Marker],
     transcript_segments: list[TranscriptSegment],
@@ -1916,6 +1964,7 @@ def match_quran_markers(
     repeat_min_overlap: float = 0.25,
     repeat_min_confidence: float = 0.80,
     repeat_max_gap_seconds: int = 10,
+    max_recovery_jump_ayahs: int = 12,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -2247,6 +2296,13 @@ def match_quran_markers(
                     jump = index - last_matched_index
                     if jump <= max_forward_jump_ayahs:
                         continue
+                    if jump > max_recovery_jump_ayahs:
+                        continue
+                    if last_marker_time >= 0:
+                        approx_gap_seconds = float(candidate.start_time) - float(last_marker_time)
+                        min_expected_gap = max(10.0, float(jump) * 2.0)
+                        if approx_gap_seconds < min_expected_gap:
+                            continue
                     if candidate.adjusted_score < 80 or candidate.overlap < 0.20 or confidence < 0.72:
                         continue
                     if recovery_best is None or candidate.adjusted_score > recovery_best.adjusted_score:
@@ -2297,7 +2353,7 @@ def match_quran_markers(
             marker_time=marker_start,
             surah_totals=surah_totals,
             min_gap_seconds=min_gap_seconds,
-            max_forward_jump_ayahs=(80 if selected_from_recovery else max_forward_jump_ayahs),
+            max_forward_jump_ayahs=(max_recovery_jump_ayahs if selected_from_recovery else max_forward_jump_ayahs),
         ):
             stale_segments += 1
             continue
@@ -2570,5 +2626,6 @@ def match_quran_markers(
     merged = _redistribute_dense_weak_runs(merged)
     merged = _stabilize_weak_marker_durations(merged)
     merged = _extend_point_markers_to_next(merged, max_extension_seconds=90)
+    merged = _prune_unrealistic_progression(merged)
     merged = sorted(merged, key=lambda marker: (marker.time, marker.surah_number or 0, marker.ayah))
     return merged
