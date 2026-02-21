@@ -17,6 +17,8 @@ type YTPlayer = {
   getPlayerState?: () => number;
   isMuted?: () => boolean;
   unMute?: () => void;
+  getVolume?: () => number;
+  setVolume?: (volume: number) => void;
 };
 
 type YTNamespace = {
@@ -97,6 +99,7 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
   const stalledTicksRef = useRef<number>(0);
   const bufferingSinceRef = useRef<number | null>(null);
   const lastStateRef = useRef<number>(-1);
+  const lowVolumeTicksRef = useRef<number>(0);
 
   useEffect(() => {
     startAtRef.current = startAt;
@@ -134,6 +137,16 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
           events: {
             onReady: () => {
               if (!playerRef.current) return;
+              try {
+                if (typeof playerRef.current.unMute === "function") {
+                  playerRef.current.unMute();
+                }
+                if (typeof playerRef.current.setVolume === "function") {
+                  playerRef.current.setVolume(100);
+                }
+              } catch {
+                // best effort audio init
+              }
               if (startAtRef.current && startAtRef.current > 0) {
                 playerRef.current.seekTo(startAtRef.current, true);
                 playerRef.current.playVideo();
@@ -178,6 +191,23 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
                 // best effort
               }
             }
+            if (typeof player.getVolume === "function") {
+              const volume = Number(player.getVolume() ?? 100);
+              if (volume <= 0) {
+                lowVolumeTicksRef.current += 1;
+              } else {
+                lowVolumeTicksRef.current = 0;
+              }
+              if (lowVolumeTicksRef.current >= 2 && typeof player.setVolume === "function") {
+                try {
+                  player.setVolume(100);
+                } catch {
+                  // best effort
+                } finally {
+                  lowVolumeTicksRef.current = 0;
+                }
+              }
+            }
             if (delta < 0.08 && document.visibilityState === "visible") {
               stalledTicksRef.current += 1;
             } else {
@@ -210,6 +240,7 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
           } else {
             stalledTicksRef.current = 0;
             bufferingSinceRef.current = null;
+            lowVolumeTicksRef.current = 0;
           }
 
           lastTimeRef.current = current;
