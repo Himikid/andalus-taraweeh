@@ -130,3 +130,53 @@ Generated `public/data/day-{N}.json` includes:
 This Python layer does not run on Vercel by default.
 
 Your Next.js deploy remains static and unaffected because Vercel builds from `npm run build` only.
+
+## Reel clip generation (vertical highlights)
+
+Create one vertical reel clip from a known ayah + exact timestamp:
+
+```bash
+python scripts/make_reel.py \
+  --day 1 \
+  --surah-number 2 \
+  --ayah 23 \
+  --ayah-end 24 \
+  --start 7:38 \
+  --duration 41 \
+  --sheikh "Sheikh Hasan" \
+  --youtube-url "https://www.youtube.com/watch?v=WJGS2B673Zg" \
+  --style fit \
+  --variants clean \
+  --align-subtitles
+```
+
+Notes:
+
+- `--video-file` can be used instead of `--youtube-url` to avoid re-downloads.
+- Default subtitle alignment model is `medium` (`--subtitle-model medium`).
+- Each run writes a QA report to `output/reels/day-{N}/s{surah}-a{ayah...}/subtitle-qa.json`.
+
+## Reel draft workflow (prepare -> edit -> generate)
+
+Generate an editable draft from `data/dayHighlights.ts`:
+
+```bash
+python scripts/prepare_reels.py prepare --day 2 --align-subtitles
+```
+
+This creates:
+
+- `data/reels/day-2-reel-draft.json`
+
+Edit each clip in the draft:
+
+- `start_timestamp`
+- `end_timestamp` or `duration_seconds`
+- `sheikh`
+- Set `"confirmed": true`
+
+Generate all enabled clips in the draft:
+
+```bash
+python scripts/prepare_reels.py generate --input data/reels/day-2-reel-draft.json --confirm
+```

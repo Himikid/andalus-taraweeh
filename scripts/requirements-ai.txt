@@ -4,3 +4,4 @@ rapidfuzz>=3.9
 requests>=2.32
 faster-whisper>=1.0
 resemblyzer>=0.1.4
+pillow>=10.0
