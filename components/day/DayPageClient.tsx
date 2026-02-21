@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import DaySelector from "@/components/day/DaySelector";
-import RecitersInfo from "@/components/shared/RecitersInfo";
+import DayHighlights from "@/components/day/DayHighlights";
 import NowReciting from "@/components/day/NowReciting";
 import SurahIndex, { type SurahMarker } from "@/components/day/SurahIndex";
 import VideoPlayer from "@/components/day/VideoPlayer";
@@ -70,12 +70,14 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
 
   const [selectedDay, setSelectedDay] = useState(safeInitialDay);
   const [markers, setMarkers] = useState<SurahMarker[]>([]);
+  const [partMarkers, setPartMarkers] = useState<Record<string, SurahMarker[]>>({});
   const [manualVideoId, setManualVideoId] = useState("");
   const [selectedPartId, setSelectedPartId] = useState<string | null>(getDefaultPartIdForDay(safeInitialDay));
   const [seekTime, setSeekTime] = useState<number | undefined>(undefined);
   const [seekNonce, setSeekNonce] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const hasInitializedSeekReset = useRef(false);
+  const skipNextSeekReset = useRef(false);
 
   const dayParts = getVideoPartsForDay(selectedDay);
   const dayVideoId = getVideoIdForDay(selectedDay, selectedPartId);
@@ -112,6 +114,10 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
   useEffect(() => {
     if (!hasInitializedSeekReset.current) {
       hasInitializedSeekReset.current = true;
+      return;
+    }
+    if (skipNextSeekReset.current) {
+      skipNextSeekReset.current = false;
       return;
     }
     setSeekTime(undefined);
@@ -155,6 +161,44 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
     };
   }, [selectedDay, selectedPartId]);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadPartMarkers() {
+      const parts = getVideoPartsForDay(selectedDay);
+      if (!parts.length) {
+        if (isMounted) {
+          setPartMarkers({});
+        }
+        return;
+      }
+
+      const nextMap: Record<string, SurahMarker[]> = {};
+      for (const part of parts) {
+        try {
+          const response = await fetch(getDataFilePathForDay(selectedDay, part.id), { cache: "no-store" });
+          if (!response.ok) {
+            continue;
+          }
+          const data = (await response.json()) as DayData;
+          nextMap[part.id] = Array.isArray(data.markers) ? smoothReciterLabels(data.markers) : [];
+        } catch {
+          // ignore missing or malformed part JSON
+        }
+      }
+
+      if (isMounted) {
+        setPartMarkers(nextMap);
+      }
+    }
+
+    void loadPartMarkers();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [selectedDay]);
+
   function handleDayChange(day: number) {
     const params = new URLSearchParams(window.location.search);
     const defaultPart = getDefaultPartIdForDay(day);
@@ -172,12 +216,25 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
   }
 
   function handlePartChange(partId: string) {
+    handlePartChangeWithSeek(partId);
+  }
+
+  function handlePartChangeWithSeek(partId: string, seconds?: number) {
     const params = new URLSearchParams(window.location.search);
     params.set("part", partId);
-    params.delete("t");
+    if (typeof seconds === "number" && Number.isFinite(seconds)) {
+      params.set("t", String(Math.max(0, Math.floor(seconds))));
+    } else {
+      params.delete("t");
+    }
     const query = params.toString();
     const pathname = `/day/${selectedDay}`;
     router.push(query ? `${pathname}?${query}` : pathname);
+    if (typeof seconds === "number" && Number.isFinite(seconds)) {
+      skipNextSeekReset.current = true;
+      setSeekTime(seconds);
+      setSeekNonce((value) => value + 1);
+    }
     setSelectedPartId(partId);
   }
 
@@ -235,15 +292,20 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
             <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
               <SurahIndex markers={markers} onSeek={handleSeek} />
             </section>
+            <DayHighlights
+              day={selectedDay}
+              markers={markers}
+              selectedPartId={selectedPartId}
+              partMarkers={partMarkers}
+              partLabels={Object.fromEntries(dayParts.map((part) => [part.id, part.label || `Part ${part.id}`]))}
+              onSeek={handleSeek}
+              onSeekInPart={handlePartChangeWithSeek}
+            />
           </div>
 
           <aside className="space-y-6 lg:col-span-4">
             <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
               <DaySelector days={availableTaraweehDays} selectedDay={selectedDay} onDayChange={handleDayChange} />
-            </section>
-
-            <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
-              <RecitersInfo compact />
             </section>
           </aside>
         </section>
