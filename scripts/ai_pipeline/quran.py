@@ -55,7 +55,18 @@ FATIHA_HINTS = [
     "اهدنا الصراط المستقيم",
     "صراط الذين انعمت عليهم غير المغضوب عليهم ولا الضالين",
 ]
+
+NON_RECITATION_HINTS = [
+    "الله اكبر",
+    "سمع الله لمن حمده",
+    "ربنا ولك الحمد",
+    "ربنا لك الحمد",
+    "سبحان ربي العظيم",
+    "سبحان ربي الاعلى",
+    "السلام عليكم ورحمة الله",
+]
 FATIHA_HINTS_NORM: list[str] = []
+NON_RECITATION_HINTS_NORM: list[str] = []
 ARABIC_ANCHOR_STOPWORDS = {
     "و",
     "ف",
@@ -544,6 +555,137 @@ def _is_fatiha_like_segment(normalized_segment: str, min_score: int = 90) -> boo
     return long_hit or medium_hits >= 2
 
 
+def _is_non_recitation_segment(normalized_segment: str, min_score: int = 90) -> bool:
+    global NON_RECITATION_HINTS_NORM
+    if len(normalized_segment) < 4:
+        return False
+    if len(normalized_segment) > 48:
+        return False
+
+    if not NON_RECITATION_HINTS_NORM:
+        NON_RECITATION_HINTS_NORM = [normalize_arabic(text) for text in NON_RECITATION_HINTS]
+
+    scores = [float(fuzz.partial_ratio(normalized_segment, phrase)) for phrase in NON_RECITATION_HINTS_NORM]
+    if not scores:
+        return False
+    return max(scores) >= float(min_score)
+
+
+def clean_transcript_for_matching(
+    transcript_segments: list[TranscriptSegment],
+    min_arabic_chars: int = 4,
+) -> list[TranscriptSegment]:
+    cleaned: list[TranscriptSegment] = []
+    for segment in transcript_segments:
+        text = str(segment.text or "").strip()
+        if not text:
+            continue
+
+        normalized = normalize_arabic(text)
+        if len(normalized) < 2:
+            continue
+        if _is_fatiha_like_segment(normalized):
+            continue
+        if _is_non_recitation_segment(normalized):
+            continue
+
+        arabic_chars = sum(1 for ch in text if "\u0600" <= ch <= "\u06FF")
+        latin_chars = sum(1 for ch in text if ("a" <= ch.lower() <= "z"))
+        if arabic_chars < min_arabic_chars:
+            continue
+        if latin_chars > 0 and arabic_chars < (latin_chars * 2):
+            continue
+
+        cleaned.append(segment)
+    return cleaned
+
+
+def _recover_missing_gap_with_search(
+    left: Marker,
+    right: Marker,
+    entry_lookup: dict[tuple[str, int], AyahEntry],
+    transcript_segments: list[TranscriptSegment],
+    min_gap_seconds: int,
+    min_score: int,
+    min_overlap: float,
+    min_confidence: float,
+    ambiguous_min_score: int,
+    ambiguous_min_confidence: float,
+    require_weak_support_for_inferred: bool,
+) -> list[Marker]:
+    recovered: list[Marker] = []
+    window_start_limit = left.time + min_gap_seconds
+    window_end_limit = right.time - min_gap_seconds
+    if window_end_limit <= window_start_limit:
+        return recovered
+
+    missing_ayahs = list(range(left.ayah + 1, right.ayah))
+    if not missing_ayahs:
+        return recovered
+
+    cursor = window_start_limit
+    span = max(1, right.time - left.time)
+    for ayah in missing_ayahs:
+        entry = entry_lookup.get((left.surah, ayah))
+        if entry is None:
+            continue
+        ratio = (ayah - left.ayah) / max(1, right.ayah - left.ayah)
+        expected = int(round(left.time + (span * ratio)))
+        half = max(20, int(round(span / max(6, len(missing_ayahs)))))
+        search_start = max(cursor, expected - half)
+        search_end = min(window_end_limit, expected + (half * 2))
+        if search_end <= search_start:
+            continue
+
+        best = _find_best_ayah_timestamp(
+            transcript_segments=transcript_segments,
+            entry=entry,
+            window_start=search_start,
+            window_end=search_end,
+            expected_time=max(search_start, min(search_end, expected)),
+            min_score=max(72, min_score - 4),
+            min_overlap=max(0.10, min_overlap - 0.06),
+            min_confidence=max(0.56, min_confidence - 0.06),
+            ambiguous_min_score=max(68, ambiguous_min_score - 4),
+            ambiguous_min_confidence=max(0.50, ambiguous_min_confidence),
+        )
+        if best is None:
+            continue
+
+        matched_time, matched_end, quality, confidence = best
+        matched_time = max(search_start, min(search_end, matched_time))
+        matched_end = max(matched_time, min(search_end, matched_end))
+        if require_weak_support_for_inferred and quality == "ambiguous":
+            if not _has_weak_local_support(
+                transcript_segments=transcript_segments,
+                entry=entry,
+                window_start=max(window_start_limit, matched_time - 14),
+                window_end=min(window_end_limit, matched_time + 14),
+                min_score=max(62, ambiguous_min_score - 8),
+                min_overlap=max(0.08, min_overlap - 0.06),
+            ):
+                continue
+
+        recovered.append(
+            Marker(
+                time=matched_time,
+                start_time=matched_time,
+                end_time=matched_end,
+                surah=left.surah,
+                surah_number=left.surah_number,
+                ayah=ayah,
+                juz=get_juz_for_ayah(left.surah_number or 1, ayah),
+                quality=quality,
+                confidence=confidence,
+            )
+        )
+        cursor = max(cursor + 1, matched_time + 2)
+        if cursor >= window_end_limit:
+            break
+
+    return recovered
+
+
 def _token_overlap(query: str, reference: str) -> float:
     query_tokens = set(query.split())
     reference_tokens = set(reference.split())
@@ -1029,11 +1171,17 @@ def _fill_surah_coverage_markers(
             right_ayahs = [a for a in known_ayahs if a > ayah]
             left_ayah = left_ayahs[-1] if left_ayahs else None
             right_ayah = right_ayahs[0] if right_ayahs else None
+            left_anchor_ayahs = [a for a in left_ayahs if _is_anchor_quality(ayah_map[a].quality)]
+            right_anchor_ayahs = [a for a in right_ayahs if _is_anchor_quality(ayah_map[a].quality)]
+            left_anchor_ayah = left_anchor_ayahs[-1] if left_anchor_ayahs else None
+            right_anchor_ayah = right_anchor_ayahs[0] if right_anchor_ayahs else None
 
             inferred_time: int
             left_marker: Marker | None = None
             right_marker: Marker | None = None
-            if left_ayah is not None and right_ayah is not None:
+            if left_anchor_ayah is not None and right_anchor_ayah is not None:
+                left_ayah = left_anchor_ayah
+                right_ayah = right_anchor_ayah
                 left_marker = ayah_map[left_ayah]
                 right_marker = ayah_map[right_ayah]
                 span_ayahs = right_ayah - left_ayah
@@ -1054,14 +1202,16 @@ def _fill_surah_coverage_markers(
                     inferred_time = int(round(left_marker.time + (span_secs * ratio)))
                 else:
                     inferred_time = left_marker.time + ((ayah - left_ayah) * step_seconds)
-            elif left_ayah is not None:
+            elif left_anchor_ayah is not None:
+                left_ayah = left_anchor_ayah
                 left_marker = ayah_map[left_ayah]
                 if not _is_anchor_quality(left_marker.quality):
                     continue
                 if (ayah - left_ayah) > max_one_sided_extrapolation_ayahs:
                     continue
                 inferred_time = left_marker.time + ((ayah - left_ayah) * step_seconds)
-            elif right_ayah is not None:
+            elif right_anchor_ayah is not None:
+                right_ayah = right_anchor_ayah
                 right_marker = ayah_map[right_ayah]
                 if not _is_anchor_quality(right_marker.quality):
                     continue
@@ -1970,6 +2120,7 @@ def match_quran_markers(
     repeat_max_gap_seconds: int = 10,
     max_recovery_jump_ayahs: int = 12,
     min_infer_step_seconds: float = 4.0,
+    non_recitation_hold_seconds: int = 16,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -1991,6 +2142,7 @@ def match_quran_markers(
     fatiha_reset_times: list[float] = []
     last_fatiha_reset_time: float | None = None
     awaiting_reacquire = False
+    pause_reacquire_until: float | None = None
 
     for segment_index, segment in enumerate(transcript_segments):
         normalized_segment = normalize_arabic(segment.text)
@@ -1998,6 +2150,12 @@ def match_quran_markers(
             fatiha_reset_times.append(float(segment.start))
             last_fatiha_reset_time = float(segment.start)
             awaiting_reacquire = True
+            continue
+        if _is_non_recitation_segment(normalized_segment):
+            pause_reacquire_until = float(segment.end) + float(max(8, non_recitation_hold_seconds))
+            awaiting_reacquire = True
+            continue
+        if pause_reacquire_until is not None and float(segment.start) <= pause_reacquire_until:
             continue
         if awaiting_reacquire and last_fatiha_reset_time is not None:
             if float(segment.start) - last_fatiha_reset_time >= 120.0:
@@ -2282,41 +2440,43 @@ def match_quran_markers(
                 recovery_best_conf = 0.0
                 recovery_second = -1.0
 
-                for index in range(recovery_start, recovery_end):
-                    candidate = evaluate_index(index)
-                    if candidate is None:
-                        continue
-                    rival = recovery_best.adjusted_score if recovery_best is not None else -1.0
-                    valid, quality, confidence = _candidate_is_valid(
-                        candidate=candidate,
-                        rival_score=rival,
-                        local_min_score=max(min_score, 80),
-                        local_min_overlap=max(min_overlap, 0.20),
-                        threshold=max(min_confidence, 0.72),
-                        ambiguous_min_score=max(ambiguous_min_score, 78),
-                        ambiguous_min_confidence=max(ambiguous_min_confidence, 0.68),
-                    )
-                    if not valid or quality is None:
-                        continue
-                    jump = index - last_matched_index
-                    if jump <= max_forward_jump_ayahs:
-                        continue
-                    if jump > max_recovery_jump_ayahs:
-                        continue
-                    if last_marker_time >= 0:
-                        approx_gap_seconds = float(candidate.start_time) - float(last_marker_time)
-                        min_expected_gap = max(10.0, float(jump) * 2.0)
-                        if approx_gap_seconds < min_expected_gap:
+                # Disable long-jump recovery while reacquiring after pause/non-recitation.
+                if not awaiting_reacquire:
+                    for index in range(recovery_start, recovery_end):
+                        candidate = evaluate_index(index)
+                        if candidate is None:
                             continue
-                    if candidate.adjusted_score < 80 or candidate.overlap < 0.20 or confidence < 0.72:
-                        continue
-                    if recovery_best is None or candidate.adjusted_score > recovery_best.adjusted_score:
-                        recovery_second = recovery_best.adjusted_score if recovery_best is not None else recovery_second
-                        recovery_best = candidate
-                        recovery_best_index = index
-                        recovery_best_conf = confidence
-                    elif candidate.adjusted_score > recovery_second:
-                        recovery_second = candidate.adjusted_score
+                        rival = recovery_best.adjusted_score if recovery_best is not None else -1.0
+                        valid, quality, confidence = _candidate_is_valid(
+                            candidate=candidate,
+                            rival_score=rival,
+                            local_min_score=max(min_score, 80),
+                            local_min_overlap=max(min_overlap, 0.20),
+                            threshold=max(min_confidence, 0.72),
+                            ambiguous_min_score=max(ambiguous_min_score, 78),
+                            ambiguous_min_confidence=max(ambiguous_min_confidence, 0.68),
+                        )
+                        if not valid or quality is None:
+                            continue
+                        jump = index - last_matched_index
+                        if jump <= max_forward_jump_ayahs:
+                            continue
+                        if jump > max_recovery_jump_ayahs:
+                            continue
+                        if last_marker_time >= 0:
+                            approx_gap_seconds = float(candidate.start_time) - float(last_marker_time)
+                            min_expected_gap = max(10.0, float(jump) * 2.0)
+                            if approx_gap_seconds < min_expected_gap:
+                                continue
+                        if candidate.adjusted_score < 80 or candidate.overlap < 0.20 or confidence < 0.72:
+                            continue
+                        if recovery_best is None or candidate.adjusted_score > recovery_best.adjusted_score:
+                            recovery_second = recovery_best.adjusted_score if recovery_best is not None else recovery_second
+                            recovery_best = candidate
+                            recovery_best_index = index
+                            recovery_best_conf = confidence
+                        elif candidate.adjusted_score > recovery_second:
+                            recovery_second = candidate.adjusted_score
 
                 if recovery_best is not None and recovery_best_index >= 0:
                     selected_index = recovery_best_index
@@ -2397,6 +2557,7 @@ def match_quran_markers(
         last_matched_index = max(last_matched_index, selected_index)
         last_marker_time = max(last_marker_time, accepted_marker.time)
         awaiting_reacquire = False
+        pause_reacquire_until = None
         stale_segments = 0
 
     inferred_markers: list[Marker] = []
@@ -2411,7 +2572,7 @@ def match_quran_markers(
             continue
 
         missing_count = right.ayah - left.ayah - 1
-        if missing_count <= 0 or missing_count > max_infer_gap_ayahs:
+        if missing_count <= 0:
             continue
 
         gap_seconds = right.time - left.time
@@ -2423,7 +2584,26 @@ def match_quran_markers(
             continue
 
         step_seconds = gap_seconds / (missing_count + 1)
-        if step_seconds < float(min_infer_step_seconds):
+        if missing_count > max_infer_gap_ayahs or step_seconds < float(min_infer_step_seconds):
+            searched = _recover_missing_gap_with_search(
+                left=left,
+                right=right,
+                entry_lookup=entry_lookup,
+                transcript_segments=transcript_segments,
+                min_gap_seconds=min_gap_seconds,
+                min_score=min_score,
+                min_overlap=min_overlap,
+                min_confidence=min_confidence,
+                ambiguous_min_score=ambiguous_min_score,
+                ambiguous_min_confidence=ambiguous_min_confidence,
+                require_weak_support_for_inferred=require_weak_support_for_inferred,
+            )
+            for marker_to_add in searched:
+                key = (marker_to_add.surah, marker_to_add.ayah)
+                if key in keyed_markers:
+                    continue
+                inferred_markers.append(marker_to_add)
+                keyed_markers[key] = marker_to_add
             continue
         for offset in range(1, missing_count + 1):
             ayah_number = left.ayah + offset
@@ -2635,5 +2815,22 @@ def match_quran_markers(
     merged = _stabilize_weak_marker_durations(merged)
     merged = _extend_point_markers_to_next(merged, max_extension_seconds=90)
     merged = _prune_unrealistic_progression(merged)
+    # Final continuity pass on the stabilized timeline: recover remaining ayah holes
+    # using anchor-aware interpolation only when pacing is plausible.
+    post_fill = _fill_surah_coverage_markers(
+        merged,
+        entry_lookup,
+        transcript_segments=transcript_segments,
+        fatiha_reset_times=fatiha_reset_times,
+        weak_support_score=max(60, ambiguous_min_score - 8),
+        weak_support_overlap=max(0.07, min_overlap - 0.05),
+        enforce_weak_support=False,
+        min_bridge_step_seconds=min_infer_step_seconds,
+    )
+    if post_fill:
+        merged.extend(post_fill)
+        merged = _dedupe_by_local_time_window(merged, window_seconds=90)
+        merged = _apply_overlap_conflict_resolution(merged)
+        merged = _prune_unrealistic_progression(merged)
     merged = sorted(merged, key=lambda marker: (marker.time, marker.surah_number or 0, marker.ayah))
     return merged

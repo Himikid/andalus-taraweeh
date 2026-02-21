@@ -18,6 +18,7 @@ from .prayers import (
 )
 from .quran import (
     STRICT_NORMALIZATION,
+    clean_transcript_for_matching,
     enrich_marker_texts,
     get_juz_for_ayah,
     load_asad_translation,
@@ -286,6 +287,7 @@ def process_day(
     )
 
     corpus_entries = load_corpus(corpus_path)
+    transcript_for_matching = clean_transcript_for_matching(transcript_segments)
     forced_start_index: int | None = None
     if match_start_surah_number is not None and match_start_ayah is not None:
         for index, entry in enumerate(corpus_entries):
@@ -293,7 +295,7 @@ def process_day(
                 forced_start_index = index
                 break
     markers = match_quran_markers(
-        transcript_segments,
+        transcript_for_matching,
         corpus_entries,
         min_score=match_min_score,
         min_gap_seconds=match_min_gap_seconds,
@@ -322,6 +324,8 @@ def process_day(
             "part": part,
             "whisper_model": whisper_model,
             "markers_detected": len(markers),
+            "transcript_segments_raw": len(transcript_segments),
+            "transcript_segments_for_matching": len(transcript_for_matching),
             "reciter_segments_detected": len(reciter_segments),
             "corpus_loaded": bool(corpus_entries),
             "asad_loaded": bool(asad_lookup),
