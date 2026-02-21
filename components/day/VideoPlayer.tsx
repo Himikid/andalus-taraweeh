@@ -161,16 +161,6 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
               if (data === 3 && bufferingSinceRef.current === null) {
                 bufferingSinceRef.current = Date.now();
               }
-              if (data === 2 && lastStateRef.current === 1) {
-                // Unintended pause right after playing can happen on flaky mobile/webview sessions.
-                window.setTimeout(() => {
-                  try {
-                    playerRef.current?.playVideo();
-                  } catch {
-                    // best effort
-                  }
-                }, 300);
-              }
               lastStateRef.current = data;
             },
           },
@@ -229,7 +219,6 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
             const started = bufferingSinceRef.current;
             if (started !== null && Date.now() - started > 8000) {
               try {
-                player.seekTo(current + 0.01, true);
                 player.playVideo();
               } catch {
                 // best effort recovery for long buffering stalls
