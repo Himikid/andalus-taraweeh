@@ -72,7 +72,9 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
   const [markers, setMarkers] = useState<SurahMarker[]>([]);
   const [partMarkers, setPartMarkers] = useState<Record<string, SurahMarker[]>>({});
   const [manualVideoId, setManualVideoId] = useState("");
-  const [selectedPartId, setSelectedPartId] = useState<string | null>(getDefaultPartIdForDay(safeInitialDay));
+  const [selectedPartId, setSelectedPartId] = useState<string | null>(
+    hasMultiplePartsForDay(safeInitialDay) ? getDefaultPartIdForDay(safeInitialDay) : null
+  );
   const [seekTime, setSeekTime] = useState<number | undefined>(undefined);
   const [seekNonce, setSeekNonce] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -90,7 +92,7 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
     const seekParam = params.get("t");
     const parsedSeek = seekParam ? Number.parseInt(seekParam, 10) : NaN;
     setManualVideoId(videoId);
-    if (partId) {
+    if (partId && hasMultiplePartsForDay(safeInitialDay)) {
       setSelectedPartId(partId);
     }
     if (Number.isFinite(parsedSeek) && parsedSeek > 0) {
@@ -105,7 +107,13 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
   }, [safeInitialDay, selectedDay]);
 
   useEffect(() => {
-    const defaultPart = getDefaultPartIdForDay(selectedDay);
+    const defaultPart = hasMultiplePartsForDay(selectedDay) ? getDefaultPartIdForDay(selectedDay) : null;
+    if (!defaultPart) {
+      if (selectedPartId !== null) {
+        setSelectedPartId(null);
+      }
+      return;
+    }
     if (!selectedPartId || !dayParts.some((part) => part.id === selectedPartId)) {
       setSelectedPartId(defaultPart);
     }
@@ -166,7 +174,7 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
 
     async function loadPartMarkers() {
       const parts = getVideoPartsForDay(selectedDay);
-      if (!parts.length) {
+      if (!hasMultiplePartsForDay(selectedDay) || !parts.length) {
         if (isMounted) {
           setPartMarkers({});
         }
@@ -201,7 +209,7 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
 
   function handleDayChange(day: number) {
     const params = new URLSearchParams(window.location.search);
-    const defaultPart = getDefaultPartIdForDay(day);
+    const defaultPart = hasMultiplePartsForDay(day) ? getDefaultPartIdForDay(day) : null;
     if (defaultPart) {
       params.set("part", defaultPart);
     } else {
