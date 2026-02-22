@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 import VideoPlayer from "@/components/day/VideoPlayer";
 import LiveStatus from "@/components/home/LiveStatus";
+import { getVideoPartsForDay } from "@/data/taraweehVideos";
 
 type HomeLiveBlockProps = {
   latestDay: number | null;
@@ -12,8 +13,14 @@ type HomeLiveBlockProps = {
 };
 
 export default function HomeLiveBlock({ latestDay, manualVideoId = null, manualTitle = "" }: HomeLiveBlockProps) {
-  const liveVideoId = manualVideoId;
-  const liveTitle = manualTitle;
+  const latestDayVideoId = useMemo(() => {
+    if (!latestDay) return "";
+    const parts = getVideoPartsForDay(latestDay);
+    return parts[0]?.videoId ?? "";
+  }, [latestDay]);
+
+  const liveVideoId = manualVideoId || latestDayVideoId || null;
+  const liveTitle = manualTitle || (latestDay ? `Ramadan Day ${latestDay} Livestream` : "");
 
   const hasLiveVideo = Boolean(liveVideoId);
   const latestDayHref = useMemo(() => {
