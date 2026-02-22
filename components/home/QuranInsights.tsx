@@ -291,9 +291,13 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
               {surahStartEntries.map(([surah, entry]) => (
                 <Link
                   key={`${surah}-${entry.day}-${entry.time}`}
-                  href={`/day/${entry.day}?${
-                    entry.partId && hasMultiplePartsForDay(entry.day) ? `part=${encodeURIComponent(entry.partId)}&` : ""
-                  }t=${entry.time}`}
+                  href={{
+                    pathname: `/day/${entry.day}`,
+                    query: {
+                      ...(entry.partId && hasMultiplePartsForDay(entry.day) ? { part: entry.partId } : {}),
+                      t: String(Math.max(0, Math.floor(entry.time))),
+                    },
+                  }}
                   className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-sand hover:text-sand"
                 >
                   {surah}
