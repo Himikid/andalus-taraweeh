@@ -145,6 +145,41 @@ Example:
 - Quran corpus: `python scripts/fetch_quran_corpus.py`
 - AI highlights prompt template: `data/ai/prompts/day-highlights-prompt.md`
 
+### Matcher progress output
+
+`scripts/process_day.py` now prints stage-by-stage pipeline progress with elapsed times, for example:
+
+- `[pipeline 1/12 ...] prepare audio source`
+- `[pipeline ...] match ayah markers done in ...s`
+- final total runtime summary
+
+Stage timing breakdown is also written into each output JSON at:
+`meta.pipeline_timings_seconds`
+
+### Day overrides (anchors and bounds)
+
+Per-day manual controls live in:
+`data/ai/day_overrides.json`
+
+Useful fields:
+
+- `start_time` and `final_time` (seconds)
+- `start_surah_number` + `start_ayah` to force matcher starting point
+- `marker_overrides` to pin exact ayah timestamps
+
+Example (Day 4 Taraweeh window):
+
+```json
+{
+  "4": {
+    "start_surah_number": 3,
+    "start_ayah": 92,
+    "start_time": 1530,
+    "final_time": 7670
+  }
+}
+```
+
 The Python layer is local processing; it is not executed in Vercel runtime.
 
 ---

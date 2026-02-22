@@ -16,6 +16,20 @@
           "end_time": 3464
         }
       ]
+    },
+    "4": {
+      "start_surah_number": 3,
+      "start_ayah": 92,
+      "start_time": 1530,
+      "final_time": 7670,
+      "marker_overrides": [
+        {
+          "surah_number": 3,
+          "ayah": 92,
+          "start_time": 1530,
+          "end_time": 1547
+        }
+      ]
     }
   }
 }

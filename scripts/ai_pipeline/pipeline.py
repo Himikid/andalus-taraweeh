@@ -4,6 +4,7 @@ import json
 from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
+from time import perf_counter
 
 import soundfile as sf
 
@@ -79,6 +80,7 @@ def _apply_day_final_ayah_override(
 
     final_surah = str(day_config.get("final_surah", "")).strip()
     final_ayah_raw = day_config.get("final_ayah")
+    start_time_raw = day_config.get("start_time")
     final_time_raw = day_config.get("final_time")
 
     try:
@@ -86,11 +88,15 @@ def _apply_day_final_ayah_override(
     except (TypeError, ValueError):
         final_ayah = None
     try:
+        start_time = int(start_time_raw) if start_time_raw is not None else None
+    except (TypeError, ValueError):
+        start_time = None
+    try:
         final_time = int(final_time_raw) if final_time_raw is not None else None
     except (TypeError, ValueError):
         final_time = None
 
-    if final_ayah is None and final_time is None:
+    if final_ayah is None and final_time is None and start_time is None:
         return markers, None
 
     final_surah_number: int | None = None
@@ -101,6 +107,8 @@ def _apply_day_final_ayah_override(
                 break
 
     def keep(marker: Marker) -> bool:
+        if start_time is not None and marker.time < start_time:
+            return False
         if final_time is not None and marker.time > final_time:
             return False
         if final_ayah is None:
@@ -195,6 +203,7 @@ def _apply_day_final_ayah_override(
         "path": str(overrides_path),
         "final_surah": final_surah or None,
         "final_ayah": final_ayah,
+        "start_time": start_time,
         "final_time": final_time,
         "markers_before": len(markers),
         "markers_after": len(filtered),
@@ -378,6 +387,7 @@ def _apply_marker_time_overrides(
     part: int | None,
     markers: list[Marker],
     overrides_path: Path | None,
+    corpus_entries: list | None = None,
 ) -> tuple[list[Marker], list[dict]]:
     if not markers or overrides_path is None or not overrides_path.exists():
         return markers, []
@@ -397,6 +407,14 @@ def _apply_marker_time_overrides(
         return markers, []
 
     applied: list[dict] = []
+    entry_lookup: dict[tuple[int, int], object] = {}
+    for entry in corpus_entries or []:
+        surah_number = getattr(entry, "surah_number", None)
+        ayah = getattr(entry, "ayah", None)
+        if surah_number is None or ayah is None:
+            continue
+        entry_lookup[(int(surah_number), int(ayah))] = entry
+
     for item in marker_overrides:
         if not isinstance(item, dict):
             continue
@@ -424,6 +442,7 @@ def _apply_marker_time_overrides(
         except (TypeError, ValueError):
             continue
 
+        found = False
         for marker in markers:
             if marker.surah_number == target_surah_number and marker.ayah == target_ayah:
                 marker.start_time = target_start_time
@@ -431,6 +450,7 @@ def _apply_marker_time_overrides(
                 marker.end_time = max(target_start_time, target_end_time)
                 marker.quality = "manual"
                 marker.confidence = 1.0
+                found = True
                 applied.append(
                     {
                         "surah_number": target_surah_number,
@@ -442,9 +462,70 @@ def _apply_marker_time_overrides(
                 )
                 break
 
+        if found:
+            continue
+
+        entry = entry_lookup.get((target_surah_number, target_ayah))
+        surah_name = str(getattr(entry, "surah", "")) if entry is not None else ""
+        markers.append(
+            Marker(
+                time=target_start_time,
+                start_time=target_start_time,
+                end_time=max(target_start_time, target_end_time),
+                surah=surah_name,
+                surah_number=target_surah_number,
+                ayah=target_ayah,
+                juz=get_juz_for_ayah(target_surah_number, target_ayah),
+                quality="manual",
+                confidence=1.0,
+            )
+        )
+        applied.append(
+            {
+                "surah_number": target_surah_number,
+                "ayah": target_ayah,
+                "part": part,
+                "start_time": target_start_time,
+                "end_time": max(target_start_time, target_end_time),
+                "inserted": True,
+            }
+        )
+
     if applied:
         markers.sort(key=lambda marker: (marker.time, marker.surah_number or 0, marker.ayah))
     return markers, applied
+
+
+def _resolve_day_start_override(
+    day: int,
+    overrides_path: Path | None,
+) -> tuple[int, int] | None:
+    if overrides_path is None or not overrides_path.exists():
+        return None
+
+    try:
+        payload = json.loads(overrides_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+    overrides = payload.get("day_overrides", payload)
+    day_config = overrides.get(str(day)) if isinstance(overrides, dict) else None
+    if not isinstance(day_config, dict):
+        return None
+
+    surah_raw = day_config.get("start_surah_number")
+    ayah_raw = day_config.get("start_ayah")
+    if surah_raw is None or ayah_raw is None:
+        return None
+
+    try:
+        surah_number = int(surah_raw)
+        ayah = int(ayah_raw)
+    except (TypeError, ValueError):
+        return None
+    if surah_number <= 0 or ayah <= 0:
+        return None
+    return surah_number, ayah
 
 
 def process_day(
@@ -470,24 +551,51 @@ def process_day(
     day_overrides_path: Path | None = None,
     part: int | None = None,
 ) -> dict:
+    total_stages = 12
+    stage_index = 0
+    stage_timings: dict[str, float] = {}
+    pipeline_start = perf_counter()
+
+    def stage_begin(label: str) -> float:
+        nonlocal stage_index
+        stage_index += 1
+        percent = int((stage_index / total_stages) * 100)
+        print(f"[pipeline {stage_index}/{total_stages} {percent:>3}%] {label}...", flush=True)
+        return perf_counter()
+
+    def stage_end(label: str, started_at: float) -> None:
+        elapsed = perf_counter() - started_at
+        stage_timings[label] = round(elapsed, 2)
+        print(f"[pipeline] {label} done in {elapsed:.1f}s", flush=True)
+
+    t = stage_begin("prepare audio source")
     normalized_audio_path, source = prepare_audio_source(
         day=day,
         youtube_url=youtube_url,
         audio_file=audio_file,
         cache_dir=cache_dir,
     )
+    stage_end("prepare audio source", t)
 
+    t = stage_begin("load normalized audio")
     audio, sample_rate = read_mono_audio(normalized_audio_path)
     transcription_audio_path = normalized_audio_path
     cache_suffix = "full"
+    stage_end("load normalized audio", t)
 
     if max_audio_seconds is not None and max_audio_seconds > 0:
+        t = stage_begin(f"trim audio to first {max_audio_seconds}s")
         max_samples = min(len(audio), max_audio_seconds * sample_rate)
         audio = audio[:max_samples]
         cache_suffix = f"{max_audio_seconds}s"
         trimmed_audio_path = normalized_audio_path.parent / f"trimmed-{cache_suffix}.wav"
         sf.write(trimmed_audio_path, audio, sample_rate)
         transcription_audio_path = trimmed_audio_path
+        stage_end(f"trim audio to first {max_audio_seconds}s", t)
+    else:
+        # Keep the progress count stable even when no trim is requested.
+        t = stage_begin("trim audio (skipped)")
+        stage_end("trim audio (skipped)", t)
 
     total_seconds = int(len(audio) / sample_rate)
 
@@ -495,6 +603,7 @@ def process_day(
     transcript_cache_path = Path("data/ai/cache") / f"day-{day}{part_suffix}-transcript-{cache_suffix}.json"
     transcript_segments: list[TranscriptSegment]
     if reuse_transcript_cache and transcript_cache_path.exists():
+        t = stage_begin("load transcript cache")
         import json
 
         with transcript_cache_path.open("r", encoding="utf-8") as handle:
@@ -517,7 +626,16 @@ def process_day(
             for segment in cached_payload.get("segments", [])
             if str(segment.get("text", "")).strip()
         ]
+        stage_end("load transcript cache", t)
+        # Keep stage count stable.
+        t = stage_begin("transcribe audio (cache hit, skipped)")
+        stage_end("transcribe audio (cache hit, skipped)", t)
     else:
+        # Keep stage count stable.
+        t = stage_begin("load transcript cache (miss)")
+        stage_end("load transcript cache (miss)", t)
+
+        t = stage_begin(f"transcribe audio (model={whisper_model})")
         transcript_segments = transcribe_audio(transcription_audio_path, model_size=whisper_model)
         write_json(
             transcript_cache_path,
@@ -527,11 +645,15 @@ def process_day(
                 "segments": [asdict(segment) for segment in transcript_segments],
             },
         )
+        stage_end(f"transcribe audio (model={whisper_model})", t)
 
+    t = stage_begin("detect reciter/prayer segment starts")
     audio_segment_starts = detect_prayer_starts(audio, sample_rate, collapse_rakah_pairs=True)
     fatiha_segment_starts = detect_fatiha_starts(transcript_segments)
     reciter_segment_starts = merge_rakah_starts(audio_segment_starts, fatiha_segment_starts, min_gap_seconds=180)
+    stage_end("detect reciter/prayer segment starts", t)
 
+    t = stage_begin("assign reciters to segments")
     reciter_segments = build_prayer_segments(reciter_segment_starts, total_seconds)
     reciter_segments = assign_reciters(
         day=day,
@@ -541,16 +663,28 @@ def process_day(
         profiles_path=profiles_path,
         bootstrap_reciters=bootstrap_reciters,
     )
+    stage_end("assign reciters to segments", t)
 
+    t = stage_begin("load Quran corpus and prepare transcript")
     corpus_entries = load_corpus(corpus_path)
     transcript_for_matching = clean_transcript_for_matching(transcript_segments)
     reset_markers = [float(item) for item in fatiha_segment_starts]
+    effective_start_surah_number = match_start_surah_number
+    effective_start_ayah = match_start_ayah
+    if effective_start_surah_number is None or effective_start_ayah is None:
+        day_start_override = _resolve_day_start_override(day=day, overrides_path=day_overrides_path)
+        if day_start_override is not None:
+            effective_start_surah_number, effective_start_ayah = day_start_override
+
     forced_start_index: int | None = None
-    if match_start_surah_number is not None and match_start_ayah is not None:
+    if effective_start_surah_number is not None and effective_start_ayah is not None:
         for index, entry in enumerate(corpus_entries):
-            if entry.surah_number == match_start_surah_number and entry.ayah == match_start_ayah:
+            if entry.surah_number == effective_start_surah_number and entry.ayah == effective_start_ayah:
                 forced_start_index = index
                 break
+    stage_end("load Quran corpus and prepare transcript", t)
+
+    t = stage_begin("match ayah markers")
     markers = match_quran_markers(
         transcript_for_matching,
         corpus_entries,
@@ -562,6 +696,9 @@ def process_day(
         forced_start_index=forced_start_index,
         precomputed_reset_times=reset_markers,
     )
+    stage_end("match ayah markers", t)
+
+    t = stage_begin("apply day overrides")
     markers, override_info = _apply_day_final_ayah_override(
         day=day,
         markers=markers,
@@ -573,6 +710,7 @@ def process_day(
         part=part,
         markers=markers,
         overrides_path=day_overrides_path,
+        corpus_entries=corpus_entries,
     )
     markers, range_fill_info = _fill_override_surah_range(
         day=day,
@@ -580,10 +718,15 @@ def process_day(
         overrides_path=day_overrides_path,
         corpus_entries=corpus_entries,
     )
+    stage_end("apply day overrides", t)
+
+    t = stage_begin("enrich marker text + reciter mapping")
     asad_lookup = load_asad_translation(asad_path) if asad_path else {}
     markers = enrich_marker_texts(markers, corpus_entries, asad_lookup)
     markers = _map_reciter_to_markers(markers, reciter_segments)
+    stage_end("enrich marker text + reciter mapping", t)
 
+    t = stage_begin("write output JSON")
     payload = {
         "day": day,
         "source": source,
@@ -613,14 +756,18 @@ def process_day(
                 "min_gap_seconds": match_min_gap_seconds,
                 "strict_normalization": STRICT_NORMALIZATION,
                 "require_weak_support_for_inferred": match_require_weak_support_for_inferred,
-                "start_surah_number": match_start_surah_number,
-                "start_ayah": match_start_ayah,
+                "start_surah_number": effective_start_surah_number,
+                "start_ayah": effective_start_ayah,
             },
             "manual_override": override_info,
             "marker_time_overrides": marker_time_overrides,
             "override_surah_fill": range_fill_info,
+            "pipeline_timings_seconds": stage_timings,
         },
     }
 
     write_json(output_path, payload)
+    stage_end("write output JSON", t)
+    total_elapsed = perf_counter() - pipeline_start
+    print(f"[pipeline] complete in {total_elapsed:.1f}s", flush=True)
     return payload
