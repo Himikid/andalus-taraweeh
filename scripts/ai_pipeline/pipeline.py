@@ -46,6 +46,89 @@ def _map_reciter_to_markers(markers: list[Marker], prayers: list[PrayerSegment])
     return markers
 
 
+def _is_known_reciter(label: str | None) -> bool:
+    normalized = (label or "").strip().lower()
+    if not normalized:
+        return False
+    if normalized in {"unknown", "talk"}:
+        return False
+    return "hasan" in normalized or "samir" in normalized
+
+
+def _filter_transcript_by_known_reciter(
+    transcript_segments: list[TranscriptSegment],
+    prayers: list[PrayerSegment],
+    edge_padding_seconds: float = 1.5,
+    min_keep_ratio: float = 0.2,
+    min_keep_segments: int = 80,
+) -> tuple[list[TranscriptSegment], dict]:
+    if not transcript_segments or not prayers:
+        return transcript_segments, {
+            "enabled": False,
+            "reason": "no_transcript_or_prayers",
+            "kept_segments": len(transcript_segments),
+            "total_segments": len(transcript_segments),
+        }
+
+    windows: list[tuple[float, float]] = []
+    for prayer in prayers:
+        if not _is_known_reciter(prayer.reciter):
+            continue
+        start = max(0.0, float(prayer.start) - edge_padding_seconds)
+        end = float(prayer.end) + edge_padding_seconds
+        if end <= start:
+            continue
+        windows.append((start, end))
+
+    if not windows:
+        return transcript_segments, {
+            "enabled": False,
+            "reason": "no_known_reciter_windows",
+            "kept_segments": len(transcript_segments),
+            "total_segments": len(transcript_segments),
+        }
+
+    windows.sort(key=lambda item: item[0])
+    merged: list[tuple[float, float]] = []
+    for start, end in windows:
+        if not merged or start > merged[-1][1]:
+            merged.append((start, end))
+        else:
+            merged[-1] = (merged[-1][0], max(merged[-1][1], end))
+
+    kept: list[TranscriptSegment] = []
+    window_index = 0
+    for segment in transcript_segments:
+        midpoint = (float(segment.start) + float(segment.end)) / 2.0
+        while window_index < len(merged) and merged[window_index][1] < midpoint:
+            window_index += 1
+        if window_index >= len(merged):
+            break
+        start, end = merged[window_index]
+        if start <= midpoint <= end:
+            kept.append(segment)
+
+    keep_ratio = (len(kept) / len(transcript_segments)) if transcript_segments else 0.0
+    if len(kept) < min_keep_segments or keep_ratio < min_keep_ratio:
+        return transcript_segments, {
+            "enabled": False,
+            "reason": "insufficient_kept_coverage",
+            "kept_segments": len(kept),
+            "total_segments": len(transcript_segments),
+            "keep_ratio": round(keep_ratio, 3),
+            "windows": len(merged),
+        }
+
+    return kept, {
+        "enabled": True,
+        "reason": "known_reciter_windows",
+        "kept_segments": len(kept),
+        "total_segments": len(transcript_segments),
+        "keep_ratio": round(keep_ratio, 3),
+        "windows": len(merged),
+    }
+
+
 def _quality_rank(value: str | None) -> int:
     quality = (value or "").strip().lower()
     if quality == "manual":
@@ -528,6 +611,54 @@ def _resolve_day_start_override(
     return surah_number, ayah
 
 
+def _resolve_day_reanchor_points(
+    day: int,
+    part: int | None,
+    overrides_path: Path | None,
+) -> list[tuple[int, int, int]]:
+    if overrides_path is None or not overrides_path.exists():
+        return []
+
+    try:
+        payload = json.loads(overrides_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+
+    overrides = payload.get("day_overrides", payload)
+    day_config = overrides.get(str(day)) if isinstance(overrides, dict) else None
+    if not isinstance(day_config, dict):
+        return []
+
+    raw_points = day_config.get("reanchor_points", [])
+    if not isinstance(raw_points, list):
+        return []
+
+    points: list[tuple[int, int, int]] = []
+    for item in raw_points:
+        if not isinstance(item, dict):
+            continue
+        item_part = item.get("part")
+        if item_part is not None:
+            try:
+                if int(item_part) != int(part or 0):
+                    continue
+            except (TypeError, ValueError):
+                continue
+
+        try:
+            at_time = int(item.get("time"))
+            surah_number = int(item.get("surah_number"))
+            ayah = int(item.get("ayah"))
+        except (TypeError, ValueError):
+            continue
+        if at_time < 0 or surah_number <= 0 or ayah <= 0:
+            continue
+        points.append((at_time, surah_number, ayah))
+
+    points.sort(key=lambda item: item[0])
+    return points
+
+
 def process_day(
     day: int,
     output_path: Path,
@@ -668,6 +799,10 @@ def process_day(
     t = stage_begin("load Quran corpus and prepare transcript")
     corpus_entries = load_corpus(corpus_path)
     transcript_for_matching = clean_transcript_for_matching(transcript_segments)
+    transcript_for_matching, reciter_filter_info = _filter_transcript_by_known_reciter(
+        transcript_segments=transcript_for_matching,
+        prayers=reciter_segments,
+    )
     reset_markers = [float(item) for item in fatiha_segment_starts]
     effective_start_surah_number = match_start_surah_number
     effective_start_ayah = match_start_ayah
@@ -675,6 +810,7 @@ def process_day(
         day_start_override = _resolve_day_start_override(day=day, overrides_path=day_overrides_path)
         if day_start_override is not None:
             effective_start_surah_number, effective_start_ayah = day_start_override
+    reanchor_points = _resolve_day_reanchor_points(day=day, part=part, overrides_path=day_overrides_path)
 
     forced_start_index: int | None = None
     if effective_start_surah_number is not None and effective_start_ayah is not None:
@@ -695,6 +831,7 @@ def process_day(
         require_weak_support_for_inferred=match_require_weak_support_for_inferred,
         forced_start_index=forced_start_index,
         precomputed_reset_times=reset_markers,
+        reanchor_points=reanchor_points,
     )
     stage_end("match ayah markers", t)
 
@@ -749,6 +886,7 @@ def process_day(
                 "fatiha_starts": len(fatiha_segment_starts),
                 "merged_starts": len(reciter_segment_starts),
             },
+            "reciter_filter": reciter_filter_info,
             "match_config": {
                 "min_score": match_min_score,
                 "min_overlap": match_min_overlap,

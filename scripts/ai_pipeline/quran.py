@@ -2626,7 +2626,9 @@ def match_quran_markers(
     min_infer_step_seconds: float = 4.0,
     max_infer_step_seconds: float = 28.0,
     non_recitation_hold_seconds: int = 16,
+    long_break_reacquire_seconds: int = 180,
     precomputed_reset_times: list[float] | None = None,
+    reanchor_points: list[tuple[int, int, int]] | None = None,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -2644,32 +2646,69 @@ def match_quran_markers(
         last_matched_index = forced_start_index - 1
     else:
         last_matched_index = -1
+
+    corpus_index_by_surah_ayah: dict[tuple[int, int], int] = {}
+    for idx, entry in enumerate(corpus_entries):
+        corpus_index_by_surah_ayah[(int(entry.surah_number), int(entry.ayah))] = idx
+    reanchor_schedule: list[tuple[float, int]] = []
+    for item in reanchor_points or []:
+        if not isinstance(item, (list, tuple)) or len(item) != 3:
+            continue
+        try:
+            at_time = float(item[0])
+            surah_number = int(item[1])
+            ayah = int(item[2])
+        except (TypeError, ValueError):
+            continue
+        mapped_index = corpus_index_by_surah_ayah.get((surah_number, ayah))
+        if mapped_index is None:
+            continue
+        reanchor_schedule.append((at_time, mapped_index))
+    reanchor_schedule.sort(key=lambda item: item[0])
+    reanchor_cursor = 0
+
     last_marker_time = -1
     stale_segments = 0
     fatiha_reset_times: list[float] = sorted(precomputed_reset_times or [])
-    last_fatiha_reset_time: float | None = None
     awaiting_reacquire = False
     pause_reacquire_until: float | None = None
+    previous_segment_end: float | None = None
+    reacquire_lock_ayahs_remaining = 0
 
     for segment_index, segment in enumerate(transcript_segments):
+        segment_start = float(segment.start)
+        segment_end = float(segment.end)
+        while reanchor_cursor < len(reanchor_schedule) and segment_start >= reanchor_schedule[reanchor_cursor][0]:
+            mapped_index = reanchor_schedule[reanchor_cursor][1]
+            last_matched_index = mapped_index - 1
+            awaiting_reacquire = True
+            pause_reacquire_until = None
+            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 8)
+            reanchor_cursor += 1
+        if (
+            previous_segment_end is not None
+            and (segment_start - previous_segment_end) >= float(max(30, long_break_reacquire_seconds))
+        ):
+            # After long breaks (talks/pauses), force strict re-acquire to avoid jumping ahead.
+            awaiting_reacquire = True
+            pause_reacquire_until = None
+            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 8)
+        previous_segment_end = segment_end
+
         normalized_segment = normalize_arabic(segment.text, strict=False)
         if _is_fatiha_like_segment(normalized_segment):
             fatiha_reset_times.append(float(segment.start))
-            last_fatiha_reset_time = float(segment.start)
             awaiting_reacquire = True
+            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 8)
             continue
         if _is_non_recitation_segment(normalized_segment):
             fatiha_reset_times.append(float(segment.start))
             pause_reacquire_until = float(segment.end) + float(max(8, non_recitation_hold_seconds))
             awaiting_reacquire = True
+            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 8)
             continue
         if pause_reacquire_until is not None and float(segment.start) <= pause_reacquire_until:
             continue
-        if awaiting_reacquire and last_fatiha_reset_time is not None:
-            # Reacquire quickly after restart; long fixed waits make us miss early post-ruku ayat.
-            if float(segment.start) - last_fatiha_reset_time >= 38.0 and len(normalized_segment) >= 10:
-                awaiting_reacquire = False
-
         segment_variants: list[tuple[str, float, int, float]] = [(normalized_segment, 0.0, segment_index, float(segment.end))]
         combined_text = normalized_segment
         previous_end = float(segment.end)
@@ -2836,7 +2875,12 @@ def match_quran_markers(
                         segment_start = int(round(float(segment.start)))
                         marker_start = int(existing_marker.start_time or existing_marker.time)
                         marker_end = int(existing_marker.end_time or marker_start)
-                        if segment_start - marker_end <= max(8, repeat_max_gap_seconds):
+                        repeat_gap_limit = max(8, repeat_max_gap_seconds)
+                        if awaiting_reacquire:
+                            # After long breaks, repeated carry-over of the previous ayah is common.
+                            # Allow extending the prior ayah across a larger gap while reacquiring.
+                            repeat_gap_limit = max(repeat_gap_limit, 900)
+                        if segment_start - marker_end <= repeat_gap_limit:
                             _, repeat_end, _ = _resolve_marker_times(
                                 segment=segment,
                                 entry=repeat_entry,
@@ -2942,7 +2986,8 @@ def match_quran_markers(
                 if not valid or quality is None:
                     continue
                 jump = index - last_matched_index
-                if jump < 1 or jump > max_forward_jump_ayahs:
+                local_max_forward_jump = 1 if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0) else max_forward_jump_ayahs
+                if jump < 1 or jump > local_max_forward_jump:
                     continue
                 selected_index = index
                 selected_candidate = candidate
@@ -2960,7 +3005,7 @@ def match_quran_markers(
                 recovery_second = -1.0
 
                 # Disable long-jump recovery while reacquiring after pause/non-recitation.
-                if not awaiting_reacquire:
+                if not awaiting_reacquire and reacquire_lock_ayahs_remaining <= 0:
                     for index in range(recovery_start, recovery_end):
                         candidate = evaluate_index(index)
                         if candidate is None:
@@ -3016,7 +3061,15 @@ def match_quran_markers(
             continue
 
         if awaiting_reacquire:
-            if selected_quality != "high" or selected_confidence < max(0.72, min_confidence + 0.08):
+            strict_reacquire_score = max(82.0, float(min_score) + 4.0)
+            strict_reacquire_overlap = max(0.22, float(min_overlap) + 0.04)
+            strict_reacquire_conf = max(0.78, float(min_confidence) + 0.12)
+            if (
+                selected_quality != "high"
+                or selected_candidate.adjusted_score < strict_reacquire_score
+                or selected_candidate.overlap < strict_reacquire_overlap
+                or selected_confidence < strict_reacquire_conf
+            ):
                 stale_segments += 1
                 continue
 
@@ -3113,6 +3166,8 @@ def match_quran_markers(
         last_marker_time = max(last_marker_time, accepted_marker.time)
         awaiting_reacquire = False
         pause_reacquire_until = None
+        if reacquire_lock_ayahs_remaining > 0:
+            reacquire_lock_ayahs_remaining -= 1
         stale_segments = 0
 
     inferred_markers: list[Marker] = []
