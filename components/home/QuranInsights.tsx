@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { surahAyahCounts } from "@/data/surahAyahCounts";
-import { availableTaraweehDays, getVideoPartsForDay } from "@/data/taraweehVideos";
+import { availableTaraweehDays, getVideoPartsForDay, hasMultiplePartsForDay } from "@/data/taraweehVideos";
 
 type Marker = {
   time: number;
@@ -291,7 +291,9 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
               {surahStartEntries.map(([surah, entry]) => (
                 <Link
                   key={`${surah}-${entry.day}-${entry.time}`}
-                  href={`/day/${entry.day}?${entry.partId ? `part=${encodeURIComponent(entry.partId)}&` : ""}t=${entry.time}`}
+                  href={`/day/${entry.day}?${
+                    entry.partId && hasMultiplePartsForDay(entry.day) ? `part=${encodeURIComponent(entry.partId)}&` : ""
+                  }t=${entry.time}`}
                   className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-sand hover:text-sand"
                 >
                   {surah}
