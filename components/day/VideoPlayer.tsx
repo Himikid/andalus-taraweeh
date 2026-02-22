@@ -261,6 +261,9 @@ export default function VideoPlayer({ videoId, startAt, seekNonce, onTimeUpdate 
     if (!playerRef.current || !startAt || startAt <= 0) {
       return;
     }
+    if (typeof playerRef.current.seekTo !== "function" || typeof playerRef.current.playVideo !== "function") {
+      return;
+    }
     playerRef.current.seekTo(startAt, true);
     playerRef.current.playVideo();
     onTimeUpdate?.(startAt);
