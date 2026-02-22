@@ -12,6 +12,8 @@ type Marker = {
   surah_number?: number;
   juz?: number;
   quality?: "high" | "ambiguous" | "inferred" | "manual";
+  __partId?: string | null;
+  __seekTime?: number;
 };
 
 type QuranInsightsProps = {
@@ -32,7 +34,10 @@ async function fetchDayMarkers(day: number): Promise<Marker[]> {
       return [];
     }
     const payload = (await response.json()) as DayPayload;
-    return Array.isArray(payload.markers) ? payload.markers : [];
+    const singlePartId = parts[0]?.id ?? null;
+    return Array.isArray(payload.markers)
+      ? payload.markers.map((marker) => ({ ...marker, __partId: singlePartId, __seekTime: marker.time }))
+      : [];
   }
 
   const partMarkers: Marker[] = [];
@@ -55,7 +60,12 @@ async function fetchDayMarkers(day: number): Promise<Marker[]> {
     const adjusted = markers
       .slice()
       .sort((a, b) => a.time - b.time)
-      .map((marker) => ({ ...marker, time: marker.time + runningOffset }));
+      .map((marker) => ({
+        ...marker,
+        __partId: part.id,
+        __seekTime: marker.time,
+        time: marker.time + runningOffset,
+      }));
 
     partMarkers.push(...adjusted);
     const partMaxTime = adjusted.length ? Math.max(...adjusted.map((marker) => marker.time)) : runningOffset;
@@ -68,6 +78,7 @@ async function fetchDayMarkers(day: number): Promise<Marker[]> {
 type SurahEntry = {
   day: number;
   time: number;
+  partId?: string | null;
   ayah: number;
   juz?: number;
 };
@@ -159,7 +170,14 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
         .forEach(({ day, markers }) => {
           markers.forEach((marker) => {
             const key = marker.surah;
-            const entry: SurahEntry = { day, time: marker.time, ayah: marker.ayah, juz: marker.juz };
+            const seekTime = marker.__seekTime ?? marker.time;
+            const entry: SurahEntry = {
+              day,
+              time: seekTime,
+              partId: marker.__partId ?? null,
+              ayah: marker.ayah,
+              juz: marker.juz,
+            };
             const quality = marker.quality ?? "high";
             if (!startsByQuality[key]) {
               startsByQuality[key] = { high: [], manual: [], ambiguous: [], inferred: [] };
@@ -203,7 +221,9 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
   const surahCoverage = dayProgress[dayProgress.length - 1]?.surahCount ?? 0;
 
   const surahStartEntries = useMemo(() => {
-    return Object.entries(surahStarts).sort((a, b) => {
+    return Object.entries(surahStarts)
+      .filter(([surah, entry]) => Boolean(surah?.trim()) && Number.isFinite(entry?.day) && Number.isFinite(entry?.time))
+      .sort((a, b) => {
       const entryA = a[1];
       const entryB = b[1];
       if (entryA.day !== entryB.day) return entryA.day - entryB.day;
@@ -271,7 +291,7 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
               {surahStartEntries.map(([surah, entry]) => (
                 <Link
                   key={`${surah}-${entry.day}-${entry.time}`}
-                  href={`/day/${entry.day}?t=${entry.time}`}
+                  href={`/day/${entry.day}?${entry.partId ? `part=${encodeURIComponent(entry.partId)}&` : ""}t=${entry.time}`}
                   className="rounded-full border border-line px-3 py-1.5 text-xs text-ivory hover:border-sand hover:text-sand"
                 >
                   {surah}
