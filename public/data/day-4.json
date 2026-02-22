@@ -4491,18 +4491,326 @@
       ]
     },
     {
-      "time": 4943,
+      "time": 4961,
       "surah": "Aal-i-Imraan",
-      "ayah": 182,
+      "ayah": 172,
       "surah_number": 3,
       "juz": 4,
       "quality": "high",
       "reciter": "Samir",
       "confidence": 0.861,
-      "arabic_text": "ذَٰلِكَ بِمَا قَدَّمَتْ أَيْدِيكُمْ وَأَنَّ ٱللَّهَ لَيْسَ بِظَلَّامٍۢ لِّلْعَبِيدِ",
-      "english_text": "in return for what your own hands have wrought - for never does God do the least wrong to His creatures!\"",
-      "start_time": 4943,
-      "end_time": 4945,
+      "arabic_text": "ٱلَّذِينَ ٱسْتَجَابُوا۟ لِلَّهِ وَٱلرَّسُولِ مِنۢ بَعْدِ مَآ أَصَابَهُمُ ٱلْقَرْحُ ۚ لِلَّذِينَ أَحْسَنُوا۟ مِنْهُمْ وَٱتَّقَوْا۟ أَجْرٌ عَظِيمٌ",
+      "english_text": "who responded to the call of God and the Apostle after misfortune had befallen them. A magnificent requital awaits those of them who have persevered in doing good and remained conscious of God:",
+      "start_time": 4961,
+      "end_time": 4963,
+      "matched_token_indices": [
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          2,
+          14
+        ]
+      ]
+    },
+    {
+      "time": 4967,
+      "surah": "Aal-i-Imraan",
+      "ayah": 173,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.725,
+      "arabic_text": "ٱلَّذِينَ قَالَ لَهُمُ ٱلنَّاسُ إِنَّ ٱلنَّاسَ قَدْ جَمَعُوا۟ لَكُمْ فَٱخْشَوْهُمْ فَزَادَهُمْ إِيمَٰنًۭا وَقَالُوا۟ حَسْبُنَا ٱللَّهُ وَنِعْمَ ٱلْوَكِيلُ",
+      "english_text": "those who have been warned by other people, \"Behold, a host has gathered against you; so beware of them!\" - whereupon this only increased their faith, so that they answered, \"God is enough for us; and how excellent a guardian is He!”",
+      "start_time": 4967,
+      "end_time": 4971,
+      "matched_token_indices": [
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          16
+        ]
+      ]
+    },
+    {
+      "time": 4988,
+      "surah": "Aal-i-Imraan",
+      "ayah": 174,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.75,
+      "arabic_text": "فَٱنقَلَبُوا۟ بِنِعْمَةٍۢ مِّنَ ٱللَّهِ وَفَضْلٍۢ لَّمْ يَمْسَسْهُمْ سُوٓءٌۭ وَٱتَّبَعُوا۟ رِضْوَٰنَ ٱللَّهِ ۗ وَٱللَّهُ ذُو فَضْلٍ عَظِيمٍ",
+      "english_text": "- and returned [from the battle] with God's blessings and bounty, without having been touched by evil: for they had been striving after God's goodly acceptance - and God is limitless in His great bounty.",
+      "start_time": 4988,
+      "end_time": 4994,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ]
+      ]
+    },
+    {
+      "time": 5003,
+      "surah": "Aal-i-Imraan",
+      "ayah": 175,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.858,
+      "arabic_text": "إِنَّمَا ذَٰلِكُمُ ٱلشَّيْطَٰنُ يُخَوِّفُ أَوْلِيَآءَهُۥ فَلَا تَخَافُوهُمْ وَخَافُونِ إِن كُنتُم مُّؤْمِنِينَ",
+      "english_text": "It is but Satan who instils [into you] fear of his allies: so fear them not, but fear Me, if you are [truly] believers!",
+      "start_time": 5003,
+      "end_time": 5017,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ]
+      ]
+    },
+    {
+      "time": 5030,
+      "surah": "Aal-i-Imraan",
+      "ayah": 176,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.833,
+      "arabic_text": "وَلَا يَحْزُنكَ ٱلَّذِينَ يُسَٰرِعُونَ فِى ٱلْكُفْرِ ۚ إِنَّهُمْ لَن يَضُرُّوا۟ ٱللَّهَ شَيْـًۭٔا ۗ يُرِيدُ ٱللَّهُ أَلَّا يَجْعَلَ لَهُمْ حَظًّۭا فِى ٱلْءَاخِرَةِ ۖ وَلَهُمْ عَذَابٌ عَظِيمٌ",
+      "english_text": "And be not grieved by those who vie with one another in denying the truth: verily, they can in no wise harm God. It is God's will that they shall have no share in the [blessings of the] life to come; and tremendous suffering awaits them.",
+      "start_time": 5030,
+      "end_time": 5040,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "time": 5044,
+      "surah": "Aal-i-Imraan",
+      "ayah": 177,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.615,
+      "arabic_text": "إِنَّ ٱلَّذِينَ ٱشْتَرَوُا۟ ٱلْكُفْرَ بِٱلْإِيمَٰنِ لَن يَضُرُّوا۟ ٱللَّهَ شَيْـًۭٔا وَلَهُمْ عَذَابٌ أَلِيمٌۭ",
+      "english_text": "Verily, they who have bought a denial of the truth at the price of faith can in no wise harm God, whereas grievous suffering awaits them.",
+      "start_time": 5044,
+      "end_time": 5045,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ]
+    },
+    {
+      "time": 5067,
+      "surah": "Aal-i-Imraan",
+      "ayah": 178,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.632,
+      "arabic_text": "وَلَا يَحْسَبَنَّ ٱلَّذِينَ كَفَرُوٓا۟ أَنَّمَا نُمْلِى لَهُمْ خَيْرٌۭ لِّأَنفُسِهِمْ ۚ إِنَّمَا نُمْلِى لَهُمْ لِيَزْدَادُوٓا۟ إِثْمًۭا ۚ وَلَهُمْ عَذَابٌۭ مُّهِينٌۭ",
+      "english_text": "And they should not think - they who are bent on denying the truth - that Our giving them rein is good for them: We give them rein only to let them grow in sinfulness; and shameful suffering awaits them.",
+      "start_time": 5067,
+      "end_time": 5070,
+      "matched_token_indices": [
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          15
+        ]
+      ]
+    },
+    {
+      "time": 5096,
+      "surah": "Aal-i-Imraan",
+      "ayah": 179,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.827,
+      "arabic_text": "مَّا كَانَ ٱللَّهُ لِيَذَرَ ٱلْمُؤْمِنِينَ عَلَىٰ مَآ أَنتُمْ عَلَيْهِ حَتَّىٰ يَمِيزَ ٱلْخَبِيثَ مِنَ ٱلطَّيِّبِ ۗ وَمَا كَانَ ٱللَّهُ لِيُطْلِعَكُمْ عَلَى ٱلْغَيْبِ وَلَٰكِنَّ ٱللَّهَ يَجْتَبِى مِن رُّسُلِهِۦ مَن يَشَآءُ ۖ فَـَٔامِنُوا۟ بِٱللَّهِ وَرُسُلِهِۦ ۚ وَإِن تُؤْمِنُوا۟ وَتَتَّقُوا۟ فَلَكُمْ أَجْرٌ عَظِيمٌۭ",
+      "english_text": "It is not God's will [O you who deny the truth] to abandon the believers to your way of life: [and] to that end He will set apart the bad from the good. And it is not God's will to give you insight into that which is beyond the reach of human perception: but [to that end] God elects whomsoever He wills from among His apostles. Believe, then, in God and His apostles; for if you believe and are conscious of Him, a magnificent requital awaits you.",
+      "start_time": 5096,
+      "end_time": 5100,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "time": 5127,
+      "surah": "Aal-i-Imraan",
+      "ayah": 180,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.813,
+      "arabic_text": "وَلَا يَحْسَبَنَّ ٱلَّذِينَ يَبْخَلُونَ بِمَآ ءَاتَىٰهُمُ ٱللَّهُ مِن فَضْلِهِۦ هُوَ خَيْرًۭا لَّهُم ۖ بَلْ هُوَ شَرٌّۭ لَّهُمْ ۖ سَيُطَوَّقُونَ مَا بَخِلُوا۟ بِهِۦ يَوْمَ ٱلْقِيَٰمَةِ ۗ وَلِلَّهِ مِيرَٰثُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ ۗ وَٱللَّهُ بِمَا تَعْمَلُونَ خَبِيرٌۭ",
+      "english_text": "AND THEY should not think - they who niggardly cling to all that God has granted them out of His bounty - that this is good for them: nay, it is bad for them. That to which they [so] niggardly cling will, on the Day of Resurrection, be hung about their necks: for unto God [alone] belongs the heritage of the heavens and of the earth; and God is aware of all that you do.",
+      "start_time": 5127,
+      "end_time": 5129,
       "matched_token_indices": [
         [
           0,
@@ -4511,8 +4819,50 @@
         [
           1,
           5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
         ]
       ]
+    },
+    {
+      "time": 5133,
+      "surah": "Aal-i-Imraan",
+      "ayah": 181,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "arabic_text": "لَّقَدْ سَمِعَ ٱللَّهُ قَوْلَ ٱلَّذِينَ قَالُوٓا۟ إِنَّ ٱللَّهَ فَقِيرٌۭ وَنَحْنُ أَغْنِيَآءُ ۘ سَنَكْتُبُ مَا قَالُوا۟ وَقَتْلَهُمُ ٱلْأَنۢبِيَآءَ بِغَيْرِ حَقٍّۢ وَنَقُولُ ذُوقُوا۟ عَذَابَ ٱلْحَرِيقِ",
+      "english_text": "God has indeed heard the saying of those who said, \"Behold, God is poor while we are rich!\" We shall record what they have said, as well as their slaying of prophets against all right, and We shall say [unto them on Judgment Day]: \"Taste suffering through fire",
+      "start_time": 5133,
+      "end_time": 5133,
+      "matched_token_indices": null
+    },
+    {
+      "time": 5139,
+      "surah": "Aal-i-Imraan",
+      "ayah": 182,
+      "surah_number": 3,
+      "juz": 4,
+      "quality": "ambiguous",
+      "reciter": "Samir",
+      "confidence": 0.586,
+      "arabic_text": "ذَٰلِكَ بِمَا قَدَّمَتْ أَيْدِيكُمْ وَأَنَّ ٱللَّهَ لَيْسَ بِظَلَّامٍۢ لِّلْعَبِيدِ",
+      "english_text": "in return for what your own hands have wrought - for never does God do the least wrong to His creatures!\"",
+      "start_time": 5139,
+      "end_time": 5155,
+      "matched_token_indices": null
     },
     {
       "time": 5316,
@@ -5975,13 +6325,13 @@
     }
   ],
   "meta": {
-    "generated_at": "2026-02-22T01:16:12.011045+00:00",
+    "generated_at": "2026-02-22T02:11:23.612299+00:00",
     "audio_path": "data/audio/day-4/normalized.wav",
     "part": null,
     "whisper_model": "small",
-    "markers_detected": 112,
+    "markers_detected": 122,
     "transcript_segments_raw": 1921,
-    "transcript_segments_for_matching": 1619,
+    "transcript_segments_for_matching": 1576,
     "transcript_reset_markers": 23,
     "reciter_segments_detected": 24,
     "corpus_loaded": true,
@@ -5991,6 +6341,14 @@
       "audio_starts": 8,
       "fatiha_starts": 23,
       "merged_starts": 24
+    },
+    "reciter_filter": {
+      "enabled": true,
+      "reason": "known_reciter_windows",
+      "kept_segments": 1576,
+      "total_segments": 1619,
+      "keep_ratio": 0.973,
+      "windows": 3
     },
     "match_config": {
       "min_score": 78,
@@ -6008,8 +6366,8 @@
       "final_ayah": null,
       "start_time": 1530,
       "final_time": 7670,
-      "markers_before": 112,
-      "markers_after": 112,
+      "markers_before": 122,
+      "markers_after": 122,
       "inserted_terminal": false,
       "inserted_terminal_time": null
     },
@@ -6024,15 +6382,15 @@
     ],
     "override_surah_fill": null,
     "pipeline_timings_seconds": {
-      "prepare audio source": 6.46,
-      "load normalized audio": 0.6,
+      "prepare audio source": 7.42,
+      "load normalized audio": 0.54,
       "trim audio (skipped)": 0.0,
       "load transcript cache": 0.01,
       "transcribe audio (cache hit, skipped)": 0.0,
-      "detect reciter/prayer segment starts": 0.13,
-      "assign reciters to segments": 7.47,
+      "detect reciter/prayer segment starts": 0.12,
+      "assign reciters to segments": 8.22,
       "load Quran corpus and prepare transcript": 0.11,
-      "match ayah markers": 49.61,
+      "match ayah markers": 46.07,
       "apply day overrides": 0.0,
       "enrich marker text + reciter mapping": 0.01
     }
