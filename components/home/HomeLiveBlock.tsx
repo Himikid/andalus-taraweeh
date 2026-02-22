@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import VideoPlayer from "@/components/day/VideoPlayer";
 import LiveStatus from "@/components/home/LiveStatus";
 
@@ -11,67 +11,9 @@ type HomeLiveBlockProps = {
   manualTitle?: string;
 };
 
-type LiveStatusResponse = {
-  live?: boolean;
-  videoId?: string | null;
-  title?: string | null;
-};
-
-const POLL_MS = 30000;
-
 export default function HomeLiveBlock({ latestDay, manualVideoId = null, manualTitle = "" }: HomeLiveBlockProps) {
-  const [liveVideoId, setLiveVideoId] = useState<string | null>(manualVideoId);
-  const [liveTitle, setLiveTitle] = useState<string>(manualTitle);
-
-  useEffect(() => {
-    if (manualVideoId) {
-      setLiveVideoId(manualVideoId);
-      setLiveTitle(manualTitle);
-      return;
-    }
-
-    let active = true;
-
-    async function pollLiveStatus() {
-      try {
-        const response = await fetch("/api/live-status", { cache: "no-store" });
-        if (!response.ok) {
-          if (active) {
-            setLiveVideoId(null);
-            setLiveTitle("");
-          }
-          return;
-        }
-
-        const payload = (await response.json()) as LiveStatusResponse;
-        if (!active) {
-          return;
-        }
-        if (payload.live && payload.videoId) {
-          setLiveVideoId(payload.videoId);
-          setLiveTitle(payload.title || "");
-        } else {
-          setLiveVideoId(null);
-          setLiveTitle("");
-        }
-      } catch {
-        if (active) {
-          setLiveVideoId(null);
-          setLiveTitle("");
-        }
-      }
-    }
-
-    void pollLiveStatus();
-    const timer = window.setInterval(() => {
-      void pollLiveStatus();
-    }, POLL_MS);
-
-    return () => {
-      active = false;
-      window.clearInterval(timer);
-    };
-  }, [manualTitle, manualVideoId]);
+  const liveVideoId = manualVideoId;
+  const liveTitle = manualTitle;
 
   const hasLiveVideo = Boolean(liveVideoId);
   const latestDayHref = useMemo(() => {
@@ -89,11 +31,11 @@ export default function HomeLiveBlock({ latestDay, manualVideoId = null, manualT
               <div className="inline-flex items-center gap-2 rounded-full border border-sand/45 bg-sand/10 px-3 py-1">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff7a7a] opacity-70" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#ff9b9b]" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#ff9b9b]" />
                 </span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ivory">Live</span>
               </div>
-              <p className="text-xs text-muted">{manualVideoId ? "Manual live override enabled" : "Auto-updates from YouTube channel"}</p>
+              <p className="text-xs text-muted">Manual live override enabled</p>
             </div>
             {liveTitle ? (
               <p className="mt-3 text-sm text-ivory/95 sm:text-base">{liveTitle}</p>
