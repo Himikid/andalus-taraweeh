@@ -429,7 +429,21 @@ def _resolve_marker_times(
 
 def _candidate_confidence(score: float, rival_score: float, overlap: float) -> float:
     margin = max(0.0, score - max(0.0, rival_score))
-    return (0.55 * (score / 100.0)) + (0.25 * min(1.0, margin / 20.0)) + (0.2 * overlap)
+    score_component = max(0.0, min(1.0, score / 100.0))
+    margin_component = max(0.0, min(1.0, margin / 24.0))
+    overlap_component = max(0.0, min(1.0, overlap))
+
+    confidence = (0.45 * score_component) + (0.15 * margin_component) + (0.40 * overlap_component)
+
+    # Penalize weak lexical support so borderline fuzzy matches do not appear highly confident.
+    if score < 78.0:
+        confidence *= 0.88
+    if overlap < 0.20:
+        confidence *= 0.82
+    if score < 70.0 and overlap < 0.16:
+        confidence *= 0.75
+
+    return max(0.0, min(1.0, confidence))
 
 
 def _best_rival_score(
@@ -2544,10 +2558,14 @@ def _candidate_is_valid(
 ) -> tuple[bool, str | None, float]:
     confidence = _candidate_confidence(candidate.adjusted_score, rival_score, candidate.overlap)
     ambiguous_min_overlap = max(0.1, local_min_overlap * 0.6)
+    # Keep acceptance flexible, but reserve "high" for genuinely strong evidence.
+    high_min_score = max(float(local_min_score), 82.0)
+    high_min_overlap = max(float(local_min_overlap), 0.22)
+    high_min_confidence = max(float(threshold), 0.68)
     is_high = (
-        candidate.adjusted_score >= local_min_score
-        and candidate.overlap >= local_min_overlap
-        and confidence >= threshold
+        candidate.adjusted_score >= high_min_score
+        and candidate.overlap >= high_min_overlap
+        and confidence >= high_min_confidence
     )
     is_ambiguous = (
         candidate.adjusted_score >= ambiguous_min_score
@@ -3171,6 +3189,31 @@ def match_quran_markers(
         ):
             stale_segments += 1
             continue
+
+        # Guard against silent drift: a single-ayah step should not appear after
+        # a very long uninterrupted recitation span unless we observed a reset
+        # marker or transcript sparsity that explains the gap.
+        if previous_for_transition is not None and previous_for_transition.surah == entry.surah:
+            ayah_delta = int(entry.ayah) - int(previous_for_transition.ayah)
+            prev_end = int(previous_for_transition.end_time or previous_for_transition.time)
+            gap_seconds = int(marker_start) - prev_end
+            if ayah_delta in {0, 1} and gap_seconds > 150:
+                has_reset_between = _contains_fatiha_reset_between(
+                    fatiha_reset_times,
+                    prev_end,
+                    int(marker_start),
+                    margin=2,
+                )
+                has_sparse_audio = _has_low_data_gap(
+                    transcript_segments=transcript_segments,
+                    start_time=prev_end,
+                    end_time=int(marker_start),
+                    max_silence_seconds=26,
+                    min_density=0.055,
+                )
+                if not has_reset_between and not has_sparse_audio:
+                    stale_segments += 1
+                    continue
 
         marker_candidate = Marker(
             time=marker_start,
