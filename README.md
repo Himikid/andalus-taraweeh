@@ -154,6 +154,27 @@ Useful keys:
 - `start_ayah`
 - `marker_overrides`
 
+### Day highlights workflow (saved prompt only)
+
+For daily Quran highlights/dua/famous-ayah content, use the saved prompt template only:
+
+- `data/ai/prompts/day-highlights-prompt.md`
+
+Expected process:
+
+1. Fill template placeholders (`DAY_NUMBER`, recitation range, optional marker note) from the current day markers.
+2. Generate JSON in the exact output schema from that prompt.
+3. Save report to:
+   - `data/ai/reports/day-{N}-highlights-ai.json`
+4. Update UI source of truth:
+   - `data/dayHighlights.ts`
+   - Add/update `dayHighlights[N]`
+   - Add/update `dayCorpusSummaries[N]`
+
+Rule:
+
+- Do not use ad-hoc prompt text for day highlights. Reuse only the saved template above for consistency across days.
+
 ## Deploy to Vercel
 
 1. Push repo to GitHub.

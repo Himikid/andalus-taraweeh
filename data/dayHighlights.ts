@@ -412,6 +412,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  5: [
+    {
+      ayahRef: "4:36",
+      themeType: "Famous Ayah",
+      shortTitle: "Worship Allah and Honor Every Right",
+      whyNotable: [
+        "A widely cited framework ayah for worship, family ethics, and social conduct.",
+        "Frequently referenced in reminders on character and rights.",
+      ],
+      summary:
+        "Allah commands exclusive worship and immediately ties it to ihsan toward parents, relatives, neighbors, and those under one's care. The ayah links tawhid to lived ethics and social responsibility.",
+      keyTakeaway: "True worship appears in how you treat people.",
+      references: [
+        { name: "Quran 4:36", url: "https://quran.com/4:36" },
+        { name: "Ibn Kathir Tafsir (4:36)", url: "https://quran.com/en/4:36/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "4:58",
+      themeType: "Famous Ayah",
+      shortTitle: "Trusts and Justice",
+      whyNotable: [
+        "A major ayah in Islamic governance and public ethics.",
+        "Commonly cited regarding amanah and fair judgment.",
+      ],
+      summary:
+        "Allah commands believers to return trusts to their rightful owners and judge with justice between people. The ayah establishes integrity and fairness as non-negotiable duties.",
+      keyTakeaway: "Amanah and justice are core obligations, not optional virtues.",
+      references: [
+        { name: "Quran 4:58", url: "https://quran.com/4:58" },
+        { name: "Ibn Kathir Tafsir (4:58)", url: "https://quran.com/en/4:58/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "4:59",
+      themeType: "Famous Ayah",
+      shortTitle: "Obedience and Returning Disputes to Revelation",
+      whyNotable: [
+        "A foundational ayah for authority, obedience, and dispute resolution.",
+        "Widely taught in aqidah and usul discussions.",
+      ],
+      summary:
+        "Believers are commanded to obey Allah, the Messenger, and rightful authority, and to refer disagreements back to Allah and His Messenger. The ayah anchors unity in revelation-based arbitration.",
+      keyTakeaway: "Lasting unity depends on returning disputes to revelation.",
+      references: [
+        { name: "Quran 4:59", url: "https://quran.com/4:59" },
+        { name: "Ibn Kathir Tafsir (4:59)", url: "https://quran.com/en/4:59/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "4:75",
+      themeType: "Dua",
+      shortTitle: "Dua of the Oppressed",
+      whyNotable: [
+        "A famous Quranic supplication from the weak and oppressed.",
+        "Frequently cited in reminders about responsibility toward vulnerable people.",
+      ],
+      summary:
+        "The oppressed call on Allah to deliver them from tyranny and grant protecting allies from Him. The ayah joins dua with moral duty to support the vulnerable.",
+      keyTakeaway: "Answer the cry of the oppressed with dua and action.",
+      references: [
+        { name: "Quran 4:75", url: "https://quran.com/4:75" },
+        { name: "Ibn Kathir Tafsir (4:75)", url: "https://quran.com/en/4:75/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "4:82",
+      themeType: "Famous Ayah",
+      shortTitle: "Reflect on the Quran",
+      whyNotable: [
+        "A key ayah used to call believers to deep Quranic reflection.",
+        "Often quoted in discussions on certainty and coherence of revelation.",
+      ],
+      summary:
+        "Allah calls people to reflect deeply on the Quran and states that contradiction would be found if it came from other than Him. The ayah invites thoughtful study as a path to certainty.",
+      keyTakeaway: "Tadabbur strengthens conviction in revelation.",
+      references: [
+        { name: "Quran 4:82", url: "https://quran.com/4:82" },
+        { name: "Ibn Kathir Tafsir (4:82)", url: "https://quran.com/en/4:82/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "4:135",
+      themeType: "Famous Ayah",
+      shortTitle: "Stand Firm for Justice",
+      whyNotable: [
+        "One of the most cited Quranic commands on impartial justice.",
+        "Frequently used in sermons and ethics lessons on truthfulness against bias.",
+      ],
+      summary:
+        "Believers are commanded to stand firmly for justice as witnesses for Allah, even against themselves or close relatives. The ayah makes justice independent of wealth, status, and personal preference.",
+      keyTakeaway: "Justice for Allah must override personal bias.",
+      references: [
+        { name: "Quran 4:135", url: "https://quran.com/4:135" },
+        { name: "Ibn Kathir Tafsir (4:135)", url: "https://quran.com/en/4:135/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -453,6 +551,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Steadfast faith is sustained by obedience, unity, and remembrance.",
       "Powerful Quranic duas train the heart for patience and trust in Allah.",
       "Taqwa extends from worship into family rights, justice, and social conduct.",
+    ],
+  },
+  5: {
+    title: "Day 5 Recitation Summary (An-Nisaa 24-147)",
+    summary:
+      "Day 5 emphasizes covenant responsibility, justice, obedience to revelation, and protection of the vulnerable. It repeatedly links faith to trustworthiness, disciplined worship, and social accountability.",
+    themes: [
+      "Tawhid must be visible in ethics, rights, and everyday conduct.",
+      "Justice and amanah are central signs of sincere faith.",
+      "Believers are called to combine dua, reflection, and principled action.",
     ],
   },
 };
