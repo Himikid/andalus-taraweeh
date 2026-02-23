@@ -1,0 +1,938 @@
+{
+  "day": 5,
+  "source": "https://www.youtube.com/watch?v=spsbGlCUzA8",
+  "markers": [
+    {
+      "time": 1465,
+      "surah": "An-Nisaa",
+      "ayah": 24,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.603,
+      "arabic_text": "۞ وَٱلْمُحْصَنَٰتُ مِنَ ٱلنِّسَآءِ إِلَّا مَا مَلَكَتْ أَيْمَٰنُكُمْ ۖ كِتَٰبَ ٱللَّهِ عَلَيْكُمْ ۚ وَأُحِلَّ لَكُم مَّا وَرَآءَ ذَٰلِكُمْ أَن تَبْتَغُوا۟ بِأَمْوَٰلِكُم مُّحْصِنِينَ غَيْرَ مُسَٰفِحِينَ ۚ فَمَا ٱسْتَمْتَعْتُم بِهِۦ مِنْهُنَّ فَـَٔاتُوهُنَّ أُجُورَهُنَّ فَرِيضَةًۭ ۚ وَلَا جُنَاحَ عَلَيْكُمْ فِيمَا تَرَٰضَيْتُم بِهِۦ مِنۢ بَعْدِ ٱلْفَرِيضَةِ ۚ إِنَّ ٱللَّهَ كَانَ عَلِيمًا حَكِيمًۭا",
+      "english_text": "And [forbidden to you are] all married women other than those whom you rightfully possess [through wedlock]: this is God's ordinance, binding upon you. But lawful to you are all [women] beyond these, for you to seek out, offering them of your possessions, taking them in honest wedlock, and not in fornication. And unto those with whom you desire to enjoy marriage, you shall give the dowers due to them; but you will incur no sin if, after [having agreed upon] this lawful due, you freely agree with one another upon anything [else]: behold, God is indeed all-knowing, wise.",
+      "start_time": 1465,
+      "end_time": 1503,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          19,
+          19
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          21,
+          22
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          27,
+          28
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          31,
+          31
+        ],
+        [
+          32,
+          32
+        ],
+        [
+          33,
+          33
+        ],
+        [
+          34,
+          34
+        ],
+        [
+          35,
+          35
+        ],
+        [
+          36,
+          36
+        ],
+        [
+          37,
+          37
+        ],
+        [
+          38,
+          38
+        ],
+        [
+          39,
+          39
+        ],
+        [
+          40,
+          40
+        ],
+        [
+          42,
+          41
+        ]
+      ]
+    },
+    {
+      "time": 1504,
+      "surah": "An-Nisaa",
+      "ayah": 25,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.402,
+      "arabic_text": "وَمَن لَّمْ يَسْتَطِعْ مِنكُمْ طَوْلًا أَن يَنكِحَ ٱلْمُحْصَنَٰتِ ٱلْمُؤْمِنَٰتِ فَمِن مَّا مَلَكَتْ أَيْمَٰنُكُم مِّن فَتَيَٰتِكُمُ ٱلْمُؤْمِنَٰتِ ۚ وَٱللَّهُ أَعْلَمُ بِإِيمَٰنِكُم ۚ بَعْضُكُم مِّنۢ بَعْضٍۢ ۚ فَٱنكِحُوهُنَّ بِإِذْنِ أَهْلِهِنَّ وَءَاتُوهُنَّ أُجُورَهُنَّ بِٱلْمَعْرُوفِ مُحْصَنَٰتٍ غَيْرَ مُسَٰفِحَٰتٍۢ وَلَا مُتَّخِذَٰتِ أَخْدَانٍۢ ۚ فَإِذَآ أُحْصِنَّ فَإِنْ أَتَيْنَ بِفَٰحِشَةٍۢ فَعَلَيْهِنَّ نِصْفُ مَا عَلَى ٱلْمُحْصَنَٰتِ مِنَ ٱلْعَذَابِ ۚ ذَٰلِكَ لِمَنْ خَشِىَ ٱلْعَنَتَ مِنكُمْ ۚ وَأَن تَصْبِرُوا۟ خَيْرٌۭ لَّكُمْ ۗ وَٱللَّهُ غَفُورٌۭ رَّحِيمٌۭ",
+      "english_text": "And as for those of you who, owing to cir­cumstances, are not in a position to marry free believing women, [let them marry] believing maidens from among those whom you rightfully possess. And God knows all about your faith; each one of you is an issue of the other. Marry them, then, with their people's leave, and give them their dowers in an equitable manner - they being women who give themselves in honest wedlock, not in fornication, nor as secret love-companions. And when they are married, and thereafter become guilty of immoral conduct, they shall be liable to half the penalty to which free married women are liable. This [permission to marry slave-girls applies] to those of you who fear lest they stumble into evil. But it is for your own good to persevere in patience [and to abstain from such marriages]: and God is much-forgiving, a dispenser of grace.",
+      "start_time": 1504,
+      "end_time": 1581,
+      "matched_token_indices": [
+        [
+          27,
+          0
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          38,
+          2
+        ],
+        [
+          39,
+          3
+        ],
+        [
+          40,
+          4
+        ],
+        [
+          41,
+          5
+        ],
+        [
+          43,
+          7
+        ],
+        [
+          44,
+          8
+        ],
+        [
+          45,
+          9
+        ],
+        [
+          48,
+          10
+        ],
+        [
+          49,
+          11
+        ],
+        [
+          50,
+          12
+        ],
+        [
+          51,
+          13
+        ],
+        [
+          52,
+          14
+        ],
+        [
+          53,
+          15
+        ],
+        [
+          54,
+          16
+        ],
+        [
+          55,
+          17
+        ],
+        [
+          56,
+          18
+        ],
+        [
+          57,
+          19
+        ],
+        [
+          58,
+          20
+        ],
+        [
+          59,
+          21
+        ],
+        [
+          60,
+          22
+        ],
+        [
+          62,
+          23
+        ],
+        [
+          69,
+          26
+        ],
+        [
+          71,
+          27
+        ],
+        [
+          73,
+          28
+        ],
+        [
+          75,
+          30
+        ],
+        [
+          76,
+          31
+        ],
+        [
+          77,
+          32
+        ],
+        [
+          78,
+          33
+        ],
+        [
+          79,
+          34
+        ],
+        [
+          81,
+          36
+        ],
+        [
+          82,
+          38
+        ],
+        [
+          83,
+          39
+        ],
+        [
+          84,
+          41
+        ],
+        [
+          85,
+          42
+        ],
+        [
+          86,
+          43
+        ],
+        [
+          87,
+          44
+        ],
+        [
+          88,
+          45
+        ]
+      ]
+    },
+    {
+      "time": 1611,
+      "surah": "An-Nisaa",
+      "ayah": 26,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.562,
+      "arabic_text": "يُرِيدُ ٱللَّهُ لِيُبَيِّنَ لَكُمْ وَيَهْدِيَكُمْ سُنَنَ ٱلَّذِينَ مِن قَبْلِكُمْ وَيَتُوبَ عَلَيْكُمْ ۗ وَٱللَّهُ عَلِيمٌ حَكِيمٌۭ",
+      "english_text": "God wants to make [all this] clear unto you, and to guide you onto the [righteous] ways of life of those who preceded you, and to turn unto you in His mercy: for God is all-knowing, wise.",
+      "start_time": 1611,
+      "end_time": 1614,
+      "matched_token_indices": [
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          11
+        ]
+      ]
+    },
+    {
+      "time": 1616,
+      "surah": "An-Nisaa",
+      "ayah": 27,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.739,
+      "arabic_text": "وَٱللَّهُ يُرِيدُ أَن يَتُوبَ عَلَيْكُمْ وَيُرِيدُ ٱلَّذِينَ يَتَّبِعُونَ ٱلشَّهَوَٰتِ أَن تَمِيلُوا۟ مَيْلًا عَظِيمًۭا",
+      "english_text": "And God wants to turn unto you in His mercy, whereas those who follow [only] their own lusts want you to drift far away from the right path.",
+      "start_time": 1616,
+      "end_time": 1621,
+      "matched_token_indices": null
+    },
+    {
+      "time": 1629,
+      "surah": "An-Nisaa",
+      "ayah": 28,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.789,
+      "arabic_text": "يُرِيدُ ٱللَّهُ أَن يُخَفِّفَ عَنكُمْ ۚ وَخُلِقَ ٱلْإِنسَٰنُ ضَعِيفًۭا",
+      "english_text": "God wants to lighten your burdens: for man has been created weak.",
+      "start_time": 1629,
+      "end_time": 1634,
+      "matched_token_indices": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          6
+        ]
+      ]
+    },
+    {
+      "time": 1649,
+      "surah": "An-Nisaa",
+      "ayah": 29,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.56,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَأْكُلُوٓا۟ أَمْوَٰلَكُم بَيْنَكُم بِٱلْبَٰطِلِ إِلَّآ أَن تَكُونَ تِجَٰرَةً عَن تَرَاضٍۢ مِّنكُمْ ۚ وَلَا تَقْتُلُوٓا۟ أَنفُسَكُمْ ۚ إِنَّ ٱللَّهَ كَانَ بِكُمْ رَحِيمًۭا",
+      "english_text": "O YOU who have attained to faith! Do not devour one another's possessions wrongfully - not even by way of trade based on mutual agreement - and do not destroy one another: for, behold, God is indeed a dispenser of grace unto you!",
+      "start_time": 1649,
+      "end_time": 1665,
+      "matched_token_indices": null
+    },
+    {
+      "time": 1669,
+      "surah": "An-Nisaa",
+      "ayah": 30,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.898,
+      "arabic_text": "وَمَن يَفْعَلْ ذَٰلِكَ عُدْوَٰنًۭا وَظُلْمًۭا فَسَوْفَ نُصْلِيهِ نَارًۭا ۚ وَكَانَ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرًا",
+      "english_text": "And as for him who does this with malicious intent and a will to do wrong - him shall We, in time, cause to endure [suffering through] fire: for this is indeed easy for God.",
+      "start_time": 1669,
+      "end_time": 1675,
+      "matched_token_indices": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          12
+        ]
+      ]
+    },
+    {
+      "time": 3819,
+      "surah": "An-Nisaa",
+      "ayah": 32,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.409,
+      "arabic_text": "وَلَا تَتَمَنَّوْا۟ مَا فَضَّلَ ٱللَّهُ بِهِۦ بَعْضَكُمْ عَلَىٰ بَعْضٍۢ ۚ لِّلرِّجَالِ نَصِيبٌۭ مِّمَّا ٱكْتَسَبُوا۟ ۖ وَلِلنِّسَآءِ نَصِيبٌۭ مِّمَّا ٱكْتَسَبْنَ ۚ وَسْـَٔلُوا۟ ٱللَّهَ مِن فَضْلِهِۦٓ ۗ إِنَّ ٱللَّهَ كَانَ بِكُلِّ شَىْءٍ عَلِيمًۭا",
+      "english_text": "Hence, do not covet the bounties which God has bestowed more abundantly on some of you than on others. Men shall have a benefit from what they earn, and women shall have a benefit from what they earn. Ask, therefore, God [to give you] out of His bounty: behold, God has indeed full knowledge of everything.",
+      "start_time": 3819,
+      "end_time": 3823,
+      "matched_token_indices": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          18
+        ],
+        [
+          3,
+          22
+        ],
+        [
+          4,
+          23
+        ]
+      ]
+    },
+    {
+      "time": 3824,
+      "surah": "An-Nisaa",
+      "ayah": 33,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "ambiguous",
+      "reciter": "Hasan",
+      "confidence": 0.61,
+      "arabic_text": "وَلِكُلٍّۢ جَعَلْنَا مَوَٰلِىَ مِمَّا تَرَكَ ٱلْوَٰلِدَانِ وَٱلْأَقْرَبُونَ ۚ وَٱلَّذِينَ عَقَدَتْ أَيْمَٰنُكُمْ فَـَٔاتُوهُمْ نَصِيبَهُمْ ۚ إِنَّ ٱللَّهَ كَانَ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدًا",
+      "english_text": "And unto everyone have We appointed heirs to what he may leave behind: parents, and near kinsfolk, and those to whom you have pledged your troth give them, therefore, their share. Behold, God is indeed a witness unto everything.",
+      "start_time": 3824,
+      "end_time": 3836,
+      "matched_token_indices": null
+    },
+    {
+      "time": 3859,
+      "surah": "An-Nisaa",
+      "ayah": 34,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.403,
+      "arabic_text": "ٱلرِّجَالُ قَوَّٰمُونَ عَلَى ٱلنِّسَآءِ بِمَا فَضَّلَ ٱللَّهُ بَعْضَهُمْ عَلَىٰ بَعْضٍۢ وَبِمَآ أَنفَقُوا۟ مِنْ أَمْوَٰلِهِمْ ۚ فَٱلصَّٰلِحَٰتُ قَٰنِتَٰتٌ حَٰفِظَٰتٌۭ لِّلْغَيْبِ بِمَا حَفِظَ ٱللَّهُ ۚ وَٱلَّٰتِى تَخَافُونَ نُشُوزَهُنَّ فَعِظُوهُنَّ وَٱهْجُرُوهُنَّ فِى ٱلْمَضَاجِعِ وَٱضْرِبُوهُنَّ ۖ فَإِنْ أَطَعْنَكُمْ فَلَا تَبْغُوا۟ عَلَيْهِنَّ سَبِيلًا ۗ إِنَّ ٱللَّهَ كَانَ عَلِيًّۭا كَبِيرًۭا",
+      "english_text": "MEN SHALL take full care of women with the bounties which God has bestowed more abundantly on the former than on the latter, and with what they may spend out of their possessions. And the right­eous women are the truly devout ones, who guard the intimacy which God has [ordained to be] guar­ded. And as for those women whose ill-will you have reason to fear, admonish them [first]; then leave them alone in bed; then beat them; and if thereupon they pay you heed, do not seek to harm them. Behold, God is indeed most high, great!",
+      "start_time": 3859,
+      "end_time": 3861,
+      "matched_token_indices": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          36
+        ]
+      ]
+    },
+    {
+      "time": 4135,
+      "surah": "An-Nisaa",
+      "ayah": 35,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.525,
+      "arabic_text": "وَإِنْ خِفْتُمْ شِقَاقَ بَيْنِهِمَا فَٱبْعَثُوا۟ حَكَمًۭا مِّنْ أَهْلِهِۦ وَحَكَمًۭا مِّنْ أَهْلِهَآ إِن يُرِيدَآ إِصْلَٰحًۭا يُوَفِّقِ ٱللَّهُ بَيْنَهُمَآ ۗ إِنَّ ٱللَّهَ كَانَ عَلِيمًا خَبِيرًۭا",
+      "english_text": "And if you have reason to fear that a breach might occur between a [married] couple, appoint an arbiter from among his people and an arbiter from among her people; if they both want to set things aright, God may bring about their reconciliation. Be­hold, God is indeed all-knowing, aware.",
+      "start_time": 4135,
+      "end_time": 4138,
+      "matched_token_indices": [
+        [
+          0,
+          17
+        ],
+        [
+          1,
+          18
+        ],
+        [
+          2,
+          19
+        ],
+        [
+          3,
+          20
+        ]
+      ]
+    },
+    {
+      "time": 5025,
+      "surah": "An-Nisaa",
+      "ayah": 36,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.659,
+      "arabic_text": "۞ وَٱعْبُدُوا۟ ٱللَّهَ وَلَا تُشْرِكُوا۟ بِهِۦ شَيْـًۭٔا ۖ وَبِٱلْوَٰلِدَيْنِ إِحْسَٰنًۭا وَبِذِى ٱلْقُرْبَىٰ وَٱلْيَتَٰمَىٰ وَٱلْمَسَٰكِينِ وَٱلْجَارِ ذِى ٱلْقُرْبَىٰ وَٱلْجَارِ ٱلْجُنُبِ وَٱلصَّاحِبِ بِٱلْجَنۢبِ وَٱبْنِ ٱلسَّبِيلِ وَمَا مَلَكَتْ أَيْمَٰنُكُمْ ۗ إِنَّ ٱللَّهَ لَا يُحِبُّ مَن كَانَ مُخْتَالًۭا فَخُورًا",
+      "english_text": "AND WORSHIP God [alone], and do not ascribe divinity, in any way, to aught beside Him. And do good unto your parents, and near of kin, and unto orphans, and the needy, and the neighbour from among your own people, and the neighbour who is a stranger, and the friend by your side, and the wayfarer, and those whom you rightfully possess. Verily, God does not love any of those who, full of self-conceit, act in a boastful manner;",
+      "start_time": 5025,
+      "end_time": 5028,
+      "matched_token_indices": [
+        [
+          0,
+          21
+        ],
+        [
+          1,
+          24
+        ],
+        [
+          2,
+          28
+        ],
+        [
+          3,
+          29
+        ]
+      ]
+    },
+    {
+      "time": 6223,
+      "surah": "An-Nisaa",
+      "ayah": 48,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.816,
+      "arabic_text": "إِنَّ ٱللَّهَ لَا يَغْفِرُ أَن يُشْرَكَ بِهِۦ وَيَغْفِرُ مَا دُونَ ذَٰلِكَ لِمَن يَشَآءُ ۚ وَمَن يُشْرِكْ بِٱللَّهِ فَقَدِ ٱفْتَرَىٰٓ إِثْمًا عَظِيمًا",
+      "english_text": "VERILY, God does not forgive the ascribing of divinity to aught beside Him, although He forgives any lesser sin unto whomever He wills: for he who ascribes divinity to aught beside God has indeed contrived an awesome sin.",
+      "start_time": 6223,
+      "end_time": 6230,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "time": 6558,
+      "surah": "An-Nisaa",
+      "ayah": 49,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.445,
+      "arabic_text": "أَلَمْ تَرَ إِلَى ٱلَّذِينَ يُزَكُّونَ أَنفُسَهُم ۚ بَلِ ٱللَّهُ يُزَكِّى مَن يَشَآءُ وَلَا يُظْلَمُونَ فَتِيلًا",
+      "english_text": "Art thou not aware of those who consider themselves pure? Nay, but it is God who causes whomever He wills to grow in purity; and none shall be wronged by as much as a hair's breadth.",
+      "start_time": 6558,
+      "end_time": 6560,
+      "matched_token_indices": [
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          10
+        ]
+      ]
+    },
+    {
+      "time": 6585,
+      "surah": "An-Nisaa",
+      "ayah": 50,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.508,
+      "arabic_text": "ٱنظُرْ كَيْفَ يَفْتَرُونَ عَلَى ٱللَّهِ ٱلْكَذِبَ ۖ وَكَفَىٰ بِهِۦٓ إِثْمًۭا مُّبِينًا",
+      "english_text": "Behold how they attribute their own lying inventions to God - than which there is no sin more obvious.",
+      "start_time": 6585,
+      "end_time": 6589,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "time": 6793,
+      "surah": "An-Nisaa",
+      "ayah": 52,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.451,
+      "arabic_text": "أُو۟لَٰٓئِكَ ٱلَّذِينَ لَعَنَهُمُ ٱللَّهُ ۖ وَمَن يَلْعَنِ ٱللَّهُ فَلَن تَجِدَ لَهُۥ نَصِيرًا",
+      "english_text": "It is they whom God has rejected: and he whom God rejects shall find none to succour him.",
+      "start_time": 6793,
+      "end_time": 6797,
+      "matched_token_indices": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          9
+        ]
+      ]
+    },
+    {
+      "time": 6815,
+      "surah": "An-Nisaa",
+      "ayah": 53,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.451,
+      "arabic_text": "أَمْ لَهُمْ نَصِيبٌۭ مِّنَ ٱلْمُلْكِ فَإِذًۭا لَّا يُؤْتُونَ ٱلنَّاسَ نَقِيرًا",
+      "english_text": "Have they, perchance, a share in [God's] dominion? But [if they had], lo, they would not give to other people as much as [would fill] the groove of a date-stone!",
+      "start_time": 6815,
+      "end_time": 6832,
+      "matched_token_indices": null
+    },
+    {
+      "time": 6836,
+      "surah": "An-Nisaa",
+      "ayah": 54,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.518,
+      "arabic_text": "أَمْ يَحْسُدُونَ ٱلنَّاسَ عَلَىٰ مَآ ءَاتَىٰهُمُ ٱللَّهُ مِن فَضْلِهِۦ ۖ فَقَدْ ءَاتَيْنَآ ءَالَ إِبْرَٰهِيمَ ٱلْكِتَٰبَ وَٱلْحِكْمَةَ وَءَاتَيْنَٰهُم مُّلْكًا عَظِيمًۭا",
+      "english_text": "Do they, perchance, envy other people for what God has granted them out of His bounty? But then, We did grant revelation and wisdom unto the House of Abraham, and We did bestow on them a mighty dominion:",
+      "start_time": 6836,
+      "end_time": 6839,
+      "matched_token_indices": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          9
+        ]
+      ]
+    },
+    {
+      "time": 6910,
+      "surah": "An-Nisaa",
+      "ayah": 56,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.622,
+      "arabic_text": "إِنَّ ٱلَّذِينَ كَفَرُوا۟ بِـَٔايَٰتِنَا سَوْفَ نُصْلِيهِمْ نَارًۭا كُلَّمَا نَضِجَتْ جُلُودُهُم بَدَّلْنَٰهُمْ جُلُودًا غَيْرَهَا لِيَذُوقُوا۟ ٱلْعَذَابَ ۗ إِنَّ ٱللَّهَ كَانَ عَزِيزًا حَكِيمًۭا",
+      "english_text": "for, verily, those who are bent on denying the truth of Our messages We shall, in time, cause to endure fire: [and] every time their skins are burnt off, We shall replace them with new skins, so that they may taste suffering [in full] Verily, God is almighty, wise.",
+      "start_time": 6910,
+      "end_time": 6913,
+      "matched_token_indices": [
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          3,
+          19
+        ]
+      ]
+    },
+    {
+      "time": 7385,
+      "surah": "An-Nisaa",
+      "ayah": 57,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.559,
+      "arabic_text": "وَٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ سَنُدْخِلُهُمْ جَنَّٰتٍۢ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدًۭا ۖ لَّهُمْ فِيهَآ أَزْوَٰجٌۭ مُّطَهَّرَةٌۭ ۖ وَنُدْخِلُهُمْ ظِلًّۭا ظَلِيلًا",
+      "english_text": "But those who attain to faith and do righteous deeds We shall bring into gardens through which running waters flow, therein to abide beyond the count of time; there shall they have spouses pure: and [thus] We shall bring them unto happiness abounding.",
+      "start_time": 7385,
+      "end_time": 7405,
+      "matched_token_indices": null
+    },
+    {
+      "time": 7445,
+      "surah": "An-Nisaa",
+      "ayah": 58,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.559,
+      "arabic_text": "۞ إِنَّ ٱللَّهَ يَأْمُرُكُمْ أَن تُؤَدُّوا۟ ٱلْأَمَٰنَٰتِ إِلَىٰٓ أَهْلِهَا وَإِذَا حَكَمْتُم بَيْنَ ٱلنَّاسِ أَن تَحْكُمُوا۟ بِٱلْعَدْلِ ۚ إِنَّ ٱللَّهَ نِعِمَّا يَعِظُكُم بِهِۦٓ ۗ إِنَّ ٱللَّهَ كَانَ سَمِيعًۢا بَصِيرًۭا",
+      "english_text": "BEHOLD, God bids you to deliver all that you have been entrusted with unto those who are entitled thereto, and whenever you judge between people, to judge with justice. Verily, most excellent is what God exhorts you to do: verily, God is all-hearing, all-seeing!",
+      "start_time": 7445,
+      "end_time": 7449,
+      "matched_token_indices": [
+        [
+          0,
+          11
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          3,
+          21
+        ]
+      ]
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-02-23T01:19:11.865124+00:00",
+    "audio_path": "data/audio/day-5/normalized.wav",
+    "part": null,
+    "whisper_model": "small",
+    "markers_detected": 21,
+    "transcript_segments_raw": 312,
+    "transcript_segments_for_matching": 256,
+    "transcript_reset_markers": 11,
+    "reciter_segments_detected": 14,
+    "corpus_loaded": true,
+    "asad_loaded": true,
+    "transcript_path": "data/ai/cache/day-5-transcript-full.json",
+    "segment_detection": {
+      "audio_starts": 10,
+      "fatiha_starts": 11,
+      "merged_starts": 14
+    },
+    "reciter_filter": {
+      "enabled": true,
+      "reason": "known_reciter_windows",
+      "kept_segments": 256,
+      "total_segments": 256,
+      "keep_ratio": 1.0,
+      "windows": 1
+    },
+    "match_config": {
+      "min_score": 60,
+      "min_overlap": 0.05,
+      "min_confidence": 0.4,
+      "min_gap_seconds": 5,
+      "strict_normalization": false,
+      "require_weak_support_for_inferred": false,
+      "start_surah_number": 4,
+      "start_ayah": 24
+    },
+    "manual_override": null,
+    "marker_time_overrides": [],
+    "override_surah_fill": null,
+    "pipeline_timings_seconds": {
+      "prepare audio source": 0.9,
+      "load normalized audio": 0.72,
+      "trim audio (skipped)": 0.0,
+      "load transcript cache": 0.01,
+      "transcribe audio (cache hit, skipped)": 0.0,
+      "detect reciter/prayer segment starts": 0.17,
+      "assign reciters to segments": 12.41,
+      "load Quran corpus and prepare transcript": 0.12,
+      "match ayah markers": 58.13,
+      "apply day overrides": 0.0,
+      "enrich marker text + reciter mapping": 0.02
+    },
+    "time_offset_seconds": 1463,
+    "window_start_seconds": 1463,
+    "window_end_seconds": 7536,
+    "taraweeh_window": {
+      "start_hms": "0:24:23",
+      "end_hms": "2:05:36"
+    },
+    "source": "trimmed-window"
+  }
+}
