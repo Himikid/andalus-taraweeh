@@ -15,11 +15,11 @@ export default function RecitersInfo({ compact = false }: RecitersInfoProps) {
           <p className="text-lg font-medium text-ivory sm:text-xl">Sheikh Samir</p>
           <p className="mt-1 text-sm text-muted">Alexandria, Egypt</p>
           <p className="mt-2 text-xs leading-5 text-muted">
-            <span className="block">Day 1: Al-Susi 'an Abi 'Amr.</span>
-            <span className="block">Day 2: Al-Susi 'an Abi 'Amr.</span>
-            <span className="block">Day 3: Ruways 'an Ya'qub.</span>
-            <span className="block">Day 4: Ibn Dhakwan 'an Ibn 'Amir.</span>
-            <span className="block">Day 5: Hafs 'an 'Asim.</span>
+            <span className="block">Day 1: Al-Susi &apos;an Abi &apos;Amr.</span>
+            <span className="block">Day 2: Al-Susi &apos;an Abi &apos;Amr.</span>
+            <span className="block">Day 3: Ruways &apos;an Ya&apos;qub.</span>
+            <span className="block">Day 4: Ibn Dhakwan &apos;an Ibn &apos;Amir.</span>
+            <span className="block">Day 5: Hafs &apos;an &apos;Asim.</span>
           </p>
         </article>
 
