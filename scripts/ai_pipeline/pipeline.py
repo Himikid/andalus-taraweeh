@@ -615,6 +615,7 @@ def _resolve_day_reanchor_points(
     day: int,
     part: int | None,
     overrides_path: Path | None,
+    corpus_entries: list | None = None,
 ) -> list[tuple[int, int, int]]:
     if overrides_path is None or not overrides_path.exists():
         return []
@@ -654,6 +655,61 @@ def _resolve_day_reanchor_points(
         if at_time < 0 or surah_number <= 0 or ayah <= 0:
             continue
         points.append((at_time, surah_number, ayah))
+
+    # Promote manual marker overrides into matching-time reanchors.
+    # This lets a confirmed manual ayah advance the matcher pointer forward
+    # during reacquire instead of only patching output after matching.
+    marker_overrides = day_config.get("marker_overrides", [])
+    if isinstance(marker_overrides, list) and marker_overrides:
+        corpus_order: dict[tuple[int, int], int] = {}
+        for index, entry in enumerate(corpus_entries or []):
+            surah_number = getattr(entry, "surah_number", None)
+            ayah = getattr(entry, "ayah", None)
+            if surah_number is None or ayah is None:
+                continue
+            corpus_order[(int(surah_number), int(ayah))] = index
+
+        for item in marker_overrides:
+            if not isinstance(item, dict):
+                continue
+
+            item_part = item.get("part")
+            if item_part is not None:
+                try:
+                    if int(item_part) != int(part or 0):
+                        continue
+                except (TypeError, ValueError):
+                    continue
+
+            try:
+                surah_number = int(item.get("surah_number"))
+                ayah = int(item.get("ayah"))
+            except (TypeError, ValueError):
+                continue
+            if surah_number <= 0 or ayah <= 0:
+                continue
+
+            end_time_raw = item.get("end_time", item.get("start_time"))
+            try:
+                at_time = int(end_time_raw)
+            except (TypeError, ValueError):
+                continue
+            if at_time < 0:
+                continue
+
+            current_index = corpus_order.get((surah_number, ayah))
+            if current_index is None:
+                continue
+            next_index = current_index + 1
+            if next_index >= len(corpus_entries or []):
+                continue
+
+            next_entry = (corpus_entries or [])[next_index]
+            next_surah_number = int(getattr(next_entry, "surah_number", 0) or 0)
+            next_ayah = int(getattr(next_entry, "ayah", 0) or 0)
+            if next_surah_number <= 0 or next_ayah <= 0:
+                continue
+            points.append((at_time, next_surah_number, next_ayah))
 
     points.sort(key=lambda item: item[0])
     return points
@@ -810,7 +866,12 @@ def process_day(
         day_start_override = _resolve_day_start_override(day=day, overrides_path=day_overrides_path)
         if day_start_override is not None:
             effective_start_surah_number, effective_start_ayah = day_start_override
-    reanchor_points = _resolve_day_reanchor_points(day=day, part=part, overrides_path=day_overrides_path)
+    reanchor_points = _resolve_day_reanchor_points(
+        day=day,
+        part=part,
+        overrides_path=day_overrides_path,
+        corpus_entries=corpus_entries,
+    )
 
     forced_start_index: int | None = None
     if effective_start_surah_number is not None and effective_start_ayah is not None:

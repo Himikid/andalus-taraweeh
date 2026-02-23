@@ -30,6 +30,22 @@
           "end_time": 1547
         }
       ]
+    },
+    "5": {
+      "marker_overrides": [
+        {
+          "surah_number": 4,
+          "ayah": 31,
+          "start_time": 212,
+          "end_time": 228
+        },
+        {
+          "surah_number": 4,
+          "ayah": 32,
+          "start_time": 329,
+          "end_time": 360
+        }
+      ]
     }
   }
 }

@@ -2957,12 +2957,17 @@ def match_quran_markers(
         else:
             expected = last_matched_index + 1
             normal_candidates: dict[int, CandidateEvidence] = {}
-            for index in range(expected - 1, expected + 3):
+            if awaiting_reacquire or reacquire_lock_ayahs_remaining > 0:
+                normal_candidate_indices = [expected, expected + 1]
+            else:
+                normal_candidate_indices = list(range(expected - 1, expected + 3))
+
+            for index in normal_candidate_indices:
                 candidate = evaluate_index(index)
                 if candidate is not None:
                     normal_candidates[index] = candidate
 
-            for index in range(expected - 1, expected + 3):
+            for index in normal_candidate_indices:
                 candidate = normal_candidates.get(index)
                 if candidate is None:
                     continue
@@ -2977,9 +2982,21 @@ def match_quran_markers(
                 valid, quality, confidence = _candidate_is_valid(
                     candidate=candidate,
                     rival_score=rival,
-                    local_min_score=min_score,
-                    local_min_overlap=min_overlap,
-                    threshold=min_confidence,
+                    local_min_score=(
+                        max(float(min_score), 82.0)
+                        if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                        else float(min_score)
+                    ),
+                    local_min_overlap=(
+                        max(float(min_overlap), 0.22)
+                        if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                        else float(min_overlap)
+                    ),
+                    threshold=(
+                        max(float(min_confidence), 0.78)
+                        if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                        else float(min_confidence)
+                    ),
                     ambiguous_min_score=ambiguous_min_score,
                     ambiguous_min_confidence=ambiguous_min_confidence,
                 )
@@ -2987,7 +3004,31 @@ def match_quran_markers(
                     continue
                 jump = index - last_matched_index
                 local_max_forward_jump = 1 if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0) else max_forward_jump_ayahs
+                if (
+                    (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                    and jump == 2
+                    and stale_segments < 3
+                ):
+                    continue
                 if jump < 1 or jump > local_max_forward_jump:
+                    if (
+                        (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                        and jump == 2
+                        and stale_segments >= 3
+                    ):
+                        pass
+                    else:
+                        continue
+                if (
+                    (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                    and jump == 2
+                    and (
+                        quality != "high"
+                        or candidate.adjusted_score < max(84.0, float(min_score) + 6.0)
+                        or candidate.overlap < max(0.24, float(min_overlap) + 0.06)
+                        or confidence < max(0.80, float(min_confidence) + 0.14)
+                    )
+                ):
                     continue
                 selected_index = index
                 selected_candidate = candidate
