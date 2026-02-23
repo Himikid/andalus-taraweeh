@@ -5848,14 +5848,29 @@
       "start_time": 6564,
       "end_time": 6565,
       "matched_token_indices": null
+    },
+    {
+      "time": 7521,
+      "surah": "An-Nisaa",
+      "ayah": 147,
+      "surah_number": 4,
+      "juz": 5,
+      "quality": "manual",
+      "reciter": "Samir",
+      "confidence": 1.0,
+      "arabic_text": "مَّا يَفْعَلُ ٱللَّهُ بِعَذَابِكُمْ إِن شَكَرْتُمْ وَءَامَنتُمْ ۚ وَكَانَ ٱللَّهُ شَاكِرًا عَلِيمًۭا",
+      "english_text": "Why would God cause you to suffer [for your past sins] if you are grateful and attain to belief - seeing that God is always responsive to gratitude, all-knowing?",
+      "start_time": 7521,
+      "end_time": 7535,
+      "matched_token_indices": null
     }
   ],
   "meta": {
-    "generated_at": "2026-02-23T18:32:02.362201+00:00",
+    "generated_at": "2026-02-23T18:37:18.187325+00:00",
     "audio_path": "data/audio/day-5/normalized.wav",
     "part": null,
     "whisper_model": "small",
-    "markers_detected": 94,
+    "markers_detected": 95,
     "transcript_segments_raw": 1423,
     "transcript_segments_for_matching": 1239,
     "transcript_reset_markers": 12,
@@ -5909,19 +5924,27 @@
         "part": null,
         "start_time": 329,
         "end_time": 360
+      },
+      {
+        "surah_number": 4,
+        "ayah": 147,
+        "part": null,
+        "start_time": 6058,
+        "end_time": 6072,
+        "inserted": true
       }
     ],
     "override_surah_fill": null,
     "pipeline_timings_seconds": {
-      "prepare audio source": 0.46,
-      "load normalized audio": 0.7,
+      "prepare audio source": 0.45,
+      "load normalized audio": 0.74,
       "trim audio (skipped)": 0.0,
       "load transcript cache": 0.01,
       "transcribe audio (cache hit, skipped)": 0.0,
-      "detect reciter/prayer segment starts": 0.1,
-      "assign reciters to segments": 6.08,
-      "load Quran corpus and prepare transcript": 0.09,
-      "match ayah markers": 28.62,
+      "detect reciter/prayer segment starts": 0.09,
+      "assign reciters to segments": 6.19,
+      "load Quran corpus and prepare transcript": 0.1,
+      "match ayah markers": 28.29,
       "apply day overrides": 0.0,
       "enrich marker text + reciter mapping": 0.01
     },
