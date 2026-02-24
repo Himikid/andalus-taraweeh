@@ -34,8 +34,24 @@
     "5": {
       "start_surah_number": 4,
       "start_ayah": 24,
+      "start_time": 1462,
       "final_surah": "An-Nisaa",
-      "final_ayah": 147
+      "final_ayah": 147,
+      "final_time": 7535,
+      "marker_overrides": [
+        {
+          "surah_number": 4,
+          "ayah": 24,
+          "start_time": 1462,
+          "end_time": 1480
+        },
+        {
+          "surah_number": 4,
+          "ayah": 147,
+          "start_time": 7535,
+          "end_time": 7535
+        }
+      ]
     },
     "6": {
       "start_surah_number": 4,
