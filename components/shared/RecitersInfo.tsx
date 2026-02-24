@@ -15,7 +15,15 @@ export default function RecitersInfo({ compact = false }: RecitersInfoProps) {
           <p className="text-lg font-medium text-ivory sm:text-xl">Sheikh Samir</p>
           <p className="mt-1 text-sm text-muted">Alexandria, Egypt</p>
           <p className="mt-2 text-xs leading-5 text-muted">
-            Day 1: Riwayat Al-Sūsī ʿan Abī ʿAmr. Day 2: Riwayat Al-Dūrī ʿan Abī ʿAmr.
+            Day 1: Riwayat Al-Susi an Abi Amr.
+            <br />
+            Day 2: Riwayat Al-Duri an Abi Amr.
+            <br />
+            Day 3: Riwayat Ruways an Yaqub.
+            <br />
+            Day 4: Riwayat Ibn Dhakwan an Ibn Amir.
+            <br />
+            Day 5: Riwayat Hafs an Asim.
           </p>
         </article>
 
@@ -23,7 +31,7 @@ export default function RecitersInfo({ compact = false }: RecitersInfoProps) {
           <p className="text-lg font-medium text-ivory sm:text-xl">Sheikh Hasan</p>
           <p className="mt-1 text-sm text-muted">Libya</p>
           <p className="mt-2 text-xs leading-5 text-muted">
-            Day 2: Riwayat Qalun with different transmission styles.
+            Riwayat Qalun and Warsh.
           </p>
         </article>
       </div>
