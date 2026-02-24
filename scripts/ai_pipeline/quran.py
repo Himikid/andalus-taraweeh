@@ -399,6 +399,15 @@ def _resolve_marker_times(
 ) -> tuple[int, int, list[list[int]] | None]:
     default_start = int(round(_estimate_marker_onset_time(segment, entry)))
     default_end = int(round(max(default_start, evidence.end_time)))
+    segment_snap_candidate = (
+        evidence.source == "segment"
+        and evidence.segment_start_index is not None
+        and evidence.segment_end_index is not None
+        and evidence.segment_start_index == evidence.segment_end_index
+        and evidence.score >= 84.0
+        and evidence.overlap >= 0.20
+        and (float(evidence.end_time) - float(evidence.start_time)) <= 75.0
+    )
 
     alignment: TokenAlignmentResult | None = None
     if (
@@ -422,7 +431,16 @@ def _resolve_marker_times(
         )
 
     if alignment is not None:
-        return alignment.start_time, alignment.end_time, alignment.matched_token_indices
+        start_time = alignment.start_time
+        end_time = alignment.end_time
+        if segment_snap_candidate:
+            snapped_start = int(round(evidence.start_time))
+            snapped_end = int(round(max(evidence.start_time, evidence.end_time)))
+            start_time = min(start_time, snapped_start)
+            end_time = max(end_time, snapped_end)
+            if end_time < start_time:
+                end_time = start_time
+        return start_time, end_time, alignment.matched_token_indices
 
     return default_start, default_end, None
 
@@ -801,6 +819,169 @@ def _token_overlap(query: str, reference: str) -> float:
 
     shared = len(query_tokens & reference_tokens)
     return shared / max(1, len(reference_tokens))
+
+
+def _refine_marker_boundaries_with_neighbors(
+    markers: list[Marker],
+    transcript_segments: list[TranscriptSegment],
+    entry_lookup: dict[tuple[str, int], AyahEntry],
+) -> list[Marker]:
+    if not markers or not transcript_segments:
+        return markers
+
+    segment_rows: list[tuple[float, float, str]] = []
+    for segment in transcript_segments:
+        normalized = normalize_arabic(segment.text, strict=False)
+        if not normalized:
+            continue
+        segment_rows.append((float(segment.start), float(segment.end), normalized))
+    if not segment_rows:
+        return markers
+
+    segment_rows.sort(key=lambda item: (item[0], item[1]))
+    ordered = sorted(markers, key=lambda item: (int(item.time), int(item.surah_number or 0), int(item.ayah)))
+
+    def find_anchor_segment_index(timestamp: int) -> int:
+        t = float(timestamp)
+        best_idx = 0
+        best_dist = float("inf")
+        for idx, (start, end, _) in enumerate(segment_rows):
+            if start <= t <= end:
+                return idx
+            dist = min(abs(t - start), abs(t - end))
+            if dist < best_dist:
+                best_dist = dist
+                best_idx = idx
+        return best_idx
+
+    for idx, marker in enumerate(ordered):
+        entry = entry_lookup.get((marker.surah, int(marker.ayah)))
+        if entry is None:
+            continue
+        prev_entry = entry_lookup.get((marker.surah, int(marker.ayah) - 1))
+        next_entry = entry_lookup.get((marker.surah, int(marker.ayah) + 1))
+        anchor_idx = find_anchor_segment_index(int(marker.start_time or marker.time))
+
+        proposed_start = int(marker.start_time or marker.time)
+        accepted_backfill = False
+        last_seg_end = None
+        for seg_idx in range(anchor_idx, -1, -1):
+            seg_start, seg_end, seg_text = segment_rows[seg_idx]
+            if (float(marker.start_time or marker.time) - seg_end) > 90.0:
+                break
+            if last_seg_end is not None and (last_seg_end - seg_end) > 3.5:
+                break
+            score_cur, overlap_cur = _score_segment_against_entry(seg_text, entry)
+            prev_score = -1.0
+            if prev_entry is not None:
+                prev_score, _ = _score_segment_against_entry(seg_text, prev_entry)
+            strong_hit = score_cur >= 74.0 and overlap_cur >= 0.16 and score_cur >= (prev_score + 4.0)
+            weak_contiguous = score_cur >= 68.0 and overlap_cur >= 0.13 and score_cur >= (prev_score + 2.0)
+            if not accepted_backfill and not strong_hit:
+                break
+            if accepted_backfill and not (strong_hit or weak_contiguous):
+                break
+            accepted_backfill = True
+            proposed_start_value = seg_start
+            if prev_score >= 55.0 and (score_cur - prev_score) < 20.0:
+                proposed_start_value = (seg_start + seg_end) / 2.0
+            proposed_start = int(round(proposed_start_value))
+            last_seg_end = seg_start
+
+        proposed_end = int(marker.end_time or marker.start_time or marker.time)
+        accepted_forward = False
+        last_seg_start = None
+        for seg_idx in range(anchor_idx, len(segment_rows)):
+            seg_start, seg_end, seg_text = segment_rows[seg_idx]
+            if (seg_start - float(marker.start_time or marker.time)) > 120.0:
+                break
+            if last_seg_start is not None and (seg_start - last_seg_start) > 3.5:
+                break
+            score_cur, overlap_cur = _score_segment_against_entry(seg_text, entry)
+            next_score = -1.0
+            if next_entry is not None:
+                next_score, _ = _score_segment_against_entry(seg_text, next_entry)
+            strong_hit = score_cur >= 72.0 and overlap_cur >= 0.14 and score_cur >= (next_score + 4.0)
+            weak_contiguous = score_cur >= 67.0 and overlap_cur >= 0.12 and score_cur >= (next_score + 2.0)
+            if not accepted_forward and not strong_hit:
+                continue
+            if accepted_forward and not (strong_hit or weak_contiguous):
+                break
+            accepted_forward = True
+            proposed_end = int(round(seg_end))
+            last_seg_start = seg_start
+
+        if idx > 0:
+            prev_marker = ordered[idx - 1]
+            if prev_marker.surah == marker.surah:
+                prev_end = int(prev_marker.end_time or prev_marker.start_time or prev_marker.time)
+                proposed_start = max(proposed_start, prev_end + 1)
+        if idx + 1 < len(ordered):
+            next_marker = ordered[idx + 1]
+            if next_marker.surah == marker.surah:
+                next_start = int(next_marker.start_time or next_marker.time)
+                if next_start > proposed_start:
+                    proposed_end = min(proposed_end, next_start - 1)
+        proposed_end = max(proposed_start, proposed_end)
+
+        marker.start_time = proposed_start
+        marker.time = proposed_start
+        marker.end_time = proposed_end
+
+    for idx in range(1, len(ordered)):
+        left = ordered[idx - 1]
+        right = ordered[idx]
+        if left.surah != right.surah:
+            continue
+        left_end = int(left.end_time or left.start_time or left.time)
+        right_start = int(right.start_time or right.time)
+        if right_start <= left_end:
+            adjusted_start = left_end + 1
+            right.start_time = adjusted_start
+            right.time = adjusted_start
+            right.end_time = max(adjusted_start, int(right.end_time or adjusted_start))
+
+    for idx in range(1, len(ordered)):
+        left = ordered[idx - 1]
+        right = ordered[idx]
+        if left.surah != right.surah:
+            continue
+        left_start = int(left.start_time or left.time)
+        left_end = int(left.end_time or left_start)
+        right_start = int(right.start_time or right.time)
+        if right_start <= left_start:
+            continue
+        # Preserve continuity: the previous ayah should usually hold until
+        # the next ayah starts, unless the gap is implausibly large.
+        if (right_start - left_start) <= 180:
+            bridged_end = right_start - 1
+            if bridged_end > left_end:
+                left.end_time = bridged_end
+
+    for idx, marker in enumerate(ordered):
+        has_next_same_surah = idx + 1 < len(ordered) and ordered[idx + 1].surah == marker.surah
+        if has_next_same_surah:
+            continue
+        entry = entry_lookup.get((marker.surah, int(marker.ayah)))
+        if entry is None:
+            continue
+        anchor_idx = find_anchor_segment_index(int(marker.end_time or marker.start_time or marker.time))
+        extended_end = int(marker.end_time or marker.start_time or marker.time)
+        accepted_any = False
+        for seg_idx in range(anchor_idx, len(segment_rows)):
+            seg_start, seg_end, seg_text = segment_rows[seg_idx]
+            if seg_start - float(marker.start_time or marker.time) > 140.0:
+                break
+            score_cur, overlap_cur = _score_segment_against_entry(seg_text, entry)
+            if not accepted_any and not (score_cur >= 70.0 and overlap_cur >= 0.12):
+                continue
+            if accepted_any and not (score_cur >= 66.0 and overlap_cur >= 0.10):
+                break
+            accepted_any = True
+            extended_end = max(extended_end, int(round(seg_end)))
+        marker.end_time = max(int(marker.start_time or marker.time), extended_end)
+
+    return ordered
 
 
 def _contains_fatiha_reset_between(reset_times: list[float], left: int, right: int, margin: int = 3) -> bool:
@@ -2504,8 +2685,14 @@ def _is_valid_forward_transition(
 ) -> bool:
     if previous is None:
         return True
-    if marker_time - previous.time < min_gap_seconds:
+    previous_start = int(previous.start_time or previous.time)
+    previous_end = int(previous.end_time or previous_start)
+    if marker_time <= previous_end:
         return False
+    if marker_time - previous_start < min_gap_seconds:
+        # Allow naturally fast ayah cadence when the previous ayah already ended.
+        if marker_time - previous_end < 1:
+            return False
 
     if previous.surah != entry.surah:
         previous_total = surah_totals.get(previous.surah, previous.ayah)
@@ -2727,7 +2914,26 @@ def match_quran_markers(
             continue
         if pause_reacquire_until is not None and float(segment.start) <= pause_reacquire_until:
             continue
-        segment_variants: list[tuple[str, float, int, float]] = [(normalized_segment, 0.0, segment_index, float(segment.end))]
+        segment_variants: list[tuple[str, float, int, int, float, float]] = [
+            (normalized_segment, 0.0, segment_index, segment_index, float(segment.start), float(segment.end))
+        ]
+        if segment_index > 0:
+            prev_segment = transcript_segments[segment_index - 1]
+            prev_end = float(prev_segment.end)
+            if float(segment.start) - prev_end <= 2.5:
+                prev_normalized = normalize_arabic(prev_segment.text, strict=False)
+                if len(prev_normalized) >= 2:
+                    back_combined = f"{prev_normalized} {normalized_segment}".strip()
+                    segment_variants.append(
+                        (
+                            back_combined,
+                            1.4,
+                            segment_index - 1,
+                            segment_index,
+                            float(prev_segment.start),
+                            float(segment.end),
+                        )
+                    )
         combined_text = normalized_segment
         previous_end = float(segment.end)
         for offset in range(1, 7):
@@ -2741,10 +2947,20 @@ def match_quran_markers(
             if len(next_normalized) < 2:
                 break
             combined_text = f"{combined_text} {next_normalized}".strip()
-            segment_variants.append((combined_text, float(offset) * 1.1, next_idx, float(next_segment.end)))
+            segment_variants.append(
+                (
+                    combined_text,
+                    float(offset) * 1.1,
+                    segment_index,
+                    next_idx,
+                    float(segment.start),
+                    float(next_segment.end),
+                )
+            )
             previous_end = float(next_segment.end)
 
-        if max(len(text) for text, _, _, _ in segment_variants) < 14:
+        # Do not discard short ayah fragments; many valid ayat are brief.
+        if all(len(text) < 8 and len(text.split()) < 2 for text, _, _, _, _, _ in segment_variants):
             continue
 
         segment_words = list(getattr(segment, "words", None) or [])
@@ -2759,7 +2975,14 @@ def match_quran_markers(
             is_muqattaat = _is_muqattaat_entry(entry)
 
             best: CandidateEvidence | None = None
-            for variant_text, penalty, variant_end_index, variant_end_time in segment_variants:
+            for (
+                variant_text,
+                penalty,
+                variant_start_index,
+                variant_end_index,
+                variant_start_time,
+                variant_end_time,
+            ) in segment_variants:
                 if is_muqattaat and not _has_muqattaat_phrase_match(variant_text, entry):
                     continue
                 score, overlap = _score_segment_against_entry(variant_text, entry)
@@ -2777,10 +3000,10 @@ def match_quran_markers(
                         penalty=penalty,
                         source="segment",
                         normalized_text=variant_text,
-                        start_time=float(segment.start),
+                        start_time=variant_start_time,
                         end_time=variant_end_time,
                         word_indices=[],
-                        segment_start_index=segment_index,
+                        segment_start_index=variant_start_index,
                         segment_end_index=variant_end_index,
                     )
 
@@ -2989,6 +3212,7 @@ def match_quran_markers(
                 candidate = normal_candidates.get(index)
                 if candidate is None:
                     continue
+                is_immediate_expected = index == expected
                 rival = max(
                     (
                         other.adjusted_score
@@ -3003,17 +3227,17 @@ def match_quran_markers(
                     local_min_score=(
                         max(float(min_score), 82.0)
                         if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
-                        else float(min_score)
+                        else max(66.0, float(min_score) - (4.0 if is_immediate_expected else 0.0))
                     ),
                     local_min_overlap=(
                         max(float(min_overlap), 0.22)
                         if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
-                        else float(min_overlap)
+                        else max(0.12, float(min_overlap) - (0.03 if is_immediate_expected else 0.0))
                     ),
                     threshold=(
                         max(float(min_confidence), 0.78)
                         if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
-                        else float(min_confidence)
+                        else max(0.5, float(min_confidence) - (0.06 if is_immediate_expected else 0.0))
                     ),
                     ambiguous_min_score=ambiguous_min_score,
                     ambiguous_min_confidence=ambiguous_min_confidence,
@@ -3235,8 +3459,21 @@ def match_quran_markers(
             existing = markers[existing_index]
             if abs(marker_candidate.time - existing.time) <= duplicate_ayah_window_seconds:
                 if _should_replace_existing(existing, marker_candidate):
-                    markers[existing_index] = marker_candidate
-                    accepted_marker = marker_candidate
+                    merged_marker = marker_candidate
+                    existing_start = int(existing.start_time or existing.time)
+                    existing_end = int(existing.end_time or existing_start)
+                    candidate_start = int(marker_candidate.start_time or marker_candidate.time)
+                    candidate_end = int(marker_candidate.end_time or candidate_start)
+                    if candidate_start >= existing_start:
+                        merged_start = existing_start
+                    else:
+                        merged_start = candidate_start
+                    merged_end = max(existing_end, candidate_end)
+                    merged_marker.start_time = merged_start
+                    merged_marker.time = merged_start
+                    merged_marker.end_time = max(merged_start, merged_end)
+                    markers[existing_index] = merged_marker
+                    accepted_marker = merged_marker
                 else:
                     accepted_marker = existing
             else:
@@ -3843,6 +4080,11 @@ def match_quran_markers(
     )
     merged = _redistribute_dense_weak_runs(merged)
     merged = _stabilize_weak_marker_durations(merged)
+    merged = _refine_marker_boundaries_with_neighbors(
+        merged,
+        transcript_segments=transcript_segments,
+        entry_lookup=entry_lookup,
+    )
     merged = _extend_point_markers_to_next(merged, max_extension_seconds=90)
     merged = _prune_unrealistic_progression(merged)
     merged = _enforce_surah_transition_order(merged, surah_totals=surah_totals, min_gap_seconds=min_gap_seconds)
