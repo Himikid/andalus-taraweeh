@@ -572,13 +572,13 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
     ],
   },
   5: {
-    title: "Day 5 Recitation Summary (An-Nisaa 24-32)",
+    title: "Day 5 Recitation Summary (An-Nisaa 24-147)",
     summary:
-      "Day 5 highlights social ethics and personal spiritual discipline in An-Nisaa, moving from legal boundaries to inner reform through contentment, dua, and trust in Allah's wisdom.",
+      "Day 5 covers a broad section of An-Nisaa, linking family and social law to justice, trust, and sincere obedience. The recitation moves from lawful boundaries and rights into communal responsibility, warnings against hypocrisy, and calls to hold firmly to revelation with integrity.",
     themes: [
-      "Divine law is revealed with mercy and intends ease, not needless burden.",
-      "Envy is replaced by lawful striving and asking Allah from His bounty.",
-      "Spiritual health grows when the heart turns from comparison to dua.",
+      "Legal rulings in family, wealth, and social relations are tied to taqwa and accountability before Allah.",
+      "Believers are called to justice, trustworthy conduct, and firm commitment to revelation in both private and public life.",
+      "The passage repeatedly contrasts sincere iman with hypocrisy, urging repentance, clarity, and steadfast obedience.",
     ],
   },
   6: {
