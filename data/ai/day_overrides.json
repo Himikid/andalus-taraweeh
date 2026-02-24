@@ -32,15 +32,7 @@
       ]
     },
     "5": {
-      "start_surah_number": 4,
-      "start_ayah": 24,
       "marker_overrides": [
-        {
-          "surah_number": 4,
-          "ayah": 24,
-          "start_time": 0,
-          "end_time": 49
-        },
         {
           "surah_number": 4,
           "ayah": 31,
@@ -52,12 +44,6 @@
           "ayah": 32,
           "start_time": 329,
           "end_time": 360
-        },
-        {
-          "surah_number": 4,
-          "ayah": 147,
-          "start_time": 6058,
-          "end_time": 6072
         }
       ]
     }
