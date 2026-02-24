@@ -46,6 +46,28 @@
           "end_time": 360
         }
       ]
+    },
+    "6": {
+      "start_surah_number": 4,
+      "start_ayah": 147,
+      "start_time": 1315,
+      "final_surah": "Al-Maaida",
+      "final_ayah": 81,
+      "final_time": 7496,
+      "marker_overrides": [
+        {
+          "surah_number": 4,
+          "ayah": 147,
+          "start_time": 1315,
+          "end_time": 1332
+        },
+        {
+          "surah_number": 5,
+          "ayah": 81,
+          "start_time": 7496,
+          "end_time": 7496
+        }
+      ]
     }
   }
 }

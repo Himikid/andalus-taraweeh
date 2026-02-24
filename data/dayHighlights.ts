@@ -412,6 +412,122 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  5: [
+    {
+      ayahRef: "4:28",
+      themeType: "Famous Ayah",
+      shortTitle: "Allah Intends Ease for You",
+      whyNotable: [
+        "A widely cited ayah that captures the principle of divine ease in the Shariah.",
+        "Frequently referenced in reminders against spiritual excess and hardship culture.",
+      ],
+      summary:
+        "Allah clarifies that His intent is to lighten burdens for believers, acknowledging human weakness. The ayah frames legal guidance with mercy and practical realism.",
+      keyTakeaway: "Practice deen with sincerity and balance, not self-imposed hardship.",
+      references: [
+        { name: "Quran 4:28", url: "https://quran.com/4:28" },
+        { name: "Ibn Kathir Tafsir (4:28)", url: "https://quran.com/en/4:28/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "4:32",
+      themeType: "Dua",
+      shortTitle: "Ask Allah from His Bounty",
+      whyNotable: [
+        "A key ayah for correcting envy and redirecting the heart toward dua.",
+        "Commonly taught as a practical spiritual response to comparison.",
+      ],
+      summary:
+        "The ayah forbids coveting what Allah has given others and instructs believers to ask Him from His bounty instead. It replaces jealousy with gratitude, effort, and dua.",
+      keyTakeaway: "When tested by comparison, turn to Allah in dua.",
+      references: [
+        { name: "Quran 4:32", url: "https://quran.com/4:32" },
+        { name: "Ibn Kathir Tafsir (4:32)", url: "https://quran.com/en/4:32/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
+  6: [
+    {
+      ayahRef: "5:2",
+      themeType: "Famous Ayah",
+      shortTitle: "Cooperate in Righteousness and Taqwa",
+      whyNotable: [
+        "One of the most cited Quranic principles for collective ethics and community conduct.",
+        "Frequently used as a foundational ayah in dawah, masjid work, and social responsibility.",
+      ],
+      summary:
+        "Allah commands believers to support one another in virtue and taqwa, and forbids cooperation in sin and transgression. It sets a clear framework for principled collaboration.",
+      keyTakeaway: "Build community work on righteousness, not expediency.",
+      references: [
+        { name: "Quran 5:2", url: "https://quran.com/5:2" },
+        { name: "Ibn Kathir Tafsir (5:2)", url: "https://quran.com/en/5:2/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "5:8",
+      themeType: "Famous Ayah",
+      shortTitle: "Justice Even Against Bias",
+      whyNotable: [
+        "A major and widely quoted ayah on principled justice.",
+        "Regularly referenced in khutbahs and Islamic ethics discussions.",
+      ],
+      summary:
+        "Believers are commanded to stand firmly for Allah in justice, without letting dislike of a people drive them to injustice. The ayah links justice directly to taqwa.",
+      keyTakeaway: "Remain just even when emotions pull in the opposite direction.",
+      references: [
+        { name: "Quran 5:8", url: "https://quran.com/5:8" },
+        { name: "Ibn Kathir Tafsir (5:8)", url: "https://quran.com/en/5:8/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "5:35",
+      themeType: "Famous Ayah",
+      shortTitle: "Seek Means to Allah and Strive",
+      whyNotable: [
+        "A very well-known ayah on drawing near to Allah through obedience and striving.",
+        "Often cited in lessons on worship discipline and spiritual effort.",
+      ],
+      summary:
+        "Allah commands taqwa, seeking nearness to Him, and striving in His cause for success. The ayah combines inward God-consciousness with outward effort.",
+      keyTakeaway: "Taqwa grows through action, striving, and closeness to Allah.",
+      references: [
+        { name: "Quran 5:35", url: "https://quran.com/5:35" },
+        { name: "Ibn Kathir Tafsir (5:35)", url: "https://quran.com/en/5:35/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "5:54",
+      themeType: "Famous Ayah",
+      shortTitle: "Allah Brings a People He Loves",
+      whyNotable: [
+        "A famous ayah describing the qualities of believers loved by Allah.",
+        "Commonly quoted in reminders on sincerity, humility, and courage in deen.",
+      ],
+      summary:
+        "Allah declares that if some turn away, He will bring a people He loves and who love Him: humble with believers, firm against opposition, and steadfast in striving for Allah.",
+      keyTakeaway: "Seek to be among those defined by love of Allah and principled courage.",
+      references: [
+        { name: "Quran 5:54", url: "https://quran.com/5:54" },
+        { name: "Ibn Kathir Tafsir (5:54)", url: "https://quran.com/en/5:54/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "5:78-79",
+      themeType: "Famous Ayah",
+      shortTitle: "Warning Against Normalizing Wrong",
+      whyNotable: [
+        "A well-known warning passage on leaving wrong uncorrected.",
+        "Frequently taught in discussions of moral responsibility and communal reform.",
+      ],
+      summary:
+        "The ayat condemn persistent disobedience and emphasize that people were blameworthy for failing to restrain one another from evil. It is a direct warning against passive acceptance of wrongdoing.",
+      keyTakeaway: "Do not normalize sin; uphold sincere mutual accountability.",
+      references: [
+        { name: "Quran 5:78-79", url: "https://quran.com/5:78-79" },
+        { name: "Ibn Kathir Tafsir (5:79)", url: "https://quran.com/en/5:79/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -453,6 +569,26 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Steadfast faith is sustained by obedience, unity, and remembrance.",
       "Powerful Quranic duas train the heart for patience and trust in Allah.",
       "Taqwa extends from worship into family rights, justice, and social conduct.",
+    ],
+  },
+  5: {
+    title: "Day 5 Recitation Summary (An-Nisaa 24-32)",
+    summary:
+      "Day 5 highlights social ethics and personal spiritual discipline in An-Nisaa, moving from legal boundaries to inner reform through contentment, dua, and trust in Allah's wisdom.",
+    themes: [
+      "Divine law is revealed with mercy and intends ease, not needless burden.",
+      "Envy is replaced by lawful striving and asking Allah from His bounty.",
+      "Spiritual health grows when the heart turns from comparison to dua.",
+    ],
+  },
+  6: {
+    title: "Day 6 Recitation Summary (An-Nisaa 147-176, Al-Maaida 1-81)",
+    summary:
+      "Day 6 moves from calls to gratitude, sincerity, and clarity of belief into major ethical foundations in Al-Maaida: covenant, justice, cooperation in righteousness, and steadfast moral responsibility.",
+    themes: [
+      "Faith is sustained through gratitude, truthfulness, and clear commitment to revelation.",
+      "Justice and principled conduct are non-negotiable, even under tension or bias.",
+      "Communal strength comes from cooperation in taqwa and refusing to normalize wrongdoing.",
     ],
   },
 };
