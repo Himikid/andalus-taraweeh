@@ -154,6 +154,23 @@ Useful keys:
 - `start_ayah`
 - `marker_overrides`
 
+### Iteration strategy (accuracy-first)
+
+We tune the matcher with a benchmark-first workflow before promoting changes to archived day JSON.
+
+1. Build truth fixtures from per-ayah reference audio (`ai-lab/fixtures/per-ayah-reference/*`).
+2. Run evaluator reports (`ai-lab/scripts/evaluate_matcher_against_truth.py`) and track:
+   - `coverage`
+   - `start_mae_seconds`
+   - `end_mae_seconds`
+   - `mean_interval_iou`
+   - tolerance hit rates (`<=1s`, `<=2s`, `<=3s`)
+3. Apply matcher changes in small passes and re-run the same fixtures.
+4. Only promote when metrics improve and no regression appears on other fixtures.
+5. Reprocess affected day JSON locally and manually spot-check large timestamp deltas.
+
+This keeps improvements measurable and avoids shipping changes that look good on one night but degrade others.
+
 ## Deploy to Vercel
 
 1. Push repo to GitHub.
