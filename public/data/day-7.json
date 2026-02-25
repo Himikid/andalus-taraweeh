@@ -25,11 +25,11 @@
       "juz": 6,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.888,
+      "confidence": 0.873,
       "arabic_text": "قُلْ أَتَعْبُدُونَ مِن دُونِ ٱللَّهِ مَا لَا يَمْلِكُ لَكُمْ ضَرًّۭا وَلَا نَفْعًۭا ۚ وَٱللَّهُ هُوَ ٱلسَّمِيعُ ٱلْعَلِيمُ",
       "english_text": "Say: \"Would you worship, beside God, aught that has no power either to harm or to benefit you-when God alone is all-hearing, all-knowing?\"",
       "start_time": 1384,
-      "end_time": 1397,
+      "end_time": 1396,
       "matched_token_indices": [
         [
           0,
@@ -49,51 +49,115 @@
         ],
         [
           4,
-          4
-        ],
-        [
-          5,
-          5
-        ],
-        [
-          6,
-          6
-        ],
-        [
-          7,
-          7
+          12
         ]
       ]
     },
     {
-      "time": 1398,
+      "time": 1397,
       "surah": "Al-Maaida",
       "ayah": 77,
       "surah_number": 5,
       "juz": 6,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.833,
+      "confidence": 0.848,
       "arabic_text": "قُلْ يَٰٓأَهْلَ ٱلْكِتَٰبِ لَا تَغْلُوا۟ فِى دِينِكُمْ غَيْرَ ٱلْحَقِّ وَلَا تَتَّبِعُوٓا۟ أَهْوَآءَ قَوْمٍۢ قَدْ ضَلُّوا۟ مِن قَبْلُ وَأَضَلُّوا۟ كَثِيرًۭا وَضَلُّوا۟ عَن سَوَآءِ ٱلسَّبِيلِ",
       "english_text": "Say: \"O followers of the Gospel! Do not overstep the bounds [of truth] in your religious beliefs; and do not follow the errant views of people who have gone astray aforetime, and have led many [others] astray, and are still straying from the right path.\"",
-      "start_time": 1398,
+      "start_time": 1397,
       "end_time": 1421,
       "matched_token_indices": [
         [
-          0,
+          11,
+          0
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
           5
         ],
         [
-          1,
+          18,
           6
         ],
         [
-          2,
+          19,
           7
         ],
         [
-          3,
+          20,
           8
+        ],
+        [
+          21,
+          9
+        ],
+        [
+          22,
+          10
+        ],
+        [
+          23,
+          11
+        ],
+        [
+          24,
+          12
+        ],
+        [
+          25,
+          13
+        ],
+        [
+          26,
+          14
+        ],
+        [
+          27,
+          15
+        ],
+        [
+          28,
+          16
+        ],
+        [
+          29,
+          17
+        ],
+        [
+          30,
+          18
+        ],
+        [
+          31,
+          19
+        ],
+        [
+          32,
+          20
+        ],
+        [
+          33,
+          21
+        ],
+        [
+          34,
+          22
         ]
       ]
     },
@@ -105,7 +169,7 @@
       "juz": 6,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.832,
+      "confidence": 0.823,
       "arabic_text": "لُعِنَ ٱلَّذِينَ كَفَرُوا۟ مِنۢ بَنِىٓ إِسْرَٰٓءِيلَ عَلَىٰ لِسَانِ دَاوُۥدَ وَعِيسَى ٱبْنِ مَرْيَمَ ۚ ذَٰلِكَ بِمَا عَصَوا۟ وَّكَانُوا۟ يَعْتَدُونَ",
       "english_text": "THOSE of the children of Israel who were bent on denying the truth have [already] been cursed by the tongue of David and of Jesus, the son of Mary? this, because they rebelled [against God] and persisted in transgressing the bounds of what is right.",
       "start_time": 1422,
@@ -137,27 +201,43 @@
       "juz": 6,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.734,
+      "confidence": 0.756,
       "arabic_text": "كَانُوا۟ لَا يَتَنَاهَوْنَ عَن مُّنكَرٍۢ فَعَلُوهُ ۚ لَبِئْسَ مَا كَانُوا۟ يَفْعَلُونَ",
       "english_text": "They would not prevent one another from doing whatever hateful things they did: vile indeed was what they were wont to do!",
       "start_time": 1464,
       "end_time": 1477,
       "matched_token_indices": [
         [
-          0,
+          7,
           0
         ],
         [
-          1,
+          8,
           1
         ],
         [
-          2,
+          9,
           2
         ],
         [
-          3,
+          10,
+          3
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          14,
           7
+        ],
+        [
+          23,
+          9
         ]
       ]
     },
@@ -169,7 +249,7 @@
       "juz": 6,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.881,
+      "confidence": 0.669,
       "arabic_text": "تَرَىٰ كَثِيرًۭا مِّنْهُمْ يَتَوَلَّوْنَ ٱلَّذِينَ كَفَرُوا۟ ۚ لَبِئْسَ مَا قَدَّمَتْ لَهُمْ أَنفُسُهُمْ أَن سَخِطَ ٱللَّهُ عَلَيْهِمْ وَفِى ٱلْعَذَابِ هُمْ خَٰلِدُونَ",
       "english_text": "[And now] thou canst see many of them allying themselves with those who are bent on denying the truth! [So] vile indeed is what their passions make them do that God has condemned them; and in suffering shall they abide.",
       "start_time": 1478,
@@ -177,35 +257,23 @@
       "matched_token_indices": [
         [
           0,
-          0
-        ],
-        [
-          1,
           1
         ],
         [
-          2,
+          1,
           2
         ],
         [
-          3,
+          2,
           3
         ],
         [
-          4,
+          3,
           4
         ],
         [
-          5,
+          4,
           5
-        ],
-        [
-          6,
-          6
-        ],
-        [
-          7,
-          7
         ]
       ]
     },
@@ -217,106 +285,199 @@
       "juz": 6,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.925,
+      "confidence": 0.967,
       "arabic_text": "وَلَوْ كَانُوا۟ يُؤْمِنُونَ بِٱللَّهِ وَٱلنَّبِىِّ وَمَآ أُنزِلَ إِلَيْهِ مَا ٱتَّخَذُوهُمْ أَوْلِيَآءَ وَلَٰكِنَّ كَثِيرًۭا مِّنْهُمْ فَٰسِقُونَ",
       "english_text": "For, if they [truly] believed in God and their Prophet and all that was bestowed upon him from on high, they would not take those [deniers of the truth] for their allies: but most of them are iniquitous.",
       "start_time": 1497,
-      "end_time": 1655,
+      "end_time": 1634,
       "matched_token_indices": [
         [
-          0,
+          11,
           0
         ],
         [
-          1,
+          12,
           1
         ],
         [
-          2,
+          13,
           2
         ],
         [
-          3,
+          14,
           3
         ],
         [
-          4,
+          15,
           4
         ],
         [
-          5,
+          16,
           5
         ],
         [
-          6,
+          17,
           6
         ],
         [
-          7,
+          18,
           7
+        ],
+        [
+          19,
+          8
+        ],
+        [
+          20,
+          9
+        ],
+        [
+          21,
+          10
+        ],
+        [
+          22,
+          11
+        ],
+        [
+          23,
+          12
+        ],
+        [
+          24,
+          13
+        ],
+        [
+          25,
+          14
         ]
       ]
     },
     {
-      "time": 1656,
+      "time": 1635,
       "surah": "Al-Maaida",
       "ayah": 82,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.593,
+      "confidence": 0.661,
       "arabic_text": "۞ لَتَجِدَنَّ أَشَدَّ ٱلنَّاسِ عَدَٰوَةًۭ لِّلَّذِينَ ءَامَنُوا۟ ٱلْيَهُودَ وَٱلَّذِينَ أَشْرَكُوا۟ ۖ وَلَتَجِدَنَّ أَقْرَبَهُم مَّوَدَّةًۭ لِّلَّذِينَ ءَامَنُوا۟ ٱلَّذِينَ قَالُوٓا۟ إِنَّا نَصَٰرَىٰ ۚ ذَٰلِكَ بِأَنَّ مِنْهُمْ قِسِّيسِينَ وَرُهْبَانًۭا وَأَنَّهُمْ لَا يَسْتَكْبِرُونَ",
       "english_text": "Thou wilt surely find that, of all people, the most hostile to those who believe [in this divine writ] are the Jews as well as those who are bent on ascribing divinity to aught beside God; and thou wilt surely find that, of all people, they who say, \"Behold, we are Christians,\" come closest to feeling affection for those who believe [in this divine writ]: this is so because there are priests and monks among them, and because these are not given to arrogance.",
-      "start_time": 1656,
-      "end_time": 1666,
-      "matched_token_indices": null
+      "start_time": 1635,
+      "end_time": 1665,
+      "matched_token_indices": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ]
+      ]
     },
     {
-      "time": 1667,
+      "time": 1666,
       "surah": "Al-Maaida",
       "ayah": 83,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.889,
+      "confidence": 0.84,
       "arabic_text": "وَإِذَا سَمِعُوا۟ مَآ أُنزِلَ إِلَى ٱلرَّسُولِ تَرَىٰٓ أَعْيُنَهُمْ تَفِيضُ مِنَ ٱلدَّمْعِ مِمَّا عَرَفُوا۟ مِنَ ٱلْحَقِّ ۖ يَقُولُونَ رَبَّنَآ ءَامَنَّا فَٱكْتُبْنَا مَعَ ٱلشَّٰهِدِينَ",
       "english_text": "For, when they come to understand what has been bestowed from on high upon this Apostle, thou canst see their eyes overflow with tears, because they recognize something of its truth; [and] they say: \"O our Sustainer! We do believe; make us one, then, with all who bear witness to the truth.",
-      "start_time": 1667,
+      "start_time": 1666,
       "end_time": 1687,
       "matched_token_indices": [
         [
-          0,
+          17,
           0
         ],
         [
-          1,
+          18,
           1
         ],
         [
-          2,
+          19,
           2
         ],
         [
-          3,
+          20,
           3
         ],
         [
-          4,
+          21,
           4
         ],
         [
-          5,
+          22,
           5
         ],
         [
-          6,
+          23,
           6
         ],
         [
-          7,
+          24,
           7
+        ],
+        [
+          26,
+          9
+        ],
+        [
+          27,
+          10
+        ],
+        [
+          28,
+          11
+        ],
+        [
+          29,
+          12
+        ],
+        [
+          30,
+          13
+        ],
+        [
+          31,
+          14
+        ],
+        [
+          32,
+          15
+        ],
+        [
+          33,
+          16
+        ],
+        [
+          34,
+          17
+        ],
+        [
+          35,
+          18
+        ],
+        [
+          36,
+          19
         ]
       ]
     },
@@ -328,7 +489,7 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.86,
+      "confidence": 0.647,
       "arabic_text": "وَمَا لَنَا لَا نُؤْمِنُ بِٱللَّهِ وَمَا جَآءَنَا مِنَ ٱلْحَقِّ وَنَطْمَعُ أَن يُدْخِلَنَا رَبُّنَا مَعَ ٱلْقَوْمِ ٱلصَّٰلِحِينَ",
       "english_text": "And how could we fail to believe in God and in whatever truth has come unto us, when we so fervently desire that our Sustainer count us among the righteous?\"",
       "start_time": 1688,
@@ -336,11 +497,11 @@
       "matched_token_indices": [
         [
           5,
-          0
+          1
         ],
         [
           6,
-          1
+          2
         ],
         [
           7,
@@ -404,63 +565,39 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.844,
+      "confidence": 0.665,
       "arabic_text": "فَأَثَٰبَهُمُ ٱللَّهُ بِمَا قَالُوا۟ جَنَّٰتٍۢ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ خَٰلِدِينَ فِيهَا ۚ وَذَٰلِكَ جَزَآءُ ٱلْمُحْسِنِينَ",
       "english_text": "And for this their belief God will reward them with gardens through which running waters flow, therein to abide: for such is the requital of the doers of good;",
       "start_time": 1702,
       "end_time": 1718,
       "matched_token_indices": [
         [
-          15,
-          0
-        ],
-        [
-          16,
+          0,
           1
         ],
         [
-          17,
+          1,
           2
         ],
         [
-          18,
+          2,
           3
         ],
         [
-          19,
+          3,
           4
         ],
         [
-          20,
+          4,
           5
         ],
         [
-          21,
+          5,
           6
         ],
         [
-          22,
+          6,
           7
-        ],
-        [
-          23,
-          9
-        ],
-        [
-          24,
-          10
-        ],
-        [
-          25,
-          11
-        ],
-        [
-          26,
-          12
-        ],
-        [
-          27,
-          13
         ]
       ]
     },
@@ -472,459 +609,211 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.874,
+      "confidence": 0.67,
       "arabic_text": "وَٱلَّذِينَ كَفَرُوا۟ وَكَذَّبُوا۟ بِـَٔايَٰتِنَآ أُو۟لَٰٓئِكَ أَصْحَٰبُ ٱلْجَحِيمِ",
       "english_text": "whereas they who are bent on denying the truth and giving the lie to Our messages - they are destined for the blazing fire.",
       "start_time": 1719,
-      "end_time": 1727,
+      "end_time": 1728,
       "matched_token_indices": [
         [
-          13,
+          0,
           0
         ],
         [
-          14,
+          1,
           1
         ],
         [
-          15,
+          2,
           2
         ],
         [
-          16,
+          3,
           3
         ],
         [
-          17,
+          4,
           4
         ],
         [
-          18,
+          5,
           5
         ],
         [
-          19,
+          6,
           6
         ]
       ]
     },
     {
-      "time": 1728,
+      "time": 1729,
       "surah": "Al-Maaida",
       "ayah": 87,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.647,
+      "confidence": 0.723,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُحَرِّمُوا۟ طَيِّبَٰتِ مَآ أَحَلَّ ٱللَّهُ لَكُمْ وَلَا تَعْتَدُوٓا۟ ۚ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلْمُعْتَدِينَ",
       "english_text": "O YOU who have attained to faith! Do not deprive yourselves of the good things of life which God has made lawful to you, but do not transgress the bounds of what is right: verily, God does not love those who transgress the bounds of what is right.",
-      "start_time": 1728,
-      "end_time": 1744,
+      "start_time": 1729,
+      "end_time": 1745,
       "matched_token_indices": [
         [
-          8,
-          0
-        ],
-        [
-          9,
-          1
-        ],
-        [
-          10,
-          2
-        ],
-        [
-          11,
-          3
-        ],
-        [
-          12,
-          4
-        ],
-        [
-          13,
-          5
-        ],
-        [
-          14,
+          0,
           6
         ],
         [
-          15,
+          1,
           7
         ],
         [
-          16,
+          2,
           8
         ],
         [
-          17,
+          3,
           9
         ],
         [
-          18,
+          4,
           10
         ],
         [
-          19,
+          5,
           11
         ],
         [
-          20,
+          6,
           12
         ],
         [
-          21,
+          7,
           13
-        ],
-        [
-          22,
-          14
-        ],
-        [
-          23,
-          15
-        ],
-        [
-          24,
-          16
         ]
       ]
     },
     {
-      "time": 1745,
+      "time": 1746,
       "surah": "Al-Maaida",
       "ayah": 88,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.714,
+      "confidence": 0.826,
       "arabic_text": "وَكُلُوا۟ مِمَّا رَزَقَكُمُ ٱللَّهُ حَلَٰلًۭا طَيِّبًۭا ۚ وَٱتَّقُوا۟ ٱللَّهَ ٱلَّذِىٓ أَنتُم بِهِۦ مُؤْمِنُونَ",
       "english_text": "Thus, partake of the lawful, good things which God grants you as sustenance, and be conscious of God, in whom you believe.",
-      "start_time": 1745,
-      "end_time": 1759,
+      "start_time": 1746,
+      "end_time": 1771,
       "matched_token_indices": [
         [
-          18,
-          0
-        ],
-        [
-          19,
-          1
-        ],
-        [
-          20,
-          2
-        ],
-        [
-          21,
-          3
-        ],
-        [
-          22,
-          4
-        ],
-        [
-          23,
+          0,
           5
         ],
         [
-          24,
+          1,
           6
         ],
         [
-          25,
+          2,
           7
         ],
         [
-          26,
+          3,
           8
         ],
         [
-          27,
+          4,
           9
         ],
         [
-          28,
+          5,
           10
         ],
         [
-          29,
+          6,
           11
         ]
       ]
     },
     {
-      "time": 1760,
+      "time": 1772,
       "surah": "Al-Maaida",
       "ayah": 89,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.615,
+      "confidence": 0.84,
       "arabic_text": "لَا يُؤَاخِذُكُمُ ٱللَّهُ بِٱللَّغْوِ فِىٓ أَيْمَٰنِكُمْ وَلَٰكِن يُؤَاخِذُكُم بِمَا عَقَّدتُّمُ ٱلْأَيْمَٰنَ ۖ فَكَفَّٰرَتُهُۥٓ إِطْعَامُ عَشَرَةِ مَسَٰكِينَ مِنْ أَوْسَطِ مَا تُطْعِمُونَ أَهْلِيكُمْ أَوْ كِسْوَتُهُمْ أَوْ تَحْرِيرُ رَقَبَةٍۢ ۖ فَمَن لَّمْ يَجِدْ فَصِيَامُ ثَلَٰثَةِ أَيَّامٍۢ ۚ ذَٰلِكَ كَفَّٰرَةُ أَيْمَٰنِكُمْ إِذَا حَلَفْتُمْ ۚ وَٱحْفَظُوٓا۟ أَيْمَٰنَكُمْ ۚ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمْ ءَايَٰتِهِۦ لَعَلَّكُمْ تَشْكُرُونَ",
       "english_text": "GOD will not take you to task for oaths which you may have uttered without thought, but He will take you to task for oaths which you have sworn in earnest. Thus, the breaking of an oath must be atoned for by feeding ten needy persons with more or less the same food as you are wont to give to your own families, or by clothing them, or by freeing a human being from bondage; and he who has not the wherewithal shall fast for three days [instead]. This shall be the atonement for your oaths whenever you have sworn [and broken them]. But be mindful of your oaths!' Thus God makes clear unto you His messages, so that you might have cause to be grateful.",
-      "start_time": 1760,
+      "start_time": 1772,
       "end_time": 1791,
       "matched_token_indices": [
         [
-          12,
-          0
-        ],
-        [
-          13,
-          1
-        ],
-        [
-          14,
-          2
-        ],
-        [
-          15,
-          3
-        ],
-        [
-          16,
-          4
-        ],
-        [
-          17,
-          5
-        ],
-        [
-          18,
-          6
-        ],
-        [
-          19,
-          7
-        ],
-        [
-          20,
-          8
-        ],
-        [
-          21,
-          9
-        ],
-        [
-          22,
-          10
-        ],
-        [
-          23,
-          11
-        ],
-        [
-          24,
-          12
-        ],
-        [
-          25,
-          13
-        ],
-        [
-          26,
-          14
-        ],
-        [
-          27,
+          0,
           15
         ],
         [
-          28,
+          1,
           16
         ],
         [
-          29,
+          2,
           17
         ],
         [
-          30,
+          3,
           18
         ],
         [
-          31,
+          4,
           19
         ],
         [
-          32,
+          5,
           20
         ],
         [
-          33,
+          6,
           21
         ],
         [
-          34,
+          7,
           22
-        ],
-        [
-          35,
-          23
-        ],
-        [
-          36,
-          24
-        ],
-        [
-          37,
-          25
-        ],
-        [
-          38,
-          26
-        ],
-        [
-          39,
-          27
-        ],
-        [
-          40,
-          28
-        ],
-        [
-          41,
-          29
-        ],
-        [
-          42,
-          30
-        ],
-        [
-          43,
-          31
-        ],
-        [
-          44,
-          32
-        ],
-        [
-          45,
-          33
-        ],
-        [
-          46,
-          34
-        ],
-        [
-          47,
-          35
-        ],
-        [
-          48,
-          36
-        ],
-        [
-          49,
-          37
-        ],
-        [
-          50,
-          38
-        ],
-        [
-          51,
-          39
-        ],
-        [
-          52,
-          40
-        ],
-        [
-          53,
-          41
-        ],
-        [
-          54,
-          42
-        ],
-        [
-          55,
-          43
-        ],
-        [
-          56,
-          44
         ]
       ]
     },
     {
-      "time": 1970,
+      "time": 1969,
       "surah": "Al-Maaida",
       "ayah": 90,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.713,
+      "confidence": 0.8,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِنَّمَا ٱلْخَمْرُ وَٱلْمَيْسِرُ وَٱلْأَنصَابُ وَٱلْأَزْلَٰمُ رِجْسٌۭ مِّنْ عَمَلِ ٱلشَّيْطَٰنِ فَٱجْتَنِبُوهُ لَعَلَّكُمْ تُفْلِحُونَ",
       "english_text": "O YOU who have attained to faith! Intoxicants, and games of chance, and idolatrous practices, and the divining of the future are but a loathsome evil of Satan's doing:' shun it, then, so that you might attain to a happy state!",
-      "start_time": 1970,
+      "start_time": 1969,
       "end_time": 1986,
       "matched_token_indices": [
         [
-          1,
-          0
-        ],
-        [
-          2,
-          1
-        ],
-        [
-          3,
-          2
-        ],
-        [
-          4,
+          0,
           3
         ],
         [
-          5,
+          1,
           4
         ],
         [
-          6,
+          2,
           5
         ],
         [
-          7,
+          3,
           6
-        ],
-        [
-          8,
-          7
-        ],
-        [
-          9,
-          8
-        ],
-        [
-          10,
-          9
-        ],
-        [
-          11,
-          10
-        ],
-        [
-          12,
-          11
-        ],
-        [
-          14,
-          12
-        ],
-        [
-          15,
-          13
-        ],
-        [
-          16,
-          14
         ]
       ]
     },
@@ -936,7 +825,7 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.806,
+      "confidence": 0.847,
       "arabic_text": "إِنَّمَا يُرِيدُ ٱلشَّيْطَٰنُ أَن يُوقِعَ بَيْنَكُمُ ٱلْعَدَٰوَةَ وَٱلْبَغْضَآءَ فِى ٱلْخَمْرِ وَٱلْمَيْسِرِ وَيَصُدَّكُمْ عَن ذِكْرِ ٱللَّهِ وَعَنِ ٱلصَّلَوٰةِ ۖ فَهَلْ أَنتُم مُّنتَهُونَ",
       "english_text": "By means of intoxicants and games of chance Satan seeks only to sow enmity and hatred among you, and to turn you away from the remembrance of God and from prayer. Will you not, then, desist?'",
       "start_time": 1987,
@@ -944,22 +833,34 @@
       "matched_token_indices": [
         [
           0,
-          11
+          8
         ],
         [
           1,
-          12
+          9
         ],
         [
           2,
-          13
+          10
         ],
         [
           3,
-          14
+          11
         ],
         [
           4,
+          12
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          7,
           15
         ]
       ]
@@ -972,62 +873,62 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.645,
+      "confidence": 0.589,
       "arabic_text": "وَأَطِيعُوا۟ ٱللَّهَ وَأَطِيعُوا۟ ٱلرَّسُولَ وَٱحْذَرُوا۟ ۚ فَإِن تَوَلَّيْتُمْ فَٱعْلَمُوٓا۟ أَنَّمَا عَلَىٰ رَسُولِنَا ٱلْبَلَٰغُ ٱلْمُبِينُ",
       "english_text": "Hence, pay heed unto God, and pay heed unto the Apostle, and be ever on your guard [against evil]; and if you turn away, then know that Our Apostle's only duty is a clear delivery of the message [entrusted to him].",
       "start_time": 2007,
       "end_time": 2022,
       "matched_token_indices": [
         [
-          0,
+          3,
           0
         ],
         [
-          1,
+          4,
           1
         ],
         [
-          2,
+          5,
           2
         ],
         [
-          3,
+          6,
           3
         ],
         [
-          4,
+          7,
           4
         ],
         [
-          5,
+          8,
           5
         ],
         [
-          6,
+          9,
           6
         ],
         [
-          7,
+          10,
           7
         ],
         [
-          8,
+          11,
           8
         ],
         [
-          9,
+          12,
           9
         ],
         [
-          10,
+          13,
           10
         ],
         [
-          11,
+          14,
           11
         ],
         [
-          12,
+          15,
           12
         ]
       ]
@@ -1040,7 +941,7 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.66,
+      "confidence": 0.688,
       "arabic_text": "لَيْسَ عَلَى ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ جُنَاحٌۭ فِيمَا طَعِمُوٓا۟ إِذَا مَا ٱتَّقَوا۟ وَّءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ ثُمَّ ٱتَّقَوا۟ وَّءَامَنُوا۟ ثُمَّ ٱتَّقَوا۟ وَّأَحْسَنُوا۟ ۗ وَٱللَّهُ يُحِبُّ ٱلْمُحْسِنِينَ",
       "english_text": "Those who have attained to faith and do righteous deeds incur no sin by partaking of whatever they may, so long as they are conscious of God and [truly] believe and do righteous deeds, and continue to be conscious of God and to believe, and grow ever more conscious of God, and persevere in doing good: for God loves the doers of good.",
       "start_time": 2023,
@@ -1072,7 +973,7 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.84,
+      "confidence": 0.858,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَيَبْلُوَنَّكُمُ ٱللَّهُ بِشَىْءٍۢ مِّنَ ٱلصَّيْدِ تَنَالُهُۥٓ أَيْدِيكُمْ وَرِمَاحُكُمْ لِيَعْلَمَ ٱللَّهُ مَن يَخَافُهُۥ بِٱلْغَيْبِ ۚ فَمَنِ ٱعْتَدَىٰ بَعْدَ ذَٰلِكَ فَلَهُۥ عَذَابٌ أَلِيمٌۭ",
       "english_text": "O YOU who have attained to faith! Most certainly God will try you by means of the game which may come within the reach of your hands and your weapons [while you are on pilgrimage], so that God might mark out those who fear Him although He is beyond the reach of human perception. And as for him who, after all this, transgresses the bounds of what is right-grievous suffering awaits him!",
       "start_time": 2046,
@@ -1120,11 +1021,11 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.673,
+      "confidence": 0.825,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَقْتُلُوا۟ ٱلصَّيْدَ وَأَنتُمْ حُرُمٌۭ ۚ وَمَن قَتَلَهُۥ مِنكُم مُّتَعَمِّدًۭا فَجَزَآءٌۭ مِّثْلُ مَا قَتَلَ مِنَ ٱلنَّعَمِ يَحْكُمُ بِهِۦ ذَوَا عَدْلٍۢ مِّنكُمْ هَدْيًۢا بَٰلِغَ ٱلْكَعْبَةِ أَوْ كَفَّٰرَةٌۭ طَعَامُ مَسَٰكِينَ أَوْ عَدْلُ ذَٰلِكَ صِيَامًۭا لِّيَذُوقَ وَبَالَ أَمْرِهِۦ ۗ عَفَا ٱللَّهُ عَمَّا سَلَفَ ۚ وَمَنْ عَادَ فَيَنتَقِمُ ٱللَّهُ مِنْهُ ۗ وَٱللَّهُ عَزِيزٌۭ ذُو ٱنتِقَامٍ",
       "english_text": "O you who have attained to faith! Kill no game while you are in the state of pilgrimage. And whoever of you kills it intentionally, [shall make] amends in cattle equivalent to what he has killed - with two persons of probity giving their judgment thereon- to be brought as an offering to the Ka`bah; or else he may atone for his sin by feeding the needy, or by the equivalent thereof in fasting: [this,] in order that. he taste the full gravity of his deed, [while] God shall have effaced the past. But whoever does it again, God will inflict His retribution on him: for God is almighty, an avenger of evil.",
       "start_time": 2071,
-      "end_time": 2221,
+      "end_time": 2230,
       "matched_token_indices": [
         [
           0,
@@ -1145,34 +1046,22 @@
         [
           4,
           7
-        ],
-        [
-          5,
-          8
-        ],
-        [
-          6,
-          15
-        ],
-        [
-          7,
-          22
         ]
       ]
     },
     {
-      "time": 2222,
+      "time": 2231,
       "surah": "Al-Maaida",
       "ayah": 96,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.886,
+      "confidence": 0.767,
       "arabic_text": "أُحِلَّ لَكُمْ صَيْدُ ٱلْبَحْرِ وَطَعَامُهُۥ مَتَٰعًۭا لَّكُمْ وَلِلسَّيَّارَةِ ۖ وَحُرِّمَ عَلَيْكُمْ صَيْدُ ٱلْبَرِّ مَا دُمْتُمْ حُرُمًۭا ۗ وَٱتَّقُوا۟ ٱللَّهَ ٱلَّذِىٓ إِلَيْهِ تُحْشَرُونَ",
       "english_text": "Lawful to you is all water-game, and what the sea brings forth, as a provision for you [who are settled] as well as for travellers, although you are forbidden to hunt on land while you are in the state of pilgrimage. And be conscious of God, unto whom you shall be gathered.",
-      "start_time": 2222,
-      "end_time": 2263,
+      "start_time": 2231,
+      "end_time": 2253,
       "matched_token_indices": [
         [
           0,
@@ -1209,17 +1098,17 @@
       ]
     },
     {
-      "time": 2264,
+      "time": 2254,
       "surah": "Al-Maaida",
       "ayah": 97,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.784,
+      "confidence": 0.755,
       "arabic_text": "۞ جَعَلَ ٱللَّهُ ٱلْكَعْبَةَ ٱلْبَيْتَ ٱلْحَرَامَ قِيَٰمًۭا لِّلنَّاسِ وَٱلشَّهْرَ ٱلْحَرَامَ وَٱلْهَدْىَ وَٱلْقَلَٰٓئِدَ ۚ ذَٰلِكَ لِتَعْلَمُوٓا۟ أَنَّ ٱللَّهَ يَعْلَمُ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ وَأَنَّ ٱللَّهَ بِكُلِّ شَىْءٍ عَلِيمٌ",
       "english_text": "God has laid down that the Ka'bah, the Inviolable Temple, shall be a symbol for all mankind; and [so, too] the sacred month [of pilgrimage] and the garlanded offerings [are symbols] meant to make you aware that God is aware of all that is in the heavens and all that is on earth, and that God has full knowledge of everything.",
-      "start_time": 2264,
+      "start_time": 2254,
       "end_time": 2279,
       "matched_token_indices": [
         [
@@ -1260,11 +1149,11 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.881,
+      "confidence": 0.718,
       "arabic_text": "ٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ وَأَنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۭ",
       "english_text": "Know that God is severe in retribution -and that God is much-forgiving, a dispenser of grace.",
       "start_time": 2280,
-      "end_time": 2288,
+      "end_time": 2292,
       "matched_token_indices": [
         [
           0,
@@ -1297,38 +1186,62 @@
       ]
     },
     {
-      "time": 2289,
+      "time": 2293,
       "surah": "Al-Maaida",
       "ayah": 99,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.794,
+      "confidence": 0.852,
       "arabic_text": "مَّا عَلَى ٱلرَّسُولِ إِلَّا ٱلْبَلَٰغُ ۗ وَٱللَّهُ يَعْلَمُ مَا تُبْدُونَ وَمَا تَكْتُمُونَ",
       "english_text": "No more is the Apostle bound to do than deliver the message [entrusted to him]: and God knows all that you do openly, and all that you would conceal.",
-      "start_time": 2289,
+      "start_time": 2293,
       "end_time": 2300,
       "matched_token_indices": [
         [
-          0,
+          9,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
           5
         ],
         [
-          1,
+          15,
           6
         ],
         [
-          2,
+          16,
           7
         ],
         [
-          3,
+          17,
           8
         ],
         [
-          4,
+          18,
           9
+        ],
+        [
+          19,
+          10
         ]
       ]
     },
@@ -1340,7 +1253,7 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.792,
+      "confidence": 0.607,
       "arabic_text": "قُل لَّا يَسْتَوِى ٱلْخَبِيثُ وَٱلطَّيِّبُ وَلَوْ أَعْجَبَكَ كَثْرَةُ ٱلْخَبِيثِ ۚ فَٱتَّقُوا۟ ٱللَّهَ يَٰٓأُو۟لِى ٱلْأَلْبَٰبِ لَعَلَّكُمْ تُفْلِحُونَ",
       "english_text": "Say: \"There is no comparison between the bad things and the good things, even though very many of the bad things may please thee greatly. Be, then, conscious of God, O you who are endowed with insight, so that you might attain to a happy state!\"",
       "start_time": 2301,
@@ -1377,6 +1290,34 @@
         [
           7,
           7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          26,
+          13
+        ],
+        [
+          28,
+          14
         ]
       ]
     },
@@ -1388,106 +1329,109 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.589,
+      "confidence": 0.69,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَسْـَٔلُوا۟ عَنْ أَشْيَآءَ إِن تُبْدَ لَكُمْ تَسُؤْكُمْ وَإِن تَسْـَٔلُوا۟ عَنْهَا حِينَ يُنَزَّلُ ٱلْقُرْءَانُ تُبْدَ لَكُمْ عَفَا ٱللَّهُ عَنْهَا ۗ وَٱللَّهُ غَفُورٌ حَلِيمٌۭ",
       "english_text": "O YOU who have attained to faith! Do not ask about matters which, if they were to be made manifest to you [in terms of law], might cause you hardship; for, if you should ask about them while the Qur'an is being revealed, they might [indeed] be made manifest to you [as laws]. God has absolved [you from any obligation] in this respect: for God is much-forgiving, forbearing.",
       "start_time": 2317,
-      "end_time": 2345,
+      "end_time": 2346,
       "matched_token_indices": [
         [
           0,
-          5
+          20
         ],
         [
           1,
-          6
+          21
         ],
         [
           2,
-          7
+          22
         ],
         [
           3,
-          8
+          23
         ],
         [
           4,
-          9
-        ],
-        [
-          5,
-          10
-        ],
-        [
-          6,
-          11
+          24
         ]
       ]
     },
     {
-      "time": 2346,
+      "time": 2347,
       "surah": "Al-Maaida",
       "ayah": 102,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.69,
+      "confidence": 0.931,
       "arabic_text": "قَدْ سَأَلَهَا قَوْمٌۭ مِّن قَبْلِكُمْ ثُمَّ أَصْبَحُوا۟ بِهَا كَٰفِرِينَ",
       "english_text": "People before your time have indeed asked such questions-and in result thereof have come to deny the truth.",
-      "start_time": 2346,
-      "end_time": 2356,
+      "start_time": 2347,
+      "end_time": 2523,
+      "matched_token_indices": null
+    },
+    {
+      "time": 2524,
+      "surah": "Al-Maaida",
+      "ayah": 103,
+      "surah_number": 5,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.827,
+      "arabic_text": "مَا جَعَلَ ٱللَّهُ مِنۢ بَحِيرَةٍۢ وَلَا سَآئِبَةٍۢ وَلَا وَصِيلَةٍۢ وَلَا حَامٍۢ ۙ وَلَٰكِنَّ ٱلَّذِينَ كَفَرُوا۟ يَفْتَرُونَ عَلَى ٱللَّهِ ٱلْكَذِبَ ۖ وَأَكْثَرُهُمْ لَا يَعْقِلُونَ",
+      "english_text": "IT IS NOT of God's ordaining that certain kinds of cattle should be marked out by superstition and set aside from the use of man; yet those who are bent on denying the truth attribute their own lying inventions to God. And most of them never use their reason:",
+      "start_time": 2524,
+      "end_time": 2546,
       "matched_token_indices": [
         [
-          3,
+          0,
           0
         ],
         [
-          4,
+          1,
           1
         ],
         [
-          5,
+          2,
           2
         ],
         [
-          6,
+          3,
           3
         ],
         [
-          7,
+          4,
           4
         ],
         [
-          8,
+          5,
           5
         ],
         [
-          9,
+          6,
           6
         ],
         [
-          10,
-          7
-        ],
-        [
-          11,
-          8
+          7,
+          19
         ]
       ]
     },
     {
-      "time": 2545,
+      "time": 2547,
       "surah": "Al-Maaida",
       "ayah": 104,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.751,
+      "confidence": 0.793,
       "arabic_text": "وَإِذَا قِيلَ لَهُمْ تَعَالَوْا۟ إِلَىٰ مَآ أَنزَلَ ٱللَّهُ وَإِلَى ٱلرَّسُولِ قَالُوا۟ حَسْبُنَا مَا وَجَدْنَا عَلَيْهِ ءَابَآءَنَآ ۚ أَوَلَوْ كَانَ ءَابَآؤُهُمْ لَا يَعْلَمُونَ شَيْـًۭٔا وَلَا يَهْتَدُونَ",
       "english_text": "for when they are told, \"Come unto that which God has bestowed from on high, and unto the Apostle\" - they answer, \"Enough for us is that which we found our forefathers believing in and doing.\" Why, even though their forefathers knew nothing, and were devoid of all guidance?",
-      "start_time": 2545,
+      "start_time": 2547,
       "end_time": 2570,
       "matched_token_indices": [
         [
@@ -1532,467 +1476,151 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.805,
+      "confidence": 0.921,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ عَلَيْكُمْ أَنفُسَكُمْ ۖ لَا يَضُرُّكُم مَّن ضَلَّ إِذَا ٱهْتَدَيْتُمْ ۚ إِلَى ٱللَّهِ مَرْجِعُكُمْ جَمِيعًۭا فَيُنَبِّئُكُم بِمَا كُنتُمْ تَعْمَلُونَ",
       "english_text": "O you who have attained to faith! It is [but] for your own selves that you are responsible: those who go astray can do you no harm if you [yourselves] are on the right path. Unto God you all must return: and then He will make you [truly] understand all that you were doing [in life].",
       "start_time": 2571,
-      "end_time": 2591,
+      "end_time": 2592,
       "matched_token_indices": [
         [
-          0,
-          11
-        ],
-        [
           1,
-          12
+          0
         ],
         [
           2,
-          13
+          1
         ],
         [
           3,
-          14
+          2
         ],
         [
           4,
-          15
+          3
         ],
         [
           5,
-          16
+          4
         ],
         [
           6,
-          17
+          5
         ],
         [
           7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          19,
           18
         ]
       ]
     },
     {
-      "time": 2592,
+      "time": 2593,
       "surah": "Al-Maaida",
       "ayah": 106,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.728,
+      "confidence": 0.636,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ شَهَٰدَةُ بَيْنِكُمْ إِذَا حَضَرَ أَحَدَكُمُ ٱلْمَوْتُ حِينَ ٱلْوَصِيَّةِ ٱثْنَانِ ذَوَا عَدْلٍۢ مِّنكُمْ أَوْ ءَاخَرَانِ مِنْ غَيْرِكُمْ إِنْ أَنتُمْ ضَرَبْتُمْ فِى ٱلْأَرْضِ فَأَصَٰبَتْكُم مُّصِيبَةُ ٱلْمَوْتِ ۚ تَحْبِسُونَهُمَا مِنۢ بَعْدِ ٱلصَّلَوٰةِ فَيُقْسِمَانِ بِٱللَّهِ إِنِ ٱرْتَبْتُمْ لَا نَشْتَرِى بِهِۦ ثَمَنًۭا وَلَوْ كَانَ ذَا قُرْبَىٰ ۙ وَلَا نَكْتُمُ شَهَٰدَةَ ٱللَّهِ إِنَّآ إِذًۭا لَّمِنَ ٱلْءَاثِمِينَ",
       "english_text": "O YOU who have attained to faith! Let there be witnesses to what you do when death approaches you and you are about to make bequests: two persons of probity from among your own people, or -if the pangs of death come upon you while you are travelling far from home -two other persons from [among people] other than your own. Take hold of the two after having prayed; and if you have any doubt in your mind, let each of them swear by God, \"We shall not sell this [our word] for any price, even though it were [for the sake of] a near kinsman; and neither shall we conceal aught of what we have witnessed before God -or else, may we indeed be counted among the sinful.\"",
-      "start_time": 2592,
+      "start_time": 2593,
       "end_time": 2643,
       "matched_token_indices": [
         [
-          0,
-          4
-        ],
-        [
-          1,
-          5
-        ],
-        [
-          2,
-          6
-        ],
-        [
-          3,
-          7
-        ],
-        [
-          4,
-          8
-        ],
-        [
-          5,
-          9
-        ],
-        [
-          6,
-          10
-        ],
-        [
-          7,
-          33
-        ]
-      ]
-    },
-    {
-      "time": 2644,
-      "surah": "Al-Maaida",
-      "ayah": 107,
-      "surah_number": 5,
-      "juz": 7,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.646,
-      "arabic_text": "فَإِنْ عُثِرَ عَلَىٰٓ أَنَّهُمَا ٱسْتَحَقَّآ إِثْمًۭا فَـَٔاخَرَانِ يَقُومَانِ مَقَامَهُمَا مِنَ ٱلَّذِينَ ٱسْتَحَقَّ عَلَيْهِمُ ٱلْأَوْلَيَٰنِ فَيُقْسِمَانِ بِٱللَّهِ لَشَهَٰدَتُنَآ أَحَقُّ مِن شَهَٰدَتِهِمَا وَمَا ٱعْتَدَيْنَآ إِنَّآ إِذًۭا لَّمِنَ ٱلظَّٰلِمِينَ",
-      "english_text": "But if afterwards it should come to light that the two [witnesses] have become guilty of [this very] sin, then two others - from among those whom the two former have deprived of their right - shall take their place and shall swear by God, \"Our testimony is indeed truer than the testimony of these two, and we have not transgressed the bounds of what is right - or else, may we indeed be counted among the evildoers!\"",
-      "start_time": 2644,
-      "end_time": 2691,
-      "matched_token_indices": [
-        [
-          23,
-          0
-        ],
-        [
-          24,
-          1
-        ],
-        [
-          25,
-          2
-        ],
-        [
-          26,
-          3
-        ],
-        [
-          27,
-          4
-        ],
-        [
-          28,
-          5
-        ],
-        [
-          29,
-          6
-        ],
-        [
-          30,
-          7
-        ],
-        [
-          31,
-          8
-        ],
-        [
-          32,
-          9
-        ],
-        [
-          33,
-          10
-        ],
-        [
-          34,
-          11
-        ],
-        [
-          35,
-          12
-        ],
-        [
-          44,
-          13
-        ],
-        [
-          45,
-          14
-        ],
-        [
-          46,
-          15
-        ],
-        [
-          47,
-          16
-        ],
-        [
-          48,
-          17
-        ],
-        [
-          49,
-          18
-        ],
-        [
-          50,
-          19
-        ],
-        [
-          51,
-          21
-        ],
-        [
-          52,
-          23
-        ],
-        [
-          53,
-          24
-        ],
-        [
-          54,
-          25
-        ]
-      ]
-    },
-    {
-      "time": 2692,
-      "surah": "Al-Maaida",
-      "ayah": 108,
-      "surah_number": 5,
-      "juz": 7,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.716,
-      "arabic_text": "ذَٰلِكَ أَدْنَىٰٓ أَن يَأْتُوا۟ بِٱلشَّهَٰدَةِ عَلَىٰ وَجْهِهَآ أَوْ يَخَافُوٓا۟ أَن تُرَدَّ أَيْمَٰنٌۢ بَعْدَ أَيْمَٰنِهِمْ ۗ وَٱتَّقُوا۟ ٱللَّهَ وَٱسْمَعُوا۟ ۗ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلْفَٰسِقِينَ",
-      "english_text": "Thus it will be more likely that people will offer testimony in accordance with the truth-or else they will [have cause to] fear that their oaths will be refuted by the oaths of others. Be, then, conscious of God, and hearken [unto Him]: for God does not bestow His guidance upon iniquitous folk.",
-      "start_time": 2692,
-      "end_time": 2713,
-      "matched_token_indices": [
-        [
-          0,
-          5
-        ],
-        [
-          1,
-          6
-        ],
-        [
-          2,
-          7
-        ],
-        [
-          3,
-          8
-        ],
-        [
-          4,
-          9
-        ],
-        [
-          5,
-          10
-        ]
-      ]
-    },
-    {
-      "time": 2714,
-      "surah": "Al-Maaida",
-      "ayah": 109,
-      "surah_number": 5,
-      "juz": 7,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.855,
-      "arabic_text": "۞ يَوْمَ يَجْمَعُ ٱللَّهُ ٱلرُّسُلَ فَيَقُولُ مَاذَآ أُجِبْتُمْ ۖ قَالُوا۟ لَا عِلْمَ لَنَآ ۖ إِنَّكَ أَنتَ عَلَّٰمُ ٱلْغُيُوبِ",
-      "english_text": "ON THE DAY when God shall assemble all the apostles and shall ask, \"What response did you receive?\" -they will answer, \"We have no knowledge; verily, it is Thou alone who fully knowest all the things that are beyond the reach of a created being's perception.\"",
-      "start_time": 2714,
-      "end_time": 2729,
-      "matched_token_indices": [
-        [
-          0,
-          6
-        ],
-        [
-          1,
-          7
-        ],
-        [
-          2,
-          8
-        ],
-        [
-          3,
-          9
-        ],
-        [
-          4,
-          10
-        ],
-        [
-          5,
-          11
-        ],
-        [
-          6,
-          12
-        ]
-      ]
-    },
-    {
-      "time": 2730,
-      "surah": "Al-Maaida",
-      "ayah": 110,
-      "surah_number": 5,
-      "juz": 7,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.687,
-      "arabic_text": "إِذْ قَالَ ٱللَّهُ يَٰعِيسَى ٱبْنَ مَرْيَمَ ٱذْكُرْ نِعْمَتِى عَلَيْكَ وَعَلَىٰ وَٰلِدَتِكَ إِذْ أَيَّدتُّكَ بِرُوحِ ٱلْقُدُسِ تُكَلِّمُ ٱلنَّاسَ فِى ٱلْمَهْدِ وَكَهْلًۭا ۖ وَإِذْ عَلَّمْتُكَ ٱلْكِتَٰبَ وَٱلْحِكْمَةَ وَٱلتَّوْرَىٰةَ وَٱلْإِنجِيلَ ۖ وَإِذْ تَخْلُقُ مِنَ ٱلطِّينِ كَهَيْـَٔةِ ٱلطَّيْرِ بِإِذْنِى فَتَنفُخُ فِيهَا فَتَكُونُ طَيْرًۢا بِإِذْنِى ۖ وَتُبْرِئُ ٱلْأَكْمَهَ وَٱلْأَبْرَصَ بِإِذْنِى ۖ وَإِذْ تُخْرِجُ ٱلْمَوْتَىٰ بِإِذْنِى ۖ وَإِذْ كَفَفْتُ بَنِىٓ إِسْرَٰٓءِيلَ عَنكَ إِذْ جِئْتَهُم بِٱلْبَيِّنَٰتِ فَقَالَ ٱلَّذِينَ كَفَرُوا۟ مِنْهُمْ إِنْ هَٰذَآ إِلَّا سِحْرٌۭ مُّبِينٌۭ",
-      "english_text": "Lo! God will say: \"O Jesus, son of Mary! Remember the blessings which I bestowed upon thee and thy mother-how I strengthened thee with holy inspiration, so that thou couldst speak unto men in thy cradle, and as a grown man; and how I imparted unto thee revelation and wisdom, including the Torah and the Gospel; and how by My leave thou didst create out of clay, as it were, the shape of [thy followers'] destiny, and then didst breathe into it, so that it might become, by My leave, [their] destiny; and how thou didst heal the blind and the leper by My leave, and how thou didst raise the dead by My leave; and how I prevented the children of Israel from harming thee when thou camest unto them with all evidence of the truth, and [when] those of them who were bent on denying the truth were saying, `This is clearly nothing but deception!\"'",
-      "start_time": 2730,
-      "end_time": 2777,
-      "matched_token_indices": [
-        [
-          0,
-          13
-        ],
-        [
-          1,
-          14
-        ],
-        [
-          2,
-          15
-        ],
-        [
-          3,
-          16
-        ],
-        [
-          4,
-          17
-        ],
-        [
-          5,
-          18
-        ],
-        [
-          6,
-          19
-        ]
-      ]
-    },
-    {
-      "time": 2778,
-      "surah": "Al-Maaida",
-      "ayah": 111,
-      "surah_number": 5,
-      "juz": 7,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.585,
-      "arabic_text": "وَإِذْ أَوْحَيْتُ إِلَى ٱلْحَوَارِيِّۦنَ أَنْ ءَامِنُوا۟ بِى وَبِرَسُولِى قَالُوٓا۟ ءَامَنَّا وَٱشْهَدْ بِأَنَّنَا مُسْلِمُونَ",
-      "english_text": "AND [remember the time] when I inspired the white-garbed ones: Believe in Me and in My Apostle!\" They answered: \"We believe; and bear Thou witness that we have surrendered ourselves [unto Thee].\"",
-      "start_time": 2778,
-      "end_time": 2815,
-      "matched_token_indices": [
-        [
-          22,
-          0
-        ],
-        [
-          44,
-          1
-        ],
-        [
-          45,
-          2
-        ],
-        [
-          46,
-          3
-        ],
-        [
-          47,
-          4
-        ],
-        [
-          48,
-          5
-        ],
-        [
-          49,
-          6
-        ],
-        [
-          50,
-          7
-        ],
-        [
-          51,
-          8
-        ],
-        [
-          52,
-          9
-        ],
-        [
-          53,
-          10
-        ],
-        [
-          54,
-          11
-        ],
-        [
-          55,
-          12
-        ]
-      ]
-    },
-    {
-      "time": 2816,
-      "surah": "Al-Maaida",
-      "ayah": 112,
-      "surah_number": 5,
-      "juz": 7,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.636,
-      "arabic_text": "إِذْ قَالَ ٱلْحَوَارِيُّونَ يَٰعِيسَى ٱبْنَ مَرْيَمَ هَلْ يَسْتَطِيعُ رَبُّكَ أَن يُنَزِّلَ عَلَيْنَا مَآئِدَةًۭ مِّنَ ٱلسَّمَآءِ ۖ قَالَ ٱتَّقُوا۟ ٱللَّهَ إِن كُنتُم مُّؤْمِنِينَ",
-      "english_text": "[And,] lo, the white-garbed ones said: \"O Jesus, son of Mary! Could thy Sustainer send down unto us a repast from heaven?\" [Jesus] answered: \"Be conscious of God, if you are [truly] believers!\"",
-      "start_time": 2816,
-      "end_time": 2838,
-      "matched_token_indices": [
-        [
-          13,
-          0
-        ],
-        [
-          14,
-          1
-        ],
-        [
           15,
-          2
+          0
+        ],
+        [
+          16,
+          1
         ],
         [
           17,
-          3
+          2
         ],
         [
           18,
-          4
+          3
         ],
         [
           19,
-          5
+          4
         ],
         [
           20,
-          6
+          5
         ],
         [
           21,
-          7
+          6
         ],
         [
           22,
-          8
+          7
         ],
         [
           23,
-          9
+          8
         ],
         [
           24,
-          10
+          9
         ],
         [
           25,
-          11
+          10
         ],
         [
           26,
-          12
+          11
         ],
         [
           27,
@@ -2025,6 +1653,665 @@
         [
           34,
           20
+        ],
+        [
+          35,
+          21
+        ],
+        [
+          36,
+          22
+        ],
+        [
+          37,
+          23
+        ],
+        [
+          38,
+          24
+        ],
+        [
+          39,
+          25
+        ],
+        [
+          40,
+          26
+        ],
+        [
+          42,
+          27
+        ],
+        [
+          43,
+          28
+        ],
+        [
+          44,
+          29
+        ],
+        [
+          45,
+          30
+        ],
+        [
+          46,
+          31
+        ],
+        [
+          47,
+          32
+        ],
+        [
+          48,
+          33
+        ],
+        [
+          49,
+          35
+        ],
+        [
+          50,
+          36
+        ],
+        [
+          51,
+          37
+        ],
+        [
+          52,
+          38
+        ],
+        [
+          53,
+          39
+        ],
+        [
+          54,
+          40
+        ],
+        [
+          55,
+          41
+        ],
+        [
+          56,
+          42
+        ],
+        [
+          57,
+          43
+        ],
+        [
+          58,
+          44
+        ],
+        [
+          59,
+          45
+        ],
+        [
+          60,
+          46
+        ],
+        [
+          61,
+          48
+        ],
+        [
+          62,
+          49
+        ],
+        [
+          63,
+          50
+        ]
+      ]
+    },
+    {
+      "time": 2644,
+      "surah": "Al-Maaida",
+      "ayah": 107,
+      "surah_number": 5,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.853,
+      "arabic_text": "فَإِنْ عُثِرَ عَلَىٰٓ أَنَّهُمَا ٱسْتَحَقَّآ إِثْمًۭا فَـَٔاخَرَانِ يَقُومَانِ مَقَامَهُمَا مِنَ ٱلَّذِينَ ٱسْتَحَقَّ عَلَيْهِمُ ٱلْأَوْلَيَٰنِ فَيُقْسِمَانِ بِٱللَّهِ لَشَهَٰدَتُنَآ أَحَقُّ مِن شَهَٰدَتِهِمَا وَمَا ٱعْتَدَيْنَآ إِنَّآ إِذًۭا لَّمِنَ ٱلظَّٰلِمِينَ",
+      "english_text": "But if afterwards it should come to light that the two [witnesses] have become guilty of [this very] sin, then two others - from among those whom the two former have deprived of their right - shall take their place and shall swear by God, \"Our testimony is indeed truer than the testimony of these two, and we have not transgressed the bounds of what is right - or else, may we indeed be counted among the evildoers!\"",
+      "start_time": 2644,
+      "end_time": 2691,
+      "matched_token_indices": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          12
+        ]
+      ]
+    },
+    {
+      "time": 2692,
+      "surah": "Al-Maaida",
+      "ayah": 108,
+      "surah_number": 5,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.562,
+      "arabic_text": "ذَٰلِكَ أَدْنَىٰٓ أَن يَأْتُوا۟ بِٱلشَّهَٰدَةِ عَلَىٰ وَجْهِهَآ أَوْ يَخَافُوٓا۟ أَن تُرَدَّ أَيْمَٰنٌۢ بَعْدَ أَيْمَٰنِهِمْ ۗ وَٱتَّقُوا۟ ٱللَّهَ وَٱسْمَعُوا۟ ۗ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلْفَٰسِقِينَ",
+      "english_text": "Thus it will be more likely that people will offer testimony in accordance with the truth-or else they will [have cause to] fear that their oaths will be refuted by the oaths of others. Be, then, conscious of God, and hearken [unto Him]: for God does not bestow His guidance upon iniquitous folk.",
+      "start_time": 2692,
+      "end_time": 2714,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          21,
+          3
+        ],
+        [
+          22,
+          4
+        ],
+        [
+          23,
+          5
+        ],
+        [
+          24,
+          6
+        ],
+        [
+          25,
+          7
+        ],
+        [
+          26,
+          8
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          28,
+          10
+        ],
+        [
+          29,
+          11
+        ],
+        [
+          30,
+          12
+        ],
+        [
+          31,
+          13
+        ],
+        [
+          32,
+          14
+        ],
+        [
+          33,
+          15
+        ],
+        [
+          34,
+          16
+        ],
+        [
+          35,
+          17
+        ],
+        [
+          36,
+          18
+        ],
+        [
+          37,
+          19
+        ],
+        [
+          38,
+          20
+        ],
+        [
+          39,
+          21
+        ]
+      ]
+    },
+    {
+      "time": 2715,
+      "surah": "Al-Maaida",
+      "ayah": 109,
+      "surah_number": 5,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.79,
+      "arabic_text": "۞ يَوْمَ يَجْمَعُ ٱللَّهُ ٱلرُّسُلَ فَيَقُولُ مَاذَآ أُجِبْتُمْ ۖ قَالُوا۟ لَا عِلْمَ لَنَآ ۖ إِنَّكَ أَنتَ عَلَّٰمُ ٱلْغُيُوبِ",
+      "english_text": "ON THE DAY when God shall assemble all the apostles and shall ask, \"What response did you receive?\" -they will answer, \"We have no knowledge; verily, it is Thou alone who fully knowest all the things that are beyond the reach of a created being's perception.\"",
+      "start_time": 2715,
+      "end_time": 2729,
+      "matched_token_indices": [
+        [
+          32,
+          0
+        ],
+        [
+          33,
+          1
+        ],
+        [
+          34,
+          2
+        ],
+        [
+          35,
+          3
+        ],
+        [
+          36,
+          4
+        ],
+        [
+          38,
+          5
+        ],
+        [
+          39,
+          6
+        ],
+        [
+          40,
+          7
+        ],
+        [
+          41,
+          8
+        ],
+        [
+          42,
+          9
+        ],
+        [
+          43,
+          10
+        ],
+        [
+          44,
+          11
+        ],
+        [
+          45,
+          12
+        ],
+        [
+          46,
+          13
+        ],
+        [
+          47,
+          14
+        ]
+      ]
+    },
+    {
+      "time": 2730,
+      "surah": "Al-Maaida",
+      "ayah": 110,
+      "surah_number": 5,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.605,
+      "arabic_text": "إِذْ قَالَ ٱللَّهُ يَٰعِيسَى ٱبْنَ مَرْيَمَ ٱذْكُرْ نِعْمَتِى عَلَيْكَ وَعَلَىٰ وَٰلِدَتِكَ إِذْ أَيَّدتُّكَ بِرُوحِ ٱلْقُدُسِ تُكَلِّمُ ٱلنَّاسَ فِى ٱلْمَهْدِ وَكَهْلًۭا ۖ وَإِذْ عَلَّمْتُكَ ٱلْكِتَٰبَ وَٱلْحِكْمَةَ وَٱلتَّوْرَىٰةَ وَٱلْإِنجِيلَ ۖ وَإِذْ تَخْلُقُ مِنَ ٱلطِّينِ كَهَيْـَٔةِ ٱلطَّيْرِ بِإِذْنِى فَتَنفُخُ فِيهَا فَتَكُونُ طَيْرًۢا بِإِذْنِى ۖ وَتُبْرِئُ ٱلْأَكْمَهَ وَٱلْأَبْرَصَ بِإِذْنِى ۖ وَإِذْ تُخْرِجُ ٱلْمَوْتَىٰ بِإِذْنِى ۖ وَإِذْ كَفَفْتُ بَنِىٓ إِسْرَٰٓءِيلَ عَنكَ إِذْ جِئْتَهُم بِٱلْبَيِّنَٰتِ فَقَالَ ٱلَّذِينَ كَفَرُوا۟ مِنْهُمْ إِنْ هَٰذَآ إِلَّا سِحْرٌۭ مُّبِينٌۭ",
+      "english_text": "Lo! God will say: \"O Jesus, son of Mary! Remember the blessings which I bestowed upon thee and thy mother-how I strengthened thee with holy inspiration, so that thou couldst speak unto men in thy cradle, and as a grown man; and how I imparted unto thee revelation and wisdom, including the Torah and the Gospel; and how by My leave thou didst create out of clay, as it were, the shape of [thy followers'] destiny, and then didst breathe into it, so that it might become, by My leave, [their] destiny; and how thou didst heal the blind and the leper by My leave, and how thou didst raise the dead by My leave; and how I prevented the children of Israel from harming thee when thou camest unto them with all evidence of the truth, and [when] those of them who were bent on denying the truth were saying, `This is clearly nothing but deception!\"'",
+      "start_time": 2730,
+      "end_time": 2800,
+      "matched_token_indices": [
+        [
+          24,
+          0
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          26,
+          2
+        ],
+        [
+          28,
+          3
+        ],
+        [
+          32,
+          4
+        ],
+        [
+          34,
+          5
+        ],
+        [
+          35,
+          6
+        ],
+        [
+          36,
+          7
+        ],
+        [
+          37,
+          8
+        ],
+        [
+          38,
+          9
+        ],
+        [
+          39,
+          10
+        ],
+        [
+          40,
+          11
+        ],
+        [
+          42,
+          12
+        ],
+        [
+          43,
+          13
+        ],
+        [
+          44,
+          14
+        ],
+        [
+          45,
+          15
+        ],
+        [
+          46,
+          16
+        ],
+        [
+          47,
+          17
+        ],
+        [
+          48,
+          18
+        ],
+        [
+          49,
+          19
+        ],
+        [
+          50,
+          20
+        ],
+        [
+          51,
+          21
+        ],
+        [
+          52,
+          22
+        ],
+        [
+          53,
+          23
+        ],
+        [
+          54,
+          24
+        ],
+        [
+          55,
+          25
+        ],
+        [
+          56,
+          26
+        ],
+        [
+          57,
+          27
+        ],
+        [
+          58,
+          28
+        ],
+        [
+          59,
+          29
+        ],
+        [
+          60,
+          30
+        ],
+        [
+          61,
+          31
+        ],
+        [
+          62,
+          32
+        ],
+        [
+          63,
+          33
+        ],
+        [
+          64,
+          34
+        ],
+        [
+          65,
+          35
+        ],
+        [
+          66,
+          36
+        ],
+        [
+          67,
+          37
+        ],
+        [
+          68,
+          38
+        ],
+        [
+          69,
+          39
+        ],
+        [
+          70,
+          40
+        ],
+        [
+          71,
+          41
+        ],
+        [
+          72,
+          42
+        ],
+        [
+          73,
+          43
+        ],
+        [
+          74,
+          44
+        ],
+        [
+          75,
+          45
+        ],
+        [
+          76,
+          46
+        ],
+        [
+          77,
+          47
+        ],
+        [
+          78,
+          48
+        ],
+        [
+          79,
+          49
+        ],
+        [
+          80,
+          50
+        ],
+        [
+          81,
+          51
+        ],
+        [
+          82,
+          52
+        ],
+        [
+          83,
+          53
+        ],
+        [
+          84,
+          54
+        ],
+        [
+          85,
+          55
+        ],
+        [
+          86,
+          56
+        ],
+        [
+          87,
+          57
+        ],
+        [
+          88,
+          58
+        ],
+        [
+          89,
+          59
+        ],
+        [
+          90,
+          60
+        ],
+        [
+          91,
+          61
+        ],
+        [
+          92,
+          62
+        ]
+      ]
+    },
+    {
+      "time": 2801,
+      "surah": "Al-Maaida",
+      "ayah": 111,
+      "surah_number": 5,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.637,
+      "arabic_text": "وَإِذْ أَوْحَيْتُ إِلَى ٱلْحَوَارِيِّۦنَ أَنْ ءَامِنُوا۟ بِى وَبِرَسُولِى قَالُوٓا۟ ءَامَنَّا وَٱشْهَدْ بِأَنَّنَا مُسْلِمُونَ",
+      "english_text": "AND [remember the time] when I inspired the white-garbed ones: Believe in Me and in My Apostle!\" They answered: \"We believe; and bear Thou witness that we have surrendered ourselves [unto Thee].\"",
+      "start_time": 2801,
+      "end_time": 2816,
+      "matched_token_indices": null
+    },
+    {
+      "time": 2817,
+      "surah": "Al-Maaida",
+      "ayah": 112,
+      "surah_number": 5,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.697,
+      "arabic_text": "إِذْ قَالَ ٱلْحَوَارِيُّونَ يَٰعِيسَى ٱبْنَ مَرْيَمَ هَلْ يَسْتَطِيعُ رَبُّكَ أَن يُنَزِّلَ عَلَيْنَا مَآئِدَةًۭ مِّنَ ٱلسَّمَآءِ ۖ قَالَ ٱتَّقُوا۟ ٱللَّهَ إِن كُنتُم مُّؤْمِنِينَ",
+      "english_text": "[And,] lo, the white-garbed ones said: \"O Jesus, son of Mary! Could thy Sustainer send down unto us a repast from heaven?\" [Jesus] answered: \"Be conscious of God, if you are [truly] believers!\"",
+      "start_time": 2817,
+      "end_time": 2838,
+      "matched_token_indices": [
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          3,
+          18
+        ],
+        [
+          4,
+          19
+        ],
+        [
+          5,
+          20
         ]
       ]
     },
@@ -2036,7 +2323,7 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.865,
+      "confidence": 0.828,
       "arabic_text": "قَالُوا۟ نُرِيدُ أَن نَّأْكُلَ مِنْهَا وَتَطْمَئِنَّ قُلُوبُنَا وَنَعْلَمَ أَن قَدْ صَدَقْتَنَا وَنَكُونَ عَلَيْهَا مِنَ ٱلشَّٰهِدِينَ",
       "english_text": "Said they: \"We desire to partake thereof, so that our hearts might be set fully at rest, and that we might know that thou hast spoken the truth to us, and that we might be of those who bear witness thereto!\"",
       "start_time": 2839,
@@ -2084,7 +2371,7 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.701,
+      "confidence": 0.67,
       "arabic_text": "قَالَ عِيسَى ٱبْنُ مَرْيَمَ ٱللَّهُمَّ رَبَّنَآ أَنزِلْ عَلَيْنَا مَآئِدَةًۭ مِّنَ ٱلسَّمَآءِ تَكُونُ لَنَا عِيدًۭا لِّأَوَّلِنَا وَءَاخِرِنَا وَءَايَةًۭ مِّنكَ ۖ وَٱرْزُقْنَا وَأَنتَ خَيْرُ ٱلرَّٰزِقِينَ",
       "english_text": "Said Jesus, the son of Mary: \"O God, our Sustainer! Send down upon us a repast from heaven: it shall be an ever-recurring feast for us - for the first and the last of us -and a sign from Thee. And provide us our sustenance, for Thou art the best of providers!\"",
       "start_time": 2858,
@@ -2092,35 +2379,27 @@
       "matched_token_indices": [
         [
           0,
-          4
-        ],
-        [
-          1,
-          5
-        ],
-        [
-          2,
-          6
-        ],
-        [
-          3,
-          7
-        ],
-        [
-          4,
-          8
-        ],
-        [
-          5,
           9
         ],
         [
-          6,
+          1,
           10
         ],
         [
-          7,
+          2,
           11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          14
         ]
       ]
     },
@@ -2132,11 +2411,11 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.83,
+      "confidence": 0.858,
       "arabic_text": "قَالَ ٱللَّهُ إِنِّى مُنَزِّلُهَا عَلَيْكُمْ ۖ فَمَن يَكْفُرْ بَعْدُ مِنكُمْ فَإِنِّىٓ أُعَذِّبُهُۥ عَذَابًۭا لَّآ أُعَذِّبُهُۥٓ أَحَدًۭا مِّنَ ٱلْعَٰلَمِينَ",
       "english_text": "God answered: \"Verily, I [always] do send it down unto you: and so, if any of you should henceforth deny [this] truth, on him, behold, will I inflict suffering the like of which I have never [yet] inflicted upon anyone in the world!\"",
       "start_time": 2883,
-      "end_time": 3019,
+      "end_time": 3023,
       "matched_token_indices": [
         [
           0,
@@ -2161,17 +2440,17 @@
       ]
     },
     {
-      "time": 3020,
+      "time": 3024,
       "surah": "Al-Maaida",
       "ayah": 116,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.652,
+      "confidence": 0.829,
       "arabic_text": "وَإِذْ قَالَ ٱللَّهُ يَٰعِيسَى ٱبْنَ مَرْيَمَ ءَأَنتَ قُلْتَ لِلنَّاسِ ٱتَّخِذُونِى وَأُمِّىَ إِلَٰهَيْنِ مِن دُونِ ٱللَّهِ ۖ قَالَ سُبْحَٰنَكَ مَا يَكُونُ لِىٓ أَنْ أَقُولَ مَا لَيْسَ لِى بِحَقٍّ ۚ إِن كُنتُ قُلْتُهُۥ فَقَدْ عَلِمْتَهُۥ ۚ تَعْلَمُ مَا فِى نَفْسِى وَلَآ أَعْلَمُ مَا فِى نَفْسِكَ ۚ إِنَّكَ أَنتَ عَلَّٰمُ ٱلْغُيُوبِ",
       "english_text": "AND LO! God said: O Jesus, son of Mary! Didst thou say unto men, `Worship me and my mother as deities beside God'?\" [Jesus] answered: \"Limitless art Thou in Thy glory! It would not have been possible for me to say what I had no right to [say]! Had I said this, Thou wouldst indeed have known it! Thou knowest all that is within myself, whereas I know not what is in Thy Self. Verily, it is Thou alone who fully knowest all the things that are beyond the reach of a created being's perception.",
-      "start_time": 3020,
+      "start_time": 3024,
       "end_time": 3056,
       "matched_token_indices": [
         [
@@ -2204,11 +2483,11 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.721,
+      "confidence": 0.703,
       "arabic_text": "مَا قُلْتُ لَهُمْ إِلَّا مَآ أَمَرْتَنِى بِهِۦٓ أَنِ ٱعْبُدُوا۟ ٱللَّهَ رَبِّى وَرَبَّكُمْ ۚ وَكُنتُ عَلَيْهِمْ شَهِيدًۭا مَّا دُمْتُ فِيهِمْ ۖ فَلَمَّا تَوَفَّيْتَنِى كُنتَ أَنتَ ٱلرَّقِيبَ عَلَيْهِمْ ۚ وَأَنتَ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ",
       "english_text": "Nothing did I tell them beyond what Thou didst bid me [to say]: `Worship God, [who is] my Sustainer as well as your Sustainer.' And I bore witness to what they did as long as I dwelt in their midst; but since Thou hast caused me to die, Thou alone hast been their keeper: for Thou art witness unto everything.",
       "start_time": 3057,
-      "end_time": 3096,
+      "end_time": 3110,
       "matched_token_indices": [
         [
           17,
@@ -2329,61 +2608,45 @@
       ]
     },
     {
-      "time": 3097,
+      "time": 3111,
       "surah": "Al-Maaida",
       "ayah": 118,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.707,
+      "confidence": 0.839,
       "arabic_text": "إِن تُعَذِّبْهُمْ فَإِنَّهُمْ عِبَادُكَ ۖ وَإِن تَغْفِرْ لَهُمْ فَإِنَّكَ أَنتَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
       "english_text": "If thou cause them to suffer - verily, they are Thy servants; and if Thou forgive them - verily, Thou alone art almighty, truly wise!\"",
-      "start_time": 3097,
+      "start_time": 3111,
       "end_time": 3119,
       "matched_token_indices": [
         [
-          11,
-          0
-        ],
-        [
-          12,
-          1
-        ],
-        [
-          13,
-          2
-        ],
-        [
-          14,
-          3
-        ],
-        [
-          15,
+          0,
           4
         ],
         [
-          16,
+          1,
           5
         ],
         [
-          17,
+          2,
           6
         ],
         [
-          18,
+          3,
           7
         ],
         [
-          19,
+          4,
           8
         ],
         [
-          20,
+          5,
           9
         ],
         [
-          21,
+          6,
           10
         ]
       ]
@@ -2396,122 +2659,58 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.638,
+      "confidence": 0.785,
       "arabic_text": "قَالَ ٱللَّهُ هَٰذَا يَوْمُ يَنفَعُ ٱلصَّٰدِقِينَ صِدْقُهُمْ ۚ لَهُمْ جَنَّٰتٌۭ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدًۭا ۚ رَّضِىَ ٱللَّهُ عَنْهُمْ وَرَضُوا۟ عَنْهُ ۚ ذَٰلِكَ ٱلْفَوْزُ ٱلْعَظِيمُ",
       "english_text": "[AND on Judgment Day] God will say: \"Today, their truthfulness shall benefit all who have been true to their word: theirs shall be gardens through which running waters flow, therein to abide beyond the count of time; well-pleased is God with them, and well-pleased are they with Him: this is the triumph supreme.\"",
       "start_time": 3120,
-      "end_time": 3144,
+      "end_time": 3143,
       "matched_token_indices": [
         [
-          11,
-          0
-        ],
-        [
-          12,
-          1
-        ],
-        [
-          13,
-          2
-        ],
-        [
-          14,
-          3
-        ],
-        [
-          15,
-          4
-        ],
-        [
-          16,
-          5
-        ],
-        [
-          17,
-          6
-        ],
-        [
-          18,
-          7
-        ],
-        [
-          19,
-          8
-        ],
-        [
-          20,
-          9
-        ],
-        [
-          21,
-          10
-        ],
-        [
-          22,
-          11
-        ],
-        [
-          23,
-          12
-        ],
-        [
-          24,
-          13
-        ],
-        [
-          25,
-          14
-        ],
-        [
-          26,
-          15
-        ],
-        [
-          27,
+          0,
           16
         ],
         [
-          28,
+          1,
           17
         ],
         [
-          29,
+          2,
           18
         ],
         [
-          30,
+          3,
           19
         ],
         [
-          31,
+          4,
           20
         ],
         [
-          32,
+          5,
           21
         ],
         [
-          33,
+          6,
           22
         ],
         [
-          34,
+          7,
           23
         ]
       ]
     },
     {
-      "time": 3145,
+      "time": 3144,
       "surah": "Al-Maaida",
       "ayah": 120,
       "surah_number": 5,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.803,
+      "confidence": 0.896,
       "arabic_text": "لِلَّهِ مُلْكُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ وَمَا فِيهِنَّ ۚ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۢ",
       "english_text": "God's is the dominion over the heavens and the earth and all that they contain; and He has the power to will anything.",
-      "start_time": 3145,
+      "start_time": 3144,
       "end_time": 3157,
       "matched_token_indices": [
         [
@@ -2537,25 +2736,53 @@
       ]
     },
     {
-      "time": 3311,
+      "time": 3331,
       "surah": "Al-An'aam",
       "ayah": 1,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.818,
+      "confidence": 0.838,
       "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ٱلْحَمْدُ لِلَّهِ ٱلَّذِى خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ وَجَعَلَ ٱلظُّلُمَٰتِ وَٱلنُّورَ ۖ ثُمَّ ٱلَّذِينَ كَفَرُوا۟ بِرَبِّهِمْ يَعْدِلُونَ",
       "english_text": "ALL PRAISE is due to God, who has created the heavens and the earth, and brought into being deep darkness as well as light: and yet, those who are bent on denying the truth regard other powers as their Sustainer's equals!",
-      "start_time": 3311,
-      "end_time": 3346,
+      "start_time": 3331,
+      "end_time": 3331,
       "matched_token_indices": [
         [
-          11,
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "time": 3332,
+      "surah": "Al-An'aam",
+      "ayah": 2,
+      "surah_number": 6,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.642,
+      "arabic_text": "هُوَ ٱلَّذِى خَلَقَكُم مِّن طِينٍۢ ثُمَّ قَضَىٰٓ أَجَلًۭا ۖ وَأَجَلٌۭ مُّسَمًّى عِندَهُۥ ۖ ثُمَّ أَنتُمْ تَمْتَرُونَ",
+      "english_text": "He it is who has created you out of clay, and then has decreed a term [for you] - a term known [only] to him. And yet you doubt –",
+      "start_time": 3332,
+      "end_time": 3361,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
           1
         ],
         [
-          12,
+          3,
           2
         ],
         [
@@ -2563,91 +2790,60 @@
           3
         ],
         [
-          19,
+          17,
           4
         ],
         [
-          20,
+          18,
           5
         ],
         [
-          21,
+          19,
           6
         ],
         [
-          22,
+          20,
           7
         ],
         [
-          23,
+          21,
           8
         ],
         [
-          24,
+          22,
           9
         ],
         [
-          25,
+          23,
           10
         ],
         [
-          26,
+          24,
           11
         ],
         [
-          27,
+          25,
           12
         ],
         [
-          28,
+          26,
           13
-        ],
-        [
-          29,
-          14
-        ],
-        [
-          30,
-          15
-        ],
-        [
-          31,
-          16
-        ],
-        [
-          32,
-          17
         ]
       ]
     },
     {
-      "time": 3347,
-      "surah": "Al-An'aam",
-      "ayah": 2,
-      "surah_number": 6,
-      "juz": 7,
-      "quality": "inferred",
-      "reciter": "Hasan",
-      "confidence": 0.56,
-      "arabic_text": "هُوَ ٱلَّذِى خَلَقَكُم مِّن طِينٍۢ ثُمَّ قَضَىٰٓ أَجَلًۭا ۖ وَأَجَلٌۭ مُّسَمًّى عِندَهُۥ ۖ ثُمَّ أَنتُمْ تَمْتَرُونَ",
-      "english_text": "He it is who has created you out of clay, and then has decreed a term [for you] - a term known [only] to him. And yet you doubt –",
-      "start_time": 3347,
-      "end_time": 3347,
-      "matched_token_indices": null
-    },
-    {
-      "time": 3359,
+      "time": 3362,
       "surah": "Al-An'aam",
       "ayah": 3,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.759,
+      "confidence": 0.743,
       "arabic_text": "وَهُوَ ٱللَّهُ فِى ٱلسَّمَٰوَٰتِ وَفِى ٱلْأَرْضِ ۖ يَعْلَمُ سِرَّكُمْ وَجَهْرَكُمْ وَيَعْلَمُ مَا تَكْسِبُونَ",
       "english_text": "although He is God in the heavens and on earth, knowing all that you keep secret as well as all that you do openly, and knowing what you deserve.",
-      "start_time": 3359,
-      "end_time": 3375,
+      "start_time": 3362,
+      "end_time": 3381,
       "matched_token_indices": [
         [
           0,
@@ -2668,18 +2864,18 @@
       ]
     },
     {
-      "time": 3376,
+      "time": 3382,
       "surah": "Al-An'aam",
       "ayah": 4,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.801,
+      "confidence": 0.802,
       "arabic_text": "وَمَا تَأْتِيهِم مِّنْ ءَايَةٍۢ مِّنْ ءَايَٰتِ رَبِّهِمْ إِلَّا كَانُوا۟ عَنْهَا مُعْرِضِينَ",
       "english_text": "Yet whenever any of their Sustainer's messages comes unto them, they [who are bent on denying the truth] turn their backs upon it:",
-      "start_time": 3376,
-      "end_time": 3392,
+      "start_time": 3382,
+      "end_time": 3391,
       "matched_token_indices": [
         [
           0,
@@ -2704,17 +2900,17 @@
       ]
     },
     {
-      "time": 3393,
+      "time": 3392,
       "surah": "Al-An'aam",
       "ayah": 5,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.757,
+      "confidence": 0.755,
       "arabic_text": "فَقَدْ كَذَّبُوا۟ بِٱلْحَقِّ لَمَّا جَآءَهُمْ ۖ فَسَوْفَ يَأْتِيهِمْ أَنۢبَٰٓؤُا۟ مَا كَانُوا۟ بِهِۦ يَسْتَهْزِءُونَ",
       "english_text": "and so they give the lie to this truth now that it has come unto them. In time, however, they will come to understand what it was that they were wont to deride.",
-      "start_time": 3393,
+      "start_time": 3392,
       "end_time": 3406,
       "matched_token_indices": [
         [
@@ -2736,14 +2932,6 @@
         [
           4,
           4
-        ],
-        [
-          5,
-          5
-        ],
-        [
-          6,
-          6
         ]
       ]
     },
@@ -2759,44 +2947,44 @@
       "arabic_text": "أَلَمْ يَرَوْا۟ كَمْ أَهْلَكْنَا مِن قَبْلِهِم مِّن قَرْنٍۢ مَّكَّنَّٰهُمْ فِى ٱلْأَرْضِ مَا لَمْ نُمَكِّن لَّكُمْ وَأَرْسَلْنَا ٱلسَّمَآءَ عَلَيْهِم مِّدْرَارًۭا وَجَعَلْنَا ٱلْأَنْهَٰرَ تَجْرِى مِن تَحْتِهِمْ فَأَهْلَكْنَٰهُم بِذُنُوبِهِمْ وَأَنشَأْنَا مِنۢ بَعْدِهِمْ قَرْنًا ءَاخَرِينَ",
       "english_text": "Do they not see how many a generation We have destroyed before their time - [people] whom We had given a [bountiful] place on earth, the like of which We never gave unto you, and upon whom We showered heavenly blessings abundant, and at whose feet We made running waters flow? And yet we destroyed them for their sins, and gave rise to other people in their stead.",
       "start_time": 3407,
-      "end_time": 3448,
+      "end_time": 3449,
       "matched_token_indices": [
         [
           0,
-          0
+          9
         ],
         [
           1,
-          1
+          10
         ],
         [
           2,
-          2
+          11
         ],
         [
           3,
-          3
+          12
         ],
         [
           4,
-          4
+          13
         ],
         [
           5,
-          5
+          14
         ],
         [
           6,
-          22
+          15
         ],
         [
           7,
-          29
+          16
         ]
       ]
     },
     {
-      "time": 3449,
+      "time": 3450,
       "surah": "Al-An'aam",
       "ayah": 7,
       "surah_number": 6,
@@ -2806,8 +2994,8 @@
       "confidence": 0.725,
       "arabic_text": "وَلَوْ نَزَّلْنَا عَلَيْكَ كِتَٰبًۭا فِى قِرْطَاسٍۢ فَلَمَسُوهُ بِأَيْدِيهِمْ لَقَالَ ٱلَّذِينَ كَفَرُوٓا۟ إِنْ هَٰذَآ إِلَّا سِحْرٌۭ مُّبِينٌۭ",
       "english_text": "But even if we had sent down unto thee [O Prophet] a writing on paper, and they had touched it with their own hands - those who are bent on denying the truth would indeed have said, \"This is clearly nothing but a deception!\"",
-      "start_time": 3449,
-      "end_time": 3479,
+      "start_time": 3450,
+      "end_time": 3466,
       "matched_token_indices": [
         [
           12,
@@ -2876,18 +3064,122 @@
       ]
     },
     {
-      "time": 3480,
+      "time": 3467,
       "surah": "Al-An'aam",
       "ayah": 8,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.634,
+      "confidence": 0.718,
       "arabic_text": "وَقَالُوا۟ لَوْلَآ أُنزِلَ عَلَيْهِ مَلَكٌۭ ۖ وَلَوْ أَنزَلْنَا مَلَكًۭا لَّقُضِىَ ٱلْأَمْرُ ثُمَّ لَا يُنظَرُونَ",
       "english_text": "They are saying, too, \"Why has not an angel (visibly] been sent down unto him?\" But had we sent down an angel, all would indeed have been decided, and they would have been allowed no further respite [for repentance.",
-      "start_time": 3480,
-      "end_time": 3486,
+      "start_time": 3467,
+      "end_time": 3485,
+      "matched_token_indices": [
+        [
+          17,
+          0
+        ],
+        [
+          18,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          20,
+          3
+        ],
+        [
+          21,
+          4
+        ],
+        [
+          22,
+          5
+        ],
+        [
+          23,
+          6
+        ],
+        [
+          24,
+          7
+        ],
+        [
+          25,
+          8
+        ],
+        [
+          26,
+          9
+        ],
+        [
+          27,
+          10
+        ],
+        [
+          28,
+          11
+        ],
+        [
+          29,
+          12
+        ]
+      ]
+    },
+    {
+      "time": 3486,
+      "surah": "Al-An'aam",
+      "ayah": 9,
+      "surah_number": 6,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.702,
+      "arabic_text": "وَلَوْ جَعَلْنَٰهُ مَلَكًۭا لَّجَعَلْنَٰهُ رَجُلًۭا وَلَلَبَسْنَا عَلَيْهِم مَّا يَلْبِسُونَ",
+      "english_text": "And (even] if We had appointed an angel as Our message-bearer, We would certainly have made him [appear as] a man - and thus We would only have confused them in the same way as they are now confusing themselves.",
+      "start_time": 3486,
+      "end_time": 3610,
+      "matched_token_indices": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ]
+      ]
+    },
+    {
+      "time": 3611,
+      "surah": "Al-An'aam",
+      "ayah": 10,
+      "surah_number": 6,
+      "juz": 7,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.685,
+      "arabic_text": "وَلَقَدِ ٱسْتُهْزِئَ بِرُسُلٍۢ مِّن قَبْلِكَ فَحَاقَ بِٱلَّذِينَ سَخِرُوا۟ مِنْهُم مَّا كَانُوا۟ بِهِۦ يَسْتَهْزِءُونَ",
+      "english_text": "And, indeed, [even] before thy time have apostles been derided - but those who scoffed at them were [in the end] overwhelmed by the very thing which they were wont to deride.",
+      "start_time": 3611,
+      "end_time": 3623,
       "matched_token_indices": [
         [
           0,
@@ -2908,93 +3200,6 @@
         [
           4,
           11
-        ],
-        [
-          5,
-          12
-        ]
-      ]
-    },
-    {
-      "time": 3487,
-      "surah": "Al-An'aam",
-      "ayah": 9,
-      "surah_number": 6,
-      "juz": 7,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.858,
-      "arabic_text": "وَلَوْ جَعَلْنَٰهُ مَلَكًۭا لَّجَعَلْنَٰهُ رَجُلًۭا وَلَلَبَسْنَا عَلَيْهِم مَّا يَلْبِسُونَ",
-      "english_text": "And (even] if We had appointed an angel as Our message-bearer, We would certainly have made him [appear as] a man - and thus We would only have confused them in the same way as they are now confusing themselves.",
-      "start_time": 3487,
-      "end_time": 3600,
-      "matched_token_indices": null
-    },
-    {
-      "time": 3601,
-      "surah": "Al-An'aam",
-      "ayah": 10,
-      "surah_number": 6,
-      "juz": 7,
-      "quality": "high",
-      "reciter": "Hasan",
-      "confidence": 0.86,
-      "arabic_text": "وَلَقَدِ ٱسْتُهْزِئَ بِرُسُلٍۢ مِّن قَبْلِكَ فَحَاقَ بِٱلَّذِينَ سَخِرُوا۟ مِنْهُم مَّا كَانُوا۟ بِهِۦ يَسْتَهْزِءُونَ",
-      "english_text": "And, indeed, [even] before thy time have apostles been derided - but those who scoffed at them were [in the end] overwhelmed by the very thing which they were wont to deride.",
-      "start_time": 3601,
-      "end_time": 3623,
-      "matched_token_indices": [
-        [
-          5,
-          0
-        ],
-        [
-          6,
-          1
-        ],
-        [
-          7,
-          2
-        ],
-        [
-          8,
-          3
-        ],
-        [
-          9,
-          4
-        ],
-        [
-          10,
-          5
-        ],
-        [
-          11,
-          6
-        ],
-        [
-          12,
-          7
-        ],
-        [
-          13,
-          8
-        ],
-        [
-          14,
-          9
-        ],
-        [
-          15,
-          10
-        ],
-        [
-          16,
-          11
-        ],
-        [
-          17,
-          12
         ]
       ]
     },
@@ -3004,28 +3209,61 @@
       "ayah": 11,
       "surah_number": 6,
       "juz": 7,
-      "quality": "inferred",
+      "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.56,
+      "confidence": 0.812,
       "arabic_text": "قُلْ سِيرُوا۟ فِى ٱلْأَرْضِ ثُمَّ ٱنظُرُوا۟ كَيْفَ كَانَ عَٰقِبَةُ ٱلْمُكَذِّبِينَ",
       "english_text": "Say: \"Go all over the earth, and behold what happened in the end to those who gave the lie to the truth!\"",
       "start_time": 3624,
-      "end_time": 3624,
-      "matched_token_indices": null
+      "end_time": 3632,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ]
     },
     {
-      "time": 3636,
+      "time": 3633,
       "surah": "Al-An'aam",
       "ayah": 12,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.836,
+      "confidence": 0.719,
       "arabic_text": "قُل لِّمَن مَّا فِى ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ ۖ قُل لِّلَّهِ ۚ كَتَبَ عَلَىٰ نَفْسِهِ ٱلرَّحْمَةَ ۚ لَيَجْمَعَنَّكُمْ إِلَىٰ يَوْمِ ٱلْقِيَٰمَةِ لَا رَيْبَ فِيهِ ۚ ٱلَّذِينَ خَسِرُوٓا۟ أَنفُسَهُمْ فَهُمْ لَا يُؤْمِنُونَ",
       "english_text": "Say: \"Unto whom belongs all that is in the heavens and on earth?\" Say: \"Unto God, who has willed upon Himself the law of grace and mercy. He will assuredly gather you all together on the Day of Resurrection, [the coming of] which is beyond all doubt: yet those who have squandered their own selves-it is they who refuse to believe [in Him],",
-      "start_time": 3636,
-      "end_time": 3656,
+      "start_time": 3633,
+      "end_time": 3655,
       "matched_token_indices": [
         [
           0,
@@ -3062,7 +3300,7 @@
       ]
     },
     {
-      "time": 3657,
+      "time": 3656,
       "surah": "Al-An'aam",
       "ayah": 13,
       "surah_number": 6,
@@ -3072,7 +3310,7 @@
       "confidence": 0.599,
       "arabic_text": "۞ وَلَهُۥ مَا سَكَنَ فِى ٱلَّيْلِ وَٱلنَّهَارِ ۚ وَهُوَ ٱلسَّمِيعُ ٱلْعَلِيمُ",
       "english_text": "although His is all that dwells in the night and the day, and He alone is all-hearing, all-knowing.",
-      "start_time": 3657,
+      "start_time": 3656,
       "end_time": 3663,
       "matched_token_indices": [
         [
@@ -3141,7 +3379,7 @@
       "arabic_text": "قُلْ إِنِّىٓ أَخَافُ إِنْ عَصَيْتُ رَبِّى عَذَابَ يَوْمٍ عَظِيمٍۢ",
       "english_text": "Say: \"Behold, I would dread, were I [thus] to rebel against my Sustainer, the suffering [which would befall me] on that awesome Day [of Judgment].\"",
       "start_time": 3686,
-      "end_time": 3694,
+      "end_time": 3693,
       "matched_token_indices": [
         [
           0,
@@ -3182,59 +3420,22 @@
       ]
     },
     {
-      "time": 3695,
+      "time": 3694,
       "surah": "Al-An'aam",
       "ayah": 16,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.753,
+      "confidence": 0.885,
       "arabic_text": "مَّن يُصْرَفْ عَنْهُ يَوْمَئِذٍۢ فَقَدْ رَحِمَهُۥ ۚ وَذَٰلِكَ ٱلْفَوْزُ ٱلْمُبِينُ",
       "english_text": "Upon him who shall be spared on that Day, He will indeed have bestowed His grace: and this will be a manifest triumph.",
-      "start_time": 3695,
-      "end_time": 3712,
-      "matched_token_indices": [
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          3,
-          3
-        ],
-        [
-          4,
-          4
-        ],
-        [
-          5,
-          5
-        ],
-        [
-          6,
-          6
-        ],
-        [
-          7,
-          7
-        ],
-        [
-          8,
-          8
-        ]
-      ]
+      "start_time": 3694,
+      "end_time": 3711,
+      "matched_token_indices": null
     },
     {
-      "time": 3713,
+      "time": 3712,
       "surah": "Al-An'aam",
       "ayah": 17,
       "surah_number": 6,
@@ -3244,7 +3445,7 @@
       "confidence": 0.724,
       "arabic_text": "وَإِن يَمْسَسْكَ ٱللَّهُ بِضُرٍّۢ فَلَا كَاشِفَ لَهُۥٓ إِلَّا هُوَ ۖ وَإِن يَمْسَسْكَ بِخَيْرٍۢ فَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ",
       "english_text": "And if God should touch thee with misfortune, there is none who could remove it but He; and if He should touch thee with good fortune -it is He who has the power to will anything:",
-      "start_time": 3713,
+      "start_time": 3712,
       "end_time": 3727,
       "matched_token_indices": [
         [
@@ -3325,41 +3526,12 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.753,
+      "confidence": 0.976,
       "arabic_text": "وَهُوَ ٱلْقَاهِرُ فَوْقَ عِبَادِهِۦ ۚ وَهُوَ ٱلْحَكِيمُ ٱلْخَبِيرُ",
       "english_text": "for He alone holds sway over His creatures, and He alone is truly wise, all-aware.",
       "start_time": 3728,
       "end_time": 3734,
-      "matched_token_indices": [
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          3,
-          3
-        ],
-        [
-          4,
-          4
-        ],
-        [
-          5,
-          5
-        ],
-        [
-          6,
-          6
-        ]
-      ]
+      "matched_token_indices": null
     },
     {
       "time": 3735,
@@ -3421,7 +3593,7 @@
       "arabic_text": "ٱلَّذِينَ ءَاتَيْنَٰهُمُ ٱلْكِتَٰبَ يَعْرِفُونَهُۥ كَمَا يَعْرِفُونَ أَبْنَآءَهُمُ ۘ ٱلَّذِينَ خَسِرُوٓا۟ أَنفُسَهُمْ فَهُمْ لَا يُؤْمِنُونَ",
       "english_text": "They unto whom we have vouchsafed revelation aforetime know this as they know their own children; yet those [of them] who have squandered their own selves -it is they who refuse to believe.",
       "start_time": 3774,
-      "end_time": 3947,
+      "end_time": 3790,
       "matched_token_indices": [
         [
           0,
@@ -3458,7 +3630,7 @@
       ]
     },
     {
-      "time": 3948,
+      "time": 3955,
       "surah": "Al-An'aam",
       "ayah": 21,
       "surah_number": 6,
@@ -3468,8 +3640,8 @@
       "confidence": 0.647,
       "arabic_text": "وَمَنْ أَظْلَمُ مِمَّنِ ٱفْتَرَىٰ عَلَى ٱللَّهِ كَذِبًا أَوْ كَذَّبَ بِـَٔايَٰتِهِۦٓ ۗ إِنَّهُۥ لَا يُفْلِحُ ٱلظَّٰلِمُونَ",
       "english_text": "And who could be more wicked than he who attributes his own lying inventions to God or gives the lie to His messages? Verily, such evildoers will never attain to a happy state:",
-      "start_time": 3948,
-      "end_time": 3968,
+      "start_time": 3955,
+      "end_time": 3967,
       "matched_token_indices": [
         [
           0,
@@ -3494,7 +3666,7 @@
       ]
     },
     {
-      "time": 3969,
+      "time": 3968,
       "surah": "Al-An'aam",
       "ayah": 22,
       "surah_number": 6,
@@ -3504,7 +3676,7 @@
       "confidence": 0.688,
       "arabic_text": "وَيَوْمَ نَحْشُرُهُمْ جَمِيعًۭا ثُمَّ نَقُولُ لِلَّذِينَ أَشْرَكُوٓا۟ أَيْنَ شُرَكَآؤُكُمُ ٱلَّذِينَ كُنتُمْ تَزْعُمُونَ",
       "english_text": "for one Day We shall gather them all together, and then We shall say unto those who ascribed divinity to aught beside God: \"Where, now, are those beings whom you imagined to have a share in God's divinity?\"",
-      "start_time": 3969,
+      "start_time": 3968,
       "end_time": 3981,
       "matched_token_indices": [
         [
@@ -3549,7 +3721,7 @@
       "arabic_text": "ثُمَّ لَمْ تَكُن فِتْنَتُهُمْ إِلَّآ أَن قَالُوا۟ وَٱللَّهِ رَبِّنَا مَا كُنَّا مُشْرِكِينَ",
       "english_text": "Whereupon, in their utter confusion, they will only [be able to] say: \"By God, our Sustainer, we did not [mean to] ascribe divinity to aught beside Him!\"",
       "start_time": 3982,
-      "end_time": 3993,
+      "end_time": 3992,
       "matched_token_indices": [
         [
           0,
@@ -3602,60 +3774,19 @@
       ]
     },
     {
-      "time": 3994,
+      "time": 3993,
       "surah": "Al-An'aam",
       "ayah": 24,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.753,
+      "confidence": 0.926,
       "arabic_text": "ٱنظُرْ كَيْفَ كَذَبُوا۟ عَلَىٰٓ أَنفُسِهِمْ ۚ وَضَلَّ عَنْهُم مَّا كَانُوا۟ يَفْتَرُونَ",
       "english_text": "Behold how they have lied to themselves -and [how] their false imagery has forsaken them!",
-      "start_time": 3994,
+      "start_time": 3993,
       "end_time": 4003,
-      "matched_token_indices": [
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          2,
-          2
-        ],
-        [
-          3,
-          3
-        ],
-        [
-          4,
-          4
-        ],
-        [
-          5,
-          5
-        ],
-        [
-          6,
-          6
-        ],
-        [
-          7,
-          7
-        ],
-        [
-          8,
-          8
-        ],
-        [
-          9,
-          9
-        ]
-      ]
+      "matched_token_indices": null
     },
     {
       "time": 4004,
@@ -3761,70 +3892,26 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.603,
+      "confidence": 0.645,
       "arabic_text": "وَلَوْ تَرَىٰٓ إِذْ وُقِفُوا۟ عَلَى ٱلنَّارِ فَقَالُوا۟ يَٰلَيْتَنَا نُرَدُّ وَلَا نُكَذِّبَ بِـَٔايَٰتِ رَبِّنَا وَنَكُونَ مِنَ ٱلْمُؤْمِنِينَ",
       "english_text": "If thou couldst but see [them] when they will be made to stand before the fire and will say, \"Oh, would that we were brought back [to life]: then we would not give the lie to our Sustainer's messages, but would be among the believers!\"",
       "start_time": 4047,
       "end_time": 4065,
       "matched_token_indices": [
         [
-          11,
-          0
-        ],
-        [
-          12,
-          1
-        ],
-        [
-          13,
-          3
-        ],
-        [
-          14,
-          4
-        ],
-        [
-          15,
-          5
-        ],
-        [
-          16,
-          6
-        ],
-        [
-          18,
-          7
-        ],
-        [
-          19,
-          8
-        ],
-        [
-          20,
-          9
-        ],
-        [
-          21,
-          10
-        ],
-        [
-          22,
-          11
-        ],
-        [
-          23,
+          0,
           12
         ],
         [
-          24,
+          1,
           13
         ],
         [
-          25,
+          2,
           14
         ],
         [
-          26,
+          3,
           15
         ]
       ]
@@ -3837,126 +3924,61 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.716,
+      "confidence": 0.796,
       "arabic_text": "بَلْ بَدَا لَهُم مَّا كَانُوا۟ يُخْفُونَ مِن قَبْلُ ۖ وَلَوْ رُدُّوا۟ لَعَادُوا۟ لِمَا نُهُوا۟ عَنْهُ وَإِنَّهُمْ لَكَٰذِبُونَ",
       "english_text": "But nay -[they will say this only because] the truth which they used to conceal [from themselves] in the past will have become obvious to them; and if they were brought back [to life], they would return to the very thing which was forbidden to them: for behold, they are indeed liars!",
       "start_time": 4066,
-      "end_time": 4079,
-      "matched_token_indices": [
-        [
-          16,
-          0
-        ],
-        [
-          17,
-          1
-        ],
-        [
-          18,
-          2
-        ],
-        [
-          19,
-          3
-        ],
-        [
-          20,
-          4
-        ],
-        [
-          21,
-          5
-        ],
-        [
-          22,
-          6
-        ],
-        [
-          23,
-          7
-        ],
-        [
-          24,
-          8
-        ],
-        [
-          25,
-          9
-        ],
-        [
-          26,
-          10
-        ],
-        [
-          27,
-          11
-        ],
-        [
-          28,
-          12
-        ],
-        [
-          29,
-          13
-        ],
-        [
-          30,
-          14
-        ],
-        [
-          31,
-          15
-        ]
-      ]
+      "end_time": 4078,
+      "matched_token_indices": null
     },
     {
-      "time": 4080,
+      "time": 4079,
       "surah": "Al-An'aam",
       "ayah": 29,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.755,
+      "confidence": 0.684,
       "arabic_text": "وَقَالُوٓا۟ إِنْ هِىَ إِلَّا حَيَاتُنَا ٱلدُّنْيَا وَمَا نَحْنُ بِمَبْعُوثِينَ",
       "english_text": "And some [of the unbelievers] say, \"There is nothing beyond our life in this world, for We shall not be raised from the dead.\"",
-      "start_time": 4080,
+      "start_time": 4079,
       "end_time": 4092,
       "matched_token_indices": [
         [
-          16,
+          0,
           0
         ],
         [
-          17,
+          1,
           1
         ],
         [
-          18,
+          2,
           2
         ],
         [
-          19,
+          3,
           3
         ],
         [
-          20,
+          4,
           4
         ],
         [
-          21,
+          5,
           5
         ],
         [
-          22,
+          6,
           6
         ],
         [
-          23,
+          7,
           7
         ],
         [
-          24,
+          8,
           8
         ]
       ]
@@ -3969,90 +3991,78 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.661,
+      "confidence": 0.787,
       "arabic_text": "وَلَوْ تَرَىٰٓ إِذْ وُقِفُوا۟ عَلَىٰ رَبِّهِمْ ۚ قَالَ أَلَيْسَ هَٰذَا بِٱلْحَقِّ ۚ قَالُوا۟ بَلَىٰ وَرَبِّنَا ۚ قَالَ فَذُوقُوا۟ ٱلْعَذَابَ بِمَا كُنتُمْ تَكْفُرُونَ",
       "english_text": "If thou couldst but see [them] when they shall be made to stand before their Sustainer [and] He will say, \"Is not this the truth?\" They will answer: \"Yea, indeed, by our Sustainer!\" [Whereupon] He will say: \"Taste, then, the suffering that comes from your having refused to acknowledge the truth!\"",
       "start_time": 4093,
-      "end_time": 4216,
+      "end_time": 4215,
       "matched_token_indices": [
         [
           0,
-          3
+          13
         ],
         [
           1,
-          4
+          14
         ],
         [
           2,
-          5
+          15
         ],
         [
           3,
-          6
+          16
         ],
         [
           4,
-          7
-        ],
-        [
-          5,
-          8
-        ],
-        [
-          6,
-          9
-        ],
-        [
-          7,
-          13
+          17
         ]
       ]
     },
     {
-      "time": 4217,
+      "time": 4216,
       "surah": "Al-An'aam",
       "ayah": 31,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.699,
+      "confidence": 0.831,
       "arabic_text": "قَدْ خَسِرَ ٱلَّذِينَ كَذَّبُوا۟ بِلِقَآءِ ٱللَّهِ ۖ حَتَّىٰٓ إِذَا جَآءَتْهُمُ ٱلسَّاعَةُ بَغْتَةًۭ قَالُوا۟ يَٰحَسْرَتَنَا عَلَىٰ مَا فَرَّطْنَا فِيهَا وَهُمْ يَحْمِلُونَ أَوْزَارَهُمْ عَلَىٰ ظُهُورِهِمْ ۚ أَلَا سَآءَ مَا يَزِرُونَ",
       "english_text": "Lost indeed are they who consider it a lie that they will have to meet God -till the Last Hour suddenly comes upon them, [and] they cry, \"Alas for us, that we disregarded it!\" - for they shall bear on their backs the burden of their sins: oh, how evil the load with which they shall be burdened!",
-      "start_time": 4217,
-      "end_time": 4251,
+      "start_time": 4216,
+      "end_time": 4250,
       "matched_token_indices": [
         [
           0,
-          0
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          2,
           2
         ],
         [
-          3,
+          1,
           3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          5
         ]
       ]
     },
     {
-      "time": 4252,
+      "time": 4251,
       "surah": "Al-An'aam",
       "ayah": 32,
       "surah_number": 6,
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.727,
+      "confidence": 0.755,
       "arabic_text": "وَمَا ٱلْحَيَوٰةُ ٱلدُّنْيَآ إِلَّا لَعِبٌۭ وَلَهْوٌۭ ۖ وَلَلدَّارُ ٱلْءَاخِرَةُ خَيْرٌۭ لِّلَّذِينَ يَتَّقُونَ ۗ أَفَلَا تَعْقِلُونَ",
       "english_text": "And nothing is the life of this world but a play and a passing delight; and the life in the hereafter is by far the better for all who are conscious of God. Will you not, then, use your reason?",
-      "start_time": 4252,
+      "start_time": 4251,
       "end_time": 4265,
       "matched_token_indices": [
         [
@@ -4085,7 +4095,7 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.81,
+      "confidence": 0.787,
       "arabic_text": "قَدْ نَعْلَمُ إِنَّهُۥ لَيَحْزُنُكَ ٱلَّذِى يَقُولُونَ ۖ فَإِنَّهُمْ لَا يُكَذِّبُونَكَ وَلَٰكِنَّ ٱلظَّٰلِمِينَ بِـَٔايَٰتِ ٱللَّهِ يَجْحَدُونَ",
       "english_text": "Well do We know that what such people say grieves thee indeed: yet, behold, it is not thee to whom they give the lie, but God's messages do these evildoers deny.",
       "start_time": 4266,
@@ -4093,35 +4103,15 @@
       "matched_token_indices": [
         [
           0,
-          0
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          2,
           2
         ],
         [
-          3,
-          3
-        ],
-        [
-          4,
-          4
-        ],
-        [
-          5,
-          5
-        ],
-        [
-          6,
-          6
-        ],
-        [
-          7,
+          1,
           7
+        ],
+        [
+          2,
+          8
         ]
       ]
     },
@@ -4133,43 +4123,99 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.74,
+      "confidence": 0.657,
       "arabic_text": "وَلَقَدْ كُذِّبَتْ رُسُلٌۭ مِّن قَبْلِكَ فَصَبَرُوا۟ عَلَىٰ مَا كُذِّبُوا۟ وَأُوذُوا۟ حَتَّىٰٓ أَتَىٰهُمْ نَصْرُنَا ۚ وَلَا مُبَدِّلَ لِكَلِمَٰتِ ٱللَّهِ ۚ وَلَقَدْ جَآءَكَ مِن نَّبَإِى۟ ٱلْمُرْسَلِينَ",
       "english_text": "And, indeed, [even] before thy time have apostles been given the lie, and they endured with patience all those charges of falsehood, and all the hurt done to them, till succour came unto them from Us: for there is no power that could alter [the outcome of] God's promises. And some of the histories of those apostles have already come within thy ken.",
       "start_time": 4288,
       "end_time": 4311,
       "matched_token_indices": [
         [
-          0,
+          5,
           0
         ],
         [
-          1,
+          6,
           1
         ],
         [
-          2,
+          7,
           2
         ],
         [
-          3,
+          8,
           3
         ],
         [
-          4,
+          9,
           4
         ],
         [
-          5,
+          10,
           5
         ],
         [
-          6,
+          11,
           6
         ],
         [
-          7,
+          12,
           7
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          12
+        ],
+        [
+          18,
+          13
+        ],
+        [
+          19,
+          14
+        ],
+        [
+          20,
+          15
+        ],
+        [
+          21,
+          16
+        ],
+        [
+          22,
+          17
+        ],
+        [
+          23,
+          18
+        ],
+        [
+          24,
+          19
+        ],
+        [
+          25,
+          20
+        ],
+        [
+          26,
+          21
         ]
       ]
     },
@@ -4181,43 +4227,123 @@
       "juz": 7,
       "quality": "high",
       "reciter": "Hasan",
-      "confidence": 0.777,
+      "confidence": 0.592,
       "arabic_text": "وَإِن كَانَ كَبُرَ عَلَيْكَ إِعْرَاضُهُمْ فَإِنِ ٱسْتَطَعْتَ أَن تَبْتَغِىَ نَفَقًۭا فِى ٱلْأَرْضِ أَوْ سُلَّمًۭا فِى ٱلسَّمَآءِ فَتَأْتِيَهُم بِـَٔايَةٍۢ ۚ وَلَوْ شَآءَ ٱللَّهُ لَجَمَعَهُمْ عَلَى ٱلْهُدَىٰ ۚ فَلَا تَكُونَنَّ مِنَ ٱلْجَٰهِلِينَ",
       "english_text": "And if it distress thee that those who deny the truth turn their backs on thee - why, then, if thou art able to go down deep into the earth or to ascend a ladder unto heaven in order to bring them a [yet more convincing] message, [do so;] but [remember that] had God so willed, He would indeed have gathered them all unto [His] guidance. Do not, therefore, allow thyself to ignore [God's ways].",
       "start_time": 4312,
-      "end_time": 4349,
+      "end_time": 4328,
       "matched_token_indices": [
         [
-          0,
+          22,
           0
         ],
         [
-          1,
+          23,
           1
         ],
         [
-          2,
+          24,
           2
         ],
         [
-          3,
+          25,
           3
         ],
         [
-          4,
+          26,
           4
         ],
         [
-          5,
+          27,
           5
         ],
         [
-          6,
+          28,
           6
         ],
         [
-          7,
+          29,
           7
+        ],
+        [
+          30,
+          8
+        ],
+        [
+          31,
+          9
+        ],
+        [
+          32,
+          10
+        ],
+        [
+          33,
+          11
+        ],
+        [
+          34,
+          12
+        ],
+        [
+          37,
+          13
+        ],
+        [
+          42,
+          14
+        ],
+        [
+          43,
+          15
+        ],
+        [
+          44,
+          16
+        ],
+        [
+          45,
+          17
+        ],
+        [
+          46,
+          18
+        ],
+        [
+          47,
+          19
+        ],
+        [
+          48,
+          20
+        ],
+        [
+          49,
+          21
+        ],
+        [
+          50,
+          22
+        ],
+        [
+          51,
+          23
+        ],
+        [
+          52,
+          24
+        ],
+        [
+          53,
+          25
+        ],
+        [
+          55,
+          26
+        ],
+        [
+          56,
+          27
         ]
       ]
     },
@@ -4233,26 +4359,35 @@
       "arabic_text": "۞ إِنَّمَا يَسْتَجِيبُ ٱلَّذِينَ يَسْمَعُونَ ۘ وَٱلْمَوْتَىٰ يَبْعَثُهُمُ ٱللَّهُ ثُمَّ إِلَيْهِ يُرْجَعُونَ",
       "english_text": "Only they who listen [with their hearts] can respond to a call; and as for the dead [of heart], God [alone] can raise them from the dead, whereupon unto Him they shall return.",
       "start_time": 5048,
-      "end_time": 5062,
-      "matched_token_indices": null
+      "end_time": 5064,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
     },
     {
-      "time": 5085,
+      "time": 5079,
       "surah": "Al-An'aam",
       "ayah": 37,
       "surah_number": 6,
       "juz": 7,
-      "quality": "inferred",
+      "quality": "ambiguous",
       "reciter": "Samir",
-      "confidence": 0.56,
+      "confidence": 0.671,
       "arabic_text": "وَقَالُوا۟ لَوْلَا نُزِّلَ عَلَيْهِ ءَايَةٌۭ مِّن رَّبِّهِۦ ۚ قُلْ إِنَّ ٱللَّهَ قَادِرٌ عَلَىٰٓ أَن يُنَزِّلَ ءَايَةًۭ وَلَٰكِنَّ أَكْثَرَهُمْ لَا يَعْلَمُونَ",
       "english_text": "And they say, \"Why has no miraculous sign been bestowed on him from on high by his Sustainer?\" Say: \"Behold, God has the power to bestow any sign from on high.\" Yet most human beings are unaware of this",
-      "start_time": 5085,
-      "end_time": 5085,
+      "start_time": 5079,
+      "end_time": 5095,
       "matched_token_indices": null
     },
     {
-      "time": 5122,
+      "time": 5116,
       "surah": "Al-An'aam",
       "ayah": 38,
       "surah_number": 6,
@@ -4262,12 +4397,12 @@
       "confidence": 0.56,
       "arabic_text": "وَمَا مِن دَآبَّةٍۢ فِى ٱلْأَرْضِ وَلَا طَٰٓئِرٍۢ يَطِيرُ بِجَنَاحَيْهِ إِلَّآ أُمَمٌ أَمْثَالُكُم ۚ مَّا فَرَّطْنَا فِى ٱلْكِتَٰبِ مِن شَىْءٍۢ ۚ ثُمَّ إِلَىٰ رَبِّهِمْ يُحْشَرُونَ",
       "english_text": "although there is no beast that walks on earth and no bird that flies on its two wings which is not [God's] creature like yourselves: no single thing have We neglected in Our decree. And once again: Unto their Sustainer shall they [all] be gathered.",
-      "start_time": 5122,
-      "end_time": 5122,
+      "start_time": 5116,
+      "end_time": 5116,
       "matched_token_indices": null
     },
     {
-      "time": 5159,
+      "time": 5153,
       "surah": "Al-An'aam",
       "ayah": 39,
       "surah_number": 6,
@@ -4277,12 +4412,12 @@
       "confidence": 0.56,
       "arabic_text": "وَٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا صُمٌّۭ وَبُكْمٌۭ فِى ٱلظُّلُمَٰتِ ۗ مَن يَشَإِ ٱللَّهُ يُضْلِلْهُ وَمَن يَشَأْ يَجْعَلْهُ عَلَىٰ صِرَٰطٍۢ مُّسْتَقِيمٍۢ",
       "english_text": "And they who give the lie to Our messages are deaf and dumb, in darkness deep. Whomever God wills, He lets go astray; and whomever He wills, He places upon a straight way.",
-      "start_time": 5159,
-      "end_time": 5159,
+      "start_time": 5153,
+      "end_time": 5153,
       "matched_token_indices": null
     },
     {
-      "time": 5196,
+      "time": 5190,
       "surah": "Al-An'aam",
       "ayah": 40,
       "surah_number": 6,
@@ -4292,12 +4427,12 @@
       "confidence": 0.56,
       "arabic_text": "قُلْ أَرَءَيْتَكُمْ إِنْ أَتَىٰكُمْ عَذَابُ ٱللَّهِ أَوْ أَتَتْكُمُ ٱلسَّاعَةُ أَغَيْرَ ٱللَّهِ تَدْعُونَ إِن كُنتُمْ صَٰدِقِينَ",
       "english_text": "Say: \"Can you see yourselves invoking any but God when God's chastisement befalls you [in this world], or the Last Hour comes upon you? [Tell me this,] if you are men of truth!",
-      "start_time": 5196,
-      "end_time": 5196,
+      "start_time": 5190,
+      "end_time": 5190,
       "matched_token_indices": null
     },
     {
-      "time": 5233,
+      "time": 5227,
       "surah": "Al-An'aam",
       "ayah": 41,
       "surah_number": 6,
@@ -4307,12 +4442,12 @@
       "confidence": 0.56,
       "arabic_text": "بَلْ إِيَّاهُ تَدْعُونَ فَيَكْشِفُ مَا تَدْعُونَ إِلَيْهِ إِن شَآءَ وَتَنسَوْنَ مَا تُشْرِكُونَ",
       "english_text": "Nay, but it is Him alone that you will invoke - whereupon He may, if He so wills, remove that [ill] which caused you to call unto Him; and you will have forgotten all that. to which you [now] ascribe divinity side by side with Him.\"",
-      "start_time": 5233,
-      "end_time": 5233,
+      "start_time": 5227,
+      "end_time": 5227,
       "matched_token_indices": null
     },
     {
-      "time": 5270,
+      "time": 5264,
       "surah": "Al-An'aam",
       "ayah": 42,
       "surah_number": 6,
@@ -4322,12 +4457,12 @@
       "confidence": 0.56,
       "arabic_text": "وَلَقَدْ أَرْسَلْنَآ إِلَىٰٓ أُمَمٍۢ مِّن قَبْلِكَ فَأَخَذْنَٰهُم بِٱلْبَأْسَآءِ وَٱلضَّرَّآءِ لَعَلَّهُمْ يَتَضَرَّعُونَ",
       "english_text": "And, indeed, We sent Our messages unto people before thy time, [O Prophet,] and visited them with misfortune and hardship so that they might humble themselves:",
-      "start_time": 5270,
-      "end_time": 5270,
+      "start_time": 5264,
+      "end_time": 5264,
       "matched_token_indices": null
     },
     {
-      "time": 5307,
+      "time": 5301,
       "surah": "Al-An'aam",
       "ayah": 43,
       "surah_number": 6,
@@ -4337,12 +4472,12 @@
       "confidence": 0.56,
       "arabic_text": "فَلَوْلَآ إِذْ جَآءَهُم بَأْسُنَا تَضَرَّعُوا۟ وَلَٰكِن قَسَتْ قُلُوبُهُمْ وَزَيَّنَ لَهُمُ ٱلشَّيْطَٰنُ مَا كَانُوا۟ يَعْمَلُونَ",
       "english_text": "yet when the misfortune decreed by Us befell them, they did not humble themselves, but rather their hearts grew hard, for Satan had made all their doings seem goodly to them.",
-      "start_time": 5307,
-      "end_time": 5307,
+      "start_time": 5301,
+      "end_time": 5301,
       "matched_token_indices": null
     },
     {
-      "time": 5344,
+      "time": 5338,
       "surah": "Al-An'aam",
       "ayah": 44,
       "surah_number": 6,
@@ -4352,12 +4487,12 @@
       "confidence": 0.56,
       "arabic_text": "فَلَمَّا نَسُوا۟ مَا ذُكِّرُوا۟ بِهِۦ فَتَحْنَا عَلَيْهِمْ أَبْوَٰبَ كُلِّ شَىْءٍ حَتَّىٰٓ إِذَا فَرِحُوا۟ بِمَآ أُوتُوٓا۟ أَخَذْنَٰهُم بَغْتَةًۭ فَإِذَا هُم مُّبْلِسُونَ",
       "english_text": "Then, when they had forgotten all that they had been told to take to heart, We threw open to them the gates of all [good] things until -even as they were rejoicing in what they had been granted - We suddenly took them to task: and lo! they were broken in spirit;",
-      "start_time": 5344,
-      "end_time": 5344,
+      "start_time": 5338,
+      "end_time": 5338,
       "matched_token_indices": null
     },
     {
-      "time": 5381,
+      "time": 5375,
       "surah": "Al-An'aam",
       "ayah": 45,
       "surah_number": 6,
@@ -4367,12 +4502,12 @@
       "confidence": 0.56,
       "arabic_text": "فَقُطِعَ دَابِرُ ٱلْقَوْمِ ٱلَّذِينَ ظَلَمُوا۟ ۚ وَٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ",
       "english_text": "and [in the end,] the last remnant of those folk who had been bent on evildoing was wiped out. For all praise is due to God, the Sustainer of all the worlds.",
-      "start_time": 5381,
-      "end_time": 5381,
+      "start_time": 5375,
+      "end_time": 5375,
       "matched_token_indices": null
     },
     {
-      "time": 5418,
+      "time": 5412,
       "surah": "Al-An'aam",
       "ayah": 46,
       "surah_number": 6,
@@ -4382,12 +4517,12 @@
       "confidence": 0.56,
       "arabic_text": "قُلْ أَرَءَيْتُمْ إِنْ أَخَذَ ٱللَّهُ سَمْعَكُمْ وَأَبْصَٰرَكُمْ وَخَتَمَ عَلَىٰ قُلُوبِكُم مَّنْ إِلَٰهٌ غَيْرُ ٱللَّهِ يَأْتِيكُم بِهِ ۗ ٱنظُرْ كَيْفَ نُصَرِّفُ ٱلْءَايَٰتِ ثُمَّ هُمْ يَصْدِفُونَ",
       "english_text": "Say: \"What do you think? If God should take away your hearing and your sight and seal your hearts - what deity but God is there that could bring it all back to you?\" Behold how many facets we give to our messages-and yet they turn away in disdain!",
-      "start_time": 5418,
-      "end_time": 5418,
+      "start_time": 5412,
+      "end_time": 5412,
       "matched_token_indices": null
     },
     {
-      "time": 5455,
+      "time": 5449,
       "surah": "Al-An'aam",
       "ayah": 47,
       "surah_number": 6,
@@ -4397,12 +4532,12 @@
       "confidence": 0.56,
       "arabic_text": "قُلْ أَرَءَيْتَكُمْ إِنْ أَتَىٰكُمْ عَذَابُ ٱللَّهِ بَغْتَةً أَوْ جَهْرَةً هَلْ يُهْلَكُ إِلَّا ٱلْقَوْمُ ٱلظَّٰلِمُونَ",
       "english_text": "Say: \"Can you imagine what your condition will be if God's chastisement befalls you, either suddenly or in a [gradually] perceptible manner? [But then-] will any but evildoing folk [ever] be destroyed?",
-      "start_time": 5455,
-      "end_time": 5455,
+      "start_time": 5449,
+      "end_time": 5449,
       "matched_token_indices": null
     },
     {
-      "time": 5492,
+      "time": 5486,
       "surah": "Al-An'aam",
       "ayah": 48,
       "surah_number": 6,
@@ -4412,12 +4547,12 @@
       "confidence": 0.56,
       "arabic_text": "وَمَا نُرْسِلُ ٱلْمُرْسَلِينَ إِلَّا مُبَشِّرِينَ وَمُنذِرِينَ ۖ فَمَنْ ءَامَنَ وَأَصْلَحَ فَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
       "english_text": "And We send [Our] message-bearers only as heralds of glad tidings and as warners: hence, all who believe and live righteously -no fear need they have, and neither shall they grieve;",
-      "start_time": 5492,
-      "end_time": 5492,
+      "start_time": 5486,
+      "end_time": 5486,
       "matched_token_indices": null
     },
     {
-      "time": 5529,
+      "time": 5523,
       "surah": "Al-An'aam",
       "ayah": 49,
       "surah_number": 6,
@@ -4427,12 +4562,12 @@
       "confidence": 0.56,
       "arabic_text": "وَٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا يَمَسُّهُمُ ٱلْعَذَابُ بِمَا كَانُوا۟ يَفْسُقُونَ",
       "english_text": "whereas those who give the lie to Our messages - suffering will afflict them in result of all their sinful doings.",
-      "start_time": 5529,
-      "end_time": 5529,
+      "start_time": 5523,
+      "end_time": 5523,
       "matched_token_indices": null
     },
     {
-      "time": 5566,
+      "time": 5560,
       "surah": "Al-An'aam",
       "ayah": 50,
       "surah_number": 6,
@@ -4442,12 +4577,12 @@
       "confidence": 0.56,
       "arabic_text": "قُل لَّآ أَقُولُ لَكُمْ عِندِى خَزَآئِنُ ٱللَّهِ وَلَآ أَعْلَمُ ٱلْغَيْبَ وَلَآ أَقُولُ لَكُمْ إِنِّى مَلَكٌ ۖ إِنْ أَتَّبِعُ إِلَّا مَا يُوحَىٰٓ إِلَىَّ ۚ قُلْ هَلْ يَسْتَوِى ٱلْأَعْمَىٰ وَٱلْبَصِيرُ ۚ أَفَلَا تَتَفَكَّرُونَ",
       "english_text": "Say [O Prophet]: \"I do not say unto you, 'God's treasures are with me,'; nor [do I say], 'I know the things that are beyond the reach of human perception'; nor do I say unto you, 'Behold, I am an angel': I but follow what is revealed to me.\" Say: \"Can the blind and the seeing be deemed equal? Will you not, then, take thought?\"",
-      "start_time": 5566,
-      "end_time": 5566,
+      "start_time": 5560,
+      "end_time": 5560,
       "matched_token_indices": null
     },
     {
-      "time": 5603,
+      "time": 5597,
       "surah": "Al-An'aam",
       "ayah": 51,
       "surah_number": 6,
@@ -4457,12 +4592,12 @@
       "confidence": 0.56,
       "arabic_text": "وَأَنذِرْ بِهِ ٱلَّذِينَ يَخَافُونَ أَن يُحْشَرُوٓا۟ إِلَىٰ رَبِّهِمْ ۙ لَيْسَ لَهُم مِّن دُونِهِۦ وَلِىٌّۭ وَلَا شَفِيعٌۭ لَّعَلَّهُمْ يَتَّقُونَ",
       "english_text": "And warn hereby those who fear lest they be gathered unto their Sustainer with none to protect them from Him or to intercede with Him, so that they might become [fully] conscious of Him.",
-      "start_time": 5603,
-      "end_time": 5603,
+      "start_time": 5597,
+      "end_time": 5597,
       "matched_token_indices": null
     },
     {
-      "time": 5640,
+      "time": 5634,
       "surah": "Al-An'aam",
       "ayah": 52,
       "surah_number": 6,
@@ -4472,12 +4607,12 @@
       "confidence": 0.56,
       "arabic_text": "وَلَا تَطْرُدِ ٱلَّذِينَ يَدْعُونَ رَبَّهُم بِٱلْغَدَوٰةِ وَٱلْعَشِىِّ يُرِيدُونَ وَجْهَهُۥ ۖ مَا عَلَيْكَ مِنْ حِسَابِهِم مِّن شَىْءٍۢ وَمَا مِنْ حِسَابِكَ عَلَيْهِم مِّن شَىْءٍۢ فَتَطْرُدَهُمْ فَتَكُونَ مِنَ ٱلظَّٰلِمِينَ",
       "english_text": "Hence, repulse not [any of] those who at morn and evening invoke their Sustainer, seeking His countenance. Thou art in no wise accountable for them-just as they are in no wise accountable for thee -and thou hast therefore no right to repulse them: for then thou wouldst be among the evildoers.",
-      "start_time": 5640,
-      "end_time": 5640,
+      "start_time": 5634,
+      "end_time": 5634,
       "matched_token_indices": null
     },
     {
-      "time": 5677,
+      "time": 5671,
       "surah": "Al-An'aam",
       "ayah": 53,
       "surah_number": 6,
@@ -4487,12 +4622,12 @@
       "confidence": 0.56,
       "arabic_text": "وَكَذَٰلِكَ فَتَنَّا بَعْضَهُم بِبَعْضٍۢ لِّيَقُولُوٓا۟ أَهَٰٓؤُلَآءِ مَنَّ ٱللَّهُ عَلَيْهِم مِّنۢ بَيْنِنَآ ۗ أَلَيْسَ ٱللَّهُ بِأَعْلَمَ بِٱلشَّٰكِرِينَ",
       "english_text": "For it is in this way that We try men through one another - to the end that they might ask, \"Has God, then, bestowed His favour upon those others in preference to us?\" Does not God know best as to who is grateful [to Him]?",
-      "start_time": 5677,
-      "end_time": 5677,
+      "start_time": 5671,
+      "end_time": 5671,
       "matched_token_indices": null
     },
     {
-      "time": 5714,
+      "time": 5708,
       "surah": "Al-An'aam",
       "ayah": 54,
       "surah_number": 6,
@@ -4502,12 +4637,12 @@
       "confidence": 0.56,
       "arabic_text": "وَإِذَا جَآءَكَ ٱلَّذِينَ يُؤْمِنُونَ بِـَٔايَٰتِنَا فَقُلْ سَلَٰمٌ عَلَيْكُمْ ۖ كَتَبَ رَبُّكُمْ عَلَىٰ نَفْسِهِ ٱلرَّحْمَةَ ۖ أَنَّهُۥ مَنْ عَمِلَ مِنكُمْ سُوٓءًۢا بِجَهَٰلَةٍۢ ثُمَّ تَابَ مِنۢ بَعْدِهِۦ وَأَصْلَحَ فَأَنَّهُۥ غَفُورٌۭ رَّحِيمٌۭ",
       "english_text": "And when those who believe in Our messages come unto thee, say: \"Peace be upon you. Your Sustainer has willed upon Himself the law of grace and mercy - so that if any of you does a bad deed out of ignorance, and thereafter repents and lives righteously, He shall be [found] much-forgiving, a dispenser of grace.\"",
-      "start_time": 5714,
-      "end_time": 5714,
+      "start_time": 5708,
+      "end_time": 5708,
       "matched_token_indices": null
     },
     {
-      "time": 5751,
+      "time": 5745,
       "surah": "Al-An'aam",
       "ayah": 55,
       "surah_number": 6,
@@ -4517,12 +4652,12 @@
       "confidence": 0.56,
       "arabic_text": "وَكَذَٰلِكَ نُفَصِّلُ ٱلْءَايَٰتِ وَلِتَسْتَبِينَ سَبِيلُ ٱلْمُجْرِمِينَ",
       "english_text": "And thus clearly do We spell out Our messages: and [We do it] so that the path of those who are lost in sin might be distinct [from that of the righteous].",
-      "start_time": 5751,
-      "end_time": 5751,
+      "start_time": 5745,
+      "end_time": 5745,
       "matched_token_indices": null
     },
     {
-      "time": 5788,
+      "time": 5782,
       "surah": "Al-An'aam",
       "ayah": 56,
       "surah_number": 6,
@@ -4532,12 +4667,12 @@
       "confidence": 0.56,
       "arabic_text": "قُلْ إِنِّى نُهِيتُ أَنْ أَعْبُدَ ٱلَّذِينَ تَدْعُونَ مِن دُونِ ٱللَّهِ ۚ قُل لَّآ أَتَّبِعُ أَهْوَآءَكُمْ ۙ قَدْ ضَلَلْتُ إِذًۭا وَمَآ أَنَا۠ مِنَ ٱلْمُهْتَدِينَ",
       "english_text": "SAY [to the deniers of the truth]: \"Behold, I have been forbidden to worship those [beings] whom you invoke instead of God.\" Say: \"I do not follow your errant views -or else I should have gone astray, and should not be among those who have found the right path.\"",
-      "start_time": 5788,
-      "end_time": 5788,
+      "start_time": 5782,
+      "end_time": 5782,
       "matched_token_indices": null
     },
     {
-      "time": 5825,
+      "time": 5819,
       "surah": "Al-An'aam",
       "ayah": 57,
       "surah_number": 6,
@@ -4547,12 +4682,12 @@
       "confidence": 0.56,
       "arabic_text": "قُلْ إِنِّى عَلَىٰ بَيِّنَةٍۢ مِّن رَّبِّى وَكَذَّبْتُم بِهِۦ ۚ مَا عِندِى مَا تَسْتَعْجِلُونَ بِهِۦٓ ۚ إِنِ ٱلْحُكْمُ إِلَّا لِلَّهِ ۖ يَقُصُّ ٱلْحَقَّ ۖ وَهُوَ خَيْرُ ٱلْفَٰصِلِينَ",
       "english_text": "Say: \"Behold, I take my stand on a clear evidence from my Sustainer-and [so] it is to Him that you are giving the lie! Not in my power is that which [in your ignorance] you so hastily demand: judgment rests with none but God. He shall declare the truth, since it is He who is the best judge between truth and falsehood.\"",
-      "start_time": 5825,
-      "end_time": 5825,
+      "start_time": 5819,
+      "end_time": 5819,
       "matched_token_indices": null
     },
     {
-      "time": 5862,
+      "time": 5856,
       "surah": "Al-An'aam",
       "ayah": 58,
       "surah_number": 6,
@@ -4562,12 +4697,12 @@
       "confidence": 0.56,
       "arabic_text": "قُل لَّوْ أَنَّ عِندِى مَا تَسْتَعْجِلُونَ بِهِۦ لَقُضِىَ ٱلْأَمْرُ بَيْنِى وَبَيْنَكُمْ ۗ وَٱللَّهُ أَعْلَمُ بِٱلظَّٰلِمِينَ",
       "english_text": "Say: \"If that which you so hastily demand were in my power, everything would indeed have been decided between me and you. But God knows best as to who is doing wrong.\"",
-      "start_time": 5862,
-      "end_time": 5862,
+      "start_time": 5856,
+      "end_time": 5856,
       "matched_token_indices": null
     },
     {
-      "time": 5899,
+      "time": 5894,
       "surah": "Al-An'aam",
       "ayah": 59,
       "surah_number": 6,
@@ -4577,12 +4712,12 @@
       "confidence": 0.56,
       "arabic_text": "۞ وَعِندَهُۥ مَفَاتِحُ ٱلْغَيْبِ لَا يَعْلَمُهَآ إِلَّا هُوَ ۚ وَيَعْلَمُ مَا فِى ٱلْبَرِّ وَٱلْبَحْرِ ۚ وَمَا تَسْقُطُ مِن وَرَقَةٍ إِلَّا يَعْلَمُهَا وَلَا حَبَّةٍۢ فِى ظُلُمَٰتِ ٱلْأَرْضِ وَلَا رَطْبٍۢ وَلَا يَابِسٍ إِلَّا فِى كِتَٰبٍۢ مُّبِينٍۢ",
       "english_text": "For, with Him are the keys to the things that are beyond the reach of a created being's perception: none knows them but He. And He knows all that is on land and in the sea; and not a leaf falls but He knows it; and neither is there a grain in the earth's deep darkness, nor anything: living or dead, but is recorded in [His] clear decree.",
-      "start_time": 5899,
-      "end_time": 5899,
+      "start_time": 5894,
+      "end_time": 5894,
       "matched_token_indices": null
     },
     {
-      "time": 5936,
+      "time": 5931,
       "surah": "Al-An'aam",
       "ayah": 60,
       "surah_number": 6,
@@ -4592,12 +4727,12 @@
       "confidence": 0.56,
       "arabic_text": "وَهُوَ ٱلَّذِى يَتَوَفَّىٰكُم بِٱلَّيْلِ وَيَعْلَمُ مَا جَرَحْتُم بِٱلنَّهَارِ ثُمَّ يَبْعَثُكُمْ فِيهِ لِيُقْضَىٰٓ أَجَلٌۭ مُّسَمًّۭى ۖ ثُمَّ إِلَيْهِ مَرْجِعُكُمْ ثُمَّ يُنَبِّئُكُم بِمَا كُنتُمْ تَعْمَلُونَ",
       "english_text": "And He it is who causes you to be [like] dead at night, and knows what you work in daytime; and He brings you back to life each days in order that a term set [by Him] be fulfilled. In the end, unto Him you must return: and then He will make you understand all that you were doing [in life].",
-      "start_time": 5936,
-      "end_time": 5936,
+      "start_time": 5931,
+      "end_time": 5931,
       "matched_token_indices": null
     },
     {
-      "time": 5973,
+      "time": 5968,
       "surah": "Al-An'aam",
       "ayah": 61,
       "surah_number": 6,
@@ -4607,12 +4742,12 @@
       "confidence": 0.56,
       "arabic_text": "وَهُوَ ٱلْقَاهِرُ فَوْقَ عِبَادِهِۦ ۖ وَيُرْسِلُ عَلَيْكُمْ حَفَظَةً حَتَّىٰٓ إِذَا جَآءَ أَحَدَكُمُ ٱلْمَوْتُ تَوَفَّتْهُ رُسُلُنَا وَهُمْ لَا يُفَرِّطُونَ",
       "english_text": "And He alone holds sway over His servants. And He sends forth heavenly forces to watch over you until, when death approaches any of you, Our messengers cause him to die: and they do not overlook [anyone].",
-      "start_time": 5973,
-      "end_time": 5973,
+      "start_time": 5968,
+      "end_time": 5968,
       "matched_token_indices": null
     },
     {
-      "time": 6010,
+      "time": 6006,
       "surah": "Al-An'aam",
       "ayah": 62,
       "surah_number": 6,
@@ -4622,12 +4757,12 @@
       "confidence": 0.56,
       "arabic_text": "ثُمَّ رُدُّوٓا۟ إِلَى ٱللَّهِ مَوْلَىٰهُمُ ٱلْحَقِّ ۚ أَلَا لَهُ ٱلْحُكْمُ وَهُوَ أَسْرَعُ ٱلْحَٰسِبِينَ",
       "english_text": "And they [who have died] are thereupon brought before God, their true Lord Supreme. Oh, verily, His alone is all judgment: and He is the swiftest of all reckoners!",
-      "start_time": 6010,
-      "end_time": 6010,
+      "start_time": 6006,
+      "end_time": 6006,
       "matched_token_indices": null
     },
     {
-      "time": 6047,
+      "time": 6044,
       "surah": "Al-An'aam",
       "ayah": 63,
       "surah_number": 6,
@@ -4637,12 +4772,12 @@
       "confidence": 0.56,
       "arabic_text": "قُلْ مَن يُنَجِّيكُم مِّن ظُلُمَٰتِ ٱلْبَرِّ وَٱلْبَحْرِ تَدْعُونَهُۥ تَضَرُّعًۭا وَخُفْيَةًۭ لَّئِنْ أَنجَىٰنَا مِنْ هَٰذِهِۦ لَنَكُونَنَّ مِنَ ٱلشَّٰكِرِينَ",
       "english_text": "Say: \"Who is it that saves you from the dark dangers of land and sea [when] you call unto Him humbly, and in the secrecy of your hearts, `If He will but save us from this [distress], we shall most certainly be among the grateful'?\"",
-      "start_time": 6047,
-      "end_time": 6047,
+      "start_time": 6044,
+      "end_time": 6044,
       "matched_token_indices": null
     },
     {
-      "time": 6084,
+      "time": 6081,
       "surah": "Al-An'aam",
       "ayah": 64,
       "surah_number": 6,
@@ -4652,12 +4787,12 @@
       "confidence": 0.56,
       "arabic_text": "قُلِ ٱللَّهُ يُنَجِّيكُم مِّنْهَا وَمِن كُلِّ كَرْبٍۢ ثُمَّ أَنتُمْ تُشْرِكُونَ",
       "english_text": "Say: \"God [alone] can save you from this and from every distress - and still you ascribe divinity to other powers beside Him!\"",
-      "start_time": 6084,
-      "end_time": 6084,
+      "start_time": 6081,
+      "end_time": 6081,
       "matched_token_indices": null
     },
     {
-      "time": 6121,
+      "time": 6118,
       "surah": "Al-An'aam",
       "ayah": 65,
       "surah_number": 6,
@@ -4667,12 +4802,12 @@
       "confidence": 0.56,
       "arabic_text": "قُلْ هُوَ ٱلْقَادِرُ عَلَىٰٓ أَن يَبْعَثَ عَلَيْكُمْ عَذَابًۭا مِّن فَوْقِكُمْ أَوْ مِن تَحْتِ أَرْجُلِكُمْ أَوْ يَلْبِسَكُمْ شِيَعًۭا وَيُذِيقَ بَعْضَكُم بَأْسَ بَعْضٍ ۗ ٱنظُرْ كَيْفَ نُصَرِّفُ ٱلْءَايَٰتِ لَعَلَّهُمْ يَفْقَهُونَ",
       "english_text": "Say: \"It is He alone who has the power to let loose upon you suffering from above you or from beneath your feet, or to confound you with mutual discord and let you taste the fear of one another.\" Behold how many facets we give to these messages, so that they might understand the truth.",
-      "start_time": 6121,
-      "end_time": 6121,
+      "start_time": 6118,
+      "end_time": 6118,
       "matched_token_indices": null
     },
     {
-      "time": 6158,
+      "time": 6156,
       "surah": "Al-An'aam",
       "ayah": 66,
       "surah_number": 6,
@@ -4682,12 +4817,12 @@
       "confidence": 0.56,
       "arabic_text": "وَكَذَّبَ بِهِۦ قَوْمُكَ وَهُوَ ٱلْحَقُّ ۚ قُل لَّسْتُ عَلَيْكُم بِوَكِيلٍۢ",
       "english_text": "and yet, to all this thy peoples have given the lie, although it is the truth. Say [then]: \"I am not responsible for your conduct.",
-      "start_time": 6158,
-      "end_time": 6158,
+      "start_time": 6156,
+      "end_time": 6156,
       "matched_token_indices": null
     },
     {
-      "time": 6195,
+      "time": 6194,
       "surah": "Al-An'aam",
       "ayah": 67,
       "surah_number": 6,
@@ -4697,12 +4832,12 @@
       "confidence": 0.56,
       "arabic_text": "لِّكُلِّ نَبَإٍۢ مُّسْتَقَرٌّۭ ۚ وَسَوْفَ تَعْلَمُونَ",
       "english_text": "Every tiding [from God] has a term set for its fulfilment: and in time you will come to know [the truth].\"",
-      "start_time": 6195,
-      "end_time": 6195,
+      "start_time": 6194,
+      "end_time": 6194,
       "matched_token_indices": null
     },
     {
-      "time": 6232,
+      "time": 6231,
       "surah": "Al-An'aam",
       "ayah": 68,
       "surah_number": 6,
@@ -4712,12 +4847,12 @@
       "confidence": 0.56,
       "arabic_text": "وَإِذَا رَأَيْتَ ٱلَّذِينَ يَخُوضُونَ فِىٓ ءَايَٰتِنَا فَأَعْرِضْ عَنْهُمْ حَتَّىٰ يَخُوضُوا۟ فِى حَدِيثٍ غَيْرِهِۦ ۚ وَإِمَّا يُنسِيَنَّكَ ٱلشَّيْطَٰنُ فَلَا تَقْعُدْ بَعْدَ ٱلذِّكْرَىٰ مَعَ ٱلْقَوْمِ ٱلظَّٰلِمِينَ",
       "english_text": "NOW, whenever thou meet such as indulge in [blasphemous] talk about Our messages, turn thy back upon them until they begin to talk of other things and if Satan should ever cause thee to forget [thyself], remain not, after recollection, in the company of such evildoing folk,",
-      "start_time": 6232,
-      "end_time": 6232,
+      "start_time": 6231,
+      "end_time": 6231,
       "matched_token_indices": null
     },
     {
-      "time": 6269,
+      "time": 6268,
       "surah": "Al-An'aam",
       "ayah": 69,
       "surah_number": 6,
@@ -4727,8 +4862,8 @@
       "confidence": 0.56,
       "arabic_text": "وَمَا عَلَى ٱلَّذِينَ يَتَّقُونَ مِنْ حِسَابِهِم مِّن شَىْءٍۢ وَلَٰكِن ذِكْرَىٰ لَعَلَّهُمْ يَتَّقُونَ",
       "english_text": "for whom those who are conscious of God are in no wise accountable. Theirs, however, is the duty to admonish [the sinners], so that they might become conscious of God.",
-      "start_time": 6269,
-      "end_time": 6269,
+      "start_time": 6268,
+      "end_time": 6268,
       "matched_token_indices": null
     },
     {
@@ -5348,28 +5483,28 @@
     }
   ],
   "meta": {
-    "generated_at": "2026-02-25T00:33:38.116782+00:00",
+    "generated_at": "2026-02-25T05:45:02.670824+00:00",
     "audio_path": "data/audio/day-7/normalized.wav",
     "part": null,
     "whisper_model": "small",
-    "markers_detected": 155,
-    "transcript_segments_raw": 233,
-    "transcript_segments_for_matching": 163,
-    "transcript_reset_markers": 12,
-    "reciter_segments_detected": 15,
+    "markers_detected": 156,
+    "transcript_segments_raw": 674,
+    "transcript_segments_for_matching": 462,
+    "transcript_reset_markers": 20,
+    "reciter_segments_detected": 20,
     "corpus_loaded": true,
     "asad_loaded": true,
     "transcript_path": "data/ai/cache/day-7-transcript-7820s.json",
     "segment_detection": {
       "audio_starts": 9,
-      "fatiha_starts": 12,
-      "merged_starts": 15
+      "fatiha_starts": 20,
+      "merged_starts": 20
     },
     "reciter_filter": {
       "enabled": false,
       "reason": "no_known_reciter_windows",
-      "kept_segments": 163,
-      "total_segments": 163
+      "kept_segments": 462,
+      "total_segments": 462
     },
     "match_config": {
       "min_score": 78,
@@ -5387,8 +5522,8 @@
       "final_ayah": 110,
       "start_time": 1355,
       "final_time": 7806,
-      "markers_before": 79,
-      "markers_after": 80,
+      "markers_before": 82,
+      "markers_after": 83,
       "inserted_terminal": true,
       "inserted_terminal_time": 7806
     },
@@ -5413,27 +5548,26 @@
         "ayah": 36,
         "part": null,
         "start_time": 5048,
-        "end_time": 5062,
-        "inserted": true
+        "end_time": 5064
       }
     ],
     "override_surah_fill": {
       "surah": "Al-An'aam",
       "surah_number": 6,
       "target_final_ayah": 110,
-      "added_markers": 73,
-      "fallback_step_seconds": 18
+      "added_markers": 72,
+      "fallback_step_seconds": 17
     },
     "pipeline_timings_seconds": {
-      "prepare audio source": 1.37,
-      "load normalized audio": 1.99,
-      "trim audio to first 7820s": 1.1,
+      "prepare audio source": 0.9,
+      "load normalized audio": 0.94,
+      "trim audio to first 7820s": 0.48,
       "load transcript cache": 0.01,
       "transcribe audio (cache hit, skipped)": 0.0,
-      "detect reciter/prayer segment starts": 0.33,
-      "assign reciters to segments": 0.24,
-      "load Quran corpus and prepare transcript": 0.15,
-      "match ayah markers": 14.94,
+      "detect reciter/prayer segment starts": 0.07,
+      "assign reciters to segments": 0.39,
+      "load Quran corpus and prepare transcript": 0.08,
+      "match ayah markers": 10.63,
       "apply day overrides": 0.0,
       "enrich marker text + reciter mapping": 0.01
     }
