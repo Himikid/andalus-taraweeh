@@ -79,7 +79,7 @@
       "start_surah_number": 5,
       "start_ayah": 75,
       "start_time": 1355,
-      "final_surah": "Al-Anaam",
+      "final_surah": "Al-An'aam",
       "final_ayah": 110,
       "final_time": 7806,
       "marker_overrides": [
@@ -94,6 +94,12 @@
           "ayah": 110,
           "start_time": 7806,
           "end_time": 7806
+        },
+        {
+          "surah_number": 6,
+          "ayah": 36,
+          "start_time": 5048,
+          "end_time": 5062
         }
       ]
     }
