@@ -22,22 +22,32 @@ type QuranInsightsProps = {
 
 type DayPayload = {
   markers?: Marker[];
+  meta?: {
+    latest_position?: Marker;
+  };
 };
 
-async function fetchDayMarkers(day: number): Promise<Marker[]> {
+type DayData = {
+  markers: Marker[];
+  latestPosition: Marker | null;
+};
+
+async function fetchDayData(day: number): Promise<DayData> {
   const parts = getVideoPartsForDay(day);
   const hasParts = parts.length > 1;
 
   if (!hasParts) {
     const response = await fetch(`/data/day-${day}.json`, { cache: "no-store" });
     if (!response.ok) {
-      return [];
+      return { markers: [], latestPosition: null };
     }
     const payload = (await response.json()) as DayPayload;
     const singlePartId = parts[0]?.id ?? null;
-    return Array.isArray(payload.markers)
+    const markers = Array.isArray(payload.markers)
       ? payload.markers.map((marker) => ({ ...marker, __partId: singlePartId, __seekTime: marker.time }))
       : [];
+    const latestPosition = payload?.meta?.latest_position ? { ...payload.meta.latest_position } : null;
+    return { markers, latestPosition };
   }
 
   const partMarkers: Marker[] = [];
@@ -72,7 +82,7 @@ async function fetchDayMarkers(day: number): Promise<Marker[]> {
     runningOffset = partMaxTime + 30;
   }
 
-  return partMarkers;
+  return { markers: partMarkers, latestPosition: null };
 }
 
 type SurahEntry = {
@@ -107,10 +117,17 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
     async function load() {
       const days = [...availableTaraweehDays].sort((a, b) => b - a);
       const records: { day: number; markers: Marker[] }[] = [];
+      let latestCandidate: LatestPosition | null = null;
 
       for (const day of days) {
         try {
-          const markers = await fetchDayMarkers(day);
+          const { markers, latestPosition } = await fetchDayData(day);
+          if (!latestCandidate) {
+            const marker = markers.length ? markers[markers.length - 1] : latestPosition;
+            if (marker) {
+              latestCandidate = { day, marker };
+            }
+          }
           if (markers.length) {
             records.push({ day, markers });
           }
@@ -120,7 +137,7 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
       }
 
       if (!active) return;
-      if (!records.length) {
+      if (!records.length && !latestCandidate) {
         setLatest(null);
         setSurahStarts({});
         setDayProgress([]);
@@ -129,9 +146,7 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
         return;
       }
 
-      const latestRecord = records[0];
-      const latestMarker = latestRecord.markers[latestRecord.markers.length - 1];
-      setLatest({ day: latestRecord.day, marker: latestMarker });
+      setLatest(latestCandidate);
 
       const startsByQuality: Record<
         string,
