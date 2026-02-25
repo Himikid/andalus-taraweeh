@@ -102,6 +102,28 @@
           "end_time": 5064
         }
       ]
+    },
+    "8": {
+      "start_surah_number": 6,
+      "start_ayah": 111,
+      "start_time": 1286,
+      "final_surah": "Al-A'raaf",
+      "final_ayah": 161,
+      "final_time": 7486,
+      "marker_overrides": [
+        {
+          "surah_number": 6,
+          "ayah": 111,
+          "start_time": 1286,
+          "end_time": 1315
+        },
+        {
+          "surah_number": 7,
+          "ayah": 161,
+          "start_time": 7486,
+          "end_time": 7486
+        }
+      ]
     }
   }
 }
