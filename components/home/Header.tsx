@@ -3,7 +3,7 @@ export default function Header() {
     <header className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 text-center">
       <p className="label-caps">Andalus Centre Glasgow</p>
 
-      <p className="arabic-basmala text-[2.2rem] leading-relaxed text-sand sm:text-[2.9rem]">
+      <p lang="ar" dir="rtl" className="arabic-basmala text-[2.2rem] leading-relaxed text-sand sm:text-[2.9rem]">
         بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
       </p>
 

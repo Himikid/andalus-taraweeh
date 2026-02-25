@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { Noto_Naskh_Arabic } from "next/font/google";
 import "./globals.css";
+
+const arabicFont = Noto_Naskh_Arabic({
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-arabic-web",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Andalus Taraweeh – Live",
@@ -15,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={arabicFont.variable}>
         {children}
         <Analytics />
       </body>

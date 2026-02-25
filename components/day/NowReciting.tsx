@@ -183,7 +183,11 @@ export default function NowReciting({ markers, currentTime }: NowRecitingProps) 
           </div>
         </div>
         {resolvedArabic ? (
-          <p className="text-right font-[var(--font-arabic)] text-2xl leading-loose text-ivory sm:text-[1.8rem]">
+          <p
+            lang="ar"
+            dir="rtl"
+            className="text-right font-[var(--font-arabic)] text-2xl leading-loose text-ivory sm:text-[1.8rem]"
+          >
             {resolvedArabic}
           </p>
         ) : null}

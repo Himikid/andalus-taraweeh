@@ -6,7 +6,7 @@
   color-scheme: light;
   --font-heading: "Didot", "Bodoni 72", "Iowan Old Style", "Baskerville", "Times New Roman", serif;
   --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-arabic: "Amiri", "Noto Naskh Arabic", "Scheherazade New", "Times New Roman", serif;
+  --font-arabic: var(--font-arabic-web), "Noto Naskh Arabic", "Amiri", "Scheherazade New", "Times New Roman", serif;
 }
 
 body {
@@ -27,7 +27,9 @@ body {
 
 .arabic-basmala {
   font-family: var(--font-arabic);
+  text-rendering: optimizeLegibility;
   font-feature-settings: "liga" 1, "calt" 1;
+  font-variant-ligatures: common-ligatures contextual;
   direction: rtl;
 }
 
