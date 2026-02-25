@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 from .types import TranscriptSegment, TranscriptWord
@@ -13,7 +14,8 @@ def transcribe_audio(audio_path: Path, model_size: str = "small") -> list[Transc
             "faster-whisper is required for transcription. Install dependencies from scripts/requirements-ai.txt"
         ) from exc
 
-    model = WhisperModel(model_size, device="cpu", compute_type="int8")
+    compute_type = os.getenv("WHISPER_COMPUTE_TYPE", "int8")
+    model = WhisperModel(model_size, device="cpu", compute_type=compute_type)
     segments, _ = model.transcribe(str(audio_path), language="ar", vad_filter=True, word_timestamps=True)
 
     transcript_segments: list[TranscriptSegment] = []
