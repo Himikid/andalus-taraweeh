@@ -610,6 +610,88 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  8: [
+    {
+      ayahRef: "6:151",
+      themeType: "Famous Ayah",
+      shortTitle: "Core Sacred Commandments",
+      whyNotable: [
+        "A highly cited set of foundational prohibitions and obligations.",
+        "Often referenced as a concise framework of Quranic ethics.",
+      ],
+      summary:
+        "This ayah gathers major commands around tawhid, family dignity, sanctity of life, and moral restraint. It presents core boundaries that protect faith and society.",
+      keyTakeaway: "Hold to revealed boundaries as a path to taqwa.",
+      references: [
+        { name: "Quran 6:151", url: "https://quran.com/6:151" },
+        { name: "Ibn Kathir Tafsir (6:151)", url: "https://quran.com/en/6:151/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "6:153",
+      themeType: "Famous Ayah",
+      shortTitle: "Follow the Straight Path",
+      whyNotable: [
+        "A well-known ayah on unity upon Allah's single path.",
+        "Frequently cited against sectarian fragmentation and deviation.",
+      ],
+      summary:
+        "Allah commands following His straight path and avoiding divergent ways that split believers from guidance. The ayah links unity to strict adherence to revelation.",
+      keyTakeaway: "Stay on one revealed path and avoid divisive deviations.",
+      references: [
+        { name: "Quran 6:153", url: "https://quran.com/6:153" },
+        { name: "Ibn Kathir Tafsir (6:153)", url: "https://quran.com/en/6:153/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "7:23",
+      themeType: "Dua",
+      shortTitle: "Dua of Adam and Hawwa",
+      whyNotable: [
+        "Among the most famous Quranic duas of repentance.",
+        "Commonly memorized and recited when seeking forgiveness.",
+      ],
+      summary:
+        "Adam and Hawwa confess their wrong and seek Allah's mercy, declaring that without His forgiveness they would be among the losers. It is a model of humble, direct repentance.",
+      keyTakeaway: "Return quickly to Allah with honest confession and hope.",
+      references: [
+        { name: "Quran 7:23", url: "https://quran.com/7:23" },
+        { name: "Ibn Kathir Tafsir (7:23)", url: "https://quran.com/en/7:23/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "7:43",
+      themeType: "Dua",
+      shortTitle: "Praise for Divine Guidance",
+      whyNotable: [
+        "A famous Quranic phrase of gratitude for being guided.",
+        "Frequently quoted to express dependence on Allah's guidance.",
+      ],
+      summary:
+        "The people of Paradise acknowledge they would never have been guided without Allah. The ayah teaches humility, gratitude, and recognition that guidance is a gift.",
+      keyTakeaway: "Credit guidance to Allah and increase gratitude.",
+      references: [
+        { name: "Quran 7:43", url: "https://quran.com/7:43" },
+        { name: "Ibn Kathir Tafsir (7:43)", url: "https://quran.com/en/7:43/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "7:89",
+      themeType: "Dua",
+      shortTitle: "Our Lord, Judge Between Us in Truth",
+      whyNotable: [
+        "A powerful prophetic supplication in conflict and trial.",
+        "Used as a model dua for justice and truthful resolution.",
+      ],
+      summary:
+        "Shu'ayb asks Allah to decide between peoples in truth, affirming that Allah is the best of judges. The ayah teaches turning disputes back to divine justice with trust.",
+      keyTakeaway: "Seek resolution through truth and trust Allah's judgment.",
+      references: [
+        { name: "Quran 7:89", url: "https://quran.com/7:89" },
+        { name: "Ibn Kathir Tafsir (7:89)", url: "https://quran.com/en/7:89/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -681,6 +763,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Belief is purified by rejecting shirk and turning fully to Allah in sincerity.",
       "Moral discipline includes leaving corrupting influences and guarding personal accountability.",
       "Quranic guidance calls for principled speech and wisdom that prevents greater harm.",
+    ],
+  },
+  8: {
+    title: "Day 8 Recitation Summary (Al-An'aam 111-165, Al-A'raaf 1-161)",
+    summary:
+      "Day 8 reinforces submission to clear guidance in Al-An'aam, then moves through major scenes of warning, repentance, and prophetic steadfastness in Al-A'raaf. The recitation repeatedly calls to humility before revelation, sincere tawbah, and moral discipline.",
+    themes: [
+      "Guidance is accepted through surrender, not selective obedience.",
+      "The stories in Al-A'raaf warn against arrogance and delaying repentance.",
+      "Steadfast faith combines tawhid, gratitude, and accountability to Allah.",
     ],
   },
 };
