@@ -124,6 +124,28 @@
           "end_time": 7486
         }
       ]
+    },
+    "9": {
+      "start_surah_number": 7,
+      "start_ayah": 85,
+      "start_time": 181,
+      "final_surah": "Al-Anfaal",
+      "final_ayah": 85,
+      "final_time": 6429,
+      "marker_overrides": [
+        {
+          "surah_number": 7,
+          "ayah": 85,
+          "start_time": 181,
+          "end_time": 195
+        },
+        {
+          "surah_number": 8,
+          "ayah": 85,
+          "start_time": 6407,
+          "end_time": 6429
+        }
+      ]
     }
   }
 }
