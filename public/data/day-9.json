@@ -4089,6 +4089,21 @@
       ]
     },
     {
+      "time": 3844,
+      "surah": "Al-A'raaf",
+      "ayah": 171,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "manual",
+      "reciter": "Unknown",
+      "confidence": 1.0,
+      "arabic_text": "۞ وَإِذْ نَتَقْنَا ٱلْجَبَلَ فَوْقَهُمْ كَأَنَّهُۥ ظُلَّةٌۭ وَظَنُّوٓا۟ أَنَّهُۥ وَاقِعٌۢ بِهِمْ خُذُوا۟ مَآ ءَاتَيْنَٰكُم بِقُوَّةٍۢ وَٱذْكُرُوا۟ مَا فِيهِ لَعَلَّكُمْ تَتَّقُونَ",
+      "english_text": "And [did We not say,] when We caused Mount Sinai to quake above the children of Israel as though it were a [mere] shadow, and they thought that it would fall upon them, \"Hold fast with [all your] strength unto what We have vouchsafed you, and bear in mind all that is therein, so that you might remain conscious of God\"?",
+      "start_time": 3844,
+      "end_time": 3856,
+      "matched_token_indices": null
+    },
+    {
       "time": 5627,
       "surah": "Al-Anfaal",
       "ayah": 1,
@@ -4690,11 +4705,11 @@
     }
   ],
   "meta": {
-    "generated_at": "2026-02-27T01:51:05.058309+00:00",
+    "generated_at": "2026-02-27T01:56:22.617257+00:00",
     "audio_path": "data/audio/day-9/normalized.wav",
     "part": null,
     "whisper_model": "small",
-    "markers_detected": 126,
+    "markers_detected": 127,
     "transcript_segments_raw": 518,
     "transcript_segments_for_matching": 350,
     "transcript_reset_markers": 17,
@@ -4743,6 +4758,14 @@
         "end_time": 195
       },
       {
+        "surah_number": 7,
+        "ayah": 171,
+        "part": null,
+        "start_time": 3844,
+        "end_time": 3856,
+        "inserted": true
+      },
+      {
         "surah_number": 8,
         "ayah": 40,
         "part": null,
@@ -4758,15 +4781,15 @@
       "fallback_step_seconds": 20
     },
     "pipeline_timings_seconds": {
-      "prepare audio source": 19.77,
-      "load normalized audio": 0.29,
+      "prepare audio source": 6.09,
+      "load normalized audio": 0.33,
       "trim audio (skipped)": 0.0,
       "load transcript cache": 0.0,
       "transcribe audio (cache hit, skipped)": 0.0,
-      "detect reciter/prayer segment starts": 0.06,
+      "detect reciter/prayer segment starts": 0.08,
       "assign reciters to segments": 0.13,
       "load Quran corpus and prepare transcript": 0.08,
-      "match ayah markers": 5.98,
+      "match ayah markers": 6.05,
       "apply day overrides": 0.0,
       "enrich marker text + reciter mapping": 0.01
     }
