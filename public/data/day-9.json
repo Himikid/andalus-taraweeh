@@ -4099,9 +4099,254 @@
       "confidence": 1.0,
       "arabic_text": "۞ وَإِذْ نَتَقْنَا ٱلْجَبَلَ فَوْقَهُمْ كَأَنَّهُۥ ظُلَّةٌۭ وَظَنُّوٓا۟ أَنَّهُۥ وَاقِعٌۢ بِهِمْ خُذُوا۟ مَآ ءَاتَيْنَٰكُم بِقُوَّةٍۢ وَٱذْكُرُوا۟ مَا فِيهِ لَعَلَّكُمْ تَتَّقُونَ",
       "english_text": "And [did We not say,] when We caused Mount Sinai to quake above the children of Israel as though it were a [mere] shadow, and they thought that it would fall upon them, \"Hold fast with [all your] strength unto what We have vouchsafed you, and bear in mind all that is therein, so that you might remain conscious of God\"?",
-      "start_time": 3844,
-      "end_time": 3856,
-      "matched_token_indices": null
+      "start_time": 3844.0,
+      "end_time": 3856.0,
+      "matched_token_indices": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          15
+        ]
+      ]
+    },
+    {
+      "time": 3869,
+      "surah": "Al-A'raaf",
+      "ayah": 172,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.801,
+      "arabic_text": "وَإِذْ أَخَذَ رَبُّكَ مِنۢ بَنِىٓ ءَادَمَ مِن ظُهُورِهِمْ ذُرِّيَّتَهُمْ وَأَشْهَدَهُمْ عَلَىٰٓ أَنفُسِهِمْ أَلَسْتُ بِرَبِّكُمْ ۖ قَالُوا۟ بَلَىٰ ۛ شَهِدْنَآ ۛ أَن تَقُولُوا۟ يَوْمَ ٱلْقِيَٰمَةِ إِنَّا كُنَّا عَنْ هَٰذَا غَٰفِلِينَ",
+      "english_text": "AND WHENEVER thy Sustainer brings forth their offspring from the loins of the children of Adam, He [thus] calls upon them to bear witness about themselves: \"Am I not your Sustainer?\" - to which they answer: \"Yea, indeed, we do bear witness thereto!\" [Of this We remind you,] lest you say on the Day of Resurrection, \"Verily, we were unaware of this\";",
+      "start_time": 3869.0,
+      "end_time": 3897.0,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "time": 3898,
+      "surah": "Al-A'raaf",
+      "ayah": 173,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.777,
+      "arabic_text": "أَوْ تَقُولُوٓا۟ إِنَّمَآ أَشْرَكَ ءَابَآؤُنَا مِن قَبْلُ وَكُنَّا ذُرِّيَّةًۭ مِّنۢ بَعْدِهِمْ ۖ أَفَتُهْلِكُنَا بِمَا فَعَلَ ٱلْمُبْطِلُونَ",
+      "english_text": "or lest you say, \"Verily, it was but our forefathers who, in times gone by, began to ascribe divinity to other beings beside God; and we were but their late offspring: wilt Thou, then, destroy us for the doings of those inventors of falsehoods?\"",
+      "start_time": 3898.0,
+      "end_time": 3913.0,
+      "matched_token_indices": [
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          14
+        ]
+      ]
+    },
+    {
+      "time": 3914,
+      "surah": "Al-A'raaf",
+      "ayah": 174,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.719,
+      "arabic_text": "وَكَذَٰلِكَ نُفَصِّلُ ٱلْءَايَٰتِ وَلَعَلَّهُمْ يَرْجِعُونَ",
+      "english_text": "And thus clearly do We spell out these messages; and [We do it] so that they [who have sinned] might return [unto Us].",
+      "start_time": 3914.0,
+      "end_time": 3921.0,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "time": 3922,
+      "surah": "Al-A'raaf",
+      "ayah": 175,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.661,
+      "arabic_text": "وَٱتْلُ عَلَيْهِمْ نَبَأَ ٱلَّذِىٓ ءَاتَيْنَٰهُ ءَايَٰتِنَا فَٱنسَلَخَ مِنْهَا فَأَتْبَعَهُ ٱلشَّيْطَٰنُ فَكَانَ مِنَ ٱلْغَاوِينَ",
+      "english_text": "And tell them what happens to him to whom We vouchsafe Our messages and who then discards them: Satan catches up with him, and he strays, like so many others, into grievous error.",
+      "start_time": 3922.0,
+      "end_time": 3934.0,
+      "matched_token_indices": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          11
+        ]
+      ]
+    },
+    {
+      "time": 3935,
+      "surah": "Al-A'raaf",
+      "ayah": 176,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.799,
+      "arabic_text": "وَلَوْ شِئْنَا لَرَفَعْنَٰهُ بِهَا وَلَٰكِنَّهُۥٓ أَخْلَدَ إِلَى ٱلْأَرْضِ وَٱتَّبَعَ هَوَىٰهُ ۚ فَمَثَلُهُۥ كَمَثَلِ ٱلْكَلْبِ إِن تَحْمِلْ عَلَيْهِ يَلْهَثْ أَوْ تَتْرُكْهُ يَلْهَث ۚ ذَّٰلِكَ مَثَلُ ٱلْقَوْمِ ٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا ۚ فَٱقْصُصِ ٱلْقَصَصَ لَعَلَّهُمْ يَتَفَكَّرُونَ",
+      "english_text": "Now had We so willed, We could indeed have exalted him by means of those [messages]: but he always clung to the earth and followed but his own desires. Thus, his parable is that of an [excited] dog: if thou approach him threateningly, he will pant with his tongue lolling; and. if thou leave him alone, he will pant with his tongue lolling. Such is the parable of those who are bent on giving the lie to Our messages. Tell [them], then, this story, so that they might take thought.",
+      "start_time": 3935.0,
+      "end_time": 3969.0,
+      "matched_token_indices": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ]
+      ]
+    },
+    {
+      "time": 3970,
+      "surah": "Al-A'raaf",
+      "ayah": 177,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.669,
+      "arabic_text": "سَآءَ مَثَلًا ٱلْقَوْمُ ٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا وَأَنفُسَهُمْ كَانُوا۟ يَظْلِمُونَ",
+      "english_text": "Evil is the example of people who are bent on giving the lie to Our messages: for it is against their own selves that they are sinning!",
+      "start_time": 3970.0,
+      "end_time": 3988.0,
+      "matched_token_indices": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ]
     },
     {
       "time": 5627,
@@ -4114,8 +4359,8 @@
       "confidence": 0.56,
       "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ يَسْـَٔلُونَكَ عَنِ ٱلْأَنفَالِ ۖ قُلِ ٱلْأَنفَالُ لِلَّهِ وَٱلرَّسُولِ ۖ فَٱتَّقُوا۟ ٱللَّهَ وَأَصْلِحُوا۟ ذَاتَ بَيْنِكُمْ ۖ وَأَطِيعُوا۟ ٱللَّهَ وَرَسُولَهُۥٓ إِن كُنتُم مُّؤْمِنِينَ",
       "english_text": "HEY WILL ASK thee about the spoils of war. Say: \"All spoils of war belong to God and the Apostle.\" Remain, then, conscious of God, and keep alive the bonds of brotherhood among yourselves, and pay heed unto God and His Apostle, if you are [truly] believers!",
-      "start_time": 5627,
-      "end_time": 5627,
+      "start_time": 5627.0,
+      "end_time": 5627.0,
       "matched_token_indices": null
     },
     {
@@ -4129,8 +4374,8 @@
       "confidence": 0.56,
       "arabic_text": "إِنَّمَا ٱلْمُؤْمِنُونَ ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتْ قُلُوبُهُمْ وَإِذَا تُلِيَتْ عَلَيْهِمْ ءَايَٰتُهُۥ زَادَتْهُمْ إِيمَٰنًۭا وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ",
       "english_text": "Believers are only they whose hearts tremble with awe whenever God is mentioned, and whose faith is strengthened whenever His messages are conveyed unto them, and who in their Sustainer place their trust -",
-      "start_time": 5647,
-      "end_time": 5647,
+      "start_time": 5647.0,
+      "end_time": 5647.0,
       "matched_token_indices": null
     },
     {
@@ -4144,8 +4389,8 @@
       "confidence": 0.56,
       "arabic_text": "ٱلَّذِينَ يُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَٰهُمْ يُنفِقُونَ",
       "english_text": "those who are constant in prayer and spend on others out of what We provide for them as sustenance:",
-      "start_time": 5667,
-      "end_time": 5667,
+      "start_time": 5667.0,
+      "end_time": 5667.0,
       "matched_token_indices": null
     },
     {
@@ -4159,8 +4404,8 @@
       "confidence": 0.56,
       "arabic_text": "أُو۟لَٰٓئِكَ هُمُ ٱلْمُؤْمِنُونَ حَقًّۭا ۚ لَّهُمْ دَرَجَٰتٌ عِندَ رَبِّهِمْ وَمَغْفِرَةٌۭ وَرِزْقٌۭ كَرِيمٌۭ",
       "english_text": "it is they, they who are truly believers! Theirs shall be great dignity in their Sustainer's sight, and forgiveness of sins, and a most excellent sustenance.",
-      "start_time": 5687,
-      "end_time": 5687,
+      "start_time": 5687.0,
+      "end_time": 5687.0,
       "matched_token_indices": null
     },
     {
@@ -4174,8 +4419,8 @@
       "confidence": 0.56,
       "arabic_text": "كَمَآ أَخْرَجَكَ رَبُّكَ مِنۢ بَيْتِكَ بِٱلْحَقِّ وَإِنَّ فَرِيقًۭا مِّنَ ٱلْمُؤْمِنِينَ لَكَٰرِهُونَ",
       "english_text": "EVEN AS thy Sustainer brought thee forth from thy home [to fight] in the cause of the truth, although some of the believers were averse to it,",
-      "start_time": 5707,
-      "end_time": 5707,
+      "start_time": 5707.0,
+      "end_time": 5707.0,
       "matched_token_indices": null
     },
     {
@@ -4189,8 +4434,8 @@
       "confidence": 0.56,
       "arabic_text": "يُجَٰدِلُونَكَ فِى ٱلْحَقِّ بَعْدَمَا تَبَيَّنَ كَأَنَّمَا يُسَاقُونَ إِلَى ٱلْمَوْتِ وَهُمْ يَنظُرُونَ",
       "english_text": "[so, too,] they would argue with thee about the truth [itself] after it had become manifest - just as if they were being driven towards death and beheld it with their very eyes.",
-      "start_time": 5727,
-      "end_time": 5727,
+      "start_time": 5727.0,
+      "end_time": 5727.0,
       "matched_token_indices": null
     },
     {
@@ -4204,8 +4449,8 @@
       "confidence": 0.56,
       "arabic_text": "وَإِذْ يَعِدُكُمُ ٱللَّهُ إِحْدَى ٱلطَّآئِفَتَيْنِ أَنَّهَا لَكُمْ وَتَوَدُّونَ أَنَّ غَيْرَ ذَاتِ ٱلشَّوْكَةِ تَكُونُ لَكُمْ وَيُرِيدُ ٱللَّهُ أَن يُحِقَّ ٱلْحَقَّ بِكَلِمَٰتِهِۦ وَيَقْطَعَ دَابِرَ ٱلْكَٰفِرِينَ",
       "english_text": "And, lo, God gave you the promise that one of the two [enemy] hosts would fall to you: and you would have liked to seize the less powerful one, whereas it was God's will to prove the truth to be true in accordance with His words, and to wipe out the last remnant of those who denied the truth -",
-      "start_time": 5747,
-      "end_time": 5747,
+      "start_time": 5747.0,
+      "end_time": 5747.0,
       "matched_token_indices": null
     },
     {
@@ -4219,8 +4464,8 @@
       "confidence": 0.56,
       "arabic_text": "لِيُحِقَّ ٱلْحَقَّ وَيُبْطِلَ ٱلْبَٰطِلَ وَلَوْ كَرِهَ ٱلْمُجْرِمُونَ",
       "english_text": "so that He might prove the truth to be true and the false to be false, however hateful this might be to those who were lost in sin.",
-      "start_time": 5767,
-      "end_time": 5767,
+      "start_time": 5767.0,
+      "end_time": 5767.0,
       "matched_token_indices": null
     },
     {
@@ -4234,8 +4479,8 @@
       "confidence": 0.56,
       "arabic_text": "إِذْ تَسْتَغِيثُونَ رَبَّكُمْ فَٱسْتَجَابَ لَكُمْ أَنِّى مُمِدُّكُم بِأَلْفٍۢ مِّنَ ٱلْمَلَٰٓئِكَةِ مُرْدِفِينَ",
       "english_text": "Lo! You were praying unto your Sustainer for aid, whereupon He thus responded to you: \"I shall, verily, aid you with a thousand angels following one upon' another!\"",
-      "start_time": 5787,
-      "end_time": 5787,
+      "start_time": 5787.0,
+      "end_time": 5787.0,
       "matched_token_indices": null
     },
     {
@@ -4249,8 +4494,8 @@
       "confidence": 0.56,
       "arabic_text": "وَمَا جَعَلَهُ ٱللَّهُ إِلَّا بُشْرَىٰ وَلِتَطْمَئِنَّ بِهِۦ قُلُوبُكُمْ ۚ وَمَا ٱلنَّصْرُ إِلَّا مِنْ عِندِ ٱللَّهِ ۚ إِنَّ ٱللَّهَ عَزِيزٌ حَكِيمٌ",
       "english_text": "And God ordained this only as a glad tiding, and that your hearts should thereby be set at rest-since no succour can come from any save God: verily, God is almighty, wise!",
-      "start_time": 5807,
-      "end_time": 5807,
+      "start_time": 5807.0,
+      "end_time": 5807.0,
       "matched_token_indices": null
     },
     {
@@ -4264,8 +4509,8 @@
       "confidence": 0.56,
       "arabic_text": "إِذْ يُغَشِّيكُمُ ٱلنُّعَاسَ أَمَنَةًۭ مِّنْهُ وَيُنَزِّلُ عَلَيْكُم مِّنَ ٱلسَّمَآءِ مَآءًۭ لِّيُطَهِّرَكُم بِهِۦ وَيُذْهِبَ عَنكُمْ رِجْزَ ٱلشَّيْطَٰنِ وَلِيَرْبِطَ عَلَىٰ قُلُوبِكُمْ وَيُثَبِّتَ بِهِ ٱلْأَقْدَامَ",
       "english_text": "[Remember how it was] when He caused inner calm to enfold you, as an assurance from Him, and sent down upon you water from the skies, so that He might purify you thereby and free you from Satan's unclean whisperings and strengthen your hearts and thus make firm your steps.",
-      "start_time": 5827,
-      "end_time": 5827,
+      "start_time": 5827.0,
+      "end_time": 5827.0,
       "matched_token_indices": null
     },
     {
@@ -4279,8 +4524,8 @@
       "confidence": 0.56,
       "arabic_text": "إِذْ يُوحِى رَبُّكَ إِلَى ٱلْمَلَٰٓئِكَةِ أَنِّى مَعَكُمْ فَثَبِّتُوا۟ ٱلَّذِينَ ءَامَنُوا۟ ۚ سَأُلْقِى فِى قُلُوبِ ٱلَّذِينَ كَفَرُوا۟ ٱلرُّعْبَ فَٱضْرِبُوا۟ فَوْقَ ٱلْأَعْنَاقِ وَٱضْرِبُوا۟ مِنْهُمْ كُلَّ بَنَانٍۢ",
       "english_text": "Lo! Thy Sustainer inspired the angels [to convey this His message to the believers]: \"I am with you!\" [And He commanded the angels:] \"And, give firmness unto those who have attained to faith [with these words from Me]: `I shall cast terror into the hearts of those who are bent on denying the truth; strike, then, their necks, [O believers,] and strike off every one of their finger-tips!\"",
-      "start_time": 5847,
-      "end_time": 5847,
+      "start_time": 5847.0,
+      "end_time": 5847.0,
       "matched_token_indices": null
     },
     {
@@ -4294,8 +4539,8 @@
       "confidence": 0.56,
       "arabic_text": "ذَٰلِكَ بِأَنَّهُمْ شَآقُّوا۟ ٱللَّهَ وَرَسُولَهُۥ ۚ وَمَن يُشَاقِقِ ٱللَّهَ وَرَسُولَهُۥ فَإِنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ",
       "english_text": "This, because they have cut themselves off from God and His Apostle: and as for him who cuts himself off from God and His Apostle - verily, God is severe in retribution.",
-      "start_time": 5867,
-      "end_time": 5867,
+      "start_time": 5867.0,
+      "end_time": 5867.0,
       "matched_token_indices": null
     },
     {
@@ -4309,8 +4554,8 @@
       "confidence": 0.56,
       "arabic_text": "ذَٰلِكُمْ فَذُوقُوهُ وَأَنَّ لِلْكَٰفِرِينَ عَذَابَ ٱلنَّارِ",
       "english_text": "This [for you, O enemies of God]! Taste it, then, [and know] that suffering through fire awaits those who deny the truth!",
-      "start_time": 5887,
-      "end_time": 5887,
+      "start_time": 5887.0,
+      "end_time": 5887.0,
       "matched_token_indices": null
     },
     {
@@ -4324,8 +4569,8 @@
       "confidence": 0.56,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا لَقِيتُمُ ٱلَّذِينَ كَفَرُوا۟ زَحْفًۭا فَلَا تُوَلُّوهُمُ ٱلْأَدْبَارَ",
       "english_text": "O YOU who have attained to faith! When you meet in battle those who are bent on denying the truth, advancing in great force, do not turn your backs on them:",
-      "start_time": 5907,
-      "end_time": 5907,
+      "start_time": 5907.0,
+      "end_time": 5907.0,
       "matched_token_indices": null
     },
     {
@@ -4339,8 +4584,8 @@
       "confidence": 0.56,
       "arabic_text": "وَمَن يُوَلِّهِمْ يَوْمَئِذٍۢ دُبُرَهُۥٓ إِلَّا مُتَحَرِّفًۭا لِّقِتَالٍ أَوْ مُتَحَيِّزًا إِلَىٰ فِئَةٍۢ فَقَدْ بَآءَ بِغَضَبٍۢ مِّنَ ٱللَّهِ وَمَأْوَىٰهُ جَهَنَّمُ ۖ وَبِئْسَ ٱلْمَصِيرُ",
       "english_text": "for, whoever on that day turns his back on them-unless it be in a battle manoeuvre or in an endeavour to join another troop [of the believers] - shall indeed have earned the burden of God's condemnation, and his goal shall be hell: and how vile a journey's end!",
-      "start_time": 5927,
-      "end_time": 5927,
+      "start_time": 5927.0,
+      "end_time": 5927.0,
       "matched_token_indices": null
     },
     {
@@ -4354,8 +4599,8 @@
       "confidence": 0.56,
       "arabic_text": "فَلَمْ تَقْتُلُوهُمْ وَلَٰكِنَّ ٱللَّهَ قَتَلَهُمْ ۚ وَمَا رَمَيْتَ إِذْ رَمَيْتَ وَلَٰكِنَّ ٱللَّهَ رَمَىٰ ۚ وَلِيُبْلِىَ ٱلْمُؤْمِنِينَ مِنْهُ بَلَآءً حَسَنًا ۚ إِنَّ ٱللَّهَ سَمِيعٌ عَلِيمٌۭ",
       "english_text": "And yet, [O believers,] it was not you who slew the enemy, but it was God who slew them; and it was not thou who cast [terror into them, O Prophet], when thou didst cast it, but it was God who cast it: and [He did all this] in order that He might test the believers by a goodly test of His Own or daining. Verily, God is all-hearing, all-knowing!",
-      "start_time": 5947,
-      "end_time": 5947,
+      "start_time": 5947.0,
+      "end_time": 5947.0,
       "matched_token_indices": null
     },
     {
@@ -4369,8 +4614,8 @@
       "confidence": 0.56,
       "arabic_text": "ذَٰلِكُمْ وَأَنَّ ٱللَّهَ مُوهِنُ كَيْدِ ٱلْكَٰفِرِينَ",
       "english_text": "This [was God's purpose] -and also [to show] that God renders vain the artful schemes of those who deny the truth.",
-      "start_time": 5967,
-      "end_time": 5967,
+      "start_time": 5967.0,
+      "end_time": 5967.0,
       "matched_token_indices": null
     },
     {
@@ -4384,8 +4629,8 @@
       "confidence": 0.56,
       "arabic_text": "إِن تَسْتَفْتِحُوا۟ فَقَدْ جَآءَكُمُ ٱلْفَتْحُ ۖ وَإِن تَنتَهُوا۟ فَهُوَ خَيْرٌۭ لَّكُمْ ۖ وَإِن تَعُودُوا۟ نَعُدْ وَلَن تُغْنِىَ عَنكُمْ فِئَتُكُمْ شَيْـًۭٔا وَلَوْ كَثُرَتْ وَأَنَّ ٱللَّهَ مَعَ ٱلْمُؤْمِنِينَ",
       "english_text": "If you have been praying for victory, [O believers] - victory has now indeed come unto you. And if you abstain [from sinning], it will be for your own good; but if you revert to it, We shall revoke [Our promise of aid] - and never will your community be of any avail to you, however great its numbers: for, behold, God is [only] with those who believe!",
-      "start_time": 5987,
-      "end_time": 5987,
+      "start_time": 5987.0,
+      "end_time": 5987.0,
       "matched_token_indices": null
     },
     {
@@ -4399,8 +4644,8 @@
       "confidence": 0.56,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ أَطِيعُوا۟ ٱللَّهَ وَرَسُولَهُۥ وَلَا تَوَلَّوْا۟ عَنْهُ وَأَنتُمْ تَسْمَعُونَ",
       "english_text": "[Hence,] O you who have attained to faith, pay heed unto God and His Apostle, and do not turn away from Him now that you hear [His message];",
-      "start_time": 6007,
-      "end_time": 6007,
+      "start_time": 6007.0,
+      "end_time": 6007.0,
       "matched_token_indices": null
     },
     {
@@ -4414,8 +4659,8 @@
       "confidence": 0.56,
       "arabic_text": "وَلَا تَكُونُوا۟ كَٱلَّذِينَ قَالُوا۟ سَمِعْنَا وَهُمْ لَا يَسْمَعُونَ",
       "english_text": "and be not like those who say, \"We have heard\", the while they do not hearken.",
-      "start_time": 6027,
-      "end_time": 6027,
+      "start_time": 6027.0,
+      "end_time": 6027.0,
       "matched_token_indices": null
     },
     {
@@ -4429,8 +4674,8 @@
       "confidence": 0.56,
       "arabic_text": "۞ إِنَّ شَرَّ ٱلدَّوَآبِّ عِندَ ٱللَّهِ ٱلصُّمُّ ٱلْبُكْمُ ٱلَّذِينَ لَا يَعْقِلُونَ",
       "english_text": "Verily, the vilest of all creatures in the sight of God are those deaf, those dumb ones who do not use their reason.",
-      "start_time": 6047,
-      "end_time": 6047,
+      "start_time": 6047.0,
+      "end_time": 6047.0,
       "matched_token_indices": null
     },
     {
@@ -4444,8 +4689,8 @@
       "confidence": 0.56,
       "arabic_text": "وَلَوْ عَلِمَ ٱللَّهُ فِيهِمْ خَيْرًۭا لَّأَسْمَعَهُمْ ۖ وَلَوْ أَسْمَعَهُمْ لَتَوَلَّوا۟ وَّهُم مُّعْرِضُونَ",
       "english_text": "For, if God had seen any good in them, He would certainly have made them hear: but [as it is,] even if He had made them hear, they would surely have turned away in their obstinacy.",
-      "start_time": 6067,
-      "end_time": 6067,
+      "start_time": 6067.0,
+      "end_time": 6067.0,
       "matched_token_indices": null
     },
     {
@@ -4459,8 +4704,8 @@
       "confidence": 0.56,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱسْتَجِيبُوا۟ لِلَّهِ وَلِلرَّسُولِ إِذَا دَعَاكُمْ لِمَا يُحْيِيكُمْ ۖ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ يَحُولُ بَيْنَ ٱلْمَرْءِ وَقَلْبِهِۦ وَأَنَّهُۥٓ إِلَيْهِ تُحْشَرُونَ",
       "english_text": "O you who have attained to faith! Respond to the call of God and the Apostle whenever he calls you unto that which will give you life; and know that God intervenes between man and [the desires of] his heart, and that unto Him you shall be gathered.",
-      "start_time": 6087,
-      "end_time": 6087,
+      "start_time": 6087.0,
+      "end_time": 6087.0,
       "matched_token_indices": null
     },
     {
@@ -4474,8 +4719,8 @@
       "confidence": 0.56,
       "arabic_text": "وَٱتَّقُوا۟ فِتْنَةًۭ لَّا تُصِيبَنَّ ٱلَّذِينَ ظَلَمُوا۟ مِنكُمْ خَآصَّةًۭ ۖ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ",
       "english_text": "And beware of that temptation to evil which does not befall only those among you who are bent on denying the truth, to the exclusion of others; and know that God is severe in retribution.",
-      "start_time": 6107,
-      "end_time": 6107,
+      "start_time": 6107.0,
+      "end_time": 6107.0,
       "matched_token_indices": null
     },
     {
@@ -4489,8 +4734,8 @@
       "confidence": 0.56,
       "arabic_text": "وَٱذْكُرُوٓا۟ إِذْ أَنتُمْ قَلِيلٌۭ مُّسْتَضْعَفُونَ فِى ٱلْأَرْضِ تَخَافُونَ أَن يَتَخَطَّفَكُمُ ٱلنَّاسُ فَـَٔاوَىٰكُمْ وَأَيَّدَكُم بِنَصْرِهِۦ وَرَزَقَكُم مِّنَ ٱلطَّيِّبَٰتِ لَعَلَّكُمْ تَشْكُرُونَ",
       "english_text": "And remember the time when you were few [and] helpless on earth, fearful lest people do away with you - whereupon He sheltered you, and strengthened you with His succour, and provided for you sustenance out of the good things of life, so that you might have cause to be grateful.",
-      "start_time": 6127,
-      "end_time": 6127,
+      "start_time": 6127.0,
+      "end_time": 6127.0,
       "matched_token_indices": null
     },
     {
@@ -4504,8 +4749,8 @@
       "confidence": 0.56,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَخُونُوا۟ ٱللَّهَ وَٱلرَّسُولَ وَتَخُونُوٓا۟ أَمَٰنَٰتِكُمْ وَأَنتُمْ تَعْلَمُونَ",
       "english_text": "[Hence,] O you who have attained to faith, do not be false to God and the Apostle, and do not knowingly be false to the trust that has been reposed in you;",
-      "start_time": 6147,
-      "end_time": 6147,
+      "start_time": 6147.0,
+      "end_time": 6147.0,
       "matched_token_indices": null
     },
     {
@@ -4519,8 +4764,8 @@
       "confidence": 0.56,
       "arabic_text": "وَٱعْلَمُوٓا۟ أَنَّمَآ أَمْوَٰلُكُمْ وَأَوْلَٰدُكُمْ فِتْنَةٌۭ وَأَنَّ ٱللَّهَ عِندَهُۥٓ أَجْرٌ عَظِيمٌۭ",
       "english_text": "and know that your worldly goods and your children are but a trial and a temptation, and that with God there is a tremendous reward.",
-      "start_time": 6167,
-      "end_time": 6167,
+      "start_time": 6167.0,
+      "end_time": 6167.0,
       "matched_token_indices": null
     },
     {
@@ -4534,8 +4779,8 @@
       "confidence": 0.56,
       "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِن تَتَّقُوا۟ ٱللَّهَ يَجْعَل لَّكُمْ فُرْقَانًۭا وَيُكَفِّرْ عَنكُمْ سَيِّـَٔاتِكُمْ وَيَغْفِرْ لَكُمْ ۗ وَٱللَّهُ ذُو ٱلْفَضْلِ ٱلْعَظِيمِ",
       "english_text": "O you who have attained to faith! If you remain conscious of God. He will endow you with a standard by which to discern the true from the false, and will efface your bad deeds, and will forgive you your sins: for God is limitless in His great bounty.",
-      "start_time": 6187,
-      "end_time": 6187,
+      "start_time": 6187.0,
+      "end_time": 6187.0,
       "matched_token_indices": null
     },
     {
@@ -4549,8 +4794,8 @@
       "confidence": 0.56,
       "arabic_text": "وَإِذْ يَمْكُرُ بِكَ ٱلَّذِينَ كَفَرُوا۟ لِيُثْبِتُوكَ أَوْ يَقْتُلُوكَ أَوْ يُخْرِجُوكَ ۚ وَيَمْكُرُونَ وَيَمْكُرُ ٱللَّهُ ۖ وَٱللَّهُ خَيْرُ ٱلْمَٰكِرِينَ",
       "english_text": "AND [remember, O Prophet,] how those who were bent on denying the truth were scheming against thee, in order to restrain thee [from preaching], or to slay thee, or to drive thee away: thus have they [always] schemed: but God brought their scheming to nought-for God is above all schemers.",
-      "start_time": 6207,
-      "end_time": 6207,
+      "start_time": 6207.0,
+      "end_time": 6207.0,
       "matched_token_indices": null
     },
     {
@@ -4564,8 +4809,8 @@
       "confidence": 0.56,
       "arabic_text": "وَإِذَا تُتْلَىٰ عَلَيْهِمْ ءَايَٰتُنَا قَالُوا۟ قَدْ سَمِعْنَا لَوْ نَشَآءُ لَقُلْنَا مِثْلَ هَٰذَآ ۙ إِنْ هَٰذَآ إِلَّآ أَسَٰطِيرُ ٱلْأَوَّلِينَ",
       "english_text": "And whenever Our messages were conveyed to them, they would say, \"We have heard [all this] before; if we wanted, we could certainly compose sayings like these [ourselves]: they are nothing but fables of ancient times!\"",
-      "start_time": 6227,
-      "end_time": 6227,
+      "start_time": 6227.0,
+      "end_time": 6227.0,
       "matched_token_indices": null
     },
     {
@@ -4579,8 +4824,8 @@
       "confidence": 0.56,
       "arabic_text": "وَإِذْ قَالُوا۟ ٱللَّهُمَّ إِن كَانَ هَٰذَا هُوَ ٱلْحَقَّ مِنْ عِندِكَ فَأَمْطِرْ عَلَيْنَا حِجَارَةًۭ مِّنَ ٱلسَّمَآءِ أَوِ ٱئْتِنَا بِعَذَابٍ أَلِيمٍۢ",
       "english_text": "And, lo, they would say, \"O God! If this. be indeed the truth from Thee, then rain down upon us stones from the skies, or inflict [some other] grievous suffering on us!\"",
-      "start_time": 6247,
-      "end_time": 6247,
+      "start_time": 6247.0,
+      "end_time": 6247.0,
       "matched_token_indices": null
     },
     {
@@ -4594,8 +4839,8 @@
       "confidence": 0.56,
       "arabic_text": "وَمَا كَانَ ٱللَّهُ لِيُعَذِّبَهُمْ وَأَنتَ فِيهِمْ ۚ وَمَا كَانَ ٱللَّهُ مُعَذِّبَهُمْ وَهُمْ يَسْتَغْفِرُونَ",
       "english_text": "But God did not choose thus to chastise them whip thou [O Prophet] wert still among them, nor would God chastise them when they [might yet] ask for forgiveness.",
-      "start_time": 6267,
-      "end_time": 6267,
+      "start_time": 6267.0,
+      "end_time": 6267.0,
       "matched_token_indices": null
     },
     {
@@ -4609,8 +4854,8 @@
       "confidence": 0.56,
       "arabic_text": "وَمَا لَهُمْ أَلَّا يُعَذِّبَهُمُ ٱللَّهُ وَهُمْ يَصُدُّونَ عَنِ ٱلْمَسْجِدِ ٱلْحَرَامِ وَمَا كَانُوٓا۟ أَوْلِيَآءَهُۥٓ ۚ إِنْ أَوْلِيَآؤُهُۥٓ إِلَّا ٱلْمُتَّقُونَ وَلَٰكِنَّ أَكْثَرَهُمْ لَا يَعْلَمُونَ",
       "english_text": "But what have they [now] in their favour that God should not chastise them-seeing that they bar [the believers] from the Inviolable House of Worship, although they are not its [rightful] guardians? None but the God-conscious can be its guardians: but of this most of these [evildoers] are unaware;",
-      "start_time": 6287,
-      "end_time": 6287,
+      "start_time": 6287.0,
+      "end_time": 6287.0,
       "matched_token_indices": null
     },
     {
@@ -4624,8 +4869,8 @@
       "confidence": 0.56,
       "arabic_text": "وَمَا كَانَ صَلَاتُهُمْ عِندَ ٱلْبَيْتِ إِلَّا مُكَآءًۭ وَتَصْدِيَةًۭ ۚ فَذُوقُوا۟ ٱلْعَذَابَ بِمَا كُنتُمْ تَكْفُرُونَ",
       "english_text": "and their prayers before the Temple are nothing but whistling and clapping of hands. Taste then, [O unbelievers,] this chastisement as an outcome of your persistent denial of the truth!",
-      "start_time": 6307,
-      "end_time": 6307,
+      "start_time": 6307.0,
+      "end_time": 6307.0,
       "matched_token_indices": null
     },
     {
@@ -4639,8 +4884,8 @@
       "confidence": 0.56,
       "arabic_text": "إِنَّ ٱلَّذِينَ كَفَرُوا۟ يُنفِقُونَ أَمْوَٰلَهُمْ لِيَصُدُّوا۟ عَن سَبِيلِ ٱللَّهِ ۚ فَسَيُنفِقُونَهَا ثُمَّ تَكُونُ عَلَيْهِمْ حَسْرَةًۭ ثُمَّ يُغْلَبُونَ ۗ وَٱلَّذِينَ كَفَرُوٓا۟ إِلَىٰ جَهَنَّمَ يُحْشَرُونَ",
       "english_text": "Behold, those who are bent on denying the truth are spending their riches in order to turn others away from the path of God; and they will go on spending them until they become [a source of] intense regret for them; and then they will be overcome! And those who [until their death] have denied the truth shall be gathered unto hell,",
-      "start_time": 6327,
-      "end_time": 6327,
+      "start_time": 6327.0,
+      "end_time": 6327.0,
       "matched_token_indices": null
     },
     {
@@ -4654,8 +4899,8 @@
       "confidence": 0.56,
       "arabic_text": "لِيَمِيزَ ٱللَّهُ ٱلْخَبِيثَ مِنَ ٱلطَّيِّبِ وَيَجْعَلَ ٱلْخَبِيثَ بَعْضَهُۥ عَلَىٰ بَعْضٍۢ فَيَرْكُمَهُۥ جَمِيعًۭا فَيَجْعَلَهُۥ فِى جَهَنَّمَ ۚ أُو۟لَٰٓئِكَ هُمُ ٱلْخَٰسِرُونَ",
       "english_text": "so that God might separate the bad from the good, and join the bad with one another, and link them all together [within His condemnation], and then place them in hell. They, they are the lost!",
-      "start_time": 6347,
-      "end_time": 6347,
+      "start_time": 6347.0,
+      "end_time": 6347.0,
       "matched_token_indices": null
     },
     {
@@ -4669,8 +4914,8 @@
       "confidence": 0.56,
       "arabic_text": "قُل لِّلَّذِينَ كَفَرُوٓا۟ إِن يَنتَهُوا۟ يُغْفَرْ لَهُم مَّا قَدْ سَلَفَ وَإِن يَعُودُوا۟ فَقَدْ مَضَتْ سُنَّتُ ٱلْأَوَّلِينَ",
       "english_text": "Tell those who are bent on denying the truth that if they desist, all that is past shall be forgiven them; but if they revert [to their wrongdoing], let them remember what happened to the like of them in times gone by.",
-      "start_time": 6367,
-      "end_time": 6367,
+      "start_time": 6367.0,
+      "end_time": 6367.0,
       "matched_token_indices": null
     },
     {
@@ -4684,8 +4929,8 @@
       "confidence": 0.56,
       "arabic_text": "وَقَٰتِلُوهُمْ حَتَّىٰ لَا تَكُونَ فِتْنَةٌۭ وَيَكُونَ ٱلدِّينُ كُلُّهُۥ لِلَّهِ ۚ فَإِنِ ٱنتَهَوْا۟ فَإِنَّ ٱللَّهَ بِمَا يَعْمَلُونَ بَصِيرٌۭ",
       "english_text": "And fight against them until there is no more oppression and all worship is devoted to God alone. And if they desist-behold, God sees all that they do;",
-      "start_time": 6387,
-      "end_time": 6387,
+      "start_time": 6387.0,
+      "end_time": 6387.0,
       "matched_token_indices": null
     },
     {
@@ -4699,8 +4944,8 @@
       "confidence": 1.0,
       "arabic_text": "وَإِن تَوَلَّوْا۟ فَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ مَوْلَىٰكُمْ ۚ نِعْمَ ٱلْمَوْلَىٰ وَنِعْمَ ٱلنَّصِيرُ",
       "english_text": "and if they turn away [from righteousness], know that God is your Lord Supreme: [and] how excellent is this Lord Supreme, and how excellent this Giver of Succour!",
-      "start_time": 6407,
-      "end_time": 6429,
+      "start_time": 6407.0,
+      "end_time": 6429.0,
       "matched_token_indices": null
     }
   ],
