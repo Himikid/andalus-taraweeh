@@ -4103,28 +4103,28 @@
       "end_time": 3856.0,
       "matched_token_indices": [
         [
-          0,
-          6
-        ],
-        [
           1,
-          7
+          11
         ],
         [
           2,
-          8
+          14
         ],
         [
           3,
-          9
+          15
         ],
         [
           4,
-          10
+          16
         ],
         [
           5,
-          15
+          17
+        ],
+        [
+          6,
+          18
         ]
       ]
     },
@@ -4136,11 +4136,11 @@
       "juz": 9,
       "quality": "high",
       "reciter": "Sheikh Samir",
-      "confidence": 0.801,
+      "confidence": 0.702,
       "arabic_text": "وَإِذْ أَخَذَ رَبُّكَ مِنۢ بَنِىٓ ءَادَمَ مِن ظُهُورِهِمْ ذُرِّيَّتَهُمْ وَأَشْهَدَهُمْ عَلَىٰٓ أَنفُسِهِمْ أَلَسْتُ بِرَبِّكُمْ ۖ قَالُوا۟ بَلَىٰ ۛ شَهِدْنَآ ۛ أَن تَقُولُوا۟ يَوْمَ ٱلْقِيَٰمَةِ إِنَّا كُنَّا عَنْ هَٰذَا غَٰفِلِينَ",
       "english_text": "AND WHENEVER thy Sustainer brings forth their offspring from the loins of the children of Adam, He [thus] calls upon them to bear witness about themselves: \"Am I not your Sustainer?\" - to which they answer: \"Yea, indeed, we do bear witness thereto!\" [Of this We remind you,] lest you say on the Day of Resurrection, \"Verily, we were unaware of this\";",
       "start_time": 3869.0,
-      "end_time": 3897.0,
+      "end_time": 3894.0,
       "matched_token_indices": [
         [
           0,
@@ -4165,41 +4165,77 @@
       ]
     },
     {
-      "time": 3898,
+      "time": 3895,
       "surah": "Al-A'raaf",
       "ayah": 173,
       "surah_number": 7,
       "juz": 9,
       "quality": "high",
       "reciter": "Sheikh Samir",
-      "confidence": 0.777,
+      "confidence": 0.641,
       "arabic_text": "أَوْ تَقُولُوٓا۟ إِنَّمَآ أَشْرَكَ ءَابَآؤُنَا مِن قَبْلُ وَكُنَّا ذُرِّيَّةًۭ مِّنۢ بَعْدِهِمْ ۖ أَفَتُهْلِكُنَا بِمَا فَعَلَ ٱلْمُبْطِلُونَ",
       "english_text": "or lest you say, \"Verily, it was but our forefathers who, in times gone by, began to ascribe divinity to other beings beside God; and we were but their late offspring: wilt Thou, then, destroy us for the doings of those inventors of falsehoods?\"",
-      "start_time": 3898.0,
+      "start_time": 3895.0,
       "end_time": 3913.0,
       "matched_token_indices": [
         [
-          0,
+          12,
+          0
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          19,
+          7
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          21,
           9
         ],
         [
-          1,
+          22,
           10
         ],
         [
-          2,
+          23,
           11
         ],
         [
-          3,
+          24,
           12
         ],
         [
-          4,
+          25,
           13
         ],
         [
-          5,
+          26,
           14
         ]
       ]
@@ -4212,11 +4248,1011 @@
       "juz": 9,
       "quality": "high",
       "reciter": "Sheikh Samir",
-      "confidence": 0.719,
+      "confidence": 0.833,
       "arabic_text": "وَكَذَٰلِكَ نُفَصِّلُ ٱلْءَايَٰتِ وَلَعَلَّهُمْ يَرْجِعُونَ",
       "english_text": "And thus clearly do We spell out these messages; and [We do it] so that they [who have sinned] might return [unto Us].",
       "start_time": 3914.0,
       "end_time": 3921.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 3922,
+      "surah": "Al-A'raaf",
+      "ayah": 175,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.672,
+      "arabic_text": "وَٱتْلُ عَلَيْهِمْ نَبَأَ ٱلَّذِىٓ ءَاتَيْنَٰهُ ءَايَٰتِنَا فَٱنسَلَخَ مِنْهَا فَأَتْبَعَهُ ٱلشَّيْطَٰنُ فَكَانَ مِنَ ٱلْغَاوِينَ",
+      "english_text": "And tell them what happens to him to whom We vouchsafe Our messages and who then discards them: Satan catches up with him, and he strays, like so many others, into grievous error.",
+      "start_time": 3922.0,
+      "end_time": 3934.0,
+      "matched_token_indices": [
+        [
+          20,
+          0
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          22,
+          2
+        ],
+        [
+          23,
+          3
+        ],
+        [
+          24,
+          4
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          26,
+          6
+        ],
+        [
+          27,
+          7
+        ],
+        [
+          28,
+          8
+        ],
+        [
+          29,
+          9
+        ],
+        [
+          30,
+          10
+        ],
+        [
+          31,
+          11
+        ],
+        [
+          32,
+          12
+        ]
+      ]
+    },
+    {
+      "time": 3935,
+      "surah": "Al-A'raaf",
+      "ayah": 176,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.561,
+      "arabic_text": "وَلَوْ شِئْنَا لَرَفَعْنَٰهُ بِهَا وَلَٰكِنَّهُۥٓ أَخْلَدَ إِلَى ٱلْأَرْضِ وَٱتَّبَعَ هَوَىٰهُ ۚ فَمَثَلُهُۥ كَمَثَلِ ٱلْكَلْبِ إِن تَحْمِلْ عَلَيْهِ يَلْهَثْ أَوْ تَتْرُكْهُ يَلْهَث ۚ ذَّٰلِكَ مَثَلُ ٱلْقَوْمِ ٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا ۚ فَٱقْصُصِ ٱلْقَصَصَ لَعَلَّهُمْ يَتَفَكَّرُونَ",
+      "english_text": "Now had We so willed, We could indeed have exalted him by means of those [messages]: but he always clung to the earth and followed but his own desires. Thus, his parable is that of an [excited] dog: if thou approach him threateningly, he will pant with his tongue lolling; and. if thou leave him alone, he will pant with his tongue lolling. Such is the parable of those who are bent on giving the lie to Our messages. Tell [them], then, this story, so that they might take thought.",
+      "start_time": 3935.0,
+      "end_time": 3971.0,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          21,
+          3
+        ],
+        [
+          22,
+          4
+        ],
+        [
+          23,
+          5
+        ],
+        [
+          24,
+          6
+        ],
+        [
+          25,
+          7
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          28,
+          10
+        ],
+        [
+          29,
+          11
+        ],
+        [
+          30,
+          12
+        ],
+        [
+          31,
+          13
+        ],
+        [
+          32,
+          14
+        ],
+        [
+          33,
+          15
+        ],
+        [
+          34,
+          16
+        ],
+        [
+          35,
+          17
+        ],
+        [
+          36,
+          18
+        ],
+        [
+          37,
+          19
+        ],
+        [
+          38,
+          20
+        ],
+        [
+          39,
+          21
+        ],
+        [
+          40,
+          22
+        ],
+        [
+          41,
+          23
+        ],
+        [
+          42,
+          24
+        ],
+        [
+          43,
+          25
+        ],
+        [
+          44,
+          26
+        ],
+        [
+          45,
+          27
+        ],
+        [
+          47,
+          28
+        ],
+        [
+          48,
+          29
+        ]
+      ]
+    },
+    {
+      "time": 3972,
+      "surah": "Al-A'raaf",
+      "ayah": 177,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.811,
+      "arabic_text": "سَآءَ مَثَلًا ٱلْقَوْمُ ٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا وَأَنفُسَهُمْ كَانُوا۟ يَظْلِمُونَ",
+      "english_text": "Evil is the example of people who are bent on giving the lie to Our messages: for it is against their own selves that they are sinning!",
+      "start_time": 3972.0,
+      "end_time": 4092.0,
+      "matched_token_indices": [
+        [
+          44,
+          0
+        ],
+        [
+          45,
+          1
+        ],
+        [
+          46,
+          2
+        ],
+        [
+          47,
+          3
+        ],
+        [
+          48,
+          4
+        ],
+        [
+          49,
+          5
+        ],
+        [
+          53,
+          6
+        ],
+        [
+          54,
+          7
+        ],
+        [
+          55,
+          8
+        ]
+      ]
+    },
+    {
+      "time": 4093,
+      "surah": "Al-A'raaf",
+      "ayah": 178,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.918,
+      "arabic_text": "مَن يَهْدِ ٱللَّهُ فَهُوَ ٱلْمُهْتَدِى ۖ وَمَن يُضْلِلْ فَأُو۟لَٰٓئِكَ هُمُ ٱلْخَٰسِرُونَ",
+      "english_text": "He whom God guides, he alone is truly guided; whereas those whom He lets go astray-it is they, they who are the losers!",
+      "start_time": 4093.0,
+      "end_time": 4106.0,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "time": 4107,
+      "surah": "Al-A'raaf",
+      "ayah": 179,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.796,
+      "arabic_text": "وَلَقَدْ ذَرَأْنَا لِجَهَنَّمَ كَثِيرًۭا مِّنَ ٱلْجِنِّ وَٱلْإِنسِ ۖ لَهُمْ قُلُوبٌۭ لَّا يَفْقَهُونَ بِهَا وَلَهُمْ أَعْيُنٌۭ لَّا يُبْصِرُونَ بِهَا وَلَهُمْ ءَاذَانٌۭ لَّا يَسْمَعُونَ بِهَآ ۚ أُو۟لَٰٓئِكَ كَٱلْأَنْعَٰمِ بَلْ هُمْ أَضَلُّ ۚ أُو۟لَٰٓئِكَ هُمُ ٱلْغَٰفِلُونَ",
+      "english_text": "And most certainly have We destined for hell many of the invisible beings and men who have hearts with which they fail to grasp the truth, and eyes with which they fail to see, and ears with which they fail to hear. They are like cattle -nay, they are even less conscious of the right way: it is they, they who are the [truly] heedless!",
+      "start_time": 4107.0,
+      "end_time": 4145.0,
+      "matched_token_indices": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          6,
+          17
+        ]
+      ]
+    },
+    {
+      "time": 4146,
+      "surah": "Al-A'raaf",
+      "ayah": 180,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.786,
+      "arabic_text": "وَلِلَّهِ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ فَٱدْعُوهُ بِهَا ۖ وَذَرُوا۟ ٱلَّذِينَ يُلْحِدُونَ فِىٓ أَسْمَٰٓئِهِۦ ۚ سَيُجْزَوْنَ مَا كَانُوا۟ يَعْمَلُونَ",
+      "english_text": "AND GOD'S [alone] are the attributes of perfection; invoke Him, then, by these, and stand aloof from all who distort the meaning of His attributes: they shall be requited for all that they were wont to do!",
+      "start_time": 4146.0,
+      "end_time": 4165.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4166,
+      "surah": "Al-A'raaf",
+      "ayah": 181,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.629,
+      "arabic_text": "وَمِمَّنْ خَلَقْنَآ أُمَّةٌۭ يَهْدُونَ بِٱلْحَقِّ وَبِهِۦ يَعْدِلُونَ",
+      "english_text": "Now, among those whom We have created there are people who guide [others] in the way of the truth and act justly in its light.",
+      "start_time": 4166.0,
+      "end_time": 4175.0,
+      "matched_token_indices": [
+        [
+          33,
+          0
+        ],
+        [
+          34,
+          1
+        ],
+        [
+          35,
+          2
+        ],
+        [
+          36,
+          3
+        ],
+        [
+          37,
+          4
+        ],
+        [
+          38,
+          5
+        ],
+        [
+          39,
+          6
+        ]
+      ]
+    },
+    {
+      "time": 4176,
+      "surah": "Al-A'raaf",
+      "ayah": 182,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.63,
+      "arabic_text": "وَٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا سَنَسْتَدْرِجُهُم مِّنْ حَيْثُ لَا يَعْلَمُونَ",
+      "english_text": "But as for those who are bent on giving the lie to Our messages-We shall bring them low, step by step, without their perceiving how it came about:",
+      "start_time": 4176.0,
+      "end_time": 4185.0,
+      "matched_token_indices": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "time": 4186,
+      "surah": "Al-A'raaf",
+      "ayah": 183,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.796,
+      "arabic_text": "وَأُمْلِى لَهُمْ ۚ إِنَّ كَيْدِى مَتِينٌ",
+      "english_text": "for, behold, though I may give them rein for a while. My subtle scheme is exceedingly firm!",
+      "start_time": 4186.0,
+      "end_time": 4190.0,
+      "matched_token_indices": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "time": 4191,
+      "surah": "Al-A'raaf",
+      "ayah": 184,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.843,
+      "arabic_text": "أَوَلَمْ يَتَفَكَّرُوا۟ ۗ مَا بِصَاحِبِهِم مِّن جِنَّةٍ ۚ إِنْ هُوَ إِلَّا نَذِيرٌۭ مُّبِينٌ",
+      "english_text": "Has it, then, never occurred to them that there is no madness whatever in [this] their fellowman? He is only a plain warner.",
+      "start_time": 4191.0,
+      "end_time": 4203.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4204,
+      "surah": "Al-A'raaf",
+      "ayah": 185,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.628,
+      "arabic_text": "أَوَلَمْ يَنظُرُوا۟ فِى مَلَكُوتِ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ وَمَا خَلَقَ ٱللَّهُ مِن شَىْءٍۢ وَأَنْ عَسَىٰٓ أَن يَكُونَ قَدِ ٱقْتَرَبَ أَجَلُهُمْ ۖ فَبِأَىِّ حَدِيثٍۭ بَعْدَهُۥ يُؤْمِنُونَ",
+      "english_text": "Have they, then, never considered [God's] mighty dominion over the heavens and the earth, and all the things that God has created, and [asked themselves] whether, perchance, the end of their own term might already have drawn nigh? In what other tiding, then, will they, after this, believe?",
+      "start_time": 4204.0,
+      "end_time": 4228.0,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          19,
+          19
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          22,
+          21
+        ]
+      ]
+    },
+    {
+      "time": 4229,
+      "surah": "Al-A'raaf",
+      "ayah": 186,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.768,
+      "arabic_text": "مَن يُضْلِلِ ٱللَّهُ فَلَا هَادِىَ لَهُۥ ۚ وَيَذَرُهُمْ فِى طُغْيَٰنِهِمْ يَعْمَهُونَ",
+      "english_text": "For those whom God lets go astray, there is no guide; and He shall leave them in their overweening arrogance, blindly stumbling to and fro.",
+      "start_time": 4229.0,
+      "end_time": 4245.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4246,
+      "surah": "Al-A'raaf",
+      "ayah": 187,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.805,
+      "arabic_text": "يَسْـَٔلُونَكَ عَنِ ٱلسَّاعَةِ أَيَّانَ مُرْسَىٰهَا ۖ قُلْ إِنَّمَا عِلْمُهَا عِندَ رَبِّى ۖ لَا يُجَلِّيهَا لِوَقْتِهَآ إِلَّا هُوَ ۚ ثَقُلَتْ فِى ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ ۚ لَا تَأْتِيكُمْ إِلَّا بَغْتَةًۭ ۗ يَسْـَٔلُونَكَ كَأَنَّكَ حَفِىٌّ عَنْهَا ۖ قُلْ إِنَّمَا عِلْمُهَا عِندَ ٱللَّهِ وَلَٰكِنَّ أَكْثَرَ ٱلنَّاسِ لَا يَعْلَمُونَ",
+      "english_text": "THEY WILL ASK thee [O Prophet] about the Last Hour: \"When will it come to pass?\" Say: \"Verily, knowledge thereof rests with my Sustainer alone. None but He will reveal it in its time. Heavily will it weigh on the heavens and the earth; [and] it will not fall upon you otherwise than of a sudden.\" They will ask thee - as if thou couldst gain insight into this [mystery] by dint of persistent inquiry! Say: \"Knowledge thereof rests with my Sustainer alone; but [of this] most people are unaware.\"",
+      "start_time": 4246.0,
+      "end_time": 4299.0,
+      "matched_token_indices": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          12
+        ]
+      ]
+    },
+    {
+      "time": 4300,
+      "surah": "Al-A'raaf",
+      "ayah": 188,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.661,
+      "arabic_text": "قُل لَّآ أَمْلِكُ لِنَفْسِى نَفْعًۭا وَلَا ضَرًّا إِلَّا مَا شَآءَ ٱللَّهُ ۚ وَلَوْ كُنتُ أَعْلَمُ ٱلْغَيْبَ لَٱسْتَكْثَرْتُ مِنَ ٱلْخَيْرِ وَمَا مَسَّنِىَ ٱلسُّوٓءُ ۚ إِنْ أَنَا۠ إِلَّا نَذِيرٌۭ وَبَشِيرٌۭ لِّقَوْمٍۢ يُؤْمِنُونَ",
+      "english_text": "Say [O Prophet]: \"It is not within my power to bring benefit to, or avert harm from, myself, except as God may please. And if I knew that which is beyond the reach of human perception, abundant good fortune-would surely have fallen to my lot, and no evil would ever have touched me. I am nothing but a warner, and a herald of glad tidings unto people who will believe.\"",
+      "start_time": 4300.0,
+      "end_time": 4474.0,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          21,
+          3
+        ],
+        [
+          22,
+          4
+        ],
+        [
+          23,
+          5
+        ],
+        [
+          24,
+          6
+        ],
+        [
+          25,
+          7
+        ],
+        [
+          26,
+          8
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          28,
+          10
+        ],
+        [
+          29,
+          11
+        ],
+        [
+          30,
+          12
+        ],
+        [
+          31,
+          13
+        ],
+        [
+          32,
+          14
+        ],
+        [
+          33,
+          15
+        ],
+        [
+          34,
+          16
+        ],
+        [
+          35,
+          17
+        ],
+        [
+          36,
+          18
+        ],
+        [
+          37,
+          19
+        ],
+        [
+          38,
+          20
+        ],
+        [
+          39,
+          21
+        ],
+        [
+          40,
+          22
+        ],
+        [
+          41,
+          23
+        ],
+        [
+          42,
+          24
+        ],
+        [
+          43,
+          25
+        ],
+        [
+          44,
+          26
+        ],
+        [
+          45,
+          27
+        ]
+      ]
+    },
+    {
+      "time": 4475,
+      "surah": "Al-A'raaf",
+      "ayah": 189,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.855,
+      "arabic_text": "۞ هُوَ ٱلَّذِى خَلَقَكُم مِّن نَّفْسٍۢ وَٰحِدَةٍۢ وَجَعَلَ مِنْهَا زَوْجَهَا لِيَسْكُنَ إِلَيْهَا ۖ فَلَمَّا تَغَشَّىٰهَا حَمَلَتْ حَمْلًا خَفِيفًۭا فَمَرَّتْ بِهِۦ ۖ فَلَمَّآ أَثْقَلَت دَّعَوَا ٱللَّهَ رَبَّهُمَا لَئِنْ ءَاتَيْتَنَا صَٰلِحًۭا لَّنَكُونَنَّ مِنَ ٱلشَّٰكِرِينَ",
+      "english_text": "IT IS HE who has created you [all] out of one living entity, and out of it brought into being its mate, so that man might incline [with love] towards woman. And so, when he has embraced her, she conceives [what at first is] a light burden, and continues to bear it. Then, when she grows heavy [with child], they both call unto God, their Sustainer, \"If Thou indeed grant us a sound [child], we shall most certainly be among the grateful!\"",
+      "start_time": 4475.0,
+      "end_time": 4505.0,
+      "matched_token_indices": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          18
+        ]
+      ]
+    },
+    {
+      "time": 4506,
+      "surah": "Al-A'raaf",
+      "ayah": 190,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.796,
+      "arabic_text": "فَلَمَّآ ءَاتَىٰهُمَا صَٰلِحًۭا جَعَلَا لَهُۥ شُرَكَآءَ فِيمَآ ءَاتَىٰهُمَا ۚ فَتَعَٰلَى ٱللَّهُ عَمَّا يُشْرِكُونَ",
+      "english_text": "And yet, as soon as He has granted them sound [offspring], they begin to ascribe to other powers beside Him a share in bringing about what He has granted them! Sublimely exalted, however, is God- above anything to which men may ascribe a share in His divinity!",
+      "start_time": 4506.0,
+      "end_time": 4521.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4522,
+      "surah": "Al-A'raaf",
+      "ayah": 191,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.785,
+      "arabic_text": "أَيُشْرِكُونَ مَا لَا يَخْلُقُ شَيْـًۭٔا وَهُمْ يُخْلَقُونَ",
+      "english_text": "Will they, then,- ascribe divinity, side by side with Him, unto beings that cannot create anything since they themselves are created -",
+      "start_time": 4522.0,
+      "end_time": 4522.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4523,
+      "surah": "Al-A'raaf",
+      "ayah": 192,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.993,
+      "arabic_text": "وَلَا يَسْتَطِيعُونَ لَهُمْ نَصْرًۭا وَلَآ أَنفُسَهُمْ يَنصُرُونَ",
+      "english_text": "and neither are able to give them succour nor can succour themselves,",
+      "start_time": 4523.0,
+      "end_time": 4536.0,
+      "matched_token_indices": [
+        [
+          27,
+          0
+        ],
+        [
+          33,
+          1
+        ],
+        [
+          34,
+          2
+        ],
+        [
+          35,
+          3
+        ],
+        [
+          36,
+          4
+        ],
+        [
+          37,
+          5
+        ],
+        [
+          38,
+          6
+        ]
+      ]
+    },
+    {
+      "time": 4537,
+      "surah": "Al-A'raaf",
+      "ayah": 193,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.921,
+      "arabic_text": "وَإِن تَدْعُوهُمْ إِلَى ٱلْهُدَىٰ لَا يَتَّبِعُوكُمْ ۚ سَوَآءٌ عَلَيْكُمْ أَدَعَوْتُمُوهُمْ أَمْ أَنتُمْ صَٰمِتُونَ",
+      "english_text": "and, if you pray to them for guidance, do not respond to you? As far as you are concerned, it is all one whether you invoke them or keep silent.",
+      "start_time": 4537.0,
+      "end_time": 4551.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4552,
+      "surah": "Al-A'raaf",
+      "ayah": 194,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.671,
+      "arabic_text": "إِنَّ ٱلَّذِينَ تَدْعُونَ مِن دُونِ ٱللَّهِ عِبَادٌ أَمْثَالُكُمْ ۖ فَٱدْعُوهُمْ فَلْيَسْتَجِيبُوا۟ لَكُمْ إِن كُنتُمْ صَٰدِقِينَ",
+      "english_text": "Verily, all those whom you invoke beside God are but created beings like yourselves: invoke them, then, and let them answer your prayer - if what you claim is true!",
+      "start_time": 4552.0,
+      "end_time": 4573.0,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    {
+      "time": 4574,
+      "surah": "Al-A'raaf",
+      "ayah": 195,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.794,
+      "arabic_text": "أَلَهُمْ أَرْجُلٌۭ يَمْشُونَ بِهَآ ۖ أَمْ لَهُمْ أَيْدٍۢ يَبْطِشُونَ بِهَآ ۖ أَمْ لَهُمْ أَعْيُنٌۭ يُبْصِرُونَ بِهَآ ۖ أَمْ لَهُمْ ءَاذَانٌۭ يَسْمَعُونَ بِهَا ۗ قُلِ ٱدْعُوا۟ شُرَكَآءَكُمْ ثُمَّ كِيدُونِ فَلَا تُنظِرُونِ",
+      "english_text": "Have these [images], perchance, feet on which they could walk? Or have they hands with which they could grasp? Or have they eyes with which they could see? Or have they ears with which they could hear? Say [O Prophet]: \"Summon to your aid all those to whom you ascribe a share in God's divinity, and thereupon contrive [anything you may wish] against me, and give me no respite!",
+      "start_time": 4574.0,
+      "end_time": 4604.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4605,
+      "surah": "Al-A'raaf",
+      "ayah": 196,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.67,
+      "arabic_text": "إِنَّ وَلِۦِّىَ ٱللَّهُ ٱلَّذِى نَزَّلَ ٱلْكِتَٰبَ ۖ وَهُوَ يَتَوَلَّى ٱلصَّٰلِحِينَ",
+      "english_text": "Verily, my protector is God, who has bestowed this divine writ from on high: for it is He who protects the righteous,",
+      "start_time": 4605.0,
+      "end_time": 4623.0,
       "matched_token_indices": [
         [
           0,
@@ -4241,18 +5277,74 @@
       ]
     },
     {
-      "time": 3922,
+      "time": 4624,
       "surah": "Al-A'raaf",
-      "ayah": 175,
+      "ayah": 197,
       "surah_number": 7,
       "juz": 9,
       "quality": "high",
       "reciter": "Sheikh Samir",
-      "confidence": 0.661,
-      "arabic_text": "وَٱتْلُ عَلَيْهِمْ نَبَأَ ٱلَّذِىٓ ءَاتَيْنَٰهُ ءَايَٰتِنَا فَٱنسَلَخَ مِنْهَا فَأَتْبَعَهُ ٱلشَّيْطَٰنُ فَكَانَ مِنَ ٱلْغَاوِينَ",
-      "english_text": "And tell them what happens to him to whom We vouchsafe Our messages and who then discards them: Satan catches up with him, and he strays, like so many others, into grievous error.",
-      "start_time": 3922.0,
-      "end_time": 3934.0,
+      "confidence": 0.755,
+      "arabic_text": "وَٱلَّذِينَ تَدْعُونَ مِن دُونِهِۦ لَا يَسْتَطِيعُونَ نَصْرَكُمْ وَلَآ أَنفُسَهُمْ يَنصُرُونَ",
+      "english_text": "whereas all those whom you invoke in His stead are neither able to give you succour nor can succour themselves;",
+      "start_time": 4624.0,
+      "end_time": 4755.0,
+      "matched_token_indices": [
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          26,
+          9
+        ]
+      ]
+    },
+    {
+      "time": 4756,
+      "surah": "Al-A'raaf",
+      "ayah": 198,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.907,
+      "arabic_text": "وَإِن تَدْعُوهُمْ إِلَى ٱلْهُدَىٰ لَا يَسْمَعُوا۟ ۖ وَتَرَىٰهُمْ يَنظُرُونَ إِلَيْكَ وَهُمْ لَا يُبْصِرُونَ",
+      "english_text": "and if you pray unto them for guidance, they do not hear; and though thou mayest imagine that they behold thee, they do not see.\"",
+      "start_time": 4756.0,
+      "end_time": 4768.0,
       "matched_token_indices": [
         [
           0,
@@ -4281,54 +5373,191 @@
       ]
     },
     {
-      "time": 3935,
+      "time": 4769,
       "surah": "Al-A'raaf",
-      "ayah": 176,
+      "ayah": 199,
       "surah_number": 7,
       "juz": 9,
       "quality": "high",
       "reciter": "Sheikh Samir",
-      "confidence": 0.799,
-      "arabic_text": "وَلَوْ شِئْنَا لَرَفَعْنَٰهُ بِهَا وَلَٰكِنَّهُۥٓ أَخْلَدَ إِلَى ٱلْأَرْضِ وَٱتَّبَعَ هَوَىٰهُ ۚ فَمَثَلُهُۥ كَمَثَلِ ٱلْكَلْبِ إِن تَحْمِلْ عَلَيْهِ يَلْهَثْ أَوْ تَتْرُكْهُ يَلْهَث ۚ ذَّٰلِكَ مَثَلُ ٱلْقَوْمِ ٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا ۚ فَٱقْصُصِ ٱلْقَصَصَ لَعَلَّهُمْ يَتَفَكَّرُونَ",
-      "english_text": "Now had We so willed, We could indeed have exalted him by means of those [messages]: but he always clung to the earth and followed but his own desires. Thus, his parable is that of an [excited] dog: if thou approach him threateningly, he will pant with his tongue lolling; and. if thou leave him alone, he will pant with his tongue lolling. Such is the parable of those who are bent on giving the lie to Our messages. Tell [them], then, this story, so that they might take thought.",
-      "start_time": 3935.0,
-      "end_time": 3969.0,
+      "confidence": 0.645,
+      "arabic_text": "خُذِ ٱلْعَفْوَ وَأْمُرْ بِٱلْعُرْفِ وَأَعْرِضْ عَنِ ٱلْجَٰهِلِينَ",
+      "english_text": "MAKE due allowance for man's nature, and enjoin the doing of what is right; and leave alone all those who choose to remain ignorant.",
+      "start_time": 4769.0,
+      "end_time": 4775.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4776,
+      "surah": "Al-A'raaf",
+      "ayah": 200,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.857,
+      "arabic_text": "وَإِمَّا يَنزَغَنَّكَ مِنَ ٱلشَّيْطَٰنِ نَزْغٌۭ فَٱسْتَعِذْ بِٱللَّهِ ۚ إِنَّهُۥ سَمِيعٌ عَلِيمٌ",
+      "english_text": "And if it should happen that a prompting from Satan stirs thee up [to blind anger], seek refuge with God: behold, He is all-hearing, all-knowing.",
+      "start_time": 4776.0,
+      "end_time": 4791.0,
       "matched_token_indices": [
         [
           0,
-          3
-        ],
-        [
-          1,
-          4
-        ],
-        [
-          2,
           5
         ],
         [
-          3,
+          1,
           6
         ],
         [
+          2,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
           4,
+          9
+        ]
+      ]
+    },
+    {
+      "time": 4792,
+      "surah": "Al-A'raaf",
+      "ayah": 201,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.785,
+      "arabic_text": "إِنَّ ٱلَّذِينَ ٱتَّقَوْا۟ إِذَا مَسَّهُمْ طَٰٓئِفٌۭ مِّنَ ٱلشَّيْطَٰنِ تَذَكَّرُوا۟ فَإِذَا هُم مُّبْصِرُونَ",
+      "english_text": "Verily, they who are conscious of God bethink themselves [of Him] whenever any dark suggestion from Satan touches them - whereupon, lo! they begin to see [things] clearly,",
+      "start_time": 4792.0,
+      "end_time": 4802.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4803,
+      "surah": "Al-A'raaf",
+      "ayah": 202,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.648,
+      "arabic_text": "وَإِخْوَٰنُهُمْ يَمُدُّونَهُمْ فِى ٱلْغَىِّ ثُمَّ لَا يُقْصِرُونَ",
+      "english_text": "even though their [godless] brethren would [like to] draw them into error: and then they cannot fail [to do what is right].",
+      "start_time": 4803.0,
+      "end_time": 4811.0,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "time": 4812,
+      "surah": "Al-A'raaf",
+      "ayah": 203,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.813,
+      "arabic_text": "وَإِذَا لَمْ تَأْتِهِم بِـَٔايَةٍۢ قَالُوا۟ لَوْلَا ٱجْتَبَيْتَهَا ۚ قُلْ إِنَّمَآ أَتَّبِعُ مَا يُوحَىٰٓ إِلَىَّ مِن رَّبِّى ۚ هَٰذَا بَصَآئِرُ مِن رَّبِّكُمْ وَهُدًۭى وَرَحْمَةٌۭ لِّقَوْمٍۢ يُؤْمِنُونَ",
+      "english_text": "And yet, when thou [O Prophet] dost not produce any miracle for them, some [people] say, \"Why dost thou not seek to obtain it [from God]? Say: \"I only follow whatever is being revealed to me by my Sustainer: this [revelation] is a means of insight from your Sustainer, and a guidance and grace unto people who will believe.",
+      "start_time": 4812.0,
+      "end_time": 4835.0,
+      "matched_token_indices": null
+    },
+    {
+      "time": 4836,
+      "surah": "Al-A'raaf",
+      "ayah": 204,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.641,
+      "arabic_text": "وَإِذَا قُرِئَ ٱلْقُرْءَانُ فَٱسْتَمِعُوا۟ لَهُۥ وَأَنصِتُوا۟ لَعَلَّكُمْ تُرْحَمُونَ",
+      "english_text": "Hence, when the Qur'an is voiced, hearken unto it, and listen in silence, so that you might be graced with [God's] mercy.\"",
+      "start_time": 4836.0,
+      "end_time": 4847.0,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
           7
         ]
       ]
     },
     {
-      "time": 3970,
+      "time": 4848,
       "surah": "Al-A'raaf",
-      "ayah": 177,
+      "ayah": 205,
       "surah_number": 7,
       "juz": 9,
       "quality": "high",
       "reciter": "Sheikh Samir",
-      "confidence": 0.669,
-      "arabic_text": "سَآءَ مَثَلًا ٱلْقَوْمُ ٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا وَأَنفُسَهُمْ كَانُوا۟ يَظْلِمُونَ",
-      "english_text": "Evil is the example of people who are bent on giving the lie to Our messages: for it is against their own selves that they are sinning!",
-      "start_time": 3970.0,
-      "end_time": 3988.0,
+      "confidence": 0.566,
+      "arabic_text": "وَٱذْكُر رَّبَّكَ فِى نَفْسِكَ تَضَرُّعًۭا وَخِيفَةًۭ وَدُونَ ٱلْجَهْرِ مِنَ ٱلْقَوْلِ بِٱلْغُدُوِّ وَٱلْءَاصَالِ وَلَا تَكُن مِّنَ ٱلْغَٰفِلِينَ",
+      "english_text": "And bethink thyself of thy Sustainer humbly and with awe, and without raising thy voice, at morn and at evening; and do not allow thyself to be heedless.",
+      "start_time": 4848.0,
+      "end_time": 4863.0,
       "matched_token_indices": [
         [
           0,
@@ -4344,6 +5573,78 @@
         ],
         [
           3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ]
+      ]
+    },
+    {
+      "time": 4864,
+      "surah": "Al-A'raaf",
+      "ayah": 206,
+      "surah_number": 7,
+      "juz": 9,
+      "quality": "high",
+      "reciter": "Sheikh Samir",
+      "confidence": 0.778,
+      "arabic_text": "إِنَّ ٱلَّذِينَ عِندَ رَبِّكَ لَا يَسْتَكْبِرُونَ عَنْ عِبَادَتِهِۦ وَيُسَبِّحُونَهُۥ وَلَهُۥ يَسْجُدُونَ ۩",
+      "english_text": "Behold, those who are near unto thy Sustainer are never too proud to worship Him; and they extol His limitless glory, and prostrate themselves before Him [alone].",
+      "start_time": 4864.0,
+      "end_time": 4878.0,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
           4
         ]
       ]
