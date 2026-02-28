@@ -692,6 +692,170 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  9: [
+    {
+      ayahRef: "7:89",
+      themeType: "Dua",
+      shortTitle: "Our Lord, Judge Between Us in Truth",
+      whyNotable: [
+        "A major Quranic dua for justice in times of dispute and pressure.",
+        "Widely cited as a prophetic model of trust in Allah's judgment.",
+      ],
+      summary:
+        "Shu'ayb asks Allah to decide between peoples in truth, affirming that Allah is the best of judges. The ayah teaches that resolution is sought through truth and divine justice, not ego or faction.",
+      keyTakeaway: "In conflict, return to truth and trust Allah's just decree.",
+      references: [
+        { name: "Quran 7:89", url: "https://quran.com/7:89" },
+        { name: "Ibn Kathir Tafsir (7:89)", url: "https://quran.com/en/7:89/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "7:151",
+      themeType: "Dua",
+      shortTitle: "Musa's Dua for Mercy and Reform",
+      whyNotable: [
+        "A famous prophetic supplication combining forgiveness and mercy.",
+        "Frequently used to ask Allah for personal and communal rectification.",
+      ],
+      summary:
+        "Musa asks Allah to forgive him and his brother and admit them into divine mercy. The dua joins repentance with concern for communal reform.",
+      keyTakeaway: "Seek Allah's mercy while asking for reform in the Ummah.",
+      references: [
+        { name: "Quran 7:151", url: "https://quran.com/7:151" },
+        { name: "Ibn Kathir Tafsir (7:151)", url: "https://quran.com/en/7:151/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "7:180",
+      themeType: "Famous Ayah",
+      shortTitle: "Call on Allah by His Most Beautiful Names",
+      whyNotable: [
+        "One of the most famous ayat connected to Asma' al-Husna.",
+        "Commonly cited in worship, dua, and remembrance practice.",
+      ],
+      summary:
+        "Allah declares that the most beautiful names belong to Him and commands believers to call on Him through them. The ayah anchors devotional life in reverence and correct belief.",
+      keyTakeaway: "Deepen dua by calling Allah through His beautiful names.",
+      references: [
+        { name: "Quran 7:180", url: "https://quran.com/7:180" },
+        { name: "Ibn Kathir Tafsir (7:180)", url: "https://quran.com/en/7:180/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "8:2",
+      themeType: "Famous Ayah",
+      shortTitle: "The Believers' Hearts Tremble at Allah's Mention",
+      whyNotable: [
+        "A defining ayah for the inner state of true believers.",
+        "Frequently recited in reminders on iman and spiritual responsiveness.",
+      ],
+      summary:
+        "Believers are described as those whose hearts respond with awe when Allah is remembered, and whose faith increases when revelation is recited. The ayah links iman to living responsiveness, not mere identity.",
+      keyTakeaway: "Let remembrance and revelation actively increase your iman.",
+      references: [
+        { name: "Quran 8:2", url: "https://quran.com/8:2" },
+        { name: "Ibn Kathir Tafsir (8:2)", url: "https://quran.com/en/8:2/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "8:24",
+      themeType: "Famous Ayah",
+      shortTitle: "Respond to What Gives You Life",
+      whyNotable: [
+        "A highly cited ayah on obedience as spiritual life.",
+        "Widely used in calls to sincere response to Quran and Sunnah.",
+      ],
+      summary:
+        "Believers are commanded to respond to Allah and His Messenger when called to what gives life. The ayah frames guidance as true vitality for the heart and community.",
+      keyTakeaway: "Real life is in responding to revelation without delay.",
+      references: [
+        { name: "Quran 8:24", url: "https://quran.com/8:24" },
+        { name: "Ibn Kathir Tafsir (8:24)", url: "https://quran.com/en/8:24/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
+  10: [
+    {
+      ayahRef: "8:60",
+      themeType: "Famous Ayah",
+      shortTitle: "Prepare Strength with Reliance on Allah",
+      whyNotable: [
+        "A very famous ayah on readiness and strategic responsibility.",
+        "Frequently cited in discussions of disciplined preparation in deen.",
+      ],
+      summary:
+        "Believers are commanded to prepare what strength they can for protection and deterrence. The ayah combines practical readiness with accountability to Allah.",
+      keyTakeaway: "Preparation is an act of responsibility under Allah's command.",
+      references: [
+        { name: "Quran 8:60", url: "https://quran.com/8:60" },
+        { name: "Ibn Kathir Tafsir (8:60)", url: "https://quran.com/en/8:60/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "8:63",
+      themeType: "Famous Ayah",
+      shortTitle: "Allah Unites Hearts",
+      whyNotable: [
+        "A major ayah on unity being a divine gift, not merely strategy.",
+        "Commonly quoted in reminders on brotherhood and communal healing.",
+      ],
+      summary:
+        "Allah states that He united believers' hearts, something wealth alone could never have accomplished. The ayah roots true unity in Allah's mercy and guidance.",
+      keyTakeaway: "Seek unity through Allah's guidance, not worldly means alone.",
+      references: [
+        { name: "Quran 8:63", url: "https://quran.com/8:63" },
+        { name: "Ibn Kathir Tafsir (8:63)", url: "https://quran.com/en/8:63/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "9:51",
+      themeType: "Famous Ayah",
+      shortTitle: "Nothing Befalls Us Except What Allah Decrees",
+      whyNotable: [
+        "One of the most quoted ayat for tawakkul in hardship.",
+        "Widely recited for emotional steadiness and trust in qadr.",
+      ],
+      summary:
+        "Believers are taught to say that nothing reaches them except what Allah has decreed. The ayah trains reliance, courage, and emotional balance through trust in Allah.",
+      keyTakeaway: "Face uncertainty with tawakkul and confidence in Allah's decree.",
+      references: [
+        { name: "Quran 9:51", url: "https://quran.com/9:51" },
+        { name: "Ibn Kathir Tafsir (9:51)", url: "https://quran.com/en/9:51/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "9:71",
+      themeType: "Famous Ayah",
+      shortTitle: "Believing Men and Women as Protecting Allies",
+      whyNotable: [
+        "A foundational ayah for shared duty in the believing community.",
+        "Frequently cited for communal ethics and mutual responsibility.",
+      ],
+      summary:
+        "The ayah describes believing men and women as allies who uphold good, restrain wrong, establish prayer, and obey Allah and His Messenger. It frames community strength through shared obedience.",
+      keyTakeaway: "Build strong communities through mutual faith-driven responsibility.",
+      references: [
+        { name: "Quran 9:71", url: "https://quran.com/9:71" },
+        { name: "Ibn Kathir Tafsir (9:71)", url: "https://quran.com/en/9:71/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "9:91",
+      themeType: "Famous Ayah",
+      shortTitle: "No Blame on the Weak if Sincere to Allah",
+      whyNotable: [
+        "A well-known ayah balancing legal duty with mercy and sincerity.",
+        "Often cited to show Allah's justice and compassion in obligations.",
+      ],
+      summary:
+        "This ayah lifts blame from those with genuine incapacity when they remain sincere to Allah and His Messenger. It affirms that Allah's law is rooted in justice, mercy, and truthful intention.",
+      keyTakeaway: "Allah values sincerity and does not burden beyond genuine capacity.",
+      references: [
+        { name: "Quran 9:91", url: "https://quran.com/9:91" },
+        { name: "Ibn Kathir Tafsir (9:91)", url: "https://quran.com/en/9:91/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -773,6 +937,26 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Guidance is accepted through surrender, not selective obedience.",
       "The stories in Al-A'raaf warn against arrogance and delaying repentance.",
       "Steadfast faith combines tawhid, gratitude, and accountability to Allah.",
+    ],
+  },
+  9: {
+    title: "Day 9 Recitation Summary (Al-A'raaf 85-206, Al-Anfaal 1-40)",
+    summary:
+      "Day 9 closes Al-A'raaf with warnings against arrogance, calls to repentance, and devotion through Allah's beautiful names, then opens Al-Anfaal with foundations of iman, obedience, and disciplined communal responsibility.",
+    themes: [
+      "Late Al-A'raaf emphasizes humility, repentance, and truthful submission to revelation.",
+      "Believers are shaped by responsive hearts, obedience, and trust in Allah's judgment.",
+      "Early Al-Anfaal links spiritual life to disciplined response to Allah and His Messenger.",
+    ],
+  },
+  10: {
+    title: "Day 10 Recitation Summary (Al-Anfaal 41-75, At-Tawba 1-91)",
+    summary:
+      "Day 10 moves through obedience, readiness, and reliance in Al-Anfaal, then into major covenant and accountability themes in At-Tawba. The recitation stresses truthfulness, sincerity, and steadfast commitment under pressure.",
+    themes: [
+      "Preparation and communal discipline are part of faithful responsibility.",
+      "Trust in Allah's decree strengthens believers through uncertainty and trial.",
+      "At-Tawba repeatedly distinguishes sincere commitment from hypocrisy and excuse-making.",
     ],
   },
 };
