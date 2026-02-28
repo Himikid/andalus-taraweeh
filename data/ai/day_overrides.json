@@ -152,6 +152,40 @@
           "end_time": 6429
         }
       ]
+    },
+    "10": {
+      "start_surah_number": 8,
+      "start_ayah": 41,
+      "start_time": 167,
+      "final_surah": "At-Tawba",
+      "final_ayah": 91,
+      "final_time": 6415,
+      "marker_overrides": [
+        {
+          "surah_number": 8,
+          "ayah": 41,
+          "start_time": 167,
+          "end_time": 184
+        },
+        {
+          "surah_number": 9,
+          "ayah": 34,
+          "start_time": 3589,
+          "end_time": 3608
+        },
+        {
+          "surah_number": 9,
+          "ayah": 70,
+          "start_time": 5488,
+          "end_time": 5504
+        },
+        {
+          "surah_number": 9,
+          "ayah": 91,
+          "start_time": 6399,
+          "end_time": 6415
+        }
+      ]
     }
   }
 }
