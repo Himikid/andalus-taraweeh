@@ -856,6 +856,56 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  11: [
+    {
+      ayahRef: "9:93",
+      themeType: "Famous Ayah",
+      shortTitle: "Sincerity Over Excuses",
+      whyNotable: [
+        "A clear ayah distinguishing sincere incapacity from empty excuses.",
+        "Often cited to emphasize truthful accountability before Allah.",
+      ],
+      summary:
+        "This ayah reproaches those who sought exemption despite being capable, exposing spiritual complacency and preference for ease over obedience.",
+      keyTakeaway: "Do not normalize excuses when Allah has already granted capacity.",
+      references: [
+        { name: "Quran 9:93", url: "https://quran.com/9:93" },
+        { name: "Ibn Kathir Tafsir (9:93)", url: "https://quran.com/en/9:93/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "10:26",
+      themeType: "Famous Ayah",
+      shortTitle: "Ihsan and More with Allah",
+      whyNotable: [
+        "A widely loved ayah promising reward and increase for excellence.",
+        "Frequently quoted in reminders about ihsan and hope in Allah's mercy.",
+      ],
+      summary:
+        "Allah promises those who excel in faith and worship the best reward and increase, with dignity and no humiliation on their faces.",
+      keyTakeaway: "Pursue ihsan consistently; Allah's reward exceeds effort.",
+      references: [
+        { name: "Quran 10:26", url: "https://quran.com/10:26" },
+        { name: "Ibn Kathir Tafsir (10:26)", url: "https://quran.com/en/10:26/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "10:109",
+      themeType: "Famous Ayah",
+      shortTitle: "Follow Revelation and Be Patient",
+      whyNotable: [
+        "A powerful closing command of Surah Yunus on perseverance.",
+        "Commonly referenced for steadfastness when outcomes are delayed.",
+      ],
+      summary:
+        "The Messenger is commanded to follow revelation and remain patient until Allah's judgment comes, affirming that He is the best of judges.",
+      keyTakeaway: "Steadfastness means continuing revelation-led action with patience.",
+      references: [
+        { name: "Quran 10:109", url: "https://quran.com/10:109" },
+        { name: "Ibn Kathir Tafsir (10:109)", url: "https://quran.com/en/10:109/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -957,6 +1007,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Preparation and communal discipline are part of faithful responsibility.",
       "Trust in Allah's decree strengthens believers through uncertainty and trial.",
       "At-Tawba repeatedly distinguishes sincere commitment from hypocrisy and excuse-making.",
+    ],
+  },
+  11: {
+    title: "Day 11 Recitation Summary (At-Tawba 93, Yunus 26-109)",
+    summary:
+      "Day 11 centers on sincerity, patience, and steadfast obedience. It moves from exposing empty excuses in At-Tawba to hope, ihsan, and endurance through the closing guidance of Surah Yunus.",
+    themes: [
+      "Allah distinguishes real incapacity from avoidable excuse-making.",
+      "Ihsan is met with immense reward, dignity, and nearness to Allah.",
+      "The path forward is revelation-led patience until Allah's judgment.",
     ],
   },
 };

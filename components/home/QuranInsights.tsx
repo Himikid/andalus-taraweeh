@@ -24,12 +24,14 @@ type DayPayload = {
   markers?: Marker[];
   meta?: {
     latest_position?: Marker;
+    progress_locked?: boolean;
   };
 };
 
 type DayData = {
   markers: Marker[];
   latestPosition: Marker | null;
+  progressLocked: boolean;
 };
 
 async function fetchDayData(day: number): Promise<DayData> {
@@ -39,7 +41,7 @@ async function fetchDayData(day: number): Promise<DayData> {
   if (!hasParts) {
     const response = await fetch(`/data/day-${day}.json`, { cache: "no-store" });
     if (!response.ok) {
-      return { markers: [], latestPosition: null };
+      return { markers: [], latestPosition: null, progressLocked: false };
     }
     const payload = (await response.json()) as DayPayload;
     const singlePartId = parts[0]?.id ?? null;
@@ -47,7 +49,8 @@ async function fetchDayData(day: number): Promise<DayData> {
       ? payload.markers.map((marker) => ({ ...marker, __partId: singlePartId, __seekTime: marker.time }))
       : [];
     const latestPosition = payload?.meta?.latest_position ? { ...payload.meta.latest_position } : null;
-    return { markers, latestPosition };
+    const progressLocked = Boolean(payload?.meta?.progress_locked);
+    return { markers, latestPosition, progressLocked };
   }
 
   const partMarkers: Marker[] = [];
@@ -82,7 +85,7 @@ async function fetchDayData(day: number): Promise<DayData> {
     runningOffset = partMaxTime + 30;
   }
 
-  return { markers: partMarkers, latestPosition: null };
+  return { markers: partMarkers, latestPosition: null, progressLocked: false };
 }
 
 type SurahEntry = {
@@ -118,10 +121,14 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
       const days = [...availableTaraweehDays].sort((a, b) => b - a);
       const records: { day: number; markers: Marker[] }[] = [];
       let latestCandidate: LatestPosition | null = null;
+      let lockedLatestCandidate: LatestPosition | null = null;
 
       for (const day of days) {
         try {
-          const { markers, latestPosition } = await fetchDayData(day);
+          const { markers, latestPosition, progressLocked } = await fetchDayData(day);
+          if (!lockedLatestCandidate && progressLocked && latestPosition) {
+            lockedLatestCandidate = { day, marker: latestPosition };
+          }
           if (!latestCandidate) {
             const marker = markers.length ? markers[markers.length - 1] : latestPosition;
             if (marker) {
@@ -146,7 +153,7 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
         return;
       }
 
-      setLatest(latestCandidate);
+      setLatest(lockedLatestCandidate ?? latestCandidate);
 
       const startsByQuality: Record<
         string,

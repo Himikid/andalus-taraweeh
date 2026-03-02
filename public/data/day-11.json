@@ -1,0 +1,58 @@
+{
+  "day": 11,
+  "source": "data/audio/day-11/source.wav",
+  "markers": [
+    {
+      "time": 1058,
+      "start_time": 1058,
+      "end_time": 1076,
+      "surah": "At-Tawba",
+      "ayah": 93,
+      "surah_number": 9,
+      "juz": 11,
+      "quality": "manual",
+      "confidence": 1,
+      "reciter": "Hasan"
+    },
+    {
+      "time": 4801,
+      "start_time": 4801,
+      "end_time": 4818,
+      "surah": "Yunus",
+      "ayah": 26,
+      "surah_number": 10,
+      "juz": 11,
+      "quality": "manual",
+      "confidence": 1,
+      "reciter": "Samir"
+    },
+    {
+      "time": 7487,
+      "start_time": 7487,
+      "end_time": 7504,
+      "surah": "Yunus",
+      "ayah": 109,
+      "surah_number": 10,
+      "juz": 11,
+      "quality": "manual",
+      "confidence": 1,
+      "reciter": "Samir"
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-03-02T00:00:00Z",
+    "manual_override": {
+      "note": "Core trusted day anchors only"
+    },
+    "latest_position": {
+      "time": 7487,
+      "surah": "Yunus",
+      "ayah": 109,
+      "surah_number": 10,
+      "juz": 11,
+      "quality": "manual",
+      "reciter": "Samir"
+    },
+    "progress_locked": true
+  }
+}
