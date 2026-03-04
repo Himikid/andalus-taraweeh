@@ -299,6 +299,9 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
             </section>
             <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
               <SurahIndex markers={markers} onSeek={handleSeek} />
+              {markers.length === 0 ? (
+                <p className="mt-2 text-sm text-muted">AI indexing for this day is still in progress.</p>
+              ) : null}
             </section>
             <DayHighlights
               day={selectedDay}

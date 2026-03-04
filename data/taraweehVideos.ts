@@ -22,7 +22,7 @@ export const taraweehVideos: Record<number, TaraweehDayConfig> = {
   9: "eB8kFf1pHK4",
   10: "iuBHEwqjN2s",
   11: "CPlqoaW1wEI",
-  12: "",
+  12: "-A-Q-bpob-U",
   13: "",
   14: "",
   15: "",

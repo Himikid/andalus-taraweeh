@@ -1019,6 +1019,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "The path forward is revelation-led patience until Allah's judgment.",
     ],
   },
+  12: {
+    title: "Day 12 Recitation Summary (Hud 1-123, Yusuf 1-53)",
+    summary:
+      "Day 12 moves through warnings, repentance, and prophetic perseverance in Surah Hud, then enters Surah Yusuf with themes of trust, chastity, and Allah's subtle plan through hardship.",
+    themes: [
+      "Steadfastness under pressure is a repeated command across prophetic narratives.",
+      "Repentance, sincerity, and patience are the path to Allah's aid.",
+      "The opening of Yusuf highlights purity, trust, and divine wisdom unfolding over time.",
+    ],
+  },
 };
 
 export function isTafsirReference(reference: HighlightReference): boolean {
