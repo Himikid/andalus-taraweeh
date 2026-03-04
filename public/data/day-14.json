@@ -4,6 +4,16 @@
   "markers": [],
   "meta": {
     "status": "in_progress",
-    "note": "AI indexing is processing. Markers will be published after validation."
+    "note": "AI indexing is processing. Markers will be published after validation.",
+    "latest_position": {
+      "time": 0,
+      "surah": "Al-Israa",
+      "ayah": 1,
+      "surah_number": 17,
+      "juz": 15,
+      "quality": "manual",
+      "reciter": "Unknown"
+    },
+    "progress_locked": true
   }
 }
