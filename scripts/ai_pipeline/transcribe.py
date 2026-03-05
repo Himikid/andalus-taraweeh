@@ -6,7 +6,13 @@ from pathlib import Path
 from .types import TranscriptSegment, TranscriptWord
 
 
-def transcribe_audio(audio_path: Path, model_size: str = "small") -> list[TranscriptSegment]:
+def transcribe_audio(
+    audio_path: Path,
+    model_size: str = "small",
+    *,
+    vad_filter: bool = True,
+    vad_parameters: dict | None = None,
+) -> list[TranscriptSegment]:
     try:
         from faster_whisper import WhisperModel
     except ImportError as exc:
@@ -16,7 +22,13 @@ def transcribe_audio(audio_path: Path, model_size: str = "small") -> list[Transc
 
     compute_type = os.getenv("WHISPER_COMPUTE_TYPE", "int8")
     model = WhisperModel(model_size, device="cpu", compute_type=compute_type)
-    segments, _ = model.transcribe(str(audio_path), language="ar", vad_filter=True, word_timestamps=True)
+    segments, _ = model.transcribe(
+        str(audio_path),
+        language="ar",
+        vad_filter=vad_filter,
+        vad_parameters=vad_parameters,
+        word_timestamps=True,
+    )
 
     transcript_segments: list[TranscriptSegment] = []
     for segment in segments:

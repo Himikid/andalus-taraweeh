@@ -186,6 +186,48 @@
           "end_time": 6415
         }
       ]
+    },
+    "12": {
+      "taraweeh_start": {
+        "time": 1282,
+        "surah_number": 11,
+        "ayah": 1
+      },
+      "breaks": [
+        {
+          "start": 4029,
+          "end": 4662,
+          "resume_time": 4662,
+          "resume_surah_number": 11,
+          "resume_ayah": 84
+        }
+      ],
+      "start_surah_number": 11,
+      "start_ayah": 1,
+      "start_time": 1282,
+      "final_surah": "Yusuf",
+      "final_ayah": 53,
+      "final_time": 7511,
+      "marker_overrides": [
+        {
+          "surah_number": 11,
+          "ayah": 1,
+          "start_time": 1282,
+          "end_time": 1300
+        },
+        {
+          "surah_number": 11,
+          "ayah": 84,
+          "start_time": 4662,
+          "end_time": 4682
+        },
+        {
+          "surah_number": 12,
+          "ayah": 53,
+          "start_time": 7491,
+          "end_time": 7511
+        }
+      ]
     }
   }
 }

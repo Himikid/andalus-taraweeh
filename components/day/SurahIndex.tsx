@@ -36,7 +36,7 @@ function markerClasses(quality: SurahMarker["quality"]) {
     return "border-ivory/35 text-ivory hover:border-ivory";
   }
   if (quality === "ambiguous") {
-    return "border-sand/50 text-sand hover:border-sand";
+    return "border-amber-300/60 text-amber-300 hover:border-amber-300";
   }
   return "border-line text-muted hover:border-line";
 }
@@ -118,7 +118,7 @@ export default function SurahIndex({ markers, onSeek }: SurahIndexProps) {
       <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
         <span className="rounded-full border border-green/40 px-2.5 py-1 text-green">High Confidence</span>
         <span className="rounded-full border border-ivory/35 px-2.5 py-1 text-ivory">Manual Anchor</span>
-        <span className="rounded-full border border-sand/50 px-2.5 py-1 text-sand">Ambiguous</span>
+        <span className="rounded-full border border-amber-300/60 px-2.5 py-1 text-amber-300">Ambiguous (AI)</span>
         <span className="rounded-full border border-line px-2.5 py-1 text-muted">Inferred</span>
       </div>
 
