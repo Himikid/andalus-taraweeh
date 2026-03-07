@@ -6,6 +6,7 @@ import type { SurahMarker } from "@/components/day/SurahIndex";
 type NowRecitingProps = {
   markers: SurahMarker[];
   currentTime: number;
+  onSeek?: (seconds: number) => void;
 };
 
 function formatTime(seconds: number) {
@@ -24,7 +25,7 @@ function reciterLabel(reciter?: string) {
   return reciter || "Unknown";
 }
 
-export default function NowReciting({ markers, currentTime }: NowRecitingProps) {
+export default function NowReciting({ markers, currentTime, onSeek }: NowRecitingProps) {
   const [textCache, setTextCache] = useState<Record<string, { arabic?: string; english?: string }>>({});
   const [isPaused, setIsPaused] = useState(false);
   const [pausedIndex, setPausedIndex] = useState<number | null>(null);
@@ -77,8 +78,13 @@ export default function NowReciting({ markers, currentTime }: NowRecitingProps) 
     if (!timeline.length) return;
     const baseIndex = isPaused ? (pausedIndex ?? liveIndex ?? 0) : (liveIndex ?? 0);
     const nextIndex = Math.max(0, Math.min(timeline.length - 1, baseIndex + direction));
-    setPausedIndex(nextIndex);
-    setIsPaused(true);
+    const target = timeline[nextIndex];
+    if (!target) return;
+
+    if (isPaused) {
+      setPausedIndex(nextIndex);
+    }
+    onSeek?.(target.time);
   }
 
   useEffect(() => {

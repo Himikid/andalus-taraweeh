@@ -295,7 +295,7 @@ export default function DayPageClient({ initialDay }: DayPageClientProps) {
                   </div>
                 </div>
               ) : null}
-              <NowReciting markers={markers} currentTime={currentTime} />
+              <NowReciting markers={markers} currentTime={currentTime} onSeek={handleSeek} />
             </section>
             <section className="tile-shell px-6 py-7 sm:px-7 sm:py-8">
               <SurahIndex markers={markers} onSeek={handleSeek} />
