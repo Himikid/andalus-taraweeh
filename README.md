@@ -25,39 +25,14 @@ Detailed diagrams: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
 ```mermaid
 flowchart LR
-    subgraph Ingest["Ingest"]
-        YT["YouTube live/archive"] --> DL["yt-dlp download"]
-        DL --> FF["ffmpeg normalize (16k mono)"]
-    end
-
-    subgraph Control["Control Plane"]
-        LOOP["scripts/run_day_remote_loop.py"] --> FS1["Firestore request docs"]
-        LOOP --> RT["Firestore runtime doc (webhook URL + token)"]
-    end
-
-    subgraph Worker["Remote ASR (Colab)"]
-        W["drive_transcription_worker.py"] --> FW["faster-whisper"]
-        FS1 --> W
-        RT --> W
-        FW --> TR["transcripts/{request_id}.json"]
-        W --> POST["HTTPS callback (ngrok)"]
-    end
-
-    subgraph Local["Local Merge + Match"]
-        POST --> WH["local_transcript_webhook.py"]
-        WH --> DR["Drive responses/transcripts (fallback-compatible)"]
-        DR --> LOOP
-        FF --> LOOP
-        LOOP --> M1["Legacy matcher"]
-        LOOP --> M2["Two-stage matcher"]
-        M1 --> MERGE["matrix merge + monotonic filter + bounded infer"]
-        M2 --> MERGE
-        MERGE --> OUT["public/data/day-N(.part-M).json"]
-    end
-
-    subgraph UI["Frontend"]
-        OUT --> NX["Next.js day pages + player"]
-    end
+    YT["YouTube"] --> LOOP["Local day loop"]
+    LOOP --> FS["Firestore queue"]
+    FS --> CW["Colab worker (Whisper)"]
+    CW --> NG["ngrok webhook callback"]
+    NG --> LOOP
+    LOOP --> MERGE["Match + merge markers"]
+    MERGE --> JSON["public/data/day-*.json"]
+    JSON --> UI["Next.js UI"]
 ```
 
 ## Matching strategy (current)
