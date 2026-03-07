@@ -30,7 +30,7 @@ export const taraweehVideos: Record<number, TaraweehDayConfig> = {
     { id: "1", label: "Part 1", videoId: "0hfVGkWiofY" },
     { id: "2", label: "Part 2", videoId: "L7UEM2RM-SY" },
   ],
-  17: "",
+  17: "8J4moM97CmQ",
   18: "",
   19: "",
   20: "",
