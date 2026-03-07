@@ -51,6 +51,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="When processing day 1, build Hasan/Samir profiles from first 5 / second 5 prayers.",
     )
+    parser.add_argument(
+        "--use-voice-reciter-classification",
+        action="store_true",
+        help="Enable voice-embedding reciter classification (default: disabled; manual reciter windows only).",
+    )
     parser.add_argument("--match-min-score", type=int, default=78, help="Minimum fuzzy score for ayah match")
     parser.add_argument("--match-min-overlap", type=float, default=0.18, help="Minimum token overlap for ayah match")
     parser.add_argument(
@@ -81,6 +86,13 @@ def parse_args() -> argparse.Namespace:
         help="Fill missing ayahs between detected anchors more aggressively (less strict local-support gating).",
     )
     parser.add_argument(
+        "--matcher-mode",
+        type=str,
+        default="legacy",
+        choices=["legacy", "two_stage"],
+        help="Matcher strategy: legacy pointer matcher or two_stage candidate+ordering matcher.",
+    )
+    parser.add_argument(
         "--start-surah-number",
         type=int,
         help="Optional forced start surah number for constrained matching (e.g. 2 for Al-Baqara).",
@@ -95,6 +107,39 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=Path("data/ai/day_overrides.json"),
         help="Optional manual per-day caps (e.g. final ayah/final time).",
+    )
+    parser.add_argument(
+        "--asr-corrections-file",
+        type=Path,
+        help="Optional ASR correction dictionary JSON (applied after transcription).",
+    )
+    parser.add_argument(
+        "--transcript-file",
+        type=Path,
+        help="Optional pre-generated transcript JSON to use instead of local transcription.",
+    )
+    parser.add_argument(
+        "--no-day-final-ayah-override",
+        dest="apply_day_final_ayah_override",
+        action="store_false",
+        help="Disable trimming/inserting markers from per-day final ayah override.",
+    )
+    parser.add_argument(
+        "--no-marker-time-overrides",
+        dest="apply_marker_time_overrides",
+        action="store_false",
+        help="Disable manual marker time overrides from day_overrides.",
+    )
+    parser.add_argument(
+        "--no-override-surah-fill",
+        dest="apply_override_surah_fill",
+        action="store_false",
+        help="Disable inferred surah fill from day_overrides.",
+    )
+    parser.set_defaults(
+        apply_day_final_ayah_override=True,
+        apply_marker_time_overrides=True,
+        apply_override_surah_fill=True,
     )
     return parser.parse_args()
 
@@ -132,18 +177,25 @@ def main() -> None:
         audio_file=args.audio_file,
         whisper_model=args.whisper_model,
         bootstrap_reciters=args.bootstrap_reciters,
+        use_voice_reciter_classification=args.use_voice_reciter_classification,
         match_min_score=args.match_min_score,
         match_min_overlap=args.match_min_overlap,
         match_min_confidence=args.match_min_confidence,
         match_min_gap_seconds=args.match_min_gap_seconds,
         match_require_weak_support_for_inferred=not args.aggressive_infer_fill,
+        matcher_mode=args.matcher_mode,
         match_start_surah_number=args.start_surah_number,
         match_start_ayah=args.start_ayah,
         reuse_transcript_cache=not args.no_reuse_transcript_cache,
         max_audio_seconds=args.max_audio_seconds,
         asad_path=args.quran_asad,
         day_overrides_path=args.day_overrides,
+        asr_corrections_path=args.asr_corrections_file,
+        transcript_input_path=args.transcript_file,
         part=args.part,
+        apply_day_final_ayah_override=args.apply_day_final_ayah_override,
+        apply_marker_time_overrides=args.apply_marker_time_overrides,
+        apply_override_surah_fill=args.apply_override_surah_fill,
     )
 
     print(f"Saved: {output_path}")

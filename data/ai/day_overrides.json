@@ -267,6 +267,76 @@
           "end_surah_number": 14,
           "end_ayah": 52
         }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 1114,
+          "end_time": 3870,
+          "reciter": "Hasan"
+        },
+        {
+          "start_time": 4657,
+          "end_time": 7417,
+          "reciter": "Samir"
+        }
+      ]
+    },
+    "14": {
+      "start_surah_number": 15,
+      "start_ayah": 1,
+      "start_time": 1025,
+      "final_surah": "An-Nahl",
+      "final_ayah": 128,
+      "final_time": 7391,
+      "marker_overrides": [
+        {
+          "surah_number": 15,
+          "ayah": 1,
+          "start_time": 1025,
+          "end_time": 1042
+        },
+        {
+          "surah_number": 16,
+          "ayah": 51,
+          "start_time": 3865,
+          "end_time": 3865
+        },
+        {
+          "surah_number": 16,
+          "ayah": 128,
+          "start_time": 7371,
+          "end_time": 7391
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 1025,
+          "end_time": 3865,
+          "start_surah_number": 15,
+          "start_ayah": 1,
+          "end_surah_number": 16,
+          "end_ayah": 51
+        },
+        {
+          "start_time": 4824,
+          "end_time": 7391,
+          "start_surah_number": 16,
+          "start_ayah": 51,
+          "end_surah_number": 16,
+          "end_ayah": 128
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 1025,
+          "end_time": 3865,
+          "reciter": "Hasan"
+        },
+        {
+          "start_time": 4824,
+          "end_time": 7391,
+          "reciter": "Samir"
+        }
       ]
     }
   }
