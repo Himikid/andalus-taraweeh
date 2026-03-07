@@ -1,0 +1,38 @@
+{
+  "drive_root": "<REPLACE_WITH_DRIVE_ROOT_PATH>",
+  "poll_seconds": 15,
+  "default_chunk_seconds": 600,
+  "webhook": {
+    "host": "127.0.0.1",
+    "port": 8765
+  },
+  "ngrok": {
+    "enabled": false,
+    "binary": "ngrok",
+    "domain": "<OPTIONAL_RESERVED_DOMAIN>",
+    "port": 8765
+  },
+  "transcription": {
+    "device": "auto",
+    "compute_type": ""
+  },
+  "callback": {
+    "enabled": false,
+    "url": "https://<YOUR_PUBLIC_INGEST_URL>/ingest/transcript",
+    "bearer_token": "<REPLACE_WITH_STRONG_TOKEN>",
+    "timeout_seconds": 20,
+    "retry_attempts": 3,
+    "retry_backoff_seconds": 2.0,
+    "verify_tls": true,
+    "send_on_cache_hit": true
+  },
+  "firestore": {
+    "enabled": false,
+    "project_id": "<FIRESTORE_PROJECT_ID>",
+    "api_key": "<FIRESTORE_WEB_API_KEY>",
+    "database_id": "(default)",
+    "session_id": "<SESSION_ID>",
+    "requests_collection": "andalus_transcription_requests",
+    "runtime_collection": "andalus_transcription_runtime"
+  }
+}

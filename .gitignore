@@ -10,3 +10,9 @@ __pycache__/
 .venv
 data/audio/*
 !data/audio/.gitkeep
+scripts/colab/local_config.json
+scripts/colab/*.local.json
+data/ai/cache/
+data/ai/remote_jobs/
+data/ai/day-*-processing.json
+ai-lab/

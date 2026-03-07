@@ -3,7 +3,8 @@ from __future__ import annotations
 import json
 import os
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field, replace
+from statistics import median
 from pathlib import Path
 
 import requests
@@ -85,6 +86,50 @@ ARABIC_ANCHOR_STOPWORDS = {
     "هذا",
     "ذلك",
 }
+PHONEME_MAP = {
+    "ا": "A",
+    "ب": "B",
+    "ت": "T",
+    "ث": "TH",
+    "ج": "J",
+    "ح": "H2",
+    "خ": "KH",
+    "د": "D",
+    "ذ": "DH",
+    "ر": "R",
+    "ز": "Z",
+    "س": "S",
+    "ش": "SH",
+    "ص": "S2",
+    "ض": "D2",
+    "ط": "T2",
+    "ظ": "Z2",
+    "ع": "AA",
+    "غ": "GH",
+    "ف": "F",
+    "ق": "Q",
+    "ك": "K",
+    "ل": "L",
+    "م": "M",
+    "ن": "N",
+    "ه": "H",
+    "و": "W",
+    "ي": "Y",
+}
+MIN_ACCEPT_MATCH_SCORE = 66.0
+SEQUENTIAL_MIN_ACCEPT_MATCH_SCORE = 62.0
+SEQUENTIAL_NEXT_BONUS = 10.0
+SURAH_SWITCH_PENALTY = 8.0
+SEARCH_FORWARD_WINDOW = 25
+SEARCH_BACKWARD_WINDOW = 3
+GAP_RECOVERY_FORWARD_WINDOW = 20
+RECOVERY_STAGE2_FORWARD_WINDOW = 60
+REACQUIRE_EXTRA_FORWARD_STALE_1 = 2
+REACQUIRE_EXTRA_FORWARD_STALE_2 = 4
+REACQUIRE_LONG_JUMP_STALE_MIN = 4
+PHONEME_BONUS_START = 68.0
+PHONEME_BONUS_WEIGHT = 0.15
+PHONEME_BONUS_CAP = 6.0
 
 
 @dataclass
@@ -95,6 +140,9 @@ class AyahEntry:
     text: str
     normalized: str
     match_forms: list[str]
+    token_list: list[str] = field(default_factory=list)
+    phoneme_sequence: str = ""
+    match_form_phonemes: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -142,6 +190,8 @@ def normalize_arabic(text: str, strict: bool | None = None) -> str:
         text = text.translate(ARABIC_CHAR_MAP)
         text = text.replace("ـ", "")
     text = ARABIC_PUNCT.sub(" ", text)
+    if not strict:
+        text = collapse_repeats(text, max_repeat=2)
     text = MULTI_SPACE.sub(" ", text).strip()
     if not strict and text:
         tokens = text.split()
@@ -151,6 +201,34 @@ def normalize_arabic(text: str, strict: bool | None = None) -> str:
                 collapsed.append(token)
         text = " ".join(collapsed)
     return text
+
+
+def collapse_repeats(text: str, max_repeat: int = 2) -> str:
+    if not text:
+        return text
+    if max_repeat < 1:
+        max_repeat = 1
+
+    out: list[str] = []
+    last = ""
+    run_len = 0
+    for ch in text:
+        if ch == last:
+            run_len += 1
+        else:
+            run_len = 1
+            last = ch
+        if run_len <= max_repeat:
+            out.append(ch)
+    return "".join(out)
+
+
+def text_to_phonemes(text: str) -> str:
+    normalized = normalize_arabic(text, strict=False)
+    if not normalized:
+        return ""
+    phonemes = [PHONEME_MAP[ch] for ch in normalized if ch in PHONEME_MAP]
+    return " ".join(phonemes)
 
 
 def _word_text(word: TranscriptWord | dict) -> str:
@@ -211,6 +289,15 @@ def _window_penalty(window_size: int) -> float:
     if window_size >= 8:
         return 0.0
     return max(0.0, float(8 - window_size) * 0.35)
+
+
+def _window_bounds_for_entry(entry: AyahEntry) -> tuple[int, int]:
+    ayah_len = max(1, len(entry.token_list) if entry.token_list else len(entry.normalized.split()))
+    min_window = max(3, ayah_len - 3)
+    max_window = min(18, ayah_len + 2)
+    if min_window > max_window:
+        min_window = max_window
+    return min_window, max_window
 
 
 def _token_similarity(token_a: str, token_b: str) -> float:
@@ -445,9 +532,23 @@ def _resolve_marker_times(
     return default_start, default_end, None
 
 
-def _candidate_confidence(score: float, rival_score: float, overlap: float) -> float:
+def _candidate_confidence(candidate: CandidateEvidence, rival_score: float) -> float:
+    score = float(candidate.adjusted_score)
+    overlap = float(candidate.overlap)
     margin = max(0.0, score - max(0.0, rival_score))
-    return (0.55 * (score / 100.0)) + (0.25 * min(1.0, margin / 20.0)) + (0.2 * overlap)
+    score_norm = max(0.0, min(1.0, (score - 55.0) / 40.0))
+    margin_norm = max(0.0, min(1.0, margin / 18.0))
+    overlap_norm = max(0.0, min(1.0, (overlap - 0.05) / 0.40))
+    penalty_norm = max(0.0, min(1.0, float(candidate.penalty) / 6.0))
+    source_bonus = 0.04 if candidate.source == "window" else 0.0
+    confidence = (
+        (0.46 * score_norm)
+        + (0.26 * margin_norm)
+        + (0.24 * overlap_norm)
+        - (0.08 * penalty_norm)
+        + source_bonus
+    )
+    return max(0.0, min(1.0, confidence))
 
 
 def _best_rival_score(
@@ -529,10 +630,23 @@ def _has_muqattaat_phrase_match(normalized_text: str, entry: AyahEntry) -> bool:
 def _score_segment_against_entry(normalized_segment: str, entry: AyahEntry) -> tuple[float, float]:
     top_score = -1.0
     top_overlap = 0.0
-    for candidate in entry.match_forms:
+    segment_phonemes = text_to_phonemes(normalized_segment)
+    form_phonemes = entry.match_form_phonemes
+    if len(form_phonemes) != len(entry.match_forms):
+        form_phonemes = [text_to_phonemes(form) for form in entry.match_forms]
+
+    for idx, candidate in enumerate(entry.match_forms):
         token_set = float(fuzz.token_set_ratio(normalized_segment, candidate))
         partial = float(fuzz.partial_ratio(normalized_segment, candidate))
-        score = (0.75 * token_set) + (0.25 * partial)
+        text_score = (0.7 * token_set) + (0.3 * partial)
+        phoneme_score = 0.0
+        candidate_phonemes = form_phonemes[idx] if idx < len(form_phonemes) else ""
+        if segment_phonemes and candidate_phonemes:
+            phoneme_score = float(fuzz.ratio(segment_phonemes, candidate_phonemes))
+        phoneme_bonus = 0.0
+        if phoneme_score > PHONEME_BONUS_START:
+            phoneme_bonus = min(PHONEME_BONUS_CAP, (phoneme_score - PHONEME_BONUS_START) * PHONEME_BONUS_WEIGHT)
+        score = min(100.0, text_score + phoneme_bonus)
         if score > top_score:
             top_score = score
             top_overlap = _token_overlap(normalized_segment, candidate)
@@ -805,6 +919,19 @@ def _token_overlap(query: str, reference: str) -> float:
 
     shared = len(query_tokens & reference_tokens)
     return shared / max(1, len(reference_tokens))
+
+
+def _segment_reliability(normalized_text: str) -> float:
+    tokens = [token for token in normalized_text.split() if token]
+    if not tokens:
+        return 0.0
+    token_count = len(tokens)
+    long_tokens = sum(1 for token in tokens if len(token) >= 3)
+    unique_ratio = len(set(tokens)) / max(1, token_count)
+    long_ratio = long_tokens / max(1, token_count)
+    # Encourage segments with enough lexical substance and diversity.
+    reliability = (0.45 * min(1.0, token_count / 10.0)) + (0.35 * long_ratio) + (0.20 * unique_ratio)
+    return max(0.0, min(1.0, reliability))
 
 
 def _refine_marker_boundaries_with_neighbors(
@@ -1093,6 +1220,7 @@ def load_corpus(corpus_path: Path) -> list[AyahEntry]:
             if not normalized:
                 continue
 
+            match_forms = _build_match_forms(ayah_number, normalized)
             entries.append(
                 AyahEntry(
                     surah_number=surah_number,
@@ -1100,7 +1228,10 @@ def load_corpus(corpus_path: Path) -> list[AyahEntry]:
                     ayah=ayah_number,
                     text=ayah_text,
                     normalized=normalized,
-                    match_forms=_build_match_forms(ayah_number, normalized),
+                    match_forms=match_forms,
+                    token_list=[token for token in normalized.split() if token],
+                    phoneme_sequence=text_to_phonemes(normalized),
+                    match_form_phonemes=[text_to_phonemes(form) for form in match_forms],
                 )
             )
 
@@ -1255,9 +1386,11 @@ def _find_best_ayah_timestamp(
 
         best_candidate: CandidateEvidence | None = None
         score, overlap = _score_segment_against_entry(normalized_segment, entry)
-        if _has_anchor_token_hit(entry, normalized_segment):
+        has_anchor = _has_anchor_token_hit(entry, normalized_segment)
+        adjusted = score + (2.0 if has_anchor else -1.5)
+        if adjusted >= float(max(60, min_score - 10)):
             best_candidate = CandidateEvidence(
-                adjusted_score=score,
+                adjusted_score=adjusted,
                 score=score,
                 overlap=overlap,
                 penalty=0.0,
@@ -1316,7 +1449,14 @@ def _find_best_ayah_timestamp(
                 )
             previous_end = float(next_segment.end)
 
-        segment_windows = list(generate_word_windows(list(getattr(segment, "words", None) or []), min_window=4, max_window=8))
+        min_window, max_window = _window_bounds_for_entry(entry)
+        segment_windows = list(
+            generate_word_windows(
+                list(getattr(segment, "words", None) or []),
+                min_window=min_window,
+                max_window=max_window,
+            )
+        )
         for window in segment_windows:
             if is_muqattaat and not _has_muqattaat_phrase_match(window.normalized_text, entry):
                 continue
@@ -1356,7 +1496,7 @@ def _find_best_ayah_timestamp(
         elif best_candidate.adjusted_score > second_score:
             second_score = best_candidate.adjusted_score
 
-    if top_segment is None or top_evidence is None or top_score < ambiguous_min_score:
+    if top_segment is None or top_evidence is None or top_score < max(float(ambiguous_min_score), 64.0):
         return None
 
     top_time, top_end, _ = _resolve_marker_times(
@@ -2277,6 +2417,33 @@ def _enforce_sequential_ayah_order(markers: list[Marker]) -> list[Marker]:
     return sorted(ordered, key=lambda item: (item.time, item.surah_number or 0, item.ayah))
 
 
+def _median_smooth_timestamps(markers: list[Marker]) -> list[Marker]:
+    if len(markers) < 3:
+        return markers
+
+    ordered = sorted(markers, key=lambda item: (int(item.time), int(item.surah_number or 0), int(item.ayah)))
+    for idx in range(1, len(ordered) - 1):
+        prev_marker = ordered[idx - 1]
+        marker = ordered[idx]
+        next_marker = ordered[idx + 1]
+        if marker.surah != prev_marker.surah or marker.surah != next_marker.surah:
+            continue
+
+        prev_end = int(prev_marker.end_time or prev_marker.start_time or prev_marker.time)
+        curr_start = int(marker.start_time or marker.time)
+        next_start = int(next_marker.start_time or next_marker.time)
+        if next_start <= prev_end + 1:
+            continue
+
+        smoothed = int(round(median([prev_end, curr_start, next_start])))
+        smoothed = max(prev_end + 1, min(next_start - 1, smoothed))
+        marker.time = smoothed
+        marker.start_time = smoothed
+        marker.end_time = max(smoothed, int(marker.end_time or smoothed))
+
+    return sorted(ordered, key=lambda item: (int(item.time), int(item.surah_number or 0), int(item.ayah)))
+
+
 def _quran_first_refine_weak_markers(
     markers: list[Marker],
     transcript_segments: list[TranscriptSegment],
@@ -2485,9 +2652,9 @@ def _build_transition_tail_markers(
     if surah_total <= previous.ayah:
         return []
 
-    # Focus on near-tail transitions only. If the gap is too large, this is likely a genuine mismatch.
+    # Allow substantial end-of-surah tails; long post-break sections can still be sequential.
     tail_missing = surah_total - previous.ayah
-    if tail_missing <= 0 or tail_missing > 12:
+    if tail_missing <= 0 or tail_missing > 80:
         return []
 
     window_start = int(previous.end_time or previous.time) + max(4, min_gap_seconds)
@@ -2661,6 +2828,135 @@ def _build_transition_tail_markers(
     return inferred
 
 
+def _fill_cross_surah_tail_markers(
+    markers: list[Marker],
+    surah_totals: dict[str, int],
+    min_gap_seconds: int = 8,
+    max_tail_ayahs: int = 80,
+) -> list[Marker]:
+    if len(markers) < 2:
+        return []
+
+    ordered = sorted(markers, key=lambda marker: (int(marker.time), int(marker.surah_number or 0), int(marker.ayah)))
+    by_surah_number: dict[int, list[Marker]] = {}
+    for marker in ordered:
+        if marker.surah_number is None:
+            continue
+        by_surah_number.setdefault(int(marker.surah_number), []).append(marker)
+
+    keyed = {(marker.surah, int(marker.ayah)) for marker in ordered}
+    additions: list[Marker] = []
+
+    for surah_number in sorted(by_surah_number.keys()):
+        current = by_surah_number.get(surah_number) or []
+        nxt = by_surah_number.get(surah_number + 1) or []
+        if not current or not nxt:
+            continue
+
+        # Use the highest ayah seen in the current surah as the tail anchor.
+        current_tail = max(current, key=lambda marker: (int(marker.ayah), int(marker.time)))
+        total_ayahs = surah_totals.get(current_tail.surah)
+        if not total_ayahs or int(current_tail.ayah) >= int(total_ayahs):
+            continue
+
+        missing = int(total_ayahs) - int(current_tail.ayah)
+        if missing <= 0 or missing > max_tail_ayahs:
+            continue
+
+        next_start = min(int(marker.start_time or marker.time) for marker in nxt)
+        start_time = int(current_tail.end_time or current_tail.time) + max(1, int(min_gap_seconds))
+        end_time = next_start - max(1, int(min_gap_seconds))
+        if end_time <= start_time:
+            continue
+
+        step = (end_time - start_time) / float(missing + 1)
+        if step < 2.0 or step > 90.0:
+            continue
+
+        for offset, ayah in enumerate(range(int(current_tail.ayah) + 1, int(total_ayahs) + 1), start=1):
+            key = (current_tail.surah, ayah)
+            if key in keyed:
+                continue
+
+            marker_time = int(round(start_time + (step * offset)))
+            marker_time = max(start_time, min(end_time, marker_time))
+            additions.append(
+                Marker(
+                    time=marker_time,
+                    start_time=marker_time,
+                    end_time=marker_time,
+                    surah=current_tail.surah,
+                    surah_number=current_tail.surah_number,
+                    ayah=ayah,
+                    juz=get_juz_for_ayah(current_tail.surah_number or 1, ayah),
+                    quality="inferred",
+                    reciter=current_tail.reciter,
+                    confidence=0.56,
+                )
+            )
+            keyed.add(key)
+
+    return additions
+
+
+def _fill_same_surah_sequential_catchup(
+    markers: list[Marker],
+    entry_lookup: dict[tuple[str, int], AyahEntry],
+    transcript_segments: list[TranscriptSegment],
+    max_gap_ayahs: int = 20,
+) -> list[Marker]:
+    if len(markers) < 2:
+        return []
+
+    ordered = sorted(markers, key=lambda item: (int(item.time), int(item.surah_number or 0), int(item.ayah)))
+    keyed = {(marker.surah, int(marker.ayah)) for marker in ordered}
+    additions: list[Marker] = []
+
+    for left, right in zip(ordered, ordered[1:]):
+        if left.surah != right.surah:
+            continue
+        left_ayah = int(left.ayah)
+        right_ayah = int(right.ayah)
+        if right_ayah <= left_ayah + 1:
+            continue
+        missing = right_ayah - left_ayah - 1
+        if missing <= 0 or missing > max_gap_ayahs:
+            continue
+        left_time = int(left.end_time or left.start_time or left.time)
+        right_time = int(right.start_time or right.time)
+        if right_time <= left_time + 2:
+            continue
+        step = (right_time - left_time) / float(missing + 1)
+        if step < 2.0 or step > 90.0:
+            continue
+
+        for offset, ayah in enumerate(range(left_ayah + 1, right_ayah), start=1):
+            key = (left.surah, ayah)
+            if key in keyed:
+                continue
+            inferred_time = int(round(left_time + (step * offset)))
+            inferred_time = max(left_time + 1, min(right_time - 1, inferred_time))
+            entry = entry_lookup.get(key)
+            surah_number = entry.surah_number if entry is not None else left.surah_number
+            additions.append(
+                Marker(
+                    time=inferred_time,
+                    start_time=inferred_time,
+                    end_time=inferred_time,
+                    surah=left.surah,
+                    surah_number=surah_number,
+                    ayah=ayah,
+                    juz=get_juz_for_ayah(surah_number or 1, ayah),
+                    quality="inferred",
+                    reciter=left.reciter or right.reciter,
+                    confidence=0.56,
+                )
+            )
+            keyed.add(key)
+
+    return additions
+
+
 def _is_valid_forward_transition(
     previous: Marker | None,
     entry: AyahEntry,
@@ -2728,9 +3024,13 @@ def _candidate_is_valid(
     threshold: float,
     ambiguous_min_score: int,
     ambiguous_min_confidence: float,
+    min_accept_score_floor: float = MIN_ACCEPT_MATCH_SCORE,
 ) -> tuple[bool, str | None, float]:
-    confidence = _candidate_confidence(candidate.adjusted_score, rival_score, candidate.overlap)
-    ambiguous_min_overlap = max(0.1, local_min_overlap * 0.6)
+    if candidate.adjusted_score < float(min_accept_score_floor):
+        return False, None, 0.0
+
+    confidence = _candidate_confidence(candidate, rival_score)
+    ambiguous_min_overlap = max(0.05, local_min_overlap * 0.6)
     is_high = (
         candidate.adjusted_score >= local_min_score
         and candidate.overlap >= local_min_overlap
@@ -2746,11 +3046,63 @@ def _candidate_is_valid(
     return True, ("high" if is_high else "ambiguous"), round(confidence, 3)
 
 
+def _candidate_indices_for_pointer(
+    total_entries: int,
+    last_matched_index: int,
+    forced_start_index: int | None = None,
+    backward_window: int = SEARCH_BACKWARD_WINDOW,
+    forward_window: int = SEARCH_FORWARD_WINDOW,
+) -> list[int]:
+    if total_entries <= 0:
+        return []
+    if last_matched_index < 0:
+        start = max(0, forced_start_index or 0)
+        end = min(total_entries, start + 40)
+        return list(range(start, end))
+
+    start = max(0, last_matched_index - max(0, backward_window))
+    end = min(total_entries, last_matched_index + max(1, forward_window) + 1)
+    return list(range(start, end))
+
+
+def _is_expected_surah_transition(previous: AyahEntry, candidate: AyahEntry, surah_totals: dict[str, int]) -> bool:
+    if previous.surah == candidate.surah:
+        return True
+    previous_total = surah_totals.get(previous.surah, previous.ayah)
+    near_end_of_previous = previous.ayah >= max(1, previous_total - 5)
+    next_surah = candidate.surah_number == previous.surah_number + 1
+    # Samir blocks can lose early next-surah ayat from VAD/transcript sparsity.
+    # Allow a wider reacquire entry into the next surah while still requiring
+    # strict forward motion and near-end completion of previous surah.
+    starts_next_surah = candidate.ayah <= 60
+    return bool(near_end_of_previous and next_surah and starts_next_surah)
+
+
+def _apply_progression_priors(
+    candidate: CandidateEvidence,
+    candidate_index: int,
+    last_matched_index: int,
+    corpus_entries: list[AyahEntry],
+    surah_totals: dict[str, int],
+) -> CandidateEvidence:
+    adjusted = float(candidate.adjusted_score)
+    if last_matched_index >= 0 and candidate_index == (last_matched_index + 1):
+        adjusted += SEQUENTIAL_NEXT_BONUS
+
+    if 0 <= last_matched_index < len(corpus_entries) and 0 <= candidate_index < len(corpus_entries):
+        previous = corpus_entries[last_matched_index]
+        current = corpus_entries[candidate_index]
+        if current.surah != previous.surah and not _is_expected_surah_transition(previous, current, surah_totals):
+            adjusted -= SURAH_SWITCH_PENALTY
+
+    return replace(candidate, adjusted_score=adjusted)
+
+
 def _has_anchor_token_hit(
     entry: AyahEntry,
     normalized_text: str,
     min_anchor_len: int = 4,
-    min_similarity: float = 85.0,
+    min_similarity: float = 70.0,
 ) -> bool:
     if not normalized_text:
         return False
@@ -2786,16 +3138,16 @@ def _has_anchor_token_hit(
 def match_quran_markers(
     transcript_segments: list[TranscriptSegment],
     corpus_entries: list[AyahEntry],
-    min_score: int = 78,
+    min_score: int = 72,
     min_gap_seconds: int = 8,
-    min_overlap: float = 0.18,
-    min_confidence: float = 0.62,
-    search_window: int = 25,
+    min_overlap: float = 0.10,
+    min_confidence: float = 0.45,
+    search_window: int = 30,
     recovery_after_seconds: int = 420,
     recovery_rewind_ayat: int = 40,
     recovery_window_multiplier: float = 3.0,
-    ambiguous_min_score: int = 74,
-    ambiguous_min_confidence: float = 0.5,
+    ambiguous_min_score: int = 64,
+    ambiguous_min_confidence: float = 0.30,
     max_infer_gap_ayahs: int = 8,
     max_infer_gap_seconds: int = 720,
     max_leading_infer_ayahs: int = 3,
@@ -2809,14 +3161,18 @@ def match_quran_markers(
     repeat_min_overlap: float = 0.25,
     repeat_min_confidence: float = 0.80,
     repeat_max_gap_seconds: int = 10,
-    max_recovery_jump_ayahs: int = 12,
+    max_recovery_jump_ayahs: int = 60,
     min_infer_step_seconds: float = 4.0,
     max_infer_step_seconds: float = 28.0,
-    non_recitation_hold_seconds: int = 16,
+    non_recitation_hold_seconds: int = 12,
     long_break_reacquire_seconds: int = 180,
     precomputed_reset_times: list[float] | None = None,
     reanchor_points: list[tuple[int, int, int]] | None = None,
-    segment_constraints: list[tuple[float, float, int | None, int | None]] | None = None,
+    sequential_recovery_lookahead: int = 24,
+    sequential_recovery_stale_segments: int = 5,
+    resume_chain_reanchors: list[tuple[int, int, int]] | None = None,
+    resume_chain_length: int = 18,
+    debug_trace: list[dict] | None = None,
 ) -> list[Marker]:
     if not transcript_segments or not corpus_entries:
         return []
@@ -2854,39 +3210,23 @@ def match_quran_markers(
         reanchor_schedule.append((at_time, mapped_index))
     reanchor_schedule.sort(key=lambda item: item[0])
     reanchor_cursor = 0
-    normalized_constraints: list[tuple[float, float, int | None, int | None]] = []
-    for item in segment_constraints or []:
-        if not isinstance(item, (list, tuple)) or len(item) < 2:
+    resume_chain_schedule: list[tuple[float, int]] = []
+    for item in resume_chain_reanchors or []:
+        if not isinstance(item, (list, tuple)) or len(item) != 3:
             continue
         try:
-            start_time = float(item[0])
-            end_time = float(item[1])
+            at_time = float(item[0])
+            surah_number = int(item[1])
+            ayah = int(item[2])
         except (TypeError, ValueError):
             continue
-        if end_time <= start_time:
+        mapped = corpus_index_by_surah_ayah.get((surah_number, ayah))
+        if mapped is None:
             continue
-        min_index: int | None = None
-        max_index: int | None = None
-        if len(item) >= 3 and item[2] is not None:
-            try:
-                min_index = max(0, int(item[2]))
-            except (TypeError, ValueError):
-                min_index = None
-        if len(item) >= 4 and item[3] is not None:
-            try:
-                max_index = max(0, int(item[3]))
-            except (TypeError, ValueError):
-                max_index = None
-        if min_index is not None and max_index is not None and max_index < min_index:
-            min_index, max_index = max_index, min_index
-        normalized_constraints.append((start_time, end_time, min_index, max_index))
-    normalized_constraints.sort(key=lambda item: (item[0], item[1]))
-
-    def _constraint_for_time(second: float) -> tuple[int | None, int | None] | None:
-        for start_time, end_time, min_index, max_index in normalized_constraints:
-            if start_time <= second <= end_time:
-                return min_index, max_index
-        return None
+        resume_chain_schedule.append((at_time, mapped))
+    resume_chain_schedule.sort(key=lambda item: item[0])
+    resume_chain_cursor = 0
+    forced_chain_until_index: int | None = None
 
     last_marker_time = -1
     stale_segments = 0
@@ -2895,18 +3235,25 @@ def match_quran_markers(
     pause_reacquire_until: float | None = None
     previous_segment_end: float | None = None
     reacquire_lock_ayahs_remaining = 0
+    cadence_samples: list[float] = []
 
     for segment_index, segment in enumerate(transcript_segments):
         segment_start = float(segment.start)
         segment_end = float(segment.end)
-        active_constraint = _constraint_for_time(segment_start)
         while reanchor_cursor < len(reanchor_schedule) and segment_start >= reanchor_schedule[reanchor_cursor][0]:
             mapped_index = reanchor_schedule[reanchor_cursor][1]
             last_matched_index = mapped_index - 1
             awaiting_reacquire = True
             pause_reacquire_until = None
-            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 8)
+            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 1)
             reanchor_cursor += 1
+        while (
+            resume_chain_cursor < len(resume_chain_schedule)
+            and segment_start >= resume_chain_schedule[resume_chain_cursor][0]
+        ):
+            mapped_index = resume_chain_schedule[resume_chain_cursor][1]
+            forced_chain_until_index = mapped_index + max(1, int(resume_chain_length))
+            resume_chain_cursor += 1
         if (
             previous_segment_end is not None
             and (segment_start - previous_segment_end) >= float(max(30, long_break_reacquire_seconds))
@@ -2914,20 +3261,20 @@ def match_quran_markers(
             # After long breaks (talks/pauses), force strict re-acquire to avoid jumping ahead.
             awaiting_reacquire = True
             pause_reacquire_until = None
-            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 8)
+            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 1)
         previous_segment_end = segment_end
 
         normalized_segment = normalize_arabic(segment.text, strict=False)
         if _is_fatiha_like_segment(normalized_segment):
             fatiha_reset_times.append(float(segment.start))
             awaiting_reacquire = True
-            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 8)
+            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 1)
             continue
         if _is_non_recitation_segment(normalized_segment):
             fatiha_reset_times.append(float(segment.start))
             pause_reacquire_until = float(segment.end) + float(max(8, non_recitation_hold_seconds))
             awaiting_reacquire = True
-            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 8)
+            reacquire_lock_ayahs_remaining = max(reacquire_lock_ayahs_remaining, 1)
             continue
         if pause_reacquire_until is not None and float(segment.start) <= pause_reacquire_until:
             continue
@@ -2978,20 +3325,25 @@ def match_quran_markers(
 
         # Do not discard short ayah fragments; many valid ayat are brief.
         if all(len(text) < 8 and len(text.split()) < 2 for text, _, _, _, _, _ in segment_variants):
+            if last_matched_index >= 0:
+                stale_segments += 1
             continue
 
         segment_words = list(getattr(segment, "words", None) or [])
-        word_windows = list(generate_word_windows(segment_words, min_window=4, max_window=8))
+        window_cache: dict[tuple[int, int], list[WordWindow]] = {}
+
+        def windows_for_entry(entry: AyahEntry) -> list[WordWindow]:
+            bounds = _window_bounds_for_entry(entry)
+            cached = window_cache.get(bounds)
+            if cached is not None:
+                return cached
+            generated = list(generate_word_windows(segment_words, min_window=bounds[0], max_window=bounds[1]))
+            window_cache[bounds] = generated
+            return generated
 
         def evaluate_index(index: int) -> CandidateEvidence | None:
             if index < 0 or index >= len(corpus_entries):
                 return None
-            if active_constraint is not None:
-                min_index, max_index = active_constraint
-                if min_index is not None and index < min_index:
-                    return None
-                if max_index is not None and index > max_index:
-                    return None
             entry = corpus_entries[index]
             if is_excluded_surah(entry.surah):
                 return None
@@ -3008,10 +3360,11 @@ def match_quran_markers(
             ) in segment_variants:
                 if is_muqattaat and not _has_muqattaat_phrase_match(variant_text, entry):
                     continue
+                reliability = _segment_reliability(variant_text)
                 score, overlap = _score_segment_against_entry(variant_text, entry)
                 has_anchor = _has_anchor_token_hit(entry, variant_text)
-                adjusted = score - penalty
-                if not has_anchor and adjusted < float(max(64, min_score - 6)):
+                adjusted = score - penalty - ((1.0 - reliability) * 4.0)
+                if not has_anchor and adjusted < float(max(56, min_score - 16)):
                     continue
                 if has_anchor:
                     adjusted += 2.0
@@ -3030,14 +3383,15 @@ def match_quran_markers(
                         segment_end_index=variant_end_index,
                     )
 
-            for window in word_windows:
+            for window in windows_for_entry(entry):
                 if is_muqattaat and not _has_muqattaat_phrase_match(window.normalized_text, entry):
                     continue
                 penalty = _window_penalty(len(window.word_indices))
+                reliability = _segment_reliability(window.normalized_text)
                 score, overlap = _score_segment_against_entry(window.normalized_text, entry)
                 has_anchor = _has_anchor_token_hit(entry, window.normalized_text)
-                adjusted = score - penalty
-                if not has_anchor and adjusted < float(max(64, min_score - 6)):
+                adjusted = score - penalty - ((1.0 - reliability) * 3.0)
+                if not has_anchor and adjusted < float(max(56, min_score - 16)):
                     continue
                 if has_anchor:
                     adjusted += 2.0
@@ -3057,11 +3411,24 @@ def match_quran_markers(
                     )
             return best
 
+        def evaluate_index_with_priors(index: int) -> CandidateEvidence | None:
+            candidate = evaluate_index(index)
+            if candidate is None:
+                return None
+            return _apply_progression_priors(
+                candidate=candidate,
+                candidate_index=index,
+                last_matched_index=last_matched_index,
+                corpus_entries=corpus_entries,
+                surah_totals=surah_totals,
+            )
+
         selected_index: int | None = None
         selected_candidate: CandidateEvidence | None = None
         selected_quality: str | None = None
         selected_confidence = 0.0
         selected_from_recovery = False
+        selected_from_soft_resume_fallback = False
         repeat_detected = False
         repeat_detected_score = -1.0
 
@@ -3088,7 +3455,7 @@ def match_quran_markers(
             if rewind_candidates:
                 forward_probe_scores: list[float] = []
                 for index in [last_matched_index + 1, last_matched_index + 2]:
-                    candidate = evaluate_index(index)
+                    candidate = evaluate_index_with_priors(index)
                     if candidate is not None:
                         forward_probe_scores.append(candidate.adjusted_score)
                 forward_best_score = max(forward_probe_scores, default=-1.0)
@@ -3183,15 +3550,20 @@ def match_quran_markers(
                                 last_marker_time = max(last_marker_time, int(existing_marker.end_time or marker_start))
 
         if last_matched_index < 0:
-            acquire_start = forced_start_index if forced_start_index is not None else 0
-            acquire_end = min(len(corpus_entries), acquire_start + 40)
+            acquisition_indices = _candidate_indices_for_pointer(
+                total_entries=len(corpus_entries),
+                last_matched_index=last_matched_index,
+                forced_start_index=forced_start_index,
+                backward_window=SEARCH_BACKWARD_WINDOW,
+                forward_window=max(SEARCH_FORWARD_WINDOW, int(search_window)),
+            )
             candidates: dict[int, CandidateEvidence] = {}
             top_score = -1.0
             top_index = -1
             second_score = -1.0
 
-            for index in range(acquire_start, acquire_end):
-                candidate = evaluate_index(index)
+            for index in acquisition_indices:
+                candidate = evaluate_index_with_priors(index)
                 if candidate is None:
                     continue
                 candidates[index] = candidate
@@ -3220,14 +3592,58 @@ def match_quran_markers(
                     selected_confidence = confidence
         else:
             expected = last_matched_index + 1
+            cadence_seconds: float | None = None
+            if len(cadence_samples) >= 3:
+                cadence_seconds = float(median(cadence_samples[-9:]))
+            chain_surah_name: str | None = None
+            if forced_chain_until_index is not None and 0 <= last_matched_index < len(corpus_entries):
+                chain_surah_name = corpus_entries[last_matched_index].surah
+            long_gap_mode = (
+                not awaiting_reacquire
+                and reacquire_lock_ayahs_remaining <= 0
+                and last_marker_time >= 0
+                and (float(segment.start) - float(last_marker_time)) >= 180.0
+            )
+            dynamic_max_forward_jump = int(max_forward_jump_ayahs)
+            dynamic_forward_window = max(SEARCH_FORWARD_WINDOW, int(search_window))
+            if long_gap_mode:
+                # When we have a long timing gap, allow broader forward probing to recover
+                # from missed ayat/surah transitions instead of getting stuck at +1/+2.
+                dynamic_max_forward_jump = max(dynamic_max_forward_jump, 45)
+                dynamic_forward_window = max(dynamic_forward_window, dynamic_max_forward_jump + 8, 80)
             normal_candidates: dict[int, CandidateEvidence] = {}
+            pointer_indices = _candidate_indices_for_pointer(
+                total_entries=len(corpus_entries),
+                last_matched_index=last_matched_index,
+                forced_start_index=forced_start_index,
+                backward_window=SEARCH_BACKWARD_WINDOW,
+                forward_window=dynamic_forward_window,
+            )
             if awaiting_reacquire or reacquire_lock_ayahs_remaining > 0:
                 normal_candidate_indices = [expected, expected + 1]
+                # After a break/reset, small ayah drops are common. Probe a little further
+                # forward before we fall into inference-heavy behavior.
+                if stale_segments >= REACQUIRE_EXTRA_FORWARD_STALE_1:
+                    normal_candidate_indices.append(expected + 2)
+                if stale_segments >= REACQUIRE_EXTRA_FORWARD_STALE_2:
+                    normal_candidate_indices.append(expected + 3)
             else:
-                normal_candidate_indices = list(range(expected - 1, expected + 3))
+                normal_candidate_indices = [expected, expected + 1]
+                # Sequential-first: we only allow small local recovery in normal mode.
+                for index in pointer_indices:
+                    if index in normal_candidate_indices:
+                        continue
+                    if index < expected - 1 or index > expected + dynamic_max_forward_jump:
+                        continue
+                    normal_candidate_indices.append(index)
+            if forced_chain_until_index is not None and last_matched_index >= 0 and last_matched_index < forced_chain_until_index:
+                normal_candidate_indices = [idx for idx in normal_candidate_indices if idx <= expected + 2]
 
             for index in normal_candidate_indices:
-                candidate = evaluate_index(index)
+                if chain_surah_name is not None and 0 <= index < len(corpus_entries):
+                    if corpus_entries[index].surah != chain_surah_name:
+                        continue
+                candidate = evaluate_index_with_priors(index)
                 if candidate is not None:
                     normal_candidates[index] = candidate
 
@@ -3248,33 +3664,95 @@ def match_quran_markers(
                     candidate=candidate,
                     rival_score=rival,
                     local_min_score=(
-                        max(float(min_score), 82.0)
+                        (
+                            max(70.0, float(min_score) - 4.0)
+                            if stale_segments >= REACQUIRE_EXTRA_FORWARD_STALE_2
+                            else max(float(min_score), 74.0)
+                        )
                         if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
                         else max(66.0, float(min_score) - (4.0 if is_immediate_expected else 0.0))
                     ),
                     local_min_overlap=(
-                        max(float(min_overlap), 0.22)
+                        (
+                            max(0.08, float(min_overlap) - 0.04)
+                            if stale_segments >= REACQUIRE_EXTRA_FORWARD_STALE_2
+                            else max(float(min_overlap), 0.12)
+                        )
                         if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
                         else max(0.12, float(min_overlap) - (0.03 if is_immediate_expected else 0.0))
                     ),
                     threshold=(
-                        max(float(min_confidence), 0.78)
+                        (
+                            max(0.50, float(min_confidence) - 0.08)
+                            if stale_segments >= REACQUIRE_EXTRA_FORWARD_STALE_2
+                            else max(float(min_confidence), 0.58)
+                        )
                         if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
                         else max(0.5, float(min_confidence) - (0.06 if is_immediate_expected else 0.0))
                     ),
-                    ambiguous_min_score=ambiguous_min_score,
+                    ambiguous_min_score=(
+                        (
+                            max(64, ambiguous_min_score - 6)
+                            if stale_segments >= REACQUIRE_EXTRA_FORWARD_STALE_2
+                            else max(ambiguous_min_score, 70)
+                        )
+                        if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                        else (
+                            max(64, ambiguous_min_score - 10)
+                            if is_immediate_expected
+                            else max(66, ambiguous_min_score - 8)
+                        )
+                    ),
                     ambiguous_min_confidence=ambiguous_min_confidence,
+                    min_accept_score_floor=(
+                        (
+                            max(60.0, MIN_ACCEPT_MATCH_SCORE - 2.0)
+                            if stale_segments >= REACQUIRE_EXTRA_FORWARD_STALE_2
+                            else max(MIN_ACCEPT_MATCH_SCORE, 62.0)
+                        )
+                        if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                        else (
+                            max(60.0, SEQUENTIAL_MIN_ACCEPT_MATCH_SCORE - 4.0)
+                            if is_immediate_expected
+                            else max(62.0, SEQUENTIAL_MIN_ACCEPT_MATCH_SCORE - 3.0)
+                        )
+                    ),
                 )
                 if not valid or quality is None:
                     continue
                 jump = index - last_matched_index
-                local_max_forward_jump = 1 if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0) else max_forward_jump_ayahs
+                local_max_forward_jump = (
+                    2
+                    if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
+                    else dynamic_max_forward_jump
+                )
+                if cadence_seconds is not None and last_marker_time >= 0 and jump > 0:
+                    approx_gap_seconds = float(candidate.start_time) - float(last_marker_time)
+                    min_expected_gap = max(2.0, cadence_seconds * float(jump) * 0.28)
+                    if (
+                        approx_gap_seconds < min_expected_gap
+                        and candidate.adjusted_score < max(80.0, float(min_score) + 2.0)
+                        and candidate.overlap < max(0.20, float(min_overlap) + 0.02)
+                    ):
+                        continue
                 if (
                     (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
                     and jump == 2
                     and stale_segments < 3
                 ):
-                    continue
+                    expected_candidate = normal_candidates.get(expected)
+                    expected_is_weak = (
+                        expected_candidate is None
+                        or expected_candidate.adjusted_score < max(72.0, float(min_score) - 6.0)
+                        or expected_candidate.overlap < max(0.10, float(min_overlap) - 0.06)
+                    )
+                    strong_skip_candidate = (
+                        candidate.adjusted_score >= max(78.0, float(min_score) + 2.0)
+                        and candidate.overlap >= max(0.12, float(min_overlap) + 0.02)
+                        and confidence >= max(0.56, float(min_confidence) + 0.06)
+                    )
+                    if not (expected_is_weak and strong_skip_candidate):
+                        continue
                 if jump < 1 or jump > local_max_forward_jump:
                     if (
                         (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
@@ -3288,13 +3766,28 @@ def match_quran_markers(
                     (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0)
                     and jump == 2
                     and (
-                        quality != "high"
-                        or candidate.adjusted_score < max(84.0, float(min_score) + 6.0)
-                        or candidate.overlap < max(0.24, float(min_overlap) + 0.06)
-                        or confidence < max(0.80, float(min_confidence) + 0.14)
+                        candidate.adjusted_score < max(72.0, float(min_score))
+                        or candidate.overlap < max(0.10, float(min_overlap))
+                        or confidence < max(0.45, float(min_confidence))
                     )
                 ):
                     continue
+                if long_gap_mode:
+                    if (
+                        selected_candidate is None
+                        or candidate.adjusted_score > selected_candidate.adjusted_score
+                        or (
+                            candidate.adjusted_score == selected_candidate.adjusted_score
+                            and confidence > selected_confidence
+                        )
+                    ):
+                        selected_index = index
+                        selected_candidate = candidate
+                        selected_quality = quality
+                        selected_confidence = confidence
+                        selected_from_recovery = False
+                    continue
+
                 selected_index = index
                 selected_candidate = candidate
                 selected_quality = quality
@@ -3303,148 +3796,511 @@ def match_quran_markers(
                 break
 
             if selected_index is None:
-                if (awaiting_reacquire or reacquire_lock_ayahs_remaining > 0) and last_matched_index >= 0:
-                    previous_entry = corpus_entries[last_matched_index]
-                    previous_total = surah_totals.get(previous_entry.surah, previous_entry.ayah)
-                    near_surah_end = previous_entry.ayah >= max(1, previous_total - 3)
-                    if near_surah_end and stale_segments >= 1:
-                        transition_start = max(0, last_matched_index + 1)
-                        transition_end = min(len(corpus_entries), transition_start + 18)
-                        transition_best_index = -1
-                        transition_best: CandidateEvidence | None = None
-                        transition_best_conf = 0.0
-
-                        for index in range(transition_start, transition_end):
-                            entry = corpus_entries[index]
-                            if (
-                                previous_entry.surah_number is not None
-                                and entry.surah_number is not None
-                                and entry.surah_number > (previous_entry.surah_number + 1)
-                            ):
-                                break
-                            if entry.surah == previous_entry.surah and (entry.ayah - previous_entry.ayah) > 8:
-                                continue
-                            if (
-                                previous_entry.surah_number is not None
-                                and entry.surah_number == previous_entry.surah_number + 1
-                                and entry.ayah > 12
-                            ):
-                                continue
-                            candidate = evaluate_index(index)
-                            if candidate is None:
-                                continue
-                            rival = transition_best.adjusted_score if transition_best is not None else -1.0
-                            valid, quality, confidence = _candidate_is_valid(
-                                candidate=candidate,
-                                rival_score=rival,
-                                local_min_score=max(float(min_score), 80.0),
-                                local_min_overlap=max(float(min_overlap), 0.20),
-                                threshold=max(float(min_confidence), 0.74),
-                                ambiguous_min_score=99,
-                                ambiguous_min_confidence=0.99,
-                            )
-                            if not valid or quality != "high":
-                                continue
-                            jump = index - last_matched_index
-                            if jump < 1 or jump > max(18, max_recovery_jump_ayahs):
-                                continue
-                            if (
-                                transition_best is None
-                                or confidence > transition_best_conf
-                                or (
-                                    confidence == transition_best_conf
-                                    and candidate.adjusted_score > transition_best.adjusted_score
-                                )
-                            ):
-                                transition_best = candidate
-                                transition_best_index = index
-                                transition_best_conf = confidence
-
-                        if transition_best is not None and transition_best_index >= 0:
-                            selected_index = transition_best_index
-                            selected_candidate = transition_best
-                            selected_quality = "high"
-                            selected_confidence = round(max(0.74, transition_best_conf), 3)
-                            selected_from_recovery = True
+                if (
+                    last_matched_index >= 0
+                    and stale_segments >= max(1, int(sequential_recovery_stale_segments))
+                    and len(corpus_entries) > (last_matched_index + 1)
+                ):
+                    current_entry = corpus_entries[last_matched_index]
+                    catchup_start = last_matched_index + 1
+                    catchup_end = min(
+                        len(corpus_entries),
+                        catchup_start + max(2, int(sequential_recovery_lookahead)),
+                    )
+                    catchup_best: tuple[int, CandidateEvidence, float] | None = None
+                    for index in range(catchup_start, catchup_end):
+                        if corpus_entries[index].surah != current_entry.surah:
+                            break
+                        candidate = evaluate_index_with_priors(index)
+                        if candidate is None:
+                            continue
+                        rival = 0.0
+                        valid, quality, confidence = _candidate_is_valid(
+                            candidate=candidate,
+                            rival_score=rival,
+                            local_min_score=max(64, min_score - 10),
+                            local_min_overlap=max(0.08, min_overlap - 0.08),
+                            threshold=max(0.50, min_confidence - 0.10),
+                            ambiguous_min_score=max(62, ambiguous_min_score - 10),
+                            ambiguous_min_confidence=max(0.46, ambiguous_min_confidence - 0.08),
+                            min_accept_score_floor=60.0,
+                        )
+                        if not valid or quality is None:
+                            continue
+                        if catchup_best is None or candidate.adjusted_score > catchup_best[1].adjusted_score:
+                            catchup_best = (index, candidate, confidence)
+                    if catchup_best is not None:
+                        selected_index = catchup_best[0]
+                        selected_candidate = catchup_best[1]
+                        selected_quality = "ambiguous"
+                        selected_confidence = max(0.52, float(catchup_best[2]))
+                        selected_from_recovery = True
 
             if selected_index is None:
                 recovery_start = max(expected, 0)
-                recovery_end = min(len(corpus_entries), recovery_start + 60)
                 recovery_best_index = -1
                 recovery_best: CandidateEvidence | None = None
                 recovery_best_conf = 0.0
                 recovery_second = -1.0
 
-                # Disable long-jump recovery while reacquiring after pause/non-recitation.
-                if not awaiting_reacquire and reacquire_lock_ayahs_remaining <= 0:
-                    for index in range(recovery_start, recovery_end):
-                        candidate = evaluate_index(index)
-                        if candidate is None:
-                            continue
-                        rival = recovery_best.adjusted_score if recovery_best is not None else -1.0
-                        valid, quality, confidence = _candidate_is_valid(
-                            candidate=candidate,
-                            rival_score=rival,
-                            local_min_score=max(min_score, 80),
-                            local_min_overlap=max(min_overlap, 0.20),
-                            threshold=max(min_confidence, 0.72),
-                            ambiguous_min_score=max(ambiguous_min_score, 78),
-                            ambiguous_min_confidence=max(ambiguous_min_confidence, 0.68),
-                        )
-                        if not valid or quality is None:
-                            continue
-                        jump = index - last_matched_index
-                        if jump < 1:
-                            continue
-                        if jump > max_recovery_jump_ayahs:
-                            continue
-                        if last_marker_time >= 0:
-                            approx_gap_seconds = float(candidate.start_time) - float(last_marker_time)
-                            min_expected_gap = max(10.0, float(jump) * 2.0)
-                            if approx_gap_seconds < min_expected_gap:
+                # Normally avoid long-jump recovery immediately after reset.
+                # Samir blocks can stall here when early next-surah ayat are lost;
+                # after a short stale run, allow recovery search to re-lock deeper.
+                allow_long_jump_recovery = (
+                    (not awaiting_reacquire and reacquire_lock_ayahs_remaining <= 0)
+                    or (awaiting_reacquire and stale_segments >= REACQUIRE_LONG_JUMP_STALE_MIN)
+                )
+                if allow_long_jump_recovery:
+                    recovery_windows = [GAP_RECOVERY_FORWARD_WINDOW]
+                    if stale_segments >= 4:
+                        recovery_windows.append(max(GAP_RECOVERY_FORWARD_WINDOW, RECOVERY_STAGE2_FORWARD_WINDOW))
+
+                    for recovery_window in recovery_windows:
+                        recovery_end = min(len(corpus_entries), recovery_start + recovery_window)
+                        for index in range(recovery_start, recovery_end):
+                            if chain_surah_name is not None and 0 <= index < len(corpus_entries):
+                                if corpus_entries[index].surah != chain_surah_name:
+                                    break
+                            candidate = evaluate_index_with_priors(index)
+                            if candidate is None:
                                 continue
-                        if candidate.adjusted_score < 80 or candidate.overlap < 0.20 or confidence < 0.72:
-                            continue
-                        if recovery_best is None or candidate.adjusted_score > recovery_best.adjusted_score:
-                            recovery_second = recovery_best.adjusted_score if recovery_best is not None else recovery_second
-                            recovery_best = candidate
-                            recovery_best_index = index
-                            recovery_best_conf = confidence
-                        elif candidate.adjusted_score > recovery_second:
-                            recovery_second = candidate.adjusted_score
+                            rival = recovery_best.adjusted_score if recovery_best is not None else -1.0
+                            valid, quality, confidence = _candidate_is_valid(
+                                candidate=candidate,
+                                rival_score=rival,
+                                local_min_score=max(min_score, 68),
+                                local_min_overlap=max(min_overlap, 0.10),
+                                threshold=max(min_confidence, 0.46),
+                                ambiguous_min_score=max(ambiguous_min_score, 62),
+                                ambiguous_min_confidence=max(ambiguous_min_confidence, 0.32),
+                                min_accept_score_floor=max(MIN_ACCEPT_MATCH_SCORE, 62.0),
+                            )
+                            # Samir-specific rescue:
+                            # When stuck near the end of a surah after a reset, allow
+                            # anchored ambiguous reacquire into the next surah even if
+                            # overlap is low (tiny/chopped Whisper segments).
+                            if not valid and last_matched_index >= 0 and 0 <= index < len(corpus_entries):
+                                previous_entry = corpus_entries[last_matched_index]
+                                candidate_entry = corpus_entries[index]
+                                previous_total = surah_totals.get(previous_entry.surah, previous_entry.ayah)
+                                near_end_prev = previous_entry.ayah >= max(1, previous_total - 5)
+                                next_surah = (
+                                    candidate_entry.surah_number == previous_entry.surah_number + 1
+                                )
+                                anchored_rescue = _has_anchor_token_hit(
+                                    candidate_entry,
+                                    candidate.normalized_text,
+                                    min_anchor_len=3,
+                                    min_similarity=72.0,
+                                )
+                                if (
+                                    near_end_prev
+                                    and next_surah
+                                    and int(candidate_entry.ayah) <= 70
+                                    and anchored_rescue
+                                    and candidate.adjusted_score >= 58.0
+                                    and confidence >= 0.18
+                                ):
+                                    valid = True
+                                    quality = "ambiguous"
+                                    confidence = max(0.40, confidence)
+                            if not valid or quality is None:
+                                continue
+                            jump = index - last_matched_index
+                            if jump < 1:
+                                continue
+                            if jump > max_recovery_jump_ayahs:
+                                continue
+                            if last_marker_time >= 0:
+                                approx_gap_seconds = float(candidate.start_time) - float(last_marker_time)
+                                min_expected_gap = max(10.0, float(jump) * 2.0)
+                                if approx_gap_seconds < min_expected_gap:
+                                    continue
+                            if candidate.adjusted_score < 66 or candidate.overlap < 0.08 or confidence < 0.42:
+                                continue
+                            if recovery_best is None or candidate.adjusted_score > recovery_best.adjusted_score:
+                                recovery_second = recovery_best.adjusted_score if recovery_best is not None else recovery_second
+                                recovery_best = candidate
+                                recovery_best_index = index
+                                recovery_best_conf = confidence
+                            elif candidate.adjusted_score > recovery_second:
+                                recovery_second = candidate.adjusted_score
+                        if recovery_best is not None and recovery_best_index >= 0:
+                            break
 
                 if recovery_best is not None and recovery_best_index >= 0:
                     selected_index = recovery_best_index
                     selected_candidate = recovery_best
-                    selected_quality = "high"
-                    selected_confidence = max(0.72, recovery_best_conf)
+                    selected_quality = "ambiguous" if recovery_best_conf < 0.64 else "high"
+                    selected_confidence = max(0.42, recovery_best_conf)
                     selected_from_recovery = True
 
+            # Next-surah anchored reacquire (Samir-specific):
+            # If we are at the tail of a surah and stale after a reset/break,
+            # probe early ayat of the next surah before falling to inferred fill.
+            if (
+                selected_index is None
+                and last_matched_index >= 0
+                and stale_segments >= REACQUIRE_LONG_JUMP_STALE_MIN
+            ):
+                prev_entry = corpus_entries[last_matched_index]
+                prev_total = surah_totals.get(prev_entry.surah, prev_entry.ayah)
+                if prev_entry.ayah >= max(1, prev_total - 3):
+                    next_surah_number = int(prev_entry.surah_number) + 1
+                    probe_start = last_matched_index + 1
+                    probe_end = min(len(corpus_entries), probe_start + max(120, int(search_window) * 4))
+                    next_surah_best: tuple[int, CandidateEvidence, float] | None = None
+
+                    for index in range(probe_start, probe_end):
+                        if index < 0 or index >= len(corpus_entries):
+                            continue
+                        entry_candidate = corpus_entries[index]
+                        if int(entry_candidate.surah_number) < next_surah_number:
+                            continue
+                        if int(entry_candidate.surah_number) > next_surah_number:
+                            break
+                        if int(entry_candidate.ayah) > 80:
+                            break
+
+                        candidate = evaluate_index(index)
+                        if candidate is None:
+                            continue
+                        if candidate.adjusted_score < 56.0 or candidate.overlap < 0.04:
+                            continue
+                        if not _has_anchor_token_hit(
+                            entry_candidate,
+                            candidate.normalized_text,
+                            min_anchor_len=3,
+                            min_similarity=70.0,
+                        ):
+                            continue
+
+                        rival = next_surah_best[1].adjusted_score if next_surah_best is not None else -1.0
+                        confidence = _candidate_confidence(candidate, rival)
+                        if confidence < 0.30:
+                            continue
+
+                        if (
+                            next_surah_best is None
+                            or candidate.adjusted_score > next_surah_best[1].adjusted_score
+                            or (
+                                candidate.adjusted_score == next_surah_best[1].adjusted_score
+                                and confidence > next_surah_best[2]
+                            )
+                        ):
+                            next_surah_best = (index, candidate, confidence)
+
+                    if next_surah_best is not None:
+                        selected_index = next_surah_best[0]
+                        selected_candidate = next_surah_best[1]
+                        selected_quality = "ambiguous"
+                        selected_confidence = max(0.40, float(next_surah_best[2]))
+                        selected_from_recovery = True
+
+            # Resume-chain soft fallback:
+            # Keep low-confidence but sequential candidates as AMBER (ambiguous)
+            # before the inference layer fills gaps. This is intentionally scoped
+            # to structured resume-chain regions so pre-break Hassan behavior stays stable.
+            if (
+                selected_index is None
+                and forced_chain_until_index is not None
+                and last_matched_index >= 0
+                and normal_candidates
+            ):
+                soft_expected = last_matched_index + 1
+                soft_best: tuple[int, CandidateEvidence, float] | None = None
+                for idx in [soft_expected, soft_expected + 1]:
+                    candidate = normal_candidates.get(idx)
+                    if candidate is None:
+                        continue
+                    if idx < 0 or idx >= len(corpus_entries):
+                        continue
+                    if idx <= last_matched_index:
+                        continue
+
+                    # Enforce same-surah sequential fallback during resume lock.
+                    prev_entry = corpus_entries[last_matched_index] if 0 <= last_matched_index < len(corpus_entries) else None
+                    curr_entry = corpus_entries[idx]
+                    if prev_entry is not None and curr_entry.surah != prev_entry.surah:
+                        continue
+
+                    rival = max(
+                        (
+                            other.adjusted_score
+                            for other_index, other in normal_candidates.items()
+                            if other_index != idx
+                        ),
+                        default=0.0,
+                    )
+                    confidence = _candidate_confidence(candidate, rival)
+                    if (
+                        candidate.adjusted_score < 54.0
+                        or candidate.overlap < 0.04
+                        or confidence < 0.36
+                    ):
+                        continue
+
+                    if soft_best is None or candidate.adjusted_score > soft_best[1].adjusted_score:
+                        soft_best = (idx, candidate, confidence)
+
+                if soft_best is not None:
+                    selected_index = soft_best[0]
+                    selected_candidate = soft_best[1]
+                    selected_quality = "ambiguous"
+                    selected_confidence = max(0.45, float(soft_best[2]))
+                    selected_from_recovery = True
+                    selected_from_soft_resume_fallback = True
+
+            # Tail transition override (Samir-specific):
+            # If we selected a weak same-surah tail candidate, but there is a much stronger
+            # anchored candidate in the next surah, prefer the next-surah candidate to avoid
+            # drifting on Hud tail while Yusuf text is already being recited.
+            if (
+                selected_index is not None
+                and selected_candidate is not None
+                and selected_quality is not None
+                and last_matched_index >= 0
+            ):
+                previous_entry = corpus_entries[last_matched_index]
+                selected_entry = corpus_entries[selected_index]
+                previous_total = surah_totals.get(previous_entry.surah, previous_entry.ayah)
+                near_end_prev = previous_entry.ayah >= max(1, previous_total - 6)
+                selected_same_surah = selected_entry.surah == previous_entry.surah
+                selected_is_weak_tail = (
+                    selected_same_surah
+                    and near_end_prev
+                    and (
+                        selected_quality != "high"
+                        or selected_confidence < 0.72
+                        or selected_candidate.adjusted_score < max(76.0, float(min_score))
+                        or selected_candidate.overlap < max(0.10, float(min_overlap) - 0.06)
+                    )
+                )
+
+                if selected_is_weak_tail:
+                    next_surah_number = int(previous_entry.surah_number) + 1
+                    probe_start = max(last_matched_index + 1, selected_index + 1)
+                    probe_end = min(len(corpus_entries), probe_start + max(140, int(search_window) * 5))
+                    transition_best: tuple[int, CandidateEvidence, float] | None = None
+
+                    for index in range(probe_start, probe_end):
+                        if index < 0 or index >= len(corpus_entries):
+                            continue
+                        entry_candidate = corpus_entries[index]
+                        if int(entry_candidate.surah_number) < next_surah_number:
+                            continue
+                        if int(entry_candidate.surah_number) > next_surah_number:
+                            break
+                        if int(entry_candidate.ayah) > 80:
+                            break
+
+                        candidate = evaluate_index(index)
+                        if candidate is None:
+                            continue
+                        if candidate.adjusted_score < 54.0 or candidate.score < 74.0 or candidate.overlap < 0.06:
+                            continue
+                        if not _has_anchor_token_hit(
+                            entry_candidate,
+                            candidate.normalized_text,
+                            min_anchor_len=3,
+                            min_similarity=70.0,
+                        ):
+                            continue
+
+                        rival = transition_best[1].adjusted_score if transition_best is not None else -1.0
+                        confidence = _candidate_confidence(candidate, rival)
+                        if confidence < 0.36:
+                            continue
+
+                        if (
+                            transition_best is None
+                            or candidate.adjusted_score > transition_best[1].adjusted_score
+                            or (
+                                candidate.adjusted_score == transition_best[1].adjusted_score
+                                and confidence > transition_best[2]
+                            )
+                        ):
+                            transition_best = (index, candidate, confidence)
+
+                    if transition_best is not None:
+                        margin_adjusted = float(transition_best[1].adjusted_score) - float(selected_candidate.adjusted_score)
+                        margin_raw = float(transition_best[1].score) - float(selected_candidate.score)
+                        if (
+                            (margin_adjusted >= 8.0 or margin_raw >= 8.0)
+                            and transition_best[1].score >= 78.0
+                            and transition_best[2] >= 0.36
+                        ):
+                            selected_index = transition_best[0]
+                            selected_candidate = transition_best[1]
+                            selected_quality = "ambiguous" if transition_best[2] < 0.64 else "high"
+                            selected_confidence = max(0.42, float(transition_best[2]))
+                            selected_from_recovery = True
+
+            # Long-gap anchored override (Samir-specific):
+            # If we have a large time gap since the last accepted marker, allow a strong
+            # multi-token anchored forward candidate to override weak local drift.
+            if (
+                selected_index is not None
+                and selected_candidate is not None
+                and selected_quality is not None
+                and last_matched_index >= 0
+                and last_marker_time >= 0
+            ):
+                gap_since_last = float(segment.start) - float(last_marker_time)
+                selected_entry = corpus_entries[selected_index]
+                selected_is_weak = (
+                    selected_candidate.adjusted_score < max(82.0, float(min_score) + 2.0)
+                    or selected_confidence < 0.72
+                    or selected_quality != "high"
+                )
+                if gap_since_last >= 180.0 and selected_is_weak:
+                    previous_entry = corpus_entries[last_matched_index]
+                    probe_start = max(last_matched_index + 1, selected_index + 1)
+                    probe_end = min(len(corpus_entries), probe_start + max(220, int(search_window) * 8))
+                    jump_best: tuple[int, CandidateEvidence, float] | None = None
+
+                    for index in range(probe_start, probe_end):
+                        if index < 0 or index >= len(corpus_entries):
+                            continue
+                        entry_candidate = corpus_entries[index]
+                        # Keep override forward and local in surah space (current or next surah only).
+                        if int(entry_candidate.surah_number) < int(previous_entry.surah_number):
+                            continue
+                        if int(entry_candidate.surah_number) > int(previous_entry.surah_number) + 1:
+                            break
+
+                        candidate = evaluate_index(index)
+                        if candidate is None:
+                            continue
+                        if len(candidate.normalized_text.split()) < 2:
+                            continue
+                        if candidate.adjusted_score < 56.0 or candidate.score < 74.0 or candidate.overlap < 0.10:
+                            continue
+                        if not _has_anchor_token_hit(
+                            entry_candidate,
+                            candidate.normalized_text,
+                            min_anchor_len=3,
+                            min_similarity=74.0,
+                        ):
+                            continue
+
+                        rival = jump_best[1].adjusted_score if jump_best is not None else -1.0
+                        confidence = _candidate_confidence(candidate, rival)
+                        if confidence < 0.42:
+                            continue
+
+                        if (
+                            jump_best is None
+                            or candidate.adjusted_score > jump_best[1].adjusted_score
+                            or (
+                                candidate.adjusted_score == jump_best[1].adjusted_score
+                                and confidence > jump_best[2]
+                            )
+                        ):
+                            jump_best = (index, candidate, confidence)
+
+                    if jump_best is not None:
+                        jump_entry = corpus_entries[jump_best[0]]
+                        margin_adjusted = float(jump_best[1].adjusted_score) - float(selected_candidate.adjusted_score)
+                        margin_raw = float(jump_best[1].score) - float(selected_candidate.score)
+                        substantial_forward_jump = (
+                            int(jump_entry.surah_number) > int(selected_entry.surah_number)
+                            or int(jump_entry.ayah) >= int(selected_entry.ayah) + 8
+                        )
+                        if (
+                            substantial_forward_jump
+                            and (margin_adjusted >= 8.0 or margin_raw >= 8.0)
+                            and jump_best[1].score >= 78.0
+                            and jump_best[2] >= 0.42
+                        ):
+                            selected_index = jump_best[0]
+                            selected_candidate = jump_best[1]
+                            selected_quality = "ambiguous" if jump_best[2] < 0.70 else "high"
+                            selected_confidence = max(0.46, float(jump_best[2]))
+                            selected_from_recovery = True
+
         if selected_index is None or selected_candidate is None or selected_quality is None:
+            if debug_trace is not None:
+                debug_candidates: list[dict] = []
+                for idx, cand in sorted(
+                    normal_candidates.items() if last_matched_index >= 0 else candidates.items(),  # type: ignore[name-defined]
+                    key=lambda item: item[1].adjusted_score,
+                    reverse=True,
+                )[:3]:
+                    entry = corpus_entries[idx]
+                    debug_candidates.append(
+                        {
+                            "index": idx,
+                            "surah_number": int(entry.surah_number),
+                            "ayah": int(entry.ayah),
+                            "score": round(float(cand.score), 2),
+                            "adjusted": round(float(cand.adjusted_score), 2),
+                            "overlap": round(float(cand.overlap), 3),
+                            "source": cand.source,
+                        }
+                    )
+                debug_trace.append(
+                    {
+                        "segment_index": int(segment_index),
+                        "segment_start": float(segment.start),
+                        "segment_end": float(segment.end),
+                        "expected_index": int(last_matched_index + 1),
+                        "selected": None,
+                        "reason": "no_valid_candidate",
+                        "top_candidates": debug_candidates,
+                    }
+                )
             if repeat_detected:
                 stale_segments = 0
                 continue
             stale_segments += 1
             continue
 
-        if repeat_detected and selected_candidate.adjusted_score < (repeat_detected_score + 1.0):
-            stale_segments = 0
-            continue
-
-        if awaiting_reacquire:
-            strict_reacquire_score = max(82.0, float(min_score) + 4.0)
-            strict_reacquire_overlap = max(0.22, float(min_overlap) + 0.04)
-            strict_reacquire_conf = max(0.78, float(min_confidence) + 0.12)
-            if (
-                selected_quality != "high"
-                or selected_candidate.adjusted_score < strict_reacquire_score
-                or selected_candidate.overlap < strict_reacquire_overlap
-                or selected_confidence < strict_reacquire_conf
-            ):
-                stale_segments += 1
+        if repeat_detected:
+            advancing = selected_index > last_matched_index
+            strong_forward_progress = (
+                advancing
+                and selected_candidate.adjusted_score >= max(float(min_score) - 2.0, 76.0)
+                and selected_candidate.overlap >= max(float(min_overlap) - 0.04, 0.14)
+            )
+            if (not strong_forward_progress) and selected_candidate.adjusted_score < (repeat_detected_score + 1.0):
+                stale_segments = 0
                 continue
 
-        entry = corpus_entries[selected_index]
+        if forced_chain_until_index is not None and selected_index > (last_matched_index + 2):
+            stale_segments += 1
+            continue
+
+        candidate_entry = corpus_entries[selected_index]
+        if awaiting_reacquire:
+            if not selected_from_soft_resume_fallback:
+                strict_reacquire_score = max(72.0, float(min_score) + 2.0)
+                strict_reacquire_overlap = max(0.10, float(min_overlap))
+                strict_reacquire_conf = max(0.50, float(min_confidence) + 0.04)
+                anchored_sequential_reacquire = (
+                    selected_index <= (last_matched_index + 3)
+                    and _has_anchor_token_hit(
+                        candidate_entry,
+                        selected_candidate.normalized_text,
+                        min_anchor_len=3,
+                        min_similarity=72.0,
+                    )
+                    and selected_candidate.adjusted_score >= max(62.0, float(min_score) - 12.0)
+                    and selected_candidate.overlap >= max(0.06, float(min_overlap) - 0.10)
+                    and selected_confidence >= 0.42
+                )
+                if (
+                    not anchored_sequential_reacquire
+                    and (
+                        selected_candidate.adjusted_score < strict_reacquire_score
+                        or selected_candidate.overlap < strict_reacquire_overlap
+                        or selected_confidence < strict_reacquire_conf
+                    )
+                ):
+                    stale_segments += 1
+                    continue
+
+        entry = candidate_entry
         previous_marker = markers[-1] if markers else None
         marker_start, marker_end, matched_tokens = _resolve_marker_times(
             segment=segment,
@@ -3454,6 +4310,24 @@ def match_quran_markers(
             segment_index=segment_index,
         )
         marker_end = max(marker_start, marker_end)
+
+        # Whisper/alignment rounding can put a strong next-ayah onset at the same second
+        # as the previous ayah end. Nudge forward slightly to preserve chronology.
+        if (
+            previous_marker is not None
+            and previous_marker.surah == entry.surah
+            and int(entry.ayah) > int(previous_marker.ayah)
+        ):
+            previous_end = int(previous_marker.end_time or previous_marker.start_time or previous_marker.time)
+            if marker_start <= previous_end:
+                is_strong_progression = (
+                    selected_quality == "high"
+                    and float(selected_candidate.adjusted_score) >= max(84.0, float(min_score) + 2.0)
+                )
+                # Only auto-adjust when overlap is tiny (<=2s), which is typically rounding noise.
+                if is_strong_progression and (previous_end - marker_start) <= 2:
+                    marker_start = previous_end + 1
+                    marker_end = max(marker_start, marker_end)
 
         previous_for_transition = previous_marker
         if previous_marker is not None and previous_marker.surah != entry.surah:
@@ -3502,6 +4376,27 @@ def match_quran_markers(
             stale_segments += 1
             continue
 
+        if debug_trace is not None:
+            debug_trace.append(
+                {
+                    "segment_index": int(segment_index),
+                    "segment_start": float(segment.start),
+                    "segment_end": float(segment.end),
+                    "expected_index": int(last_matched_index + 1),
+                    "selected": {
+                        "index": int(selected_index),
+                        "surah_number": int(entry.surah_number),
+                        "ayah": int(entry.ayah),
+                        "quality": selected_quality,
+                        "confidence": round(float(selected_confidence), 3),
+                        "score": round(float(selected_candidate.score), 2),
+                        "adjusted": round(float(selected_candidate.adjusted_score), 2),
+                        "overlap": round(float(selected_candidate.overlap), 3),
+                        "source": selected_candidate.source,
+                    },
+                }
+            )
+
         marker_candidate = Marker(
             time=marker_start,
             start_time=marker_start,
@@ -3548,10 +4443,21 @@ def match_quran_markers(
 
         last_matched_index = max(last_matched_index, selected_index)
         last_marker_time = max(last_marker_time, accepted_marker.time)
+        if previous_for_transition is not None and previous_for_transition.surah == entry.surah:
+            prev_time = int(previous_for_transition.start_time or previous_for_transition.time)
+            prev_ayah = int(previous_for_transition.ayah)
+            ayah_step = max(1, int(entry.ayah) - prev_ayah)
+            time_step = int(marker_start) - int(prev_time)
+            if time_step > 0 and ayah_step > 0:
+                cadence_samples.append(float(time_step) / float(ayah_step))
+                if len(cadence_samples) > 24:
+                    cadence_samples = cadence_samples[-24:]
         awaiting_reacquire = False
         pause_reacquire_until = None
         if reacquire_lock_ayahs_remaining > 0:
             reacquire_lock_ayahs_remaining -= 1
+        if forced_chain_until_index is not None and last_matched_index >= forced_chain_until_index:
+            forced_chain_until_index = None
         stale_segments = 0
 
     inferred_markers: list[Marker] = []
@@ -4172,6 +5078,30 @@ def match_quran_markers(
         merged = _prune_unrealistic_progression(merged)
         merged = _enforce_surah_transition_order(merged, surah_totals=surah_totals, min_gap_seconds=min_gap_seconds)
     merged = _enforce_long_ayah_inferred_floor(merged, entry_lookup=entry_lookup)
+    catchup_fill = _fill_same_surah_sequential_catchup(
+        merged,
+        entry_lookup=entry_lookup,
+        transcript_segments=transcript_segments,
+        max_gap_ayahs=max(6, int(sequential_recovery_lookahead)),
+    )
+    if catchup_fill:
+        merged.extend(catchup_fill)
+        merged = _dedupe_by_local_time_window(merged, window_seconds=90)
+        merged = _apply_overlap_conflict_resolution(merged)
+        merged = _enforce_surah_transition_order(merged, surah_totals=surah_totals, min_gap_seconds=min_gap_seconds)
+        merged = _enforce_long_ayah_inferred_floor(merged, entry_lookup=entry_lookup)
+    cross_surah_tail = _fill_cross_surah_tail_markers(
+        merged,
+        surah_totals=surah_totals,
+        min_gap_seconds=min_gap_seconds,
+    )
+    if cross_surah_tail:
+        merged.extend(cross_surah_tail)
+        merged = _dedupe_by_local_time_window(merged, window_seconds=90)
+        merged = _apply_overlap_conflict_resolution(merged)
+        merged = _enforce_surah_transition_order(merged, surah_totals=surah_totals, min_gap_seconds=min_gap_seconds)
+        merged = _enforce_long_ayah_inferred_floor(merged, entry_lookup=entry_lookup)
     merged = _enforce_sequential_ayah_order(merged)
+    merged = _median_smooth_timestamps(merged)
     merged = sorted(merged, key=lambda marker: (marker.time, marker.surah_number or 0, marker.ayah))
     return merged

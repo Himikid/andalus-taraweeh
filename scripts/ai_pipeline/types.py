@@ -41,6 +41,7 @@ class Marker:
     start_time: int | None = None
     end_time: int | None = None
     matched_token_indices: list[list[int]] | None = None
+    origin: str | None = None
 
     def __post_init__(self) -> None:
         if self.start_time is None:
