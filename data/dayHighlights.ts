@@ -1298,6 +1298,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  17: [
+    {
+      ayahRef: "21:87",
+      themeType: "Dua",
+      shortTitle: "Dua of Yunus in Distress",
+      whyNotable: [
+        "One of the most famous Quranic duas for repentance in hardship.",
+        "Widely recited when seeking relief through tawhid and humility.",
+      ],
+      summary:
+        "Yunus calls upon Allah in the darknesses, affirming Allah's oneness and admitting his own wrong. The ayah models urgent repentance with pure tawhid.",
+      keyTakeaway: "In distress, return to Allah with sincere tawbah and clear tawhid.",
+      references: [
+        { name: "Quran 21:87", url: "https://quran.com/21:87" },
+        { name: "Ibn Kathir Tafsir (21:87)", url: "https://quran.com/en/21:87/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "22:77",
+      themeType: "Famous Ayah",
+      shortTitle: "Bow, Prostrate, and Do Good",
+      whyNotable: [
+        "A concise command joining worship with righteous action.",
+        "Frequently cited in reminders on embodied submission.",
+      ],
+      summary:
+        "Believers are commanded to bow, prostrate, worship their Lord, and do good so they may succeed. The ayah links ritual devotion and ethical conduct.",
+      keyTakeaway: "Let worship and good deeds move together in daily life.",
+      references: [
+        { name: "Quran 22:77", url: "https://quran.com/22:77" },
+        { name: "Ibn Kathir Tafsir (22:77)", url: "https://quran.com/en/22:77/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "22:78",
+      themeType: "Famous Ayah",
+      shortTitle: "Strive for Allah as He Deserves",
+      whyNotable: [
+        "A major ayah on purposeful striving and Muslim identity.",
+        "Often quoted in calls to perseverance and communal responsibility.",
+      ],
+      summary:
+        "Allah commands striving for His cause with true striving and reminds the ummah of its chosen mission. The ayah frames religion as committed worship, sacrifice, and witness-bearing.",
+      keyTakeaway: "Treat commitment to Allah as a full-life mission, not occasional effort.",
+      references: [
+        { name: "Quran 22:78", url: "https://quran.com/22:78" },
+        { name: "Ibn Kathir Tafsir (22:78)", url: "https://quran.com/en/22:78/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "23:1-2",
+      themeType: "Famous Ayah",
+      shortTitle: "Successful Believers and Khushu",
+      whyNotable: [
+        "A foundational passage defining the traits of true success.",
+        "Commonly taught as the opening program of Surah Al-Mu'minoon.",
+      ],
+      summary:
+        "The surah opens by declaring believers successful, beginning with those who are humbly attentive in prayer. Success is presented as spiritual focus before external achievement.",
+      keyTakeaway: "Protect khushu in salah as the root of lasting success.",
+      references: [
+        { name: "Quran 23:1-2", url: "https://quran.com/23:1-2" },
+        { name: "Ibn Kathir Tafsir (23:1)", url: "https://quran.com/en/23:1/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "23:97-98",
+      themeType: "Dua",
+      shortTitle: "Seeking Refuge from Shayateen",
+      whyNotable: [
+        "A direct Quranic dua for protection from satanic whispers and influence.",
+        "Often recited for spiritual safeguarding and inner discipline.",
+      ],
+      summary:
+        "The Prophet is taught to seek refuge from the provocations of devils and from their presence. The passage trains believers to seek constant divine protection from unseen harm.",
+      keyTakeaway: "Make isti'adhah a daily guard against subtle spiritual attacks.",
+      references: [
+        { name: "Quran 23:97-98", url: "https://quran.com/23:97-98" },
+        { name: "Ibn Kathir Tafsir (23:97)", url: "https://quran.com/en/23:97/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "24:20",
+      themeType: "Famous Ayah",
+      shortTitle: "Allah's Favor and Mercy Preserve Us",
+      whyNotable: [
+        "A powerful closing reminder in this portion of An-Noor against moral collapse.",
+        "Highlights that protection and reform are by Allah's compassion.",
+      ],
+      summary:
+        "Allah reminds believers that without His favor and mercy they would be lost, and that He is Most Kind and Merciful. The ayah grounds communal purity in gratitude and dependence on Allah.",
+      keyTakeaway: "Remain grateful and humble, knowing guidance is Allah's mercy.",
+      references: [
+        { name: "Quran 24:20", url: "https://quran.com/24:20" },
+        { name: "Ibn Kathir Tafsir (24:20)", url: "https://quran.com/en/24:20/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -1459,6 +1557,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Maryam highlights purity, reverence, and the legacy of prophets who responded to revelation with humility and sujood.",
       "Taa-Haa emphasizes prophetic courage, reliance on Allah, and forgiveness for those who repent and stay guided.",
       "Early Al-Anbiyaa reinforces accountability and Allah's support for truth against persistent opposition.",
+    ],
+  },
+  17: {
+    title: "Day 17 Recitation Summary (Al-Anbiyaa 74-112, Al-Hajj 1-78, Al-Mu'minoon 1-118, An-Noor 1-20)",
+    summary:
+      "Day 17 moves from the closing prophetic scenes of Surah Al-Anbiyaa into the urgency and submission themes of Surah Al-Hajj, then into the character blueprint of Surah Al-Mu'minoon and the social-purity guidance at the opening of Surah An-Noor. The recitation repeatedly ties salvation to humility, disciplined worship, repentance, and moral accountability.",
+    themes: [
+      "Late Al-Anbiyaa emphasizes dua, repentance, and Allah's rescue of sincere prophets under trial.",
+      "Al-Hajj calls to worship, striving, and communal obedience rooted in Ibrahim's legacy and tawhid.",
+      "Al-Mu'minoon and early An-Noor define successful believers through purity, lowered gaze, and social responsibility.",
     ],
   },
 };
