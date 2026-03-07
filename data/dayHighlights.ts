@@ -1004,6 +1004,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  14: [
+    {
+      ayahRef: "15:9",
+      themeType: "Famous Ayah",
+      shortTitle: "Allah Preserves the Reminder",
+      whyNotable: [
+        "A foundational ayah cited for divine preservation of the Quran.",
+        "Frequently referenced in aqidah and Quran sciences teaching.",
+      ],
+      summary:
+        "Allah declares that He revealed the Reminder and that He Himself will preserve it. The ayah anchors certainty in the Quran's protection across generations.",
+      keyTakeaway: "Trust the Quran as divinely guarded guidance for all times.",
+      references: [
+        { name: "Quran 15:9", url: "https://quran.com/15:9" },
+        { name: "Ibn Kathir Tafsir (15:9)", url: "https://quran.com/en/15:9/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "15:99",
+      themeType: "Famous Ayah",
+      shortTitle: "Worship Until Certainty",
+      whyNotable: [
+        "A famous closing command in Surah Al-Hijr on lifelong devotion.",
+        "Widely cited in reminders on consistency and steadfast worship.",
+      ],
+      summary:
+        "Allah commands the Prophet to continue worshiping his Lord until certainty comes. The ayah teaches constancy in worship through all phases of life.",
+      keyTakeaway: "Remain consistent in worship without waiting for ideal conditions.",
+      references: [
+        { name: "Quran 15:99", url: "https://quran.com/15:99" },
+        { name: "Ibn Kathir Tafsir (15:99)", url: "https://quran.com/en/15:99/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "16:90",
+      themeType: "Famous Ayah",
+      shortTitle: "Justice, Excellence, and Moral Restraint",
+      whyNotable: [
+        "One of the most famous ayat recited in khutbahs globally.",
+        "A concise ethical framework covering justice, ihsan, and social conduct.",
+      ],
+      summary:
+        "Allah commands justice, excellence, and generosity to relatives, and forbids indecency, wrongdoing, and transgression. The ayah gathers core social ethics in one powerful command.",
+      keyTakeaway: "Live Islam through justice, ihsan, and disciplined restraint from harm.",
+      references: [
+        { name: "Quran 16:90", url: "https://quran.com/16:90" },
+        { name: "Ibn Kathir Tafsir (16:90)", url: "https://quran.com/en/16:90/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "16:97",
+      themeType: "Famous Ayah",
+      shortTitle: "A Good Life Through Faith and Righteous Deeds",
+      whyNotable: [
+        "A highly cited ayah on dignified living through iman and righteous action.",
+        "Often referenced to emphasize spiritual quality of life beyond material measure.",
+      ],
+      summary:
+        "Allah promises believers who do righteous deeds, male or female, a good life and a better reward in the Hereafter. The ayah links inner well-being to faith-driven action.",
+      keyTakeaway: "Real fulfillment is built on iman and righteous deeds, not appearances.",
+      references: [
+        { name: "Quran 16:97", url: "https://quran.com/16:97" },
+        { name: "Ibn Kathir Tafsir (16:97)", url: "https://quran.com/en/16:97/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "16:125",
+      themeType: "Famous Ayah",
+      shortTitle: "Call to Allah with Wisdom",
+      whyNotable: [
+        "A central ayah for da'wah methodology and adab of dialogue.",
+        "Frequently taught in outreach, education, and community leadership contexts.",
+      ],
+      summary:
+        "Believers are commanded to invite to Allah's path with wisdom, good instruction, and the best manner of discussion. The ayah sets tone, method, and intention for principled da'wah.",
+      keyTakeaway: "Effective da'wah requires wisdom, mercy, and disciplined speech.",
+      references: [
+        { name: "Quran 16:125", url: "https://quran.com/16:125" },
+        { name: "Ibn Kathir Tafsir (16:125)", url: "https://quran.com/en/16:125/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "16:128",
+      themeType: "Famous Ayah",
+      shortTitle: "Allah Is with the God-Conscious and the Excellent",
+      whyNotable: [
+        "A beloved closing ayah of Surah An-Nahl emphasizing divine support.",
+        "Frequently used in reminders for endurance, taqwa, and ihsan.",
+      ],
+      summary:
+        "The surah closes by affirming Allah's special support for those who have taqwa and those who excel. It seals the passage with reassurance for believers striving under pressure.",
+      keyTakeaway: "Pursue taqwa and ihsan to remain under Allah's aid.",
+      references: [
+        { name: "Quran 16:128", url: "https://quran.com/16:128" },
+        { name: "Ibn Kathir Tafsir (16:128)", url: "https://quran.com/en/16:128/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -1135,6 +1233,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Late Yusuf teaches patience rewarded, sincere forgiveness, and gratitude after relief.",
       "Ar-Ra'd repeatedly anchors faith in dhikr, tawakkul, and personal reform.",
       "Ibrahim emphasizes shukr, the danger of denial, and the lasting priority of prayer and supplication.",
+    ],
+  },
+  14: {
+    title: "Day 14 Recitation Summary (Al-Hijr 1-99, An-Nahl 1-128)",
+    summary:
+      "Day 14 moves from the preservation and warning themes of Surah Al-Hijr into the expansive signs, ethics, and da'wah guidance of Surah An-Nahl. The recitation emphasizes gratitude, justice, principled worship, and calling to Allah with wisdom and patience.",
+    themes: [
+      "Al-Hijr reinforces certainty in revelation and lifelong constancy in worship.",
+      "An-Nahl repeatedly directs hearts to Allah's favors, tawhid, and accountability.",
+      "The day closes with justice, wise da'wah, and Allah's support for people of taqwa and ihsan.",
     ],
   },
 };

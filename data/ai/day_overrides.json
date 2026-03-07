@@ -337,6 +337,20 @@
           "end_time": 7391,
           "reciter": "Samir"
         }
+      ],
+      "duplicate_markers": [
+        {
+          "surah_number": 16,
+          "ayah": 51,
+          "time": 3865,
+          "reciter": "Hasan"
+        },
+        {
+          "surah_number": 16,
+          "ayah": 51,
+          "time": 4824,
+          "reciter": "Samir"
+        }
       ]
     }
   }
