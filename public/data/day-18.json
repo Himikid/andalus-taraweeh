@@ -12211,6 +12211,16 @@
           "origin": "matrix_two_stage_vad_on"
         }
       ]
-    }
+    },
+    "latest_position": {
+      "time": 6559,
+      "surah": "An-Naml",
+      "ayah": 1,
+      "surah_number": 27,
+      "juz": 19,
+      "quality": "manual",
+      "reciter": "Hasan"
+    },
+    "progress_locked": true
   }
 }
