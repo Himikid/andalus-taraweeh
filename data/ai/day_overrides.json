@@ -391,6 +391,84 @@
           "reciter": "Hasan"
         }
       ]
+    },
+    "18": {
+      "start_surah_number": 24,
+      "start_ayah": 36,
+      "start_time": 15,
+      "final_surah": "Ash-Shu'araa",
+      "final_ayah": 227,
+      "final_time": 6559,
+      "marker_overrides": [
+        {
+          "surah_number": 24,
+          "ayah": 36,
+          "start_time": 15,
+          "end_time": 33
+        },
+        {
+          "surah_number": 25,
+          "ayah": 61,
+          "start_time": 2450,
+          "end_time": 2450
+        },
+        {
+          "surah_number": 25,
+          "ayah": 61,
+          "start_time": 3497,
+          "end_time": 3515
+        },
+        {
+          "surah_number": 26,
+          "ayah": 227,
+          "start_time": 6539,
+          "end_time": 6559
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 15,
+          "end_time": 2450,
+          "start_surah_number": 24,
+          "start_ayah": 36,
+          "end_surah_number": 25,
+          "end_ayah": 61
+        },
+        {
+          "start_time": 3497,
+          "end_time": 6559,
+          "start_surah_number": 25,
+          "start_ayah": 61,
+          "end_surah_number": 26,
+          "end_ayah": 227
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 15,
+          "end_time": 2450,
+          "reciter": "Hasan"
+        },
+        {
+          "start_time": 3497,
+          "end_time": 6559,
+          "reciter": "Samir"
+        }
+      ],
+      "duplicate_markers": [
+        {
+          "surah_number": 25,
+          "ayah": 61,
+          "time": 2450,
+          "reciter": "Hasan"
+        },
+        {
+          "surah_number": 25,
+          "ayah": 61,
+          "time": 3497,
+          "reciter": "Samir"
+        }
+      ]
     }
   }
 }

@@ -1396,6 +1396,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  18: [
+    {
+      ayahRef: "24:36-38",
+      themeType: "Famous Ayah",
+      shortTitle: "Houses Raised for Allah's Remembrance",
+      whyNotable: [
+        "A famous masjid-centered passage linking remembrance to spiritual success.",
+        "Frequently cited to show that true devotion is not distracted by worldly trade.",
+      ],
+      summary:
+        "Allah praises houses where His name is exalted and remembered morning and evening by men not distracted by commerce from dhikr, prayer, and zakah. The passage defines worship-centered living with fear of accountability and hope in divine reward.",
+      keyTakeaway: "Build life around remembrance and salah, not around distraction.",
+      references: [
+        { name: "Quran 24:36-38", url: "https://quran.com/24:36-38" },
+        { name: "Ibn Kathir Tafsir (24:36)", url: "https://quran.com/en/24:36/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "24:55",
+      themeType: "Famous Ayah",
+      shortTitle: "Promise of Establishment for Believers",
+      whyNotable: [
+        "A widely cited ayah on Allah's promise of succession, stability, and security for sincere believers.",
+        "Often referenced in lessons on collective obedience and public trust in Allah.",
+      ],
+      summary:
+        "Allah promises those who believe and do righteous deeds that He will grant them succession, establish their religion, and replace fear with security so long as they worship Him alone. The ayah links communal strength to tawhid and obedience.",
+      keyTakeaway: "Collective honor comes through sincere iman and righteous action.",
+      references: [
+        { name: "Quran 24:55", url: "https://quran.com/24:55" },
+        { name: "Ibn Kathir Tafsir (24:55)", url: "https://quran.com/en/24:55/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "25:63",
+      themeType: "Famous Ayah",
+      shortTitle: "Servants of the Most Merciful",
+      whyNotable: [
+        "A signature ayah introducing the famous 'Ibad ar-Rahman' character sequence.",
+        "Regularly used in tarbiyah to define humility and dignified conduct.",
+      ],
+      summary:
+        "The servants of the Most Merciful are described as those who walk gently on earth and respond to ignorance with peace. The ayah opens a practical blueprint of spiritual character rooted in mercy and restraint.",
+      keyTakeaway: "Answer provocation with humility and principled calm.",
+      references: [
+        { name: "Quran 25:63", url: "https://quran.com/25:63" },
+        { name: "Ibn Kathir Tafsir (25:63)", url: "https://quran.com/en/25:63/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "25:74",
+      themeType: "Dua",
+      shortTitle: "Dua for Family and Leadership in Taqwa",
+      whyNotable: [
+        "One of the most memorized Quranic duas for righteous family life.",
+        "Widely recited for pious offspring and upright communal leadership.",
+      ],
+      summary:
+        "Believers ask Allah to grant from their spouses and offspring comfort to their eyes and to make them leaders for the people of taqwa. The dua combines private household righteousness with public spiritual responsibility.",
+      keyTakeaway: "Ask Allah for homes that nurture taqwa and service to deen.",
+      references: [
+        { name: "Quran 25:74", url: "https://quran.com/25:74" },
+        { name: "Ibn Kathir Tafsir (25:74)", url: "https://quran.com/en/25:74/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "26:83-85",
+      themeType: "Dua",
+      shortTitle: "Dua of Ibrahim for Wisdom and Legacy",
+      whyNotable: [
+        "A famous cluster of prophetic duas recited for righteous legacy.",
+        "Highlights humility in asking for wisdom, truthfulness, and Paradise.",
+      ],
+      summary:
+        "Ibrahim asks his Lord for sound judgment, to be joined with the righteous, and for an honorable mention among later generations, then asks to be among the inheritors of the Garden of Bliss. The passage models expansive, akhirah-centered ambition through dua.",
+      keyTakeaway: "Seek wisdom, righteous company, and a legacy anchored in the Hereafter.",
+      references: [
+        { name: "Quran 26:83-85", url: "https://quran.com/26:83-85" },
+        { name: "Ibn Kathir Tafsir (26:83)", url: "https://quran.com/en/26:83/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "26:88-89",
+      themeType: "Famous Ayah",
+      shortTitle: "Only the Sound Heart Will Benefit",
+      whyNotable: [
+        "One of the most famous Quranic reminders on the Day of Judgment.",
+        "Frequently cited in purification-of-heart teachings.",
+      ],
+      summary:
+        "On the Day when wealth and children will not benefit, only the one who comes to Allah with a sound heart will be saved. The ayah redirects priorities from outward assets to inward sincerity.",
+      keyTakeaway: "Prioritize heart purification over temporary worldly status.",
+      references: [
+        { name: "Quran 26:88-89", url: "https://quran.com/26:88-89" },
+        { name: "Ibn Kathir Tafsir (26:88)", url: "https://quran.com/en/26:88/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -1567,6 +1665,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Late Al-Anbiyaa emphasizes dua, repentance, and Allah's rescue of sincere prophets under trial.",
       "Al-Hajj calls to worship, striving, and communal obedience rooted in Ibrahim's legacy and tawhid.",
       "Al-Mu'minoon and early An-Noor define successful believers through purity, lowered gaze, and social responsibility.",
+    ],
+  },
+  18: {
+    title: "Day 18 Recitation Summary (An-Noor 36-64, Al-Furqan 1-77, Ash-Shu'araa 1-227)",
+    summary:
+      "Day 18 moves from the worship-and-purity directives in Surah An-Noor into the character and dua program of Surah Al-Furqan, then through the prophetic warning-and-resilience cycles of Surah Ash-Shu'araa. The recitation repeatedly ties honor to sincere worship, humility, repentance, and a sound heart before Allah.",
+    themes: [
+      "An-Noor emphasizes living faith through remembrance, obedience, and communal moral discipline.",
+      "Al-Furqan defines the servants of the Most Merciful through humility, restraint, and sustained dua.",
+      "Ash-Shu'araa reinforces steadfast da'wah, prophetic patience, and ultimate accountability before Allah.",
     ],
   },
 };
