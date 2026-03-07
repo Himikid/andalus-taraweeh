@@ -3115,14 +3115,14 @@
     {
       "time": 1319,
       "surah": "Taa-Haa",
-      "ayah": 26,
+      "ayah": 25,
       "surah_number": 20,
       "juz": 16,
       "quality": "manual",
       "reciter": "Hasan",
       "confidence": 1.0,
-      "arabic_text": "وَيَسِّرْ لِىٓ أَمْرِى",
-      "english_text": "and make my task easy for me,",
+      "arabic_text": "قَالَ رَبِّ ٱشْرَحْ لِى صَدْرِى",
+      "english_text": "Said [Moses]: \"O my Sustainer! Open up my heart [to Thy light],",
       "start_time": 1319,
       "end_time": 1337,
       "matched_token_indices": null,
@@ -3749,307 +3749,6 @@
       "origin": "matrix_legacy_vad_on"
     },
     {
-      "time": 2227,
-      "surah": "Al-Anbiyaa",
-      "ayah": 1,
-      "surah_number": 21,
-      "juz": 17,
-      "quality": "high",
-      "reciter": "Samir",
-      "confidence": 0.782,
-      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ٱقْتَرَبَ لِلنَّاسِ حِسَابُهُمْ وَهُمْ فِى غَفْلَةٍۢ مُّعْرِضُونَ",
-      "english_text": "CLOSER DRAWS unto men their reckoning: and yet they remain stubbornly heedless [of its approach].",
-      "start_time": 2227,
-      "end_time": 2229,
-      "matched_token_indices": [
-        [
-          0,
-          2
-        ],
-        [
-          1,
-          3
-        ]
-      ],
-      "origin": "matrix_legacy_vad_off"
-    },
-    {
-      "time": 2243,
-      "start_time": 2243,
-      "end_time": 2243,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 2,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2258,
-      "start_time": 2258,
-      "end_time": 2258,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 3,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2274,
-      "start_time": 2274,
-      "end_time": 2274,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 4,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2290,
-      "start_time": 2290,
-      "end_time": 2290,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 5,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2305,
-      "start_time": 2305,
-      "end_time": 2305,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 6,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2321,
-      "start_time": 2321,
-      "end_time": 2321,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 7,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2337,
-      "start_time": 2337,
-      "end_time": 2337,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 8,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2352,
-      "start_time": 2352,
-      "end_time": 2352,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 9,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2368,
-      "start_time": 2368,
-      "end_time": 2368,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 10,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2384,
-      "start_time": 2384,
-      "end_time": 2384,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 11,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2399,
-      "start_time": 2399,
-      "end_time": 2399,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 12,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2415,
-      "start_time": 2415,
-      "end_time": 2415,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 13,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2431,
-      "start_time": 2431,
-      "end_time": 2431,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 14,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2446,
-      "start_time": 2446,
-      "end_time": 2446,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 15,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2462,
-      "start_time": 2462,
-      "end_time": 2462,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 16,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2478,
-      "start_time": 2478,
-      "end_time": 2478,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 17,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2493,
-      "start_time": 2493,
-      "end_time": 2493,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 18,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2509,
-      "start_time": 2509,
-      "end_time": 2509,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 19,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2525,
-      "start_time": 2525,
-      "end_time": 2525,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 20,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2540,
-      "start_time": 2540,
-      "end_time": 2540,
-      "surah": "Al-Anbiyaa",
-      "surah_number": 21,
-      "ayah": 21,
-      "juz": null,
-      "quality": "inferred",
-      "reciter": "Samir",
-      "confidence": 0.56,
-      "origin": "final_gap_fill_bounded"
-    },
-    {
-      "time": 2556,
-      "surah": "Al-Anbiyaa",
-      "ayah": 22,
-      "surah_number": 21,
-      "juz": 17,
-      "quality": "ambiguous",
-      "reciter": "Samir",
-      "confidence": 0.74,
-      "arabic_text": "لَوْ كَانَ فِيهِمَآ ءَالِهَةٌ إِلَّا ٱللَّهُ لَفَسَدَتَا ۚ فَسُبْحَٰنَ ٱللَّهِ رَبِّ ٱلْعَرْشِ عَمَّا يَصِفُونَ",
-      "english_text": "had there been in heaven or on earth any deities other than God, both [those realms would surely have fallen into ruin! But limitless in His glory is God, enthroned in His awesome almightiness far] above anything that men may devise by way of definition!",
-      "start_time": 2556,
-      "end_time": 2558,
-      "matched_token_indices": null,
-      "origin": "matrix_legacy_vad_off"
-    },
-    {
       "time": 2930,
       "surah": "Taa-Haa",
       "ayah": 83,
@@ -4063,7 +3762,7 @@
       "start_time": 2930,
       "end_time": 2948,
       "matched_token_indices": null,
-      "origin": "manual_break_anchor"
+      "origin": "matrix_legacy_vad_on"
     },
     {
       "time": 5808,
@@ -4085,42 +3784,9 @@
   "meta": {
     "merged_from_parts": [
       "/Users/himi/Documents/firebase/andalus-taraweeh/public/data/day-16-part-1.json",
-      "/Users/himi/Documents/firebase/andalus-taraweeh/public/data/day-16-part-2.json"
+      "/Users/himi/Documents/firebase/andalus-taraweeh/public/data/day-16-part-2.redo.v4.json"
     ],
     "part2_time_offset_seconds": 1240,
-    "video_parts": [
-      {
-        "part": 1,
-        "source": "https://www.youtube.com/live/0hfVGkWiofY",
-        "time_range_seconds": [
-          224,
-          1318
-        ],
-        "start_ayah": "19:1",
-        "end_ayah": "19:59"
-      },
-      {
-        "part": 2,
-        "source": "https://www.youtube.com/live/L7UEM2RM-SY",
-        "time_range_seconds": [
-          79,
-          4588
-        ],
-        "start_ayah": "20:26",
-        "break_start_seconds": 955,
-        "break_end_seconds": 1690,
-        "break_end_ayah": "20:83",
-        "end_ayah": "21:82"
-      }
-    ],
-    "merge_note": "Part 2 marker times were shifted by +1240s to provide a continuous day-level timeline.",
-    "manual_anchor_notes": [
-      {
-        "surah_number": 20,
-        "ayah": 83,
-        "time": 2930,
-        "reason": "Day 16 break-end anchor provided by operator"
-      }
-    ]
+    "merge_note": "part2 from redo.v4 with enforce_match_blocks=true and explicit break constraints"
   }
 }
