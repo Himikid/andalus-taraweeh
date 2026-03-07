@@ -352,6 +352,45 @@
           "reciter": "Samir"
         }
       ]
+    },
+    "15": {
+      "start_surah_number": 17,
+      "start_ayah": 1,
+      "start_time": 1277,
+      "final_surah": "Al-Israa",
+      "final_ayah": 111,
+      "final_time": 4428,
+      "marker_overrides": [
+        {
+          "surah_number": 17,
+          "ayah": 1,
+          "start_time": 1277,
+          "end_time": 1295
+        },
+        {
+          "surah_number": 17,
+          "ayah": 111,
+          "start_time": 4408,
+          "end_time": 4428
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 1277,
+          "end_time": 4428,
+          "start_surah_number": 17,
+          "start_ayah": 1,
+          "end_surah_number": 17,
+          "end_ayah": 111
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 1277,
+          "end_time": 4428,
+          "reciter": "Hasan"
+        }
+      ]
     }
   }
 }

@@ -1102,6 +1102,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  15: [
+    {
+      ayahRef: "17:1",
+      themeType: "Famous Ayah",
+      shortTitle: "The Night Journey Sign",
+      whyNotable: [
+        "A foundational ayah introducing Al-Israa and the sacred Night Journey.",
+        "Frequently cited in discussions on Allah's power and the honor of the Prophet.",
+      ],
+      summary:
+        "Allah opens the surah by declaring His transcendence and mentioning the Night Journey of His servant from Al-Masjid Al-Haram to Al-Masjid Al-Aqsa. The ayah anchors certainty in Allah's limitless power and signs.",
+      keyTakeaway: "Approach revelation with awe and trust in Allah's absolute power.",
+      references: [
+        { name: "Quran 17:1", url: "https://quran.com/17:1" },
+        { name: "Ibn Kathir Tafsir (17:1)", url: "https://quran.com/en/17:1/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "17:9",
+      themeType: "Famous Ayah",
+      shortTitle: "The Quran Guides to What Is Most Upright",
+      whyNotable: [
+        "A central ayah on the Quran's role as direct, upright guidance.",
+        "Widely referenced in reminders on building life through revelation.",
+      ],
+      summary:
+        "Allah states that this Quran guides to what is most upright and gives glad tidings to believers who do righteous deeds. It connects right direction to revelation-led living and action.",
+      keyTakeaway: "Use the Quran as the primary compass for belief, character, and decisions.",
+      references: [
+        { name: "Quran 17:9", url: "https://quran.com/17:9" },
+        { name: "Ibn Kathir Tafsir (17:9)", url: "https://quran.com/en/17:9/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "17:23-24",
+      themeType: "Famous Ayah",
+      shortTitle: "Excellence to Parents",
+      whyNotable: [
+        "Among the most cited ayat on birr al-walidayn and speech ethics.",
+        "Often taught as a practical standard for mercy, humility, and gratitude.",
+      ],
+      summary:
+        "Allah commands worship of Him alone and immediate excellence to parents, especially in old age, forbidding even minor harshness in speech. The passage teaches gentleness, dua, and humble service.",
+      keyTakeaway: "Tawhid and honoring parents are inseparable acts of obedience.",
+      references: [
+        { name: "Quran 17:23-24", url: "https://quran.com/17:23-24" },
+        { name: "Ibn Kathir Tafsir (17:23)", url: "https://quran.com/en/17:23/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "17:32",
+      themeType: "Famous Ayah",
+      shortTitle: "Do Not Go Near Zina",
+      whyNotable: [
+        "A key Quranic boundary that forbids paths leading to major sin.",
+        "Frequently referenced in teaching prevention, modesty, and moral safeguards.",
+      ],
+      summary:
+        "Allah commands believers not merely to avoid zina itself but to avoid approaching it. The ayah establishes proactive moral protection, not reactive regret.",
+      keyTakeaway: "Guard your environment and habits before temptation escalates.",
+      references: [
+        { name: "Quran 17:32", url: "https://quran.com/17:32" },
+        { name: "Ibn Kathir Tafsir (17:32)", url: "https://quran.com/en/17:32/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "17:70",
+      themeType: "Famous Ayah",
+      shortTitle: "The Dignity of the Children of Adam",
+      whyNotable: [
+        "A major ayah on human honor, stewardship, and accountability.",
+        "Often cited in discussions on sacred human value and ethical conduct.",
+      ],
+      summary:
+        "Allah affirms that He has honored the children of Adam and provided them with means of life on land and sea. The ayah frames human dignity as a divine trust tied to responsibility.",
+      keyTakeaway: "Treat human life with dignity because honor is granted by Allah.",
+      references: [
+        { name: "Quran 17:70", url: "https://quran.com/17:70" },
+        { name: "Ibn Kathir Tafsir (17:70)", url: "https://quran.com/en/17:70/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "17:111",
+      themeType: "Famous Ayah",
+      shortTitle: "Perfect Praise and Takbir for Allah",
+      whyNotable: [
+        "A powerful closing ayah affirming pure tawhid and divine perfection.",
+        "Frequently used in reminders on praising Allah with proper creed.",
+      ],
+      summary:
+        "The surah closes with praise of Allah, negating offspring, partnership, and weakness in His dominion, then commanding takbir. It seals Al-Israa with uncompromised tawhid and glorification.",
+      keyTakeaway: "End every effort with pure praise and exaltation of Allah alone.",
+      references: [
+        { name: "Quran 17:111", url: "https://quran.com/17:111" },
+        { name: "Ibn Kathir Tafsir (17:111)", url: "https://quran.com/en/17:111/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -1243,6 +1341,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Al-Hijr reinforces certainty in revelation and lifelong constancy in worship.",
       "An-Nahl repeatedly directs hearts to Allah's favors, tawhid, and accountability.",
       "The day closes with justice, wise da'wah, and Allah's support for people of taqwa and ihsan.",
+    ],
+  },
+  15: {
+    title: "Day 15 Recitation Summary (Al-Israa 1-111)",
+    summary:
+      "Day 15 spans all of Surah Al-Israa, moving from the Night Journey sign into a sustained program of tawhid, worship, family ethics, social justice, and accountability. The recitation repeatedly ties belief to disciplined character and reverence for revelation.",
+    themes: [
+      "Al-Israa centers guidance in the Quran and warns against moral drift away from revelation.",
+      "The surah joins worship of Allah with lived ethics: honoring parents, guarding chastity, justice, and balanced conduct.",
+      "The closing ayat renew pure tawhid, gratitude, and exaltation of Allah's greatness.",
     ],
   },
 };
