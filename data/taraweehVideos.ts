@@ -26,7 +26,10 @@ export const taraweehVideos: Record<number, TaraweehDayConfig> = {
   13: "7-ReoGsMAQ4",
   14: "ouP177I4-rw",
   15: "aJKRHigADcM",
-  16: "0hfVGkWiofY",
+  16: [
+    { id: "1", label: "Part 1", videoId: "0hfVGkWiofY" },
+    { id: "2", label: "Part 2", videoId: "L7UEM2RM-SY" },
+  ],
   17: "",
   18: "",
   19: "",
