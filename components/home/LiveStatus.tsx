@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const LIVESTREAM_START_HOUR = 19;
-const LIVESTREAM_START_MINUTE = 45;
+const LIVESTREAM_START_HOUR = 20;
+const LIVESTREAM_START_MINUTE = 0;
 const LIVESTREAM_END_HOUR = 21;
 const LIVESTREAM_END_MINUTE = 30;
 const GLASGOW_TIMEZONE = "Europe/London";
@@ -54,16 +54,16 @@ export default function LiveStatus({ forceLive = false }: LiveStatusProps) {
 
   return (
     <div className="space-y-4 text-center">
-      <p className="label-caps">Livestream Starts At Isha (7:45pm)</p>
+      <p className="label-caps">Isha 8:00pm · Taraweeh follows in the same stream</p>
 
       {isLive ? (
         <>
           <p className="font-[var(--font-heading)] text-4xl leading-none text-ivory sm:text-5xl">Live Now</p>
-          <p className="text-sm text-muted">Isha is live now. Taraweeh follows after Isha in the same stream.</p>
+          <p className="text-sm text-muted">Isha is live now at 8:00pm. Taraweeh follows immediately after.</p>
         </>
       ) : (
         <>
-          <p className="font-[var(--font-heading)] text-5xl leading-none text-ivory sm:text-6xl">7:45pm</p>
+          <p className="font-[var(--font-heading)] text-5xl leading-none text-ivory sm:text-6xl">8:00pm</p>
           <p className="font-mono text-base text-muted">{countdown}</p>
         </>
       )}
