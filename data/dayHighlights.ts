@@ -1022,11 +1022,11 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
   12: {
     title: "Day 12 Recitation Summary (Hud 1-123, Yusuf 1-53)",
     summary:
-      "Day 12 moves from the closing warnings and steadfastness of Surah Hud into the early arc of Surah Yusuf, centering on trust in Allah, moral restraint, and how divine wisdom unfolds through trial.",
+      "Day 12 closes Surah Hud with a sustained call to istiqamah, repentance, and trust in Allah's judgment, then opens Surah Yusuf with betrayal, patience, chastity, and eventual vindication. The recitation frames hardship as a test in which sincerity and restraint are elevated by Allah.",
     themes: [
-      "Steadfastness under pressure is repeated across the final passages of Hud.",
-      "Repentance, sincerity, and patient obedience remain the path to Allah's aid.",
-      "Yusuf emphasizes purity, trust, and Allah's precise plan even through hardship.",
+      "The ending of Hud repeatedly commands uprightness, non-compromise with wrongdoing, and reliance on Allah.",
+      "Yusuf teaches sabr jamil, moral restraint, and guarding the heart under severe personal trial.",
+      "Across both surahs, relief follows sincere tawbah, taqwa, and trusting Allah's decree.",
     ],
   },
 };
