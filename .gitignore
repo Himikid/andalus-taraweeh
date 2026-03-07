@@ -16,3 +16,5 @@ data/ai/cache/
 data/ai/remote_jobs/
 data/ai/day-*-processing.json
 ai-lab/
+
+.tmp-*.html

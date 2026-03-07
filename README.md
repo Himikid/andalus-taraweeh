@@ -1,68 +1,109 @@
-# andalus-taraweeh
+# Andalus Taraweeh
 
-A production-ready Ramadan livestream and archive platform for **Andalus Centre Glasgow**.
+High-accuracy Taraweeh tracking for **Andalus Centre Glasgow**.
 
-Built for people who want to join nightly Taraweeh live, revisit previous recitations, and follow Quran progress with ayah-level context.
+The project combines a Next.js archive UI with a local + Colab transcription pipeline that produces ayah-level timeline markers per day.
 
-## Highlights
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178c6)](https://www.typescriptlang.org/)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776ab)](https://www.python.org/)
+[![Whisper](https://img.shields.io/badge/ASR-faster--whisper-0ea5e9)](https://github.com/SYSTRAN/faster-whisper)
+[![Firestore Queue](https://img.shields.io/badge/Queue-Firestore-orange)](https://firebase.google.com/docs/firestore)
+[![Webhook](https://img.shields.io/badge/Callback-ngrok%20webhook-22c55e)](https://ngrok.com/)
 
-| Capability | Why it matters |
-| --- | --- |
-| Live + archive in one product | Join now or catch up later in the same flow |
-| Ayah-level indexing | Jump to precise recitation points instead of scrubbing blindly |
-| Arabic + English context | Listen and read together for stronger understanding |
-| Multi-part day support | Real-world split uploads handled cleanly |
-| Local AI pipeline | Generates timeline JSON without backend complexity |
+## What this repo ships
 
-## User experience
-
-- Homepage with nightly status and countdown.
-- Dedicated day pages for archive playback.
-- Surah/ayah navigation tied to video timestamps.
-- "Now Reciting" context with manual sync controls.
-- Indexed surah/ayah markers rendered from static JSON.
-
-## Tech stack
-
-| Layer | Stack |
-| --- | --- |
-| Framework | Next.js 14 (App Router), React, TypeScript |
-| Styling | TailwindCSS |
-| Video | YouTube iframe player |
-| Data delivery | Static JSON under `public/data/*` |
-| AI processing | Local Python scripts (`scripts/ai_pipeline/*`) |
-| Deployment | Vercel |
+- Archive-first UI with live/day navigation.
+- Ayah markers with confidence, quality tags, and reciter labels.
+- Split-stream day support (`day-N-part-M.json`).
+- Remote transcription orchestration (Drive + Firestore + HTTP callback).
+- Dual-transcript, dual-matcher merge strategy for stronger marker quality.
 
 ## Architecture
 
+Detailed diagrams: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+
 ```mermaid
-flowchart TD
-    A[YouTube streams and uploads] --> B[Local Python processing]
-    B --> C[day-n JSON markers]
-    C --> D[public/data]
-    D --> E[Next.js UI]
-    E --> F[Homepage and day pages]
+flowchart LR
+    subgraph Ingest["Ingest"]
+        YT["YouTube live/archive"] --> DL["yt-dlp download"]
+        DL --> FF["ffmpeg normalize (16k mono)"]
+    end
+
+    subgraph Control["Control Plane"]
+        LOOP["scripts/run_day_remote_loop.py"] --> FS1["Firestore request docs"]
+        LOOP --> RT["Firestore runtime doc (webhook URL + token)"]
+    end
+
+    subgraph Worker["Remote ASR (Colab)"]
+        W["drive_transcription_worker.py"] --> FW["faster-whisper"]
+        FS1 --> W
+        RT --> W
+        FW --> TR["transcripts/{request_id}.json"]
+        W --> POST["HTTPS callback (ngrok)"]
+    end
+
+    subgraph Local["Local Merge + Match"]
+        POST --> WH["local_transcript_webhook.py"]
+        WH --> DR["Drive responses/transcripts (fallback-compatible)"]
+        DR --> LOOP
+        FF --> LOOP
+        LOOP --> M1["Legacy matcher"]
+        LOOP --> M2["Two-stage matcher"]
+        M1 --> MERGE["matrix merge + monotonic filter + bounded infer"]
+        M2 --> MERGE
+        MERGE --> OUT["public/data/day-N(.part-M).json"]
+    end
+
+    subgraph UI["Frontend"]
+        OUT --> NX["Next.js day pages + player"]
+    end
 ```
 
-## Repository structure
+## Matching strategy (current)
+
+`run_day_remote_loop.py` default mode is `dual_vad_matrix`:
+
+1. Generate full transcript with VAD on.
+2. Generate full transcript with VAD off.
+3. Run both matchers on both transcripts:
+   - `legacy + vad_on`
+   - `legacy + vad_off`
+   - `two_stage + vad_on`
+   - `two_stage + vad_off`
+4. Merge markers with priority:
+   - strong legacy markers first
+   - strong two-stage markers to fill gaps
+   - bounded inferred markers last
+5. Enforce monotonic Quran order and apply day overrides.
+
+Artifacts are written under:
+
+- `data/ai/remote_jobs/day-{N}/transcripts/`
+- `data/ai/remote_jobs/day-{N}/outputs/`
+- `data/ai/remote_jobs/day-{N}/iteration_report.json`
+- final UI file: `public/data/day-{N}.json` (or `day-{N}-part-{M}.json`)
+
+## Repository map
 
 ```text
 andalus-taraweeh/
-├─ app/                        # Next.js App Router pages/layout
-├─ components/
-│  ├─ day/                     # Day player and recitation UI
-│  ├─ home/                    # Homepage sections
-│  └─ shared/                  # Shared UI blocks
-├─ data/                       # Static configs (videos, highlights, metadata)
-├─ public/data/                # Generated timeline JSON consumed by UI
+├─ app/                              # Next.js routes
+├─ components/                       # UI components
+├─ data/
+│  ├─ ai/day_overrides.json          # Manual anchors/blocks/reciter windows
+│  ├─ quran/                         # Quran corpus + translation cache
+│  └─ taraweehVideos.ts              # Day -> video mapping
+├─ public/data/                      # Published day marker JSON
 ├─ scripts/
-│  ├─ ai_pipeline/             # Matching/transcription/alignment logic
-│  ├─ reels/                   # Reel helper scripts
-│  └─ process_day.py           # Main local processing entrypoint
+│  ├─ run_day_remote_loop.py         # Main remote orchestration loop
+│  ├─ process_day.py                 # Local direct processing entrypoint
+│  ├─ ai_pipeline/                   # Matching/transcription/merge internals
+│  └─ colab/                         # Colab worker, webhook, ngrok helpers
 └─ README.md
 ```
 
-## Quick start
+## Frontend quick start
 
 ```bash
 npm install
@@ -78,111 +119,108 @@ npm run build
 npm run start
 ```
 
-## Configuration
+## Pipeline quick start (local + Colab)
 
-### Day video mapping
+### 1) Install AI dependencies
 
-Edit:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r scripts/requirements-ai.txt
+brew install ffmpeg yt-dlp
+```
 
-- `data/taraweehVideos.ts`
+### 2) Configure local bridge (gitignored)
 
-Supports single video or multi-part day arrays.
+```bash
+cp scripts/colab/local_config.example.json scripts/colab/local_config.json
+```
 
-### Manual video override
+Fill placeholders in `scripts/colab/local_config.json`:
 
-Append query param:
+- `drive_root`
+- `callback.url`, `callback.bearer_token`
+- optional `firestore.*` values
 
-- `?video=VIDEO_ID`
+### 3) Start ngrok tunnel (local)
 
-Example:
+```bash
+python scripts/colab/start_ngrok.py --config scripts/colab/local_config.json
+```
 
-- `http://localhost:3000/day/1?video=VIDEO_ID`
+Use the returned public URL with `/ingest/transcript`.
+
+### 4) Run day loop (local)
+
+```bash
+python scripts/run_day_remote_loop.py \
+  --day 17 \
+  --youtube-url "https://www.youtube.com/live/8J4moM97CmQ" \
+  --drive-config scripts/colab/local_config.json \
+  --firestore \
+  --webhook-public-url "https://<your-ngrok-domain>/ingest/transcript" \
+  --webhook-token "<YOUR_TOKEN>" \
+  --output public/data/day-17.json
+```
+
+### 5) Start Colab worker
+
+In Colab (with Drive mounted + repo/scripts available):
+
+```bash
+pip install faster-whisper yt-dlp requests
+python scripts/colab/drive_transcription_worker.py --config scripts/colab/local_config.json
+```
+
+## Optional local-only mode
+
+Skip remote orchestration and run directly against YouTube/local audio:
+
+```bash
+python scripts/process_day.py \
+  --day 1 \
+  --youtube-url "https://www.youtube.com/watch?v=..." \
+  --output public/data/day-1.json
+```
 
 ## Data model
 
-### Day files
+Each `public/data/day-*.json` contains:
 
-- `public/data/day-{N}.json`
-- Multi-part examples:
-  - `public/data/day-2-part-1.json`
-  - `public/data/day-2-part-2.json`
+- `markers`: ayah timeline rows (`surah`, `ayah`, `time`, `reciter`, `quality`, `confidence`)
+- `meta`: pipeline provenance, matcher configs, overrides, timing stats, merge diagnostics
 
-### Marker quality
+Quality labels:
 
-Markers can include quality hints:
-
+- `manual`
 - `high`
 - `ambiguous`
 - `inferred`
-- `manual`
 
-### Optional AI hook files
+## Config and secret hygiene
 
-- `public/data/day-{N}.json` can include extra indexing metadata used by UI hooks.
+- Keep secrets in `scripts/colab/local_config.json` only.
+- `scripts/colab/local_config.json` is gitignored.
+- Use committed placeholders:
+  - `scripts/colab/local_config.example.json`
+  - `scripts/colab/local_config.template.json`
 
-## Local AI pipeline
+## Day overrides
 
-The pipeline is local-only (not executed in Vercel runtime).
+Manual controls live in `data/ai/day_overrides.json`, including:
 
-Primary entrypoint:
-
-- `python scripts/process_day.py ...`
-
-Related docs/tools:
-
-- `scripts/README.md`
-- `python scripts/fetch_quran_corpus.py`
-- `data/ai/prompts/day-highlights-prompt.md`
-
-### Progress visibility
-
-`process_day.py` prints stage-by-stage progress and writes timing metrics into output JSON:
-
-- `meta.pipeline_timings_seconds`
-
-### Day overrides
-
-Manual anchors/bounds live in:
-
-- `data/ai/day_overrides.json`
-
-Useful keys:
-
-- `start_time`
-- `final_time`
-- `start_surah_number`
-- `start_ayah`
+- `start_time` / `final_time`
+- `start_surah_number` / `start_ayah`
 - `marker_overrides`
+- `match_blocks`
+- `manual_reciter_windows`
+- `duplicate_markers`
 
-### Iteration strategy (accuracy-first)
+## Deployment
 
-We tune the matcher with a benchmark-first workflow before promoting changes to archived day JSON.
+Frontend deploys to Vercel as a standard Next.js app.
 
-1. Build truth fixtures from per-ayah reference audio (`ai-lab/fixtures/per-ayah-reference/*`).
-2. Run evaluator reports (`ai-lab/scripts/evaluate_matcher_against_truth.py`) and track:
-   - `coverage`
-   - `start_mae_seconds`
-   - `end_mae_seconds`
-   - `mean_interval_iou`
-   - tolerance hit rates (`<=1s`, `<=2s`, `<=3s`)
-3. Apply matcher changes in small passes and re-run the same fixtures.
-4. Only promote when metrics improve and no regression appears on other fixtures.
-5. Reprocess affected day JSON locally and manually spot-check large timestamp deltas.
-
-This keeps improvements measurable and avoids shipping changes that look good on one night but degrade others.
-
-## Deploy to Vercel
-
-1. Push repo to GitHub.
-2. Import in Vercel.
-3. Keep default Next.js settings.
-4. Deploy.
-
-## Operational notes
-
-- Frontend is static-deploy friendly.
-- No backend service required for playback/index rendering.
-- Daily AI processing can run locally and commit updated JSON.
+The Python/Colab pipeline is external to Vercel and publishes static JSON into `public/data/`.
 
 ## License / usage
 
