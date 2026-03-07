@@ -1,0 +1,3256 @@
+{
+  "day": 16,
+  "source": "https://www.youtube.com/live/0hfVGkWiofY",
+  "markers": [
+    {
+      "time": 224,
+      "surah": "Maryam",
+      "ayah": 1,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "manual",
+      "reciter": "Hasan",
+      "confidence": 1.0,
+      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ كٓهيعٓصٓ",
+      "english_text": "Kaf. Ha. Ya. `Ayn. Sad.",
+      "start_time": 224,
+      "end_time": 242,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 239,
+      "surah": "Maryam",
+      "ayah": 2,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.96,
+      "arabic_text": "ذِكْرُ رَحْمَتِ رَبِّكَ عَبْدَهُۥ زَكَرِيَّآ",
+      "english_text": "AN ACCOUNT of the grace which thy Sustainer bestowed upon His servant Zachariah:",
+      "start_time": 239,
+      "end_time": 245,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 246,
+      "surah": "Maryam",
+      "ayah": 3,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.941,
+      "arabic_text": "إِذْ نَادَىٰ رَبَّهُۥ نِدَآءً خَفِيًّۭا",
+      "english_text": "When he called out to his Sustainer in the secrecy of his heart,",
+      "start_time": 246,
+      "end_time": 251,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 252,
+      "surah": "Maryam",
+      "ayah": 4,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.998,
+      "arabic_text": "قَالَ رَبِّ إِنِّى وَهَنَ ٱلْعَظْمُ مِنِّى وَٱشْتَعَلَ ٱلرَّأْسُ شَيْبًۭا وَلَمْ أَكُنۢ بِدُعَآئِكَ رَبِّ شَقِيًّۭا",
+      "english_text": "he prayed: \"O my Sustainer! Feeble have become my bones, and my head glistens with grey hair. But never yet, O my Lord, has my prayer unto Thee remained unanswered.",
+      "start_time": 252,
+      "end_time": 270,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 271,
+      "surah": "Maryam",
+      "ayah": 5,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.677,
+      "arabic_text": "وَإِنِّى خِفْتُ ٱلْمَوَٰلِىَ مِن وَرَآءِى وَكَانَتِ ٱمْرَأَتِى عَاقِرًۭا فَهَبْ لِى مِن لَّدُنكَ وَلِيًّۭا",
+      "english_text": "\"Now, behold, I am afraid of [what] my kinsfolk [will do] after I am gone, for my wife has always been barren. Bestow, then, upon me, out of Thy grace, the gift of a successor",
+      "start_time": 271,
+      "end_time": 283,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 284,
+      "surah": "Maryam",
+      "ayah": 6,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.755,
+      "arabic_text": "يَرِثُنِى وَيَرِثُ مِنْ ءَالِ يَعْقُوبَ ۖ وَٱجْعَلْهُ رَبِّ رَضِيًّۭا",
+      "english_text": "who will be my heir as well as an heir [to the dignity] of the House of Jacob; and make him, O my Sustainer, well-pleasing to Thee!\"",
+      "start_time": 284,
+      "end_time": 292,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 293,
+      "surah": "Maryam",
+      "ayah": 7,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.784,
+      "arabic_text": "يَٰزَكَرِيَّآ إِنَّا نُبَشِّرُكَ بِغُلَٰمٍ ٱسْمُهُۥ يَحْيَىٰ لَمْ نَجْعَل لَّهُۥ مِن قَبْلُ سَمِيًّۭا",
+      "english_text": "[Thereupon the angels called out unto him: \"O Zachariah! We bring thee the glad tiding of [the birth of] a son whose name shall be John. [And God says,] `Never have We given this name to anyone before him.\"",
+      "start_time": 293,
+      "end_time": 300,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 307,
+      "surah": "Maryam",
+      "ayah": 8,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.817,
+      "arabic_text": "قَالَ رَبِّ أَنَّىٰ يَكُونُ لِى غُلَٰمٌۭ وَكَانَتِ ٱمْرَأَتِى عَاقِرًۭا وَقَدْ بَلَغْتُ مِنَ ٱلْكِبَرِ عِتِيًّۭا",
+      "english_text": "[Zachariah] exclaimed: \"O my Sustainer! How can I have a son when my wife has always been barren and I have become utterly infirm through old age?\"",
+      "start_time": 307,
+      "end_time": 320,
+      "matched_token_indices": [
+        [
+          16,
+          0
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          18,
+          2
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          20,
+          4
+        ],
+        [
+          21,
+          5
+        ],
+        [
+          22,
+          6
+        ],
+        [
+          23,
+          7
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          25,
+          9
+        ],
+        [
+          26,
+          10
+        ],
+        [
+          27,
+          11
+        ],
+        [
+          28,
+          12
+        ],
+        [
+          29,
+          13
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 321,
+      "surah": "Maryam",
+      "ayah": 9,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.747,
+      "arabic_text": "قَالَ كَذَٰلِكَ قَالَ رَبُّكَ هُوَ عَلَىَّ هَيِّنٌۭ وَقَدْ خَلَقْتُكَ مِن قَبْلُ وَلَمْ تَكُ شَيْـًۭٔا",
+      "english_text": "Answered [the angel]: \"Thus. it is; [but] thy 'Sustainer says, `This is easy for Me -even as I have created thee aforetime out of nothing.",
+      "start_time": 321,
+      "end_time": 331,
+      "matched_token_indices": [
+        [
+          22,
+          0
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24,
+          2
+        ],
+        [
+          25,
+          3
+        ],
+        [
+          26,
+          4
+        ],
+        [
+          27,
+          5
+        ],
+        [
+          28,
+          6
+        ],
+        [
+          29,
+          7
+        ],
+        [
+          30,
+          8
+        ],
+        [
+          31,
+          9
+        ],
+        [
+          32,
+          10
+        ],
+        [
+          33,
+          11
+        ],
+        [
+          34,
+          12
+        ],
+        [
+          35,
+          13
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 338,
+      "surah": "Maryam",
+      "ayah": 10,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.624,
+      "arabic_text": "قَالَ رَبِّ ٱجْعَل لِّىٓ ءَايَةًۭ ۚ قَالَ ءَايَتُكَ أَلَّا تُكَلِّمَ ٱلنَّاسَ ثَلَٰثَ لَيَالٍۢ سَوِيًّۭا",
+      "english_text": "[Zachariah] prayed: \"O my Sustainer! Appoint a sign for me!\" Said [the angel]: \"Thy sign shall be that for full three nights [and days] thou wilt not speak unto men.",
+      "start_time": 338,
+      "end_time": 346,
+      "matched_token_indices": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 347,
+      "surah": "Maryam",
+      "ayah": 11,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.945,
+      "arabic_text": "فَخَرَجَ عَلَىٰ قَوْمِهِۦ مِنَ ٱلْمِحْرَابِ فَأَوْحَىٰٓ إِلَيْهِمْ أَن سَبِّحُوا۟ بُكْرَةًۭ وَعَشِيًّۭا",
+      "english_text": "Thereupon he came out of the sanctuary unto his people and signified to them [by gestures]: \"Extol His limitless glory by day and by night!\"",
+      "start_time": 347,
+      "end_time": 358,
+      "matched_token_indices": [
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 359,
+      "surah": "Maryam",
+      "ayah": 12,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.904,
+      "arabic_text": "يَٰيَحْيَىٰ خُذِ ٱلْكِتَٰبَ بِقُوَّةٍۢ ۖ وَءَاتَيْنَٰهُ ٱلْحُكْمَ صَبِيًّۭا",
+      "english_text": "[And when the son was born and grew up, he was told,] \"O John! Hold fast unto the divine writ with [all thy] strength!\" - for We granted him wisdom \"while he was yet a little boy,",
+      "start_time": 359,
+      "end_time": 367,
+      "matched_token_indices": [
+        [
+          12,
+          0
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          18,
+          6
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 368,
+      "surah": "Maryam",
+      "ayah": 13,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.807,
+      "arabic_text": "وَحَنَانًۭا مِّن لَّدُنَّا وَزَكَوٰةًۭ ۖ وَكَانَ تَقِيًّۭا",
+      "english_text": "as well as, by Our grace, [the gift of] compassion and purity; and he was [always] conscious of Us",
+      "start_time": 368,
+      "end_time": 375,
+      "matched_token_indices": [
+        [
+          21,
+          0
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          24,
+          3
+        ],
+        [
+          25,
+          4
+        ],
+        [
+          26,
+          5
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 376,
+      "surah": "Maryam",
+      "ayah": 14,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.768,
+      "arabic_text": "وَبَرًّۢا بِوَٰلِدَيْهِ وَلَمْ يَكُن جَبَّارًا عَصِيًّۭا",
+      "english_text": "and full of piety towards his parents; and never was he haughty or rebellious.",
+      "start_time": 376,
+      "end_time": 383,
+      "matched_token_indices": [
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          15,
+          5
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 384,
+      "surah": "Maryam",
+      "ayah": 15,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.848,
+      "arabic_text": "وَسَلَٰمٌ عَلَيْهِ يَوْمَ وُلِدَ وَيَوْمَ يَمُوتُ وَيَوْمَ يُبْعَثُ حَيًّۭا",
+      "english_text": "Hence, [God's] peace was upon him on the day when he was born, and on the day of his death, and. will be [upon him] on the day when he shall be raised to life [again].",
+      "start_time": 384,
+      "end_time": 392,
+      "matched_token_indices": [
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 392,
+      "surah": "Maryam",
+      "ayah": 16,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.767,
+      "arabic_text": "وَٱذْكُرْ فِى ٱلْكِتَٰبِ مَرْيَمَ إِذِ ٱنتَبَذَتْ مِنْ أَهْلِهَا مَكَانًۭا شَرْقِيًّۭا",
+      "english_text": "AND CALL to mind, through this divine writ, Mary. Lo! She withdrew from her family to an eastern place",
+      "start_time": 392,
+      "end_time": 402,
+      "matched_token_indices": [
+        [
+          29,
+          0
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          31,
+          2
+        ],
+        [
+          32,
+          3
+        ],
+        [
+          33,
+          4
+        ],
+        [
+          34,
+          5
+        ],
+        [
+          35,
+          6
+        ],
+        [
+          36,
+          7
+        ],
+        [
+          37,
+          8
+        ],
+        [
+          38,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 402,
+      "surah": "Maryam",
+      "ayah": 17,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.787,
+      "arabic_text": "فَٱتَّخَذَتْ مِن دُونِهِمْ حِجَابًۭا فَأَرْسَلْنَآ إِلَيْهَا رُوحَنَا فَتَمَثَّلَ لَهَا بَشَرًۭا سَوِيًّۭا",
+      "english_text": "and kept herself in seclusion from them, whereupon We sent unto her Our angel of revelation, who appeared to her in the shape of a well-made human being.",
+      "start_time": 402,
+      "end_time": 414,
+      "matched_token_indices": [
+        [
+          20,
+          0
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          22,
+          2
+        ],
+        [
+          23,
+          3
+        ],
+        [
+          24,
+          4
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          26,
+          6
+        ],
+        [
+          27,
+          7
+        ],
+        [
+          28,
+          8
+        ],
+        [
+          29,
+          9
+        ],
+        [
+          30,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 415,
+      "surah": "Maryam",
+      "ayah": 18,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.756,
+      "arabic_text": "قَالَتْ إِنِّىٓ أَعُوذُ بِٱلرَّحْمَٰنِ مِنكَ إِن كُنتَ تَقِيًّۭا",
+      "english_text": "She exclaimed: \"Verily, 'I seek refuge from thee with the Most Gracious! [Approach me not] if thou art conscious of Him!\"",
+      "start_time": 415,
+      "end_time": 424,
+      "matched_token_indices": [
+        [
+          22,
+          0
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24,
+          2
+        ],
+        [
+          25,
+          3
+        ],
+        [
+          26,
+          4
+        ],
+        [
+          27,
+          5
+        ],
+        [
+          28,
+          6
+        ],
+        [
+          29,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 425,
+      "surah": "Maryam",
+      "ayah": 19,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.689,
+      "arabic_text": "قَالَ إِنَّمَآ أَنَا۠ رَسُولُ رَبِّكِ لِأَهَبَ لَكِ غُلَٰمًۭا زَكِيًّۭا",
+      "english_text": "[The angel] answered: \"I' am but a messenger of thy Sustainer, [who says,] `I shall bestow upon thee the gift of a son endowed with purity.'\"",
+      "start_time": 425,
+      "end_time": 433,
+      "matched_token_indices": [
+        [
+          19,
+          0
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          21,
+          2
+        ],
+        [
+          22,
+          3
+        ],
+        [
+          23,
+          4
+        ],
+        [
+          24,
+          5
+        ],
+        [
+          25,
+          6
+        ],
+        [
+          26,
+          7
+        ],
+        [
+          27,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 434,
+      "surah": "Maryam",
+      "ayah": 20,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.685,
+      "arabic_text": "قَالَتْ أَنَّىٰ يَكُونُ لِى غُلَٰمٌۭ وَلَمْ يَمْسَسْنِى بَشَرٌۭ وَلَمْ أَكُ بَغِيًّۭا",
+      "english_text": "Said she: \"How can I have a son when no man has ever touched me? - for, never have I been a loose woman!\"",
+      "start_time": 434,
+      "end_time": 445,
+      "matched_token_indices": [
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          18,
+          9
+        ],
+        [
+          19,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 446,
+      "surah": "Maryam",
+      "ayah": 21,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.68,
+      "arabic_text": "قَالَ كَذَٰلِكِ قَالَ رَبُّكِ هُوَ عَلَىَّ هَيِّنٌۭ ۖ وَلِنَجْعَلَهُۥٓ ءَايَةًۭ لِّلنَّاسِ وَرَحْمَةًۭ مِّنَّا ۚ وَكَانَ أَمْرًۭا مَّقْضِيًّۭا",
+      "english_text": "[The angel] answered: \"Thus it is; [but] thy Sustainer says, `This is easy for Me; and [thou shalt have a son,] so that We might make him a symbol unto mankind and an act of grace from US. And it was a thing decreed [by God]:",
+      "start_time": 446,
+      "end_time": 577,
+      "matched_token_indices": [
+        [
+          11,
+          0
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          19,
+          7
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          21,
+          9
+        ],
+        [
+          22,
+          10
+        ],
+        [
+          23,
+          11
+        ],
+        [
+          24,
+          12
+        ],
+        [
+          25,
+          13
+        ],
+        [
+          26,
+          14
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 583,
+      "surah": "Maryam",
+      "ayah": 22,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.933,
+      "arabic_text": "۞ فَحَمَلَتْهُ فَٱنتَبَذَتْ بِهِۦ مَكَانًۭا قَصِيًّۭا",
+      "english_text": "and in time she conceived him, and then she withdrew with him to a far-off place.",
+      "start_time": 583,
+      "end_time": 590,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 590,
+      "surah": "Maryam",
+      "ayah": 23,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.872,
+      "arabic_text": "فَأَجَآءَهَا ٱلْمَخَاضُ إِلَىٰ جِذْعِ ٱلنَّخْلَةِ قَالَتْ يَٰلَيْتَنِى مِتُّ قَبْلَ هَٰذَا وَكُنتُ نَسْيًۭا مَّنسِيًّۭا",
+      "english_text": "And [when] the throes of childbirth drove her to the trunk of a palm-tree, she exclaimed: \"Oh, would that I had died ere this, and had become a thing forgotten, utterly forgotten!\"",
+      "start_time": 590,
+      "end_time": 604,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          13,
+          12
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 605,
+      "surah": "Maryam",
+      "ayah": 24,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.976,
+      "arabic_text": "فَنَادَىٰهَا مِن تَحْتِهَآ أَلَّا تَحْزَنِى قَدْ جَعَلَ رَبُّكِ تَحْتَكِ سَرِيًّۭا",
+      "english_text": "Thereupon [a voice] called out to her from beneath that [palm-tree]: \"Grieve not! Thy Sustainer has provided a rivulet [running] beneath thee;",
+      "start_time": 605,
+      "end_time": 613,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 614,
+      "surah": "Maryam",
+      "ayah": 25,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 1.0,
+      "arabic_text": "وَهُزِّىٓ إِلَيْكِ بِجِذْعِ ٱلنَّخْلَةِ تُسَٰقِطْ عَلَيْكِ رُطَبًۭا جَنِيًّۭا",
+      "english_text": "and shake the trunk of the palm-tree towards thee: it will drop fresh, ripe dates upon thee.",
+      "start_time": 614,
+      "end_time": 623,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 624,
+      "surah": "Maryam",
+      "ayah": 26,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.83,
+      "arabic_text": "فَكُلِى وَٱشْرَبِى وَقَرِّى عَيْنًۭا ۖ فَإِمَّا تَرَيِنَّ مِنَ ٱلْبَشَرِ أَحَدًۭا فَقُولِىٓ إِنِّى نَذَرْتُ لِلرَّحْمَٰنِ صَوْمًۭا فَلَنْ أُكَلِّمَ ٱلْيَوْمَ إِنسِيًّۭا",
+      "english_text": "Eat, then, and drink, and let thine eye be gladdened! And if thou shouldst see any human being, convey this unto him: `Behold, abstinence from speech have I vowed unto the Most Gracious; hence, I may not speak today to any mortal.",
+      "start_time": 624,
+      "end_time": 647,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 648,
+      "surah": "Maryam",
+      "ayah": 27,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.656,
+      "arabic_text": "فَأَتَتْ بِهِۦ قَوْمَهَا تَحْمِلُهُۥ ۖ قَالُوا۟ يَٰمَرْيَمُ لَقَدْ جِئْتِ شَيْـًۭٔا فَرِيًّۭا",
+      "english_text": "And in time she returned to her people, carrying the child with her. They said: \"O Mary! Thou hast indeed done an amazing thing!",
+      "start_time": 648,
+      "end_time": 660,
+      "matched_token_indices": [
+        [
+          20,
+          0
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          22,
+          2
+        ],
+        [
+          23,
+          3
+        ],
+        [
+          24,
+          4
+        ],
+        [
+          26,
+          5
+        ],
+        [
+          27,
+          6
+        ],
+        [
+          28,
+          7
+        ],
+        [
+          29,
+          8
+        ],
+        [
+          30,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 659,
+      "surah": "Maryam",
+      "ayah": 28,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.757,
+      "arabic_text": "يَٰٓأُخْتَ هَٰرُونَ مَا كَانَ أَبُوكِ ٱمْرَأَ سَوْءٍۢ وَمَا كَانَتْ أُمُّكِ بَغِيًّۭا",
+      "english_text": "O sister of Aaron! Thy father was not a wicked man, nor was thy mother a loose woman!\"",
+      "start_time": 659,
+      "end_time": 668,
+      "matched_token_indices": [
+        [
+          20,
+          0
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          24,
+          3
+        ],
+        [
+          25,
+          4
+        ],
+        [
+          26,
+          5
+        ],
+        [
+          27,
+          6
+        ],
+        [
+          28,
+          7
+        ],
+        [
+          29,
+          8
+        ],
+        [
+          30,
+          9
+        ],
+        [
+          31,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 670,
+      "surah": "Maryam",
+      "ayah": 29,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.916,
+      "arabic_text": "فَأَشَارَتْ إِلَيْهِ ۖ قَالُوا۟ كَيْفَ نُكَلِّمُ مَن كَانَ فِى ٱلْمَهْدِ صَبِيًّۭا",
+      "english_text": "Thereupon she pointed to him. They exclaimed: \"How can we talk to one who [as yet] is a little boy in the cradle?\"",
+      "start_time": 670,
+      "end_time": 680,
+      "matched_token_indices": [
+        [
+          23,
+          0
+        ],
+        [
+          24,
+          1
+        ],
+        [
+          25,
+          2
+        ],
+        [
+          26,
+          3
+        ],
+        [
+          27,
+          4
+        ],
+        [
+          28,
+          5
+        ],
+        [
+          29,
+          6
+        ],
+        [
+          30,
+          7
+        ],
+        [
+          31,
+          8
+        ],
+        [
+          32,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 681,
+      "surah": "Maryam",
+      "ayah": 30,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.671,
+      "arabic_text": "قَالَ إِنِّى عَبْدُ ٱللَّهِ ءَاتَىٰنِىَ ٱلْكِتَٰبَ وَجَعَلَنِى نَبِيًّۭا",
+      "english_text": "[But] he said: \"Behold, I am a servant of God. He has vouchsafed unto me revelation and made me a prophet,",
+      "start_time": 681,
+      "end_time": 689,
+      "matched_token_indices": [
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          2
+        ],
+        [
+          17,
+          3
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          19,
+          5
+        ],
+        [
+          20,
+          6
+        ],
+        [
+          21,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 690,
+      "surah": "Maryam",
+      "ayah": 31,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.911,
+      "arabic_text": "وَجَعَلَنِى مُبَارَكًا أَيْنَ مَا كُنتُ وَأَوْصَٰنِى بِٱلصَّلَوٰةِ وَٱلزَّكَوٰةِ مَا دُمْتُ حَيًّۭا",
+      "english_text": "and made me blessed wherever I may be; and He has enjoined upon me prayer and charity as long as I live,",
+      "start_time": 690,
+      "end_time": 699,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          3
+        ],
+        [
+          21,
+          4
+        ],
+        [
+          22,
+          5
+        ],
+        [
+          23,
+          6
+        ],
+        [
+          24,
+          7
+        ],
+        [
+          25,
+          8
+        ],
+        [
+          26,
+          9
+        ],
+        [
+          27,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 700,
+      "surah": "Maryam",
+      "ayah": 32,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.893,
+      "arabic_text": "وَبَرًّۢا بِوَٰلِدَتِى وَلَمْ يَجْعَلْنِى جَبَّارًۭا شَقِيًّۭا",
+      "english_text": "and [has endowed me with] piety towards my mother; and He has not made me haughty or bereft of grace.",
+      "start_time": 700,
+      "end_time": 709,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          21,
+          3
+        ],
+        [
+          22,
+          4
+        ],
+        [
+          23,
+          5
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 710,
+      "surah": "Maryam",
+      "ayah": 33,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.697,
+      "arabic_text": "وَٱلسَّلَٰمُ عَلَىَّ يَوْمَ وُلِدتُّ وَيَوْمَ أَمُوتُ وَيَوْمَ أُبْعَثُ حَيًّۭا",
+      "english_text": "\"Hence, peace was upon me on the day when I was born, and [will be upon me] on the day of my death, and on the day when I shall be raised to life [again]!\"",
+      "start_time": 710,
+      "end_time": 718,
+      "matched_token_indices": [
+        [
+          16,
+          0
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          18,
+          2
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          20,
+          4
+        ],
+        [
+          21,
+          5
+        ],
+        [
+          22,
+          6
+        ],
+        [
+          23,
+          7
+        ],
+        [
+          24,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 719,
+      "surah": "Maryam",
+      "ayah": 34,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.654,
+      "arabic_text": "ذَٰلِكَ عِيسَى ٱبْنُ مَرْيَمَ ۚ قَوْلَ ٱلْحَقِّ ٱلَّذِى فِيهِ يَمْتَرُونَ",
+      "english_text": "SUCH WAS, in the words of truth, Jesus the son of Mary, about whose nature they so deeply disagree.",
+      "start_time": 719,
+      "end_time": 728,
+      "matched_token_indices": [
+        [
+          19,
+          0
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          21,
+          2
+        ],
+        [
+          22,
+          3
+        ],
+        [
+          23,
+          4
+        ],
+        [
+          24,
+          5
+        ],
+        [
+          25,
+          6
+        ],
+        [
+          26,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 728,
+      "surah": "Maryam",
+      "ayah": 35,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.88,
+      "arabic_text": "مَا كَانَ لِلَّهِ أَن يَتَّخِذَ مِن وَلَدٍۢ ۖ سُبْحَٰنَهُۥٓ ۚ إِذَا قَضَىٰٓ أَمْرًۭا فَإِنَّمَا يَقُولُ لَهُۥ كُن فَيَكُونُ",
+      "english_text": "It is not conceivable that God should have taken unto Himself a son: limitless is He in His glory! When He wills a thing to be, He but says unto it \"Be\" -and it is!",
+      "start_time": 728,
+      "end_time": 758,
+      "matched_token_indices": [
+        [
+          27,
+          0
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          30,
+          3
+        ],
+        [
+          31,
+          4
+        ],
+        [
+          32,
+          5
+        ],
+        [
+          33,
+          6
+        ],
+        [
+          34,
+          7
+        ],
+        [
+          35,
+          8
+        ],
+        [
+          36,
+          9
+        ],
+        [
+          37,
+          10
+        ],
+        [
+          38,
+          11
+        ],
+        [
+          39,
+          12
+        ],
+        [
+          40,
+          13
+        ],
+        [
+          41,
+          14
+        ],
+        [
+          42,
+          15
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 759,
+      "surah": "Maryam",
+      "ayah": 36,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.798,
+      "arabic_text": "وَإِنَّ ٱللَّهَ رَبِّى وَرَبُّكُمْ فَٱعْبُدُوهُ ۚ هَٰذَا صِرَٰطٌۭ مُّسْتَقِيمٌۭ",
+      "english_text": "And [thus it was that Jesus always said]: \"Verily, God is my Sustainer as well as your Sustainer; so worship [none but] Him: this (alone] is a straight way.\"",
+      "start_time": 759,
+      "end_time": 782,
+      "matched_token_indices": [
+        [
+          17,
+          0
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          32,
+          2
+        ],
+        [
+          33,
+          3
+        ],
+        [
+          34,
+          4
+        ],
+        [
+          35,
+          5
+        ],
+        [
+          36,
+          6
+        ],
+        [
+          37,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 783,
+      "surah": "Maryam",
+      "ayah": 37,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.777,
+      "arabic_text": "فَٱخْتَلَفَ ٱلْأَحْزَابُ مِنۢ بَيْنِهِمْ ۖ فَوَيْلٌۭ لِّلَّذِينَ كَفَرُوا۟ مِن مَّشْهَدِ يَوْمٍ عَظِيمٍ",
+      "english_text": "And yet, the sects [that follow the Bible] are at variance among themselves [about the nature of Jesus Woe, then, unto all who deny the truth when that awesome Day will appear!",
+      "start_time": 783,
+      "end_time": 798,
+      "matched_token_indices": [
+        [
+          33,
+          0
+        ],
+        [
+          34,
+          1
+        ],
+        [
+          35,
+          2
+        ],
+        [
+          36,
+          3
+        ],
+        [
+          37,
+          4
+        ],
+        [
+          38,
+          5
+        ],
+        [
+          39,
+          6
+        ],
+        [
+          47,
+          7
+        ],
+        [
+          48,
+          8
+        ],
+        [
+          49,
+          9
+        ],
+        [
+          50,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 800,
+      "surah": "Maryam",
+      "ayah": 38,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.73,
+      "arabic_text": "أَسْمِعْ بِهِمْ وَأَبْصِرْ يَوْمَ يَأْتُونَنَا ۖ لَٰكِنِ ٱلظَّٰلِمُونَ ٱلْيَوْمَ فِى ضَلَٰلٍۢ مُّبِينٍۢ",
+      "english_text": "How well will they hear and see [the truth] on the Day when they come before Us! Today, however, these evildoers are obviously lost in error:",
+      "start_time": 800,
+      "end_time": 842,
+      "matched_token_indices": [
+        [
+          32,
+          0
+        ],
+        [
+          33,
+          1
+        ],
+        [
+          34,
+          2
+        ],
+        [
+          35,
+          3
+        ],
+        [
+          36,
+          4
+        ],
+        [
+          37,
+          5
+        ],
+        [
+          38,
+          6
+        ],
+        [
+          39,
+          7
+        ],
+        [
+          40,
+          8
+        ],
+        [
+          41,
+          9
+        ],
+        [
+          42,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 843,
+      "surah": "Maryam",
+      "ayah": 39,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.816,
+      "arabic_text": "وَأَنذِرْهُمْ يَوْمَ ٱلْحَسْرَةِ إِذْ قُضِىَ ٱلْأَمْرُ وَهُمْ فِى غَفْلَةٍۢ وَهُمْ لَا يُؤْمِنُونَ",
+      "english_text": "hence, warn them of [the coming of] the Day of Regrets, when everything will have been decided-for as yet they are heedless, and they do not believe [in it].",
+      "start_time": 843,
+      "end_time": 853,
+      "matched_token_indices": [
+        [
+          60,
+          0
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          62,
+          2
+        ],
+        [
+          63,
+          3
+        ],
+        [
+          64,
+          4
+        ],
+        [
+          65,
+          5
+        ],
+        [
+          66,
+          6
+        ],
+        [
+          67,
+          7
+        ],
+        [
+          68,
+          8
+        ],
+        [
+          69,
+          9
+        ],
+        [
+          70,
+          10
+        ],
+        [
+          71,
+          11
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 854,
+      "surah": "Maryam",
+      "ayah": 40,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.713,
+      "arabic_text": "إِنَّا نَحْنُ نَرِثُ ٱلْأَرْضَ وَمَنْ عَلَيْهَا وَإِلَيْنَا يُرْجَعُونَ",
+      "english_text": "Behold, We alone shall remain after the earth and all who live on it have passed away, and (when] unto Us all will have been brought back.",
+      "start_time": 854,
+      "end_time": 1017,
+      "matched_token_indices": [
+        [
+          30,
+          0
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          33,
+          3
+        ],
+        [
+          34,
+          4
+        ],
+        [
+          35,
+          5
+        ],
+        [
+          36,
+          6
+        ],
+        [
+          37,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1018,
+      "surah": "Maryam",
+      "ayah": 41,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.987,
+      "arabic_text": "وَٱذْكُرْ فِى ٱلْكِتَٰبِ إِبْرَٰهِيمَ ۚ إِنَّهُۥ كَانَ صِدِّيقًۭا نَّبِيًّا",
+      "english_text": "AND CALL to mind, through this divine writ, Abraham. Behold, he was a man of truth, [already] a prophet",
+      "start_time": 1018,
+      "end_time": 1028,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 1029,
+      "surah": "Maryam",
+      "ayah": 42,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 1.0,
+      "arabic_text": "إِذْ قَالَ لِأَبِيهِ يَٰٓأَبَتِ لِمَ تَعْبُدُ مَا لَا يَسْمَعُ وَلَا يُبْصِرُ وَلَا يُغْنِى عَنكَ شَيْـًۭٔا",
+      "english_text": "when he spoke [thus] unto his father: \"O my father! Why dost thou worship something that neither hears nor sees and can be of no avail whatever to thee?",
+      "start_time": 1029,
+      "end_time": 1041,
+      "matched_token_indices": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1042,
+      "surah": "Maryam",
+      "ayah": 43,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 1.0,
+      "arabic_text": "يَٰٓأَبَتِ إِنِّى قَدْ جَآءَنِى مِنَ ٱلْعِلْمِ مَا لَمْ يَأْتِكَ فَٱتَّبِعْنِىٓ أَهْدِكَ صِرَٰطًۭا سَوِيًّۭا",
+      "english_text": "\"O my father! Behold, there has indeed come to me [a ray] of knowledge such as has never yet come unto thee: follow me, then; I shall guide thee onto a perfect way.",
+      "start_time": 1042,
+      "end_time": 1055,
+      "matched_token_indices": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1056,
+      "surah": "Maryam",
+      "ayah": 44,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.961,
+      "arabic_text": "يَٰٓأَبَتِ لَا تَعْبُدِ ٱلشَّيْطَٰنَ ۖ إِنَّ ٱلشَّيْطَٰنَ كَانَ لِلرَّحْمَٰنِ عَصِيًّۭا",
+      "english_text": "\"O my father! Do not worship Satan-for, verily, Satan is a rebel against the Most Gracious!",
+      "start_time": 1056,
+      "end_time": 1066,
+      "matched_token_indices": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1067,
+      "surah": "Maryam",
+      "ayah": 45,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.945,
+      "arabic_text": "يَٰٓأَبَتِ إِنِّىٓ أَخَافُ أَن يَمَسَّكَ عَذَابٌۭ مِّنَ ٱلرَّحْمَٰنِ فَتَكُونَ لِلشَّيْطَٰنِ وَلِيًّۭا",
+      "english_text": "O my father! I dread lest a chastisement from the Most Gracious befall thee, and then thou wilt become [aware of having been] close unto Satan!\"",
+      "start_time": 1067,
+      "end_time": 1076,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1077,
+      "surah": "Maryam",
+      "ayah": 46,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.664,
+      "arabic_text": "قَالَ أَرَاغِبٌ أَنتَ عَنْ ءَالِهَتِى يَٰٓإِبْرَٰهِيمُ ۖ لَئِن لَّمْ تَنتَهِ لَأَرْجُمَنَّكَ ۖ وَٱهْجُرْنِى مَلِيًّۭا",
+      "english_text": "He answered: \"Dost thou dislike my gods, O Abraham? Indeed, if thou desist not, I shall most certainly cause thee to be stoned to death! Now begone from me for good!\"",
+      "start_time": 1077,
+      "end_time": 1090,
+      "matched_token_indices": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          15,
+          11
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1091,
+      "surah": "Maryam",
+      "ayah": 47,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.96,
+      "arabic_text": "قَالَ سَلَٰمٌ عَلَيْكَ ۖ سَأَسْتَغْفِرُ لَكَ رَبِّىٓ ۖ إِنَّهُۥ كَانَ بِى حَفِيًّۭا",
+      "english_text": "[Abraham] replied: \"Peace be upon thee! I shall ask my Sustainer to forgive thee: for, behold, He has always been kind unto me.",
+      "start_time": 1091,
+      "end_time": 1105,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1106,
+      "surah": "Maryam",
+      "ayah": 48,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.879,
+      "arabic_text": "وَأَعْتَزِلُكُمْ وَمَا تَدْعُونَ مِن دُونِ ٱللَّهِ وَأَدْعُوا۟ رَبِّى عَسَىٰٓ أَلَّآ أَكُونَ بِدُعَآءِ رَبِّى شَقِيًّۭا",
+      "english_text": "But I shall withdraw from you all and from whatever you invoke instead of God, and shall invoke my Sustainer [alone]: it may well be that my prayer [for thee] will not remain unanswered by my Sustainer.\"",
+      "start_time": 1106,
+      "end_time": 1124,
+      "matched_token_indices": [
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          19,
+          12
+        ],
+        [
+          20,
+          13
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1125,
+      "surah": "Maryam",
+      "ayah": 49,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.671,
+      "arabic_text": "فَلَمَّا ٱعْتَزَلَهُمْ وَمَا يَعْبُدُونَ مِن دُونِ ٱللَّهِ وَهَبْنَا لَهُۥٓ إِسْحَٰقَ وَيَعْقُوبَ ۖ وَكُلًّۭا جَعَلْنَا نَبِيًّۭا",
+      "english_text": "And after he had withdrawn from them and from all that they were worshipping instead of God, We bestowed upon him Isaac and Jacob, and made each of them a prophet;",
+      "start_time": 1125,
+      "end_time": 1143,
+      "matched_token_indices": [
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          2
+        ],
+        [
+          17,
+          3
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          19,
+          5
+        ],
+        [
+          22,
+          6
+        ],
+        [
+          25,
+          7
+        ],
+        [
+          26,
+          8
+        ],
+        [
+          27,
+          9
+        ],
+        [
+          28,
+          10
+        ],
+        [
+          29,
+          11
+        ],
+        [
+          30,
+          12
+        ],
+        [
+          31,
+          13
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1144,
+      "surah": "Maryam",
+      "ayah": 50,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.874,
+      "arabic_text": "وَوَهَبْنَا لَهُم مِّن رَّحْمَتِنَا وَجَعَلْنَا لَهُمْ لِسَانَ صِدْقٍ عَلِيًّۭا",
+      "english_text": "and We bestowed upon them [manifold] gifts out of Our grace, and granted them a lofty power to convey the truth [unto others].",
+      "start_time": 1144,
+      "end_time": 1152,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          21,
+          3
+        ],
+        [
+          22,
+          4
+        ],
+        [
+          23,
+          5
+        ],
+        [
+          24,
+          6
+        ],
+        [
+          25,
+          7
+        ],
+        [
+          26,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1152,
+      "surah": "Maryam",
+      "ayah": 51,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.765,
+      "arabic_text": "وَٱذْكُرْ فِى ٱلْكِتَٰبِ مُوسَىٰٓ ۚ إِنَّهُۥ كَانَ مُخْلَصًۭا وَكَانَ رَسُولًۭا نَّبِيًّۭا",
+      "english_text": "AND CALL to mind, through this divine writ, Moses. Behold, he was a chosen one, and was an apostle [of God], a prophet.",
+      "start_time": 1152,
+      "end_time": 1162,
+      "matched_token_indices": [
+        [
+          28,
+          0
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          30,
+          2
+        ],
+        [
+          31,
+          3
+        ],
+        [
+          32,
+          4
+        ],
+        [
+          33,
+          5
+        ],
+        [
+          34,
+          6
+        ],
+        [
+          35,
+          7
+        ],
+        [
+          36,
+          8
+        ],
+        [
+          37,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 1164,
+      "surah": "Maryam",
+      "ayah": 52,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.665,
+      "arabic_text": "وَنَٰدَيْنَٰهُ مِن جَانِبِ ٱلطُّورِ ٱلْأَيْمَنِ وَقَرَّبْنَٰهُ نَجِيًّۭا",
+      "english_text": "And [remember how] We called upon him from the right-hand slope of Mount Sinai and drew him near [unto Us] in mystic communion,",
+      "start_time": 1164,
+      "end_time": 1171,
+      "matched_token_indices": [
+        [
+          19,
+          0
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          21,
+          2
+        ],
+        [
+          22,
+          3
+        ],
+        [
+          23,
+          4
+        ],
+        [
+          24,
+          5
+        ],
+        [
+          25,
+          6
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1173,
+      "surah": "Maryam",
+      "ayah": 53,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.891,
+      "arabic_text": "وَوَهَبْنَا لَهُۥ مِن رَّحْمَتِنَآ أَخَاهُ هَٰرُونَ نَبِيًّۭا",
+      "english_text": "and [how], out of Our grace, We granted unto him his brother Aaron, to be a prophet [by his side].",
+      "start_time": 1173,
+      "end_time": 1180,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          21,
+          3
+        ],
+        [
+          22,
+          4
+        ],
+        [
+          23,
+          5
+        ],
+        [
+          24,
+          6
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 1181,
+      "surah": "Maryam",
+      "ayah": 54,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.778,
+      "arabic_text": "وَٱذْكُرْ فِى ٱلْكِتَٰبِ إِسْمَٰعِيلَ ۚ إِنَّهُۥ كَانَ صَادِقَ ٱلْوَعْدِ وَكَانَ رَسُولًۭا نَّبِيًّۭا",
+      "english_text": "AND CALL to mind, through this divine writ, Ishmael. Behold, he was always true to his promise, and was an apostle [of God], a prophet,",
+      "start_time": 1181,
+      "end_time": 1192,
+      "matched_token_indices": [
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          2
+        ],
+        [
+          17,
+          3
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          19,
+          5
+        ],
+        [
+          20,
+          6
+        ],
+        [
+          21,
+          7
+        ],
+        [
+          22,
+          8
+        ],
+        [
+          23,
+          9
+        ],
+        [
+          24,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1193,
+      "surah": "Maryam",
+      "ayah": 55,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.681,
+      "arabic_text": "وَكَانَ يَأْمُرُ أَهْلَهُۥ بِٱلصَّلَوٰةِ وَٱلزَّكَوٰةِ وَكَانَ عِندَ رَبِّهِۦ مَرْضِيًّۭا",
+      "english_text": "who used to enjoin upon his people prayer and charity, and found favour in his Sustainer's sight.",
+      "start_time": 1193,
+      "end_time": 1201,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          24,
+          3
+        ],
+        [
+          25,
+          4
+        ],
+        [
+          26,
+          5
+        ],
+        [
+          27,
+          6
+        ],
+        [
+          28,
+          7
+        ],
+        [
+          29,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1203,
+      "surah": "Maryam",
+      "ayah": 56,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.685,
+      "arabic_text": "وَٱذْكُرْ فِى ٱلْكِتَٰبِ إِدْرِيسَ ۚ إِنَّهُۥ كَانَ صِدِّيقًۭا نَّبِيًّۭا",
+      "english_text": "AND CALL to mind, through this divine writ, Idris. Behold, he was a man of truth, a prophet,",
+      "start_time": 1203,
+      "end_time": 1211,
+      "matched_token_indices": [
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          15,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 1213,
+      "surah": "Maryam",
+      "ayah": 57,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.78,
+      "arabic_text": "وَرَفَعْنَٰهُ مَكَانًا عَلِيًّا",
+      "english_text": "whom We exalted onto a lofty station.",
+      "start_time": 1213,
+      "end_time": 1217,
+      "matched_token_indices": [
+        [
+          16,
+          0
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          18,
+          2
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1218,
+      "surah": "Maryam",
+      "ayah": 58,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.666,
+      "arabic_text": "أُو۟لَٰٓئِكَ ٱلَّذِينَ أَنْعَمَ ٱللَّهُ عَلَيْهِم مِّنَ ٱلنَّبِيِّۦنَ مِن ذُرِّيَّةِ ءَادَمَ وَمِمَّنْ حَمَلْنَا مَعَ نُوحٍۢ وَمِن ذُرِّيَّةِ إِبْرَٰهِيمَ وَإِسْرَٰٓءِيلَ وَمِمَّنْ هَدَيْنَا وَٱجْتَبَيْنَآ ۚ إِذَا تُتْلَىٰ عَلَيْهِمْ ءَايَٰتُ ٱلرَّحْمَٰنِ خَرُّوا۟ سُجَّدًۭا وَبُكِيًّۭا ۩",
+      "english_text": "THESE WERE some of the prophets upon whom God bestowed His blessings - [prophets] of the seed of Adam and of those whom We caused to be borne [in the ark] with Noah, and of the seed of Abraham and Israel and [all of them were] among those whom We had guided and elected; [and] whenever the messages of the Most Gracious were conveyed unto them, they would fall down [before Him], prostrating themselves and weeping.",
+      "start_time": 1218,
+      "end_time": 1281,
+      "matched_token_indices": [
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          18,
+          5
+        ],
+        [
+          22,
+          7
+        ],
+        [
+          24,
+          9
+        ],
+        [
+          27,
+          10
+        ],
+        [
+          28,
+          11
+        ],
+        [
+          29,
+          12
+        ],
+        [
+          30,
+          13
+        ],
+        [
+          31,
+          14
+        ],
+        [
+          32,
+          15
+        ],
+        [
+          33,
+          16
+        ],
+        [
+          34,
+          17
+        ],
+        [
+          36,
+          18
+        ],
+        [
+          37,
+          19
+        ],
+        [
+          38,
+          20
+        ],
+        [
+          39,
+          21
+        ],
+        [
+          40,
+          22
+        ],
+        [
+          41,
+          23
+        ],
+        [
+          42,
+          24
+        ],
+        [
+          43,
+          25
+        ],
+        [
+          44,
+          26
+        ],
+        [
+          45,
+          27
+        ],
+        [
+          46,
+          28
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1300,
+      "surah": "Maryam",
+      "ayah": 59,
+      "surah_number": 19,
+      "juz": 16,
+      "quality": "manual",
+      "reciter": "Hasan",
+      "confidence": 1.0,
+      "arabic_text": "۞ فَخَلَفَ مِنۢ بَعْدِهِمْ خَلْفٌ أَضَاعُوا۟ ٱلصَّلَوٰةَ وَٱتَّبَعُوا۟ ٱلشَّهَوَٰتِ ۖ فَسَوْفَ يَلْقَوْنَ غَيًّا",
+      "english_text": "Yet they were succeeded by generations [of people] who lost all [thought of] prayer and followed [but] their own lusts; and these will, in time, meet with utter disillusion.",
+      "start_time": 1300,
+      "end_time": 1318,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          19,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-03-07T17:26:49.595326+00:00",
+    "audio_path": "data/audio/day-16/normalized.wav",
+    "part": 1,
+    "whisper_model": "small",
+    "markers_detected": 51,
+    "transcript_segments_raw": 119,
+    "transcript_segments_for_matching": 109,
+    "transcript_reset_markers": 1,
+    "reciter_segments_detected": 3,
+    "voice_reciter_classification_enabled": false,
+    "manual_reciter_windows": [
+      {
+        "start_time": 224,
+        "end_time": 1318,
+        "reciter": "Hasan"
+      }
+    ],
+    "corpus_loaded": true,
+    "asad_loaded": true,
+    "transcript_path": "data/ai/remote_jobs/day-16/transcripts/day16-full-224-1318-88b5d75206f0.json",
+    "asr_corrections": {
+      "enabled": false,
+      "reason": "no_path"
+    },
+    "segment_detection": {
+      "audio_starts": 2,
+      "fatiha_starts": 1,
+      "merged_starts": 3
+    },
+    "reciter_filter": {
+      "enabled": true,
+      "reason": "known_reciter_windows",
+      "kept_segments": 109,
+      "total_segments": 109,
+      "keep_ratio": 1.0,
+      "windows": 1
+    },
+    "match_config": {
+      "min_score": 78,
+      "min_overlap": 0.18,
+      "min_confidence": 0.62,
+      "min_gap_seconds": 8,
+      "strict_normalization": false,
+      "require_weak_support_for_inferred": true,
+      "start_surah_number": 19,
+      "start_ayah": 1,
+      "segment_constraints_count": 1,
+      "matcher_mode": "two_stage"
+    },
+    "manual_override": {
+      "path": "data/ai/remote_jobs/day-16/config/day_overrides.part1.json",
+      "final_surah": "Maryam",
+      "final_ayah": 59,
+      "start_time": 224,
+      "final_time": 1318,
+      "markers_before": 50,
+      "markers_after": 50,
+      "inserted_terminal": false,
+      "inserted_terminal_time": null
+    },
+    "marker_time_overrides": [
+      {
+        "surah_number": 19,
+        "ayah": 1,
+        "part": 1,
+        "start_time": 224,
+        "end_time": 242,
+        "inserted": true
+      },
+      {
+        "surah_number": 19,
+        "ayah": 59,
+        "part": 1,
+        "start_time": 1300,
+        "end_time": 1318
+      }
+    ],
+    "override_surah_fill": null,
+    "override_flags": {
+      "apply_day_final_ayah_override": true,
+      "apply_marker_time_overrides": true,
+      "apply_override_surah_fill": false
+    },
+    "pipeline_timings_seconds": {
+      "prepare audio source": 3.21,
+      "load normalized audio": 0.06,
+      "trim audio (skipped)": 0.0,
+      "load provided transcript": 0.0,
+      "transcribe audio (provided, skipped)": 0.0,
+      "apply ASR corrections": 0.0,
+      "detect reciter/prayer segment starts": 0.01,
+      "assign reciters to segments": 0.0,
+      "load Quran corpus and prepare transcript": 0.06,
+      "match ayah markers": 0.05,
+      "apply day overrides": 0.0,
+      "enrich marker text + reciter mapping": 0.01
+    },
+    "merge_strategy": "legacy_strong_then_two_stage_strong_then_bounded_infer",
+    "legacy_commit_ref": "a61c0d3",
+    "matrix_sources": {
+      "legacy_vad_on": "day-16-vad-on-legacy.json",
+      "legacy_vad_off": "day-16-vad-off-legacy.json",
+      "two_stage_vad_on": "day-16-vad-on-two_stage.json",
+      "two_stage_vad_off": "day-16-vad-off-two_stage.json"
+    },
+    "merged_strong_count": 59,
+    "final_inferred_added": 0,
+    "legacy_skipped": {
+      "non_strong": 0,
+      "invalid": 0
+    },
+    "two_stage_skipped": {
+      "non_strong": 0,
+      "invalid": 0
+    },
+    "final_infer_constraints": {
+      "min_total_gap_seconds": 12,
+      "min_seconds_per_ayah": 2.5,
+      "max_seconds_per_ayah": 30.0,
+      "max_gap_ayahs": 40,
+      "min_missing_ayahs": 1
+    },
+    "final_infer_stats": {
+      "added": 0,
+      "skipped_short_time": 0,
+      "skipped_rate": 0,
+      "skipped_large_gap": 0,
+      "skipped_order": 0
+    },
+    "monotonic_timeline_filter": {
+      "dropped": 0,
+      "total": 59,
+      "examples": []
+    },
+    "rescued_from_two_stage_after_monotonic": {
+      "count": 0,
+      "examples": []
+    }
+  }
+}

@@ -1200,6 +1200,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  16: [
+    {
+      ayahRef: "19:16",
+      themeType: "Famous Ayah",
+      shortTitle: "Maryam Withdraws for Devotion",
+      whyNotable: [
+        "A central opening scene of Surah Maryam showing sincere seclusion for worship.",
+        "Frequently cited in reflections on purity, modesty, and spiritual focus.",
+      ],
+      summary:
+        "Maryam is remembered as she withdrew from her people to an eastern place for devotion. The ayah opens the narrative with reverence, chastity, and intentional worship.",
+      keyTakeaway: "Create sincere spaces of worship and guarded devotion to Allah.",
+      references: [
+        { name: "Quran 19:16", url: "https://quran.com/19:16" },
+        { name: "Ibn Kathir Tafsir (19:16)", url: "https://quran.com/en/19:16/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "19:58",
+      themeType: "Famous Ayah",
+      shortTitle: "The Prophets Wept in Sujood",
+      whyNotable: [
+        "A beloved ayah describing prophetic humility when hearing Allah's signs.",
+        "Often used to teach khushu, crying in worship, and reverence for revelation.",
+      ],
+      summary:
+        "Allah describes the honored prophets who, when His verses were recited to them, fell in prostration and wept. The ayah presents deep receptivity as the mark of the righteous.",
+      keyTakeaway: "Let Quran recitation soften the heart into humility and obedience.",
+      references: [
+        { name: "Quran 19:58", url: "https://quran.com/19:58" },
+        { name: "Ibn Kathir Tafsir (19:58)", url: "https://quran.com/en/19:58/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "20:25-28",
+      themeType: "Dua",
+      shortTitle: "Dua of Musa for Clarity and Ease",
+      whyNotable: [
+        "One of the most memorized Quranic duas before study and teaching.",
+        "A timeless supplication for confidence, clarity, and effective speech.",
+      ],
+      summary:
+        "Musa asks Allah to expand his chest, ease his task, and loosen his tongue so people can understand him. The dua combines spiritual reliance with practical readiness for responsibility.",
+      keyTakeaway: "Begin difficult duties by asking Allah for clarity, ease, and truthful speech.",
+      references: [
+        { name: "Quran 20:25-28", url: "https://quran.com/20:25-28" },
+        { name: "Ibn Kathir Tafsir (20:25)", url: "https://quran.com/en/20:25/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "20:82",
+      themeType: "Famous Ayah",
+      shortTitle: "Vast Forgiveness for the One Who Returns",
+      whyNotable: [
+        "A major ayah of hope balancing repentance with steadfast faith and action.",
+        "Frequently quoted in reminders on tawbah and returning to Allah.",
+      ],
+      summary:
+        "Allah declares immense forgiveness for the one who repents, believes, does righteous deeds, and remains guided. The ayah links forgiveness to sincere return and continuity in obedience.",
+      keyTakeaway: "Keep returning to Allah with repentance and steady righteous action.",
+      references: [
+        { name: "Quran 20:82", url: "https://quran.com/20:82" },
+        { name: "Ibn Kathir Tafsir (20:82)", url: "https://quran.com/en/20:82/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "20:114",
+      themeType: "Dua",
+      shortTitle: "My Lord, Increase Me in Knowledge",
+      whyNotable: [
+        "A foundational Quranic supplication for sacred learning.",
+        "Commonly cited as a core ethic of lifelong knowledge-seeking.",
+      ],
+      summary:
+        "Allah teaches the Prophet to supplicate, 'My Lord, increase me in knowledge.' The ayah establishes humility and constant growth as the proper posture toward revelation.",
+      keyTakeaway: "Seek beneficial knowledge continuously through dua and discipline.",
+      references: [
+        { name: "Quran 20:114", url: "https://quran.com/20:114" },
+        { name: "Ibn Kathir Tafsir (20:114)", url: "https://quran.com/en/20:114/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "21:69",
+      themeType: "Famous Ayah",
+      shortTitle: "The Fire Made Cool for Ibrahim",
+      whyNotable: [
+        "A famous ayah of divine protection and miraculous relief for a prophet under trial.",
+        "Widely referenced to affirm Allah's control over all causes and outcomes.",
+      ],
+      summary:
+        "Allah commands the fire to become coolness and safety for Ibrahim. The ayah is a direct sign that Allah can reverse expected harm for those who rely on Him.",
+      keyTakeaway: "Trust Allah's protection even when outward circumstances appear overwhelming.",
+      references: [
+        { name: "Quran 21:69", url: "https://quran.com/21:69" },
+        { name: "Ibn Kathir Tafsir (21:69)", url: "https://quran.com/en/21:69/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -1351,6 +1449,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Al-Israa centers guidance in the Quran and warns against moral drift away from revelation.",
       "The surah joins worship of Allah with lived ethics: honoring parents, guarding chastity, justice, and balanced conduct.",
       "The closing ayat renew pure tawhid, gratitude, and exaltation of Allah's greatness.",
+    ],
+  },
+  16: {
+    title: "Day 16 Recitation Summary (Maryam 1-59, Taa-Haa 26-135, Al-Anbiyaa 1-82)",
+    summary:
+      "Day 16 opens with Surah Maryam's scenes of mercy and prophetic devotion, moves into the mission-centered guidance of Surah Taa-Haa, and reaches the warning-and-vindication passages of Surah Al-Anbiyaa. Across both video parts, the recitation links humility, repentance, and steadfast da'wah under pressure.",
+    themes: [
+      "Maryam highlights purity, reverence, and the legacy of prophets who responded to revelation with humility and sujood.",
+      "Taa-Haa emphasizes prophetic courage, reliance on Allah, and forgiveness for those who repent and stay guided.",
+      "Early Al-Anbiyaa reinforces accountability and Allah's support for truth against persistent opposition.",
     ],
   },
 };
