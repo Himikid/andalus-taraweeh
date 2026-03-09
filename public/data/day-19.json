@@ -1,0 +1,2874 @@
+{
+  "day": 19,
+  "source": "/Users/himi/Library/CloudStorage/GoogleDrive-ibrahim@andalus.co.uk/My Drive/andalus-transcription/audio-cache/day19-ahaVOumf0VY.webm",
+  "markers": [
+    {
+      "time": 84,
+      "surah": "Al-Qasas",
+      "ayah": 1,
+      "surah_number": 28,
+      "juz": 20,
+      "quality": "manual",
+      "reciter": "Hasan",
+      "confidence": 1.0,
+      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ طسٓمٓ",
+      "english_text": "Ta. Sin. Mim.",
+      "start_time": 84,
+      "end_time": 102,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 2339,
+      "surah": "Al-Qasas",
+      "ayah": 2,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.703,
+      "arabic_text": "تِلْكَ ءَايَٰتُ ٱلْكِتَٰبِ ٱلْمُبِينِ",
+      "english_text": "These are messages of a divine writ clear in itself and clearly showing the truth.",
+      "start_time": 2339,
+      "end_time": 2343,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2348,
+      "start_time": 2348,
+      "end_time": 2348,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 3,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Hasan",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 2358,
+      "surah": "Al-Qasas",
+      "ayah": 4,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.789,
+      "arabic_text": "إِنَّ فِرْعَوْنَ عَلَا فِى ٱلْأَرْضِ وَجَعَلَ أَهْلَهَا شِيَعًۭا يَسْتَضْعِفُ طَآئِفَةًۭ مِّنْهُمْ يُذَبِّحُ أَبْنَآءَهُمْ وَيَسْتَحْىِۦ نِسَآءَهُمْ ۚ إِنَّهُۥ كَانَ مِنَ ٱلْمُفْسِدِينَ",
+      "english_text": "Behold, Pharaoh exalted himself in the land and divided its people into castes. One group of them he deemed utterly low; he would slaughter their sons and spare (only) their women: for, behold, he was one of those who spread corruption [on earth].",
+      "start_time": 2358,
+      "end_time": 2380,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2381,
+      "surah": "Al-Qasas",
+      "ayah": 5,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.826,
+      "arabic_text": "وَنُرِيدُ أَن نَّمُنَّ عَلَى ٱلَّذِينَ ٱسْتُضْعِفُوا۟ فِى ٱلْأَرْضِ وَنَجْعَلَهُمْ أَئِمَّةًۭ وَنَجْعَلَهُمُ ٱلْوَٰرِثِينَ",
+      "english_text": "But it was Our will to bestow Our favour upon those [very people] who were deemed [so] utterly low in the land, and to make them forerunners in faith. and to make them heirs [to Pharaoh’s glory],",
+      "start_time": 2381,
+      "end_time": 2394,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2394,
+      "surah": "Al-Qasas",
+      "ayah": 6,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.951,
+      "arabic_text": "وَنُمَكِّنَ لَهُمْ فِى ٱلْأَرْضِ وَنُرِىَ فِرْعَوْنَ وَهَٰمَٰنَ وَجُنُودَهُمَا مِنْهُم مَّا كَانُوا۟ يَحْذَرُونَ",
+      "english_text": "and to establish them securely on earth, and to let Pharaoh and Haman and their hosts experience through those [children of Israel] the very thing against which they sought to protect themselves.",
+      "start_time": 2394,
+      "end_time": 2407,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2412,
+      "surah": "Al-Qasas",
+      "ayah": 7,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.768,
+      "arabic_text": "وَأَوْحَيْنَآ إِلَىٰٓ أُمِّ مُوسَىٰٓ أَنْ أَرْضِعِيهِ ۖ فَإِذَا خِفْتِ عَلَيْهِ فَأَلْقِيهِ فِى ٱلْيَمِّ وَلَا تَخَافِى وَلَا تَحْزَنِىٓ ۖ إِنَّا رَآدُّوهُ إِلَيْكِ وَجَاعِلُوهُ مِنَ ٱلْمُرْسَلِينَ",
+      "english_text": "And so, [when he was born,] We inspired [thus] the mother of Moses: Suckle him [for a time], and then, when thou hast cause to fear for him, cast him into the river, and have no fear and do not grieve - for We shall restore him to thee, and shall make him one of Our message-bearers!”",
+      "start_time": 2412,
+      "end_time": 2422,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2433,
+      "surah": "Al-Qasas",
+      "ayah": 8,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.783,
+      "arabic_text": "فَٱلْتَقَطَهُۥٓ ءَالُ فِرْعَوْنَ لِيَكُونَ لَهُمْ عَدُوًّۭا وَحَزَنًا ۗ إِنَّ فِرْعَوْنَ وَهَٰمَٰنَ وَجُنُودَهُمَا كَانُوا۟ خَٰطِـِٔينَ",
+      "english_text": "And [some of] Pharaoh’s household found [and spared] him: for [We had willed] that he becomes an enemy unto them and [a source of] grief, seeing that Pharaoh and Haman and their hosts were sinners indeed!",
+      "start_time": 2433,
+      "end_time": 2441,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2449,
+      "surah": "Al-Qasas",
+      "ayah": 9,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.936,
+      "arabic_text": "وَقَالَتِ ٱمْرَأَتُ فِرْعَوْنَ قُرَّتُ عَيْنٍۢ لِّى وَلَكَ ۖ لَا تَقْتُلُوهُ عَسَىٰٓ أَن يَنفَعَنَآ أَوْ نَتَّخِذَهُۥ وَلَدًۭا وَهُمْ لَا يَشْعُرُونَ",
+      "english_text": "Now the wife of Pharaoh said: “A joy to the eye [could this child be] for me and thee! Slay him not: he may well be of use to us, or we may adopt him as a son!” And they had no presentiment [of what he was to become].",
+      "start_time": 2449,
+      "end_time": 2464,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2484,
+      "surah": "Al-Qasas",
+      "ayah": 10,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.671,
+      "arabic_text": "وَأَصْبَحَ فُؤَادُ أُمِّ مُوسَىٰ فَٰرِغًا ۖ إِن كَادَتْ لَتُبْدِى بِهِۦ لَوْلَآ أَن رَّبَطْنَا عَلَىٰ قَلْبِهَا لِتَكُونَ مِنَ ٱلْمُؤْمِنِينَ",
+      "english_text": "On the morrow, however, an aching void grew up in the heart of the mother of Moses, and she would indeed have disclosed all about him had We not endowed her heart with enough strength to keep alive her faith [in Our promise].",
+      "start_time": 2484,
+      "end_time": 2489,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2604,
+      "surah": "Al-Qasas",
+      "ayah": 12,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.81,
+      "arabic_text": "۞ وَحَرَّمْنَا عَلَيْهِ ٱلْمَرَاضِعَ مِن قَبْلُ فَقَالَتْ هَلْ أَدُلُّكُمْ عَلَىٰٓ أَهْلِ بَيْتٍۢ يَكْفُلُونَهُۥ لَكُمْ وَهُمْ لَهُۥ نَٰصِحُونَ",
+      "english_text": "Now from the very beginning We caused him to refuse the breast of [Egyptian] nurses; and [when his sister came to know this,] she said: “Shall I guide you to a family that might rear him for you, and look after him with good will?”",
+      "start_time": 2604,
+      "end_time": 2613,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2635,
+      "surah": "Al-Qasas",
+      "ayah": 13,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.8,
+      "arabic_text": "فَرَدَدْنَٰهُ إِلَىٰٓ أُمِّهِۦ كَىْ تَقَرَّ عَيْنُهَا وَلَا تَحْزَنَ وَلِتَعْلَمَ أَنَّ وَعْدَ ٱللَّهِ حَقٌّۭ وَلَٰكِنَّ أَكْثَرَهُمْ لَا يَعْلَمُونَ",
+      "english_text": "And thus We restored him to his mother, so that her eye might he gladdened, and that she might grieve no longer, and that she might know that God’s promise always comes true - even though most of them know it not!",
+      "start_time": 2635,
+      "end_time": 2644,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2650,
+      "surah": "Al-Qasas",
+      "ayah": 14,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.8,
+      "arabic_text": "وَلَمَّا بَلَغَ أَشُدَّهُۥ وَٱسْتَوَىٰٓ ءَاتَيْنَٰهُ حُكْمًۭا وَعِلْمًۭا ۚ وَكَذَٰلِكَ نَجْزِى ٱلْمُحْسِنِينَ",
+      "english_text": "Now when [Moses] reached full manhood and had become mature [of mind]. We bestowed upon him the ability to judge [between right and wrong] as well as [innate] knowledge: for thus do We reward the doers of good.",
+      "start_time": 2650,
+      "end_time": 2657,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2657,
+      "surah": "Al-Qasas",
+      "ayah": 15,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.696,
+      "arabic_text": "وَدَخَلَ ٱلْمَدِينَةَ عَلَىٰ حِينِ غَفْلَةٍۢ مِّنْ أَهْلِهَا فَوَجَدَ فِيهَا رَجُلَيْنِ يَقْتَتِلَانِ هَٰذَا مِن شِيعَتِهِۦ وَهَٰذَا مِنْ عَدُوِّهِۦ ۖ فَٱسْتَغَٰثَهُ ٱلَّذِى مِن شِيعَتِهِۦ عَلَى ٱلَّذِى مِنْ عَدُوِّهِۦ فَوَكَزَهُۥ مُوسَىٰ فَقَضَىٰ عَلَيْهِ ۖ قَالَ هَٰذَا مِنْ عَمَلِ ٱلشَّيْطَٰنِ ۖ إِنَّهُۥ عَدُوٌّۭ مُّضِلٌّۭ مُّبِينٌۭ",
+      "english_text": "And [one day] he entered the city at a time when [most of] its people were [resting in their houses,] unaware of what was going on [in the streets]; and there he encountered two men fighting with one another - one of his own people, and the other of his enemies. And the one who belonged to his own people cried out to him for help against him who was of his enemies - whereupon Moses struck him down with his fist, and [thus] brought about his end. [But then] he said [to himself]: “This is of Satan’s doing! Verily, he is an open foe, leading [man] astray!”",
+      "start_time": 2657,
+      "end_time": 2663,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 2704,
+      "surah": "Al-Qasas",
+      "ayah": 16,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.877,
+      "arabic_text": "قَالَ رَبِّ إِنِّى ظَلَمْتُ نَفْسِى فَٱغْفِرْ لِى فَغَفَرَ لَهُۥٓ ۚ إِنَّهُۥ هُوَ ٱلْغَفُورُ ٱلرَّحِيمُ",
+      "english_text": "[And] he prayed: O my Sustainer! Verily, I have sinned against myself! Grant me, then, Thy forgiveness!” And He forgave him - for, verily, He alone is truly forgiving, a dispenser of grace.",
+      "start_time": 2704,
+      "end_time": 2711,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 2891,
+      "surah": "Al-Qasas",
+      "ayah": 17,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.99,
+      "arabic_text": "قَالَ رَبِّ بِمَآ أَنْعَمْتَ عَلَىَّ فَلَنْ أَكُونَ ظَهِيرًۭا لِّلْمُجْرِمِينَ",
+      "english_text": "Said he: “O my Sustainer! [I vow] by all the blessings which Thou hast bestowed on me: Never­more shall I aid such as are lost in sin!”",
+      "start_time": 2891,
+      "end_time": 2900,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 2912,
+      "surah": "Al-Qasas",
+      "ayah": 18,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.771,
+      "arabic_text": "فَأَصْبَحَ فِى ٱلْمَدِينَةِ خَآئِفًۭا يَتَرَقَّبُ فَإِذَا ٱلَّذِى ٱسْتَنصَرَهُۥ بِٱلْأَمْسِ يَسْتَصْرِخُهُۥ ۚ قَالَ لَهُۥ مُوسَىٰٓ إِنَّكَ لَغَوِىٌّۭ مُّبِينٌۭ",
+      "english_text": "And next morning he found himself in the city, looking fearfully about him, when lo! the one who had sought his help the day before [once again] cried out to him [for help whereupon] Moses said unto him: “Behold, thou art indeed, most clearly, deeply in the wrong!",
+      "start_time": 2912,
+      "end_time": 2920,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 2918,
+      "surah": "Al-Qasas",
+      "ayah": 19,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.842,
+      "arabic_text": "فَلَمَّآ أَنْ أَرَادَ أَن يَبْطِشَ بِٱلَّذِى هُوَ عَدُوٌّۭ لَّهُمَا قَالَ يَٰمُوسَىٰٓ أَتُرِيدُ أَن تَقْتُلَنِى كَمَا قَتَلْتَ نَفْسًۢا بِٱلْأَمْسِ ۖ إِن تُرِيدُ إِلَّآ أَن تَكُونَ جَبَّارًۭا فِى ٱلْأَرْضِ وَمَا تُرِيدُ أَن تَكُونَ مِنَ ٱلْمُصْلِحِينَ",
+      "english_text": "But then as soon as he was about to lay violent hands on the man who was their [common] enemy, the latter exclaimed: “O Moses, dost thou intend to slay me as thou didst slay another man yesterday? Thy sole aim is to become a tyrant in this land, for thou dost not care to be of those who would set things to rights!”",
+      "start_time": 2918,
+      "end_time": 2938,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2951,
+      "surah": "Al-Qasas",
+      "ayah": 20,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.907,
+      "arabic_text": "وَجَآءَ رَجُلٌۭ مِّنْ أَقْصَا ٱلْمَدِينَةِ يَسْعَىٰ قَالَ يَٰمُوسَىٰٓ إِنَّ ٱلْمَلَأَ يَأْتَمِرُونَ بِكَ لِيَقْتُلُوكَ فَٱخْرُجْ إِنِّى لَكَ مِنَ ٱلنَّٰصِحِينَ",
+      "english_text": "And [then and there] a man came running from the farthermost end of the city, and said: “O Moses! Behold, the great ones [of the kingdom] are deli­berating upon thy case with a view to killing thee! Begone, then: verily, I am of those who wish thee well!”",
+      "start_time": 2951,
+      "end_time": 2968,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2968,
+      "surah": "Al-Qasas",
+      "ayah": 21,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.95,
+      "arabic_text": "فَخَرَجَ مِنْهَا خَآئِفًۭا يَتَرَقَّبُ ۖ قَالَ رَبِّ نَجِّنِى مِنَ ٱلْقَوْمِ ٱلظَّٰلِمِينَ",
+      "english_text": "So he went forth from thence, looking fearfully about him, and prayed: “O my Sustainer! Save me from all evildoing folk!”",
+      "start_time": 2968,
+      "end_time": 2981,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 2981,
+      "surah": "Al-Qasas",
+      "ayah": 22,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.958,
+      "arabic_text": "وَلَمَّا تَوَجَّهَ تِلْقَآءَ مَدْيَنَ قَالَ عَسَىٰ رَبِّىٓ أَن يَهْدِيَنِى سَوَآءَ ٱلسَّبِيلِ",
+      "english_text": "And as he turned his face towards Madyan, he said [to himself]: “It may well be that my Sustainer will [thus] guide me onto the right path”",
+      "start_time": 2981,
+      "end_time": 2998,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 3002,
+      "surah": "Al-Qasas",
+      "ayah": 23,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.757,
+      "arabic_text": "وَلَمَّا وَرَدَ مَآءَ مَدْيَنَ وَجَدَ عَلَيْهِ أُمَّةًۭ مِّنَ ٱلنَّاسِ يَسْقُونَ وَوَجَدَ مِن دُونِهِمُ ٱمْرَأَتَيْنِ تَذُودَانِ ۖ قَالَ مَا خَطْبُكُمَا ۖ قَالَتَا لَا نَسْقِى حَتَّىٰ يُصْدِرَ ٱلرِّعَآءُ ۖ وَأَبُونَا شَيْخٌۭ كَبِيرٌۭ",
+      "english_text": "NOW WHEN he arrived at the wells of Madyan, he found there a large group of men who were watering [their herds and flocks]; and at some distance from them he came upon two women who were keeping back their flock. He asked [them]: “What is the matter with you?” They answered: “We cannot water [our animals] until the herdsmen drive [theirs] home - for [we are weak and] our father is a very old man.”",
+      "start_time": 3002,
+      "end_time": 3021,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 3182,
+      "surah": "Al-Qasas",
+      "ayah": 24,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.99,
+      "arabic_text": "فَسَقَىٰ لَهُمَا ثُمَّ تَوَلَّىٰٓ إِلَى ٱلظِّلِّ فَقَالَ رَبِّ إِنِّى لِمَآ أَنزَلْتَ إِلَىَّ مِنْ خَيْرٍۢ فَقِيرٌۭ",
+      "english_text": "So he watered [their flock] for them: and when he withdrew into the shade and prayed: “O my Sus­tainer! Verily, in dire need am I of any good which Thou mayest bestow upon me!”",
+      "start_time": 3182,
+      "end_time": 3195,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 3207,
+      "surah": "Al-Qasas",
+      "ayah": 25,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.739,
+      "arabic_text": "فَجَآءَتْهُ إِحْدَىٰهُمَا تَمْشِى عَلَى ٱسْتِحْيَآءٍۢ قَالَتْ إِنَّ أَبِى يَدْعُوكَ لِيَجْزِيَكَ أَجْرَ مَا سَقَيْتَ لَنَا ۚ فَلَمَّا جَآءَهُۥ وَقَصَّ عَلَيْهِ ٱلْقَصَصَ قَالَ لَا تَخَفْ ۖ نَجَوْتَ مِنَ ٱلْقَوْمِ ٱلظَّٰلِمِينَ",
+      "english_text": "[Shortly] afterwards, one of the two [maidens] approached him, walking shyly, and said: “Behold, my father invites thee, so that he might duly reward thee for thy having watered [our flock] for us.” And as soon as [Moses] came unto him and told him the story [of his life], he said: “Have no fear! Thou art now safe from those evildoing folk!”",
+      "start_time": 3207,
+      "end_time": 3214,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 3231,
+      "surah": "Al-Qasas",
+      "ayah": 26,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.724,
+      "arabic_text": "قَالَتْ إِحْدَىٰهُمَا يَٰٓأَبَتِ ٱسْتَـْٔجِرْهُ ۖ إِنَّ خَيْرَ مَنِ ٱسْتَـْٔجَرْتَ ٱلْقَوِىُّ ٱلْأَمِينُ",
+      "english_text": "Said one of the two [daughters]: “O my father! Hire him: for, behold, the best [man] that thou couldst hire is one who is [as] strong and worthy of trust [as he]!”",
+      "start_time": 3231,
+      "end_time": 3237,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 3249,
+      "surah": "Al-Qasas",
+      "ayah": 27,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.683,
+      "arabic_text": "قَالَ إِنِّىٓ أُرِيدُ أَنْ أُنكِحَكَ إِحْدَى ٱبْنَتَىَّ هَٰتَيْنِ عَلَىٰٓ أَن تَأْجُرَنِى ثَمَٰنِىَ حِجَجٍۢ ۖ فَإِنْ أَتْمَمْتَ عَشْرًۭا فَمِنْ عِندِكَ ۖ وَمَآ أُرِيدُ أَنْ أَشُقَّ عَلَيْكَ ۚ سَتَجِدُنِىٓ إِن شَآءَ ٱللَّهُ مِنَ ٱلصَّٰلِحِينَ",
+      "english_text": "[After some time, the father] said: “Behold, I am willing to let thee wed one of these two daughters of mine on the understanding that thou wilt remain eight years in my service; and if thou shouldst com­plete ten [years], that would be [an act of grace] from thee, for I do not want to impose any hardship on thee: [on the contrary,] thou wilt find me, if God so wills, righteous in all my dealings.”",
+      "start_time": 3249,
+      "end_time": 3254,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 3270,
+      "surah": "Al-Qasas",
+      "ayah": 28,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Hasan",
+      "confidence": 0.8,
+      "arabic_text": "قَالَ ذَٰلِكَ بَيْنِى وَبَيْنَكَ ۖ أَيَّمَا ٱلْأَجَلَيْنِ قَضَيْتُ فَلَا عُدْوَٰنَ عَلَىَّ ۖ وَٱللَّهُ عَلَىٰ مَا نَقُولُ وَكِيلٌۭ",
+      "english_text": "Answered [Moses]: “Thus shall it be between me and thee! Whichever of the two terms I fulfill, let there be no ill will against me. And God be witness to all that we say!”",
+      "start_time": 3270,
+      "end_time": 3277,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 3316,
+      "surah": "Al-Qasas",
+      "ayah": 29,
+      "surah_number": 28,
+      "juz": 20,
+      "quality": "manual",
+      "reciter": "Hasan",
+      "confidence": 1.0,
+      "arabic_text": "۞ فَلَمَّا قَضَىٰ مُوسَى ٱلْأَجَلَ وَسَارَ بِأَهْلِهِۦٓ ءَانَسَ مِن جَانِبِ ٱلطُّورِ نَارًۭا قَالَ لِأَهْلِهِ ٱمْكُثُوٓا۟ إِنِّىٓ ءَانَسْتُ نَارًۭا لَّعَلِّىٓ ءَاتِيكُم مِّنْهَا بِخَبَرٍ أَوْ جَذْوَةٍۢ مِّنَ ٱلنَّارِ لَعَلَّكُمْ تَصْطَلُونَ",
+      "english_text": "And when Moses had fulfilled his term and was wandering with his family [in the desert], he per­ceived a fire on the slope of Mount Sinai; [and so] he said to his family: “Wait here. Behold, I perceive a fire [far away]; perhaps I may bring you from there some tiding, or [at least] a burning brand from the fire, so that you might warm yourselves.",
+      "start_time": 3316,
+      "end_time": 3316,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4152,
+      "surah": "Al-Qasas",
+      "ayah": 30,
+      "surah_number": 28,
+      "juz": 20,
+      "quality": "manual",
+      "reciter": "Samir",
+      "confidence": 1.0,
+      "arabic_text": "فَلَمَّآ أَتَىٰهَا نُودِىَ مِن شَٰطِئِ ٱلْوَادِ ٱلْأَيْمَنِ فِى ٱلْبُقْعَةِ ٱلْمُبَٰرَكَةِ مِنَ ٱلشَّجَرَةِ أَن يَٰمُوسَىٰٓ إِنِّىٓ أَنَا ٱللَّهُ رَبُّ ٱلْعَٰلَمِينَ",
+      "english_text": "But when he came close to it, a call was sounded from the right-side bank of the valley, out of the tree [burning] on blessed ground: “O Moses! Verily, I am God, the Sustainer of all the worlds!”",
+      "start_time": 4152,
+      "end_time": 4170,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4284,
+      "surah": "Al-Qasas",
+      "ayah": 34,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.809,
+      "arabic_text": "وَأَخِى هَٰرُونُ هُوَ أَفْصَحُ مِنِّى لِسَانًۭا فَأَرْسِلْهُ مَعِىَ رِدْءًۭا يُصَدِّقُنِىٓ ۖ إِنِّىٓ أَخَافُ أَن يُكَذِّبُونِ",
+      "english_text": "And my brother Aaron - he is far better in speech than I am. Send him, therefore, as a helper, so that he might [more eloquently] bear witness to my speaking the truth: for I fear indeed that they will give me the lie.”",
+      "start_time": 4284,
+      "end_time": 4294,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4294,
+      "surah": "Al-Qasas",
+      "ayah": 35,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.878,
+      "arabic_text": "قَالَ سَنَشُدُّ عَضُدَكَ بِأَخِيكَ وَنَجْعَلُ لَكُمَا سُلْطَٰنًۭا فَلَا يَصِلُونَ إِلَيْكُمَا ۚ بِـَٔايَٰتِنَآ أَنتُمَا وَمَنِ ٱتَّبَعَكُمَا ٱلْغَٰلِبُونَ",
+      "english_text": "Said He: “We shall strengthen thine arm through thy brother, and endow both of you with power, so that they will not be able to touch you: by virtue of Our messages shall you two, and all who follow you, prevail!”",
+      "start_time": 4294,
+      "end_time": 4313,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4314,
+      "surah": "Al-Qasas",
+      "ayah": 36,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.866,
+      "arabic_text": "فَلَمَّا جَآءَهُم مُّوسَىٰ بِـَٔايَٰتِنَا بَيِّنَٰتٍۢ قَالُوا۟ مَا هَٰذَآ إِلَّا سِحْرٌۭ مُّفْتَرًۭى وَمَا سَمِعْنَا بِهَٰذَا فِىٓ ءَابَآئِنَا ٱلْأَوَّلِينَ",
+      "english_text": "But as soon as Moses came unto them with Our clear messages [Pharaoh and his great ones] said: “All this is nothing but spellbinding eloquence devised [by man]: and never did we hear [the like of] this, [nor has it ever been heard of] in the time of our forebears of old!”",
+      "start_time": 4314,
+      "end_time": 4338,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4338,
+      "surah": "Al-Qasas",
+      "ayah": 37,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.716,
+      "arabic_text": "وَقَالَ مُوسَىٰ رَبِّىٓ أَعْلَمُ بِمَن جَآءَ بِٱلْهُدَىٰ مِنْ عِندِهِۦ وَمَن تَكُونُ لَهُۥ عَٰقِبَةُ ٱلدَّارِ ۖ إِنَّهُۥ لَا يُفْلِحُ ٱلظَّٰلِمُونَ",
+      "english_text": "And Moses replied: “My Sustainer knows best as to who comes with guidance from Him, and to whom the future belongs! Verily, never will evil­doers attain to a happy state!”",
+      "start_time": 4338,
+      "end_time": 4344,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4360,
+      "surah": "Al-Qasas",
+      "ayah": 38,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.719,
+      "arabic_text": "وَقَالَ فِرْعَوْنُ يَٰٓأَيُّهَا ٱلْمَلَأُ مَا عَلِمْتُ لَكُم مِّنْ إِلَٰهٍ غَيْرِى فَأَوْقِدْ لِى يَٰهَٰمَٰنُ عَلَى ٱلطِّينِ فَٱجْعَل لِّى صَرْحًۭا لَّعَلِّىٓ أَطَّلِعُ إِلَىٰٓ إِلَٰهِ مُوسَىٰ وَإِنِّى لَأَظُنُّهُۥ مِنَ ٱلْكَٰذِبِينَ",
+      "english_text": "Whereupon Pharaoh said: “O you nobles! I did not know that you could have any deity other than myself Well, then, O Haman, kindle me a fire for [baking bricks of] clay, and then build me a lofty tower, that haply I may have a look at the god of Moses although, behold, I am convinced that he is of those who [always] tell lies!”",
+      "start_time": 4360,
+      "end_time": 4374,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4379,
+      "start_time": 4379,
+      "end_time": 4379,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 39,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 4398,
+      "start_time": 4398,
+      "end_time": 4398,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 40,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 4416,
+      "start_time": 4416,
+      "end_time": 4416,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 41,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 4435,
+      "surah": "Al-Qasas",
+      "ayah": 42,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.89,
+      "arabic_text": "وَأَتْبَعْنَٰهُمْ فِى هَٰذِهِ ٱلدُّنْيَا لَعْنَةًۭ ۖ وَيَوْمَ ٱلْقِيَٰمَةِ هُم مِّنَ ٱلْمَقْبُوحِينَ",
+      "english_text": "We have caused a curse to follow them in this world as well; and on Resurrection Day they will find themselves among those who are bereft of all good.",
+      "start_time": 4435,
+      "end_time": 4447,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4554,
+      "surah": "Al-Qasas",
+      "ayah": 43,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.801,
+      "arabic_text": "وَلَقَدْ ءَاتَيْنَا مُوسَى ٱلْكِتَٰبَ مِنۢ بَعْدِ مَآ أَهْلَكْنَا ٱلْقُرُونَ ٱلْأُولَىٰ بَصَآئِرَ لِلنَّاسِ وَهُدًۭى وَرَحْمَةًۭ لَّعَلَّهُمْ يَتَذَكَّرُونَ",
+      "english_text": "And [then,] indeed, after We had destroyed those earlier generations [of sinners], We vouchsafed unto Moses [Our] revelation as a means of insight for men, and as a guidance and grace, so that they might bethink themselves [of Us].",
+      "start_time": 4554,
+      "end_time": 4566,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4566,
+      "surah": "Al-Qasas",
+      "ayah": 44,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.955,
+      "arabic_text": "وَمَا كُنتَ بِجَانِبِ ٱلْغَرْبِىِّ إِذْ قَضَيْنَآ إِلَىٰ مُوسَى ٱلْأَمْرَ وَمَا كُنتَ مِنَ ٱلشَّٰهِدِينَ",
+      "english_text": "NOW [as for thee, O Muhammad,] thou wert not present on the sunset slope [of Mount Sinai] when We imposed the Law upon Moses, nor wert thou among those who witnessed [his times]:",
+      "start_time": 4566,
+      "end_time": 4579,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4584,
+      "surah": "Al-Qasas",
+      "ayah": 45,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.68,
+      "arabic_text": "وَلَٰكِنَّآ أَنشَأْنَا قُرُونًۭا فَتَطَاوَلَ عَلَيْهِمُ ٱلْعُمُرُ ۚ وَمَا كُنتَ ثَاوِيًۭا فِىٓ أَهْلِ مَدْيَنَ تَتْلُوا۟ عَلَيْهِمْ ءَايَٰتِنَا وَلَٰكِنَّا كُنَّا مُرْسِلِينَ",
+      "english_text": "nay, but [between them and thee] We brought into being [many] generations, and long was their span of life. And neither didst thou dwell among the people of Madyan, conveying Our messages unto them: nay, but We have [always] been sending [Our message-bearers unto man].",
+      "start_time": 4584,
+      "end_time": 4588,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4602,
+      "surah": "Al-Qasas",
+      "ayah": 46,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.75,
+      "arabic_text": "وَمَا كُنتَ بِجَانِبِ ٱلطُّورِ إِذْ نَادَيْنَا وَلَٰكِن رَّحْمَةًۭ مِّن رَّبِّكَ لِتُنذِرَ قَوْمًۭا مَّآ أَتَىٰهُم مِّن نَّذِيرٍۢ مِّن قَبْلِكَ لَعَلَّهُمْ يَتَذَكَّرُونَ",
+      "english_text": "And neither wert thou present on the slope of Mount Sinai when We called out [to Moses]: but [thou, too, art sent] as an act of thy Sustainer’s grace, to warn people to whom no warner has come before thee, so that they might bethink themselves [of Us];",
+      "start_time": 4602,
+      "end_time": 4609,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4647,
+      "surah": "Al-Qasas",
+      "ayah": 47,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.741,
+      "arabic_text": "وَلَوْلَآ أَن تُصِيبَهُم مُّصِيبَةٌۢ بِمَا قَدَّمَتْ أَيْدِيهِمْ فَيَقُولُوا۟ رَبَّنَا لَوْلَآ أَرْسَلْتَ إِلَيْنَا رَسُولًۭا فَنَتَّبِعَ ءَايَٰتِكَ وَنَكُونَ مِنَ ٱلْمُؤْمِنِينَ",
+      "english_text": "and [We have sent thee] lest they say [on Judg­ment Day], when disaster befalls them as an outcome of what their own hands have wrought, “O our Sus­tainer, if only Thou had sent an apostle unto us, we would have followed Thy messages, and would have been among those who believe!”",
+      "start_time": 4647,
+      "end_time": 4654,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4674,
+      "surah": "Al-Qasas",
+      "ayah": 48,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.726,
+      "arabic_text": "فَلَمَّا جَآءَهُمُ ٱلْحَقُّ مِنْ عِندِنَا قَالُوا۟ لَوْلَآ أُوتِىَ مِثْلَ مَآ أُوتِىَ مُوسَىٰٓ ۚ أَوَلَمْ يَكْفُرُوا۟ بِمَآ أُوتِىَ مُوسَىٰ مِن قَبْلُ ۖ قَالُوا۟ سِحْرَانِ تَظَٰهَرَا وَقَالُوٓا۟ إِنَّا بِكُلٍّۢ كَٰفِرُونَ",
+      "english_text": "And yet, now that the truth has come unto them from Us, they say, “Why has he not been vouch­safed the like of what Moses was vouchsafed?” But did they not also, before this, deny the truth of what Moses was vouchsafed? [For] they do say, “Two examples of delusion, [seemingly] supporting each other!” And they add, “Behold, we refuse to accept either of them as true!”",
+      "start_time": 4674,
+      "end_time": 4680,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4689,
+      "surah": "Al-Qasas",
+      "ayah": 49,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.827,
+      "arabic_text": "قُلْ فَأْتُوا۟ بِكِتَٰبٍۢ مِّنْ عِندِ ٱللَّهِ هُوَ أَهْدَىٰ مِنْهُمَآ أَتَّبِعْهُ إِن كُنتُمْ صَٰدِقِينَ",
+      "english_text": "Say: “Produce, then, [another] revelation from God which would offer better guidance than either of these two [and] I shall follow it, if you speak the truth!”",
+      "start_time": 4689,
+      "end_time": 4703,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4704,
+      "surah": "Al-Qasas",
+      "ayah": 50,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.76,
+      "arabic_text": "فَإِن لَّمْ يَسْتَجِيبُوا۟ لَكَ فَٱعْلَمْ أَنَّمَا يَتَّبِعُونَ أَهْوَآءَهُمْ ۚ وَمَنْ أَضَلُّ مِمَّنِ ٱتَّبَعَ هَوَىٰهُ بِغَيْرِ هُدًۭى مِّنَ ٱللَّهِ ۚ إِنَّ ٱللَّهَ لَا يَهْدِى ٱلْقَوْمَ ٱلظَّٰلِمِينَ",
+      "english_text": "And since they cannot respond to this thy challenge, know that they are following only their own likes and dislikes: and who could be more astray than he who follows [but] his own likes and dislikes without any guidance from God? Verily, God does not grace with His guidance peo­ple who are given to evildoing!",
+      "start_time": 4704,
+      "end_time": 4713,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4901,
+      "surah": "Al-Qasas",
+      "ayah": 51,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.99,
+      "arabic_text": "۞ وَلَقَدْ وَصَّلْنَا لَهُمُ ٱلْقَوْلَ لَعَلَّهُمْ يَتَذَكَّرُونَ",
+      "english_text": "NOW, INDEED, We have caused this word [of Ours] to reach mankind step by step, so that they might [learn to] keep it in mind.",
+      "start_time": 4901,
+      "end_time": 4908,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4910,
+      "start_time": 4910,
+      "end_time": 4910,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 52,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 4918,
+      "surah": "Al-Qasas",
+      "ayah": 53,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.965,
+      "arabic_text": "وَإِذَا يُتْلَىٰ عَلَيْهِمْ قَالُوٓا۟ ءَامَنَّا بِهِۦٓ إِنَّهُ ٱلْحَقُّ مِن رَّبِّنَآ إِنَّا كُنَّا مِن قَبْلِهِۦ مُسْلِمِينَ",
+      "english_text": "and whenever it is [clearly] conveyed unto them, they [are bound to] profess, “We have come to believe in it, for, behold, it is the truth from our Sustainer - and, verily, even before this have we surrendered ourselves unto Him!”",
+      "start_time": 4918,
+      "end_time": 4933,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4938,
+      "surah": "Al-Qasas",
+      "ayah": 54,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.694,
+      "arabic_text": "أُو۟لَٰٓئِكَ يُؤْتَوْنَ أَجْرَهُم مَّرَّتَيْنِ بِمَا صَبَرُوا۟ وَيَدْرَءُونَ بِٱلْحَسَنَةِ ٱلسَّيِّئَةَ وَمِمَّا رَزَقْنَٰهُمْ يُنفِقُونَ",
+      "english_text": "These it is that shall receive a twofold reward for having been patient in adversity, and having repelled evil with good, and having spent on others out of what We provided for them as sus­tenance,",
+      "start_time": 4938,
+      "end_time": 4947,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4956,
+      "surah": "Al-Qasas",
+      "ayah": 55,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.773,
+      "arabic_text": "وَإِذَا سَمِعُوا۟ ٱللَّغْوَ أَعْرَضُوا۟ عَنْهُ وَقَالُوا۟ لَنَآ أَعْمَٰلُنَا وَلَكُمْ أَعْمَٰلُكُمْ سَلَٰمٌ عَلَيْكُمْ لَا نَبْتَغِى ٱلْجَٰهِلِينَ",
+      "english_text": "and, whenever they heard frivolous talk, having turned away from it and said: “Unto us shall be accounted Our deeds, and unto you, your deeds. Peace be upon you - [but] we do not seek out such as are ignorant [of the meaning of right and wrong].”",
+      "start_time": 4956,
+      "end_time": 4968,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4972,
+      "surah": "Al-Qasas",
+      "ayah": 56,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.88,
+      "arabic_text": "إِنَّكَ لَا تَهْدِى مَنْ أَحْبَبْتَ وَلَٰكِنَّ ٱللَّهَ يَهْدِى مَن يَشَآءُ ۚ وَهُوَ أَعْلَمُ بِٱلْمُهْتَدِينَ",
+      "english_text": "VERILY, thou canst not guide aright everyone whom thou lovest: but it is God who guides him that wills [to be guided]; and He is fully aware of all who would let themselves be guided.",
+      "start_time": 4972,
+      "end_time": 4982,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4995,
+      "start_time": 4995,
+      "end_time": 4995,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 57,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5018,
+      "surah": "Al-Qasas",
+      "ayah": 58,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.722,
+      "arabic_text": "وَكَمْ أَهْلَكْنَا مِن قَرْيَةٍۭ بَطِرَتْ مَعِيشَتَهَا ۖ فَتِلْكَ مَسَٰكِنُهُمْ لَمْ تُسْكَن مِّنۢ بَعْدِهِمْ إِلَّا قَلِيلًۭا ۖ وَكُنَّا نَحْنُ ٱلْوَٰرِثِينَ",
+      "english_text": "And how many a community that [once] exult­ed in its wanton wealth and ease of life have We destroyed, so that those dwelling-places of theirs – all but a few - have never been dwelt-in after them: for it is indeed We alone who shall remain when all else will have passed away!",
+      "start_time": 5018,
+      "end_time": 5027,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5040,
+      "surah": "Al-Qasas",
+      "ayah": 59,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.819,
+      "arabic_text": "وَمَا كَانَ رَبُّكَ مُهْلِكَ ٱلْقُرَىٰ حَتَّىٰ يَبْعَثَ فِىٓ أُمِّهَا رَسُولًۭا يَتْلُوا۟ عَلَيْهِمْ ءَايَٰتِنَا ۚ وَمَا كُنَّا مُهْلِكِى ٱلْقُرَىٰٓ إِلَّا وَأَهْلُهَا ظَٰلِمُونَ",
+      "english_text": "Yet, withal, thy Sustainer would never destroy a community without having [first] raised in its midst an apostle who would convey unto them Our mes­sages; and never would We destroy a community unless its people are wont to do wrong [to one another].",
+      "start_time": 5040,
+      "end_time": 5053,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5219,
+      "surah": "Al-Qasas",
+      "ayah": 60,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.815,
+      "arabic_text": "وَمَآ أُوتِيتُم مِّن شَىْءٍۢ فَمَتَٰعُ ٱلْحَيَوٰةِ ٱلدُّنْيَا وَزِينَتُهَا ۚ وَمَا عِندَ ٱللَّهِ خَيْرٌۭ وَأَبْقَىٰٓ ۚ أَفَلَا تَعْقِلُونَ",
+      "english_text": "And [remember:] whatever you are given [now] is but for the [passing] enjoyment of life in this world, and for its embellishment - whereas that which is with God is [so much] better and more enduring. Will you not, then, use your reason?",
+      "start_time": 5219,
+      "end_time": 5227,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5235,
+      "start_time": 5235,
+      "end_time": 5235,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 61,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5252,
+      "start_time": 5252,
+      "end_time": 5252,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 62,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5268,
+      "surah": "Al-Qasas",
+      "ayah": 63,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.798,
+      "arabic_text": "قَالَ ٱلَّذِينَ حَقَّ عَلَيْهِمُ ٱلْقَوْلُ رَبَّنَا هَٰٓؤُلَآءِ ٱلَّذِينَ أَغْوَيْنَآ أَغْوَيْنَٰهُمْ كَمَا غَوَيْنَا ۖ تَبَرَّأْنَآ إِلَيْكَ ۖ مَا كَانُوٓا۟ إِيَّانَا يَعْبُدُونَ",
+      "english_text": "[whereupon] they against whom the word [of truth] shall thus stand revealed will exclaim: O our Sustainer! Those whom we caused to err so grievously, we but caused to err as we our­selves had been erring. We [now] disavow them before Thee: it was not us that they worshipped!”",
+      "start_time": 5268,
+      "end_time": 5286,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5286,
+      "surah": "Al-Qasas",
+      "ayah": 64,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.965,
+      "arabic_text": "وَقِيلَ ٱدْعُوا۟ شُرَكَآءَكُمْ فَدَعَوْهُمْ فَلَمْ يَسْتَجِيبُوا۟ لَهُمْ وَرَأَوُا۟ ٱلْعَذَابَ ۚ لَوْ أَنَّهُمْ كَانُوا۟ يَهْتَدُونَ",
+      "english_text": "And [they] will be told: “Call [now] unto those [beings or powers] to whom you were wont to ascribe a share in God’s divinity!” and they will call unto them [for help], but those [fake objects of worship] will not respond to them: whereupon they will see the suffering [that awaits them - the suffering which could have been avoided] if only they had allowed them­selves to be guided!",
+      "start_time": 5286,
+      "end_time": 5302,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5302,
+      "surah": "Al-Qasas",
+      "ayah": 65,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.99,
+      "arabic_text": "وَيَوْمَ يُنَادِيهِمْ فَيَقُولُ مَاذَآ أَجَبْتُمُ ٱلْمُرْسَلِينَ",
+      "english_text": "And on that Day He will call unto them, and will ask: “How did you respond to My message­ bearers?”",
+      "start_time": 5302,
+      "end_time": 5310,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5316,
+      "surah": "Al-Qasas",
+      "ayah": 66,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.8,
+      "arabic_text": "فَعَمِيَتْ عَلَيْهِمُ ٱلْأَنۢبَآءُ يَوْمَئِذٍۢ فَهُمْ لَا يَتَسَآءَلُونَ",
+      "english_text": "but all arguments and excuses will by then have been erased from their minds, and they will not [be able to] obtain any [helpful] answer from one another.",
+      "start_time": 5316,
+      "end_time": 5321,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5324,
+      "start_time": 5324,
+      "end_time": 5324,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 67,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5333,
+      "surah": "Al-Qasas",
+      "ayah": 68,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.771,
+      "arabic_text": "وَرَبُّكَ يَخْلُقُ مَا يَشَآءُ وَيَخْتَارُ ۗ مَا كَانَ لَهُمُ ٱلْخِيَرَةُ ۚ سُبْحَٰنَ ٱللَّهِ وَتَعَٰلَىٰ عَمَّا يُشْرِكُونَ",
+      "english_text": "AND [thus it is:] thy Sustainer creates whatever He wills; and He chooses [for mankind] whatever is best for them. Limitless is God in His glory, and sub­limely exalted above anything to which they may ascribe a share in His divinity!",
+      "start_time": 5333,
+      "end_time": 5343,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5351,
+      "surah": "Al-Qasas",
+      "ayah": 69,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.99,
+      "arabic_text": "وَرَبُّكَ يَعْلَمُ مَا تُكِنُّ صُدُورُهُمْ وَمَا يُعْلِنُونَ",
+      "english_text": "And thy Sustainer knows all that their hearts conceal as well as all that they bring into the open:",
+      "start_time": 5351,
+      "end_time": 5359,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5368,
+      "surah": "Al-Qasas",
+      "ayah": 70,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.815,
+      "arabic_text": "وَهُوَ ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ۖ لَهُ ٱلْحَمْدُ فِى ٱلْأُولَىٰ وَٱلْءَاخِرَةِ ۖ وَلَهُ ٱلْحُكْمُ وَإِلَيْهِ تُرْجَعُونَ",
+      "english_text": "for He is God, save whom there is no deity. Unto Him all praise is due, at the beginning and at the end [of time]; and with Him rests all judgment; and unto Him shall you all be brought back.",
+      "start_time": 5368,
+      "end_time": 5375,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5393,
+      "surah": "Al-Qasas",
+      "ayah": 71,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.718,
+      "arabic_text": "قُلْ أَرَءَيْتُمْ إِن جَعَلَ ٱللَّهُ عَلَيْكُمُ ٱلَّيْلَ سَرْمَدًا إِلَىٰ يَوْمِ ٱلْقِيَٰمَةِ مَنْ إِلَٰهٌ غَيْرُ ٱللَّهِ يَأْتِيكُم بِضِيَآءٍ ۖ أَفَلَا تَسْمَعُونَ",
+      "english_text": "Say: “Have you ever considered [this]: If God had willed that there should always be night about you, without break, until the Day of Resurrection - is there any deity other than God that could bring you light? Will you not, then, listen [to the truth]?”",
+      "start_time": 5393,
+      "end_time": 5405,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5418,
+      "surah": "Al-Qasas",
+      "ayah": 72,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.747,
+      "arabic_text": "قُلْ أَرَءَيْتُمْ إِن جَعَلَ ٱللَّهُ عَلَيْكُمُ ٱلنَّهَارَ سَرْمَدًا إِلَىٰ يَوْمِ ٱلْقِيَٰمَةِ مَنْ إِلَٰهٌ غَيْرُ ٱللَّهِ يَأْتِيكُم بِلَيْلٍۢ تَسْكُنُونَ فِيهِ ۖ أَفَلَا تُبْصِرُونَ",
+      "english_text": "Say: “Have you ever considered [this]: If God had willed that there should always be daylight about you, without break, until the Day of Resurrection - is there any deity other than God that could bring you [the darkness of] night, wherein you might rest? Will you not, then, see [the truth]?”",
+      "start_time": 5418,
+      "end_time": 5432,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5436,
+      "surah": "Al-Qasas",
+      "ayah": 73,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.924,
+      "arabic_text": "وَمِن رَّحْمَتِهِۦ جَعَلَ لَكُمُ ٱلَّيْلَ وَٱلنَّهَارَ لِتَسْكُنُوا۟ فِيهِ وَلِتَبْتَغُوا۟ مِن فَضْلِهِۦ وَلَعَلَّكُمْ تَشْكُرُونَ",
+      "english_text": "For it is out of His grace that He has made for you the night and the day, so that you might rest therein as well as seek to obtain [what you need] of His bounty: and [He gave you all this] so that you might have cause to be grateful.",
+      "start_time": 5436,
+      "end_time": 5449,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5449,
+      "surah": "Al-Qasas",
+      "ayah": 74,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.933,
+      "arabic_text": "وَيَوْمَ يُنَادِيهِمْ فَيَقُولُ أَيْنَ شُرَكَآءِىَ ٱلَّذِينَ كُنتُمْ تَزْعُمُونَ",
+      "english_text": "AND ON THAT DAY He will call unto those [that shall have been arraigned before His judgment seat], and will ask: “Where, now, are those [beings or powers] whom you imagined to have a share in My divinity?”",
+      "start_time": 5449,
+      "end_time": 5461,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5461,
+      "surah": "Al-Qasas",
+      "ayah": 75,
+      "surah_number": 28,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.933,
+      "arabic_text": "وَنَزَعْنَا مِن كُلِّ أُمَّةٍۢ شَهِيدًۭا فَقُلْنَا هَاتُوا۟ بُرْهَٰنَكُمْ فَعَلِمُوٓا۟ أَنَّ ٱلْحَقَّ لِلَّهِ وَضَلَّ عَنْهُم مَّا كَانُوا۟ يَفْتَرُونَ",
+      "english_text": "And [they will remain silent: for by then] We will have called forth witnesses from within every community, and will have said [unto the sinners]: “Produce an evidence for what you have been claim­ing!” And so they will come to understand that all truth is God’s [alone]; and all their false imagery will have forsaken them.",
+      "start_time": 5461,
+      "end_time": 5484,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 5488,
+      "start_time": 5488,
+      "end_time": 5488,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 76,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5516,
+      "start_time": 5516,
+      "end_time": 5516,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 77,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5543,
+      "start_time": 5543,
+      "end_time": 5543,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 78,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5571,
+      "start_time": 5571,
+      "end_time": 5571,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 79,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5598,
+      "start_time": 5598,
+      "end_time": 5598,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 80,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5626,
+      "start_time": 5626,
+      "end_time": 5626,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 81,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5653,
+      "start_time": 5653,
+      "end_time": 5653,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 82,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5680,
+      "start_time": 5680,
+      "end_time": 5680,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 83,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5708,
+      "start_time": 5708,
+      "end_time": 5708,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 84,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5735,
+      "start_time": 5735,
+      "end_time": 5735,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 85,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5763,
+      "start_time": 5763,
+      "end_time": 5763,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 86,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5790,
+      "start_time": 5790,
+      "end_time": 5790,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 87,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5818,
+      "start_time": 5818,
+      "end_time": 5818,
+      "surah": "Al-Qasas",
+      "surah_number": 28,
+      "ayah": 88,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 5845,
+      "surah": "Al-Ankaboot",
+      "ayah": 1,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.92,
+      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ الٓمٓ",
+      "english_text": "Alif. Lam. Mim.",
+      "start_time": 5845,
+      "end_time": 5908,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 6196,
+      "surah": "Al-Ankaboot",
+      "ayah": 2,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.818,
+      "arabic_text": "أَحَسِبَ ٱلنَّاسُ أَن يُتْرَكُوٓا۟ أَن يَقُولُوٓا۟ ءَامَنَّا وَهُمْ لَا يُفْتَنُونَ",
+      "english_text": "DO MEN THINK that on their [mere] saying, “We have attained to faith”, they will be left to themselves, and will not be put to a test?",
+      "start_time": 6196,
+      "end_time": 6202,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 6221,
+      "start_time": 6221,
+      "end_time": 6221,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 3,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6247,
+      "start_time": 6247,
+      "end_time": 6247,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 4,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6272,
+      "start_time": 6272,
+      "end_time": 6272,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 5,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6297,
+      "start_time": 6297,
+      "end_time": 6297,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 6,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6322,
+      "start_time": 6322,
+      "end_time": 6322,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 7,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6348,
+      "start_time": 6348,
+      "end_time": 6348,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 8,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6373,
+      "start_time": 6373,
+      "end_time": 6373,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 9,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6398,
+      "start_time": 6398,
+      "end_time": 6398,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 10,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6423,
+      "start_time": 6423,
+      "end_time": 6423,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 11,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6449,
+      "start_time": 6449,
+      "end_time": 6449,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 12,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6474,
+      "start_time": 6474,
+      "end_time": 6474,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 13,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6499,
+      "start_time": 6499,
+      "end_time": 6499,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 14,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6524,
+      "start_time": 6524,
+      "end_time": 6524,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 15,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6550,
+      "start_time": 6550,
+      "end_time": 6550,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 16,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6575,
+      "surah": "Al-Ankaboot",
+      "ayah": 17,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.742,
+      "arabic_text": "إِنَّمَا تَعْبُدُونَ مِن دُونِ ٱللَّهِ أَوْثَٰنًۭا وَتَخْلُقُونَ إِفْكًا ۚ إِنَّ ٱلَّذِينَ تَعْبُدُونَ مِن دُونِ ٱللَّهِ لَا يَمْلِكُونَ لَكُمْ رِزْقًۭا فَٱبْتَغُوا۟ عِندَ ٱللَّهِ ٱلرِّزْقَ وَٱعْبُدُوهُ وَٱشْكُرُوا۟ لَهُۥٓ ۖ إِلَيْهِ تُرْجَعُونَ",
+      "english_text": "You worship only [lifeless] idols instead of God, and [thus] you give visible shape to a lie! Behold, those [things and beings] that you worship instead of God have it not in their power to provide sustenance for you: seek, then, all [your] sustenance from God, and worship Him [alone] and be grateful to Him: [for] unto Him you shall be brought back!",
+      "start_time": 6575,
+      "end_time": 6589,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6589,
+      "surah": "Al-Ankaboot",
+      "ayah": 18,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.955,
+      "arabic_text": "وَإِن تُكَذِّبُوا۟ فَقَدْ كَذَّبَ أُمَمٌۭ مِّن قَبْلِكُمْ ۖ وَمَا عَلَى ٱلرَّسُولِ إِلَّا ٱلْبَلَٰغُ ٱلْمُبِينُ",
+      "english_text": "“And if you give [me] the lie - well, [other] communities have given the lie [to Gods prophets] before your time: but no more is an apostle bound to do than clearly deliver the message [entrusted to him].”",
+      "start_time": 6589,
+      "end_time": 6602,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6602,
+      "surah": "Al-Ankaboot",
+      "ayah": 19,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.99,
+      "arabic_text": "أَوَلَمْ يَرَوْا۟ كَيْفَ يُبْدِئُ ٱللَّهُ ٱلْخَلْقَ ثُمَّ يُعِيدُهُۥٓ ۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٌۭ",
+      "english_text": "Are then they [who deny the truth] not aware of how God creates [life] in the first instance, and then brings it forth anew? This, verily, is easy for God!",
+      "start_time": 6602,
+      "end_time": 6615,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6628,
+      "surah": "Al-Ankaboot",
+      "ayah": 20,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.7,
+      "arabic_text": "قُلْ سِيرُوا۟ فِى ٱلْأَرْضِ فَٱنظُرُوا۟ كَيْفَ بَدَأَ ٱلْخَلْقَ ۚ ثُمَّ ٱللَّهُ يُنشِئُ ٱلنَّشْأَةَ ٱلْءَاخِرَةَ ۚ إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ",
+      "english_text": "Say: “Go all over the earth and behold how [wondrously] He has created [man] in the first in­stance: and thus, too, will God bring into being your second life for, verily, God has the power to will anything!",
+      "start_time": 6628,
+      "end_time": 6631,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6648,
+      "surah": "Al-Ankaboot",
+      "ayah": 21,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.99,
+      "arabic_text": "يُعَذِّبُ مَن يَشَآءُ وَيَرْحَمُ مَن يَشَآءُ ۖ وَإِلَيْهِ تُقْلَبُونَ",
+      "english_text": "He causes to suffer whomever He wills, and bestows His mercy on whomever He wills; and unto Him you shall be made to return:",
+      "start_time": 6648,
+      "end_time": 6659,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6659,
+      "surah": "Al-Ankaboot",
+      "ayah": 22,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.99,
+      "arabic_text": "وَمَآ أَنتُم بِمُعْجِزِينَ فِى ٱلْأَرْضِ وَلَا فِى ٱلسَّمَآءِ ۖ وَمَا لَكُم مِّن دُونِ ٱللَّهِ مِن وَلِىٍّۢ وَلَا نَصِيرٍۢ",
+      "english_text": "and never - not on earth and not in the skies - can you [hope to] elude Him: and you have none to protect you from God, and none to bring you succour.”",
+      "start_time": 6659,
+      "end_time": 6676,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6691,
+      "surah": "Al-Ankaboot",
+      "ayah": 23,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.771,
+      "arabic_text": "وَٱلَّذِينَ كَفَرُوا۟ بِـَٔايَٰتِ ٱللَّهِ وَلِقَآئِهِۦٓ أُو۟لَٰٓئِكَ يَئِسُوا۟ مِن رَّحْمَتِى وَأُو۟لَٰٓئِكَ لَهُمْ عَذَابٌ أَلِيمٌۭ",
+      "english_text": "And [thus it is:] they who are bent on denying the truth of God’s messages and of their [ultimate] meeting with Him - it is they who abandon all hope of My grace and mercy: and it is they whom grievous suffering awaits [in the life to come].",
+      "start_time": 6691,
+      "end_time": 6703,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6703,
+      "surah": "Al-Ankaboot",
+      "ayah": 24,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.94,
+      "arabic_text": "فَمَا كَانَ جَوَابَ قَوْمِهِۦٓ إِلَّآ أَن قَالُوا۟ ٱقْتُلُوهُ أَوْ حَرِّقُوهُ فَأَنجَىٰهُ ٱللَّهُ مِنَ ٱلنَّارِ ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍۢ لِّقَوْمٍۢ يُؤْمِنُونَ",
+      "english_text": "Now [as for Abraham,] his people’s only answer was, “Slay him, or burn him!” – but God saved him from the fire. Behold, in this [story] there are messages indeed for people who will believe!",
+      "start_time": 6703,
+      "end_time": 6724,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6733,
+      "surah": "Al-Ankaboot",
+      "ayah": 25,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.737,
+      "arabic_text": "وَقَالَ إِنَّمَا ٱتَّخَذْتُم مِّن دُونِ ٱللَّهِ أَوْثَٰنًۭا مَّوَدَّةَ بَيْنِكُمْ فِى ٱلْحَيَوٰةِ ٱلدُّنْيَا ۖ ثُمَّ يَوْمَ ٱلْقِيَٰمَةِ يَكْفُرُ بَعْضُكُم بِبَعْضٍۢ وَيَلْعَنُ بَعْضُكُم بَعْضًۭا وَمَأْوَىٰكُمُ ٱلنَّارُ وَمَا لَكُم مِّن نَّٰصِرِينَ",
+      "english_text": "And [Abraham] said: “You have chosen to worship idols instead of God for no other reason than to have a bond of love in the life of this world, between yourselves [and your forebears]: but then, on Resurrection Day, you shall disown one another and curse one another - for the goal of you all will be the fire, and you will have none to succour you.",
+      "start_time": 6733,
+      "end_time": 6759,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6913,
+      "surah": "Al-Ankaboot",
+      "ayah": 26,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.733,
+      "arabic_text": "۞ فَـَٔامَنَ لَهُۥ لُوطٌۭ ۘ وَقَالَ إِنِّى مُهَاجِرٌ إِلَىٰ رَبِّىٓ ۖ إِنَّهُۥ هُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+      "english_text": "Thereupon [his brother’s son] Lot came to believe in him and said: “Verily, I [too] shall forsake the domain of evil [and turn] to my Sustainer: for, verily, He alone is almighty, truly wise!”",
+      "start_time": 6913,
+      "end_time": 6918,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6928,
+      "start_time": 6928,
+      "end_time": 6928,
+      "surah": "Al-Ankaboot",
+      "surah_number": 29,
+      "ayah": 27,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 6943,
+      "surah": "Al-Ankaboot",
+      "ayah": 28,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.745,
+      "arabic_text": "وَلُوطًا إِذْ قَالَ لِقَوْمِهِۦٓ إِنَّكُمْ لَتَأْتُونَ ٱلْفَٰحِشَةَ مَا سَبَقَكُم بِهَا مِنْ أَحَدٍۢ مِّنَ ٱلْعَٰلَمِينَ",
+      "english_text": "And Lot, [too, was inspired by Us] when he said unto his people: “Verily, you commit abominations such as none in all the world has ever committed before you!",
+      "start_time": 6943,
+      "end_time": 6947,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6969,
+      "surah": "Al-Ankaboot",
+      "ayah": 29,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.68,
+      "arabic_text": "أَئِنَّكُمْ لَتَأْتُونَ ٱلرِّجَالَ وَتَقْطَعُونَ ٱلسَّبِيلَ وَتَأْتُونَ فِى نَادِيكُمُ ٱلْمُنكَرَ ۖ فَمَا كَانَ جَوَابَ قَوْمِهِۦٓ إِلَّآ أَن قَالُوا۟ ٱئْتِنَا بِعَذَابِ ٱللَّهِ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ",
+      "english_text": "Must you indeed approach men [with lust], and thus cut across the way [of nature]? and must you commit these shameful deeds in your open] assemblies?” But his people’s only answer was, “Bring down upon us God’s chastisement, if thou art a man of truth!”",
+      "start_time": 6969,
+      "end_time": 6973,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 6982,
+      "surah": "Al-Ankaboot",
+      "ayah": 30,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.734,
+      "arabic_text": "قَالَ رَبِّ ٱنصُرْنِى عَلَى ٱلْقَوْمِ ٱلْمُفْسِدِينَ",
+      "english_text": "[And] he prayed: “O my Sustainer! Succour Thou me against these people who spread corrup­tion!”",
+      "start_time": 6982,
+      "end_time": 7032,
+      "matched_token_indices": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 6997,
+      "surah": "Al-Ankaboot",
+      "ayah": 31,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.683,
+      "arabic_text": "وَلَمَّا جَآءَتْ رُسُلُنَآ إِبْرَٰهِيمَ بِٱلْبُشْرَىٰ قَالُوٓا۟ إِنَّا مُهْلِكُوٓا۟ أَهْلِ هَٰذِهِ ٱلْقَرْيَةِ ۖ إِنَّ أَهْلَهَا كَانُوا۟ ظَٰلِمِينَ",
+      "english_text": "And so, when Our [heavenly] messengers came to Abraham with the glad tiding [of the birth of Isaac], they [also] said, “Behold, we are about to destroy the people of that land, for its people are truly evildoers!”",
+      "start_time": 6997,
+      "end_time": 7003,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 7012,
+      "surah": "Al-Ankaboot",
+      "ayah": 32,
+      "surah_number": 29,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.743,
+      "arabic_text": "قَالَ إِنَّ فِيهَا لُوطًۭا ۚ قَالُوا۟ نَحْنُ أَعْلَمُ بِمَن فِيهَا ۖ لَنُنَجِّيَنَّهُۥ وَأَهْلَهُۥٓ إِلَّا ٱمْرَأَتَهُۥ كَانَتْ مِنَ ٱلْغَٰبِرِينَ",
+      "english_text": "[And when Abraham] exclaimed, “But Lot lives there!” - they answered: We know fully well who is there; most certainly we shall save him and his household - all but his wife: she will indeed be among those that stay behind.”",
+      "start_time": 7012,
+      "end_time": 7017,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 7033,
+      "surah": "Al-Ankaboot",
+      "ayah": 33,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.931,
+      "arabic_text": "وَلَمَّآ أَن جَآءَتْ رُسُلُنَا لُوطًۭا سِىٓءَ بِهِمْ وَضَاقَ بِهِمْ ذَرْعًۭا وَقَالُوا۟ لَا تَخَفْ وَلَا تَحْزَنْ ۖ إِنَّا مُنَجُّوكَ وَأَهْلَكَ إِلَّا ٱمْرَأَتَكَ كَانَتْ مِنَ ٱلْغَٰبِرِينَ",
+      "english_text": "And when Our messengers came unto Lot, he was sorely grieved on their account, seeing that it was beyond his power to shield them; but they said: “Fear not, and grieve not! Behold, we shall save thee and thy household - all but thy wife: she will indeed be among those that stay behind.",
+      "start_time": 7033,
+      "end_time": 7059,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          19,
+          18
+        ],
+        [
+          20,
+          19
+        ],
+        [
+          21,
+          20
+        ],
+        [
+          22,
+          21
+        ],
+        [
+          23,
+          22
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7060,
+      "surah": "Al-Ankaboot",
+      "ayah": 34,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.707,
+      "arabic_text": "إِنَّا مُنزِلُونَ عَلَىٰٓ أَهْلِ هَٰذِهِ ٱلْقَرْيَةِ رِجْزًۭا مِّنَ ٱلسَّمَآءِ بِمَا كَانُوا۟ يَفْسُقُونَ",
+      "english_text": "Verily, we shall bring down upon the people of this land a horror from heaven in requital of all their iniquitous doings!”",
+      "start_time": 7060,
+      "end_time": 7182,
+      "matched_token_indices": [
+        [
+          18,
+          0
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          28,
+          2
+        ],
+        [
+          29,
+          3
+        ],
+        [
+          30,
+          4
+        ],
+        [
+          31,
+          5
+        ],
+        [
+          32,
+          6
+        ],
+        [
+          33,
+          7
+        ],
+        [
+          34,
+          8
+        ],
+        [
+          35,
+          9
+        ],
+        [
+          36,
+          10
+        ],
+        [
+          37,
+          11
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7183,
+      "surah": "Al-Ankaboot",
+      "ayah": 35,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.685,
+      "arabic_text": "وَلَقَد تَّرَكْنَا مِنْهَآ ءَايَةًۢ بَيِّنَةًۭ لِّقَوْمٍۢ يَعْقِلُونَ",
+      "english_text": "And [so it happened; and] thereof, indeed, We have left a clear sign for people who use their reason.",
+      "start_time": 7183,
+      "end_time": 7193,
+      "matched_token_indices": [
+        [
+          12,
+          0
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          18,
+          6
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7194,
+      "surah": "Al-Ankaboot",
+      "ayah": 36,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.85,
+      "arabic_text": "وَإِلَىٰ مَدْيَنَ أَخَاهُمْ شُعَيْبًۭا فَقَالَ يَٰقَوْمِ ٱعْبُدُوا۟ ٱللَّهَ وَٱرْجُوا۟ ٱلْيَوْمَ ٱلْءَاخِرَ وَلَا تَعْثَوْا۟ فِى ٱلْأَرْضِ مُفْسِدِينَ",
+      "english_text": "AND UNTO [the people of] Madyan [We sent] their brother Shu’ayb who thereupon said: “O my peo­ple! Worship God [alone], and look forward to the Last Day, and do not act wickedly on earth by spreading corruption!”",
+      "start_time": 7194,
+      "end_time": 7212,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7213,
+      "surah": "Al-Ankaboot",
+      "ayah": 37,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.688,
+      "arabic_text": "فَكَذَّبُوهُ فَأَخَذَتْهُمُ ٱلرَّجْفَةُ فَأَصْبَحُوا۟ فِى دَارِهِمْ جَٰثِمِينَ",
+      "english_text": "But they gave him the lie. Thereupon an earthquake overtook them: and then they lay lifeless, in their very homes, on the ground.",
+      "start_time": 7213,
+      "end_time": 7221,
+      "matched_token_indices": [
+        [
+          13,
+          0
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          16,
+          3
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          18,
+          5
+        ],
+        [
+          19,
+          6
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7222,
+      "surah": "Al-Ankaboot",
+      "ayah": 38,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.713,
+      "arabic_text": "وَعَادًۭا وَثَمُودَا۟ وَقَد تَّبَيَّنَ لَكُم مِّن مَّسَٰكِنِهِمْ ۖ وَزَيَّنَ لَهُمُ ٱلشَّيْطَٰنُ أَعْمَٰلَهُمْ فَصَدَّهُمْ عَنِ ٱلسَّبِيلِ وَكَانُوا۟ مُسْتَبْصِرِينَ",
+      "english_text": "AND [the tribes of] Ad and Thamud [too, did We destroy -] as should have become obvious to you from [whatever there remains of] their dwellings. [They perished] because Satan had made their [sinful] doings seem goodly to them, and thus had barred them from the path [of God] despite their having been endowed with the ability to perceive the truth.",
+      "start_time": 7222,
+      "end_time": 7243,
+      "matched_token_indices": [
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          19,
+          12
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          21,
+          14
+        ],
+        [
+          22,
+          15
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7244,
+      "surah": "Al-Ankaboot",
+      "ayah": 39,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.685,
+      "arabic_text": "وَقَٰرُونَ وَفِرْعَوْنَ وَهَٰمَٰنَ ۖ وَلَقَدْ جَآءَهُم مُّوسَىٰ بِٱلْبَيِّنَٰتِ فَٱسْتَكْبَرُوا۟ فِى ٱلْأَرْضِ وَمَا كَانُوا۟ سَٰبِقِينَ",
+      "english_text": "And [thus, too, did We deal with] Qarun and Pharaoh, and Haman: to them had come Moses with all evidence of the truth, but they behaved arrogantly on earth [and rejected him]; and withal, they could not escape [Us].",
+      "start_time": 7244,
+      "end_time": 7265,
+      "matched_token_indices": [
+        [
+          16,
+          0
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          18,
+          2
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          20,
+          4
+        ],
+        [
+          21,
+          5
+        ],
+        [
+          22,
+          6
+        ],
+        [
+          23,
+          7
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          25,
+          9
+        ],
+        [
+          26,
+          10
+        ],
+        [
+          27,
+          11
+        ],
+        [
+          28,
+          12
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7266,
+      "surah": "Al-Ankaboot",
+      "ayah": 40,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.62,
+      "arabic_text": "فَكُلًّا أَخَذْنَا بِذَنۢبِهِۦ ۖ فَمِنْهُم مَّنْ أَرْسَلْنَا عَلَيْهِ حَاصِبًۭا وَمِنْهُم مَّنْ أَخَذَتْهُ ٱلصَّيْحَةُ وَمِنْهُم مَّنْ خَسَفْنَا بِهِ ٱلْأَرْضَ وَمِنْهُم مَّنْ أَغْرَقْنَا ۚ وَمَا كَانَ ٱللَّهُ لِيَظْلِمَهُمْ وَلَٰكِن كَانُوٓا۟ أَنفُسَهُمْ يَظْلِمُونَ",
+      "english_text": "For, every one of them, did We take to task for his sin: and so, upon some of them We let loose a deadly storm wind; and some of them were overtaken by a [sudden] blast; and some of them We caused to be swallowed by the earth: and some of them We caused to drown. And it was not God who wronged them, but it was they who had wronged themselves.",
+      "start_time": 7266,
+      "end_time": 7303,
+      "matched_token_indices": [
+        [
+          13,
+          0
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          16,
+          3
+        ],
+        [
+          20,
+          4
+        ],
+        [
+          21,
+          5
+        ],
+        [
+          22,
+          6
+        ],
+        [
+          23,
+          7
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          25,
+          9
+        ],
+        [
+          26,
+          10
+        ],
+        [
+          27,
+          11
+        ],
+        [
+          31,
+          12
+        ],
+        [
+          32,
+          13
+        ],
+        [
+          33,
+          14
+        ],
+        [
+          34,
+          15
+        ],
+        [
+          35,
+          16
+        ],
+        [
+          36,
+          17
+        ],
+        [
+          37,
+          18
+        ],
+        [
+          38,
+          19
+        ],
+        [
+          39,
+          20
+        ],
+        [
+          40,
+          21
+        ],
+        [
+          41,
+          22
+        ],
+        [
+          42,
+          23
+        ],
+        [
+          43,
+          24
+        ],
+        [
+          44,
+          25
+        ],
+        [
+          45,
+          26
+        ],
+        [
+          46,
+          27
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7304,
+      "surah": "Al-Ankaboot",
+      "ayah": 41,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.639,
+      "arabic_text": "مَثَلُ ٱلَّذِينَ ٱتَّخَذُوا۟ مِن دُونِ ٱللَّهِ أَوْلِيَآءَ كَمَثَلِ ٱلْعَنكَبُوتِ ٱتَّخَذَتْ بَيْتًۭا ۖ وَإِنَّ أَوْهَنَ ٱلْبُيُوتِ لَبَيْتُ ٱلْعَنكَبُوتِ ۖ لَوْ كَانُوا۟ يَعْلَمُونَ",
+      "english_text": "The parable of those who take [beings or forces] other than God for their protectors is that of the spider which makes for itself a house: for, behold, the frailest of all houses is the spiders house. Could they but understand this!",
+      "start_time": 7304,
+      "end_time": 7326,
+      "matched_token_indices": [
+        [
+          34,
+          0
+        ],
+        [
+          35,
+          1
+        ],
+        [
+          36,
+          2
+        ],
+        [
+          37,
+          3
+        ],
+        [
+          38,
+          4
+        ],
+        [
+          39,
+          5
+        ],
+        [
+          40,
+          6
+        ],
+        [
+          41,
+          7
+        ],
+        [
+          42,
+          8
+        ],
+        [
+          43,
+          9
+        ],
+        [
+          44,
+          10
+        ],
+        [
+          45,
+          11
+        ],
+        [
+          46,
+          12
+        ],
+        [
+          47,
+          13
+        ],
+        [
+          48,
+          14
+        ],
+        [
+          49,
+          15
+        ],
+        [
+          50,
+          16
+        ],
+        [
+          51,
+          17
+        ],
+        [
+          52,
+          18
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7327,
+      "surah": "Al-Ankaboot",
+      "ayah": 42,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.708,
+      "arabic_text": "إِنَّ ٱللَّهَ يَعْلَمُ مَا يَدْعُونَ مِن دُونِهِۦ مِن شَىْءٍۢ ۚ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+      "english_text": "Verily, God knows whatever it is that men invoke instead of Him for He alone is almighty, truly wise.",
+      "start_time": 7327,
+      "end_time": 7349,
+      "matched_token_indices": [
+        [
+          19,
+          0
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          21,
+          2
+        ],
+        [
+          22,
+          3
+        ],
+        [
+          23,
+          4
+        ],
+        [
+          24,
+          5
+        ],
+        [
+          25,
+          6
+        ],
+        [
+          26,
+          7
+        ],
+        [
+          27,
+          8
+        ],
+        [
+          28,
+          9
+        ],
+        [
+          29,
+          10
+        ],
+        [
+          30,
+          11
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7350,
+      "surah": "Al-Ankaboot",
+      "ayah": 43,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.611,
+      "arabic_text": "وَتِلْكَ ٱلْأَمْثَٰلُ نَضْرِبُهَا لِلنَّاسِ ۖ وَمَا يَعْقِلُهَآ إِلَّا ٱلْعَٰلِمُونَ",
+      "english_text": "And so We propound these parables unto man: but none can grasp their innermost meaning save those who [of Us] are aware",
+      "start_time": 7350,
+      "end_time": 7360,
+      "matched_token_indices": [
+        [
+          24,
+          0
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          26,
+          2
+        ],
+        [
+          27,
+          3
+        ],
+        [
+          28,
+          4
+        ],
+        [
+          29,
+          5
+        ],
+        [
+          30,
+          6
+        ],
+        [
+          31,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7361,
+      "surah": "Al-Ankaboot",
+      "ayah": 44,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.67,
+      "arabic_text": "خَلَقَ ٱللَّهُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ بِٱلْحَقِّ ۚ إِنَّ فِى ذَٰلِكَ لَءَايَةًۭ لِّلْمُؤْمِنِينَ",
+      "english_text": "[and hence are certain that] God has created the heavens and the earth in accordance with [an inner] truth: for, behold, in this [very creation] there is a message indeed for all who believe [in Him].",
+      "start_time": 7361,
+      "end_time": 7373,
+      "matched_token_indices": [
+        [
+          23,
+          0
+        ],
+        [
+          24,
+          1
+        ],
+        [
+          25,
+          2
+        ],
+        [
+          27,
+          3
+        ],
+        [
+          28,
+          4
+        ],
+        [
+          29,
+          5
+        ],
+        [
+          30,
+          6
+        ],
+        [
+          31,
+          7
+        ],
+        [
+          32,
+          8
+        ],
+        [
+          33,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 7405,
+      "surah": "Al-Ankaboot",
+      "ayah": 45,
+      "surah_number": 29,
+      "juz": 20,
+      "quality": "manual",
+      "reciter": "Samir",
+      "confidence": 1.0,
+      "arabic_text": "ٱتْلُ مَآ أُوحِىَ إِلَيْكَ مِنَ ٱلْكِتَٰبِ وَأَقِمِ ٱلصَّلَوٰةَ ۖ إِنَّ ٱلصَّلَوٰةَ تَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ ۗ وَلَذِكْرُ ٱللَّهِ أَكْبَرُ ۗ وَٱللَّهُ يَعْلَمُ مَا تَصْنَعُونَ",
+      "english_text": "CONVEY [unto others] whatever of this divine writ has been revealed unto thee, and be constant in prayer: for, behold, prayer restrains [man] from loathsome deeds and from all that runs counter to reason; and remembrance of God is indeed the greatest [good]. And God knows all that you do.",
+      "start_time": 7405,
+      "end_time": 7405,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_on"
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-03-09T00:05:15.590679+00:00",
+    "audio_path": "data/audio/day-19/normalized.wav",
+    "part": null,
+    "whisper_model": "small",
+    "markers_detected": 39,
+    "transcript_segments_raw": 662,
+    "transcript_segments_for_matching": 565,
+    "transcript_reset_markers": 16,
+    "reciter_segments_detected": 18,
+    "voice_reciter_classification_enabled": false,
+    "manual_reciter_windows": [
+      {
+        "start_time": 84,
+        "end_time": 3316,
+        "reciter": "Hasan"
+      },
+      {
+        "start_time": 4152,
+        "end_time": 7405,
+        "reciter": "Samir"
+      }
+    ],
+    "corpus_loaded": true,
+    "asad_loaded": true,
+    "transcript_path": "/Users/himi/Library/CloudStorage/GoogleDrive-ibrahim@andalus.co.uk/My Drive/andalus-transcription/transcripts/day19-full-84-7405-4258f2a0bf6e.json",
+    "asr_corrections": {
+      "enabled": false,
+      "reason": "no_path"
+    },
+    "segment_detection": {
+      "audio_starts": 10,
+      "fatiha_starts": 16,
+      "merged_starts": 18
+    },
+    "reciter_filter": {
+      "enabled": true,
+      "reason": "known_reciter_windows",
+      "kept_segments": 565,
+      "total_segments": 565,
+      "keep_ratio": 1.0,
+      "windows": 1
+    },
+    "match_config": {
+      "min_score": 78,
+      "min_overlap": 0.18,
+      "min_confidence": 0.62,
+      "min_gap_seconds": 8,
+      "strict_normalization": false,
+      "require_weak_support_for_inferred": true,
+      "start_surah_number": 28,
+      "start_ayah": 1,
+      "segment_constraints_count": 2,
+      "matcher_mode": "two_stage"
+    },
+    "manual_override": {
+      "path": "data/ai/day_overrides.json",
+      "final_surah": "Al-Ankaboot",
+      "final_ayah": 45,
+      "start_time": 84,
+      "final_time": 7405,
+      "markers_before": 37,
+      "markers_after": 38,
+      "inserted_terminal": true,
+      "inserted_terminal_time": 7405
+    },
+    "marker_time_overrides": [
+      {
+        "surah_number": 28,
+        "ayah": 1,
+        "part": null,
+        "start_time": 84,
+        "end_time": 102,
+        "inserted": true
+      },
+      {
+        "surah_number": 28,
+        "ayah": 29,
+        "part": null,
+        "start_time": 3316,
+        "end_time": 3316
+      },
+      {
+        "surah_number": 28,
+        "ayah": 30,
+        "part": null,
+        "start_time": 4152,
+        "end_time": 4170
+      },
+      {
+        "surah_number": 29,
+        "ayah": 45,
+        "part": null,
+        "start_time": 7405,
+        "end_time": 7405
+      }
+    ],
+    "override_surah_fill": null,
+    "override_flags": {
+      "apply_day_final_ayah_override": true,
+      "apply_marker_time_overrides": true,
+      "apply_override_surah_fill": false
+    },
+    "pipeline_timings_seconds": {
+      "prepare audio source": 14.02,
+      "load normalized audio": 0.37,
+      "trim audio (skipped)": 0.0,
+      "load provided transcript": 0.0,
+      "transcribe audio (provided, skipped)": 0.0,
+      "apply ASR corrections": 0.0,
+      "detect reciter/prayer segment starts": 0.11,
+      "assign reciters to segments": 0.0,
+      "load Quran corpus and prepare transcript": 0.09,
+      "match ayah markers": 0.32,
+      "apply day overrides": 0.0,
+      "enrich marker text + reciter mapping": 0.01
+    },
+    "merge_strategy": "legacy_strong_then_two_stage_strong_then_bounded_infer",
+    "legacy_commit_ref": "a61c0d3",
+    "enforce_match_blocks": false,
+    "match_blocks_count": 2,
+    "matrix_sources": {
+      "legacy_vad_on": "day-19-vad-on-legacy.json",
+      "legacy_vad_off": "day-19-vad-off-legacy.json",
+      "two_stage_vad_on": "day-19-vad-on-two_stage.json",
+      "two_stage_vad_off": "day-19-vad-off-two_stage.json"
+    },
+    "merged_strong_count": 92,
+    "final_inferred_added": 37,
+    "legacy_skipped": {
+      "non_strong": 0,
+      "invalid": 0,
+      "outside_match_blocks": 0
+    },
+    "two_stage_skipped": {
+      "non_strong": 0,
+      "invalid": 0,
+      "outside_match_blocks": 0
+    },
+    "final_infer_constraints": {
+      "min_total_gap_seconds": 12,
+      "min_seconds_per_ayah": 2.5,
+      "max_seconds_per_ayah": 30.0,
+      "max_gap_ayahs": 40,
+      "min_missing_ayahs": 1
+    },
+    "final_infer_stats": {
+      "added": 37,
+      "skipped_short_time": 0,
+      "skipped_rate": 2,
+      "skipped_large_gap": 0,
+      "skipped_order": 0,
+      "skipped_outside_match_blocks": 0
+    },
+    "monotonic_timeline_filter": {
+      "dropped": 7,
+      "total": 96,
+      "examples": [
+        {
+          "surah_number": 28,
+          "ayah": 31,
+          "time": 188,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_off"
+        },
+        {
+          "surah_number": 28,
+          "ayah": 32,
+          "time": 220,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_on"
+        },
+        {
+          "surah_number": 28,
+          "ayah": 36,
+          "time": 243,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_off"
+        },
+        {
+          "surah_number": 28,
+          "ayah": 68,
+          "time": 1530,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_on"
+        },
+        {
+          "surah_number": 28,
+          "ayah": 69,
+          "time": 1879,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_on"
+        },
+        {
+          "surah_number": 29,
+          "ayah": 8,
+          "time": 2025,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_off"
+        },
+        {
+          "surah_number": 28,
+          "ayah": 85,
+          "time": 4070,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_on"
+        }
+      ]
+    },
+    "rescued_from_two_stage_after_monotonic": {
+      "count": 3,
+      "examples": [
+        {
+          "surah_number": 28,
+          "ayah": 36,
+          "time": 4314,
+          "quality": "high",
+          "origin": "matrix_two_stage_vad_off"
+        },
+        {
+          "surah_number": 28,
+          "ayah": 68,
+          "time": 5333,
+          "quality": "high",
+          "origin": "matrix_two_stage_vad_off"
+        },
+        {
+          "surah_number": 28,
+          "ayah": 69,
+          "time": 5351,
+          "quality": "high",
+          "origin": "matrix_two_stage_vad_off"
+        }
+      ]
+    },
+    "latest_position": {
+      "time": 7405,
+      "surah": "Al-Ankaboot",
+      "ayah": 45,
+      "surah_number": 29,
+      "juz": 20,
+      "reciter": "Samir",
+      "quality": "manual"
+    },
+    "progress_locked": true
+  }
+}

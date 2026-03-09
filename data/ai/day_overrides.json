@@ -469,6 +469,84 @@
           "reciter": "Samir"
         }
       ]
+    },
+    "19": {
+      "start_surah_number": 28,
+      "start_ayah": 1,
+      "start_time": 84,
+      "final_surah": "Al-Ankaboot",
+      "final_ayah": 45,
+      "final_time": 7405,
+      "marker_overrides": [
+        {
+          "surah_number": 28,
+          "ayah": 1,
+          "start_time": 84,
+          "end_time": 102
+        },
+        {
+          "surah_number": 28,
+          "ayah": 29,
+          "start_time": 3316,
+          "end_time": 3316
+        },
+        {
+          "surah_number": 28,
+          "ayah": 30,
+          "start_time": 4152,
+          "end_time": 4170
+        },
+        {
+          "surah_number": 29,
+          "ayah": 45,
+          "start_time": 7405,
+          "end_time": 7405
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 84,
+          "end_time": 3316,
+          "start_surah_number": 28,
+          "start_ayah": 1,
+          "end_surah_number": 28,
+          "end_ayah": 29
+        },
+        {
+          "start_time": 4152,
+          "end_time": 7405,
+          "start_surah_number": 28,
+          "start_ayah": 30,
+          "end_surah_number": 29,
+          "end_ayah": 45
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 84,
+          "end_time": 3316,
+          "reciter": "Hasan"
+        },
+        {
+          "start_time": 4152,
+          "end_time": 7405,
+          "reciter": "Samir"
+        }
+      ],
+      "duplicate_markers": [
+        {
+          "surah_number": 28,
+          "ayah": 29,
+          "time": 3316,
+          "reciter": "Hasan"
+        },
+        {
+          "surah_number": 28,
+          "ayah": 30,
+          "time": 4152,
+          "reciter": "Samir"
+        }
+      ]
     }
   }
 }
