@@ -11455,6 +11455,15 @@
     "rescued_from_two_stage_after_monotonic": {
       "count": 0,
       "examples": []
-    }
+    },
+    "latest_position": {
+      "surah": "Saba",
+      "surah_number": 34,
+      "ayah": 54,
+      "juz": 22,
+      "time": 8888.0,
+      "quality": "manual"
+    },
+    "progress_locked": true
   }
 }
