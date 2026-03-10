@@ -547,6 +547,70 @@
           "reciter": "Samir"
         }
       ]
+    },
+    "20": {
+      "start_surah_number": 29,
+      "start_ayah": 46,
+      "start_time": 1069,
+      "final_surah": "Saba",
+      "final_ayah": 54,
+      "final_time": 8888,
+      "marker_overrides": [
+        {
+          "surah_number": 29,
+          "ayah": 46,
+          "start_time": 1069,
+          "end_time": 1087
+        },
+        {
+          "surah_number": 32,
+          "ayah": 30,
+          "start_time": 4547,
+          "end_time": 4547
+        },
+        {
+          "surah_number": 33,
+          "ayah": 1,
+          "start_time": 5154,
+          "end_time": 5172
+        },
+        {
+          "surah_number": 34,
+          "ayah": 54,
+          "start_time": 8888,
+          "end_time": 8888
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 1069,
+          "end_time": 4547,
+          "start_surah_number": 29,
+          "start_ayah": 46,
+          "end_surah_number": 32,
+          "end_ayah": 30
+        },
+        {
+          "start_time": 5154,
+          "end_time": 8888,
+          "start_surah_number": 33,
+          "start_ayah": 1,
+          "end_surah_number": 34,
+          "end_ayah": 54
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 1069,
+          "end_time": 4547,
+          "reciter": "Hasan"
+        },
+        {
+          "start_time": 5154,
+          "end_time": 8888,
+          "reciter": "Samir"
+        }
+      ]
     }
   }
 }
