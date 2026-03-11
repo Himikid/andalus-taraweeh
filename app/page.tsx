@@ -1,14 +1,15 @@
-import Link from "next/link";
 import Header from "@/components/home/Header";
 import HomeLiveBlock from "@/components/home/HomeLiveBlock";
+import PublishedDays from "@/components/home/PublishedDays";
 import QuranInsights from "@/components/home/QuranInsights";
 import RecitersInfo from "@/components/shared/RecitersInfo";
 import { manualLiveTitle, manualLiveVideoId } from "@/data/liveOverride";
-import { getDateForRamadanDay } from "@/data/ramadan";
-import { availableTaraweehDays, getVideoPartsForDay } from "@/data/taraweehVideos";
+import { availableTaraweehDays } from "@/data/taraweehVideos";
 
 export default function HomePage() {
-  const latestDay = availableTaraweehDays.at(-1) ?? null;
+  const orderedDays = [...availableTaraweehDays].sort((a, b) => b - a);
+  const latestDay = orderedDays[0] ?? null;
+  const recentDays = orderedDays.slice(0, 5);
 
   return (
     <main className="app-shell px-5 py-12 sm:px-8 sm:py-16 lg:py-20">
@@ -30,28 +31,7 @@ export default function HomePage() {
               <h2 className="font-[var(--font-heading)] text-3xl leading-[1.05] text-ivory sm:text-4xl">Published Days</h2>
             </div>
 
-            {availableTaraweehDays.length ? (
-              <ul className="mt-7 divide-y divide-line border-y border-line">
-                {availableTaraweehDays.map((day) => (
-                  <li key={day}>
-                    <Link href={`/day/${day}`} className="flex items-center justify-between gap-4 py-4">
-                      <div>
-                        <p className="text-sm font-medium text-ivory sm:text-base">Ramadan Day {day}</p>
-                        <p className="mt-1 text-sm text-muted">{getDateForRamadanDay(day)}</p>
-                        {getVideoPartsForDay(day).length > 1 ? (
-                          <p className="mt-1 text-xs text-sand">{getVideoPartsForDay(day).length} stream parts</p>
-                        ) : null}
-                      </div>
-                      <span className="text-sm text-sand">Open</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="mt-7 text-sm text-muted">
-                No livestream days are published yet. Add YouTube IDs in <span className="text-ivory">data/taraweehVideos.ts</span>.
-              </p>
-            )}
+            <PublishedDays days={recentDays} />
           </section>
 
           <section className="tile-shell px-6 py-8 sm:px-8 sm:py-9 lg:col-span-4">
