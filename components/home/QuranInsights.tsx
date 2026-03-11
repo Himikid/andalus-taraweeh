@@ -153,7 +153,14 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
         return;
       }
 
-      setLatest(lockedLatestCandidate ?? latestCandidate);
+      const selectedLatest =
+        lockedLatestCandidate && latestCandidate
+          ? lockedLatestCandidate.day >= latestCandidate.day
+            ? lockedLatestCandidate
+            : latestCandidate
+          : lockedLatestCandidate ?? latestCandidate;
+
+      setLatest(selectedLatest);
 
       const startsByQuality: Record<
         string,
