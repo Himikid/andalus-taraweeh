@@ -308,7 +308,7 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
       <div className="mt-7 border-t border-line pt-5">
         <p className="label-caps">Navigate By Surah</p>
         {surahStartEntries.length ? (
-          <div className="mt-3 max-h-[26rem] overflow-y-auto pr-1">
+          <div className="mt-3 max-h-56 overflow-y-auto rounded-xl border border-line/70 bg-charcoalSoft/45 p-2 pr-1">
             <div className="flex flex-wrap gap-2">
               {surahStartEntries.map(([surah, entry]) => (
                 <Link

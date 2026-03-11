@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <main className="app-shell px-5 py-12 sm:px-8 sm:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-6xl">
-        <div className="grid gap-5 sm:gap-6 lg:grid-cols-12">
+        <div className="grid gap-5 sm:gap-6 lg:grid-cols-12 lg:items-start">
           <section className="hero-shell px-6 py-14 sm:px-10 sm:py-16 lg:col-span-8">
             <div className="mx-auto flex w-full max-w-3xl flex-col gap-12">
               <Header />
