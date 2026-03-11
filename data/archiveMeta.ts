@@ -1,4 +1,4 @@
-import { getDataFilePathForDay, getVideoPartsForDay } from "@/data/taraweehVideos";
+import { getDataFilePathForDay, getVideoPartsForDay, hasMultiplePartsForDay } from "@/data/taraweehVideos";
 
 type RawMarker = {
   surah?: string;
@@ -87,7 +87,7 @@ export async function fetchDayArchiveMeta(day: number): Promise<DayArchiveMeta> 
   const pending = (async () => {
     try {
       const parts = getVideoPartsForDay(day);
-      const paths = parts.length
+      const paths = hasMultiplePartsForDay(day)
         ? parts.map((part) => getDataFilePathForDay(day, part.id))
         : [getDataFilePathForDay(day, null)];
 
