@@ -21,7 +21,10 @@ export default function ArchiveGrid({ days }: ArchiveGridProps) {
     let mounted = true;
 
     async function load() {
-      const metas = await Promise.all(days.map((day) => fetchDayArchiveMeta(day)));
+      const results = await Promise.allSettled(days.map((day) => fetchDayArchiveMeta(day)));
+      const metas = results
+        .filter((result): result is PromiseFulfilledResult<DayArchiveMeta> => result.status === "fulfilled")
+        .map((result) => result.value);
       if (!mounted) return;
       setItems(metas.sort((a, b) => b.day - a.day));
     }

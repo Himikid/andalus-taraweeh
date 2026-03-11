@@ -31,6 +31,15 @@ function isFinitePositiveInt(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value) && value > 0;
 }
 
+function toFinitePositiveInt(value: unknown): number | null {
+  if (isFinitePositiveInt(value)) return Math.floor(value);
+  if (typeof value === "string") {
+    const parsed = Number.parseInt(value, 10);
+    if (Number.isFinite(parsed) && parsed > 0) return parsed;
+  }
+  return null;
+}
+
 function normalizeMarkers(input: unknown): RawMarker[] {
   if (!Array.isArray(input)) return [];
   return input.filter((item): item is RawMarker => typeof item === "object" && item !== null);
@@ -76,56 +85,70 @@ export async function fetchDayArchiveMeta(day: number): Promise<DayArchiveMeta> 
   if (cached) return cached;
 
   const pending = (async () => {
-    const parts = getVideoPartsForDay(day);
-    const paths = parts.length
-      ? parts.map((part) => getDataFilePathForDay(day, part.id))
-      : [getDataFilePathForDay(day, null)];
+    try {
+      const parts = getVideoPartsForDay(day);
+      const paths = parts.length
+        ? parts.map((part) => getDataFilePathForDay(day, part.id))
+        : [getDataFilePathForDay(day, null)];
 
-    const markerBatches = await Promise.all(paths.map((path) => fetchMarkersFromPath(path)));
-    const markers = markerBatches.flat();
+      const markerBatches = await Promise.all(paths.map((path) => fetchMarkersFromPath(path)));
+      const markers = markerBatches.flat();
 
-    const juzSet = new Set<number>();
-    const surahMap = new Map<number, { name: string; startAyah: number; endAyah: number }>();
+      const juzSet = new Set<number>();
+      const surahMap = new Map<number, { name: string; startAyah: number; endAyah: number }>();
 
-    for (const marker of markers) {
-      if (isFinitePositiveInt(marker.juz)) {
-        juzSet.add(Math.floor(marker.juz));
+      for (const marker of markers) {
+        const juz = toFinitePositiveInt(marker.juz);
+        if (juz !== null) {
+          juzSet.add(juz);
+        }
+
+        const surahNumber = toFinitePositiveInt(marker.surah_number);
+        const ayah = toFinitePositiveInt(marker.ayah);
+        if (surahNumber === null || ayah === null) continue;
+        const current = surahMap.get(surahNumber);
+        const name = typeof marker.surah === "string" && marker.surah.trim() ? marker.surah.trim() : `Surah ${surahNumber}`;
+
+        if (!current) {
+          surahMap.set(surahNumber, { name, startAyah: ayah, endAyah: ayah });
+        } else {
+          current.startAyah = Math.min(current.startAyah, ayah);
+          current.endAyah = Math.max(current.endAyah, ayah);
+        }
       }
 
-      if (!isFinitePositiveInt(marker.surah_number) || !isFinitePositiveInt(marker.ayah)) continue;
-      const surahNumber = Math.floor(marker.surah_number);
-      const ayah = Math.floor(marker.ayah);
-      const current = surahMap.get(surahNumber);
-      const name = typeof marker.surah === "string" && marker.surah.trim() ? marker.surah.trim() : `Surah ${surahNumber}`;
+      const juzValues = [...juzSet].sort((a, b) => a - b);
+      const surahs: DaySurahSummary[] = [...surahMap.entries()]
+        .sort((a, b) => a[0] - b[0])
+        .map(([surahNumber, value]) => ({
+          surahNumber,
+          surahName: value.name,
+          startAyah: value.startAyah,
+          endAyah: value.endAyah,
+        }));
 
-      if (!current) {
-        surahMap.set(surahNumber, { name, startAyah: ayah, endAyah: ayah });
-      } else {
-        current.startAyah = Math.min(current.startAyah, ayah);
-        current.endAyah = Math.max(current.endAyah, ayah);
-      }
+      return {
+        day,
+        markerCount: markers.length,
+        streamParts: Math.max(1, parts.length),
+        juzValues,
+        juzLabel: formatJuzLabel(juzValues),
+        surahs,
+        surahLabel: formatSurahLabel(surahs),
+        hasIndexedData: markers.length > 0,
+      };
+    } catch {
+      return {
+        day,
+        markerCount: 0,
+        streamParts: Math.max(1, getVideoPartsForDay(day).length),
+        juzValues: [],
+        juzLabel: "Juz pending",
+        surahs: [],
+        surahLabel: "Surah indexing in progress",
+        hasIndexedData: false,
+      };
     }
-
-    const juzValues = [...juzSet].sort((a, b) => a - b);
-    const surahs: DaySurahSummary[] = [...surahMap.entries()]
-      .sort((a, b) => a[0] - b[0])
-      .map(([surahNumber, value]) => ({
-        surahNumber,
-        surahName: value.name,
-        startAyah: value.startAyah,
-        endAyah: value.endAyah,
-      }));
-
-    return {
-      day,
-      markerCount: markers.length,
-      streamParts: Math.max(1, parts.length),
-      juzValues,
-      juzLabel: formatJuzLabel(juzValues),
-      surahs,
-      surahLabel: formatSurahLabel(surahs),
-      hasIndexedData: markers.length > 0,
-    };
   })();
 
   dayMetaCache.set(day, pending);
