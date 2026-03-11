@@ -611,6 +611,65 @@
           "reciter": "Samir"
         }
       ]
+    },
+    "21": {
+      "start_surah_number": 35,
+      "start_ayah": 1,
+      "start_time": 1380,
+      "final_surah": "Az-Zumar",
+      "final_ayah": 31,
+      "final_time": 8698,
+      "marker_overrides": [
+        {
+          "surah_number": 35,
+          "ayah": 1,
+          "start_time": 1380,
+          "end_time": 1400
+        },
+        {
+          "surah_number": 37,
+          "ayah": 74,
+          "start_time": 4814,
+          "end_time": 4814
+        },
+        {
+          "surah_number": 37,
+          "ayah": 75,
+          "start_time": 5583,
+          "end_time": 5603
+        },
+        {
+          "surah_number": 39,
+          "ayah": 31,
+          "start_time": 8698,
+          "end_time": 8698
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 1380,
+          "end_time": 4814,
+          "start_surah_number": 35,
+          "start_ayah": 1,
+          "end_surah_number": 37,
+          "end_ayah": 74
+        },
+        {
+          "start_time": 5583,
+          "end_time": 8698,
+          "start_surah_number": 37,
+          "start_ayah": 75,
+          "end_surah_number": 39,
+          "end_ayah": 31
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 1380,
+          "end_time": 8698,
+          "reciter": "Samir"
+        }
+      ]
     }
   }
 }

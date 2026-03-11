@@ -1690,6 +1690,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  21: [
+    {
+      ayahRef: "35:15",
+      themeType: "Famous Ayah",
+      shortTitle: "Our Need, Allah's Self-Sufficiency",
+      whyNotable: [
+        "A widely cited ayah that summarizes ubudiyyah and dependence on Allah.",
+        "Frequently used in reminders on humility and sincerity in worship.",
+      ],
+      summary:
+        "Allah declares that all people are in need of Him, while He alone is free of need and worthy of all praise. The ayah grounds the believer's life in humility and reliance.",
+      keyTakeaway: "Begin every effort with recognition of your need for Allah.",
+      references: [
+        { name: "Quran 35:15", url: "https://quran.com/35:15" },
+        { name: "Ibn Kathir Tafsir (35:15)", url: "https://quran.com/en/35:15/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "36:58",
+      themeType: "Famous Ayah",
+      shortTitle: "Salam from a Merciful Lord",
+      whyNotable: [
+        "One of the most beloved ayat describing the honor of the people of Jannah.",
+        "Commonly quoted to cultivate longing for Allah's mercy and acceptance.",
+      ],
+      summary:
+        "The people of Paradise are greeted with peace from a Lord full of mercy. The ayah offers profound hope and frames ultimate success as nearness to Allah's mercy.",
+      keyTakeaway: "Live for the day you are greeted by Allah's peace.",
+      references: [
+        { name: "Quran 36:58", url: "https://quran.com/36:58" },
+        { name: "Ibn Kathir Tafsir (36:58)", url: "https://quran.com/en/36:58/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "36:82",
+      themeType: "Famous Ayah",
+      shortTitle: "Kun Fayakoon",
+      whyNotable: [
+        "A highly famous statement of Allah's absolute command and power.",
+        "Frequently recited in lessons on qadr, trust, and certainty in Allah's decree.",
+      ],
+      summary:
+        "Allah's command, when He wills a thing, is only to say 'Be,' and it is. The ayah restores certainty that no matter is difficult for Allah.",
+      keyTakeaway: "Trust Allah's power over outcomes beyond your control.",
+      references: [
+        { name: "Quran 36:82", url: "https://quran.com/36:82" },
+        { name: "Ibn Kathir Tafsir (36:82)", url: "https://quran.com/en/36:82/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "37:100",
+      themeType: "Dua",
+      shortTitle: "Dua for Righteous Offspring",
+      whyNotable: [
+        "A famous prophetic dua from Ibrahim, widely recited by parents and families.",
+        "Represents hope, patience, and trust in Allah's timing.",
+      ],
+      summary:
+        "Ibrahim asks his Lord to grant him righteous offspring, and Allah responds with glad tidings. The ayah models sincere dua joined with patience and certainty.",
+      keyTakeaway: "Ask Allah for righteous legacy with patience and trust.",
+      references: [
+        { name: "Quran 37:100", url: "https://quran.com/37:100" },
+        { name: "Ibn Kathir Tafsir (37:100)", url: "https://quran.com/en/37:100/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "38:35",
+      themeType: "Dua",
+      shortTitle: "Sulaiman's Dua for Forgiveness and Unique Provision",
+      whyNotable: [
+        "A famous prophetic dua uniting repentance with purposeful leadership.",
+        "Frequently cited in lessons on asking Allah with humility and clarity.",
+      ],
+      summary:
+        "Sulaiman asks Allah for forgiveness and a kingdom not granted to anyone after him. The ayah teaches beginning requests with repentance and seeking gifts for righteous purpose.",
+      keyTakeaway: "Start with istighfar, then ask Allah boldly for good.",
+      references: [
+        { name: "Quran 38:35", url: "https://quran.com/38:35" },
+        { name: "Ibn Kathir Tafsir (38:35)", url: "https://quran.com/en/38:35/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "39:23",
+      themeType: "Famous Ayah",
+      shortTitle: "The Best Speech and the Responsive Heart",
+      whyNotable: [
+        "A major ayah describing the effect of the Quran on hearts and bodies.",
+        "Widely quoted in reminders about deep, living engagement with revelation.",
+      ],
+      summary:
+        "Allah describes the Quran as the best speech, repeated and consistent, causing the skins of those who fear Him to tremble, then soften into remembrance. The ayah defines true receptivity to revelation.",
+      keyTakeaway: "Recite Quran to be transformed, not just informed.",
+      references: [
+        { name: "Quran 39:23", url: "https://quran.com/39:23" },
+        { name: "Ibn Kathir Tafsir (39:23)", url: "https://quran.com/en/39:23/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -1891,6 +1989,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Daily dhikr, salah, and patience are presented as the practical framework for spiritual stability.",
       "Family ethics, community character, and public speech are tied directly to taqwa.",
       "True honor and safety come through obedience, salawat, and reliance on Allah alone.",
+    ],
+  },
+  21: {
+    title: "Day 21 Recitation Summary (Fatir 1-45, Ya-Sin 1-83, As-Saffat 1-182, Sad 1-88, Az-Zumar 1-31)",
+    summary:
+      "Day 21 moves from divine power and human dependence in Fatir into resurrection certainty and Quranic warning in Ya-Sin, then through prophetic devotion and sacrifice in As-Saffat and Sad, before reaching sincerity, repentance, and revelation-centered transformation in Az-Zumar. The recitation repeatedly calls the heart to tawhid, humility, and accountability before Allah.",
+    themes: [
+      "Creation signs and resurrection scenes are used to restore certainty in Allah's power and final return.",
+      "Prophetic duas and stories model patience, sacrifice, repentance, and steadfast worship under trial.",
+      "Az-Zumar emphasizes ikhlas, fear-and-hope balance, and deep receptivity to the Quran as the path to reform.",
     ],
   },
 };
