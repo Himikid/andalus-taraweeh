@@ -2070,10 +2070,11 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
     ],
   },
   19: {
-    title: "Day 19 Recitation Summary (Al-Qasas 1-88, Al-Ankaboot 1-45)",
+    title: "Day 19 Recitation Summary (An-Naml 1, Al-Qasas 2-88, Al-Ankaboot 1-45)",
     summary:
-      "Day 19 moves through the trust, reliance, and accountability themes of Surah Al-Qasas, then opens Surah Al-Ankaboot with testing, steadfast faith, and disciplined worship. The recitation repeatedly redirects the heart away from arrogance and fragile dependencies toward sincere reliance on Allah.",
+      "Day 19 begins with the opening ayah of Surah An-Naml, then moves through the trust, reliance, and accountability themes of Surah Al-Qasas before opening Surah Al-Ankaboot with testing, steadfast faith, and disciplined worship. The recitation repeatedly redirects the heart away from arrogance and fragile dependencies toward sincere reliance on Allah.",
     themes: [
+      "The transition from An-Naml into Al-Qasas reinforces revelation-centered warning and attention to Allah's signs.",
       "Al-Qasas emphasizes divine planning, humility, and that true guidance remains in Allah's hand.",
       "Early Al-Ankaboot frames trials as a necessary filter between claim and truth in iman.",
       "The day closes by linking Quran recitation and salah to moral protection and spiritual steadiness.",
