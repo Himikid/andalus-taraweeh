@@ -1788,6 +1788,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  22: [
+    {
+      ayahRef: "40:44",
+      themeType: "Dua",
+      shortTitle: "I Entrust My Affair to Allah",
+      whyNotable: [
+        "A famous Quranic declaration of tawakkul repeated in personal hardship.",
+        "Widely cited for calm reliance when truth is opposed.",
+      ],
+      summary:
+        "The believing man from Pharaoh's family concludes by entrusting his entire affair to Allah, affirming that Allah sees all servants. The ayah captures principled speech followed by full reliance on divine judgment.",
+      keyTakeaway: "After speaking truth, place outcomes fully with Allah.",
+      references: [
+        { name: "Quran 40:44", url: "https://quran.com/40:44" },
+        { name: "Ibn Kathir Tafsir (40:44)", url: "https://quran.com/en/40:44/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "40:60",
+      themeType: "Dua",
+      shortTitle: "Call Upon Me, I Will Respond",
+      whyNotable: [
+        "One of the most quoted ayat on dua and divine response.",
+        "Frequently recited to revive consistency in supplication.",
+      ],
+      summary:
+        "Allah commands His servants to call upon Him and promises response, while warning against arrogant refusal to worship. The ayah directly links dua to servitude and humility before Allah.",
+      keyTakeaway: "Treat dua as worship and return to it consistently.",
+      references: [
+        { name: "Quran 40:60", url: "https://quran.com/40:60" },
+        { name: "Ibn Kathir Tafsir (40:60)", url: "https://quran.com/en/40:60/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "40:65",
+      themeType: "Dua",
+      shortTitle: "Call on Him with Pure Sincerity",
+      whyNotable: [
+        "A major ayah grounding dua in ikhlas and pure tawhid.",
+        "Regularly cited in reminders on sincerity in worship.",
+      ],
+      summary:
+        "Allah, the Ever-Living with no deity besides Him, commands believers to call on Him with religion made purely for Him. The ayah ties accepted worship to sincerity and undivided devotion.",
+      keyTakeaway: "Purify intention before and during every dua.",
+      references: [
+        { name: "Quran 40:65", url: "https://quran.com/40:65" },
+        { name: "Ibn Kathir Tafsir (40:65)", url: "https://quran.com/en/40:65/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "41:30",
+      themeType: "Famous Ayah",
+      shortTitle: "Steadfastness and Angelic Reassurance",
+      whyNotable: [
+        "A beloved ayah about istiqamah and divine reassurance at death and beyond.",
+        "Widely referenced in reminders on courage and consistency.",
+      ],
+      summary:
+        "Those who declare 'Our Lord is Allah' and remain steadfast are met by angels with reassurance not to fear or grieve, and glad tidings of Paradise. The ayah presents istiqamah as lived loyalty rewarded with divine comfort.",
+      keyTakeaway: "Stay firm on Allah through consistency, not bursts.",
+      references: [
+        { name: "Quran 41:30", url: "https://quran.com/41:30" },
+        { name: "Ibn Kathir Tafsir (41:30)", url: "https://quran.com/en/41:30/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "42:11",
+      themeType: "Famous Ayah",
+      shortTitle: "Nothing Is Like Him",
+      whyNotable: [
+        "A foundational aqidah ayah used to affirm Allah's absolute uniqueness.",
+        "Central in mainstream Sunni teaching on names and attributes.",
+      ],
+      summary:
+        "Allah affirms that nothing is comparable to Him while He is the All-Hearing, All-Seeing. The ayah balances transcendence and affirmed attributes without anthropomorphism.",
+      keyTakeaway: "Affirm Allah as He described Himself, without distortion.",
+      references: [
+        { name: "Quran 42:11", url: "https://quran.com/42:11" },
+        { name: "Ibn Kathir Tafsir (42:11)", url: "https://quran.com/en/42:11/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "42:38",
+      themeType: "Famous Ayah",
+      shortTitle: "Consultation as a Believer's Trait",
+      whyNotable: [
+        "A key ayah establishing shura as a standing community principle.",
+        "Frequently cited in governance, leadership, and family decision ethics.",
+      ],
+      summary:
+        "Believers are described as those who respond to their Lord, establish prayer, conduct their affairs by mutual consultation, and spend from what Allah provided. The ayah links spirituality with responsible, consultative social conduct.",
+      keyTakeaway: "Build decisions around worship, shura, and accountability.",
+      references: [
+        { name: "Quran 42:38", url: "https://quran.com/42:38" },
+        { name: "Ibn Kathir Tafsir (42:38)", url: "https://quran.com/en/42:38/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -1999,6 +2097,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Creation signs and resurrection scenes are used to restore certainty in Allah's power and final return.",
       "Prophetic duas and stories model patience, sacrifice, repentance, and steadfast worship under trial.",
       "Az-Zumar emphasizes ikhlas, fear-and-hope balance, and deep receptivity to the Quran as the path to reform.",
+    ],
+  },
+  22: {
+    title: "Day 22 Recitation Summary (Az-Zumar 60-75, Ghafir 1-85, Fussilat 1-54, Ash-Shuraa 1-38)",
+    summary:
+      "Day 22 closes Az-Zumar with decisive scenes of judgment and salvation, then moves through Ghafir with the call to repentance, tawakkul, and certainty in resurrection. It continues through Fussilat with steadfast witness and Quran-centered guidance, and reaches Ash-Shuraa's foundations of tawhid, dependence, and shura-guided community life.",
+    themes: [
+      "Accountability scenes in Az-Zumar and Ghafir renew fear, hope, and urgency in repentance.",
+      "Believers are trained to combine dua, trust, and principled speech under pressure.",
+      "Fussilat and Ash-Shuraa anchor steadfastness, Allah-centered reliance, and faithful communal conduct.",
     ],
   },
 };
