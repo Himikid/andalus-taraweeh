@@ -479,11 +479,11 @@
       "final_time": 7405,
       "marker_overrides": [
         {
-        "surah_number": 27,
-        "ayah": 1,
-        "start_time": 84,
-        "end_time": 102
-      },
+          "surah_number": 27,
+          "ayah": 1,
+          "start_time": 84,
+          "end_time": 102
+        },
         {
           "surah_number": 28,
           "ayah": 29,
@@ -726,6 +726,65 @@
         {
           "start_time": 0,
           "end_time": 5971,
+          "reciter": "Samir"
+        }
+      ]
+    },
+    "23": {
+      "start_time": 1306,
+      "start_surah_number": 43,
+      "start_ayah": 1,
+      "final_surah": "Al-Fath",
+      "final_ayah": 29,
+      "final_time": 8142,
+      "marker_overrides": [
+        {
+          "surah_number": 43,
+          "ayah": 1,
+          "start_time": 1306,
+          "end_time": 1306
+        },
+        {
+          "surah_number": 46,
+          "ayah": 10,
+          "start_time": 4578,
+          "end_time": 4578
+        },
+        {
+          "surah_number": 46,
+          "ayah": 11,
+          "start_time": 5271,
+          "end_time": 5271
+        },
+        {
+          "surah_number": 48,
+          "ayah": 29,
+          "start_time": 8142,
+          "end_time": 8142
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 1306,
+          "end_time": 4578,
+          "start_surah_number": 43,
+          "start_ayah": 1,
+          "end_surah_number": 46,
+          "end_ayah": 10
+        },
+        {
+          "start_time": 5271,
+          "end_time": 8142,
+          "start_surah_number": 46,
+          "start_ayah": 11,
+          "end_surah_number": 48,
+          "end_ayah": 29
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 0,
+          "end_time": 8142,
           "reciter": "Samir"
         }
       ]
