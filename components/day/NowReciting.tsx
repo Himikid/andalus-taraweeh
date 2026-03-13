@@ -31,18 +31,19 @@ export default function NowReciting({ markers, currentTime, onSeek }: NowRecitin
   const [pausedIndex, setPausedIndex] = useState<number | null>(null);
 
   const timeline = useMemo(() => {
-    return markers.slice().sort((a, b) => a.time - b.time);
+    const rank = (quality: SurahMarker["quality"]) => {
+      if (quality === "manual") return 3;
+      if (quality === "high") return 2;
+      if (quality === "ambiguous") return 1;
+      return 0;
+    };
+    return markers
+      .slice()
+      .sort((a, b) => (a.time !== b.time ? a.time - b.time : rank(a.quality) - rank(b.quality)));
   }, [markers]);
 
   const liveIndex = useMemo(() => {
     if (!timeline.length) return null;
-
-    const isStrong = (marker: SurahMarker) => {
-      if (marker.quality === "high" || marker.quality === "manual") {
-        return true;
-      }
-      return (marker.confidence ?? 0) >= 0.7;
-    };
 
     let index = 0;
     for (let i = 1; i < timeline.length; i += 1) {
@@ -50,11 +51,7 @@ export default function NowReciting({ markers, currentTime, onSeek }: NowRecitin
       if (candidate.time > currentTime) {
         break;
       }
-      const current = timeline[index];
-      const currentEnd = current.end_time ?? current.time;
-      if (isStrong(candidate) || currentTime >= currentEnd) {
-        index = i;
-      }
+      index = i;
     }
     return index;
   }, [timeline, currentTime]);
