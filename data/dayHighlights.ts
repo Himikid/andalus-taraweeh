@@ -1886,6 +1886,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  23: [
+    {
+      ayahRef: "44:3-4",
+      themeType: "Famous Ayah",
+      shortTitle: "A Blessed Night of Revelation",
+      whyNotable: [
+        "A famous passage linked to the blessed descent of Quranic guidance.",
+        "Frequently cited to emphasize revelation as mercy and warning.",
+      ],
+      summary:
+        "Allah states that He sent the revelation down in a blessed night and that every wise matter is distinguished therein. The ayat frame revelation as deliberate divine mercy and guidance for accountability.",
+      keyTakeaway: "Treat the Quran as a living mercy that directs every major decision.",
+      references: [
+        { name: "Quran 44:3-4", url: "https://quran.com/44:3-4" },
+        { name: "Ibn Kathir Tafsir (44:3)", url: "https://quran.com/en/44:3/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "45:36-37",
+      themeType: "Famous Ayah",
+      shortTitle: "All Praise and Greatness Belong to Allah",
+      whyNotable: [
+        "A well-known closing declaration of praise and divine majesty.",
+        "Used in reminders on humility before Allah's sovereignty.",
+      ],
+      summary:
+        "These ayat conclude with total praise for Allah, Lord of the heavens and earth, and affirm His greatness and authority over all realms. They train the believer to end reflection in glorification and surrender.",
+      keyTakeaway: "Close your reflection with hamd and recognition of Allah's absolute authority.",
+      references: [
+        { name: "Quran 45:36-37", url: "https://quran.com/45:36-37" },
+        { name: "Ibn Kathir Tafsir (45:36)", url: "https://quran.com/en/45:36/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "46:15",
+      themeType: "Dua",
+      shortTitle: "Dua of Gratitude and Righteous Legacy",
+      whyNotable: [
+        "A highly recited Quranic dua for gratitude, righteous deeds, and righteous offspring.",
+        "Commonly used in family and tarbiyah reminders.",
+      ],
+      summary:
+        "The believer asks Allah to inspire gratitude for divine favors, to enable righteous action pleasing to Him, and to rectify one's offspring. The ayah combines personal reform, family concern, and repentance in one comprehensive supplication.",
+      keyTakeaway: "Make gratitude and family righteousness part of your daily dua.",
+      references: [
+        { name: "Quran 46:15", url: "https://quran.com/46:15" },
+        { name: "Ibn Kathir Tafsir (46:15)", url: "https://quran.com/en/46:15/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "47:7",
+      themeType: "Famous Ayah",
+      shortTitle: "Support Allah's Cause, Receive His Support",
+      whyNotable: [
+        "A famous principle ayah on divine aid and steadfastness.",
+        "Widely cited in calls to sincere effort and perseverance.",
+      ],
+      summary:
+        "Allah promises that those who support His cause will be supported by Him and have their steps made firm. The ayah anchors resilience in faithful commitment rather than worldly calculation.",
+      keyTakeaway: "Stand for Allah sincerely and rely on His stabilizing support.",
+      references: [
+        { name: "Quran 47:7", url: "https://quran.com/47:7" },
+        { name: "Ibn Kathir Tafsir (47:7)", url: "https://quran.com/en/47:7/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "48:4",
+      themeType: "Famous Ayah",
+      shortTitle: "Sakina Sent into Believing Hearts",
+      whyNotable: [
+        "A beloved ayah on divine tranquility in moments of strain.",
+        "Frequently cited to explain calm conviction during trials.",
+      ],
+      summary:
+        "Allah states that He sent tranquility into the hearts of believers so they would increase in faith upon faith. The ayah shows that inner steadiness is a divine gift that strengthens obedience and trust.",
+      keyTakeaway: "Ask Allah for sakina when pressure rises and decisions feel heavy.",
+      references: [
+        { name: "Quran 48:4", url: "https://quran.com/48:4" },
+        { name: "Ibn Kathir Tafsir (48:4)", url: "https://quran.com/en/48:4/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "48:29",
+      themeType: "Famous Ayah",
+      shortTitle: "Mercy Among Believers",
+      whyNotable: [
+        "A central and frequently quoted portrait of the Prophet and his companions.",
+        "Used widely to define strength with principle and mercy within the believing community.",
+      ],
+      summary:
+        "This ayah describes the Messenger of Allah and his companions as firm against rejection yet deeply merciful among themselves, marked by worship and sincere devotion. It presents communal strength as worship-rooted character, not harshness.",
+      keyTakeaway: "Build communities that combine principled firmness with mercy and worship.",
+      references: [
+        { name: "Quran 48:29", url: "https://quran.com/48:29" },
+        { name: "Ibn Kathir Tafsir (48:29)", url: "https://quran.com/en/48:29/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -2108,6 +2206,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Accountability scenes in Az-Zumar and Ghafir renew fear, hope, and urgency in repentance.",
       "Believers are trained to combine dua, trust, and principled speech under pressure.",
       "Fussilat and Ash-Shuraa anchor steadfastness, Allah-centered reliance, and faithful communal conduct.",
+    ],
+  },
+  23: {
+    title: "Day 23 Recitation Summary (Az-Zukhruf 1-89, Ad-Dukhan 1-59, Al-Jathiyah 1-37, Al-Ahqaf 1-35, Muhammad 1-38, Al-Fath 1-29)",
+    summary:
+      "Day 23 moves from revelation, tawhid, and the critique of worldly arrogance in Az-Zukhruf into warning and accountability scenes in Ad-Dukhan and Al-Jathiyah. It then carries the heart through repentance and steadfast warning in Al-Ahqaf, disciplined commitment in Muhammad, and the victory-and-pledge framework of Al-Fath. The recitation repeatedly ties honor to obedience, sincerity, and trust in Allah's decree.",
+    themes: [
+      "Revelation is presented as criterion, exposing false pride and calling people back to sincere worship.",
+      "Scenes of judgment, repentance, and the fate of rejecting nations renew fear-and-hope balance.",
+      "Al-Fath closes with prophetic loyalty, mercy among believers, and a disciplined path to victory.",
     ],
   },
 };
