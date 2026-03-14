@@ -60,22 +60,18 @@ export default function SurahIndex({ markers, onSeek }: SurahIndexProps) {
   const [openSurah, setOpenSurah] = useState<string | null>(null);
 
   const groupedSurahs = useMemo(() => {
-    const dedupedMap = new Map<string, SurahMarker>();
-    markers.forEach((marker) => {
-      if (isExcludedSurah(marker.surah)) {
-        return;
-      }
-
+    const timeline = markers.filter((marker) => !isExcludedSurah(marker.surah));
+    const dedupedByTime = new Map<string, SurahMarker>();
+    timeline.forEach((marker) => {
       const reciter = marker.reciter?.trim() || "Unknown";
-      const key = `${marker.surah}:${reciter}:${marker.ayah}`;
-      const existing = dedupedMap.get(key);
-      if (!existing || marker.time < existing.time) {
-        dedupedMap.set(key, marker);
+      const key = `${marker.surah}:${reciter}:${marker.ayah}:${marker.time}`;
+      if (!dedupedByTime.has(key)) {
+        dedupedByTime.set(key, marker);
       }
     });
 
     const surahMap = new Map<string, Map<string, SurahMarker[]>>();
-    Array.from(dedupedMap.values()).forEach((marker) => {
+    Array.from(dedupedByTime.values()).forEach((marker) => {
       const reciter = marker.reciter?.trim() || "Unknown";
       const reciterMap = surahMap.get(marker.surah) ?? new Map<string, SurahMarker[]>();
       const ayahs = reciterMap.get(reciter) ?? [];
@@ -142,16 +138,25 @@ export default function SurahIndex({ markers, onSeek }: SurahIndexProps) {
                     <div key={`${surahGroup.surah}-${reciterGroup.reciter}`}>
                       <p className="text-xs uppercase tracking-[0.15em] text-muted">{reciterLabel(reciterGroup.reciter)}</p>
                       <div className="mt-2 flex flex-wrap gap-2">
-                        {reciterGroup.ayahs.map((marker) => (
-                          <button
-                            key={`${surahGroup.surah}-${reciterGroup.reciter}-${marker.ayah}`}
-                            type="button"
-                            onClick={() => onSeek?.(marker.time)}
-                            className={`rounded-full border px-3 py-1.5 text-xs ${markerClasses(marker.quality)}`}
-                          >
-                            Ayah {marker.ayah} - {formatTime(marker.time)}
-                          </button>
-                        ))}
+                        {(() => {
+                          const repeatCountByAyah = new Map<number, number>();
+                          return reciterGroup.ayahs.map((marker, index) => {
+                            const seen = repeatCountByAyah.get(marker.ayah) ?? 0;
+                            repeatCountByAyah.set(marker.ayah, seen + 1);
+                            const isRepeat = seen > 0;
+                            return (
+                              <button
+                                key={`${surahGroup.surah}-${reciterGroup.reciter}-${marker.ayah}-${marker.time}-${index}`}
+                                type="button"
+                                onClick={() => onSeek?.(marker.time)}
+                                className={`rounded-full border px-3 py-1.5 text-xs ${markerClasses(marker.quality)}`}
+                              >
+                                Ayah {marker.ayah}
+                                {isRepeat ? " (repeat)" : ""} - {formatTime(marker.time)}
+                              </button>
+                            );
+                          });
+                        })()}
                       </div>
                     </div>
                   ))}
