@@ -847,6 +847,65 @@
           "reciter": "Samir"
         }
       ]
+    },
+    "25": {
+      "start_time": 0,
+      "start_surah_number": 58,
+      "start_ayah": 11,
+      "final_surah": "Al-Munafiqun",
+      "final_ayah": 11,
+      "final_time": 5168,
+      "marker_overrides": [
+        {
+          "surah_number": 58,
+          "ayah": 11,
+          "start_time": 0,
+          "end_time": 0
+        },
+        {
+          "surah_number": 59,
+          "ayah": 24,
+          "start_time": 1762,
+          "end_time": 1762
+        },
+        {
+          "surah_number": 60,
+          "ayah": 1,
+          "start_time": 2919,
+          "end_time": 2919
+        },
+        {
+          "surah_number": 63,
+          "ayah": 11,
+          "start_time": 5168,
+          "end_time": 5168
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 0,
+          "end_time": 1762,
+          "start_surah_number": 58,
+          "start_ayah": 11,
+          "end_surah_number": 59,
+          "end_ayah": 24
+        },
+        {
+          "start_time": 2919,
+          "end_time": 5168,
+          "start_surah_number": 60,
+          "start_ayah": 1,
+          "end_surah_number": 63,
+          "end_ayah": 11
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 0,
+          "end_time": 5168,
+          "reciter": "Samir"
+        }
+      ]
     }
   }
 }

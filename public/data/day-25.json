@@ -1,0 +1,4466 @@
+{
+  "day": 25,
+  "source": "https://www.youtube.com/watch?v=HDfXNU93UqY",
+  "markers": [
+    {
+      "time": 0,
+      "surah": "Al-Mujaadila",
+      "ayah": 11,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "manual",
+      "reciter": "Samir",
+      "confidence": 1.0,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا قِيلَ لَكُمْ تَفَسَّحُوا۟ فِى ٱلْمَجَٰلِسِ فَٱفْسَحُوا۟ يَفْسَحِ ٱللَّهُ لَكُمْ ۖ وَإِذَا قِيلَ ٱنشُزُوا۟ فَٱنشُزُوا۟ يَرْفَعِ ٱللَّهُ ٱلَّذِينَ ءَامَنُوا۟ مِنكُمْ وَٱلَّذِينَ أُوتُوا۟ ٱلْعِلْمَ دَرَجَٰتٍۢ ۚ وَٱللَّهُ بِمَا تَعْمَلُونَ خَبِيرٌۭ",
+      "english_text": "O YOU who have attained to faith! When you are told, “Make room for one another in your collective life”, do make room: [and in return,] God will make room for you [in His grace]. And whenever you are told, “Rise up [for a good deed]”, do rise up; [and] God will exalt by [many] degrees those of you who have attained to faith and, [above all,] such as have been vouchsafed [true] knowledge: for God is fully aware of all that you do.",
+      "start_time": 0,
+      "end_time": 0,
+      "matched_token_indices": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          12
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 27,
+      "surah": "Al-Mujaadila",
+      "ayah": 12,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.89,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا نَٰجَيْتُمُ ٱلرَّسُولَ فَقَدِّمُوا۟ بَيْنَ يَدَىْ نَجْوَىٰكُمْ صَدَقَةًۭ ۚ ذَٰلِكَ خَيْرٌۭ لَّكُمْ وَأَطْهَرُ ۚ فَإِن لَّمْ تَجِدُوا۟ فَإِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌ",
+      "english_text": "O YOU who have attained to faith! Whenever you [intend to] consult the Apostle, offer up something in charity on the occasion of your consultation: this will be for your own good, and more conducive to your [inner] purity. Yet if you are unable to do so, [know that,] verily, God is much-forgiving, a dispen­ser of grace.",
+      "start_time": 27,
+      "end_time": 49,
+      "matched_token_indices": [
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          19,
+          12
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          21,
+          14
+        ],
+        [
+          22,
+          15
+        ],
+        [
+          23,
+          16
+        ],
+        [
+          24,
+          17
+        ],
+        [
+          25,
+          18
+        ],
+        [
+          26,
+          19
+        ],
+        [
+          27,
+          20
+        ],
+        [
+          28,
+          21
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 50,
+      "surah": "Al-Mujaadila",
+      "ayah": 13,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.627,
+      "arabic_text": "ءَأَشْفَقْتُمْ أَن تُقَدِّمُوا۟ بَيْنَ يَدَىْ نَجْوَىٰكُمْ صَدَقَٰتٍۢ ۚ فَإِذْ لَمْ تَفْعَلُوا۟ وَتَابَ ٱللَّهُ عَلَيْكُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَطِيعُوا۟ ٱللَّهَ وَرَسُولَهُۥ ۚ وَٱللَّهُ خَبِيرٌۢ بِمَا تَعْمَلُونَ",
+      "english_text": "Do you, perchance, fear lest [you may be sinning if] you cannot offer up anything in charity on the occasion of your consultation [with the Apostle]? But if you fail to do it [for lack of opportunity], and God turns unto you in His mercy, remain but con­stant in prayer and render [no more than] the purify­ing dues, and [thus] pay heed unto God and His Apostle: for God is fully aware of all that you do.",
+      "start_time": 50,
+      "end_time": 181,
+      "matched_token_indices": [
+        [
+          23,
+          0
+        ],
+        [
+          24,
+          1
+        ],
+        [
+          25,
+          2
+        ],
+        [
+          26,
+          3
+        ],
+        [
+          27,
+          4
+        ],
+        [
+          28,
+          5
+        ],
+        [
+          29,
+          6
+        ],
+        [
+          30,
+          7
+        ],
+        [
+          31,
+          8
+        ],
+        [
+          32,
+          9
+        ],
+        [
+          33,
+          10
+        ],
+        [
+          34,
+          11
+        ],
+        [
+          35,
+          12
+        ],
+        [
+          36,
+          13
+        ],
+        [
+          37,
+          14
+        ],
+        [
+          38,
+          15
+        ],
+        [
+          39,
+          16
+        ],
+        [
+          40,
+          17
+        ],
+        [
+          41,
+          18
+        ],
+        [
+          42,
+          19
+        ],
+        [
+          43,
+          20
+        ],
+        [
+          44,
+          21
+        ],
+        [
+          45,
+          22
+        ],
+        [
+          46,
+          23
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 182,
+      "surah": "Al-Mujaadila",
+      "ayah": 14,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.935,
+      "arabic_text": "۞ أَلَمْ تَرَ إِلَى ٱلَّذِينَ تَوَلَّوْا۟ قَوْمًا غَضِبَ ٱللَّهُ عَلَيْهِم مَّا هُم مِّنكُمْ وَلَا مِنْهُمْ وَيَحْلِفُونَ عَلَى ٱلْكَذِبِ وَهُمْ يَعْلَمُونَ",
+      "english_text": "ART THOU NOT aware of those who would be friends with people whom God has condemned? They are neither of you [O believers] nor of those [who utterly reject the truth]: and so they swear to a falsehood the while they know [it to be false].",
+      "start_time": 182,
+      "end_time": 210,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 211,
+      "surah": "Al-Mujaadila",
+      "ayah": 15,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.783,
+      "arabic_text": "أَعَدَّ ٱللَّهُ لَهُمْ عَذَابًۭا شَدِيدًا ۖ إِنَّهُمْ سَآءَ مَا كَانُوا۟ يَعْمَلُونَ",
+      "english_text": "God has readied for them suffering severe [in the life to come]. Behold, evil indeed is what they are wont to do:",
+      "start_time": 211,
+      "end_time": 223,
+      "matched_token_indices": [
+        [
+          21,
+          0
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          24,
+          3
+        ],
+        [
+          25,
+          4
+        ],
+        [
+          26,
+          5
+        ],
+        [
+          27,
+          6
+        ],
+        [
+          28,
+          7
+        ],
+        [
+          29,
+          8
+        ],
+        [
+          30,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 224,
+      "surah": "Al-Mujaadila",
+      "ayah": 16,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.635,
+      "arabic_text": "ٱتَّخَذُوٓا۟ أَيْمَٰنَهُمْ جُنَّةًۭ فَصَدُّوا۟ عَن سَبِيلِ ٱللَّهِ فَلَهُمْ عَذَابٌۭ مُّهِينٌۭ",
+      "english_text": "they have made their oaths a cover [for their falseness], and thus they turn others away from the path of God: hence, shameful suffering awaits them.",
+      "start_time": 224,
+      "end_time": 240,
+      "matched_token_indices": [
+        [
+          22,
+          0
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24,
+          2
+        ],
+        [
+          32,
+          3
+        ],
+        [
+          33,
+          4
+        ],
+        [
+          34,
+          5
+        ],
+        [
+          35,
+          6
+        ],
+        [
+          36,
+          7
+        ],
+        [
+          37,
+          8
+        ],
+        [
+          38,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 241,
+      "surah": "Al-Mujaadila",
+      "ayah": 17,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.615,
+      "arabic_text": "لَّن تُغْنِىَ عَنْهُمْ أَمْوَٰلُهُمْ وَلَآ أَوْلَٰدُهُم مِّنَ ٱللَّهِ شَيْـًٔا ۚ أُو۟لَٰٓئِكَ أَصْحَٰبُ ٱلنَّارِ ۖ هُمْ فِيهَا خَٰلِدُونَ",
+      "english_text": "Neither their worldly possessions nor their offspring will be of the least avail to them against God: it is they who are destined for the fire, therein to abide!",
+      "start_time": 241,
+      "end_time": 258,
+      "matched_token_indices": [
+        [
+          27,
+          0
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          30,
+          3
+        ],
+        [
+          31,
+          4
+        ],
+        [
+          32,
+          5
+        ],
+        [
+          33,
+          6
+        ],
+        [
+          34,
+          7
+        ],
+        [
+          35,
+          8
+        ],
+        [
+          36,
+          9
+        ],
+        [
+          37,
+          10
+        ],
+        [
+          38,
+          11
+        ],
+        [
+          39,
+          12
+        ],
+        [
+          40,
+          13
+        ],
+        [
+          41,
+          14
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 258,
+      "surah": "Al-Mujaadila",
+      "ayah": 18,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.88,
+      "arabic_text": "يَوْمَ يَبْعَثُهُمُ ٱللَّهُ جَمِيعًۭا فَيَحْلِفُونَ لَهُۥ كَمَا يَحْلِفُونَ لَكُمْ ۖ وَيَحْسَبُونَ أَنَّهُمْ عَلَىٰ شَىْءٍ ۚ أَلَآ إِنَّهُمْ هُمُ ٱلْكَٰذِبُونَ",
+      "english_text": "On the Day when God will raise them all from the dead, they will swear before Him as they [now] swear before you, thinking that they are on firm ground [in their assumptions]. Oh, verily, it is they, they who are the [greatest] liars!",
+      "start_time": 258,
+      "end_time": 277,
+      "matched_token_indices": [
+        [
+          24,
+          0
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          26,
+          2
+        ],
+        [
+          27,
+          3
+        ],
+        [
+          28,
+          4
+        ],
+        [
+          29,
+          5
+        ],
+        [
+          30,
+          6
+        ],
+        [
+          31,
+          7
+        ],
+        [
+          32,
+          8
+        ],
+        [
+          33,
+          9
+        ],
+        [
+          34,
+          10
+        ],
+        [
+          35,
+          11
+        ],
+        [
+          36,
+          12
+        ],
+        [
+          37,
+          13
+        ],
+        [
+          38,
+          14
+        ],
+        [
+          39,
+          15
+        ],
+        [
+          40,
+          16
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 277,
+      "surah": "Al-Mujaadila",
+      "ayah": 19,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.841,
+      "arabic_text": "ٱسْتَحْوَذَ عَلَيْهِمُ ٱلشَّيْطَٰنُ فَأَنسَىٰهُمْ ذِكْرَ ٱللَّهِ ۚ أُو۟لَٰٓئِكَ حِزْبُ ٱلشَّيْطَٰنِ ۚ أَلَآ إِنَّ حِزْبَ ٱلشَّيْطَٰنِ هُمُ ٱلْخَٰسِرُونَ",
+      "english_text": "Satan has gained mastery over them, and has caused them to remain oblivious of the remem­brance of God. Such as these are Satan’s partisans: oh, verily, it is they, the partisans of Satan, who will truly be the losers!",
+      "start_time": 277,
+      "end_time": 314,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 439,
+      "surah": "Al-Mujaadila",
+      "ayah": 20,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.759,
+      "arabic_text": "إِنَّ ٱلَّذِينَ يُحَآدُّونَ ٱللَّهَ وَرَسُولَهُۥٓ أُو۟لَٰٓئِكَ فِى ٱلْأَذَلِّينَ",
+      "english_text": "Verily, those who contend against God and His Apostle - it is they who [on Judgment Day] shall find themselves among the most abject.",
+      "start_time": 439,
+      "end_time": 452,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 453,
+      "surah": "Al-Mujaadila",
+      "ayah": 21,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.846,
+      "arabic_text": "كَتَبَ ٱللَّهُ لَأَغْلِبَنَّ أَنَا۠ وَرُسُلِىٓ ۚ إِنَّ ٱللَّهَ قَوِىٌّ عَزِيزٌۭ",
+      "english_text": "[For] God has thus ordained: “I shall most certainly prevail, I and My apostles!” Verily, God is powerful, almighty!",
+      "start_time": 453,
+      "end_time": 475,
+      "matched_token_indices": [
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 476,
+      "surah": "Al-Mujaadila",
+      "ayah": 22,
+      "surah_number": 58,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.856,
+      "arabic_text": "لَّا تَجِدُ قَوْمًۭا يُؤْمِنُونَ بِٱللَّهِ وَٱلْيَوْمِ ٱلْءَاخِرِ يُوَآدُّونَ مَنْ حَآدَّ ٱللَّهَ وَرَسُولَهُۥ وَلَوْ كَانُوٓا۟ ءَابَآءَهُمْ أَوْ أَبْنَآءَهُمْ أَوْ إِخْوَٰنَهُمْ أَوْ عَشِيرَتَهُمْ ۚ أُو۟لَٰٓئِكَ كَتَبَ فِى قُلُوبِهِمُ ٱلْإِيمَٰنَ وَأَيَّدَهُم بِرُوحٍۢ مِّنْهُ ۖ وَيُدْخِلُهُمْ جَنَّٰتٍۢ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ خَٰلِدِينَ فِيهَا ۚ رَضِىَ ٱللَّهُ عَنْهُمْ وَرَضُوا۟ عَنْهُ ۚ أُو۟لَٰٓئِكَ حِزْبُ ٱللَّهِ ۚ أَلَآ إِنَّ حِزْبَ ٱللَّهِ هُمُ ٱلْمُفْلِحُونَ",
+      "english_text": "Thou canst not find people who [truly] believe in God and the Last Day and [at the same time] love anyone who contends against God and His Apostle - even though they be their fathers, or their sons, or their brothers, or [others of] their kindred. [As for the true believers,] it is they in whose hearts He has inscribed faith, and whom He has strength­ened with inspiration from Himself, and whom [in time] He will admit into gardens through which running waters flow, therein to abide. Well-pleased is God with them, and well-pleased are they with Him. They are God’s partisans: oh, verily, it is they, the partisans of God, who shall attain to a happy state!",
+      "start_time": 476,
+      "end_time": 500,
+      "matched_token_indices": [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          18
+        ],
+        [
+          10,
+          19
+        ],
+        [
+          11,
+          20
+        ],
+        [
+          12,
+          21
+        ],
+        [
+          13,
+          22
+        ],
+        [
+          14,
+          23
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          16,
+          25
+        ],
+        [
+          17,
+          26
+        ],
+        [
+          18,
+          27
+        ],
+        [
+          19,
+          32
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 629,
+      "surah": "Al-Hashr",
+      "ayah": 1,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.798,
+      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ سَبَّحَ لِلَّهِ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+      "english_text": "ALL THAT IS in the heavens and all that is on earth extols God’s limitless glory: for He alone is almighty, truly wise.",
+      "start_time": 629,
+      "end_time": 642,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 653,
+      "surah": "Al-Hashr",
+      "ayah": 2,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.69,
+      "arabic_text": "هُوَ ٱلَّذِىٓ أَخْرَجَ ٱلَّذِينَ كَفَرُوا۟ مِنْ أَهْلِ ٱلْكِتَٰبِ مِن دِيَٰرِهِمْ لِأَوَّلِ ٱلْحَشْرِ ۚ مَا ظَنَنتُمْ أَن يَخْرُجُوا۟ ۖ وَظَنُّوٓا۟ أَنَّهُم مَّانِعَتُهُمْ حُصُونُهُم مِّنَ ٱللَّهِ فَأَتَىٰهُمُ ٱللَّهُ مِنْ حَيْثُ لَمْ يَحْتَسِبُوا۟ ۖ وَقَذَفَ فِى قُلُوبِهِمُ ٱلرُّعْبَ ۚ يُخْرِبُونَ بُيُوتَهُم بِأَيْدِيهِمْ وَأَيْدِى ٱلْمُؤْمِنِينَ فَٱعْتَبِرُوا۟ يَٰٓأُو۟لِى ٱلْأَبْصَٰرِ",
+      "english_text": "He it is who turned out of their homes, at the time of [their] first gathering [for war], such of the followers of earlier revelation as were bent on denying the truth. You did not think [O believers] that they would depart [without resistance] - just as they thought that their strongholds would protect them against God: but God came upon them in a manner which they had not expected, and cast terror into their hearts; [and thus] they destroyed their homes by their own hands as well as the hands of the believers. Learn a lesson, then, O you who are endowed with insight!",
+      "start_time": 653,
+      "end_time": 662,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 689,
+      "surah": "Al-Hashr",
+      "ayah": 3,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.963,
+      "arabic_text": "وَلَوْلَآ أَن كَتَبَ ٱللَّهُ عَلَيْهِمُ ٱلْجَلَآءَ لَعَذَّبَهُمْ فِى ٱلدُّنْيَا ۖ وَلَهُمْ فِى ٱلْءَاخِرَةِ عَذَابُ ٱلنَّارِ",
+      "english_text": "And had it not been for God’s having ordained banishment for them, He would indeed have imposed [yet greater] suffering on them in this world: still, in the life to come there awaits them suffering through fire:",
+      "start_time": 689,
+      "end_time": 703,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 703,
+      "surah": "Al-Hashr",
+      "ayah": 4,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.778,
+      "arabic_text": "ذَٰلِكَ بِأَنَّهُمْ شَآقُّوا۟ ٱللَّهَ وَرَسُولَهُۥ ۖ وَمَن يُشَآقِّ ٱللَّهَ فَإِنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ",
+      "english_text": "this, because they cut themselves off from God and His Apostle: and as for him who cuts himself off from God and His Apostle - verily, God is severe in retribution!",
+      "start_time": 703,
+      "end_time": 712,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 722,
+      "surah": "Al-Hashr",
+      "ayah": 5,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.927,
+      "arabic_text": "مَا قَطَعْتُم مِّن لِّينَةٍ أَوْ تَرَكْتُمُوهَا قَآئِمَةً عَلَىٰٓ أُصُولِهَا فَبِإِذْنِ ٱللَّهِ وَلِيُخْزِىَ ٱلْفَٰسِقِينَ",
+      "english_text": "Whatever [of their] palm trees you may have cut down, [O believers,] or left standing on their roots, was [done] by God’s leave, and in order that He might confound the iniquitous.",
+      "start_time": 722,
+      "end_time": 734,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 884,
+      "surah": "Al-Hashr",
+      "ayah": 6,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.72,
+      "arabic_text": "وَمَآ أَفَآءَ ٱللَّهُ عَلَىٰ رَسُولِهِۦ مِنْهُمْ فَمَآ أَوْجَفْتُمْ عَلَيْهِ مِنْ خَيْلٍۢ وَلَا رِكَابٍۢ وَلَٰكِنَّ ٱللَّهَ يُسَلِّطُ رُسُلَهُۥ عَلَىٰ مَن يَشَآءُ ۚ وَٱللَّهُ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ",
+      "english_text": "Yet [remember:] whatever [spoils taken] from the enemy God has turned over to His Apostle, you did not have to spur horse or riding-camel for its sake: but God gives His apostles mastery over whomever He wills - for God has the power to will anything.",
+      "start_time": 884,
+      "end_time": 891,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 911,
+      "surah": "Al-Hashr",
+      "ayah": 7,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.677,
+      "arabic_text": "مَّآ أَفَآءَ ٱللَّهُ عَلَىٰ رَسُولِهِۦ مِنْ أَهْلِ ٱلْقُرَىٰ فَلِلَّهِ وَلِلرَّسُولِ وَلِذِى ٱلْقُرْبَىٰ وَٱلْيَتَٰمَىٰ وَٱلْمَسَٰكِينِ وَٱبْنِ ٱلسَّبِيلِ كَىْ لَا يَكُونَ دُولَةًۢ بَيْنَ ٱلْأَغْنِيَآءِ مِنكُمْ ۚ وَمَآ ءَاتَىٰكُمُ ٱلرَّسُولُ فَخُذُوهُ وَمَا نَهَىٰكُمْ عَنْهُ فَٱنتَهُوا۟ ۚ وَٱتَّقُوا۟ ٱللَّهَ ۖ إِنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ",
+      "english_text": "Whatever [spoils taken] from the people of those villages God has turned over to His Apostle - [all of it] belongs to God and the Apostle, and the near of kin [of deceased believers], and the orphans, and the needy, and the wayfarer, so that it may not be [a benefit] going round and round among such of you as may [already] be rich. Hence, accept [willing­ly] whatever the Apostle* gives you [thereof], and refrain from [demanding] anything that he withholds from you; and remain conscious of God: for, verily, God is severe in retribution.",
+      "start_time": 911,
+      "end_time": 917,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 977,
+      "surah": "Al-Hashr",
+      "ayah": 8,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.686,
+      "arabic_text": "لِلْفُقَرَآءِ ٱلْمُهَٰجِرِينَ ٱلَّذِينَ أُخْرِجُوا۟ مِن دِيَٰرِهِمْ وَأَمْوَٰلِهِمْ يَبْتَغُونَ فَضْلًۭا مِّنَ ٱللَّهِ وَرِضْوَٰنًۭا وَيَنصُرُونَ ٱللَّهَ وَرَسُولَهُۥٓ ۚ أُو۟لَٰٓئِكَ هُمُ ٱلصَّٰدِقُونَ",
+      "english_text": "[Thus, part of such war-gains shall be given] to the poor among those who have forsaken the domain of evil: those who have been driven from their homelands and their possessions, seeking favour with God and [His] goodly acceptance, and who aid [the cause of] God and His Apostle: it is they, they who are true to their word!",
+      "start_time": 977,
+      "end_time": 981,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 1144,
+      "surah": "Al-Hashr",
+      "ayah": 9,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.7,
+      "arabic_text": "وَٱلَّذِينَ تَبَوَّءُو ٱلدَّارَ وَٱلْإِيمَٰنَ مِن قَبْلِهِمْ يُحِبُّونَ مَنْ هَاجَرَ إِلَيْهِمْ وَلَا يَجِدُونَ فِى صُدُورِهِمْ حَاجَةًۭ مِّمَّآ أُوتُوا۟ وَيُؤْثِرُونَ عَلَىٰٓ أَنفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌۭ ۚ وَمَن يُوقَ شُحَّ نَفْسِهِۦ فَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ",
+      "english_text": "And [it shall be offered, too, unto the poor from among] those who, before them, had their abode in this realm and in faith - [those] who love all that come to them in search of refuge, and who harbour in their hearts no grudge for whatever the others may have been given, but rather give them preference over themselves, even though poverty be their own lot: for, such as from their own covetousness are saved - it is they, they that shall attain to a happy state!",
+      "start_time": 1144,
+      "end_time": 1151,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 1205,
+      "surah": "Al-Hashr",
+      "ayah": 11,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.827,
+      "arabic_text": "۞ أَلَمْ تَرَ إِلَى ٱلَّذِينَ نَافَقُوا۟ يَقُولُونَ لِإِخْوَٰنِهِمُ ٱلَّذِينَ كَفَرُوا۟ مِنْ أَهْلِ ٱلْكِتَٰبِ لَئِنْ أُخْرِجْتُمْ لَنَخْرُجَنَّ مَعَكُمْ وَلَا نُطِيعُ فِيكُمْ أَحَدًا أَبَدًۭا وَإِن قُوتِلْتُمْ لَنَنصُرَنَّكُمْ وَٱللَّهُ يَشْهَدُ إِنَّهُمْ لَكَٰذِبُونَ",
+      "english_text": "ART THOU NOT aware of how those who would always dissemble [their real feelings] speak to their truth-denying brethren from among the followers of earlier revelation: “If you are driven away, we shall most certainly go forth with you, and shall never pay heed to anyone against you; and if war is waged against you, we shall most certainly come to your succour.” But God bears witness that they are most flagrantly lying:",
+      "start_time": 1205,
+      "end_time": 1233,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 1249,
+      "surah": "Al-Hashr",
+      "ayah": 12,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.832,
+      "arabic_text": "لَئِنْ أُخْرِجُوا۟ لَا يَخْرُجُونَ مَعَهُمْ وَلَئِن قُوتِلُوا۟ لَا يَنصُرُونَهُمْ وَلَئِن نَّصَرُوهُمْ لَيُوَلُّنَّ ٱلْأَدْبَٰرَ ثُمَّ لَا يُنصَرُونَ",
+      "english_text": "[for] if those [to whom they have pledged themselves] are indeed driven away, they will not go forth with them; and if war is waged against them, they will not come to their succour; and even if they [try to] succour them, they will most certainly turn their backs [in flight], and in the end will [themselves] find no succour.",
+      "start_time": 1249,
+      "end_time": 1261,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 1437,
+      "surah": "Al-Hashr",
+      "ayah": 13,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.85,
+      "arabic_text": "لَأَنتُمْ أَشَدُّ رَهْبَةًۭ فِى صُدُورِهِم مِّنَ ٱللَّهِ ۚ ذَٰلِكَ بِأَنَّهُمْ قَوْمٌۭ لَّا يَفْقَهُونَ",
+      "english_text": "Nay, [O believers,] you arouse in their bosoms a fear more intense than [even their fear of] God: this, because they are people who fail to grasp the truth.",
+      "start_time": 1437,
+      "end_time": 1444,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 1461,
+      "surah": "Al-Hashr",
+      "ayah": 14,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.741,
+      "arabic_text": "لَا يُقَٰتِلُونَكُمْ جَمِيعًا إِلَّا فِى قُرًۭى مُّحَصَّنَةٍ أَوْ مِن وَرَآءِ جُدُرٍۭ ۚ بَأْسُهُم بَيْنَهُمْ شَدِيدٌۭ ۚ تَحْسَبُهُمْ جَمِيعًۭا وَقُلُوبُهُمْ شَتَّىٰ ۚ ذَٰلِكَ بِأَنَّهُمْ قَوْمٌۭ لَّا يَعْقِلُونَ",
+      "english_text": "Never will they fight you, [even] in unison, otherwise than from within fortified strongholds or from behind walls. Severe is their warlike discord among themselves: thou wouldst think that they are united, whereas [in fact] their hearts are at odds [with one another]: this, because they are people who will not use their reason.",
+      "start_time": 1461,
+      "end_time": 1477,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 1477,
+      "surah": "Al-Hashr",
+      "ayah": 15,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.948,
+      "arabic_text": "كَمَثَلِ ٱلَّذِينَ مِن قَبْلِهِمْ قَرِيبًۭا ۖ ذَاقُوا۟ وَبَالَ أَمْرِهِمْ وَلَهُمْ عَذَابٌ أَلِيمٌۭ",
+      "english_text": "[To both kinds of your enemies, O believers, is bound to happen] the like of [what happened to] those who, a short while before them, had to taste the evil that came from their own doings, with [yet more] grievous suffering awaiting them [in the life to come]:",
+      "start_time": 1477,
+      "end_time": 1488,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 1492,
+      "surah": "Al-Hashr",
+      "ayah": 16,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.81,
+      "arabic_text": "كَمَثَلِ ٱلشَّيْطَٰنِ إِذْ قَالَ لِلْإِنسَٰنِ ٱكْفُرْ فَلَمَّا كَفَرَ قَالَ إِنِّى بَرِىٓءٌۭ مِّنكَ إِنِّىٓ أَخَافُ ٱللَّهَ رَبَّ ٱلْعَٰلَمِينَ",
+      "english_text": "the like of [what happens] when Satan says unto man, “Deny the truth!” - but as soon as [man] has denied the truth, [Satan] says, “Behold, I am not responsible for thee: behold, I fear God, the Sustainer of all the worlds!”",
+      "start_time": 1492,
+      "end_time": 1514,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 1514,
+      "surah": "Al-Hashr",
+      "ayah": 17,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.705,
+      "arabic_text": "فَكَانَ عَٰقِبَتَهُمَآ أَنَّهُمَا فِى ٱلنَّارِ خَٰلِدَيْنِ فِيهَا ۚ وَذَٰلِكَ جَزَٰٓؤُا۟ ٱلظَّٰلِمِينَ",
+      "english_text": "Thus, in the end, both [the deniers of the truth and the hypocrites] will find themselves in the fire, therein to abide: for such is the recompense of evil­doers.",
+      "start_time": 1514,
+      "end_time": 1522,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 1648,
+      "surah": "Al-Hashr",
+      "ayah": 18,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.754,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱتَّقُوا۟ ٱللَّهَ وَلْتَنظُرْ نَفْسٌۭ مَّا قَدَّمَتْ لِغَدٍۢ ۖ وَٱتَّقُوا۟ ٱللَّهَ ۚ إِنَّ ٱللَّهَ خَبِيرٌۢ بِمَا تَعْمَلُونَ",
+      "english_text": "O YOU who have attained to faith! Remain conscious of God; and let every human being look to what he sends ahead for the morrow! And [once again]: Remain conscious of God, for God is fully aware of all that you do;",
+      "start_time": 1648,
+      "end_time": 1653,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 1658,
+      "start_time": 1658,
+      "end_time": 1658,
+      "surah": "Al-Hashr",
+      "surah_number": 59,
+      "ayah": 19,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 1668,
+      "surah": "Al-Hashr",
+      "ayah": 20,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.861,
+      "arabic_text": "لَا يَسْتَوِىٓ أَصْحَٰبُ ٱلنَّارِ وَأَصْحَٰبُ ٱلْجَنَّةِ ۚ أَصْحَٰبُ ٱلْجَنَّةِ هُمُ ٱلْفَآئِزُونَ",
+      "english_text": "Not equal are those who are destined for the fire and those who are destined for paradise: those who are destined for paradise - it is they, they [alone] who shall triumph [on Judgment Day]!",
+      "start_time": 1668,
+      "end_time": 1681,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 1681,
+      "surah": "Al-Hashr",
+      "ayah": 21,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.918,
+      "arabic_text": "لَوْ أَنزَلْنَا هَٰذَا ٱلْقُرْءَانَ عَلَىٰ جَبَلٍۢ لَّرَأَيْتَهُۥ خَٰشِعًۭا مُّتَصَدِّعًۭا مِّنْ خَشْيَةِ ٱللَّهِ ۚ وَتِلْكَ ٱلْأَمْثَٰلُ نَضْرِبُهَا لِلنَّاسِ لَعَلَّهُمْ يَتَفَكَّرُونَ",
+      "english_text": "HAD WE bestowed this Qur’an from on high upon a mountain, thou wouldst indeed see it humbling itself, breaking asunder for awe of God. And [all] such parables We propound unto men, so that they might [learn to] think.",
+      "start_time": 1681,
+      "end_time": 1702,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 1711,
+      "surah": "Al-Hashr",
+      "ayah": 22,
+      "surah_number": 59,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.733,
+      "arabic_text": "هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَٰهَ إِلَّا هُوَ ۖ عَٰلِمُ ٱلْغَيْبِ وَٱلشَّهَٰدَةِ ۖ هُوَ ٱلرَّحْمَٰنُ ٱلرَّحِيمُ",
+      "english_text": "GOD IS HE save whom there is no deity: the One who knows all that is beyond the reach of a created being’s perception, as well as all that can be wit­nessed by a creature’s senses or mind: He, the Most Gracious, the Dispenser of Grace.",
+      "start_time": 1711,
+      "end_time": 1713,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_on"
+    },
+    {
+      "time": 1720,
+      "surah": "Al-Hashr",
+      "ayah": 23,
+      "surah_number": 59,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.688,
+      "arabic_text": "هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَٰهَ إِلَّا هُوَ ٱلْمَلِكُ ٱلْقُدُّوسُ ٱلسَّلَٰمُ ٱلْمُؤْمِنُ ٱلْمُهَيْمِنُ ٱلْعَزِيزُ ٱلْجَبَّارُ ٱلْمُتَكَبِّرُ ۚ سُبْحَٰنَ ٱللَّهِ عَمَّا يُشْرِكُونَ",
+      "english_text": "God is He save whom there is no deity: the Sovereign Supreme, the Holy, the One with whom all salvation rests, the Giver of Faith, the One who determines what is true and false, the Almighty, the One who subdues wrong and restores right, the One to whom all greatness belongs! Utterly remote is God, in His limitless glory, from anything to which men may ascribe a share in His divinity!",
+      "start_time": 1720,
+      "end_time": 1743,
+      "matched_token_indices": [
+        [
+          4,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          17,
+          3
+        ],
+        [
+          20,
+          4
+        ],
+        [
+          22,
+          5
+        ],
+        [
+          27,
+          6
+        ],
+        [
+          28,
+          7
+        ],
+        [
+          29,
+          8
+        ],
+        [
+          30,
+          9
+        ],
+        [
+          31,
+          10
+        ],
+        [
+          32,
+          11
+        ],
+        [
+          34,
+          12
+        ],
+        [
+          35,
+          13
+        ],
+        [
+          39,
+          14
+        ],
+        [
+          41,
+          16
+        ],
+        [
+          43,
+          17
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 1762,
+      "surah": "Al-Hashr",
+      "ayah": 24,
+      "surah_number": 59,
+      "juz": 28,
+      "quality": "manual",
+      "reciter": "Samir",
+      "confidence": 1.0,
+      "arabic_text": "هُوَ ٱللَّهُ ٱلْخَٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+      "english_text": "He is God, the Creator, the Maker who shapes all forms and appearances! His [alone] are the attributes of perfection. All that is in the heavens and on earth extols His limitless glory: for He alone is almighty, truly wise!",
+      "start_time": 1762,
+      "end_time": 1762,
+      "matched_token_indices": [
+        [
+          17,
+          0
+        ],
+        [
+          18,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          20,
+          3
+        ],
+        [
+          21,
+          4
+        ],
+        [
+          22,
+          5
+        ],
+        [
+          23,
+          6
+        ],
+        [
+          24,
+          7
+        ],
+        [
+          25,
+          8
+        ],
+        [
+          26,
+          9
+        ],
+        [
+          27,
+          10
+        ],
+        [
+          28,
+          11
+        ],
+        [
+          29,
+          12
+        ],
+        [
+          30,
+          13
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 2919,
+      "surah": "Al-Mumtahana",
+      "ayah": 1,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "manual",
+      "reciter": "Samir",
+      "confidence": 1.0,
+      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَتَّخِذُوا۟ عَدُوِّى وَعَدُوَّكُمْ أَوْلِيَآءَ تُلْقُونَ إِلَيْهِم بِٱلْمَوَدَّةِ وَقَدْ كَفَرُوا۟ بِمَا جَآءَكُم مِّنَ ٱلْحَقِّ يُخْرِجُونَ ٱلرَّسُولَ وَإِيَّاكُمْ ۙ أَن تُؤْمِنُوا۟ بِٱللَّهِ رَبِّكُمْ إِن كُنتُمْ خَرَجْتُمْ جِهَٰدًۭا فِى سَبِيلِى وَٱبْتِغَآءَ مَرْضَاتِى ۚ تُسِرُّونَ إِلَيْهِم بِٱلْمَوَدَّةِ وَأَنَا۠ أَعْلَمُ بِمَآ أَخْفَيْتُمْ وَمَآ أَعْلَنتُمْ ۚ وَمَن يَفْعَلْهُ مِنكُمْ فَقَدْ ضَلَّ سَوَآءَ ٱلسَّبِيلِ",
+      "english_text": "O YOU who have attained to faith! Do not take My enemies - who are your enemies as well - for your friends, showing them affection even though they are bent on denying whatever truth has come unto you, [and even though] they have driven the Apostle and yourselves away, [only] because you believe in God, your Sustainer! If [it be true that] you have gone forth [from your homes] to strive in My cause, and out of a longing for My goodly acceptance, [do not take them for your friends,] inclining towards them in secret affection: for I am fully aware of all that you may conceal as well as of all that you do openly. And any of you who does this has already strayed from the right path.",
+      "start_time": 2919,
+      "end_time": 2919,
+      "matched_token_indices": [
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          3,
+          18
+        ],
+        [
+          4,
+          19
+        ],
+        [
+          5,
+          20
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 2969,
+      "surah": "Al-Mumtahana",
+      "ayah": 2,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.72,
+      "arabic_text": "إِن يَثْقَفُوكُمْ يَكُونُوا۟ لَكُمْ أَعْدَآءًۭ وَيَبْسُطُوٓا۟ إِلَيْكُمْ أَيْدِيَهُمْ وَأَلْسِنَتَهُم بِٱلسُّوٓءِ وَوَدُّوا۟ لَوْ تَكْفُرُونَ",
+      "english_text": "If they could but overcome you, they would [still] remain your foes, and would stretch forth their hands and tongues against you with evil intent: for they desire that you [too] should deny the truth.",
+      "start_time": 2969,
+      "end_time": 3000,
+      "matched_token_indices": [
+        [
+          19,
+          0
+        ],
+        [
+          33,
+          1
+        ],
+        [
+          34,
+          2
+        ],
+        [
+          35,
+          3
+        ],
+        [
+          36,
+          4
+        ],
+        [
+          37,
+          5
+        ],
+        [
+          38,
+          6
+        ],
+        [
+          39,
+          7
+        ],
+        [
+          40,
+          8
+        ],
+        [
+          41,
+          9
+        ],
+        [
+          42,
+          10
+        ],
+        [
+          43,
+          11
+        ],
+        [
+          44,
+          12
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3001,
+      "surah": "Al-Mumtahana",
+      "ayah": 3,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.733,
+      "arabic_text": "لَن تَنفَعَكُمْ أَرْحَامُكُمْ وَلَآ أَوْلَٰدُكُمْ ۚ يَوْمَ ٱلْقِيَٰمَةِ يَفْصِلُ بَيْنَكُمْ ۚ وَٱللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌۭ",
+      "english_text": "But [bear in mind that] neither your kinsfolk nor [even] your own children will be of any benefit to you on Resurrection Day, [for then] He will decide between you [on your merit alone]: and God sees all that you do.",
+      "start_time": 3001,
+      "end_time": 3116,
+      "matched_token_indices": [
+        [
+          21,
+          0
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          24,
+          3
+        ],
+        [
+          25,
+          4
+        ],
+        [
+          26,
+          5
+        ],
+        [
+          27,
+          6
+        ],
+        [
+          28,
+          7
+        ],
+        [
+          29,
+          8
+        ],
+        [
+          30,
+          9
+        ],
+        [
+          31,
+          10
+        ],
+        [
+          32,
+          11
+        ],
+        [
+          33,
+          12
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3117,
+      "surah": "Al-Mumtahana",
+      "ayah": 4,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.931,
+      "arabic_text": "قَدْ كَانَتْ لَكُمْ أُسْوَةٌ حَسَنَةٌۭ فِىٓ إِبْرَٰهِيمَ وَٱلَّذِينَ مَعَهُۥٓ إِذْ قَالُوا۟ لِقَوْمِهِمْ إِنَّا بُرَءَٰٓؤُا۟ مِنكُمْ وَمِمَّا تَعْبُدُونَ مِن دُونِ ٱللَّهِ كَفَرْنَا بِكُمْ وَبَدَا بَيْنَنَا وَبَيْنَكُمُ ٱلْعَدَٰوَةُ وَٱلْبَغْضَآءُ أَبَدًا حَتَّىٰ تُؤْمِنُوا۟ بِٱللَّهِ وَحْدَهُۥٓ إِلَّا قَوْلَ إِبْرَٰهِيمَ لِأَبِيهِ لَأَسْتَغْفِرَنَّ لَكَ وَمَآ أَمْلِكُ لَكَ مِنَ ٱللَّهِ مِن شَىْءٍۢ ۖ رَّبَّنَا عَلَيْكَ تَوَكَّلْنَا وَإِلَيْكَ أَنَبْنَا وَإِلَيْكَ ٱلْمَصِيرُ",
+      "english_text": "Indeed, you have had a good example in Abraham and those who followed him, when they said unto their [idolatrous] people: \"Verily, we are quit of you and of all that you worship instead of God: we deny the truth of whatever you believe; and between us and you there has arisen enmity and hatred, to last until such a time as you come to believe in the One God!\" The only exception was Abraham's saying to his father \"I shall indeed pray for [God's] forgiveness for thee, although I have it not in my power to obtain anything from God in thy behalf.\" [And Abraham and his followers prayed:] \"O our Sustainer! In Thee have we placed our trust, and unto Thee do we turn: for unto Thee is all journeys' end.",
+      "start_time": 3117,
+      "end_time": 3176,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          19,
+          19
+        ],
+        [
+          20,
+          20
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          22,
+          22
+        ],
+        [
+          23,
+          23
+        ],
+        [
+          24,
+          24
+        ],
+        [
+          25,
+          25
+        ],
+        [
+          26,
+          26
+        ],
+        [
+          27,
+          27
+        ],
+        [
+          28,
+          28
+        ],
+        [
+          29,
+          41
+        ],
+        [
+          30,
+          42
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3177,
+      "surah": "Al-Mumtahana",
+      "ayah": 5,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.865,
+      "arabic_text": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةًۭ لِّلَّذِينَ كَفَرُوا۟ وَٱغْفِرْ لَنَا رَبَّنَآ ۖ إِنَّكَ أَنتَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+      "english_text": "O our Sustainer! Make us not a plaything for those who are bent on denying the truth! And forgive us our sins, O our sustainer: for Thou alone art, almighty, truly wise!\"",
+      "start_time": 3177,
+      "end_time": 3209,
+      "matched_token_indices": [
+        [
+          16,
+          0
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          31,
+          2
+        ],
+        [
+          32,
+          3
+        ],
+        [
+          33,
+          4
+        ],
+        [
+          34,
+          5
+        ],
+        [
+          35,
+          6
+        ],
+        [
+          36,
+          7
+        ],
+        [
+          37,
+          8
+        ],
+        [
+          42,
+          9
+        ],
+        [
+          43,
+          10
+        ],
+        [
+          44,
+          11
+        ],
+        [
+          45,
+          12
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3210,
+      "surah": "Al-Mumtahana",
+      "ayah": 6,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.637,
+      "arabic_text": "لَقَدْ كَانَ لَكُمْ فِيهِمْ أُسْوَةٌ حَسَنَةٌۭ لِّمَن كَانَ يَرْجُوا۟ ٱللَّهَ وَٱلْيَوْمَ ٱلْءَاخِرَ ۚ وَمَن يَتَوَلَّ فَإِنَّ ٱللَّهَ هُوَ ٱلْغَنِىُّ ٱلْحَمِيدُ",
+      "english_text": "In them, indeed, you have a good example for everyone who looks forward [with hope and awe] to God and the Last Day. And if any turns away, [let him know that] God is truly self-sufficient, the One to whom all praise is due.\"",
+      "start_time": 3210,
+      "end_time": 3221,
+      "matched_token_indices": [
+        [
+          30,
+          0
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          32,
+          2
+        ],
+        [
+          33,
+          3
+        ],
+        [
+          34,
+          4
+        ],
+        [
+          35,
+          5
+        ],
+        [
+          36,
+          6
+        ],
+        [
+          37,
+          7
+        ],
+        [
+          38,
+          8
+        ],
+        [
+          39,
+          9
+        ],
+        [
+          40,
+          10
+        ],
+        [
+          41,
+          11
+        ],
+        [
+          42,
+          12
+        ],
+        [
+          43,
+          13
+        ],
+        [
+          44,
+          14
+        ],
+        [
+          45,
+          15
+        ],
+        [
+          46,
+          16
+        ],
+        [
+          47,
+          17
+        ],
+        [
+          48,
+          18
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3409,
+      "surah": "Al-Mumtahana",
+      "ayah": 7,
+      "surah_number": 60,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.877,
+      "arabic_text": "۞ عَسَى ٱللَّهُ أَن يَجْعَلَ بَيْنَكُمْ وَبَيْنَ ٱلَّذِينَ عَادَيْتُم مِّنْهُم مَّوَدَّةًۭ ۚ وَٱللَّهُ قَدِيرٌۭ ۚ وَٱللَّهُ غَفُورٌۭ رَّحِيمٌۭ",
+      "english_text": "[But] it may well be that God will bring about [mutual] affection between you [O believers] and some of those whom you [now] face as enemies: for, God is all-powerful - and God is much-forgiving, a dispenser of grace.",
+      "start_time": 3409,
+      "end_time": 3418,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 3434,
+      "start_time": 3434,
+      "end_time": 3434,
+      "surah": "Al-Mumtahana",
+      "surah_number": 60,
+      "ayah": 8,
+      "juz": null,
+      "quality": "inferred",
+      "reciter": "Samir",
+      "confidence": 0.56,
+      "origin": "final_gap_fill_bounded"
+    },
+    {
+      "time": 3459,
+      "surah": "Al-Mumtahana",
+      "ayah": 9,
+      "surah_number": 60,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.625,
+      "arabic_text": "إِنَّمَا يَنْهَىٰكُمُ ٱللَّهُ عَنِ ٱلَّذِينَ قَٰتَلُوكُمْ فِى ٱلدِّينِ وَأَخْرَجُوكُم مِّن دِيَٰرِكُمْ وَظَٰهَرُوا۟ عَلَىٰٓ إِخْرَاجِكُمْ أَن تَوَلَّوْهُمْ ۚ وَمَن يَتَوَلَّهُمْ فَأُو۟لَٰٓئِكَ هُمُ ٱلظَّٰلِمُونَ",
+      "english_text": "God only forbids you to turn in friendship towards such as fight against you because of [your] faith, and drive you forth from your homelands, or aid [others] in driving you forth: and as for those [from among you] who turn towards them in friendship; it is they, they who are truly wrongdoers!",
+      "start_time": 3459,
+      "end_time": 3466,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 3545,
+      "surah": "Al-Mumtahana",
+      "ayah": 11,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.714,
+      "arabic_text": "وَإِن فَاتَكُمْ شَىْءٌۭ مِّنْ أَزْوَٰجِكُمْ إِلَى ٱلْكُفَّارِ فَعَاقَبْتُمْ فَـَٔاتُوا۟ ٱلَّذِينَ ذَهَبَتْ أَزْوَٰجُهُم مِّثْلَ مَآ أَنفَقُوا۟ ۚ وَٱتَّقُوا۟ ٱللَّهَ ٱلَّذِىٓ أَنتُم بِهِۦ مُؤْمِنُونَ",
+      "english_text": "And if any of your wives should go over to the deniers of the truth, and you are thus afflicted in turn, then give unto those whose wives have gone away the equivalent of what they had spent [on their wives by way of dower], and remain conscious of God, in whom you believe!",
+      "start_time": 3545,
+      "end_time": 3702,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3703,
+      "surah": "Al-Mumtahana",
+      "ayah": 12,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.68,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلنَّبِىُّ إِذَا جَآءَكَ ٱلْمُؤْمِنَٰتُ يُبَايِعْنَكَ عَلَىٰٓ أَن لَّا يُشْرِكْنَ بِٱللَّهِ شَيْـًۭٔا وَلَا يَسْرِقْنَ وَلَا يَزْنِينَ وَلَا يَقْتُلْنَ أَوْلَٰدَهُنَّ وَلَا يَأْتِينَ بِبُهْتَٰنٍۢ يَفْتَرِينَهُۥ بَيْنَ أَيْدِيهِنَّ وَأَرْجُلِهِنَّ وَلَا يَعْصِينَكَ فِى مَعْرُوفٍۢ ۙ فَبَايِعْهُنَّ وَٱسْتَغْفِرْ لَهُنَّ ٱللَّهَ ۖ إِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۭ",
+      "english_text": "O Prophet! Whenever believing women come unto thee to pledge their allegiance to thee, [pledging] that [henceforth] they would not ascribe divinity, in any way, to aught but God, and would not steal, and would not commit adultery, and would not kill their children, and would not indulge in slander, falsely devising it out of nothingness: and would not disobey thee in anything [that thou declarest to be] right - then accept their pledge of allegiance, and pray to God to forgive them their [past] sins: for, behold, God is much-forgiving, a dispenser of grace.",
+      "start_time": 3703,
+      "end_time": 3715,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          15,
+          19
+        ],
+        [
+          16,
+          20
+        ],
+        [
+          17,
+          21
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          19,
+          23
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          21,
+          32
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3716,
+      "surah": "Al-Mumtahana",
+      "ayah": 13,
+      "surah_number": 60,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.676,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَتَوَلَّوْا۟ قَوْمًا غَضِبَ ٱللَّهُ عَلَيْهِمْ قَدْ يَئِسُوا۟ مِنَ ٱلْءَاخِرَةِ كَمَا يَئِسَ ٱلْكُفَّارُ مِنْ أَصْحَٰبِ ٱلْقُبُورِ",
+      "english_text": "O YOU who have attained to faith! Be not friends with people whom God has condemned! They [who would befriend them] are indeed bereft of all hope of a life to come - just as those deniers of the truth are bereft of all hope of [ever again seeing] those who are [now] in their graves.",
+      "start_time": 3716,
+      "end_time": 3735,
+      "matched_token_indices": [
+        [
+          22,
+          0
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24,
+          2
+        ],
+        [
+          25,
+          3
+        ],
+        [
+          26,
+          4
+        ],
+        [
+          27,
+          5
+        ],
+        [
+          28,
+          6
+        ],
+        [
+          29,
+          7
+        ],
+        [
+          30,
+          8
+        ],
+        [
+          31,
+          9
+        ],
+        [
+          32,
+          10
+        ],
+        [
+          33,
+          11
+        ],
+        [
+          34,
+          12
+        ],
+        [
+          35,
+          13
+        ],
+        [
+          36,
+          14
+        ],
+        [
+          37,
+          15
+        ],
+        [
+          38,
+          16
+        ],
+        [
+          39,
+          17
+        ],
+        [
+          40,
+          18
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3888,
+      "surah": "As-Saff",
+      "ayah": 1,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.935,
+      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ سَبَّحَ لِلَّهِ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+      "english_text": "ALL THAT IS in the heavens and all that is on earth extols God's limitless glory: for He alone is almighty, truly wise!",
+      "start_time": 3888,
+      "end_time": 3896,
+      "matched_token_indices": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          14
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3897,
+      "surah": "As-Saff",
+      "ayah": 2,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.838,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لِمَ تَقُولُونَ مَا لَا تَفْعَلُونَ",
+      "english_text": "O YOU who have attained to faith! Why do you say one thing and do another?",
+      "start_time": 3897,
+      "end_time": 3903,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3904,
+      "surah": "As-Saff",
+      "ayah": 3,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.96,
+      "arabic_text": "كَبُرَ مَقْتًا عِندَ ٱللَّهِ أَن تَقُولُوا۟ مَا لَا تَفْعَلُونَ",
+      "english_text": "Most loathsome is it in the sight of God that you say what you do not do!",
+      "start_time": 3904,
+      "end_time": 3911,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3912,
+      "surah": "As-Saff",
+      "ayah": 4,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.881,
+      "arabic_text": "إِنَّ ٱللَّهَ يُحِبُّ ٱلَّذِينَ يُقَٰتِلُونَ فِى سَبِيلِهِۦ صَفًّۭا كَأَنَّهُم بُنْيَٰنٌۭ مَّرْصُوصٌۭ",
+      "english_text": "Verily, God loves [only] those who fight in His cause in [solid] ranks, as though they were a building firm and compact.",
+      "start_time": 3912,
+      "end_time": 3927,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3928,
+      "surah": "As-Saff",
+      "ayah": 5,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.702,
+      "arabic_text": "وَإِذْ قَالَ مُوسَىٰ لِقَوْمِهِۦ يَٰقَوْمِ لِمَ تُؤْذُونَنِى وَقَد تَّعْلَمُونَ أَنِّى رَسُولُ ٱللَّهِ إِلَيْكُمْ ۖ فَلَمَّا زَاغُوٓا۟ أَزَاغَ ٱللَّهُ قُلُوبَهُمْ ۚ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلْفَٰسِقِينَ",
+      "english_text": "Now when Moses spoke to his people, [it was this same truth that he had in mind:] \"O my people! Why do you cause me grief, the while you know that I am an apostle of God sent unto you?\" And so, when they swerved from the right way, God let their hearts swerve from the truth: for God does not bestow His guidance upon iniquitous folk.",
+      "start_time": 3928,
+      "end_time": 3948,
+      "matched_token_indices": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          19
+        ],
+        [
+          8,
+          22
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3949,
+      "surah": "As-Saff",
+      "ayah": 6,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.665,
+      "arabic_text": "وَإِذْ قَالَ عِيسَى ٱبْنُ مَرْيَمَ يَٰبَنِىٓ إِسْرَٰٓءِيلَ إِنِّى رَسُولُ ٱللَّهِ إِلَيْكُم مُّصَدِّقًۭا لِّمَا بَيْنَ يَدَىَّ مِنَ ٱلتَّوْرَىٰةِ وَمُبَشِّرًۢا بِرَسُولٍۢ يَأْتِى مِنۢ بَعْدِى ٱسْمُهُۥٓ أَحْمَدُ ۖ فَلَمَّا جَآءَهُم بِٱلْبَيِّنَٰتِ قَالُوا۟ هَٰذَا سِحْرٌۭ مُّبِينٌۭ",
+      "english_text": "And [this happened, too,] when Jesus, the son of Mary, said: \"O children of Israel! Behold, I am an apostle of God unto you, [sent] to confirm the truth of whatever there still remains of the Torah, and to give [you] the glad tiding of an apostle who shall come after me, whose name shall be Ahmad.\" But when he [whose coming Jesus had foretold] came unto them with all evidence of the truth, they said: \"This [alleged message of his] is [nothing but] spellbinding eloquence!\"",
+      "start_time": 3949,
+      "end_time": 4120,
+      "matched_token_indices": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 3984,
+      "surah": "As-Saff",
+      "ayah": 7,
+      "surah_number": 61,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.94,
+      "arabic_text": "وَمَنْ أَظْلَمُ مِمَّنِ ٱفْتَرَىٰ عَلَى ٱللَّهِ ٱلْكَذِبَ وَهُوَ يُدْعَىٰٓ إِلَى ٱلْإِسْلَٰمِ ۚ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلظَّٰلِمِينَ",
+      "english_text": "And who could be more wicked than one who invents [such] a lie about [a message from] God, seeing that he is [but] being called to self-surrender unto Him? But God does not bestow His guidance upon evil-doing folk.",
+      "start_time": 3984,
+      "end_time": 3998,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4004,
+      "surah": "As-Saff",
+      "ayah": 8,
+      "surah_number": 61,
+      "juz": null,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.709,
+      "arabic_text": "يُرِيدُونَ لِيُطْفِـُٔوا۟ نُورَ ٱللَّهِ بِأَفْوَٰهِهِمْ وَٱللَّهُ مُتِمُّ نُورِهِۦ وَلَوْ كَرِهَ ٱلْكَٰفِرُونَ",
+      "english_text": "They aim to extinguish God's light with their utterances: but God has willed to spread His light in all its fullness, however hateful this may be to all who deny the truth",
+      "start_time": 4004,
+      "end_time": 4007,
+      "matched_token_indices": null,
+      "origin": "matrix_two_stage_vad_off"
+    },
+    {
+      "time": 4121,
+      "surah": "As-Saff",
+      "ayah": 11,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.945,
+      "arabic_text": "تُؤْمِنُونَ بِٱللَّهِ وَرَسُولِهِۦ وَتُجَٰهِدُونَ فِى سَبِيلِ ٱللَّهِ بِأَمْوَٰلِكُمْ وَأَنفُسِكُمْ ۚ ذَٰلِكُمْ خَيْرٌۭ لَّكُمْ إِن كُنتُمْ تَعْلَمُونَ",
+      "english_text": "You are to believe in God and His Apostle, and to strive hard in God's cause with your possessions and your lives: this is for your own good - if you but knew it!",
+      "start_time": 4121,
+      "end_time": 4157,
+      "matched_token_indices": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          14
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4158,
+      "surah": "As-Saff",
+      "ayah": 12,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.903,
+      "arabic_text": "يَغْفِرْ لَكُمْ ذُنُوبَكُمْ وَيُدْخِلْكُمْ جَنَّٰتٍۢ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ وَمَسَٰكِنَ طَيِّبَةًۭ فِى جَنَّٰتِ عَدْنٍۢ ۚ ذَٰلِكَ ٱلْفَوْزُ ٱلْعَظِيمُ",
+      "english_text": "[If you do so,] He will forgive you your sins, and [in the life to come] will admit you into gardens through which running waters flow, and into goodly mansions in [those] gardens of perpetual bliss: that [will be] the triumph supreme!",
+      "start_time": 4158,
+      "end_time": 4180,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4181,
+      "surah": "As-Saff",
+      "ayah": 13,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.744,
+      "arabic_text": "وَأُخْرَىٰ تُحِبُّونَهَا ۖ نَصْرٌۭ مِّنَ ٱللَّهِ وَفَتْحٌۭ قَرِيبٌۭ ۗ وَبَشِّرِ ٱلْمُؤْمِنِينَ",
+      "english_text": "And [withal, He will grant you] yet another thing that you dearly love: succour from God [in this world], and a victory soon to come: and [thereof, O Prophet,] give thou a glad tiding to all who believe.",
+      "start_time": 4181,
+      "end_time": 4191,
+      "matched_token_indices": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4192,
+      "surah": "As-Saff",
+      "ayah": 14,
+      "surah_number": 61,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.737,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُونُوٓا۟ أَنصَارَ ٱللَّهِ كَمَا قَالَ عِيسَى ٱبْنُ مَرْيَمَ لِلْحَوَارِيِّۦنَ مَنْ أَنصَارِىٓ إِلَى ٱللَّهِ ۖ قَالَ ٱلْحَوَارِيُّونَ نَحْنُ أَنصَارُ ٱللَّهِ ۖ فَـَٔامَنَت طَّآئِفَةٌۭ مِّنۢ بَنِىٓ إِسْرَٰٓءِيلَ وَكَفَرَت طَّآئِفَةٌۭ ۖ فَأَيَّدْنَا ٱلَّذِينَ ءَامَنُوا۟ عَلَىٰ عَدُوِّهِمْ فَأَصْبَحُوا۟ ظَٰهِرِينَ",
+      "english_text": "O YOU who have attained to faith! Be helpers [in the cause of God - even as Jesus, the son of Mary, said unto the white-garbed ones, \"Who will be my helpers in God's cause?\" - whereupon the white-garbed [disciples] replied, \"We shall be [thy] helpers [in the cause] of God!\" And so [it happened that] some of the children of Israel came to believe [in the apostleship of Jesus], whereas others denied the truth. But [now] We have given strength against their foes unto those who have [truly] attained to faith: and they have become the ones that shall prevail.",
+      "start_time": 4192,
+      "end_time": 4213,
+      "matched_token_indices": [
+        [
+          15,
+          0
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          18,
+          3
+        ],
+        [
+          19,
+          4
+        ],
+        [
+          20,
+          5
+        ],
+        [
+          21,
+          6
+        ],
+        [
+          23,
+          7
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          25,
+          9
+        ],
+        [
+          26,
+          10
+        ],
+        [
+          27,
+          11
+        ],
+        [
+          28,
+          12
+        ],
+        [
+          29,
+          13
+        ],
+        [
+          30,
+          14
+        ],
+        [
+          31,
+          15
+        ],
+        [
+          32,
+          16
+        ],
+        [
+          33,
+          17
+        ],
+        [
+          34,
+          18
+        ],
+        [
+          35,
+          19
+        ],
+        [
+          36,
+          20
+        ],
+        [
+          37,
+          21
+        ],
+        [
+          38,
+          22
+        ],
+        [
+          39,
+          23
+        ],
+        [
+          40,
+          24
+        ],
+        [
+          41,
+          25
+        ],
+        [
+          42,
+          26
+        ],
+        [
+          43,
+          27
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4391,
+      "surah": "Al-Jumu'a",
+      "ayah": 1,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.879,
+      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ يُسَبِّحُ لِلَّهِ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ٱلْمَلِكِ ٱلْقُدُّوسِ ٱلْعَزِيزِ ٱلْحَكِيمِ",
+      "english_text": "ALL THAT IS in the heavens and all that is on earth extols the limitless glory of God, the Sovereign Supreme, the Holy, the Almighty, the Wise!",
+      "start_time": 4391,
+      "end_time": 4400,
+      "matched_token_indices": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          15
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4401,
+      "surah": "Al-Jumu'a",
+      "ayah": 2,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.671,
+      "arabic_text": "هُوَ ٱلَّذِى بَعَثَ فِى ٱلْأُمِّيِّۦنَ رَسُولًۭا مِّنْهُمْ يَتْلُوا۟ عَلَيْهِمْ ءَايَٰتِهِۦ وَيُزَكِّيهِمْ وَيُعَلِّمُهُمُ ٱلْكِتَٰبَ وَٱلْحِكْمَةَ وَإِن كَانُوا۟ مِن قَبْلُ لَفِى ضَلَٰلٍۢ مُّبِينٍۢ",
+      "english_text": "He it is who has sent unto the unlettered people an apostle from among themselves, to convey unto them His messages, and to cause them to grow in purity, and to impart unto them the divine writ as well as wisdom - whereas before that they were indeed, most obviously, lost in error",
+      "start_time": 4401,
+      "end_time": 4422,
+      "matched_token_indices": [
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          19,
+          12
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          21,
+          14
+        ],
+        [
+          22,
+          15
+        ],
+        [
+          23,
+          16
+        ],
+        [
+          24,
+          17
+        ],
+        [
+          25,
+          18
+        ],
+        [
+          26,
+          19
+        ],
+        [
+          27,
+          20
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4423,
+      "surah": "Al-Jumu'a",
+      "ayah": 3,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.729,
+      "arabic_text": "وَءَاخَرِينَ مِنْهُمْ لَمَّا يَلْحَقُوا۟ بِهِمْ ۚ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+      "english_text": "and [to cause this message to spread] from them unto other people as soon as they come into contact with them: for He alone is almighty, truly wise!",
+      "start_time": 4423,
+      "end_time": 4431,
+      "matched_token_indices": [
+        [
+          24,
+          0
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          26,
+          2
+        ],
+        [
+          27,
+          3
+        ],
+        [
+          28,
+          4
+        ],
+        [
+          29,
+          5
+        ],
+        [
+          30,
+          6
+        ],
+        [
+          31,
+          7
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4432,
+      "surah": "Al-Jumu'a",
+      "ayah": 4,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.857,
+      "arabic_text": "ذَٰلِكَ فَضْلُ ٱللَّهِ يُؤْتِيهِ مَن يَشَآءُ ۚ وَٱللَّهُ ذُو ٱلْفَضْلِ ٱلْعَظِيمِ",
+      "english_text": "Such is God's bounty: He grants it to anyone who is willing [to receive it]: for God is limitless in His great bounty.",
+      "start_time": 4432,
+      "end_time": 4441,
+      "matched_token_indices": [
+        [
+          29,
+          0
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          31,
+          2
+        ],
+        [
+          32,
+          3
+        ],
+        [
+          33,
+          4
+        ],
+        [
+          34,
+          5
+        ],
+        [
+          35,
+          6
+        ],
+        [
+          36,
+          7
+        ],
+        [
+          37,
+          8
+        ],
+        [
+          38,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4442,
+      "surah": "Al-Jumu'a",
+      "ayah": 5,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.627,
+      "arabic_text": "مَثَلُ ٱلَّذِينَ حُمِّلُوا۟ ٱلتَّوْرَىٰةَ ثُمَّ لَمْ يَحْمِلُوهَا كَمَثَلِ ٱلْحِمَارِ يَحْمِلُ أَسْفَارًۢا ۚ بِئْسَ مَثَلُ ٱلْقَوْمِ ٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِ ٱللَّهِ ۚ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلظَّٰلِمِينَ",
+      "english_text": "THE PARABLE of those who were graced with the burden of the Torah, and thereafter failed to bear this burden, is that of an ass that carries a load of books [but cannot benefit from them]. Calamitous is the parable of people who are bent on giving the lie to God's messages - for God does not bestow His guidance upon such evildoing folk!",
+      "start_time": 4442,
+      "end_time": 4465,
+      "matched_token_indices": [
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          18,
+          9
+        ],
+        [
+          19,
+          10
+        ],
+        [
+          20,
+          11
+        ],
+        [
+          21,
+          12
+        ],
+        [
+          22,
+          13
+        ],
+        [
+          23,
+          14
+        ],
+        [
+          24,
+          15
+        ],
+        [
+          25,
+          16
+        ],
+        [
+          26,
+          17
+        ],
+        [
+          27,
+          18
+        ],
+        [
+          28,
+          19
+        ],
+        [
+          29,
+          20
+        ],
+        [
+          30,
+          21
+        ],
+        [
+          31,
+          22
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 4469,
+      "surah": "Al-Jumu'a",
+      "ayah": 6,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.664,
+      "arabic_text": "قُلْ يَٰٓأَيُّهَا ٱلَّذِينَ هَادُوٓا۟ إِن زَعَمْتُمْ أَنَّكُمْ أَوْلِيَآءُ لِلَّهِ مِن دُونِ ٱلنَّاسِ فَتَمَنَّوُا۟ ٱلْمَوْتَ إِن كُنتُمْ صَٰدِقِينَ",
+      "english_text": "Say: \"O you who follow the Jewish faith! If you claim that you [alone] are close to God, to the exclusion of all other people, then you should be longing for death - if what you say is true!\"",
+      "start_time": 4469,
+      "end_time": 4486,
+      "matched_token_indices": [
+        [
+          8,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4488,
+      "surah": "Al-Jumu'a",
+      "ayah": 7,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.717,
+      "arabic_text": "وَلَا يَتَمَنَّوْنَهُۥٓ أَبَدًۢا بِمَا قَدَّمَتْ أَيْدِيهِمْ ۚ وَٱللَّهُ عَلِيمٌۢ بِٱلظَّٰلِمِينَ",
+      "english_text": "But never will they long for it, because [they are aware] of what their hands have wrought in this world; and God has full knowledge of evildoers.",
+      "start_time": 4488,
+      "end_time": 4499,
+      "matched_token_indices": [
+        [
+          22,
+          0
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24,
+          2
+        ],
+        [
+          25,
+          3
+        ],
+        [
+          26,
+          4
+        ],
+        [
+          27,
+          5
+        ],
+        [
+          28,
+          6
+        ],
+        [
+          29,
+          7
+        ],
+        [
+          30,
+          8
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 4488,
+      "surah": "Al-Jumu'a",
+      "ayah": 8,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.846,
+      "arabic_text": "قُلْ إِنَّ ٱلْمَوْتَ ٱلَّذِى تَفِرُّونَ مِنْهُ فَإِنَّهُۥ مُلَٰقِيكُمْ ۖ ثُمَّ تُرَدُّونَ إِلَىٰ عَٰلِمِ ٱلْغَيْبِ وَٱلشَّهَٰدَةِ فَيُنَبِّئُكُم بِمَا كُنتُمْ تَعْمَلُونَ",
+      "english_text": "Say: \"Behold, the death from which you are fleeing is bound to overtake you - and then you will be brought back unto Him who knows all that is beyond the reach of a created being's perception as well as all that can be witnessed by a creature's senses or mind, whereupon He will make you truly understand all that you were doing [in life].",
+      "start_time": 4488,
+      "end_time": 4631,
+      "matched_token_indices": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4627,
+      "surah": "Al-Jumu'a",
+      "ayah": 9,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.919,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا نُودِىَ لِلصَّلَوٰةِ مِن يَوْمِ ٱلْجُمُعَةِ فَٱسْعَوْا۟ إِلَىٰ ذِكْرِ ٱللَّهِ وَذَرُوا۟ ٱلْبَيْعَ ۚ ذَٰلِكُمْ خَيْرٌۭ لَّكُمْ إِن كُنتُمْ تَعْلَمُونَ",
+      "english_text": "O YOU who have attained to faith! When the call to prayer is sounded on the day of congregation, hasten to the remembrance of God, and leave all worldly commerce: this is for your own good, if you but knew it.",
+      "start_time": 4627,
+      "end_time": 4650,
+      "matched_token_indices": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          19,
+          19
+        ],
+        [
+          20,
+          20
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 4651,
+      "surah": "Al-Jumu'a",
+      "ayah": 10,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.741,
+      "arabic_text": "فَإِذَا قُضِيَتِ ٱلصَّلَوٰةُ فَٱنتَشِرُوا۟ فِى ٱلْأَرْضِ وَٱبْتَغُوا۟ مِن فَضْلِ ٱللَّهِ وَٱذْكُرُوا۟ ٱللَّهَ كَثِيرًۭا لَّعَلَّكُمْ تُفْلِحُونَ",
+      "english_text": "And when the prayer is ended, disperse freely on earth and seek to obtain [something] of God's bounty; but remember God often, so that you might attain to a happy state!",
+      "start_time": 4651,
+      "end_time": 4669,
+      "matched_token_indices": [
+        [
+          11,
+          0
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          19,
+          8
+        ],
+        [
+          22,
+          9
+        ],
+        [
+          24,
+          10
+        ],
+        [
+          25,
+          11
+        ],
+        [
+          26,
+          12
+        ],
+        [
+          27,
+          13
+        ],
+        [
+          28,
+          14
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 4670,
+      "surah": "Al-Jumu'a",
+      "ayah": 11,
+      "surah_number": 62,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.57,
+      "arabic_text": "وَإِذَا رَأَوْا۟ تِجَٰرَةً أَوْ لَهْوًا ٱنفَضُّوٓا۟ إِلَيْهَا وَتَرَكُوكَ قَآئِمًۭا ۚ قُلْ مَا عِندَ ٱللَّهِ خَيْرٌۭ مِّنَ ٱللَّهْوِ وَمِنَ ٱلتِّجَٰرَةِ ۚ وَٱللَّهُ خَيْرُ ٱلرَّٰزِقِينَ",
+      "english_text": "Yet [it does happen that] when people become aware of [an occasion for] worldly gain or a passing delight, they rush headlong towards it, and leave thee standing [and preaching]. Say: \"That which is with God is far better than all passing delight and all gain! And God is the best of providers!\"",
+      "start_time": 4670,
+      "end_time": 4691,
+      "matched_token_indices": [
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          19,
+          11
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          21,
+          13
+        ],
+        [
+          22,
+          14
+        ],
+        [
+          23,
+          15
+        ],
+        [
+          24,
+          16
+        ],
+        [
+          25,
+          17
+        ],
+        [
+          26,
+          18
+        ],
+        [
+          27,
+          19
+        ],
+        [
+          28,
+          20
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4678,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 1,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.757,
+      "arabic_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ إِذَا جَآءَكَ ٱلْمُنَٰفِقُونَ قَالُوا۟ نَشْهَدُ إِنَّكَ لَرَسُولُ ٱللَّهِ ۗ وَٱللَّهُ يَعْلَمُ إِنَّكَ لَرَسُولُهُۥ وَٱللَّهُ يَشْهَدُ إِنَّ ٱلْمُنَٰفِقِينَ لَكَٰذِبُونَ",
+      "english_text": "WHEN THE HYPOCRITES come unto thee, they say, \"We bear witness that thou art indeed God's Apostle!\" But God knows that thou art truly His Apostle; and He bears witness that the hypocrites are indeed false [in their declaration of faith].",
+      "start_time": 4678,
+      "end_time": 4678,
+      "matched_token_indices": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4867,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 2,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.808,
+      "arabic_text": "ٱتَّخَذُوٓا۟ أَيْمَٰنَهُمْ جُنَّةًۭ فَصَدُّوا۟ عَن سَبِيلِ ٱللَّهِ ۚ إِنَّهُمْ سَآءَ مَا كَانُوا۟ يَعْمَلُونَ",
+      "english_text": "They have made their oaths a cover [for their falseness], and thus they turn others away from the Path of God. Evil indeed is all that they are wont to do:",
+      "start_time": 4867,
+      "end_time": 4880,
+      "matched_token_indices": [
+        [
+          30,
+          0
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          32,
+          2
+        ],
+        [
+          33,
+          3
+        ],
+        [
+          34,
+          4
+        ],
+        [
+          35,
+          5
+        ],
+        [
+          36,
+          6
+        ],
+        [
+          37,
+          7
+        ],
+        [
+          38,
+          8
+        ],
+        [
+          39,
+          9
+        ],
+        [
+          40,
+          10
+        ],
+        [
+          41,
+          11
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 4881,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 3,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.693,
+      "arabic_text": "ذَٰلِكَ بِأَنَّهُمْ ءَامَنُوا۟ ثُمَّ كَفَرُوا۟ فَطُبِعَ عَلَىٰ قُلُوبِهِمْ فَهُمْ لَا يَفْقَهُونَ",
+      "english_text": "this, because [they profess that] they have attained to faith, whereas [inwardly] they deny the truth - and so, a seal has been set on their hearts so that they can no longer understand [what is true and what false].",
+      "start_time": 4881,
+      "end_time": 4891,
+      "matched_token_indices": [
+        [
+          21,
+          0
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          24,
+          3
+        ],
+        [
+          25,
+          4
+        ],
+        [
+          26,
+          5
+        ],
+        [
+          27,
+          6
+        ],
+        [
+          28,
+          7
+        ],
+        [
+          29,
+          8
+        ],
+        [
+          30,
+          9
+        ],
+        [
+          31,
+          10
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4892,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 4,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.783,
+      "arabic_text": "۞ وَإِذَا رَأَيْتَهُمْ تُعْجِبُكَ أَجْسَامُهُمْ ۖ وَإِن يَقُولُوا۟ تَسْمَعْ لِقَوْلِهِمْ ۖ كَأَنَّهُمْ خُشُبٌۭ مُّسَنَّدَةٌۭ ۖ يَحْسَبُونَ كُلَّ صَيْحَةٍ عَلَيْهِمْ ۚ هُمُ ٱلْعَدُوُّ فَٱحْذَرْهُمْ ۚ قَٰتَلَهُمُ ٱللَّهُ ۖ أَنَّىٰ يُؤْفَكُونَ",
+      "english_text": "Now when thou seest them, their outward appearance may please thee; and when they speak, thou art inclined to lend ear to what they say. [But though they may seem as sure of themselves] as if they were timbers [firmly] propped up, they think that every shout is [directed] against them. They are the [real] enemies [of all faith], so beware of them. [They deserve the imprecation,] \"May God destroy them!\" How perverted are their minds!",
+      "start_time": 4892,
+      "end_time": 4922,
+      "matched_token_indices": [
+        [
+          40,
+          0
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          42,
+          2
+        ],
+        [
+          43,
+          3
+        ],
+        [
+          44,
+          4
+        ],
+        [
+          45,
+          5
+        ],
+        [
+          46,
+          6
+        ],
+        [
+          47,
+          7
+        ],
+        [
+          51,
+          8
+        ],
+        [
+          52,
+          9
+        ],
+        [
+          53,
+          10
+        ],
+        [
+          54,
+          11
+        ],
+        [
+          55,
+          12
+        ],
+        [
+          56,
+          13
+        ],
+        [
+          57,
+          14
+        ],
+        [
+          58,
+          15
+        ],
+        [
+          59,
+          16
+        ],
+        [
+          60,
+          17
+        ],
+        [
+          61,
+          18
+        ],
+        [
+          62,
+          19
+        ],
+        [
+          63,
+          20
+        ],
+        [
+          64,
+          21
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 4924,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 5,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.696,
+      "arabic_text": "وَإِذَا قِيلَ لَهُمْ تَعَالَوْا۟ يَسْتَغْفِرْ لَكُمْ رَسُولُ ٱللَّهِ لَوَّوْا۟ رُءُوسَهُمْ وَرَأَيْتَهُمْ يَصُدُّونَ وَهُم مُّسْتَكْبِرُونَ",
+      "english_text": "for, when they are told, \"Come, the Apostle of God will pray [unto God] that you be forgiven\", they turn their heads away, and thou canst see how they draw back in their false pride.",
+      "start_time": 4924,
+      "end_time": 4941,
+      "matched_token_indices": [
+        [
+          15,
+          0
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          18,
+          3
+        ],
+        [
+          19,
+          4
+        ],
+        [
+          20,
+          5
+        ],
+        [
+          21,
+          6
+        ],
+        [
+          22,
+          7
+        ],
+        [
+          23,
+          8
+        ],
+        [
+          24,
+          9
+        ]
+      ],
+      "origin": "matrix_legacy_vad_on"
+    },
+    {
+      "time": 4941,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 6,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.78,
+      "arabic_text": "سَوَآءٌ عَلَيْهِمْ أَسْتَغْفَرْتَ لَهُمْ أَمْ لَمْ تَسْتَغْفِرْ لَهُمْ لَن يَغْفِرَ ٱللَّهُ لَهُمْ ۚ إِنَّ ٱللَّهَ لَا يَهْدِى ٱلْقَوْمَ ٱلْفَٰسِقِينَ",
+      "english_text": "As for them it is all the same whether thou dost pray that they be forgiven or dost not pray for them: God will nor forgive them - for, behold, God does not bestow His guidance upon such iniquitous folk.",
+      "start_time": 4941,
+      "end_time": 5063,
+      "matched_token_indices": [
+        [
+          36,
+          0
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          38,
+          2
+        ],
+        [
+          39,
+          3
+        ],
+        [
+          40,
+          4
+        ],
+        [
+          41,
+          5
+        ],
+        [
+          42,
+          6
+        ],
+        [
+          43,
+          7
+        ],
+        [
+          44,
+          8
+        ],
+        [
+          45,
+          9
+        ],
+        [
+          46,
+          10
+        ],
+        [
+          47,
+          11
+        ],
+        [
+          48,
+          12
+        ],
+        [
+          49,
+          13
+        ],
+        [
+          50,
+          14
+        ],
+        [
+          51,
+          15
+        ],
+        [
+          52,
+          16
+        ],
+        [
+          53,
+          17
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 5064,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 7,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 1.0,
+      "arabic_text": "هُمُ ٱلَّذِينَ يَقُولُونَ لَا تُنفِقُوا۟ عَلَىٰ مَنْ عِندَ رَسُولِ ٱللَّهِ حَتَّىٰ يَنفَضُّوا۟ ۗ وَلِلَّهِ خَزَآئِنُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ وَلَٰكِنَّ ٱلْمُنَٰفِقِينَ لَا يَفْقَهُونَ",
+      "english_text": "It is they who say [to their compatriots], \"Do not spend anything on those who are with God's Apostle, so that they [may be forced to] leave.\" However, unto God belong the treasures of the heavens and the earth: but this truth the hypocrites cannot grasp.",
+      "start_time": 5064,
+      "end_time": 5086,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 5087,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 8,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.655,
+      "arabic_text": "يَقُولُونَ لَئِن رَّجَعْنَآ إِلَى ٱلْمَدِينَةِ لَيُخْرِجَنَّ ٱلْأَعَزُّ مِنْهَا ٱلْأَذَلَّ ۚ وَلِلَّهِ ٱلْعِزَّةُ وَلِرَسُولِهِۦ وَلِلْمُؤْمِنِينَ وَلَٰكِنَّ ٱلْمُنَٰفِقِينَ لَا يَعْلَمُونَ",
+      "english_text": "[And] they say, \"Indeed, when we return to the City [we,] the ones most worthy of honour will surely drive out therefrom those most contemptible ones!\" However, all honour belongs to God, and [thus] to His Apostle and those who believe [in God]: but of this the hypocrites are not aware.",
+      "start_time": 5087,
+      "end_time": 5107,
+      "matched_token_indices": [
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          18,
+          9
+        ],
+        [
+          19,
+          10
+        ],
+        [
+          20,
+          11
+        ],
+        [
+          21,
+          12
+        ],
+        [
+          22,
+          13
+        ],
+        [
+          23,
+          14
+        ],
+        [
+          24,
+          15
+        ],
+        [
+          25,
+          16
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 5108,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 9,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.928,
+      "arabic_text": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُلْهِكُمْ أَمْوَٰلُكُمْ وَلَآ أَوْلَٰدُكُمْ عَن ذِكْرِ ٱللَّهِ ۚ وَمَن يَفْعَلْ ذَٰلِكَ فَأُو۟لَٰٓئِكَ هُمُ ٱلْخَٰسِرُونَ",
+      "english_text": "O YOU who have attained to faith! Let not your worldly goods or your children make you oblivious of the remembrance of God: for If any behave thus - it is they, they who are the losers!",
+      "start_time": 5108,
+      "end_time": 5127,
+      "matched_token_indices": [
+        [
+          25,
+          0
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          27,
+          2
+        ],
+        [
+          28,
+          3
+        ],
+        [
+          29,
+          4
+        ],
+        [
+          30,
+          5
+        ],
+        [
+          31,
+          6
+        ],
+        [
+          32,
+          7
+        ],
+        [
+          33,
+          8
+        ],
+        [
+          34,
+          9
+        ],
+        [
+          35,
+          10
+        ],
+        [
+          36,
+          11
+        ],
+        [
+          37,
+          12
+        ],
+        [
+          38,
+          13
+        ],
+        [
+          39,
+          14
+        ],
+        [
+          40,
+          15
+        ],
+        [
+          41,
+          16
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 5128,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 10,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "high",
+      "reciter": "Samir",
+      "confidence": 0.888,
+      "arabic_text": "وَأَنفِقُوا۟ مِن مَّا رَزَقْنَٰكُم مِّن قَبْلِ أَن يَأْتِىَ أَحَدَكُمُ ٱلْمَوْتُ فَيَقُولَ رَبِّ لَوْلَآ أَخَّرْتَنِىٓ إِلَىٰٓ أَجَلٍۢ قَرِيبٍۢ فَأَصَّدَّقَ وَأَكُن مِّنَ ٱلصَّٰلِحِينَ",
+      "english_text": "And spend on others out of what We have provided for you as sustenance, ere there come a time when death approaches any of you, and he then says, \"O my Sustainer! If only Thou wouldst grant me a delay for a short while, so that I could give in charity and be among the righteous!\"",
+      "start_time": 5128,
+      "end_time": 5154,
+      "matched_token_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          19,
+          19
+        ]
+      ],
+      "origin": "matrix_legacy_vad_off"
+    },
+    {
+      "time": 5168,
+      "surah": "Al-Munaafiqoon",
+      "ayah": 11,
+      "surah_number": 63,
+      "juz": 28,
+      "quality": "manual",
+      "reciter": "Samir",
+      "confidence": 1.0,
+      "arabic_text": "وَلَن يُؤَخِّرَ ٱللَّهُ نَفْسًا إِذَا جَآءَ أَجَلُهَا ۚ وَٱللَّهُ خَبِيرٌۢ بِمَا تَعْمَلُونَ",
+      "english_text": "But never does God grant a delay to a human being when his term has come; and God is fully aware of all that you do.",
+      "start_time": 5168,
+      "end_time": 5168,
+      "matched_token_indices": null,
+      "origin": "matrix_legacy_vad_on"
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-03-15T01:14:55.424911+00:00",
+    "audio_path": "data/audio/day-25/normalized.wav",
+    "part": null,
+    "whisper_model": "small",
+    "markers_detected": 65,
+    "transcript_segments_raw": 672,
+    "transcript_segments_for_matching": 588,
+    "transcript_reset_markers": 16,
+    "reciter_segments_detected": 19,
+    "voice_reciter_classification_enabled": false,
+    "manual_reciter_windows": [
+      {
+        "start_time": 0,
+        "end_time": 5168,
+        "reciter": "Samir"
+      }
+    ],
+    "corpus_loaded": true,
+    "asad_loaded": true,
+    "transcript_path": "data/ai/remote_jobs/day-25/transcripts/day25-full-0-5168-0d06b99342b2.json",
+    "asr_corrections": {
+      "enabled": false,
+      "reason": "no_path"
+    },
+    "segment_detection": {
+      "audio_starts": 10,
+      "fatiha_starts": 16,
+      "merged_starts": 19
+    },
+    "reciter_filter": {
+      "enabled": true,
+      "reason": "known_reciter_windows",
+      "kept_segments": 588,
+      "total_segments": 588,
+      "keep_ratio": 1.0,
+      "windows": 1
+    },
+    "match_config": {
+      "min_score": 78,
+      "min_overlap": 0.18,
+      "min_confidence": 0.62,
+      "min_gap_seconds": 8,
+      "strict_normalization": false,
+      "require_weak_support_for_inferred": true,
+      "start_surah_number": 58,
+      "start_ayah": 11,
+      "segment_constraints_count": 2,
+      "matcher_mode": "two_stage"
+    },
+    "manual_override": {
+      "path": "data/ai/day_overrides.json",
+      "final_surah": "Al-Munafiqun",
+      "final_ayah": 11,
+      "start_time": 0,
+      "final_time": 5168,
+      "markers_before": 64,
+      "markers_after": 65,
+      "inserted_terminal": true,
+      "inserted_terminal_time": 5168
+    },
+    "marker_time_overrides": [
+      {
+        "surah_number": 58,
+        "ayah": 11,
+        "part": null,
+        "start_time": 0,
+        "end_time": 0
+      },
+      {
+        "surah_number": 59,
+        "ayah": 24,
+        "part": null,
+        "start_time": 1762,
+        "end_time": 1762
+      },
+      {
+        "surah_number": 60,
+        "ayah": 1,
+        "part": null,
+        "start_time": 2919,
+        "end_time": 2919
+      },
+      {
+        "surah_number": 63,
+        "ayah": 11,
+        "part": null,
+        "start_time": 5168,
+        "end_time": 5168
+      }
+    ],
+    "override_surah_fill": null,
+    "override_flags": {
+      "apply_day_final_ayah_override": true,
+      "apply_marker_time_overrides": true,
+      "apply_override_surah_fill": false
+    },
+    "pipeline_timings_seconds": {
+      "prepare audio source": 5.59,
+      "load normalized audio": 0.36,
+      "trim audio (skipped)": 0.0,
+      "load provided transcript": 0.01,
+      "transcribe audio (provided, skipped)": 0.0,
+      "apply ASR corrections": 0.0,
+      "detect reciter/prayer segment starts": 0.08,
+      "assign reciters to segments": 0.0,
+      "load Quran corpus and prepare transcript": 0.08,
+      "match ayah markers": 0.25,
+      "apply day overrides": 0.0,
+      "enrich marker text + reciter mapping": 0.01
+    },
+    "merge_strategy": "legacy_strong_then_two_stage_strong_then_bounded_infer",
+    "legacy_commit_ref": "a61c0d3",
+    "enforce_match_blocks": false,
+    "match_blocks_count": 2,
+    "matrix_sources": {
+      "legacy_vad_on": "day-25-vad-on-legacy.json",
+      "legacy_vad_off": "day-25-vad-off-legacy.json",
+      "two_stage_vad_on": "day-25-vad-on-two_stage.json",
+      "two_stage_vad_off": "day-25-vad-off-two_stage.json"
+    },
+    "merged_strong_count": 79,
+    "final_inferred_added": 2,
+    "legacy_skipped": {
+      "non_strong": 0,
+      "invalid": 2,
+      "outside_match_blocks": 0
+    },
+    "two_stage_skipped": {
+      "non_strong": 0,
+      "invalid": 2,
+      "outside_match_blocks": 0
+    },
+    "final_infer_constraints": {
+      "min_total_gap_seconds": 12,
+      "min_seconds_per_ayah": 2.5,
+      "max_seconds_per_ayah": 30.0,
+      "max_gap_ayahs": 40,
+      "min_missing_ayahs": 1
+    },
+    "final_infer_stats": {
+      "added": 2,
+      "skipped_short_time": 0,
+      "skipped_rate": 3,
+      "skipped_large_gap": 0,
+      "skipped_order": 1,
+      "skipped_outside_match_blocks": 0
+    },
+    "monotonic_timeline_filter": {
+      "dropped": 3,
+      "total": 81,
+      "examples": [
+        {
+          "surah_number": 59,
+          "ayah": 19,
+          "time": 517,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_on"
+        },
+        {
+          "surah_number": 59,
+          "ayah": 22,
+          "time": 598,
+          "quality": "high",
+          "origin": "matrix_legacy_vad_off"
+        },
+        {
+          "surah_number": 61,
+          "ayah": 10,
+          "time": 4128,
+          "quality": "high",
+          "origin": "matrix_two_stage_vad_off"
+        }
+      ]
+    },
+    "rescued_from_two_stage_after_monotonic": {
+      "count": 1,
+      "examples": [
+        {
+          "surah_number": 59,
+          "ayah": 22,
+          "time": 1711,
+          "quality": "high",
+          "origin": "matrix_two_stage_vad_on"
+        }
+      ]
+    },
+    "latest_position": {
+      "surah": "At-Taghabun",
+      "surah_number": 64,
+      "ayah": 1,
+      "juz": 28,
+      "time": 5168.0,
+      "quality": "manual"
+    },
+    "progress_locked": true
+  }
+}

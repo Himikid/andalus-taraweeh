@@ -2082,6 +2082,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  25: [
+    {
+      ayahRef: "58:11",
+      themeType: "Famous Ayah",
+      shortTitle: "Allah Raises People of Knowledge and Iman",
+      whyNotable: [
+        "A highly cited ayah on adab, humility, and the rank granted by Allah.",
+        "Frequently quoted in learning circles to connect ilm with faith and obedience.",
+      ],
+      summary:
+        "Allah commands believers to make space in gatherings and to rise when instructed, then promises elevation for those who believe and those given knowledge. The ayah links community adab to spiritual rank and divine awareness of all actions.",
+      keyTakeaway: "Carry humility and discipline in gatherings so knowledge benefits the heart.",
+      references: [
+        { name: "Quran 58:11", url: "https://quran.com/58:11" },
+        { name: "Ibn Kathir Tafsir (58:11)", url: "https://quran.com/en/58:11/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "59:10",
+      themeType: "Dua",
+      shortTitle: "Dua for Forgiveness and Clean Hearts",
+      whyNotable: [
+        "A famous Quranic dua for unity and purification from resentment.",
+        "Widely used to mend relationships and preserve brotherhood among believers.",
+      ],
+      summary:
+        "Believers ask Allah to forgive them and those who preceded them in faith, and to remove rancor from their hearts toward believers. The supplication combines humility, mercy for earlier generations, and inner purification.",
+      keyTakeaway: "Protect unity by making dua for others and cleansing the heart of grudges.",
+      references: [
+        { name: "Quran 59:10", url: "https://quran.com/59:10" },
+        { name: "Ibn Kathir Tafsir (59:10)", url: "https://quran.com/en/59:10/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "59:18",
+      themeType: "Famous Ayah",
+      shortTitle: "Prepare for Tomorrow",
+      whyNotable: [
+        "A central accountability ayah often quoted in reminders on self-audit.",
+        "Commonly used to frame daily muhasabah before Allah.",
+      ],
+      summary:
+        "Allah commands believers to have taqwa and to look at what each soul has sent forward for tomorrow. The ayah turns faith into proactive accountability, urging constant moral inventory.",
+      keyTakeaway: "Review your actions regularly and invest intentionally for the Hereafter.",
+      references: [
+        { name: "Quran 59:18", url: "https://quran.com/59:18" },
+        { name: "Ibn Kathir Tafsir (59:18)", url: "https://quran.com/en/59:18/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "59:22-24",
+      themeType: "Famous Ayah",
+      shortTitle: "The Beautiful Names of Allah",
+      whyNotable: [
+        "Among the most recited passages listing Allah's names and attributes.",
+        "Used frequently in dhikr-focused reminders to deepen awe and ma'rifah.",
+      ],
+      summary:
+        "These closing ayat of Al-Hashr present Allah's majestic names and attributes, affirming His perfection, sovereignty, and holiness. The passage trains hearts to know Allah through His names and worship Him with reverence.",
+      keyTakeaway: "Strengthen worship by learning Allah's names and living by their meanings.",
+      references: [
+        { name: "Quran 59:22-24", url: "https://quran.com/59:22-24" },
+        { name: "Ibn Kathir Tafsir (59:22)", url: "https://quran.com/en/59:22/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "62:9",
+      themeType: "Famous Ayah",
+      shortTitle: "Respond to the Call of Jumuah",
+      whyNotable: [
+        "The primary ayah on Jumuah obligation and prioritizing remembrance over trade.",
+        "Frequently referenced in khutbahs about weekly spiritual discipline.",
+      ],
+      summary:
+        "When the call for Friday prayer is made, believers are commanded to hasten to Allah's remembrance and leave trade. The ayah prioritizes worship and collective dhikr over immediate worldly gain.",
+      keyTakeaway: "Treat Jumuah as a non-negotiable weekly covenant with Allah.",
+      references: [
+        { name: "Quran 62:9", url: "https://quran.com/62:9" },
+        { name: "Ibn Kathir Tafsir (62:9)", url: "https://quran.com/en/62:9/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "63:9",
+      themeType: "Famous Ayah",
+      shortTitle: "Do Not Let Wealth Distract from Dhikr",
+      whyNotable: [
+        "A well-known warning ayah on wealth and family distractions.",
+        "Commonly cited to recalibrate priorities around remembrance and obedience.",
+      ],
+      summary:
+        "Believers are warned not to let wealth and children distract them from the remembrance of Allah, because that neglect is true loss. The ayah reframes success around dhikr-centered living.",
+      keyTakeaway: "Keep remembrance of Allah central so worldly blessings do not become trials.",
+      references: [
+        { name: "Quran 63:9", url: "https://quran.com/63:9" },
+        { name: "Ibn Kathir Tafsir (63:9)", url: "https://quran.com/en/63:9/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -2324,6 +2422,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Believer character is framed through adab, humility, and guarding speech before Allah and His Messenger.",
       "Repeated akhirah scenes and signs in creation renew fear, hope, and certainty in resurrection.",
       "The day closes by tying true honor to worship, generosity, and iman-rooted action.",
+    ],
+  },
+  25: {
+    title: "Day 25 Recitation Summary (Al-Mujadilah 11-22, Al-Hashr 1-24, Al-Mumtahanah 1-13, As-Saff 1-14, Al-Jumuah 1-11, Al-Munafiqun 1-11)",
+    summary:
+      "Day 25 centers on loyal faith identity, truthful obedience, and disciplined remembrance. It moves from adab and sincere allegiance in Al-Mujadilah and Al-Hashr into tests of love, alliance, and prophetic example in Al-Mumtahanah, then through mission integrity in As-Saff, Jumuah-priority worship in Al-Jumuah, and final warnings against heedless distraction in Al-Munafiqun.",
+    themes: [
+      "The recitation links elevated rank to iman, knowledge, and obedience-based adab.",
+      "Believers are repeatedly called to align public claims with sincere, actionable commitment.",
+      "The day closes by prioritizing dhikr and worship over worldly distraction and delay.",
     ],
   },
 };
