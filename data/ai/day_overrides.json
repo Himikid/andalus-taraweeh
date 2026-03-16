@@ -906,6 +906,65 @@
           "reciter": "Samir"
         }
       ]
+    },
+    "26": {
+      "start_time": 929,
+      "start_surah_number": 64,
+      "start_ayah": 1,
+      "final_surah": "Al-Ma'arij",
+      "final_ayah": 35,
+      "final_time": 6844,
+      "marker_overrides": [
+        {
+          "surah_number": 64,
+          "ayah": 1,
+          "start_time": 929,
+          "end_time": 929
+        },
+        {
+          "surah_number": 67,
+          "ayah": 18,
+          "start_time": 3305,
+          "end_time": 3305
+        },
+        {
+          "surah_number": 67,
+          "ayah": 19,
+          "start_time": 4268,
+          "end_time": 4268
+        },
+        {
+          "surah_number": 70,
+          "ayah": 35,
+          "start_time": 6844,
+          "end_time": 6844
+        }
+      ],
+      "match_blocks": [
+        {
+          "start_time": 929,
+          "end_time": 3305,
+          "start_surah_number": 64,
+          "start_ayah": 1,
+          "end_surah_number": 67,
+          "end_ayah": 18
+        },
+        {
+          "start_time": 4268,
+          "end_time": 6844,
+          "start_surah_number": 67,
+          "start_ayah": 19,
+          "end_surah_number": 70,
+          "end_ayah": 35
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 0,
+          "end_time": 6844,
+          "reciter": "Samir"
+        }
+      ]
     }
   }
 }
