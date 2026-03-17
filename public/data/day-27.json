@@ -4,22 +4,6 @@
   "markers": [
     {
       "time": 1713,
-      "surah": "Al-Ma'aarij",
-      "ayah": 36,
-      "surah_number": 70,
-      "juz": 29,
-      "quality": "manual",
-      "reciter": "Samir",
-      "confidence": 1.0,
-      "arabic_text": "فَمَالِ ٱلَّذِينَ كَفَرُوا۟ قِبَلَكَ مُهْطِعِينَ",
-      "english_text": "WHAT, THEN, is amiss with such as are bent on denying the truth, that they run about confusedly to and fro before thee,",
-      "start_time": 1713,
-      "end_time": 1713,
-      "matched_token_indices": null,
-      "origin": "matrix_legacy_vad_on"
-    },
-    {
-      "time": 1713,
       "surah": "Nooh",
       "ayah": 1,
       "surah_number": 71,
@@ -9771,16 +9755,7 @@
       "inserted_terminal": false,
       "inserted_terminal_time": null
     },
-    "marker_time_overrides": [
-      {
-        "surah_number": 70,
-        "ayah": 36,
-        "part": null,
-        "start_time": 1713,
-        "end_time": 1713,
-        "inserted": true
-      }
-    ],
+    "marker_time_overrides": [],
     "override_surah_fill": null,
     "override_flags": {
       "apply_day_final_ayah_override": true,
