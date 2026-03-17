@@ -2278,6 +2278,104 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  27: [
+    {
+      ayahRef: "71:10-12",
+      themeType: "Dua",
+      shortTitle: "Seek Forgiveness for Expansive Provision",
+      whyNotable: [
+        "A famous Quranic call linking istighfar with mercy, rain, wealth, and children.",
+        "Widely recited in reminders on repentance and opening closed doors.",
+      ],
+      summary:
+        "Nuh calls his people to seek Allah's forgiveness, promising that Allah is ever-forgiving and will send rain, wealth, and offspring as aid. The passage teaches that repentance is both spiritual purification and a means for worldly barakah.",
+      keyTakeaway: "Make sincere istighfar constant, especially in hardship and stagnation.",
+      references: [
+        { name: "Quran 71:10-12", url: "https://quran.com/71:10-12" },
+        { name: "Ibn Kathir Tafsir (71:10)", url: "https://quran.com/en/71:10/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "73:20",
+      themeType: "Famous Ayah",
+      shortTitle: "Recite What Is Easy from the Quran",
+      whyNotable: [
+        "A central ayah of practical worship balance in Surah Al-Muzzammil.",
+        "Often cited to encourage consistent Quran recitation with realistic discipline.",
+      ],
+      summary:
+        "Allah acknowledges varied human burdens and commands believers to recite what is manageable of the Quran, while upholding prayer, charity, and sincere striving. It frames consistency over unsustainable intensity.",
+      keyTakeaway: "Build worship routines you can sustain with sincerity.",
+      references: [
+        { name: "Quran 73:20", url: "https://quran.com/73:20" },
+        { name: "Ibn Kathir Tafsir (73:20)", url: "https://quran.com/en/73:20/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "74:38",
+      themeType: "Famous Ayah",
+      shortTitle: "Every Soul Is Held by What It Earned",
+      whyNotable: [
+        "A widely quoted accountability ayah from Surah Al-Muddaththir.",
+        "Used frequently in reminders on personal responsibility before Allah.",
+      ],
+      summary:
+        "This ayah states that every soul is pledged to what it has earned, anchoring moral responsibility without excuse-shifting. It sharpens the believer's focus on deeds, repentance, and preparation for judgment.",
+      keyTakeaway: "Own your deeds now before they testify later.",
+      references: [
+        { name: "Quran 74:38", url: "https://quran.com/74:38" },
+        { name: "Ibn Kathir Tafsir (74:38)", url: "https://quran.com/en/74:38/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "75:2",
+      themeType: "Famous Ayah",
+      shortTitle: "By the Self-Reproaching Soul",
+      whyNotable: [
+        "A profound ayah on conscience and inner moral awakening.",
+        "Frequently cited in purification talks about muhasabah and repentance.",
+      ],
+      summary:
+        "Allah swears by the self-reproaching soul, highlighting the inner faculty that recognizes fault and calls for correction. The ayah validates healthy remorse as a path back to Allah.",
+      keyTakeaway: "Use conscience as a guide to repentance, not a trigger for despair.",
+      references: [
+        { name: "Quran 75:2", url: "https://quran.com/75:2" },
+        { name: "Ibn Kathir Tafsir (75:2)", url: "https://quran.com/en/75:2/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "79:40-41",
+      themeType: "Famous Ayah",
+      shortTitle: "Restrain the Self, Earn Paradise",
+      whyNotable: [
+        "A famous passage on controlling desires and fearing standing before Allah.",
+        "Commonly used in tarbiyah reminders on discipline and akhirah focus.",
+      ],
+      summary:
+        "For the one who fears standing before Allah and restrains the self from unchecked desire, Paradise is promised as refuge. The ayah ties salvation to reverent fear and practical self-control.",
+      keyTakeaway: "Real strength is saying no to desires that pull you from Allah.",
+      references: [
+        { name: "Quran 79:40-41", url: "https://quran.com/79:40-41" },
+        { name: "Ibn Kathir Tafsir (79:40)", url: "https://quran.com/en/79:40/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "80:34-37",
+      themeType: "Famous Ayah",
+      shortTitle: "The Day Each Person Flees Even Loved Ones",
+      whyNotable: [
+        "A striking and frequently quoted akhirah scene from Surah Abasa.",
+        "Used to awaken urgency and sincerity before the Day of Judgment.",
+      ],
+      summary:
+        "These ayat describe a day when every person flees even closest family due to overwhelming personal concern. The scene strips false security and redirects the heart to sincere preparation.",
+      keyTakeaway: "Prepare now for the Day when only your deeds remain with you.",
+      references: [
+        { name: "Quran 80:34-37", url: "https://quran.com/80:34-37" },
+        { name: "Ibn Kathir Tafsir (80:34)", url: "https://quran.com/en/80:34/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -2540,6 +2638,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Taqwa is tied to practical obedience, trust in Allah, and ethical consistency under pressure.",
       "The recitation repeatedly contrasts sincere repentance and steadfastness with heedlessness and delay.",
       "Akhirah scenes in Al-Haqqah and Al-Ma'arij sharpen urgency for worship, patience, and reform.",
+    ],
+  },
+  27: {
+    title: "Day 27 Recitation Summary (Al-Ma'arij 36-44, Nuh 1-28, Al-Jinn 1-28, Al-Muzzammil 1-20, Al-Muddaththir 1-56, Al-Qiyamah 1-40, Al-Insan 1-31, Al-Mursalat 1-50, An-Naba 1-40, An-Naziat 1-46, Abasa 1-42)",
+    summary:
+      "Day 27 moves through urgent akhirah warnings in the close of Al-Ma'arij, repentance and da'wah persistence in Nuh, and obedience-centered reform across Al-Jinn, Al-Muzzammil, and Al-Muddaththir. It continues through accountability scenes in Al-Qiyamah, gratitude and sincerity in Al-Insan, and powerful resurrection imagery through Al-Mursalat, An-Naba, An-Naziat, and Abasa. The recitation repeatedly calls for disciplined worship, moral seriousness, and preparation for the final standing before Allah.",
+    themes: [
+      "Persistent repentance, recitation, and prayer are framed as the path to steadfastness.",
+      "Akhirah imagery repeatedly dismantles heedlessness and resets priorities.",
+      "Personal accountability and self-restraint are presented as keys to salvation.",
     ],
   },
 };

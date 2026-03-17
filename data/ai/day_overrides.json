@@ -965,6 +965,27 @@
           "reciter": "Samir"
         }
       ]
+    },
+    "27": {
+      "start_time": 1713,
+      "start_surah_number": 70,
+      "start_ayah": 36,
+      "final_time": 7542,
+      "marker_overrides": [
+        {
+          "surah_number": 70,
+          "ayah": 36,
+          "start_time": 1713,
+          "end_time": 1713
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 0,
+          "end_time": 7542,
+          "reciter": "Samir"
+        }
+      ]
     }
   }
 }
