@@ -986,6 +986,35 @@
           "reciter": "Samir"
         }
       ]
+    },
+    "28": {
+      "start_time": 2304,
+      "start_surah_number": 81,
+      "start_ayah": 1,
+      "final_surah": "An-Naas",
+      "final_ayah": 6,
+      "final_time": 7875,
+      "marker_overrides": [
+        {
+          "surah_number": 81,
+          "ayah": 1,
+          "start_time": 2304,
+          "end_time": 2304
+        },
+        {
+          "surah_number": 114,
+          "ayah": 6,
+          "start_time": 7875,
+          "end_time": 7875
+        }
+      ],
+      "manual_reciter_windows": [
+        {
+          "start_time": 0,
+          "end_time": 7875,
+          "reciter": "Samir"
+        }
+      ]
     }
   }
 }

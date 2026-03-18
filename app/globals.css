@@ -60,3 +60,43 @@ body {
 .live-player-glow {
   animation: live-glow 4.5s ease-in-out infinite;
 }
+
+@keyframes khatam-confetti-fall {
+  0% {
+    transform: translate3d(0, -18px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(16px, 120%, 0) rotate(320deg);
+    opacity: 0;
+  }
+}
+
+.khatam-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.khatam-confetti-piece {
+  position: absolute;
+  top: -14px;
+  left: var(--confetti-left, 50%);
+  width: 7px;
+  height: 14px;
+  border-radius: 999px;
+  background: #f2c46d;
+  opacity: 0;
+  animation: khatam-confetti-fall var(--confetti-duration, 6s) linear var(--confetti-delay, 0s) infinite;
+}
+
+.khatam-confetti-piece:nth-child(3n) {
+  background: #88bfa3;
+}
+
+.khatam-confetti-piece:nth-child(3n + 1) {
+  background: #f1dfb8;
+}

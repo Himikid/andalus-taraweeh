@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Header from "@/components/home/Header";
 import HomeLiveBlock from "@/components/home/HomeLiveBlock";
 import PublishedDays from "@/components/home/PublishedDays";
@@ -10,12 +11,30 @@ export default function HomePage() {
   const orderedDays = [...availableTaraweehDays].sort((a, b) => b - a);
   const latestDay = orderedDays[0] ?? null;
   const recentDays = orderedDays.slice(0, 5);
+  const isKhatamComplete = (latestDay ?? 0) >= 28;
 
   return (
     <main className="app-shell px-5 py-12 sm:px-8 sm:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid gap-5 sm:gap-6 lg:grid-cols-12">
-          <section className="hero-shell px-6 py-14 sm:px-10 sm:py-16 lg:col-span-8">
+          <section className="hero-shell relative overflow-hidden px-6 py-14 sm:px-10 sm:py-16 lg:col-span-8">
+            {isKhatamComplete ? (
+              <div className="khatam-confetti" aria-hidden="true">
+                {Array.from({ length: 18 }).map((_, index) => (
+                  <span
+                    key={index}
+                    className="khatam-confetti-piece"
+                    style={
+                      {
+                        "--confetti-left": `${(index * 97) % 100}%`,
+                        "--confetti-delay": `${(index % 7) * 0.35}s`,
+                        "--confetti-duration": `${5 + (index % 4)}s`,
+                      } as CSSProperties
+                    }
+                  />
+                ))}
+              </div>
+            ) : null}
             <div className="mx-auto flex w-full max-w-3xl flex-col gap-12">
               <Header />
 

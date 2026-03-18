@@ -2376,6 +2376,120 @@ export const dayHighlights: Record<number, DayHighlightItem[]> = {
       ],
     },
   ],
+  28: [
+    {
+      ayahRef: "81:1-14",
+      themeType: "Famous Ayah",
+      shortTitle: "When the Cosmic Order Is Folded",
+      whyNotable: [
+        "A highly recognized opening passage of Surah At-Takwir on Day of Judgment upheaval.",
+        "Frequently cited to awaken urgency and seriousness about akhirah.",
+      ],
+      summary:
+        "The surah opens with a sequence of cosmic events that overturn normal reality and lead each soul to face what it has prepared. The passage shocks the heart out of heedlessness and into accountability.",
+      keyTakeaway: "Live today with the certainty that every deed will be exposed tomorrow.",
+      references: [
+        { name: "Quran 81:1-14", url: "https://quran.com/81:1-14" },
+        { name: "Ibn Kathir Tafsir (81:1)", url: "https://quran.com/en/81:1/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "93:3-5",
+      themeType: "Famous Ayah",
+      shortTitle: "Your Lord Has Not Forsaken You",
+      whyNotable: [
+        "Among the most quoted ayat of hope and reassurance in Surah Ad-Duhaa.",
+        "Widely recited for comfort in moments of spiritual heaviness.",
+      ],
+      summary:
+        "Allah reassures the Prophet that he was neither abandoned nor hated, and promises that what is coming is better than what has passed. These ayat rebuild hope and trust in divine care.",
+      keyTakeaway: "Interpret hardship through Allah's promise, not through despair.",
+      references: [
+        { name: "Quran 93:3-5", url: "https://quran.com/93:3-5" },
+        { name: "Ibn Kathir Tafsir (93:3)", url: "https://quran.com/en/93:3/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "94:5-6",
+      themeType: "Famous Ayah",
+      shortTitle: "With Hardship Comes Ease",
+      whyNotable: [
+        "One of the most universally memorized and quoted Quranic refrains.",
+        "Central in Muslim discourse on resilience and sabr.",
+      ],
+      summary:
+        "Allah repeats that with hardship comes ease, embedding relief as a divine pattern rather than a rare exception. The repetition strengthens certainty and endurance.",
+      keyTakeaway: "Persist through pressure with confidence that ease is part of Allah's decree.",
+      references: [
+        { name: "Quran 94:5-6", url: "https://quran.com/94:5-6" },
+        { name: "Ibn Kathir Tafsir (94:5)", url: "https://quran.com/en/94:5/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "97:1-5",
+      themeType: "Famous Ayah",
+      shortTitle: "Laylatul Qadr Is Better Than a Thousand Months",
+      whyNotable: [
+        "A flagship Ramadan passage recited globally in worship and reminders.",
+        "Defines the magnitude and peace of the Night of Decree.",
+      ],
+      summary:
+        "These ayat describe the Quran's descent on Laylatul Qadr, its immense value beyond a thousand months, and the descent of angels with divine decree. The passage frames the night as a peak opportunity for worship.",
+      keyTakeaway: "Treat nights of worship as life-defining opportunities, not routine moments.",
+      references: [
+        { name: "Quran 97:1-5", url: "https://quran.com/97:1-5" },
+        { name: "Ibn Kathir Tafsir (97:1)", url: "https://quran.com/en/97:1/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "99:7-8",
+      themeType: "Famous Ayah",
+      shortTitle: "Even an Atom's Weight Will Be Seen",
+      whyNotable: [
+        "A foundational accountability passage known across all age groups.",
+        "Frequently cited to emphasize no deed is lost before Allah.",
+      ],
+      summary:
+        "Whoever does an atom's weight of good will see it, and whoever does an atom's weight of evil will see it. The ayah establishes complete precision in divine justice.",
+      keyTakeaway: "Never underestimate small deeds, whether good or harmful.",
+      references: [
+        { name: "Quran 99:7-8", url: "https://quran.com/99:7-8" },
+        { name: "Ibn Kathir Tafsir (99:7)", url: "https://quran.com/en/99:7/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "112:1-4",
+      themeType: "Famous Ayah",
+      shortTitle: "The Pure Declaration of Tawhid",
+      whyNotable: [
+        "One of the most recited surahs and a core summary of Islamic monotheism.",
+        "Universally used in salah, dhikr, and aqidah teaching.",
+      ],
+      summary:
+        "Surah Al-Ikhlas affirms Allah's absolute oneness, independence, and uniqueness without lineage or equal. It distills pure tawhid into four concise ayat.",
+      keyTakeaway: "Anchor every act of worship in uncompromising tawhid.",
+      references: [
+        { name: "Quran 112:1-4", url: "https://quran.com/112:1-4" },
+        { name: "Ibn Kathir Tafsir (112:1)", url: "https://quran.com/en/112:1/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+    {
+      ayahRef: "113:1-5, 114:1-6",
+      themeType: "Dua",
+      shortTitle: "Seeking Refuge in the Lord of Dawn and Mankind",
+      whyNotable: [
+        "The Mu'awwidhatayn are among the most practiced daily protective recitations.",
+        "Central to prophetic adhkar for spiritual and psychological protection.",
+      ],
+      summary:
+        "The closing surahs teach believers to seek refuge with Allah from external harm, envy, hidden whispers, and inner temptation. They close the Quran with dependence, humility, and protective tawakkul.",
+      keyTakeaway: "Return to Allah for protection from both visible and invisible harm.",
+      references: [
+        { name: "Quran 113:1-5", url: "https://quran.com/113:1-5" },
+        { name: "Ibn Kathir Tafsir (113:1)", url: "https://quran.com/en/113:1/tafsirs/ar-tafsir-ibn-kathir" },
+      ],
+    },
+  ],
 };
 
 export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
@@ -2648,6 +2762,16 @@ export const dayCorpusSummaries: Record<number, DayCorpusSummary> = {
       "Persistent repentance, recitation, and prayer are framed as the path to steadfastness.",
       "Akhirah imagery repeatedly dismantles heedlessness and resets priorities.",
       "Personal accountability and self-restraint are presented as keys to salvation.",
+    ],
+  },
+  28: {
+    title: "Day 28 Recitation Summary (At-Takwir 1-29, Al-Infitar 1-19, Al-Mutaffifin 1-36, Al-Inshiqaq 1-25, Al-Burooj 1-22, At-Tariq 1-17, Al-A'la 1-19, Al-Ghashiyah 1-26, Al-Fajr 1-30, Al-Balad 1-20, Ash-Shams 1-15, Al-Layl 1-21, Ad-Duhaa 1-11, Ash-Sharh 1-8, At-Tin 1-8, Al-Alaq 1-19, Al-Qadr 1-5, Al-Bayyinah 1-8, Az-Zalzalah 1-8, Al-Adiyat 1-11, Al-Qariah 1-11, At-Takathur 1-8, Al-Asr 1-3, Al-Humazah 1-9, Al-Fil 1-5, Quraysh 1-4, Al-Ma'un 1-7, Al-Kawthar 1-3, Al-Kafirun 1-6, An-Nasr 1-3, Al-Masad 1-5, Al-Ikhlas 1-4, Al-Falaq 1-5, An-Naas 1-6)",
+    summary:
+      "Day 28 completes the Quran with the short surahs of Juz 30, weaving together akhirah certainty, moral accountability, sincere worship, and pure tawhid. The recitation repeatedly contrasts heedlessness with remembrance, arrogance with humility, and denial with conscious preparation for meeting Allah. It closes with the Mu'awwidhatayn and Surah An-Naas, ending the khatam in refuge, dependence, and devotion.",
+    themes: [
+      "Final surahs intensify accountability by making every deed, intention, and choice consequential.",
+      "Core beliefs are distilled into concise, memorized passages of tawhid, worship, and ethical warning.",
+      "The Quran closes by directing believers to seek constant refuge in Allah from visible and hidden harm.",
     ],
   },
 };

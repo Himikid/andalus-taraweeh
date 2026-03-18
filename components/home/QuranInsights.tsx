@@ -244,10 +244,13 @@ export default function QuranInsights({ className = "" }: QuranInsightsProps) {
     };
   }, []);
 
-  const currentJuz = latest?.marker?.juz ?? 0;
-  const currentSurahNumber = latest?.marker?.surah_number ?? 0;
+  const isKhatamComplete = Boolean(
+    latest?.marker?.surah_number === 114 && latest?.marker?.ayah >= (surahAyahCounts[114] ?? 6)
+  );
+  const currentJuz = isKhatamComplete ? 30 : latest?.marker?.juz ?? 0;
+  const currentSurahNumber = isKhatamComplete ? 114 : latest?.marker?.surah_number ?? 0;
   const currentSurahTotalAyahs = currentSurahNumber ? surahAyahCounts[currentSurahNumber] ?? 0 : 0;
-  const surahCoverage = dayProgress[dayProgress.length - 1]?.surahCount ?? 0;
+  const surahCoverage = isKhatamComplete ? 114 : dayProgress[dayProgress.length - 1]?.surahCount ?? 0;
 
   const surahStartEntries = useMemo(() => {
     return Object.entries(surahStarts)
